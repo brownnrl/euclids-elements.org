@@ -599,8 +599,8 @@ function getprop(book) { // pass the correct book as found in getbook
 // Prepare a link to the book
 //
 function getBookLink(book) {
-  if (book < 0 || book >= booktable.length) 
-    return '<a href="../elements.html">Introduction</a>';
+  if (book < 0 || book >= booktable.length)
+    return '<a href="/">Introduction</a>';
   var str = '<a href="../'+booktable[book][0]+'/'+booktable[book][0]+'.html">';
   str += booktable[book][1]+"</a>";
   return str;
@@ -719,8 +719,8 @@ function getTopicForm(prefix) { // prefix is either empty or "../"
   var formString = '<form name="TopicForm">';
   formString += '<select name="select3" size="1" onchange="if (options[selectedIndex].value){ location = options[selectedIndex].value }">';
   formString += '<option value="">Select topic';
-  formString += '<option value="'+prefix+'elements.html">Introduction';
-  formString += '<option value="'+prefix+'toc.html">Table of Contents';
+  formString += '<option value="/">Introduction';
+  formString += '<option value="/elements/">Table of Contents';
   formString += '<option value="/geomlib/usingGeomlib.html">Using geomlib';
   formString += '<option value="'+prefix+'aboutText.html">About the text';
   formString += '<option value="'+prefix+'Euclid.html">Euclid';
@@ -744,7 +744,7 @@ function loadHeader(){
     headertext += getEuclidLogoMap(prfx);
     headertext += "<h1>"+booktable[book][1]+"</h1>";  
   } else { // This is a proposition
-    headertext += '<a class="hover" href="../elements.html">';
+    headertext += '<a class="hover" href="/">';
     headertext += "<h1>Euclid's Elements</h1></a>";
     headertext += '<a class="hover" href="'+booktable[book][0]+'.html">';
     headertext += "<h1>"+booktable[book][1]+"</h1></a>";  
@@ -761,7 +761,7 @@ function getEuclidLogoMap(prfx) { // prfx is empty or "../"
   txt += '" height=238 width=245 border=0></a>';
   txt +=  "</center>";
   txt +=  '<MAP NAME="tocmap">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="59,88,193,164"   HREF="'+prfx+'"toc.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="59,88,193,164"   HREF="/elements/">';
   txt +=  '<AREA SHAPE="RECT" COORDS="160,10,188,31"   HREF="'+prfx+'bookI/bookI.html">';
   txt +=  '<AREA SHAPE="RECT" COORDS="194,34,215,70"   HREF="'+prfx+'bookII/bookII.html">';
   txt +=  '<AREA SHAPE="RECT" COORDS="215,73,243,98"   HREF="'+prfx+'bookIII/bookIII.html">';
@@ -816,11 +816,9 @@ function loadFooter(copyrightDates){
   // that finishes the table of links
   //finish up the footer
   footerText+="<hr size=6><p>";
-  footerText+="<font size=-1><a href="+prfx+"copyright.html>\u00A9"+copyrightDates+"</a>";
-  footerText+="<br><a href='http://aleph0.clarku.edu/~djoyce/'>David E. Joyce</a>" ;
-  footerText+="<br><img src='"+prfx+"dj.gif'>";
-  footerText+="<br><a href='http://www.clarku.edu/departments/mathcs/'>Department of Mathematics and Computer Science</a>";
-  footerText+="<br><a href='http://www.clarku.edu/'>Clark University</a><br>Worcester, MA 01610";
+  footerText+="<font size=-1>\u00A9"+copyrightDates;
+  footerText+="<br>David E. Joyce (Professor Emeritus, <a href='http://www.clarku.edu/'>Clark University</a>)";
+  footerText+="<br><a href='/copyright.html'>Copyright Notice</a>";
   footerText+="</font size>";
   //
   // footer is the footer for each chapter page
