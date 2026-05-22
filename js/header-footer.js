@@ -754,27 +754,27 @@ function loadHeader(){
 // 
 // Euclid logo map
 //
-function getEuclidLogoMap(prfx) { // prfx is empty or "../"
+function getEuclidLogoMap(prfx) { // prfx kept for back-compat; URLs are absolute
   var txt = "<center>";
-  txt += '<img src='+prfx+'logo.gif USEMAP="#tocmap"  alt="';
+  txt += '<img src="/elements/logo.gif" USEMAP="#tocmap" alt="';
   txt += "Euclid's Elements";
-  txt += '" height=238 width=245 border=0></a>';
+  txt += '" height=238 width=245 border=0>';
   txt +=  "</center>";
   txt +=  '<MAP NAME="tocmap">';
   txt +=  '<AREA SHAPE="RECT" COORDS="59,88,193,164"   HREF="/elements/">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="160,10,188,31"   HREF="'+prfx+'bookI/bookI.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="194,34,215,70"   HREF="'+prfx+'bookII/bookII.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="215,73,243,98"   HREF="'+prfx+'bookIII/bookIII.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="217,118,242,139" HREF="'+prfx+'bookIV/bookIV.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="208,163,231,185" HREF="'+prfx+'bookV/bookV.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="176,199,203,219" HREF="'+prfx+'bookVI/bookVI.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="134,215,172,236" HREF="'+prfx+'bookVII/bookVII.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="74,215,115,236"  HREF="'+prfx+'bookVIII/bookVIII.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="44,197,72,218"   HREF="'+prfx+'bookIX/bookIX.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="16,163,44,183"   HREF="'+prfx+'bookX/bookX.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="0,121,31,140"    HREF="'+prfx+'bookXI/bookXI.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="0,78,36,98"      HREF="'+prfx+'bookXII/bookXII.html">';
-  txt +=  '<AREA SHAPE="RECT" COORDS="10,32,57,54"     HREF="'+prfx+'bookXIII/bookXIII.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="160,10,188,31"   HREF="/elements/bookI/bookI.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="194,34,215,70"   HREF="/elements/bookII/bookII.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="215,73,243,98"   HREF="/elements/bookIII/bookIII.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="217,118,242,139" HREF="/elements/bookIV/bookIV.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="208,163,231,185" HREF="/elements/bookV/bookV.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="176,199,203,219" HREF="/elements/bookVI/bookVI.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="134,215,172,236" HREF="/elements/bookVII/bookVII.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="74,215,115,236"  HREF="/elements/bookVIII/bookVIII.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="44,197,72,218"   HREF="/elements/bookIX/bookIX.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="16,163,44,183"   HREF="/elements/bookX/bookX.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="0,121,31,140"    HREF="/elements/bookXI/bookXI.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="0,78,36,98"      HREF="/elements/bookXII/bookXII.html">';
+  txt +=  '<AREA SHAPE="RECT" COORDS="10,32,57,54"     HREF="/elements/bookXIII/bookXIII.html">';
   txt +=  "</MAP>";
   return txt;
 }
@@ -816,7 +816,8 @@ function loadFooter(copyrightDates){
   // that finishes the table of links
   //finish up the footer
   footerText+="<hr size=6><p>";
-  footerText+="<font size=-1>\u00A9"+copyrightDates;
+  footerText+="<font size=-1><a href='/'>Home</a>";
+  footerText+="<br>\u00A9"+copyrightDates;
   footerText+="<br>David E. Joyce (Professor Emeritus, <a href='http://www.clarku.edu/'>Clark University</a>)";
   footerText+="<br><a href='/copyright.html'>Copyright Notice</a>";
   footerText+="</font size>";
