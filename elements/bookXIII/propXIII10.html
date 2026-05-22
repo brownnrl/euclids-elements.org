@@ -1,0 +1,131 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book XIII, Proposition 10</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 10</h1>
+
+<div class="statement">
+If an equilateral pentagon is inscribed in a circle, then the square on the side of the pentagon equals the sum of the squares on the sides of the hexagon and the decagon inscribed in the same circle.</div>
+
+<p>Let <i>ABCDE</i> be a circle, and let the equilateral pentagon <i>ABCDE</i> be inscribed in the circle <i>ABCDE.</i>
+
+<p>I say that the square on the side of the pentagon <i>ABCDE</i> equals the sum of the squares on the side of the hexagon and on that of the decagon inscribed in the circle <i>ABCDE.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="340" height="340" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propXIII10.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.10",
+        pivot: "F",
+        fontsize: "14",
+        elements: [
+            "C;point;free;90,280",
+            "D;point;free;250,280",
+            "CDEAB;polygon;regularPolygon;C,D,5;0;0;0;0",
+            "E;point;vertex;CDEAB,3",
+            "A;point;vertex;CDEAB,4",
+            "B;point;vertex;CDEAB,5",
+            "circ;circle;circumcircle;C,D,A;0;0;black;random",
+            "CDEABdup;polygon;regularPolygon;C,D,5;0;0;black;random",
+            "F;point;center;circ;black;green",
+            "G;point;extend;A,F,A,F",
+            "AG;line;connect;A,G",
+            "BF;line;connect;B,F",
+            "H;point;midpoint;A,B",
+            "K;point;cutoff;F,H,F,A",
+            "FK;line;connect;F,K",
+            "BK;line;connect;B,K",
+            "AK;line;connect;A,K",
+            "L;point;midpoint;A,K",
+            "M;point;cutoff;F,L,F,A",
+            "FM;line;connect;F,M",
+            "N;point;intersection;F,L,A,B",
+            "KN;line;connect;K,N"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="../bookIII/propIII1.html">III.1</a>
+<br><a href="../bookI/propI12.html">I.12</a></div>
+<p>Take the center <i>F</i> of the circle, join <i>AF</i> and carry it through to the point <i>G,</i> and join <i>FB.</i> Draw <i>FH</i>  from <i>F</i> perpendicular to <i>AB</i> and carry it through to <i>K,</i>  join <i>AK</i> and <i>KB,</i> draw <i>FL</i> from <i>F</i> perpendicular to <i>AK,</i> carry it through to <i>M,</i> and join <i>KN.</i>
+
+<p>Since the circumference <i>ABCG</i> equals the circumference <i>AEDG,</i> and in them <i>ABC</i> equals <i>AED,</i> therefore the remainder, the circumference <i>CG,</i> equals the remainder <i>GD.</i>
+
+<p>But <i>CD</i> belongs to a pentagon, therefore <i>CG</i> belongs to a decagon.</tr>
+
+<div class="just"><a href="../bookI/propI5.html">I.5</a>,
+<a href="../bookI/propI26.html">I.26</a></div>
+<p>And, since <i>FA</i> equals <i>FB,</i> and <i>FH</i> is perpendicular, therefore the angle <i>AFK</i> equals the angle <i>KFB.</i>
+
+<div class="just"><a href="../bookIII/propIII26.html">III.26</a></div>
+<p>Hence the circumference <i>AK</i> equals <i>KB.</i>  Therefore the circumference <i>AB</i> is double the circumference <i>BK.</i>  Therefore the straight line <i>AK</i> is a side of a decagon.  For the same reason <i>AK</i> is double <i>KM.</i>
+
+<p>Now, since the circumference <i>AB</i> is double the circumference <i>BK,</i> while the circumference <i>CD</i> equals the circumference <i>AB,</i> therefore the circumference <i>CD</i> is also double the circumference <i>BK.</i>
+
+<p>But the circumference <i>CD</i> is also double <i>CG,</i> therefore the circumference <i>CG</i> equals the circumference <i>BK.</i>  But <i>BK</i> is double <i>KM,</i> since <i>KA</i> is so also,  therefore <i>CG</i> is also double <i>KM.</i>
+
+<div class="just"><a href="../bookVI/propVI33.html">VI.33</a></div>
+<p>But, further, the circumference <i>CB</i> is also double the circumference <i>BK,</i> for the circumference <i>CB</i> equals <i>BA.</i> Therefore the whole circumference <i>GB</i> is also double <i>BM.</i>  Hence the angle <i>GFB</i> is double the angle <i>BFM.</i>
+
+<p>But the angle <i>GFB</i> is double the angle <i>FAB,</i> for the angle <i>FAB</i> equals the angle <i>ABF.</i>  Therefore the angle <i>BFN</i> equals the angle <i>FAB.</i>
+
+<div class="just"><a href="../bookI/propI32.html">I.32</a></div>
+<p>But the angle <i>ABF</i> is common to the two triangles <i>ABF</i> and <i>BFN,</i> therefore the remaining angle <i>AFB</i> equals the remaining angle <i>BNF.</i> Therefore the triangle <i>ABF</i> is equiangular with the triangle <i>BFN.</i>
+
+<div class="just"><a href="../bookVI/propVI4.html">VI.4</a>,
+<a href="../bookVI/propVI17.html">VI.17</a></div>
+<p>Therefore, proportionally the straight line <i>AB</i> is to <i>BF</i> as <i>FB</i> is to <i>BN.</i>   Therefore the rectangle <i>AB</i> by <i>BN</i> equals the square on <i>BF.</i>
+
+<div class="just"><a href="../bookI/propI4.html">I.4</a></div>
+<p>Again, since <i>AL</i> equals <i>LK,</i> while <i>LN</i> is common and at right angles, therefore the base <i>KN</i> equals the base <i>AN.</i>  Therefore the angle <i>LKN</i> also equals the angle <i>LAN.</i>
+
+<p>But the angle <i>LAN</i> equals the angle <i>KBN,</i> therefore the angle <i>LKN</i> also equals the angle <i>KBN.</i>
+
+<div class="just"><a href="../bookI/propI32.html">I.32</a></div>
+<p>And the angle at <i>A</i> is common to the two triangles <i>AKB</i> and <i>AKN.</i>  Therefore the remaining angle <i>AKB</i> equals the remaining angle <i>KNA.</i>
+ 
+<div class="just"><a href="../bookVI/propVI1.html">VI.1</a></div>
+<p>Therefore the triangle <i>KBA</i> is equiangular with the triangle <i>KNA.</i> Therefore, proportionally the straight line <i>BA</i> is to <i>AK</i> as <i>KA</i> is to <i>AN.</i>
+
+<div class="just"><a href="../bookVI/propVI17.html">VI.17</a></div>
+<p>Therefore the rectangle <i>BA</i> by <i>AN</i> equals the square on <i>AK.</i>
+
+<div class="just"><a href="../bookII/propII2.html">II.2</a></div>
+<p>But the rectangle <i>AB</i> by <i>BN</i> was also proved equal to the square on <i>BF,</i> therefore the sum of the rectangle <i>AB</i> by <i>BN</i> and the rectangle <i>BA</i> by <i>AN,</i> that is, the square on <i>BA,</i> equals the sum of the squares on <i>BF</i> and <i>AK.</i>
+
+<div class="just"><a href="../bookIV/propIV15.html#cor">IV.15,Cor.</a></div>
+<p>And <i>BA</i> is a side of the pentagon, <i>BF</i> of the hexagon, and <i>AK</i> of the decagon.
+
+<p>Therefore, <i>if an equilateral pentagon is inscribed in a circle, then the square on the side of the pentagon equals the sum of the squares on the sides of the hexagon and the decagon inscribed in the same circle.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<img src="propXIII10a.gif" alt="image detail" align=right vspace=5 hspace=5>
+
+<a name="guide"></a>
+<h2>Guide</h2>
+
+The diagram is a little small to see detail.  Part of it is expanded to the right
+
+<h4>Use of this proposition</h4>
+
+This result is used in <a href="propXIII16.html">XIII.16</a> for the construction of an icosahedron and later in <a href="propXIII18.html">XIII.18</a> when an icosahedron is compared to the other four regular polyhedra.
+
+<br clear=all>
+
+<div id="footer"></div>
+<script>
+  loadFooter("1997, 2013");
+</script>
+</BODY></HTML>

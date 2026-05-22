@@ -1,0 +1,74 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book XIII, Proposition 12</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 12</h1>
+
+<div class="statement">
+If an equilateral triangle is inscribed in a circle, then the square on the side of the triangle is triple the square on the radius of the circle.</div>
+
+<p>Let <i>ABC</i> be a circle, and let the equilateral triangle <i>ABC</i> be inscribed in it.
+<p>I say that the square on one side of the triangle <i>ABC</i> is triple the square on the radius of the circle.
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="245" height="245" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propXIII12.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.12",
+        elements: [
+            "B;point;free;40,170",
+            "C;point;free;200,170",
+            "BCA;polygon;equilateralTriangle;B,C;0;0;0;0",
+            "A;point;vertex;BCA,3",
+            "circ;circle;circumcircle;A,B,C;0;0;black;random",
+            "BCAdup;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;center;circ",
+            "E;point;extend;A,D,A,D",
+            "AE;line;connect;A,E",
+            "BE;line;connect;B,E"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="../bookIII/propIII1.html">III.1</a></div>
+<p>Take the center <i>D</i> of the circle <i>ABC,</i> join <i>AD</i> and carry it through to <i>E,</i> and join <i>BE.</i>
+
+<div class="just"><a href="../bookIV/propIV15.html#cor">IV.15,Cor.</a></div>
+<p>Then, since the triangle <i>ABC</i> is equilateral, therefore the circumference <i>BEC</i> is a third part of the circumference of the circle <i>ABC.</i>  Therefore the circumference <i>BE</i> is a sixth part of the circumference of the circle. Therefore the straight line <i>BE</i> belongs to a hexagon. Therefore it equals the radius <i>DE.</i>
+
+<p>And, since <i>AE</i> is double <i>DE,</i> therefore the square on <i>AE</i> is quadruple the square on <i>ED,</i> that is, of the square on <i>BE.</i>
+
+<div class="just"><a href="../bookIII/propIII31.html">III.31</a>
+<br><a href="../bookI/propI47.html">I.47</a></div>
+<p>But the square on <i>AE</i> equals the sum of the squares on <i>AB</i> and <i>BE.</i>  Therefore the sum of the squares on <i>AB</i> and <i>BE</i> is quadruple the square on <i>BE.</i>
+
+<p>Therefore, taken separately, the square on <i>AB</i> is triple the square on <i>BE.</i> But <i>BE</i> equals <i>DE,</i> therefore the square on <i>AB</i> is triple the square on <i>DE.</i>
+
+<p>Therefore the square on the side of the triangle is triple the square on the radius.
+
+<p>Therefore, <i>if an equilateral triangle is inscribed in a circle, then the square on the side of the triangle is triple the square on the radius of the circle.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name="guide"></a>
+<h2>Guide</h2>
+
+<h4>Use of this proposition</h4>
+This result is needed in proposition <a href="propXIII13.html">XIII.13</a> coming next to show that the construction given there produces a regular tetrahedron.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1997");
+</script>
+</BODY></HTML>

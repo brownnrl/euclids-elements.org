@@ -1,0 +1,433 @@
+<HTML><HEAD><TITLE>Construction by Compasses Alone</TITLE><script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY bgcolor=ffffff>
+
+<center><h2>Compass
+ Geometry</h2></center>
+
+
+<h4>3. Summary of inversion</h4>
+
+We don't need all the properties of inverion in a circle for this
+ investigation, just a few of them.  Of course, we need a definition.  
+
+<canvas id="canvas_0" width="200" height="280" tabindex="0"></canvas>
+<noscript><img align="right" alt="Inversion in a circle" hspace="10" src="compass3a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "Inversion in a circle",
+        pivot: "O",
+        elements: [
+            "O;point;free;100,200",
+            "A;point;free;170,230",
+            "OA;circle;radius;O,A;0;0;black;random",
+            "P;point;free;100,35",
+            "OP;line;connect;O,P",
+            "P';point;invert;P,OA",
+            "OP';line;connect;O,P'"
+        ],
+    });
+</script>
+
+
+<p>Fix a circle with center <i>O</i> and radius <i>OA&nbsp;=&nbsp;r.</i> For each point <i>P</i> other than the
+ center <i>O,</i> the point <i>inverse</i> to <i>P</i> in the circle <i>O</i> is that point <i>P'</i> on the line <i>OP</i>
+ (extended in the direction of <i>P</i> if needed) so that the proportion
+
+<p><center>
+
+<i>OP&nbsp;/&nbsp;r&nbsp;=&nbsp;r&nbsp;/&nbsp;OP'</i>
+</center><p> 
+
+is satisfied. An equivalent condition is that 
+
+<p><center>
+
+<i>OP OP'</i> = <i>r</i><sup>2</sup>.
+</center><p>
+
+In order to cover the special case that occurs when <i>P</i> is the center
+ <i>O</i> of the circle, we'll add a point <img src="infinity.gif" alt="infinity "> to the plane, and let <i>O</i> and <img
+ src="infinity.gif" alt="infinity "> be inverses of each other.
+
+<p>We'll use the notation <i>P</i><img src="thru.gif"
+ alt=">"><i>C</i> to indicate the inverse point <i>P'.</i> Read "<i>P</i><img src="thru.gif" alt=">"><i>C</i>" as "<i>P</i> through
+ <i>C.</i>"  More generally,  when <i>B</i> is any plane geometric figure (point, line, circle, etc.) and <i>C</i> is a circle,
+ we'll use the notation <i>B</i><img src="thru.gif" alt=">"><i>C</i> for the result of inverting <i>B</i> in the circle <i>C.</i>
+ We'll also use this notation for reflecting across a straight line.  So, if <i>B</i> is any plain geometric figure, and <i>L</i>
+ is a straight line, then <i>B</i><img src="thru.gif" alt=">"><i>L</i> is the figure that results from reflecting <i>B</i> across
+ <i>L.</i>
+
+<p>Note that inversion in a circle is an involution.  That is, application of inversion in the same circle a second
+ time undoes the first application.  Otherwise said, it is an operation that when done twice yields the identity operation. 
+ Algebraically, this observation is the identity (<i>B</i><img src="thru.gif" alt=">"><i>C</i>)<img src="thru.gif" alt=">"><i>C</i> =
+ <i>B,</i>
+where <i>B</i> is any plane figure.
+
+<p>Also note that a point <i>P</i> is its own inverse, that is, <i>P</i><img
+ src="thru.gif" alt=">"><i>C</i> = <i>P,</i> if and only if it lies on the circumference of the circle.  In particular, <i>C</i><img
+ src="thru.gif" alt=">"><i>C</i> = <i>C.</i>
+
+<h4>A standard construction for inversion</h4>
+
+
+<canvas id="canvas_1" width="200" height="280" tabindex="0"></canvas>
+<noscript><img align="left" alt="Inversion in a circle" hspace="10" src="compass3b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Inversion in a circle",
+        pivot: "O",
+        elements: [
+            "O;point;free;100,200",
+            "A;point;free;170,230",
+            "OA;circle;radius;O,A;0;0;black;random",
+            "P;point;free;100,35",
+            "OP;line;connect;O,P",
+            "P';point;invert;P,OA",
+            "P'perp;line;perpendicular;P',O;0;0;0",
+            "BC;line;chord;P'perp,OA",
+            "B;point;first;BC",
+            "C;point;last;BC",
+            "PB;line;connect;P,B",
+            "PC;line;connect;P,C",
+            "OB;line;connect;O,B;0;0;gray",
+            "OC;line;connect;O,C;0;0;gray"
+        ],
+    });
+</script>
+
+<p>The standard construction to invert a point in a circle uses both compass and
+ straightedge, so we won't be able to use it.  Our construction using just a compass will come later. Still, the standard
+ construction is interesting. We only need to consider points <i>P</i> which either lie outside the circle, or lie inside the
+ circle but are not the center of the circle; points on the circle are their own inverses, and the center has <img
+ src="infinity.gif" alt="infinity "> as its inverse.
+
+<p>Let there be a circle with center <i>O</i> and radius
+ <i>OA&nbsp;=&nbsp;r,</i> and let <i>P</i> be a point.  To invert <i>P</i> in the circle, first draw the line <i>OP.</i> Now, if
+ <i>P</i> happens to be a point outside the circle, then draw the tangents <i>PB</i> and <i>PC</i> to the circle, then draw the
+ line <i>BC.</i>  Where these two lines meet will be the inverse point <i>P'.</i>  Since the two right triangles <i>OBP</i> and
+ <i>BP'P</i> are similar, therefore the proportion <i>OP&nbsp;/&nbsp;r&nbsp;=&nbsp;r&nbsp;/&nbsp;OP'</i> holds.
+
+<canvas id="canvas_2" width="200" height="280" tabindex="0"></canvas>
+<noscript><img align="right" alt="Inversion in a circle" hspace="10" src="compass3c.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_2",
+        background: "0,0,100",
+        title: "Inversion in a circle",
+        pivot: "O",
+        elements: [
+            "O;point;free;100,200",
+            "A;point;free;170,230",
+            "OA;circle;radius;O,A;0;0;black;random",
+            "P;point;free;100,160",
+            "P';point;invert;P,OA",
+            "OP;line;connect;O,P'",
+            "Pperp;line;perpendicular;P,O;0;0;0",
+            "BC;line;chord;Pperp,OA",
+            "B;point;first;BC",
+            "C;point;last;BC",
+            "P'B;line;connect;P',B",
+            "P'C;line;connect;P',C",
+            "OB;line;connect;O,B;0;0;gray",
+            "OC;line;connect;O,C;0;0;gray"
+        ],
+    });
+</script>
+
+<p>But if <i>P</i> happens to be a point inside the circle (except the center),
+ then draw the line <i>BC</i> perpendicular to <i>OP,</i> and let <i>B</i> and <i>C</i> be the points of intersection of that line
+ with the circle.  Then draw tangents to the circle at <i>B</i> and <i>C.</i>  In this case, the inverse point <i>P'</i> is the
+ intersection of the two tangent lines.  Note again the two similar right triangles, from which it follows that the identical
+ proportion holds.
+
+<p>A third case occurs when <i>P</i> lies on the circle, and in that case let the inverse point <i>P'</i> be
+ the same as <i>P</i> itself.  
+
+<p>The fourth case occurs when <i>P</i> is the center <i>O</i> of the circle, and as mentioned
+ above, <i>O</i> and <img src="infinity.gif" alt="infinity "> are inverses.
+
+
+<h4>Inverting lines in a circle.</h4> 
+
+We will need
+ to know some properties of inversion.  The first is that when you invert a straight line in a circle, the result is a circle. 
+ Also, when you invert one circle in another, then the result is a circle (or in a special case, a straight line).
+
+<p>We will
+ invert lines and circles in our circle with center <i>O</i> and radius <i>OA</i> = <i>r.</i>
+
+<p>
+<canvas id="canvas_3" width="280" height="250" tabindex="0"></canvas>
+<noscript><img align="left" alt="Inversion in a circle" hspace="10" src="compass3d.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_3",
+        background: "0,0,100",
+        title: "Inversion in a circle",
+        pivot: "O",
+        elements: [
+            "x0;point;fixed;0,0;0;0",
+            "x1;point;fixed;1000,0;0;0",
+            "O;point;free;110,220",
+            "A;point;free;260,220",
+            "OA;circle;radius;O,A;0;0;black;random",
+            "B;point;free;170,35",
+            "C;point;free;30,35",
+            "B1;point;extend;B,C,x0,x1;0;0",
+            "C1;point;extend;C,B,x0,x1;0;0",
+            "BC;line;connect;B1,C1",
+            "D;point;foot;O,BC",
+            "OD;line;connect;O,D",
+            "D';point;invert;D,OA",
+            "M;point;midpoint;O,D';0;0",
+            "invert;circle;radius;M,O;0;0;black;random",
+            "E;point;lineSlider;B,C,260,35",
+            "OE;line;connect;O,E",
+            "chord;line;chord;O,E,invert;0;0;0",
+            "E';point;last;chord",
+            "E'D';line;connect;E',D'",
+            "EE';line;connect;E,E'",
+            "DD';line;connect;D,D'"
+        ],
+    });
+</script>
+
+First, consider a line <i>BC</i> which doesn't pass through the
+ center <i>O.</i>  We'll show that its inverse is a circle passing through the center of the circle. Let <i>D</i> be the foot of
+ the perpendicular drawn from <i>O</i> to the line <i>BC.</i>  Let  <i>D'</i> be the point inverse to <i>D.</i>  Draw the circle
+ with diameter <i>OD'.</i> Let <i>E</i> be an arbitrary point on the line <i>BC,</i> and let <i>E'</i>
+be where the ray <i>OE</i>
+ meets the circle with diameter <i>OD'.</i>  Then triangle <i>OE'D'</i> is a right triangle, and it's similar to the right
+ triangle <i>ODE.</i>  Hence, we have the proportion
+
+<center><i>OE&nbsp;/&nbsp;OD</i>&nbsp;=&nbsp;<i>OD'&nbsp;/&nbsp;OE'.</i></center>
+Therefore, 
+<center><i>OE OE'</i> = <i>OD
+ OD'</i> = <i>r</i><sup>2</sup>,</center>
+and we conclude <i>E'</i> is inverse to <i>E.</i>  As <i>E</i> was an arbitrary point on
+ the line, we may conclude that the circle with diameter <i>OD'</i> is inverse to the line <i>BC.</i>
+
+<p>Since inversion is an
+ involution, it is clear that any circle passing through the center of our circle will invert to a straight line.
+
+<p>Should a
+ line <i>BC</i> pass through the center <i>O,</i> then it is clear that its inverse will be itself.
+
+<h4>Inverting circles in a
+ circle.</h4>
+
+Next, we'll invert a circle <i>BCD</i> in our circle with center <i>O</i> and radius <i>OA&nbsp;=&nbsp;r.</i> 
+ There are two cases to consider&#151;when <i>O</i> lies outside the circle <i>BCD,</i> and when it lies inside that circle.  (The
+ third case is when <i>O</i> lies on the circle, but that's taken care of above, and the inverse of <i>BCD</i> is a straight
+ line.)
+
+<canvas id="canvas_4" width="280" height="400" tabindex="0"></canvas>
+<noscript><img align="right" alt="Inversion in a circle" hspace="10" src="compass3e.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_4",
+        background: "0,0,100",
+        title: "Inversion in a circle",
+        pivot: "O",
+        elements: [
+            "O;point;free;140,370",
+            "A;point;free;260,300",
+            "OA;circle;radius;O,A;0;0;black;random",
+            "B;point;free;40,120",
+            "C;point;free;120,30",
+            "D;point;free;230,120",
+            "BCD;circle;circumcircle;B,C,D;0;0;black;random",
+            "P;point;center;BCD;0;0",
+            "M;point;midpoint;O,P;0;0",
+            "Mcirc;circle;radius;M,P;0;0;0;0",
+            "TT';line;bichord;BCD,Mcirc;0;0;0",
+            "T;point;first;TT'",
+            "OT;line;connect;O,T;0;0;gray",
+            "T';point;last;TT';0;0",
+            "OT';line;connect;O,T';0;0;gray",
+            "E;point;circleSlider;BCD,180,200",
+            "OE;line;connect;O,E",
+            "EF;line;chord;BCD,OE",
+            "mid;point;midpoint;EF;0;0",
+            "F;point;extend;E,mid,E,mid",
+            "E';point;invert;E,OA",
+            "B';point;invert;B,OA;0;0",
+            "C';point;invert;C,OA;0;0",
+            "D';point;invert;D,OA;0;0",
+            "BCDinvert;circle;circumcircle;B',C',D';0;0;black;0"
+        ],
+    });
+</script>
+
+<p>We'll start with the case where <i>O</i> lies outside the circle <i>BCD.</i>
+
+<p>Let <i>E</i> be any point on the circle
+ <i>BCD,</i> and <i>F</i> the other point where the line <i>OE</i> intersects the circle <i>BCD.</i>  Let <i>OT</i> be a line from
+ <i>O</i> tangent to the circle <i>BCD</i> at the point <i>T,</i>
+and let <i>t</i> denote the length <i>OT.</i>
+Then by Euclid's
+ Proposition III.35, <i>OE&nbsp;OF&nbsp;=&nbsp;t</i><sup>2</sup>. 
+
+<p>We're looking for a point <i>E'</i> on the line <i>OE</i>
+ such that <i>OE&nbsp;OE'&nbsp;=&nbsp;r</i><sup>2</sup>.  Dividing this equation by the equation
+ <i>OE&nbsp;OF&nbsp;=&nbsp;t</i><sup>2</sup>, we recognize that what we need is a point <i>E'</i> so that 
+<p><center>
+
+<i>OE'&nbsp;/&nbsp;OF&nbsp;=&nbsp;t</i><sup>2</sup>&nbsp;<i>/&nbsp;r</i><sup>2</sup>.
+</center><p>
+Therefore, <i>OE'</i> is a
+ constant times <i>OF.</i>  This means that when we apply a scaling to the plane by a factor of
+ <i>t</i><sup>2</sup>&nbsp;<i>/&nbsp;r</i><sup>2</sup> with the fixed point of the plane being <i>O,</i> then points on the circle
+ <i>BCD</i> will be inverted to points in the scaled circle.  Note that both the original and scaled circles have the same tangent
+ lines from the point <i>O.</i>
+
+<p>The other case occurs when <i>O</i> lies inside the circle <i>BCD.</i>  It may seem that
+ because there are no tangents from <i>O</i> to the circle <i>BCD</i> we've run into serious problems.  But we didn't actually use
+ the tangent lines in the first case; all we needed to know was that the product <i>OE&nbsp;OF</i> was a constant.  In this case,
+ it's also a constant.
+
+<canvas id="canvas_5" width="300" height="300" tabindex="0"></canvas>
+<noscript><img align="left" alt="Inversion in a circle" hspace="10" src="compass3f.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_5",
+        background: "0,0,100",
+        title: "Inversion in a\n circle",
+        pivot: "O",
+        elements: [
+            "O;point;free;170,180",
+            "A;point;free;200,270",
+            "OA;circle;radius;O,A;0;0;black;random",
+            "B;point;free;30,220",
+            "C;point;free;120,30",
+            "D;point;free;240,220",
+            "BCD;circle;circumcircle;B,C,D;0;0;black;0",
+            "P;point;center;BCD;0;0",
+            "E;point;circleSlider;BCD,180,120",
+            "OE;line;connect;O,E",
+            "EF;line;chord;BCD,OE",
+            "mid;point;midpoint;EF;0;0",
+            "F;point;extend;E,mid,E,mid",
+            "E';point;invert;E,OA",
+            "B';point;invert;B,OA;0;0",
+            "C';point;invert;C,OA;0;0",
+            "D';point;invert;D,OA;0;0",
+            "BCDinvert;circle;circumcircle;B',C',D';0;0;black;0"
+        ],
+    });
+</script>
+
+<p>As
+ before, let <i>E</i> be any point on the circle <i>BCD,</i> and <i>F</i> the other point where the line <i>OE</i> intersects the
+ circle <i>BCD.</i> (This time, <i>F</i> is on the other side of <i>O.</i>)
+Then by Euclid's Proposition III.36, the product
+ <i>OE&nbsp;OF</i> is a constant, call it <i>k.</i> 
+
+<p>We're still looking for a point <i>E'</i> on the line <i>OE</i> such that
+ <i>OE&nbsp;OE'&nbsp;=&nbsp;r</i><sup>2</sup>.  Dividing this equation by the equation <i>OE&nbsp;OF&nbsp;=&nbsp;k</i>, we
+ recognize that what we need is a point <i>E'</i> so that 
+<p><center>
+
+<i>OE'&nbsp;/&nbsp;OF&nbsp;=&nbsp;k&nbsp;/&nbsp;r</i><sup>2</sup>.
+</center><p>
+Therefore, <i>OE'</i> is a constant times
+ <i>OF.</i>  This means that when we apply a scaling to the plane by a factor of <i>k&nbsp;/&nbsp;r</i><sup>2</sup> with the fixed
+ point of the plane being <i>O,</i> then points on the circle <i>BCD</i> will be inverted to points in the scaled circle.
+
+<p>We
+ conclude that when one circle is inverted in another, and the center of the other is not on the circumference of the first, then
+ the result is a circle.  But if the center of the other is on the circumfere
+nce of the first, then the result is a straight line.
+
+<h4>Reflection in a line as a limit of inversions</h4>
+
+<canvas id="canvas_6" width="280" height="400" tabindex="0"></canvas>
+<noscript><img align="right" alt="Reflection in a line" hspace="10" src="compass3g.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_6",
+        background: "0,0,100",
+        title: "Reflection in a line",
+        elements: [
+            "S;point;free;30,300",
+            "T;point;free;140,300",
+            "T1;point;extend;S,T,S,T;0;0",
+            "S1;point;extend;T,S,T1,S;0;0",
+            "T2;point;extend;S1,T1,S1,T1;0;0",
+            "ST;line;connect;S1,T2",
+            "SA;line;perpendicular;S,T1",
+            "A;point;lineSlider;SA,30,260",
+            "U;point;parallelogram;A,S,T1;0;0",
+            "OT;circle;circumcircle;A,T,U;0;0;black;random",
+            "O;point;center;OT",
+            "O1;point;extend;T,O,T,O;0;0",
+            "TO1;line;connect;T,O1",
+            "B;point;free;240,370",
+            "F;point;foot;B,ST;0;0",
+            "C;point;extend;B,F,B,F",
+            "BC;line;connect;B,C",
+            "BO;line;connect;B,O;0;0;gray",
+            "D;point;invert;B,OT"
+        ],
+    });
+</script>
+
+Kepler's principle of continuity can be used to relate reflection in a line to inversion
+ in circles.  Kepler observed that some figures are limits of others.  For instance, a parabola is a limit of circles in the sense
+ that if one focus of a circle is left fixed, and the other moves to infinity along a line, then the ellipse becomes closer and
+ closer to a parabola.  A more basic example of continuity is the one we can use here, namely that a line is the limit of circles.
+  Let <i>ST</i> be a straight line, and consider a circle <i>AT</i> tangent to the line at <i>T.</i>  Let the center of the circle
+ be <i>O,</i> and let the radius <i>OT</i> grow by moving <i>O</i> further away from <i>T</i> along a line perpendicular to
+ <i>ST.</i> As the circle grows, the circumference gets closer and closer to the line <i>ST.</i>
+
+<p>Now examine what happens to
+ the inverted point <i>D&nbsp;=&nbsp;B<img src="thru.gif" alt=">">OT</i> of a point <i>B</i> in the circle <i>OT</i> as the circle
+ enlarges.  In the diagram, as you drag point <i>A</i> toward <i>S,</i> the circle <i>OT</i> approaces the line <i>ST</i> and the
+ inverse point <i>D</i> approaches <i>C&nbsp;=&nbsp;B<img src="thru.gif" alt=">">ST,</i> the reflection of <i>C</i> in the line
+ <i>ST.</i>  Thus, the operation of reflection in a line is a limit of inversions in circles.
+
+
+<p><hr width=50%<p>
+
+Next part: <a
+ href="compass4.html">4. Stereographic projection</a>
+<form name="MyForm">
+  <select name="select1" size="1" onchange="if
+ (options[selectedIndex].value) 
+   { location = options[selectedIndex].value }">
+   <option value="">Table of contents
+   <option
+ value="../compass/">Introduction
+   <option value="compass1.html">1. Euclidean constructions
+   <option value="compass2.html">2.
+ Reduction to circular constructions
+   <option value="compass3.html">3. Summary of inversion
+   <option value="compass4.html">4.
+ Stereographic projection   
+   <option value="compass5.html">5. Invert a point in a circle
+   <option value="compass6.html">6.
+ Find the center of a circle
+   <option value="compass7.html">7. Involutory quandles
+ </select>
+</form>
+
+<p><hr width=50%<p>
+
+<p><small>March, 2002.
+<br>David E. Joyce  
+<br><a href="http://aleph0.clarku.edu/">Department of Mathematics and Computer
+ Science</a>
+<br>Clark University
+<br>Worcester, MA 01610
+<p>Email: <A HREF="mailto:djoyce@clarku.edu">djoyce@clarku.edu</a>
+<br>
+
+My <a href="../../home.html">Homepage</a>
+</small>
+</BODY>
+</HTML>

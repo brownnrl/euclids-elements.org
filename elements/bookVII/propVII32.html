@@ -1,0 +1,60 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book VII, Proposition 32</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 32</h1>
+
+<div class="statement">Any number is either prime or is measured by some prime
+ number.</div>
+
+<p>Let <i>A</i> be a number.
+
+<p>I say that <i>A</i> either is prime or is measured by some prime number.
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="250" height="60" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propVII32.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.32",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;lineSlider;A0,A3,220,0;0",
+            "A;line;connect;A1,A2;black"
+        ],
+    });
+</script></div>
+
+<p>If now <i>A</i> is prime, then that which was proposed is done.
+
+<div class="just"><a href="propVII31.html">VII.31</a></div>
+<p>But if it is composite, then some prime number measures it.
+
+<p>Therefore any number either is prime or is measured by some prime number.
+
+<p>Therefore, <i>any number is either prime or is measured by some prime
+ number.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+After the previous proposition, this one really doesn&rsquo;t need to be stated at all.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

@@ -1,0 +1,67 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book III, Proposition 30</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 30</h1>
+
+<div class="statement">To bisect a given circumference.</div>
+
+<p>Let <i>ADB</i> be the given circumference.
+
+<p>It is required to bisect the circumference <i>ADB.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="260" height="150" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII30.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.30",
+        elements: [
+            "A;point;free;40,120",
+            "B;point;free;220,120",
+            "AB;line;connect;A,B",
+            "C;point;midpoint;AB",
+            "CD';line;perpendicular;C,B;0;0;0",
+            "D;point;lineSlider;CD',80,60",
+            "CD;line;connect;C,D",
+            "ADB;sector;arc;B,D,A;0;0;black;0",
+            "AD;line;connect;A,D",
+            "BD;line;connect;B,D"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="../bookI/propI10.html">I.10</a>,
+<a href="../bookI/propI11.html">I.11</a></div>
+<p>Join <i>AB,</i> and bisect it at <i>C.</i>  Draw <i>CD</i> from the point <i>C</i> at right angles to the straight line <i>AB.</i> Join <i>AD</i> and <i>DB.</i>
+
+<div class="just"><a href="../bookI/propI4.html">I.4</a></div>
+<p>Then, since <i>AC</i> equals <i>CB,</i> and <i>CD</i> is common, the two sides <i>AC</i> and <i>CD</i> equal the two sides <i>BC</i> and <i>CD,</i> and the angle <i>ACD</i> equals the angle <i>BCD,</i> for each is right, therefore the base <i>AD</i> equals the base <i>DB.</i>
+
+<div class="just"><a href="propIII28.html">III.28</a></div>
+<p>But equal straight lines cut off equal circumferences, the greater equal to the greater, and the less to the less, and each of the circumferences <i>AD</i> and <i>DB</i> is less than a semicircle, therefore the circumference <i>AD</i> equals the circumference <i>DB.</i>
+
+<p>Therefore the given circumference has been bisected at the point <i>D.</i>
+
+<div class="qed">Q.E.F.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+The construction in this proposition is used in <a href="../bookIV/propIV16.html">IV.16</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

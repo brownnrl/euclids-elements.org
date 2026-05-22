@@ -1,0 +1,75 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book III, Definitions 4 and 5</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Definition 4</h1>
+
+<div class="statement">Straight lines in a circle are said to be <i>equally distant</i> from the center when the perpendiculars drawn to them from the center are equal.</div>
+</div>
+
+<br>  
+
+<div class="theorem">
+<h1>Definition 5</h1>
+
+<div class="statement">And that straight line is said to be at a <i>greater distance</i> on which the greater perpendicular falls. </div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+<table cellpadding=5><tr><td>
+These definitions could have been broadened to distances from a line to an arbitrary point, but Euclid&rsquo;s needs only distances from a line to the center of a circle.
+
+<p>The perpendiculars <i>AE</i> and <i>AH</i> drawn from the center <i>A</i> to the lines <i>CD</i> and <i>FG</i> respectively are equal, so the lines <i>CD</i> and <i>FG</i> are equally distant from the center.  
+
+<p>As the perpendicular <i>AM</i> is greater, the line <i>KL</i> is at a greater distance from the center.
+</td>
+<td>
+<canvas id="canvas_0" width="300" height="280" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="defIII4.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.Def.4-5",
+        pivot: "A",
+        elements: [
+            "A;point;free;150,140;black;green",
+            "B;point;free;150,40",
+            "Acirc;circle;radius;A,B;0;0;black;random",
+            "C;point;circleSlider;Acirc,40,30",
+            "D;point;circleSlider;Acirc,50,200",
+            "CD;line;connect;C,D",
+            "AE;line;foot;A,CD",
+            "E;point;last;AE",
+            "F;point;circleSlider;Acirc,200,50",
+            "Fcirc;circle;radius;F,CD;0;0;0;0",
+            "GG';line;bichord;Acirc,Fcirc;0;0;0",
+            "G;point;first;GG'",
+            "FG;line;connect;F,G",
+            "AH;line;foot;A,FG",
+            "H;point;last;AH",
+            "K;point;circleSlider;Acirc,130,200",
+            "Kcirc;circle;radius;K,C,E;0;0;0;0",
+            "L'L;line;bichord;Acirc,Kcirc;0;0;0",
+            "L;point;last;L'L",
+            "KL;line;connect;K,L",
+            "AM;line;foot;A,KL",
+            "M;point;last;AM"
+        ],
+    });
+</script>
+</td></tr></table>
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

@@ -1,0 +1,171 @@
+<HTML><HEAD><TITLE>Construction by Compasses Alone</TITLE><script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY bgcolor=ffffff>
+
+<center><h2>Compass Geometry</h2></center>
+
+
+<h4>5. Construction <b>PC</b> to invert a point in a circle</h4>
+
+<p>Let there be  given a circle <i>C</i> with center <i>O</i> and point <i>A</i> on its circumference, and a point <i>P</i> either outside the circle <i>C</i> or inside but more than half the radius away from <i>O.</i>  Here is a construction to invert <i>P</i> in the circle <i>C</i> to get <i>P'</i> = <i>P</i><img src="thru.gif" alt=">"><i>C.</i>  Draw the circle with center <i>P</i> and radius <i>PO.</i>  Then this new circle meets the circle <i>C</i> at two points, <i>Q</i> and <i>Q'.</i>  Draw the two circles with centers <i>Q</i> and <i>Q'</i> and radii <i>QO</i> and <i>QO',</i> respectively.  Besides <i>O,</i> they will meet at another point <i>P'.</i> 
+
+<p>This point <i>P'</i> will be the image of the point <i>P</i> inverted in the circle <i>C.</i> The usual definition of the inverted point <i>P'</i> is that it is situated on the line <i>OP</i> from the center of the circle to <i>P</i>
+so that <i>OP</i>:<i>OA</i> = <i>OA</i>:<i>OP'.</i>  From the symmetry of the construction, <i>P'</i> is clearly on that line.  To see that the proportion is valid, note that the two triangles <i>QOP</i> and <i>P'OQ</i> are each isosceles, and they have the same base angles, so they're similar.  The proportion immediately follows.
+
+<p><center>
+<canvas id="canvas_0" width="400" height="250" tabindex="0"></canvas>
+<noscript><img alt="Invert P in a circle" src="compass5a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "Invert P in a circle",
+        elements: [
+            "O;point;free;100,125",
+            "A;point;free;100,220",
+            "P;point;free;170,125",
+            "Ocirc;circle;radius;O,A;0;0;black;random",
+            "Pcirc;circle;radius;P,O;0;0;black;0",
+            "QQ';line;bichord;Ocirc,Pcirc;0;0;0",
+            "Q;point;first;QQ'",
+            "Q';point;last;QQ'",
+            "Qcirc;circle;radius;Q,O;0;0;black;0",
+            "Q'circ;circle;radius;Q',O;0;0;black;0",
+            "OP';line;bichord;Qcirc,Q'circ;0;0;0",
+            "OPmid;point;midpoint;OP';0;0",
+            "P';point;extend;O,OPmid,O,OPmid"
+        ],
+    });
+</script></center><p>
+
+Now, this construction doesn't work if <i>P</i> is within half the radius of <i>O</i> since the two circles won't intersect to produce the points <i>Q</i> and <i>Q',</i> so some other construction is needed to invert such <i>P.</i>  But if <i>P</i> is at least a quarter of the radius away from <i>O,</i> then we will find the point <i>R</i> twice as far from <i>O</i> as <i>P</i> is, then invert <i>R</i> in the circle <i>C</i> to get <i>R'</i> = <i>R</i><img src="thru.gif" alt=">"><i>C</i> by the method described above, and then <i>P'</i> will be the point twice as far from <i>O</i> as <i>R'</i> is.  This requires a doubling construction <b>2OP</b>.
+
+<p>
+<canvas id="canvas_1" width="300" height="250" tabindex="0"></canvas>
+<noscript><img align="right" alt="Double OP" src="compass5b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Double OP",
+        elements: [
+            "O;point;free;40,125",
+            "P;point;free;120,125",
+            "Ocirc;circle;radius;O,P;0;0;black;random",
+            "Pcirc;circle;radius;P,O;0;0;black;0",
+            "QQ';line;bichord;Ocirc,Pcirc;0;0;0",
+            "Q;point;first;QQ'",
+            "Q';point;last;QQ'",
+            "Qcirc;circle;radius;Q,Q';0;0;black;0",
+            "Q'R;line;bichord;Qcirc,Pcirc;0;0;0",
+            "Q'Rmid;point;midpoint;Q'R;0;0",
+            "R;point;extend;Q',Q'Rmid,Q',Q'Rmid"
+        ],
+    });
+</script></center><p>
+
+
+<ul>
+<br><b>2OP</b>: given two points <i>O</i> and <i>P,</i> constuct the point <i>R</i> on the line <i>OP</i> twice as far from <i>O</i> as <i>P</i> is.
+</ul>
+
+The construction <b>2OP</b> can be effected as follows.  Draw the circles with centers <i>O</i> and <i>P</i> and radius <i>OP.</i>  Let them intersect at <i>Q</i> and <i>Q'.</i>  Draw the circle with center <i>Q</i> and radius <i>QQ'.</i>  It will intersect the circle with center <i>P</i> at the points <i>Q'</i> and <i>R.</i>
+
+<p>Now we can invert any point <i>P</i> in a circle so long as it is at least a quarter of a radius away from the center of the circle.
+<br clear=all>
+
+When <i>P</i> is very close to <i>O,</i> all we have to do is repeatedly double the distance from <i>O</i> until we've got a point at least half the radius from <i>O,</i> invert that point, and double the resulting distance the same number of times to get <i>P'.</i>
+
+<p><center>
+<canvas id="canvas_2" width="400" height="250" tabindex="0"></canvas>
+<noscript><img alt="Invert P in a circle" src="compass5c.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_2",
+        background: "0,0,100",
+        title: "Invert P in a circle",
+        elements: [
+            "O;point;free;100,125",
+            "A;point;free;100,210",
+            "P;point;free;130,125",
+            "R;point;extend;O,P,O,P",
+            "Ocirc;circle;radius;O,A;0;0;black;random",
+            "Rcirc;circle;radius;R,O;0;0;black;0",
+            "QQ';line;bichord;Ocirc,Rcirc;0;0;0",
+            "Q;point;first;QQ'",
+            "Q';point;last;QQ'",
+            "Qcirc;circle;radius;Q,O;0;0;black;0",
+            "Q'circ;circle;radius;Q',O;0;0;black;0",
+            "OR';line;bichord;Qcirc,Q'circ;0;0;0",
+            "OR'mid;point;midpoint;OR';0;0",
+            "R';point;extend;O,OR'mid,O,OR'mid",
+            "P';point;extend;O,R',O,R'"
+        ],
+    });
+</script></center><p>
+
+<h4>Bisecting and multisecting lines</h4>
+
+Before going on, we can use inversion in circles to effect a construction to bisect a line segment, or more generally, cut off one <i>n</i>-th of a line segment.  To bisect a line segment <i>OP,</i> use construction <b>2OP</b> to double it to <i>OR,</i> then construction <b>PC</b> to invert <i>R</i> in the circle with center <i>O</i> and radius <i>OP</i> to get the midpoint <i>M</i> of <i>OP.</i>
+
+<p><center>
+<canvas id="canvas_3" width="400" height="250" tabindex="0"></canvas>
+<noscript><img alt="A midpoint construction" src="compass5d.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_3",
+        background: "0,0,100",
+        title: "A midpoint construction",
+        elements: [
+            "O;point;free;100,125",
+            "P;point;free;180,125",
+            "R;point;extend;O,P,O,P",
+            "Ocirc;circle;radius;O,P;0;0;black;random",
+            "Rcirc;circle;radius;R,O;0;0;black;0",
+            "QQ';line;bichord;Ocirc,Rcirc;0;0;0",
+            "Q;point;first;QQ'",
+            "Q';point;last;QQ'",
+            "Qcirc;circle;radius;Q,O;0;0;black;0",
+            "Q'circ;circle;radius;Q',O;0;0;black;0",
+            "OM;line;bichord;Qcirc,Q'circ;0;0;0",
+            "OMmid;point;midpoint;OM;0;0",
+            "M;point;extend;O,OMmid,O,OMmid"
+        ],
+    });
+</script></center><p>
+
+We can trisect <i>OP</i> by doubling <i>OP</i> to <i>OR</i> then doubling <i>PR</i> to <i>PS,</i> so that <i>OS</i> is triple <i>OP,</i> then inverting <i>S</i> in the circle with center <i>O</i> and radius <i>OP</i> to get <i>S'.</i>  Then <i>OS'</i> will be one-third of <i>OP</i>
+
+<p>More generally, we can cut off an <i>n</i>-th of <i>OP</i> by first extending <i>OP</i> by a factor of <i>n</i> (which is easily seen as a variant of the doubling construction), then inverting in that same circle.
+
+<p><hr width=50%<p>
+
+Next part: <a href="compass6.html">6. Find the center of a circle</a>
+<form name="MyForm">
+  <select name="select1" size="1" onchange="if (options[selectedIndex].value) 
+   { location = options[selectedIndex].value }">
+   <option value="">Table of contents
+   <option value="../compass/">Introduction
+   <option value="compass1.html">1. Euclidean constructions
+   <option value="compass2.html">2. Reduction to circular constructions
+   <option value="compass3.html">3. Summary of inversion
+   <option value="compass4.html">4. Stereographic projection   
+   <option value="compass5.html">5. Invert a point in a circle
+   <option value="compass6.html">6. Find the center of a circle
+   <option value="compass7.html">7. Involutory quandles
+ </select>
+</form>
+
+<p><hr width=50%<p>
+
+<p><small>April, 1998; March, 2002.
+<br>David E. Joyce  
+<br><a href="http://aleph0.clarku.edu/">Department of Mathematics and Computer Science</a>
+<br>Clark University
+<br>Worcester, MA 01610
+<p>Email: <A HREF="mailto:djoyce@clarku.edu">djoyce@clarku.edu</a>
+<br>
+My <a href="../../home.html">Homepage</a>
+</small>
+</BODY>
+</HTML>

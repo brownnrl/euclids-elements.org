@@ -1,0 +1,94 @@
+<HTML><HEAD><TITLE>Euclid's Elements, Book VI, Proposition 19</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 19</h1>
+
+<div class="statement">Similar triangles are to one another in the duplicate ratio of the corresponding sides.</div>
+
+<div class="just"><a href="../bookV/defV11.html">V.Def.11</a></div>
+<p>Let <i>ABC</i> and <i>DEF</i> be similar triangles having the angle at <i>B</i> equal to the angle at <i>E,</i> and such that <i>AB</i> is to <i>BC</i> as <i>DE</i> is to <i>EF,</i> so that <i>BC</i> corresponds to <i>EF.</i>
+
+<p>I say that  the triangle <i>ABC</i> has to the triangle <i>DEF</i> a ratio duplicate of that which <i>BC</i> has to <i>EF.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="330" height="220" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propVI19.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.19",
+        elements: [
+            "A;point;free;140,40",
+            "B0;point;free;-1000,190",
+            "B3;point;free;1000,190",
+            "B;point;lineSlider;B0,B3,50,0",
+            "C;point;lineSlider;B0,B3,180,0",
+            "E;point;lineSlider;B0,B3,210,0",
+            "F;point;lineSlider;B0,B3,290,0",
+            "D;point;similar;E,F,B,C,A",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "G;point;proportion;B,C,E,F,E,F,B,C",
+            "AG;line;connect;A,G"
+        ],
+    });
+</script>
+</div>
+
+<div class="just"><a href="propVI11.html">VI.11</a></div>
+<p>Take a third proportional <i>BG</i> to <i>BC</i> and <i>EF</i> so that <i>BC</i> is to <i>EF</i> as <i>EF</i> is to <i>BG,</i>  and join <i>AG.</i>
+
+<div class="just"><a href="../bookV/propV16.html">V.16</a></div>
+<p>Since <i>AB</i> is to <i>BC</i> as <i>DE</i> is to <i>EF,</i> therefore, alternately, <i>AB</i> is to <i>DE</i> as <i>BC</i> is to <i>EF.</i>
+
+<div class="just"><a href="../bookV/propV11.html">V.11</a></div>
+<p>But <i>BC</i> is to <i>EF</i> as <i>EF</i> is to <i>BG,</i> therefore also <i>AB</i> is to <i>DE</i> as <i>EF</i> is to <i>BG.</i>
+
+<p>Therefore in the triangles <i>ABG</i> and <i>DEF</i> the sides about the equal angles are reciprocally proportional.
+
+<div class="just"><a href="propVI15.html">VI.15</a></div>
+<p>But those triangles which have one angle equal to one angle, and in which the sides about the equal angles are reciprocally proportional, are equal.  Therefore the triangle <i>ABG</i> equals the triangle <i>DEF.</i>
+
+<div class="just"><a href="../bookV/defV8.html">V.Def.9</a></div>
+<p>Now since <i>BC</i> is to <i>EF</i> as <i>EF</i> is to <i>BG,</i> and, if three straight lines are proportional, the first has to the third a ratio duplicate of that which it has to the second, therefore <i>BC</i> has to <i>BG</i> a ratio duplicate of that which <i>BC</i> has to <i>EF.</i>
+
+<div class="just"><a href="propVI1.html">VI.1</a>
+<br><a href="../bookV/propV11.html">V.11</a></div>
+<p>But <i>BC</i> is to <i>BG</i> as the triangle <i>ABC</i> is to the triangle <i>ABG,</i>  therefore the triangle <i>ABC</i> also has to the triangle <i>ABG</i> a ratio duplicate of that which <i>BC</i> has to <i>EF.</i>
+
+<div class="just"><a href="../bookV/propV7.html">V.7</a></div>
+<p>But the triangle <i>ABG</i> equals the triangle <i>DEF,</i> therefore the triangle <i>ABC</i> also has to the triangle <i>DEF</i> a ratio duplicate of that which <i>BC</i> has to <i>EF.</i>
+
+<p>Therefore, <i>similar triangles are to one another in the duplicate ratio of the corresponding sides.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<br>
+<a name=cor></a>
+<div class="theorem">
+<h1>Corollary</h1>
+<div class="statement">
+From this it is clear that if three straight lines are proportional, then the first is to the third as the figure described on the first is to that which is similar and similarly described on the second.
+</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is used in the proof of the next one, and the corollary is used in the proofs of <a href="propVI22.html">VI.22</a>, <a href="propVI31.html">VI.31</a>, and <a href="../bookX/propX6.html">X.6</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

@@ -1,0 +1,72 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book III, Proposition 21</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 21</h1>
+
+<div class="statement">In a circle the angles in the same segment equal one another.
+</div>
+
+<p>Let <i>ABCD</i> be a circle, and let the angles <i>BAD</i> and <i>BED</i> be angles in the same segment <i>BAED.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="290" height="270" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII21.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.21",
+        pivot: "F",
+        elements: [
+            "C;point;free;145,240",
+            "B;point;free;60,200",
+            "D;point;free;230,200",
+            "ABCD;circle;circumcircle;C,B,D;0;0;black;random",
+            "A;point;circleSlider;ABCD,90,30",
+            "BD;line;connect;B,D",
+            "AD;line;connect;A,D",
+            "BA;line;connect;B,A",
+            "F;point;center;ABCD;black;green",
+            "BF;line;connect;B,F",
+            "DF;line;connect;D,F",
+            "E;point;circleSlider;ABCD,240,130",
+            "BE;line;connect;B,E",
+            "DE;line;connect;D,E"
+        ],
+    });
+</script></div>
+
+<p>I say that the angles <i>BAD</i> and <i>BED</i> equal one another.
+
+<div class="just"><a href="propIII1.html">III.1</a></div>
+<p>Take the center <i>F</i> of the circle <i>ABCD,</i> and join <i>BF</i> and <i>FD.</i>
+
+<div class="just"><a href="propIII20.html">III.20</a></div>
+<p>Now, since the angle <i>BFD</i> is at the center, and the angle <i>BAD</i> at the circumference, and they have the same circumference <i>BCD</i> as base, therefore the angle <i>BFD</i> is double the angle <i>BAD.</i>
+
+<p>For the same reason the angle <i>BFD</i> is also double the angle <i>BED.</i>  Therefore the angle <i>BAD</i> equals the angle <i>BED.</i>
+
+<p>Therefore <i>in a circle the angles in the same segment equal one another.</i>
+
+<div class="qed">Q.E.D.</div>
+<br clear=all>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is used in the next one.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

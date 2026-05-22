@@ -1,0 +1,73 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book III, Proposition 19</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 19</h1>
+
+<div class="statement">If a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.</div>
+
+<div class="just"><a href="../bookI/propI11.html">I.11</a></div>
+<p>For let a straight line <i>DE</i> touch the circle <i>ABC</i> at the point <i>C.</i> Draw <i>CA</i> from <i>C</i> at right angles to <i>DE.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="270" height="250" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII19.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.19",
+        elements: [
+            "D;point;free;40,220",
+            "E;point;free;230,220",
+            "DE;line;connect;D,E",
+            "C;point;lineSlider;DE,125,220",
+            "CA';line;perpendicular;C,E;0;0;0",
+            "A;point;lineSlider;CA',125,30",
+            "O;point;midpoint;A,C;0;0",
+            "ABC;circle;radius;O,C;0;0;0,0,0;random",
+            "AC;line;connect;A,C",
+            "B;point;circleSlider;ABC,180,80;0,0,0;0",
+            "F;point;free;140,120",
+            "CF;line;connect;C,F"
+        ],
+    });
+</script></div>
+
+<p>I say that the center of the circle is on <i>AC.</i>
+
+<p>For suppose it is not, but, if possible, let <i>F</i> be the center, and join <i>CF.</i>
+
+<div class="just"><a href="propIII18.html">III.18</a></div>
+<p>Since a straight line <i>DE</i> touches the circle <i>ABC,</i> and <i>FC</i> has been joined from the center to the point of contact, <i>FC</i> is perpendicular to <i>DE.</i> Therefore the angle <i>FCE</i> is right.
+
+<p>But the angle <i>ACE</i> is also right, therefore the angle <i>FCE</i> equals the angle <i>ACE,</i> the less equals the greater, which is impossible. 
+
+<p>Therefore <i>F</i> is not the center of the circle <i>ABC.</i> 
+
+<p>Similarly we can prove that neither is any other point except a point on <i>AC.</i>
+
+<p>Therefore <i>if a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.
+</i>
+
+<div class="qed">Q.E.D.</div>
+<br clear=all>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is used in proposition <a href="propIII32.html">III.32</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

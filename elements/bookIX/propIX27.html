@@ -1,0 +1,63 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book IX, Proposition 27</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+
+<div class="theorem">
+<h1>Proposition 27</h1>
+
+<div class="statement">If an even number is subtracted from an odd number, then the remainder is odd.</div>
+
+<p>Let the even number <i>BC</i> be subtracted from the odd number <i>AB.</i>
+
+<p>I say that the remainder <i>CA</i> is odd.
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="230" height="60" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIX27.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IX.27",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,20;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,200,0",
+            "C;point;lineSlider;A0,A3,130,0",
+            "D;point;cutoff;A,B,U1,U2",
+            "AB;line;connect;A,B"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="../bookVII/defVII6.html">VII.Def.7</a></div>
+<p>Subtract the unit <i>AD,</i> therefore <i>DB</i> is even.
+
+<div class="just"><a href="propIX24.html">IX.24</a>
+<a href="../bookVII/defVII6.html">VII.Def.7</a></div>
+<p>But <i>BC</i> is also even, therefore the remainder <i>CD</i> is even.  Therefore <i>CA</i> is odd.
+
+<p>Therefore, <i>if an even number is subtracted from an odd number, then the remainder is odd.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<h2>Guide</h2>
+
+This is the last of four propositions that examine the result of subtracting even and odd numbers from each other.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

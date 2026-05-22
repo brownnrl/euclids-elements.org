@@ -1,0 +1,61 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book X, Proposition 45</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 45</h1>
+
+<div class="statement">A major straight line is divided at one point only.</div>
+
+<p>Let <i>AB</i> be a major straight line divided at <i>C</i>, so that <i>AC</i> and <i>CB</i> are incommensurable in square, and let the sum of the squares on <i>AC</i> and <i>CB</i> be rational, but the rectangle <i>AC</i> by <i>CB</i> medial.
+
+<p>I say that <i>AB</i> is not so divided at another point.
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="250" height="70" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propX42.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.45",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,220,0",
+            "AB;line;connect;A,B;0;0",
+            "C;point;lineSlider;A0,A3,170,0",
+            "D;point;lineSlider;A0,A3,130,0"
+        ],
+    });
+</script></div>
+
+<p>If possible, let it also be divided at <i>D</i>, so that <i>AD</i> and <i>DB</i> are incommensurable in square and the sum of the squares on <i>AD</i> and <i>DB</i> is rational, but the rectangle contained by them medial.
+
+<div class="just"><a href="propX26.html">X.26</a></div>
+<p>Then, since that by which the sum of the squares on <i>AC</i> and <i>CB</i> differs from the sum of the squares on <i>AD</i> and <i>DB</i> is also that by which twice the rectangle <i>AD</i> by <i>DB</i> differs from twice the rectangle <i>AC</i> by <i>CB</i>, while the sum of the squares on <i>AC</i> and <i>CB</i> exceeds the sum of the squares on <i>AD</i> and <i>DB</i> by a rational area, for both are rational, therefore twice the rectangle <i>AD</i> by <i>DB</i> also exceeds twice the rectangle <i>AC</i> by <i>CB</i> by a rational area, though they are medial, which is impossible.
+
+<p>Therefore a major straight line is not divided at different points.  Therefore it is only divided at one and the same point.
+
+<p>Therefore, <i>a major straight line is divided at one point only.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is not used in the rest of the <i>Elements</i>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

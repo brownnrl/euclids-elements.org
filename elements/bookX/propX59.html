@@ -1,0 +1,103 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book X, Proposition 59</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 59</h1>
+
+<div class="statement">If an area is contained by a rational straight line and the sixth binomial, then the side of the area is the irrational straight line called the side of the sum of two medial areas.</div>
+
+<p>Let the area <i>ABCD</i> be contained by the rational straight line <i>AB</i> and the sixth binomial <i>AD</i>, divided into its terms at <i>E</i>, so that <i>AE</i> is the greater term.
+
+<p>I say that the side of <i>AC</i> is the side of the sum of two medial areas.
+
+<p>Make the same construction as shown before.
+
+<p>It is then clear that <i>MO</i> is the side of <i>AC</i>, and that <i>MN</i> is incommensurable in square with <i>NO</i>.
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="400" height="210" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propX54.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.59",
+        elements: [
+            "A0;point;free;-1000,60;0;0",
+            "A3;point;free;1000,60;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "D;point;lineSlider;A0,A3,200,0",
+            "B';point;perpendicular;A,D;0;0",
+            "B;point;lineSlider;A,B',0,150",
+            "C;point;parallelogram;B,A,D",
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random",
+            "E;point;lineSlider;A,D,120,0",
+            "F;point;midpoint;E,D",
+            "AEmid;point;midpoint;A,E;0;0",
+            "AEquar;point;midpoint;E,AEmid;0;0",
+            "EFcirc;circle;radius;E,F;0;0;0;0",
+            "EAcirc;circle;radius;AEquar,E;0;0;0;0",
+            "bich;line;bichord;EFcirc,EAcirc;0;0;0",
+            "G';point;first;bich;0;0",
+            "G;point;cutoff;AEmid,D,AEmid,G'",
+            "H;point;parallelogram;B,A,G",
+            "K;point;parallelogram;B,A,E",
+            "L;point;parallelogram;B,A,F",
+            "HGEK;polygon;quadrilateral;H,G,E,K;0;0;black;190,80,100",
+            "FL;line;connect;F,L",
+            "AH;polygon;quadrilateral;A,B,H,G;0;0;0;130,80,100",
+            "S0;point;free;-1000,175;0;0",
+            "S3;point;free;1000,175;0;0",
+            "S;point;lineSlider;S0,S3,240,0",
+            "P;point;meanProportional;A,G,G,H,S,S3",
+            "SPNM;polygon;square;S,P;0;0;black;130,80,100",
+            "M;point;vertex;SPNM,4",
+            "N;point;vertex;SPNM,3",
+            "T;point;meanProportional;G,E,E,K,P,S3;0",
+            "O;point;parallelogram;M,S,T",
+            "NOQR;polygon;square;N,O;0;0;black;190,80,100",
+            "Q;point;vertex;NOQR,3",
+            "R;point;vertex;NOQR,4",
+            "SQ;polygon;parallelogram;S,T,Q;0;0;black;0"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="propX21.html">X.21</a></div>
+<p>Now, since <i>EA</i> is incommensurable in length with <i>AB</i>, therefore <i>EA</i> and <i>AB</i> are rational straight lines commensurable in square only, therefore <i>AK</i>, that is, the sum of the squares on <i>MN</i> and <i>NO</i>, is medial.
+
+<div class="just"><a href="propX13.html">X.13</a>
+<br><a href="propX21.html">X.21</a></div>
+<p>Again, since <i>ED</i> is incommensurable in length with <i>AB</i>, therefore <i>FE</i> is also incommensurable with <i>EK</i>.  Therefore <i>FE</i> and <i>EK</i> are rational straight lines commensurable in square only.  Therefore <i>EL</i>, that is, <i>MR</i>, that is, the rectangle <i>MN</i> by <i>NO</i>, is medial.
+
+<div class="just"><a href="../bookVI/propVI1.html">VI.1</a>,
+<a href="propX11.html">X.11</a></div>
+<p>Since <i>AE</i> is incommensurable with <i>EF</i>, therefore <i>AK</i> is also incommensurable with <i>EL</i>.
+
+<p>But <i>AK</i> is the sum of the squares on <i>MN</i> and <i>NO</i>, and <i>EL</i> is the rectangle <i>MN</i> by <i>NO</i>, therefore the sum of the squares on <i>MN</i> and <i>NO</i> is incommensurable with the rectangle <i>MN</i> by <i>NO</i>. And each of them is medial, and <i>MN</i> and <i>NO</i> are incommensurable in square.
+
+<div class="just"><a href="propX41.html">X.41</a></div>
+<p>Therefore <i>MO</i> is the side of the sum of two medial areas, and is the side of <i>AC</i>.
+
+<p>Therefore, <i>if an area is contained by a rational straight line and the sixth binomial, then the side of the area is the irrational straight line called the side of the sum of two medial areas.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is used in <a href="propX72.html">X.72</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

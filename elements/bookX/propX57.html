@@ -1,0 +1,113 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book X, Proposition 57</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 57</h1>
+
+<div class="statement">If an area is contained by a rational straight line and the fourth binomial, then the side of the area is the irrational straight line called major.</div>
+
+<p>Let the area <i>AC</i> be contained by the rational straight line <i>AB</i> and the fourth binomial <i>AD</i> divided into its terms at <i>E</i>, of which terms let <i>AE</i> be the greater.
+
+<p>I say that the side of the area <i>AC</i> is the irrational straight line called major.
+
+<div class="just"><a href="defX.II.html#4">X.Def.II.4</a></div>
+<p>Since <i>AD</i> is a fourth binomial straight line, therefore <i>AE</i> and <i>ED</i> are rational straight lines commensurable in square only, the square on <i>AE</i> is greater than the square on <i>ED</i> by the square on a straight line incommensurable with <i>AE</i>, and <i>AE</i> is commensurable in length with <i>AB</i>. 
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="400" height="210" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propX54.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.57",
+        elements: [
+            "A0;point;free;-1000,60;0;0",
+            "A3;point;free;1000,60;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "D;point;lineSlider;A0,A3,200,0",
+            "B';point;perpendicular;A,D;0;0",
+            "B;point;lineSlider;A,B',0,150",
+            "C;point;parallelogram;B,A,D",
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random",
+            "E;point;lineSlider;A,D,120,0",
+            "F;point;midpoint;E,D",
+            "AEmid;point;midpoint;A,E;0;0",
+            "AEquar;point;midpoint;E,AEmid;0;0",
+            "EFcirc;circle;radius;E,F;0;0;0;0",
+            "EAcirc;circle;radius;AEquar,E;0;0;0;0",
+            "bich;line;bichord;EFcirc,EAcirc;0;0;0",
+            "G';point;first;bich;0;0",
+            "G;point;cutoff;AEmid,D,AEmid,G'",
+            "H;point;parallelogram;B,A,G",
+            "K;point;parallelogram;B,A,E",
+            "L;point;parallelogram;B,A,F",
+            "HGEK;polygon;quadrilateral;H,G,E,K;0;0;black;150,80,100",
+            "FL;line;connect;F,L",
+            "AH;polygon;quadrilateral;A,B,H,G;0;0;0;300,80,100",
+            "S0;point;free;-1000,175;0;0",
+            "S3;point;free;1000,175;0;0",
+            "S;point;lineSlider;S0,S3,240,0",
+            "P;point;meanProportional;A,G,G,H,S,S3",
+            "SPNM;polygon;square;S,P;0;0;black;300,80,100",
+            "M;point;vertex;SPNM,4",
+            "N;point;vertex;SPNM,3",
+            "T;point;meanProportional;G,E,E,K,P,S3;0",
+            "O;point;parallelogram;M,S,T",
+            "NOQR;polygon;square;N,O;0;0;black;150,80,100",
+            "Q;point;vertex;NOQR,3",
+            "R;point;vertex;NOQR,4",
+            "SQ;polygon;parallelogram;S,T,Q;0;0;black;0"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="propX18.html">X.18</a></div>
+<p>Bisect <i>DE</i> at <i>F</i>, and apply to <i>AE</i> a parallelogram, the rectangle <i>AG</i> by <i>GE</i>, equal to the square on <i>EF</i>.  Then <i>AG</i> is incommensurable in length with <i>GE</i>.
+
+<p>Draw <i>GH</i>, <i>EK</i>, and <i>FL</i> parallel to <i>AB</i>, and make the rest of the construction as before.
+
+<p>It is then manifest that <i>MO</i> is the side of the area <i>AC</i>.
+
+<p>It is next to be proved that <i>MO</i> is the irrational straight line called major.
+
+<div class="just"><a href="../bookVI/propVI1.html">VI.1</a>
+<br><a href="propX11.html">X.11</a></div>
+<p>Since <i>AG</i> is incommensurable with <i>EG</i>, therefore <i>AH</i> is also incommensurable with <i>GK</i>, that is, <i>SN</i> with <i>NQ</i>.  Therefore <i>MN</i> and <i>NO</i> are incommensurable in square.
+
+<div class="just"><a href="propX19.html">X.19</a></div>
+<p>Since <i>AE</i> is commensurable with <i>AB</i>, therefore <i>AK</i> is rational, and it equals the sum of the squares on <i>MN</i> and <i>NO</i>. Therefore the sum of the squares on <i>MN</i> and <i>NO</i> is also rational.
+
+<div class="just"><a href="propX13.html">X.13</a></div>
+<p>Since <i>DE</i> is incommensurable in length with <i>AB</i>, that is, with <i>EK</i>, while <i>DE</i> is commensurable with <i>EF</i>, therefore <i>EF</i> is incommensurable in length with <i>EK</i>.
+
+<div class="just"><a href="propX21.html">X.21</a></div>
+<p>Therefore <i>EK</i> and <i>EF</i> are rational straight lines commensurable in square only. Therefore <i>LE</i>, that is, <i>MR</i>, is medial.
+
+<p>And it is contained by <i>MN</i> and <i>NO</i>, therefore the rectangle <i>MN</i> by <i>NO</i> is medial. And the sum of the squares on <i>MN</i> and <i>NO</i> is rational, and <i>MN</i> and <i>NO</i> are incommensurable in square.
+
+<div class="just"><a href="propX39.html">X.39</a></div>
+<p>But, if two straight lines incommensurable in square and making the sum of the squares on them rational, but the rectangle contained by them medial, are added together, then the whole is irrational and is called major. Therefore <i>MO</i> is the irrational straight line called major and is the side of the area <i>AC</i>.
+
+<p>Therefore, <i>if an area is contained by a rational straight line and the fourth binomial, then the side of the area is the irrational straight line called major.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is used in <a href="propX70.html">X.70</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

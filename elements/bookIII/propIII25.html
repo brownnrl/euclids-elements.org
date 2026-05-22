@@ -1,0 +1,142 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book III, Proposition 25</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 25</h1>
+
+<div class="statement">Given a segment of a circle, to describe the complete circle of which it is a segment.</div>
+
+<p>Let <i>ABC</i> be the given segment of a circle.
+
+<p>It is required to describe the complete circle belonging to the segment <i>ABC,</i> that is, of which it is a segment.
+
+<div class="just"><a href="../bookI/propI10.html">I.10</a>
+<br><a href="../bookI/propI11.html">I.11</a></div>
+<p>Bisect <i>AC</i> at <i>D,</i> draw <i>DB</i> from the point <i>D</i> at right angles to <i>AC,</i> and join <i>AB.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="230" height="230" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII25a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.25a",
+        pivot: "E",
+        elements: [
+            "A;point;free;60,30",
+            "C;point;free;60,200",
+            "AC;line;connect;A,C",
+            "D;point;midpoint;AC",
+            "DB;line;perpendicular;D,A;0;0;0",
+            "B;point;lineSlider;DB,30,115",
+            "E;point;circumcenter;A,B,C;black;green",
+            "BE;line;connect;B,E",
+            "AE;line;connect;A,E",
+            "CE;line;connect;C,E",
+            "ABC;sector;sector;E,A,C;0;0;black;random",
+            "AB;line;connect;A,B",
+            "ACE;polygon;triangle;A,C,E;0;0;0;background"
+        ],
+    });
+</script></div>
+
+<p>The angle <i>ABD</i> is then greater than, equal to, or less than the angle <i>BAD.</i>
+
+<div class="just"><a href="../bookI/propI23.html">I.23</a></div>
+<p>First let it be greater.  Construct the angle <i>BAE</i> on the straight line <i>BA,</i> and at the point <i>A</i> on it, equal to the angle <i>ABD.</i>  Draw <i>DB</i> through to <i>E,</i> and join <i>EC.</i>
+
+<div class="just"><a href="../bookI/propI6.html">I.6</a></div>
+<p>Then, since the angle <i>ABE</i> equals the angle <i>BAE,</i> the straight line <i>EB</i> also equals <i>EA.</i>
+
+<div class="just"><a href="../bookI/propI4.html">I.4</a></div>
+<p>And, since <i>AD</i> equals <i>DC,</i> and <i>DE</i> is common, the two sides <i>AD</i> and <i>DE</i> equal the two sides <i>CD</i> and <i>DE</i> respectively, and the angle <i>ADE</i> equals the angle <i>CDE,</i> for each is right, therefore the base <i>AE</i> equals the base <i>CE.</i>
+
+
+<div class="rdiagram">
+<canvas id="canvas_1" width="150" height="200" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII25b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "III.25b",
+        pivot: "D",
+        elements: [
+            "A;point;free;120,30",
+            "C;point;free;120,170",
+            "AC;line;connect;A,C",
+            "D;point;midpoint;AC;black;green",
+            "DB;line;perpendicular;D,A",
+            "B;point;last;DB",
+            "ABC;sector;arc;A,B,C;0;0;black;random",
+            "AB;line;connect;A,B"
+        ],
+    });
+</script></div>
+
+<p>But <i>AE</i> was proved equal to <i>BE,</i> therefore be also equals <i>CE.</i>  Therefore the three straight lines <i>AE, EB,</i> and <i>EC</i> equal one another.
+
+<div class="just"><a href="propIII9.html">III.9</a></div>
+<p>Therefore the circle drawn with center <i>E</i> and radius one of the straight lines <i>AE, EB,</i> or <i>EC</i> also passes through the remaining points and has been completed.
+
+<p>Therefore, given a segment of a circle, the complete circle has been described.
+<hr width=30%>
+<div class="ldiagram">
+<canvas id="canvas_2" width="250" height="230" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII25c.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_2",
+        background: "35,19,100",
+        title: "III.25c",
+        pivot: "E",
+        elements: [
+            "A;point;free;200,30",
+            "C;point;free;200,200",
+            "AC;line;connect;A,C",
+            "D;point;midpoint;AC",
+            "DB;line;perpendicular;D,A;0;0;0",
+            "B;point;lineSlider;DB,30,115",
+            "E;point;circumcenter;A,B,C;black;green",
+            "BD;line;connect;B,D",
+            "AE;line;connect;A,E",
+            "ABC;sector;sector;E,A,C",
+            "AB;line;connect;A,B",
+            "ACE;polygon;triangle;A,C,E;0;0;0"
+        ],
+    });
+</script></div> 
+
+<p>And it is manifest that the segment <i>ABC</i> is less than a semicircle, because the center <i>E</i> happens to be outside it.
+
+<p>Similarly, even if the angle <i>ABD</i> equals the angle <i>BAD</i> and <i>AD</i> being equal to each of the two <i>BD</i> and <i>DC,</i> the three straight lines <i>DA, DB,</i> and <i>DC</i> will equal one another, <i>D</i> will be the center of the completed circle, and <i>ABC</i> will clearly be a semicircle.
+
+<hr width=30%>
+
+<div class="just"><a href="../bookI/propI23.html">I.23</a></div>
+<p>But, if the angle <i>ABD</i> is less than the angle <i>BAD,</i> and if we construct, on the straight line <i>BA</i> and at the point <i>A</i> on it, an angle equal to the angle <i>ABD,</i> the center will fall on <i>DB</i> within the segment <i>ABC,</i> and the segment <i>ABC</i> will clearly be greater than a semicircle.
+
+<p>Therefore, given a segment of a circle, the complete circle has been described.
+
+<div class="qed">Q.E.F.</div>
+<br clear=all>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+The construction in this proposition is not used in the rest of the <i>Elements.</i>
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

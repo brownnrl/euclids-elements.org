@@ -1,0 +1,115 @@
+<HTML><HEAD><TITLE>Euclid's Elements, Book V, Proposition 11</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 11</h1>
+
+<div class="statement">Ratios which are the same with the same ratio are also the same with one another.</div>
+
+<p>Let <i>A</i> be to <i>B</i> as <i>C</i> is to <i>D,</i> and let <i>C</i> be to <i>D</i> as <i>E</i> is to <i>F.</i>
+
+<p>I say that <i>A</i> is to <i>B</i> as <i>E</i> is to <i>F.</i>
+
+<p>Take equimultiples <i>G, H,</i> and <i>K</i> of <i>A, C,</i> and <i>E,</i> and take other, arbitrary, equimultiples <i>L, M,</i> and <i>N</i> of <i>B, D,</i> and <i>F.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="500" height="150" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propV11.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "V.11",
+        elements: [
+            "U0;point;free;-1000,30;0;0",
+            "U1;point;free;1000,30;0;0",
+            "V0;point;free;-1000,60;0;0",
+            "V1;point;free;1000,60;0;0",
+            "W0;point;free;-1000,100;0;0",
+            "W1;point;free;1000,100;0;0",
+            "X0;point;free;-1000,130;0;0",
+            "X1;point;free;1000,130;0;0",
+            "A;point;lineSlider;U0,U1,30,30",
+            "A1;point;lineSlider;U0,U1,80,30;0",
+            "AA1;line;connect;A,A1;0;0;blue",
+            "B;point;lineSlider;V0,V1,30,60",
+            "B1;point;lineSlider;V0,V1,70,60;0",
+            "BB1;line;connect;B,B1;0;0;blue",
+            "C;point;lineSlider;U0,U1,200,30",
+            "C1;point;lineSlider;U0,U1,260,30;0",
+            "CC1;line;connect;C,C1;0;0;red",
+            "D;point;lineSlider;V0,V1,200,60",
+            "D1;point;proportion;A,A1,B,B1,C,C1,D,V1;0",
+            "DD1;line;connect;D,D1;0;0;red",
+            "E;point;lineSlider;U0,U1,370,30",
+            "E1;point;lineSlider;U0,U1,410,30;0",
+            "EE1;line;connect;E,E1;0;0;green",
+            "F;point;lineSlider;V0,V1,370,60",
+            "F1;point;proportion;A,A1,B,B1,E,E1,F,V1;0",
+            "FF1;line;connect;F,F1;0;0;green",
+            "G;point;lineSlider;W0,W1,30,30",
+            "G1;point;cutoff;G,W1,A,A1;0;lightGray",
+            "G2;point;cutoff;G1,W1,A,A1;0",
+            "GG2;line;connect;G,G2;0;0;blue",
+            "L;point;lineSlider;X0,X1,30,60",
+            "L1;point;cutoff;L,X1,B,B1;0;lightGray",
+            "L2;point;cutoff;L1,X1,B,B1;0;lightGray",
+            "L3;point;cutoff;L2,X1,B,B1;0",
+            "LL3;line;connect;L,L3;0;0;blue",
+            "H;point;lineSlider;W0,W1,200,30",
+            "H1;point;cutoff;H,W1,C,C1;0;lightGray",
+            "H2;point;cutoff;H1,W1,C,C1;0",
+            "HH2;line;connect;H,H2;0;0;red",
+            "M;point;lineSlider;X0,X1,200,60",
+            "M1;point;cutoff;M,X1,D,D1;0;lightGray",
+            "M2;point;cutoff;M1,X1,D,D1;0;lightGray",
+            "M3;point;cutoff;M2,X1,D,D1;0",
+            "MM3;line;connect;M,M3;0;0;red",
+            "K;point;lineSlider;W0,W1,370,30",
+            "K1;point;cutoff;K,W1,E,E1;0;lightGray",
+            "K2;point;cutoff;K1,W1,E,E1;0",
+            "KK2;line;connect;K,K2;0;0;green",
+            "N;point;lineSlider;X0,X1,370,60",
+            "N1;point;cutoff;N,X1,F,F1;0;lightGray",
+            "N2;point;cutoff;N1,X1,F,F1;0;lightGray",
+            "N3;point;cutoff;N2,X1,F,F1;0",
+            "NN3;line;connect;N,N3;0;0;green"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="defV5.html">V.Def.5</a></div>
+<p>Then since <i>A</i> is to <i>B</i> as <i>C</i> is to <i>D,</i> and of <i>A</i> and <i>C</i> equimultiples <i>G</i> and <i>H</i> have been taken, and of <i>B</i> and <i>D</i> other, arbitrary, equimultiples <i>L</i> and <i>M,</i> therefore, if <i>G</i> is in excess of <i>L, H</i> is also in excess of <i>M</i>; if equal, equal; and if less, less.
+
+<p>Again, since <i>C</i> is to <i>D</i> as <i>E</i> is to <i>F,</i> and of <i>C</i> and <i>E</i> equimultiples <i>H</i> and <i>K</i> have been taken, and of <i>D</i> and <i>F</i> other, arbitrary, equimultiples <i>M</i> and <i>N,</i> therefore, if <i>H</i> is in excess of <i>M, K</i> is also in excess of <i>N</i>; if equal, equal; and if less, less.
+
+<div class="just"><a href="defV5.html">V.Def.5</a></div>
+<p>But we saw that, if <i>H</i> was in excess of <i>M, G</i> was also in excess of <i>L</i>; if equal, equal; and if less, less, so that, in addition, if <i>G</i> is in excess of <i>L, K</i> is also in excess of <i>N</i>; if equal, equal; and if less, less.
+
+<div class="just"><a href="defV5.html">V.Def.5</a></div>
+<p>And <i>G</i> and <i>K</i> are equimultiples of <i>A</i> and <i>E,</i> while <i>L</i> and <i>N</i> are other, arbitrary, equimultiples of <i>B</i> and <i>F,</i> therefore <i>A</i> is to <i>B</i> as <i>E</i> is to <i>F.</i>
+
+<p>Therefore, <i>ratios which are the same with the same ratio are also the same with one another.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition expresses the transitivity of the relation of being the same when applied to ratios.  After this proposition (and the easily proved properties of reflexivity and symmetry, see the <a href="defV5.html#guide">Guide</a> to definition V.Def.6), the expression &ldquo;two ratios are the same,&rdquo; or the equivalent expression &ldquo;two ratios are equal,&rdquo; is justified.  The proof follows directly from the definition. What is remarkable is that Eudoxus, or Euclid, recognized that this proposition needed to be proved.
+
+<p>The magnitudes may be of three different kinds with <i>A</i> and <i>B</i> of one kind, <i>C</i> and <i>D</i> of a second kind, and <i>E</i> and <i>F</i> of a third kind.
+
+<p>This proposition is used very frequently whenever ratios are used.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

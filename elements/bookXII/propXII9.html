@@ -1,0 +1,110 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book XII, Proposition 9</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 9</h1>
+
+<div class="statement">
+In equal pyramids with triangular bases the bases are reciprocally proportional to the heights; and those pyramids are equal in which the bases are reciprocally proportional to the heights.</div>
+
+<p>Let there be equal pyramids with triangular bases <i>ABC</i> and <i>DEF</i> and vertices <i>G</i> and <i>H.</i>
+
+<p>I say that in the pyramids <i>ABCG</i> and <i>DEFH</i> the bases are reciprocally proportional to the heights, that is the base <i>ABC</i> is to the base <i>DEF</i> as the height of the pyramid <i>DEFH</i> is to the height of the pyramid <i>ABCG.</i> 
+
+<p>Complete the parallelepipedal solids <i>BGML</i> and <i>EHQP.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="400" height="280" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propXII9.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.9",
+        elements: [
+            "C;point;fixed;100,200,0;black;green",
+            "1X;point;fixed;412,200,-91;0;0",
+            "1Y;point;fixed;65,500,-120;0;0",
+            "1Z;point;fixed;184,325,288;0;0",
+            "floor;plane;3points;C,1X,1Y;0;0;0;0",
+            "B;point;lineSlider;C,1X,40,230,0",
+            "M;point;planeSlider;floor,180,130,0",
+            "a;point;lineSlider;C,1Y,150,150,160;0",
+            "L;point;parallelogram;M,C,a",
+            "G;point;parallelogram;B,C,a",
+            "A;point;parallelogram;B,C,M",
+            "ABCG;polyhedron;tetrahedron;A,B,C,G;0;0;black;random",
+            "Apar;polyhedron;parallelepiped;B,A,C,G;0;0;black;0",
+            "E;point;lineSlider;C,1X,220,200,0",
+            "D;point;lineSlider;C,1X,305,200,0",
+            "F;point;planeSlider;floor,260,260,0",
+            "H';point;parallelogram;a,C,E;0;0",
+            "ABCM;polygon;quadrilateral;A,B,C,M;0;0;0;0",
+            "DEap;polygon;application;ABCM,E,D,F;0;0;0;0",
+            "F';point;vertex;DEap,4;0;0",
+            "H;point;proportion;E,F,B,G,E,F',E,H'",
+            "DEFH;polyhedron;tetrahedron;D,E,F,H;0;0;black;random",
+            "Dpar;polyhedron;parallelepiped;E,D,F,H;0;0;black;0",
+            "Q;point;parallelogram;D,E,F",
+            "O;point;parallelogram;D,E,H",
+            "P;point;parallelogram;Q,E,H",
+            "R;point;parallelogram;F,E,H"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="propXII7.html#cor">XII.7,Cor</a></div>
+<p>Now, since the pyramid <i>ABCG</i> equals the pyramid <i>DEFH,</i> and the solid <i>BGML</i> is six times the pyramid <i>ABCG,</i> and the solid <i>EHQP</i> six times the pyramid <i>DEFH,</i> therefore the solid <i>BGML</i> equals the solid <i>EHQP.</i>
+
+<div class="just"><a href="../bookXI/propXI34.html">XI.34</a></div>
+<p>But in equal parallelepipedal solids the bases are reciprocally proportional to the heights, therefore the base <i>BM</i> is to the base <i>EQ</i> as the height of the solid <i>EHQP</i> is to the height of the solid <i>BGML.</i>
+
+<div class="just"><a href="../bookI/propI34.html">I.34</a>
+<br><a href="../bookV/propV11.html">V.11</a></div>
+<p>But the base <i>BM</i> is to <i>EQ</i> as the triangle <i>ABC</i> is to the triangle <i>DEF.</i> Therefore the triangle <i>ABC</i> is to the triangle <i>DEF</i> as the height of the solid <i>EHQP</i> is to the height of the solid <i>BGML.</i>
+
+<p>But the height of the solid <i>EHQP</i> is identical with the height of the pyramid <i>DEFH,</i> and the height of the solid <i>BGML</i> is identical with the height of the pyramid <i>ABCG,</i> therefore the base <i>ABC</i> is to the base <i>DEF</i> as the height of the pyramid <i>DEFH</i> is to the height of the pyramid <i>ABCG.</i>
+
+<p>Therefore in the pyramids <i>ABCG</i> and <i>DEFH</i> the bases are reciprocally proportional to the heights. 
+
+<hr width=50%>
+
+<p>Next, in the pyramids <i>ABCG</i> and <i>DEFH</i> let the bases be reciprocally proportional to the heights, that is, as the base <i>ABC</i> is to the base <i>DEF,</i> so let the height of the pyramid <i>DEFH</i> be to the height of the pyramid <i>ABCG.</i>
+
+<p>I say that the pyramid <i>ABCG</i> equals the pyramid <i>DEFH.</i>
+
+<div class="just"><a href="../bookV/propV11.html">V.11</a></div>
+<p>With the same construction, since the base <i>ABC</i> is to the base <i>DEF</i> as the height of the pyramid <i>DEFH</i> is to the height of the pyramid <i>ABCG,</i> while the base <i>ABC</i> is to the base <i>DEF</i> as the parallelogram <i>BM</i> is to the parallelogram <i>EQ,</i> therefore the parallelogram <i>BM</i> is to the parallelogram <i>EQ</i> as the height of the pyramid <i>DEFH</i> is to the height of the pyramid <i>ABCG.</i>
+
+<p>But the height of the pyramid <i>DEFH</i> is identical with the height of the parallelepiped <i>EHQP,</i> and the height of the pyramid <i>ABCG</i> is identical with the height of the parallelepiped <i>BGML,</i> therefore the base <i>BM</i> is to the base <i>EQ</i> as the height of the parallelepiped <i>EHQP</i> is to the height of the parallelepiped <i>BGML.</i>
+
+<div class="just"><a href="../bookXI/propXI34.html">XI.34</a></div>
+<p>But those parallelepipedal solids in which the bases are reciprocally proportional to the heights are equal, therefore the parallelepipedal solid <i>BGML</i> equals the parallelepipedal solid <i>EHQP.</i>
+
+<p>And the pyramid <i>ABCG</i> is a sixth part of <i>BGML,</i> and the pyramid <i>DEFH</i> a sixth part of the parallelepiped <i>EHQP,</i> therefore the pyramid <i>ABCG</i> equals the pyramid <i>DEFH.</i>
+
+<p>Therefore, <i>in equal pyramids with triangular bases the bases are reciprocally proportional to the heights; and those pyramids are equal in which the bases are reciprocally proportional to the heights.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<h2>Guide</h2>
+
+The pyramids with triangular bases are one-third of the prisms with triangular bases, which aren&rsquo;t drawn, and the prisms are half of the parallelepipeds.  Since the analogous proposition <a href="../bookXI/propXI34.html">XI.34</a> holds for parallelepipeds, this proposition holds for pyramids.
+
+<p>When a similar situation appears later where cones are one-third of cylinders, Euclid simply says the same holds for cones, too, with no details whatsoever.
+
+<p>This proposition completes the theory of volumes for pyramids.  The next few propositions treat the theory of volumes of cones and cylinders.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1997");
+</script>
+</BODY></HTML>

@@ -1,0 +1,95 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book XI, Proposition 17</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+
+<h1>Proposition 17</h1>
+
+<div class="statement">
+If two straight lines are cut by parallel planes, then they are cut in the same ratios.</div>
+
+<p>Let the two straight lines <i>AB</i> and <i>CD</i> be cut by the parallel planes <i>GH, KL,</i> and <i>MN</i> at the points <i>A, E,</i> and <i>B,</i> and at the points <i>C, F,</i> and <i>D,</i> respectively.
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="310" height="320" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propXI17.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.17",
+        elements: [
+            "X;point;free;100000,200",
+            "Y;point;free;200,-100000",
+            "Z;point;free;30000,-100000",
+            "G;point;free;30,100",
+            "H;point;free;180,30",
+            "G';point;intersection;G,X,H,Z;0;0",
+            "H';point;intersection;H,X,G,Z;0;0",
+            "GH;polygon;quadrilateral;G,G',H,H';0;0;lightGray;brighter",
+            "K;point;free;75,190",
+            "L;point;free;225,120",
+            "K';point;intersection;K,X,L,Z;0;0",
+            "L';point;intersection;L,X,K,Z;0;0",
+            "KL;polygon;quadrilateral;K,K',L,L';0;0;lightGray;brighter",
+            "M;point;free;120,290",
+            "N;point;free;270,220",
+            "M';point;intersection;M,X,N,Z;0;0",
+            "N';point;intersection;N,X,M,Z;0;0",
+            "MN;polygon;quadrilateral;M,M',N,N';0;0;lightGray;brighter",
+            "A;point;free;130,40",
+            "B;point;free;240,260",
+            "C;point;free;60,70",
+            "D;point;free;160,245",
+            "AB;line;connect;A,B",
+            "CD;line;connect;C,D",
+            "E;point;lineSlider;AB,190,150",
+            "O';point;parallelogram;D,B,E;0;0",
+            "O;point;intersection;E,O',A,D",
+            "F';point;parallelogram;C,A,O;0;0",
+            "F;point;intersection;O,F',C,D",
+            "AC;line;connect;A,C",
+            "BD;line;connect;B,D",
+            "AD;line;connect;A,D",
+            "EO;line;connect;E,O",
+            "FO;line;connect;F,O"
+        ],
+    });
+</script></div>
+
+<p>I say that the straight line <i>AE</i> is to <i>EB</i> as <i>CF</i> is to <i>FD.</i>
+
+<p>Join <i>AC, BD,</i> and <i>AD.</i>  Let <i>AD</i> meet the plane <i>KL</i> at the point <i>O.</i>  Join <i>EO</i> and <i>FO.</i>
+
+<div class="just"><a href="propXI16.html">XI.16</a></div>
+<p> Now, since the two parallel planes <i>KL</i> and <i>MN</i> are cut by the plane <i>EBDO,</i> therefore their intersections <i>EO</i> and <i>BD</i> are parallel.  For the same reason, since the two parallel planes <i>GH</i> and <i>KL</i> are cut by the plane <i>AOFC,</i> their intersections <i>AC</i> and <i>OF</i> are parallel.
+
+<div class="just"><a href="../bookVI/propVI2.html">VI.2</a></div>
+<p>And, since the straight line <i>EO</i> is parallel to <i>BC,</i> one of the sides of the triangle <i>ABD,</i> therefore  proportionally <i>AE</i> is to <i>EB</i> as <i>AO</i> is to <i>OD.</i>  Again, since the straight line <i>FO</i> is parallel to <i>CA,</i> one of the sides of the triangle <i>ADC,</i> therefore proportionally <i>AO</i> is to <i>OD</i> as <i>CF</i> is to <i>FD.</i>
+
+<div class="just"><a href="../bookV/propV11.html">V.11</a></div>
+<p>But it was prove that <i>AO</i> is to <i>OD</i> as <i>AE</i> is to <i>EB,</i> therefore <i>AE</i> is to <i>EB</i> as <i>CF</i> is to <i>FD.</i>
+
+<p>Therefore, <i>if two straight lines are cut by parallel planes, then they are cut in the same ratios.</i>
+
+<div class="qed">Q.E.D.</div>
+<br clear=all>
+</div>
+
+<h2>Guide</h2>
+
+This proposition is used in the proof of proposition <a href="../bookXII/propXII4.html">XII.4</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1997");
+</script>
+</BODY></HTML>

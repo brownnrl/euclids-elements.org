@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>geomlib &mdash; Interactive Euclidean Geometry</title>
+  <meta name="description" content="geomlib is a TypeScript library that renders interactive Euclidean geometry diagrams on an HTML5 canvas. A port of David E. Joyce's 1996 Java Geometry Applet.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+<center>
+  <h1>geomlib</h1>
+  <p><i>Interactive Euclidean geometry constructions, in the browser.</i></p>
+</center>
+
+<p style="text-align:center;">
+  <a href="/">Home</a> &nbsp;|&nbsp;
+  <a href="/elements/elements.html">Euclid's Elements</a> &nbsp;|&nbsp;
+  <a href="/geomlib/usingGeomlib.html">Using geomlib diagrams</a>
+</p>
+
+<div class="theorem">
+<h2>What is geomlib?</h2>
+
+<p><tt>geomlib</tt> is a TypeScript library that renders interactive
+Euclidean geometry diagrams on an HTML5 <tt>&lt;canvas&gt;</tt>. Drag
+a free point and every dependent construction follows; the geometry is
+recomputed from first principles every frame. All 465 propositions
+across Books I&ndash;XIII of Euclid's <i>Elements</i> are renderable
+&mdash; you can see them throughout
+<a href="/elements/elements.html">this site</a>.
+
+<h3>Use via CDN</h3>
+
+<p>Drop the bundle into any HTML page, then call
+<tt>geomlib.init({...})</tt>:
+
+<pre style="background-color:#f4f4f4; padding:0.5em; border:1px solid #ccc; overflow-x:auto;">&lt;canvas id="propI1" style="width:340px; height:240px;"&gt;&lt;/canvas&gt;
+&lt;script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  const E = geomlib.E;
+  geomlib.init({
+    canvasid: "propI1",
+    elements: [
+      { name: "A", construction: E.Point.free,    params: [125, 130] },
+      { name: "B", construction: E.Point.free,    params: [215, 130] },
+      { name: "AB", construction: E.Line.connect, params: ["A", "B"] },
+      // ...
+    ],
+  });
+&lt;/script&gt;</pre>
+
+<h3>Or install from npm</h3>
+
+<p><tt>npm install @brownnrl/geomlib</tt></p>
+
+<p>Links:
+<a href="https://www.npmjs.com/package/@brownnrl/geomlib">npm package</a> &middot;
+<a href="https://github.com/brownnrl/euclid">source on GitHub</a> &middot;
+<a href="https://github.com/brownnrl/euclid/blob/main/README.md">README</a> &middot;
+<a href="https://github.com/brownnrl/euclid/blob/main/NOTICE.md">NOTICE / attribution</a>
+
+</div>
+
+<div class="theorem">
+<h2>Original work &mdash; Clark University attribution</h2>
+
+<p><tt>geomlib</tt> is a TypeScript port of
+<a href="http://aleph0.clarku.edu/~djoyce/java/Geometry/Geometry.html"><i>Geometry Applet v2.2</i></a>,
+the 1996 Java applet written by
+<b>Dr. David E. Joyce</b> (Professor Emeritus,
+<a href="http://www.clarku.edu/departments/mathcs/">Department of Mathematics and Computer Science</a>,
+<a href="http://www.clarku.edu/">Clark University</a>).
+The applet illustrated his online edition of Euclid's <i>Elements</i>
+from 1996 until Java applets ceased to function in modern browsers.
+
+<p>This port was undertaken with Dr. Joyce's
+explicit permission, granted in 2026.
+For the full permission text, the joint-copyright statement, and the
+list of preserved Java reference materials, see the
+<a href="https://github.com/brownnrl/euclid/blob/main/NOTICE.md">NOTICE</a>
+in the geomlib repository.
+
+<p>The MIT-licensed TypeScript code is joint-copyright:
+<small>&copy; 1996&ndash;2020 David E. Joyce, 2019&ndash;2026 Nelson Brown.</small>
+The <i>Elements</i> narrative content republished on this site is
+&copy; David E. Joyce, used by permission &mdash; see
+<a href="/COPYRIGHT.html">site copyright</a>.
+
+</div>
+
+<div class="theorem">
+<h2>Other works powered by geomlib</h2>
+
+<p>Beyond the <i>Elements</i>, this site mirrors several other
+Joyce-authored geometry tutorials, now driven by <tt>geomlib</tt>
+instead of the original Java applet:
+
+<ul>
+  <li><a href="/geomlib/compass/index.html"><b>Compass Geometry</b></a>
+      &mdash; seven-page introduction to Euclidean constructions
+      using compass and straightedge.</li>
+  <li><a href="/geomlib/round/round1.html"><b>Round Triangles</b></a>
+      (with <a href="/geomlib/round/sixeight.html">Six-Eight</a> and
+      <a href="/geomlib/round/desargues.html">Desargues</a>) &mdash;
+      inversive and spherical geometry tutorials.</li>
+  <li><a href="/geomlib/eulerline.html"><b>The Euler Line</b></a>
+      &mdash; a single-page interactive demo of the Euler line of a
+      triangle.</li>
+  <li><a href="/geomlib/usingGeomlib.html"><b>Using geomlib diagrams</b></a>
+      &mdash; how to interact with the diagrams on this site (drag,
+      reset, pop-out window).</li>
+</ul>
+
+</div>
+
+<div class="theorem">
+<h2>Library test artifacts</h2>
+
+<p>For transparency, the latest test-run artifacts from the
+<a href="https://github.com/brownnrl/euclid">geomlib repository</a>
+are mirrored here:
+
+<ul>
+  <li><a href="/geomlib/coverage/index.html"><b>Code coverage report</b></a>
+      &mdash; <tt>c8</tt> output for the TypeScript source.</li>
+  <li><a href="/geomlib/snapshots/report.html"><b>Snapshot regression report</b></a>
+      &mdash; visual-regression snapshots of every construction scene
+      the library renders, including drag interactions.</li>
+</ul>
+
+</div>
+
+<p style="text-align:center; margin-top:2em;">
+  <a href="/">&larr; Home</a>
+</p>
+
+</body>
+</html>

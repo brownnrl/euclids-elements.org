@@ -1,0 +1,98 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book III, Proposition 10</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 10</h1>
+
+<div class="statement">A circle does not cut a circle at more than two points. </div>
+
+<p>For, if possible, let the circle <i>ABC</i> cut the circle <i>DEF</i> at more points than two, namely <i>B, G, F,</i> and <i>H.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="300" height="300" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII10.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.10",
+        pivot: "P",
+        elements: [
+            "B;point;free;150,40",
+            "F;point;free;150,260",
+            "H;point;free;40,180",
+            "ABC;circle;circumcircle;B,F,H;0;0;black;random",
+            "P;point;center;ABC;black;green",
+            "G;point;circleSlider;ABC,210,150",
+            "HB;line;connect;H,B",
+            "BG;line;connect;B,G",
+            "K;point;midpoint;HB",
+            "L;point;midpoint;BG",
+            "S;point;midpoint;H,F;0;0",
+            "BHY;polygon;equilateralTriangle;B,H;0;0;0;0",
+            "Y;point;vertex;BHY,3;0;0",
+            "Z;point;intersection;H,Y,S,P;0;0",
+            "W;point;intersection;B,Y,L,P;0;0",
+            "X;point;intersection;F,Z,G,W;0;0",
+            "arcFG;sector;sector;X,F,G;0;0;black;0",
+            "arcGB;sector;sector;W,G,B;0;0;black;0",
+            "arcBH;sector;sector;Y,B,H;0;0;black;0",
+            "arcHF;sector;sector;Z,H,F;0;0;black;0",
+            "A;point;cutoff;P,K,P,B",
+            "C;point;extend;A,P,A,P",
+            "AC;line;connect;A,C",
+            "O;point;cutoff;P,L,P,B",
+            "N;point;extend;O,P,O,P",
+            "circGB;circle;radius;W,B;0;0;0;0",
+            "circHF;circle;radius;Z,H;0;0;0;0",
+            "EE';line;chord;N,O,circGB;0;0;0",
+            "MM';line;chord;N,O,circHF;0;0;0",
+            "E;point;last;EE'",
+            "M;point;first;MM'",
+            "EM;line;connect;E,M",
+            "D;point;cutoff;Y,A,Y,B;black;0"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="../bookI/propI10.html">I.10</a>
+<br><a href="../bookI/propI11.html">I.11</a></div>
+<p>Join <i>BH</i> and <i>BG,</i> and bisect them at the points <i>K</i> and <i>L.</i> Draw  <i>KC</i> and <i>LM</i> from <i>K</i> and <i>L</i> at right angles to <i>BH</i> and <i>BG,</i>  and carry them through to the points <i>A</i> and <i>E.</i>
+
+<div class="just"><a href="propIII1.html#cor">III.1,Cor</a></div>
+<p>Then, since in the circle <i>ABC</i> a straight line <i>AC</i> cuts a straight line <i>BH</i> into two equal parts and at right angles, the center of the circle <i>ABC</i> lies on <i>AC.</i>  Again, since in the same circle <i>ABC</i> a straight line <i>NO</i> cuts a straight line <i>BG</i> into two equal parts and at right angles, the center of the circle <i>ABC</i> lies on <i>NO.</i>>
+
+<p>But it was also proved to lie on <i>AC,</i> and the straight lines <i>AC</i> and <i>NO</i> meet at no point except at <i>P,</i> therefore the point <i>P</i> is the center of the circle <i>ABC.</i>
+
+<div class="just"><a href="propIII5.html">III.5</a></div>
+<p>Similarly we can prove that <i>P</i> is also the center of the circle <i>DEF,</i> therefore the two circles <i>ABC</i> and <i>DEF</i> which cut one another have the same center <i>P,</i> which is impossible.
+
+<p>Therefore <i>a circle does not cut a circle at more than two points.</i>
+
+<div class="qed">Q.E.D.</div>
+<br clear=all>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+The figure is another impossible figure.  Both curves are supposed to be circumferences of circles, but, of course, they cannot both be drawn as circles since the situation is proved not to occur.  Although Euclid names four points where the circles meet, only three, <i>B, G,</i> and <i>H,</i> are used in the proof.
+
+<p>The proof actually shows that the two circles cannot <i>meet</i> in more than two points, where &ldquo;meet&rdquo; could be either cut or touch.
+
+<p>Heath remarks that the lines bisecting <i>BG</i> and <i>BH</i> have not been shown to meet.  In fact, they have, since the center of the circle <i>ABC</i> has been shown to be on both.
+
+<p>This proposition is used in <a href="propIII24.html">III.24</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

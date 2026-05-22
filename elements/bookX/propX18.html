@@ -1,0 +1,99 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book X, Proposition 18</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 18</h1>
+
+<div class="statement">If there are two unequal straight lines, and to the greater there is applied a parallelogram equal to the fourth part of the square on the less but falling short by a square, and if it divides it into incommensurable parts, then the square on the greater is greater than the square on the less by the square on a straight line incommensurable with the greater.  And if the square on the greater is greater than the square on the less by the square on a straight line incommensurable with the greater, and if there is applied to the greater a parallelogram equal to the fourth part of the square on the less but falling short by a square, then it divides it into incommensurable parts.</div>
+
+<div class="just"><a href="propX17.html#lemma">X.17,Lemma</a></div>
+<p>Let <i>A</i> and <i>BC</i> be two unequal straight lines, of which <i>BC</i> is the greater, and to <i>BC</i> let there be applied a parallelogram equal to the fourth part of the square on the less, <i>A</i>, but falling short by a square. Let this be the rectangle <i>BD</i> by <i>DC</i>, and let <i>BD</i> be incommensurable in length with <i>DC</i>.
+
+<p>I say that the square on <i>BC</i> is greater than the square on <i>A</i> by the square on a straight line incommensurable with <i>BC</i>.
+
+<p>With the same construction as before, we can prove similarly that the square on <i>BC</i> is greater than the square on <i>A</i> by the square on <i>FD</i>.
+
+<p>It is to be proved that <i>BC</i> is incommensurable in length with <i>DF</i>.</td>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="270" height="190" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propX17.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.18",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "B0;point;free;-1000,150;0;0",
+            "B3;point;free;1000,150;0;0",
+            "A1;point;lineSlider;A0,A3,40,0;0",
+            "A2;point;lineSlider;A0,A3,220,0;0",
+            "A;line;connect;A1,A2;black",
+            "B;point;lineSlider;B0,B3,40,0",
+            "C;point;lineSlider;B0,B3,230,0",
+            "BC;line;connect;B,C",
+            "E;point;midpoint;B,C",
+            "a;point;midpoint;A1,A2;0;0",
+            "b;point;midpoint;B,E;0;0",
+            "bcirc;circle;radius;b,B;0;0;0;0",
+            "Bcirc;circle;radius;B,A1,a;0;0;0;0",
+            "cc';line;bichord;bcirc,Bcirc;0;0;0",
+            "c;point;first;cc';0;0",
+            "D;point;cutoff;E,C,E,c",
+            "F;point;cutoff;E,B,D,E",
+            "d;point;perpendicular;D,C;0;0",
+            "rect;polygon;parallelogram;B,D,d;0;0;black;random"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="propX16.html">X.16</a></div>
+<p>Since <i>BD</i> is incommensurable in length with <i>DC</i>, therefore <i>BC</i> is also incommensurable in length with <i>CD</i>.
+
+<div class="just"><a href="propX6.html">X.6</a>,
+<a href="propX13.html">X.13</a>
+<br><a href="propX16.html">X.16</a></div>
+<p>But <i>DC</i> is commensurable with the sum of <i>BF</i> and <i>DC</i>, therefore <i>BC</i> is incommensurable with the sum of <i>BF</i> and <i>DC</i>,  so that <i>BC</i> is also incommensurable in length with the remainder <i>FD</i>.
+
+<p>And the square on <i>BC</i> is greater than the square on <i>A</i> by the square on <i>FD</i>, therefore the square on <i>BC</i> is greater than the square on <i>A</i> by the square on a straight line incommensurable with <i>BC</i>.
+
+<hr width=50%>
+
+<p>Next, let the square on <i>BC</i> be greater than the square on <i>A</i> by the square on a straight line incommensurable with <i>BC</i>.  Apply to <i>BC</i> a parallelogram equal to the fourth part of the square on <i>A</i> but falling short by a square. Let this be the rectangle <i>BD</i> by <i>DC</i>.
+
+<p>It is to be proved that <i>BD</i> is incommensurable in length with <i>DC</i>.
+
+<p>With the same construction, we can prove similarly that the square on <i>BC</i> is greater than the square on <i>A</i> by the square on <i>FD</i>.
+
+<div class="just"><a href="propX16.html">X.16</a></div>
+<p>But the square on <i>BC</i> is greater than the square on <i>A</i> by the square on a straight line incommensurable with <i>BC</i>, therefore <i>BC</i> is incommensurable in length with <i>FD</i>, so that <i>BC</i> is also incommensurable with the remainder, the sum of <i>BF</i> and <i>DC</i>.
+
+<div class="just"><a href="propX6.html">X.6</a>,
+<a href="propX13.html">X.13</a>
+<br><a href="propX16.html">X.16</a></div>
+<p>But the sum of <i>BF</i> and <i>DC</i> is commensurable in length with <i>DC</i>, therefore <i>BC</i> is also incommensurable in length with <i>DC</i>, so that, taken separately, <i>BD</i> is also incommensurable in length with <i>DC</i>.
+
+<p>Therefore, <i>if there are two unequal straight lines, and to the greater there is applied a parallelogram equal to the fourth part of the square on the less but falling short by a square, and if it divides it into incommensurable parts, then the square on the greater is greater than the square on the less by the square on a straight line incommensurable with the greater.  And if the square on the greater is greater than the square on the less by the square on a straight line incommensurable with the greater, and if there is applied to the greater a parallelogram equal to the fourth part of the square on the less but falling short by a square, then it divides it into incommensurable parts.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is a logical variant of the last.  It is used in frequently in Book X starting with <a href="propX33.html">X.33</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

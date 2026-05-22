@@ -1,0 +1,46 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book III, Definition 10</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Definition 10</h1>
+
+<div class="statement">A <i>sector</i> of a circle is the figure which, when an angle is constructed at the center of the circle, is contained by the straight lines containing the angle and the circumference cut off by them.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+<center>
+<canvas id="canvas_0" width="300" height="240" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="defIII10.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.Def.10",
+        pivot: "A",
+        elements: [
+            "A;point;free;150,120;black;green",
+            "B;point;free;150,30",
+            "Acirc;circle;radius;A,B;0;0;black;random",
+            "C;point;circleSlider;Acirc,40,130",
+            "sect;sector;sector;A,B,C;0;0;0;random",
+            "AB;line;connect;A,B",
+            "AC;line;connect;A,C"
+        ],
+    });
+</script></center>
+
+<p>Here a sector <i>BAC</i> is illustrated.  The angle <i>BAC</i> encloses the sector.  Note that the remainder of the circle would not be considered a sector by Euclid since the angle at the center would be greater than 180&deg;.  Euclid&rsquo;s angles were all greater than 0 and less than two right angles.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

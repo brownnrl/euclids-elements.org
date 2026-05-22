@@ -1,0 +1,80 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book VIII, Proposition 17</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 17</h1>
+
+<div class="statement">If a cubic number does not measure a cubic number, then neither does the side measure the side; and, if the side does not measure the side, then neither does the cube measure the cube.</div>
+
+<p>Let the cubic number <i>A</i> not measure the cubic number <i>B,</i> and let <i>C</i> be the side of <i>A,</i> and <i>D</i> of <i>B.</i>
+<p>I say that <i>C</i> does not measure <i>D.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="260" height="170" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propVIII17.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VIII.17",
+        elements: [
+            "A0;point;free;-1000,35;0;0",
+            "A3;point;free;1000,35;0;0",
+            "B0;point;free;-1000,70;0;0",
+            "B3;point;free;1000,70;0;0",
+            "C0;point;free;-1000,105;0;0",
+            "C3;point;free;1000,105;0;0",
+            "D0;point;free;-1000,140;0;0",
+            "D3;point;free;1000,140;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,30;0;0",
+            "C1;point;lineSlider;C0,C3,30,0;0",
+            "C2;point;lineSlider;C0,C3,70,0;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;D0,D3,30,0;0",
+            "D2;point;lineSlider;D0,D3,85,0;0",
+            "D;line;connect;D1,D2;black",
+            "C4;point;proportion;U1,U2,C1,C2,C1,C2,C1,C3;0;0",
+            "D4;point;proportion;U1,U2,D1,D2,D1,D2,D1,D3;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;proportion;U1,U2,C1,C2,C1,C4,A1,A3;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;lineSlider;B0,B3,30,0;0",
+            "B2;point;proportion;U1,U2,D1,D2,D1,D4,B1,B3;0",
+            "B;line;connect;B1,B2;black"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="propVIII15.html">VIII.15</a></div>
+<p>For if <i>C</i> measures <i>D,</i> then <i>A</i> also measures <i>B.</i> But <i>A</i> does not measure <i>B,</i> therefore neither does <i>C</i> measure <i>D.</i>
+
+<p><hr width=50%><p>
+Next, let <i>C</i> not measure <i>D.</i>
+<p>I say that neither does <i>A</i> measure <i>B.</i>
+
+<div class="just"><a href="propVIII15.html">VIII.15</a></div>
+<p>If <i>A</i> measures <i>B,</i> then <i>C</i> also measures <i>D.</i>  But <i>C</i> does not measure <i>D,</i> therefore neither does <i>A</i> measure <i>B.</i>
+
+<p>Therefore, <i>if a cubic number does not measure a cubic number, then neither does the side measure the side; and, if the side does not measure the side, then neither does the cube measure the cube.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<h2>Guide</h2>
+
+This proposition is simply the contrapositive of <a href="propVIII15.html">VIII.15</a>.  
+<p>&ldquo;Contrariwise,&rdquo; continued Tweedledee, &ldquo;if it was so, it would be; but as it isn&rsquo;t, it ain&rsquo;t.  That&rsquo;s logic.&rdquo;
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996, 2004");
+</script>
+</BODY></HTML>

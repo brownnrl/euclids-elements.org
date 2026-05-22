@@ -1,0 +1,127 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book VIII, Proposition 10</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 10</h1>
+
+<div class="statement">If numbers fall between two numbers and a unit in continued proportion, then however many numbers fall between each of them and a unit in continued proportion, so many also fall between the numbers themselves in continued proportion.</div>
+
+<p>Let the numbers <i>D</i> and <i>E</i> and the numbers <i>F</i> and <i>G</i> respectively fall between the two numbers <i>A</i> and <i>B</i> and the unit <i>C</i> in continued proportion.
+
+<p>I say that, as many numbers have fallen between each of the numbers <i>A</i> and <i>B</i> and the unit <i>C</i> in continued proportion as fall between <i>A</i> and <i>B</i> in continued proportion.
+
+<p>Multiply <i>D</i> by <i>F</i> to make <i>H,</i> and multiply the numbers <i>D</i> and <i>F</i> by <i>H</i> to make <i>K</i> and <i>L</i> respectively.
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="450" height="170" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propVIII10.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VIII.10",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "E0;point;free;-1000,50;0;0",
+            "E3;point;free;1000,50;0;0",
+            "D0;point;free;-1000,70;0;0",
+            "D3;point;free;1000,70;0;0",
+            "C0;point;free;-1000,90;0;0",
+            "C3;point;free;1000,90;0;0",
+            "F0;point;free;-1000,110;0;0",
+            "F3;point;free;1000,110;0;0",
+            "G0;point;free;-1000,130;0;0",
+            "G3;point;free;1000,130;0;0",
+            "B0;point;free;-1000,150;0;0",
+            "B3;point;free;1000,150;0;0",
+            "C1;point;lineSlider;C0,C3,30,0;0",
+            "C2;point;lineSlider;C0,C3,55,0;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;D0,D3,90,0;0",
+            "D2;point;lineSlider;D0,D3,125,0;0",
+            "D;line;connect;D1,D2;black",
+            "F1;point;lineSlider;F0,F3,90,0;0",
+            "F2;point;lineSlider;F0,F3,135,0;0",
+            "F;line;connect;F1,F2;black",
+            "E1;point;lineSlider;E0,E3,170,0;0",
+            "E2;point;proportion;C1,C2,D1,D2,D1,D2,E1,E3;0",
+            "E;line;connect;E1,E2;black",
+            "G1;point;lineSlider;G0,G3,170,0;0",
+            "G2;point;proportion;C1,C2,F1,F2,F1,F2,G1,G3;0",
+            "G;line;connect;G1,G2;black",
+            "A1;point;lineSlider;A0,A3,300,0;0",
+            "A2;point;proportion;C1,C2,D1,D2,E1,E2,A1,A3;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;lineSlider;B0,B3,300,0;0",
+            "B2;point;proportion;C1,C2,F1,F2,G1,G2,B1,B3;0",
+            "B;line;connect;B1,B2;black",
+            "H1;point;lineSlider;C0,C3,170,0;0",
+            "H2;point;proportion;C1,C2,D1,D2,F1,F2,H1,C3;0",
+            "H;line;connect;H1,H2;black",
+            "K1;point;lineSlider;D0,D3,300,0;0",
+            "K2;point;proportion;C1,C2,D1,D2,H1,H2,K1,D3;0",
+            "K;line;connect;K1,K2;black",
+            "L1;point;lineSlider;F0,F3,300,0;0",
+            "L2;point;proportion;C1,C2,F1,F2,H1,H2,L1,F3;0",
+            "L;line;connect;L1,L2;black"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="../bookVII/defVII20.html">VII.Def.20</a></div>
+<p>Now, since the unit <i>C</i> is to the number <i>D</i> as <i>D</i> is to <i>E,</i> therefore the unit <i>C</i> measures the number <i>D</i> the same number of times as <i>D</i> measures <i>E.</i> But the unit <i>C</i> measures the number <i>D</i> according to the units in <i>D,</i> therefore the number <i>D</i> also measures <i>E</i> according to the units in <i>D.</i> Therefore <i>D</i> multiplied by itself makes <i>E.</i>
+
+<p>Again, since <i>C</i> is to the number <i>D</i> as <i>E</i> is to <i>A,</i> therefore the unit <i>C</i> measures the number <i>D</i> the same number of times as <i>E</i> measures <i>A.</i> But the unit <i>C</i> measures the number <i>D</i> according to the units in <i>D,</i> therefore <i>E</i> also measures <i>A</i> according to the units in <i>D.</i> Therefore <i>D</i> multiplied by <i>E</i> makes <i>A.</i>
+
+<p>For the same reason also <i>F</i> multiplied by itself makes <i>G,</i> and multiplied by <i>G</i> makes <i>B.</i>
+
+<div class="just"><a href="../bookVII/propVII17.html">VII.17</a></div>
+<p>And, since <i>D</i> multiplied by itself makes <i>E</i> and multiplied by <i>F</i> makes <i>H,</i> therefore <i>D</i> is to <i>F</i> as <i>E</i> is to <i>H.</i>
+
+<div class="just"><a href="../bookVII/propVII18.html">VII.18</a></div>
+<p>For the same reason also <i>D</i> is to <i>F</i> as <i>H</i> is to <i>G.</i> Therefore <i>E</i> is to <i>H</i> as <i>H</i> is to <i>G.</i>
+
+<div class="just"><a href="../bookVII/propVII17.html">VII.17</a></div>
+<p>Again, since <i>D</i> multiplied by the numbers <i>E</i> and <i>H</i> makes <i>A</i> and <i>K</i> respectively, therefore <i>E</i> is to <i>H</i> as <i>A</i> is to <i>K.</i> But <i>E</i> is to <i>H</i> as <i>D</i> is to <i>F,</i> therefore <i>D</i> is to <i>F</i> as <i>A</i> is to <i>K.</i>
+
+<div class="just"><a href="../bookVII/propVII18.html">VII.18</a>
+<br><a href="../bookVII/propVII17.html">VII.17</a></div>
+<p>Again, since the numbers <i>D</i> and <i>F</i> multiplied by <i>H</i> make <i>K</i> and <i>L</i> respectively, therefore <i>D</i> is to <i>F</i> as <i>K</i> is to <i>L.</i> But <i>D</i> is to <i>F</i> as <i>A</i> is to <i>K,</i> therefore <i>A</i> is to <i>K</i> as <i>K</i> is to <i>L.</i> Further, since <i>F</i> multiplied by the numbers <i>H</i> and <i>G</i> makes <i>L</i> and <i>B</i> respectively, therefore <i>H</i> is to <i>G</i> as <i>L</i> is to <i>B.</i>
+
+<p>But <i>H</i> is to <i>G</i> as <i>D</i> is to <i>F,</i> therefore <i>D</i> is to <i>F</i> as <i>L</i> is to <i>B.</i> But it was also proved that <i>D</i> is to <i>F</i> as <i>A</i> is to <i>K</i> and as <i>K</i> is to <i>L,</i> therefore <i>A</i> is to <i>K</i> as <i>K</i> is to <i>L</i> and as <i>L</i> is to <i>B.</i> Therefore <i>A, K, L,</i> and <i>B</i> are in continued proportion.
+
+<p>Therefore, as many numbers as fall between each of the numbers <i>A</i> and <i>B</i> and the unit <i>C</i> in continued proportion, so many also fall between <i>A</i> and <i>B</i> in continued proportion.
+
+<p>Therefore, <i>if numbers fall between two numbers and a unit in continued proportion, then however many numbers fall between each of them and a unit in continued proportion, so many also fall between the numbers themselves in continued proportion.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<h2>Guide</h2>
+
+<p>Essentially, the proposition says that if <i>a</i> and <i>b</i> are (<i>n</i>&ndash;1)<sup>st</sup> powers of <i>d</i> and <i>f</i>, respectively, then the sequence
+<p><center>
+<i>d</i><sup><i>n</i>-1</sup>, <i>d</i><sup><i>n</i>-2</sup><i>f</i>, <i>d</i><sup><i>n</i>-3</sup><i>f</i><sup>&nbsp;2</sup>, ... ,
+<i>d</i><i>f</i><sup>&nbsp;<i>n</i>-2</sup>, <i>f</i><sup>&nbsp;<i>n</i>-1</sup>
+</center><p>
+
+is in continued proportion.
+
+<p>This is a partial converse to the previous proposition; it doesn&rsquo;t require that the generating numbers <i>d</i> and <i>f</i> be relatively prime. 
+
+<p>The next two propositions are special cases of this proposition when the powers are squares and cubes.  
+
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996, 2013");
+</script>
+</BODY></HTML>

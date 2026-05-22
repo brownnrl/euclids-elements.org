@@ -1,0 +1,77 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book VII, Proposition 25</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 25</h1>
+
+<div class="statement">If two numbers are relatively prime, then the product of one of them with itself is relatively prime to the remaining one.</div>
+
+<p>Let <i>A</i> and <i>B</i> be two numbers relatively prime, and let <i>A</i> multiplied by itself make <i>C.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="130" height="250" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propVII25.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.25",
+        elements: [
+            "A0;point;free;30,-1000;0;0",
+            "A3;point;free;30,1000;0;0",
+            "A1;point;lineSlider;A0,A3,30,30;0",
+            "A2;point;lineSlider;A0,A3,30,110;0",
+            "A;line;connect;A1,A2;black",
+            "B0;point;free;65,-1000;0;0",
+            "B3;point;free;65,1000;0;0",
+            "B1;point;lineSlider;B0,B3,65,30;0",
+            "B2;point;lineSlider;B0,B3,65,130;0",
+            "B;line;connect;B1,B2;black",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,50;0;0",
+            "C0;point;free;100,-1000;0;0",
+            "C3;point;free;100,1000;0;0",
+            "C1;point;lineSlider;C0,C3,100,30;0",
+            "C2;point;proportion;U1,U2,A1,A2,A1,A2,C1,C3;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;A0,A3,30,140;0",
+            "D2;point;cutoff;D1,A3,A1,A2;0",
+            "D;line;connect;D1,D2;black"
+        ],
+    });
+</script></div>
+
+<p>I say that <i>B</i> and <i>C</i> are relatively prime.
+
+<p>Make <i>D</i> equal to <i>A.</i>
+
+<div class="just"><a href="propVII24.html">VII.24</a></div>
+<p>Since <i>A</i> and <i>B</i> are relatively prime, and <i>A</i> equals <i>D,</i> therefore <i>D</i> and <i>B</i> are also relatively prime. Therefore each of the two numbers <i>D</i> and <i>A</i> is relatively prime to <i>B.</i> Therefore the product of <i>D</i> and <i>A</i> is also relatively prime to <i>B.</i>
+
+<p>But the number which is the product of <i>D</i> and <i>A</i> is <i>C.</i> Therefore <i>C</i> and <i>B</i> are relatively prime.
+
+<p>Therefore, <i>if two numbers are relatively prime, then the product of one of them with itself is relatively prime to the remaining one.</i>
+
+<div class="qed">Q.E.D.</div>
+<br clear=all>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition says that if <i>a</i> is relatively prime to <i>b</i>, then <i>a</i><sup>2</sup> is also relatively prime to <i>b</i>.
+
+<p>
+It&rsquo;s a special case of the previous proposition and hardly needs its own enunciation. It is used in <a href="propVII27.html">VII.27</a> and <a href="../bookIX/propIX15.html">IX.15</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996, 2013");
+</script>
+</BODY></HTML>

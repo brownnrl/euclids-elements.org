@@ -1,0 +1,85 @@
+<HTML><HEAD><TITLE>Euclid's Elements, Book V, Proposition 15</TITLE><link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+
+<div class="theorem">
+<h1>Proposition 15</h1>
+
+<div class="statement">Parts have the same ratio as their equimultiples.</div>
+
+<p>Let <i>AB</i> be the same multiple of <i>C</i> that <i>DE</i> is of <i>F.</i>
+
+<p>I say that <i>C</i> is to <i>F</i> as <i>AB</i> is to <i>DE.</i>
+
+<p>Since <i>AB</i> is the same multiple of <i>C</i> that <i>DE</i> is of <i>F,</i> as many magnitudes as there are in <i>AB</i> equal to <i>C,</i> there are also in <i>DE</i> equal to <i>F.</i>
+
+<p>Divide <i>AB</i> into the magnitudes <i>AG, GH,</i> and <i>HB</i> equal to <i>C,</i> and divide <i>DE</i> into the magnitudes <i>DK, KL,</i> and <i>LE</i> equal to <i>F.</i>  Then the number of the magnitudes <i>AG, GH,</i> and <i>HB</i> equals the number of the magnitudes <i>DK, KL,</i> and <i>LE.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="380" height="150" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propV15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "V.15",
+        elements: [
+            "U0;point;free;-1000,30;0;0",
+            "U1;point;free;1000,30;0;0",
+            "V0;point;free;-1000,60;0;0",
+            "V1;point;free;1000,60;0;0",
+            "W0;point;free;-1000,90;0;0",
+            "W1;point;free;1000,90;0;0",
+            "X0;point;free;-1000,120;0;0",
+            "X1;point;free;1000,120;0;0",
+            "C0;point;lineSlider;W0,W1,20,90;0",
+            "C1;point;lineSlider;W0,W1,70,90;0",
+            "C;line;connect;C0,C1;black;0;green",
+            "F0;point;lineSlider;X0,X1,280,120;0",
+            "F1;point;lineSlider;X0,X1,350,120;0",
+            "F;line;connect;F0,F1;black;0;green",
+            "A;point;lineSlider;U0,U1,20,30",
+            "G;point;cutoff;A,U1,C0,C1",
+            "H;point;cutoff;G,U1,C0,C1",
+            "B;point;cutoff;H,U1,C0,C1",
+            "AB;line;connect;A,B;0;0;green",
+            "E;point;lineSlider;V0,V1,350,60",
+            "L;point;cutoff;E,V0,F0,F1",
+            "K;point;cutoff;L,V0,F0,F1",
+            "D;point;cutoff;K,V0,F0,F1",
+            "DE;line;connect;D,E;0;0;green"
+        ],
+    });
+</script>
+</td></div>
+
+<div class="just"><a href="propV7.html">V.7</a></div>
+<p>And, since <i>AG, GH,</i> and <i>HB</i> equal one another, and <i>DK, KL,</i> and <i>LE</i> also equal one another, therefore <i>AG</i> is to <i>DK</i> as <i>GH</i> is to <i>KL,</i> and as <i>HB</i> is to <i>LE.</i>
+
+<p>Therefore one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents.  Therefore <i>AG</i> is to <i>DK</i> as <i>AB</i> is to <i>DE.</i>
+
+<div class="just"><a href="propV12.html">V.12</a></div>
+<p>But <i>AG</i> equals <i>C</i> and <i>DK</i> equals <i>F,</i> therefore <i>C</i> is to <i>F</i> as <i>AB</i> is to <i>DE.</i>
+
+<p>Therefore, <i>parts have the same ratio as their equimultiples.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition states that if <i>n</i> is any number and <i>c</i> and <i>f</i> any magnitudes of the same kind, then <i>c</i>&nbsp;:&nbsp;<i>f</i>&nbsp;=&nbsp;<i>nc</i>&nbsp;:&nbsp;<i>nf.</i>
+
+<p>This proposition is used in the next one and a few others in Books V, VI, and XIII.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

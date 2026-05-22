@@ -1,0 +1,51 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book I, Definition 23</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Definition 23</h1>
+
+<div class="statement"><i>Parallel</i> straight lines are straight lines which, being in the same plane and being produced indefinitely in both directions, do not meet one another in either direction.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+<table cellspacing=5>
+<tr><td>
+<div id="ap1">
+<canvas id="canvas_0" width="250" height="160" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="defI23.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.Def.23",
+        elements: [
+            "A1;point;free;40,40;0",
+            "A2;point;free;200,60;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;free;50,100;0",
+            "B2;point;parallelogram;B1,A1,A2;0;0",
+            "B3;point;lineSlider;B1,B2,200,100;0",
+            "B;line;connect;B1,B3;black"
+        ],
+    });
+</script>
+</div>
+</td>
+
+<td>This definition only defines what it means for straight lines to be parallel; it does not say that there are any parallel lines.  Proposition <a href="propI31.html">I.31</a> gives a construction for a line parallel to a given line through a given point.
+</td></tr></table>
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

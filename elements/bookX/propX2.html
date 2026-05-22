@@ -1,0 +1,127 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book X, Proposition 2</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 2</h1>
+
+<div class="statement">If, when the less of two unequal magnitudes is continually subtracted in turn from the greater that which is left never measures the one before it, then the two magnitudes are incommensurable.</div>
+
+<p>There being two unequal magnitudes <i>AB</i> and <i>CD,</i> with <i>AB</i> being the less, when the less is continually subtracted in turn from the greater, let that which is left over never measure the one before it.
+
+<p>I say that the magnitudes <i>AB</i> and <i>CD</i> are incommensurable.
+
+<p>If they are commensurable, then some magnitude <i>E</i> measures them.
+
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="300" height="100" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propX2.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.2",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "C0;point;free;-1000,70;0;0",
+            "C3;point;free;1000,70;0;0",
+            "A;point;lineSlider;A0,A3,160,0",
+            "B;point;lineSlider;A0,A3,260,0",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;C0,C3,30,0",
+            "D;point;lineSlider;C0,C3,260,0",
+            "CD;line;connect;C,D",
+            "E1;point;lineSlider;A0,A3,30,0;0",
+            "E2;point;lineSlider;A0,A3,80,0;0",
+            "E;line;connect;E1,E2;black",
+            "F1;point;cutoff;D,C,A,B;0;0",
+            "F;point;cutoff;F1,C,A,B",
+            "G1;point;cutoff;B,A,C,F;0;0",
+            "G;point;cutoff;G1,A,C,F"
+        ],
+    });
+</script></div>
+
+<p>Let <i>AB,</i> measuring <i>FD,</i> leave <i>CF</i> less than itself, let <i>CF</i> measuring <i>BG,</i> leave <i>AG</i> less than itself, and let this process be repeated continually, until there is left some magnitude which is less than <i>E.</i>
+
+<p>Suppose this done, and let there be left <i>AG</i> less than <i>E.</i>
+
+<p>Then, since <i>E</i> measures <i>AB,</i> while <i>AB</i> measures <i>DF,</i> therefore <i>E</i> also measures <i>FD.</i> But it measures the whole <i>CD</i> also, therefore it also measures the remainder <i>CF.</i> But <i>CF</i> measures <i>BG,</i> therefore <i>E</i> also measures <i>BG.</i> But it measures the whole <i>AB</i> also, therefore it also measures the remainder <i>AG,</i> the greater the less, which is impossible.
+
+<div class="just"><a href="defX.I.html#1">X.Def.I.1</a></div>
+<p>Therefore no magnitude measures the magnitudes <i>AB</i> and <i>CD.</i> Therefore the magnitudes <i>AB</i> and <i>CD</i> are incommensurable.
+
+<p>Therefore, <i>if, when the less of two unequal magnitudes is continually subtracted in turn from the greater that which is left never measures the one before it, then the two magnitudes are incommensurable.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+Antenaresis (also called the Euclidean algorithm), first used in proposition <a href="../bookVII/propVII1.html">VII.1</a>, is again used in this proposition.  Beginning with two magnitudes, the smaller, whichever it is, is repeated subtracted from the larger.  Proposition VII.1 concerns relatively prime numbers. It is similar to this proposition, but its conclusion is different.
+
+<p>Heath claims that Euclid uses <a href="propX1.html">X.1</a> to prove this proposition, in particular, to show that antenaresis eventually leaves some magnitude which is less than <i>E.</i>  It is hard to tell what Euclid thought his justification was.  Since both magnitudes are multiples of <i>E,</i> whatever justification Euclid intended back in proposition <a href="../bookVII/propVII2.html">VII.2</a> works just as well here.  Euclid did, however, put X.1 just before this proposition, perhaps for an intended logical connection.  If so, there is a missing statement to the effect that <i>GB</i> is greater than half of <i>AB,</i>  and so forth, so that X.1 might be invoked.
+
+<h4>An example of incommensurable magnitudes</h4>
+
+<table cellpadding=5>
+<tr><td>
+Consider the 36&deg;-72&deg;-72&deg; triangle constructed <i>ABC</i> in proposition <a href="../bookIV/propIV10.html">IV.10</a>.  This triangle was used in the following proposition <a href="../bookIV/propIV11.html">IV.11</a> to construct regular pentagons.  When its base <i>BC</i> is 
+subtracted from a side <i>AC</i> then the remainder <i>CD</i> is the base of a similar triangle <i>BCD.</i>  Likewise, when the base <i>CD</i> of this new triangle is subtracted from its side <i>BD</i> then the remainder <i>DE</i> is the base of yet another smaller similar triangle <i>CDE.</i> And so forth.
+
+<p>Thus, when we begin with the two lines <i>AB</i> and <i>BC</i> and apply the algorithm of antenaresis to them, we get a series of lines which never ends <i>AB, BC, CD, DE, EF,</i> and so forth, and these lines form a never-ending continued proportion.
+<p><center>
+<i>AB</i>&nbsp;:&nbsp;<i>BC</i> = <i>BC</i>&nbsp;:&nbsp;<i>CD</i> = <i>CD</i>&nbsp;:&nbsp;<i>DE</i> = <i>DE</i>&nbsp;:&nbsp;<i>EF</i> = ...
+</center><p>
+Thus, according to this proposition, the two quantities <i>AB</i> and <i>BC</i> are incommensurable.
+
+<p>Cutting the line <i>AB</i> at <i>C</i> to make this ratio <i>AB</i>&nbsp;:&nbsp;<i>BC</i> is called in <a href="../bookVI/defVI3.html">VI.Def.3</a> cutting <i>AB</i> into extreme and mean ratio.  A more recent name for this ratio is the &ldquo;golden ratio.&rdquo;
+</td>
+<td>
+<canvas id="canvas_1" width="230" height="320" tabindex="0"></canvas>
+<noscript><img alt="a series of triangles" src="propX2a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "A pentagram",
+        elements: [
+            "C;point;free;40,280",
+            "B;point;free;190,280",
+            "ABCDE;polygon;regularPolygon;C,B,5;0;0;0;0",
+            "A;point;vertex;ABCDE,4",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;similar;B,C,A,B,C",
+            "BCD;polygon;triangle;B,C,D;0;0;black;random",
+            "E;point;similar;C,D,B,C,D",
+            "CDE;polygon;triangle;C,D,E;0;0;black;random",
+            "F;point;similar;D,E,C,D,E",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "G;point;similar;E,F,D,E,F",
+            "EFG;polygon;triangle;E,F,G;0;0;black;random",
+            "H;point;similar;F,G,E,F,G;0",
+            "FGH;polygon;triangle;F,G,H;0;0;black;random"
+        ],
+    });
+</script></td></tr>
+</table>
+
+
+<h4>Use of this proposition</h4>
+
+<p>This proposition is used in the next one. 
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

@@ -1,0 +1,93 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book XI, Proposition 27</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+
+<h1>Proposition 27</h1>
+
+<div class="statement">
+To describe a parallelepipedal solid similar and similarly situated to a given parallelepipedal solid on a given straight line.</div>
+
+<p>Let <i>AB</i> be the given straight line and <i>CD</i> the given parallelepipedal solid.
+
+<p>It is required to describe on the given straight line <i>AB</i> a parallelepipedal solid similar and similarly situated to the given parallelepipedal solid <i>CD.</i>
+
+<center>
+<canvas id="canvas_0" width="600" height="220" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propXI27.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.27",
+        elements: [
+            "C0;point;free;-1000,180;0;0",
+            "C3;point;free;1000,180;0;0",
+            "A;point;lineSlider;C0,C3,390,0",
+            "B;point;lineSlider;C0,C3,500,0",
+            "C;point;lineSlider;C0,C3,100,0",
+            "E;point;lineSlider;C0,C3,240,0",
+            "F;point;free;60,100",
+            "G;point;free;120,120",
+            "N;point;parallelogram;F,C,G;0",
+            "O;point;parallelogram;F,C,E;0",
+            "P;point;parallelogram;G,C,E;0",
+            "D;point;parallelogram;N,G,P",
+            "NFCG;polygon;quadrilateral;N,F,C,G;0;0;black;random",
+            "NGPD;polygon;quadrilateral;N,G,P,D;0;0;black;random",
+            "CEPG;polygon;quadrilateral;C,E,P,G;0;0;black;random",
+            "FO;line;connect;F,O",
+            "DO;line;connect;D,O",
+            "EO;line;connect;E,O",
+            "H;point;similar;B,A,E,C,F",
+            "K;point;similar;B,A,E,C,G",
+            "R;point;parallelogram;B,A,K;0",
+            "M;point;parallelogram;B,A,H",
+            "Q;point;parallelogram;H,A,K;0",
+            "L;point;parallelogram;M,A,K",
+            "QHAK;polygon;quadrilateral;Q,H,A,K;0;0;black;random",
+            "ABRK;polygon;quadrilateral;A,B,R,K;0;0;black;random",
+            "QKRL;polygon;quadrilateral;Q,K,R,L;0;0;black;random",
+            "HM;line;connect;H,M",
+            "LM;line;connect;L,M",
+            "BM;line;connect;B,M"
+        ],
+    });
+</script></center>
+
+<div class="just"><a href="propXI26.html">XI.26</a>
+<br><a href="../bookVI/propVI12.html">VI.12</a></div>
+<p>Construct the solid angle contained by the angles <i>BAH, HAK,</i> and <i>KAB</i> at the point <i>A</i> on the straight line <i>AB</i> equal to the solid angle <i>C</i> so that the angle <i>BAH</i> equals the angle <i>ECF,</i> the angle <i>BAK</i> equals the angle <i>ECG,</i> and the angle <i>KAH</i> equals the angle <i>GCF,</i>so that <i>EC</i> is to <i>CG</i> as <i>BA</i> is to <i>AK,</i> and <i>GC</i> is to <i>CF</i> as <i>KA</i> is to <i>AH.</i>
+
+<div class="just"><a href="../bookV/propV22.html">V.22</a></div>
+<p>Therefore, <i>ex aequali, EC</i> is to <i>CF</i> as <i>BA</i> is to <i>AH.</i>
+
+<p>Complete the parallelogram <i>HB</i> and the solid <i>AL.</i>
+
+<p>Now since <i>EC</i> is to <i>CG</i> as <i>BA</i> is to <i>AK,</i> and the sides about the equal angles <i>ECG</i> and <i>BAK</i> are thus proportional, therefore the parallelogram <i>GE</i> is similar to the parallelogram <i>KB.</i>  For the same reason the parallelogram <i>KH</i> is similar to the parallelogram <i>GF,</i> and also <i>FE</i> is similar to <i>HB.</i>
+
+<div class="just"><a href="defXI9.html">XI.Def.9</a></div>
+<p>Therefore three parallelograms of the solid <i>CD</i> are similar to three parallelograms of the solid <i>AL.</i> But the former three are both equal and similar to the three opposite parallelograms, and the latter three are both equal and similar to the three opposite parallelograms, therefore the whole solid <i>CD</i> is similar to the whole solid <i>AL.</i>
+
+<p>Therefore on the given straight line <i>AB</i> there has been described <i>AL</i> similar and similarly situated to the given parallelepipedal solid <i>CD.</i>
+
+<div class="qed">Q.E.F.</div>
+</div>
+
+<h2>Guide</h2>
+
+This proposition is analogous to proposition <a href="../bookVI/propVI18.html">VI.18</a> which constructs a similar plane figure on a line, but it is not as general since it applies only to parallelepipeds and not all polyhedra.  It is not used later in the <i>Elements.</i>
+
+<div id="footer"></div>
+<script>
+  loadFooter("1997");
+</script>
+</BODY></HTML>

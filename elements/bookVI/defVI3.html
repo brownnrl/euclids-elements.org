@@ -1,0 +1,56 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book VI, Definition 3</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Definition 3</h1>
+
+<div class="statement">A straight line is said to have been <i>cut in extreme and mean ratio</i> when, as the whole line is to the greater segment, so is the greater to the less.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+<center><table cellspacing=5>
+<tr><td>The line <i>AB</i> is cut in extreme and mean ratio at <i>C</i> since <i>AB</i>&nbsp;:&nbsp;<i>AC</i>&nbsp;=&nbsp;<i>AC</i>&nbsp;:&nbsp;<i>CB.</i></td>
+
+<td><canvas id="canvas_0" width="210" height="70" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="defVI3.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.Def.3",
+        elements: [
+            "A;point;free;30,40",
+            "B;point;free;180,40",
+            "AB;line;connect;A,B",
+            "BDE;circle;radius;A,B;0;0;0;0",
+            "G;point;perpendicular;A,B;0;0",
+            "K;point;midpoint;A,G;0;0",
+            "F;point;extend;G,K,K,B;0;0",
+            "C;point;cutoff;A,B,A,F"
+        ],
+    });
+</script></td></tr>
+
+<tr><td colspan=2>A construction to cut a line in this manner first appeared in Book II, proposition <a href="../bookII/propII11.html">II.11</a>.  Of course that was before ratios were defined, and there an equivalent condition was stated in terms of rectangles, namely, that the square on <i>AC</i> equal the rectangle <i>AB</i> by <i>BC.</i> That construction was later used in Book IV in order to construct regular pentagons and 15-sided polygons (propositions <a href="../bookIV/propIV10.html">IV.10</a> through 12 and 16).
+
+<p>Now that the theory of ratios and proportions has been developed, it is time to define this section as a ratio, rather than using rectangles.  An alternate construction is given in proposition <a href="propVI30.html">VI.30</a>.
+
+<p>Yet one more characterization of cutting a line in extreme and mean ratio appears in Book XIII proposition <a href="../bookXIII/propXIII1.html">XIII.1</a>: the square on the greater segment added to the half of the whole is five times the square on the half.  That property is used to analyze the sides of the icosahedron and dodecahedron constructed in propositions <a href="../bookXIII/propXIII16.html">XIII.16</a> and <a href="../bookXIII/propXIII17.html">XIII.17</a>
+
+</td></tr></table></center>
+
+<div id="footer"></div>
+<script>
+  loadFooter("1997, 2013");
+</script>
+</BODY></HTML>

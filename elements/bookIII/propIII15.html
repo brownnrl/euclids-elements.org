@@ -1,0 +1,98 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book III, Proposition 15</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 15</h1>
+
+<div class="statement">Of straight lines in a circle the diameter is greatest, and of the rest the nearer to the center is always greater than the more remote. </div>
+
+<p>Let <i>ABCD</i> be a circle, <i>AD</i> its diameter, and <i>E</i> its center.  Let <i>BC</i> be nearer to the center <i>AD,</i> and <i>FG</i> more remote. 
+
+<p>I say that <i>AD</i> is greatest and <i>BC</i> greater than <i>FG.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="280" height="280" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.15",
+        pivot: "E",
+        elements: [
+            "A;point;free;140,35",
+            "D;point;free;140,245",
+            "E;point;midpoint;A,D;black;green",
+            "ABCD;circle;radius;E,A;0;0;black;random",
+            "AD;line;connect;A,D",
+            "B;point;circleSlider;ABCD,200,60",
+            "C;point;circleSlider;ABCD,170,200",
+            "F;point;circleSlider;ABCD,50,80",
+            "G;point;circleSlider;ABCD,40,160",
+            "BC;line;connect;B,C",
+            "FG;line;connect;F,G",
+            "H;point;foot;E,BC",
+            "K;point;foot;E,FG",
+            "EH;line;connect;E,H",
+            "EK;line;connect;E,K",
+            "L;point;cutoff;E,K,E,H",
+            "LL';line;perpendicular;L,E;0;0;0",
+            "MN;line;chord;LL',ABCD",
+            "M;point;first;MN",
+            "N;point;last;MN",
+            "EF;line;connect;E,F",
+            "EG;line;connect;E,G",
+            "EM;line;connect;E,M",
+            "EN;line;connect;E,N"
+        ],
+    });
+</script></div>
+
+<div class="just"><a href="../bookI/propI12.html">I.12</a></div>
+<p>Draw <i>EH</i> and <i>EK</i> from the center <i>E</i> perpendicular to <i>BC</i> and <i>FG.</i>
+
+<div class="just"><a href="defIII4.html">III.Def.5</a></div>
+<p>Then, since <i>BC</i> is nearer to the center and <i>FG</i> more remote, <i>EK</i> is greater than <i>EH.</i>
+
+<div class="just"><a href="../bookI/propI3.html">I.3</a>
+<br><a href="../bookI/propI11.html">I.11</a></div>
+<p>Make <i>EL</i>  equal to <i>EH.</i> Draw <i>LM</i> through <i>L</i> at right angles to <i>EK,</i> and carry it through to <i>N.</i> Join <i>ME, EN, FE,</i> and <i>EG.</i>
+
+
+<div class="just"><a href="propIII14.html">III.14</a></div>
+<p>Then, since <i>EH</i> equals <i>EL, BC</i> also equals <i>MN.</i>
+
+<p>Again, since <i>AE</i> equals <i>EM,</i> and <i>ED</i> equals <i>EN, AD</i> equals the sum of <i>ME</i> and <i>EN.</i>
+
+<div class="just"><a href="../bookI/propI20.html">I.20</a></div>
+<p>But the sum of <i>ME</i> and <i>EN</i> is greater than <i>MN,</i> and <i>MN</i> equals <i>BC,</i> therefore <i>AD</i> is greater than <i>BC.</i>
+
+<div class="just"><a href="../bookI/propI24.html">I.24</a></div>
+<p>And, since the two sides <i>ME</i> and <i>EN</i> equal the two sides <i>FE</i> and <i>EG,</i> and the angle <i>MEN</i> greater than the angle <i>FEG,</i> therefore the base <i>MN</i> is greater than the base <i>FG.</i>
+
+<p>But <i>MN</i> was proved equal to <i>BC.</i> 
+
+<p>Therefore the diameter <i>AD</i> is greatest and <i>BC</i> greater than <i>FG.</i>
+
+<p>Therefore <i>of straight lines in a circle the diameter is greatest, and of the rest the nearer to the center is always greater than the more remote.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is not used in the rest of the <i>Elements.</i>
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

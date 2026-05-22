@@ -1,0 +1,73 @@
+<HTML><HEAD><TITLE>Euclid's Elements, Book XI, Definitions 21 through 23</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Definition 21</h1>
+
+<div class="statement">When a rectangular parallelogram with one side of those about the right angle remains fixed is carried round and restored again to the same position from which it began to be moved, the figure so comprehended is a cylinder.</div>
+</div>
+
+<br>
+
+<div class="theorem">
+<h1>Definition 22</h1>
+
+<div class="statement">The axis of the cylinder is the straight line which remains fixed and about which the parallelogram is turned.</div>
+</div>
+
+<br>
+
+<div class="theorem">
+<h1>Definition 23</h1>
+
+<div class="statement">And the bases are the circles described by the two sides opposite to one another which are carried round.</div>
+</div>
+
+<h2>Guide</h2>
+
+<table cellspacing=5>
+<tr><td>Rectangle <i>ABEC</i> is rotated around the side <i>AC</i> to produce a cylinder.  Its axis is <i>AC</i> and it has two circles for bases.
+
+<p>The concept of cylinder has been generalized since Euclid&rsquo;s time as have so many ancient mathematical concepts.  Euclid&rsquo;s cylinders are right, circular cylinders since their axes are at right angles to their bases and their bases are circles.</td>
+
+<td>
+<canvas id="canvas_0" width="170" height="220" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="defXI21.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "Def.XI.21-23",
+        elements: [
+            "origin;point;free;70,220;0;0",
+            "z;point;fixed;70,80,100;0;0",
+            "xyplane;plane;perpendicular;origin,z;0;0;0;0",
+            "A;point;planeSlider;xyplane,80,120,0",
+            "B;point;planeSlider;xyplane,120,120,0",
+            "D;point;extend;B,A,B,A;0",
+            "C';point;perpendicular;A,xyplane,A,B;0;0",
+            "C;point;lineSlider;A,C',70,140,200",
+            "E;point;parallelogram;C,A,B",
+            "F;point;parallelogram;C,A,D",
+            "Acircle;circle;radius;A,B,xyplane;0;0;black;150,50,100",
+            "Cplane;plane;parallel;xyplane,C;0;0;0;0",
+            "Ccircle;circle;radius;C,E,Cplane;0;0;black;150,50,100",
+            "CBD;polygon;quadrilateral;B,D,F,E;0;0;black;150,50,100",
+            "AC;line;connect;A,C"
+        ],
+    });
+</script>
+</td></tr></table>
+
+<div id="footer"></div>
+<script>
+  loadFooter("1998");
+</script>
+</BODY></HTML>

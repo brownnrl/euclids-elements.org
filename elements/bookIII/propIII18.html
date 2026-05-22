@@ -1,0 +1,75 @@
+<HTML><HEAD>
+<TITLE>Euclid's Elements, Book III, Proposition 18</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+<h1>Proposition 18</h1>
+
+<div class="statement">If a straight line touches a circle, and a straight line is joined from the center to the point of contact, the straight line so joined will be perpendicular to the tangent.</div>
+
+<div class="just"><a href="propIII1.html">III.1</a></div>
+<p>For let a straight line <i>DE</i> touch the circle <i>ABC</i> at the point <i>C.</i>  Take the center <i>F</i> of the circle <i>ABC,</i> and join <i>FC</i> from <i>F</i> to <i>C.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="330" height="260" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propIII18.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.18",
+        pivot: "F",
+        elements: [
+            "A;point;free;50,60;black",
+            "C;point;free;210,190",
+            "F;point;midpoint;A,C;black;green",
+            "ABC;circle;radius;F,C;0;0;black;random",
+            "CF;line;connect;C,F",
+            "CD';line;perpendicular;CF;0;0;0",
+            "D;point;lineSlider;CD',270,80;black;0",
+            "E;point;lineSlider;CD',160,230;black;0",
+            "DE;line;connect;D,E",
+            "G;point;lineSlider;CD',240,110",
+            "GF;line;connect;G,F",
+            "B;point;cutoff;F,G,F,C"
+        ],
+    });
+</script></div>
+
+<p>I say that <i>FC</i> is perpendicular to <i>DE.</i>
+
+<div class="just"><a href="../bookI/propI12.html">I.12</a></div>
+<p>For, if not, draw <i>FG</i> from <i>F</i> perpendicular to <i>DE.</i>
+
+<div class="just"><a href="../bookI/propI17.html">I.17</a>
+<br><a href="../bookI/propI19.html">I.19</a></div>
+<p>Then, since the angle <i>FGC</i> is right, the angle <i>FCG</i> is acute, and the side opposite the greater angle is greater, therefore <i>FC</i> is greater than <i>FG.</i>
+
+<p>But <i>FC</i> equals <i>FB,</i> therefore <i>FB</i> is also greater than <i>FG,</i> the less greater than the greater, which is impossible.
+
+<p>Therefore <i>FG</i> is not perpendicular to <i>DE.</i> 
+
+<p>Similarly we can prove that neither is any other straight line except <i>FC.</i> Therefore <i>FC</i> is perpendicular to <i>DE.</i>
+
+<p>Therefore <i>if a straight line touches a circle, and a straight line is joined from the center to the point of contact, the straight line so joined will be perpendicular to the tangent.</i>
+
+<div class="qed">Q.E.D.</div>
+<br clear=all>
+</div>
+
+<a name=guide><h2>Guide</h2></a>
+
+This proposition is used in <a href="propIII19.html">III.19</a>, <a href="propIII36.html">III.36</a>, and a other propositions in Books III and IV.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1996");
+</script>
+</BODY></HTML>

@@ -1,0 +1,88 @@
+<HTML>
+<HEAD><TITLE>Euclid's Elements, Book XI, Proposition 16</TITLE>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="/js/header-footer.js"></script>
+<script src="https://unpkg.com/@brownnrl/geomlib@0.1.0/dist/bundle.js" type="text/javascript"></script>
+</HEAD>
+<BODY>
+
+<div id="header"></div>
+<script>loadHeader();</script>
+
+<div class="theorem">
+
+<h1>Proposition 16</h1>
+
+<div class="statement">
+If two parallel planes are cut by any plane, then their intersections are parallel.</div>
+
+<div class="just"><a href="propXI3.html">XI.3</a></div>
+<p>Let the two parallel planes <i>AB</i> and <i>CD</i> be cut by the plane <i>EFGH,</i> and let <i>EF</i> and <i>GH</i> be their intersections.
+
+<p>I say that <i>EF</i> is parallel to <i>GH.</i>
+
+<p>If not, then <i>EF</i> and <i>GH</i> will, when produced, meet either in the direction of <i>F</i> and <i>H</i> or in the direction of <i>E</i> and <i>G.</i>
+
+<div class="ldiagram">
+<canvas id="canvas_0" width="320" height="230" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="propXI16.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.16",
+        elements: [
+            "X;point;free;100000,200",
+            "Y;point;free;200,-100000",
+            "Z;point;free;30000,-100000",
+            "A;point;free;40,100",
+            "B;point;free;170,30",
+            "P1;point;intersection;A,X,B,Z;0;0",
+            "P3;point;intersection;B,X,A,Z;0;0",
+            "P;polygon;quadrilateral;A,P1,B,P3;0;0;gray;brighter",
+            "C;point;free;40,180",
+            "D;point;free;170,110",
+            "Q1;point;intersection;C,X,D,Z;0;0",
+            "Q3;point;intersection;D,X,C,Z;0;0",
+            "Q;polygon;quadrilateral;C,Q1,D,Q3;0;0;gray;brighter",
+            "E;point;lineSlider;A,P3,40,50",
+            "F;point;intersection;E,X,B,P1",
+            "EF;line;connect;E,F",
+            "G;point;lineSlider;C,Q3,60,160",
+            "H;point;intersection;G,X,D,Q1",
+            "GH;line;connect;G,H",
+            "EG;line;connect;E,G",
+            "FH;line;connect;F,H",
+            "M;point;midpoint;E,G;0;0",
+            "K;point;lineSlider;M,X,270,100",
+            "FK;line;connect;F,K",
+            "HK;line;connect;H,K"
+        ],
+    });
+</script></div>
+
+<p>First, let them meet when produced in the direction of <i>F</i> and <i>H</i> at <i>K.</i>
+
+<div class="just"><a href="propXI1.html">XI.1</a></div>
+<p>Now, since <i>EFK</i> lies in the plane <i>AB,</i> therefore all the points on <i>EFK</i> also lie in the plane <i>AB.</i>  But <i>K</i> is one of the points on the straight line <i>EFK,</i> therefore <i>K</i> lies in the plane <i>AB.</i>  For the same reason <i>K</i> also lies in the plane <i>CD.</i>  Therefore the planes <i>AB</i> and <i>CD</i> will meet when produced.
+
+<p>But they do not meet, because, by hypothesis, they are parallel.  Therefore the straight lines <i>EF</i> and <i>GH</i> do not meet when produced in the direction of <i>F</i> and <i>H.</i>
+
+<p>Similarly we can prove that neither do the straight lines <i>EF</i> and <i>GH</i> meet when produced in the direction of <i>E</i> and <i>G.</i>
+
+<p>But straight lines which do not meet in either direction are parallel.  Therefore <i>EF</i> is parallel to <i>GH.</i>
+
+<p>Therefore, <i>if two parallel planes are cut by any plane, then their intersections are parallel.</i>
+
+<div class="qed">Q.E.D.</div>
+</div>
+
+<h2>Guide</h2>
+
+This proposition is used in the proof of the next proposition as well as proposition <a href="propXI24.html">XI.24</a>.
+
+<div id="footer"></div>
+<script>
+  loadFooter("1997");
+</script>
+</BODY></HTML>
