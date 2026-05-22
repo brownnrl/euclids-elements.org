@@ -816,7 +816,8 @@ function loadFooter(copyrightDates){
   // that finishes the table of links
   //finish up the footer
   footerText+="<hr size=6><p>";
-  footerText+="<font size=-1>\u00A9"+copyrightDates;
+  footerText+="<font size=-1><a href='/'>Home</a>";
+  footerText+="<br>\u00A9"+copyrightDates;
   footerText+="<br>David E. Joyce (Professor Emeritus, <a href='http://www.clarku.edu/'>Clark University</a>)";
   footerText+="<br><a href='/copyright.html'>Copyright Notice</a>";
   footerText+="</font size>";
