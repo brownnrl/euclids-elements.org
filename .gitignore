@@ -3,3 +3,6 @@
 *.swp
 __pycache__/
 *.pyc
+
+# c8 raw coverage data — only the HTML report under geomlib/coverage/ is shipped
+geomlib/coverage/tmp/
