@@ -78,6 +78,24 @@ the Pages site. DNS for the apex needs A records pointing at GitHub
 Pages' four IPs (185.199.108.153, 185.199.109.153, 185.199.110.153,
 185.199.111.153) and/or an `AAAA` set for IPv6.
 
+## Mobile testing
+
+A Cloudflare Workers Static Assets project also builds this repo on
+every push to `main` and serves it at
+[`euclids-elements-org.brownnrl.workers.dev`](https://euclids-elements-org.brownnrl.workers.dev/).
+That URL is the one to load on a phone when iterating on
+responsive-layout changes — `localhost:8000` isn't reachable from a
+mobile device, and pushing untested CSS to the canonical
+`euclids-elements.org` would interrupt readers.
+
+[`.assetsignore`](.assetsignore) (same syntax as `.gitignore`)
+controls what the CF build skips when uploading assets. The 25 MiB
+per-file limit is the main constraint; add patterns there if more
+excludable files appear.
+
+Production canonical URL remains `https://www.euclids-elements.org/`.
+The `workers.dev` URL is a parallel mirror, not a replacement.
+
 ## Licensing
 
 - **Content** (everything under `elements/`, `geomlib/compass/`,
