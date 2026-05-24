@@ -7,7 +7,7 @@ body
   font-family: 'Felipa';
   font-style: normal;
   font-weight: 400;
-  src: local('Felipa'), local('Felipa-Regular'), url(http://themes.googleusercontent.com/static/fonts/felipa/v1/CGA4sfSyBqMA9-nMl4k29-vvDin1pK8aKteLpeZ5c0A.ttf) format('truetype');
+  src: local('Felipa'), local('Felipa-Regular'), url(https://themes.googleusercontent.com/static/fonts/felipa/v1/CGA4sfSyBqMA9-nMl4k29-vvDin1pK8aKteLpeZ5c0A.ttf) format('truetype');
 }
 
 h1 {font-family: 'Felipa';
@@ -134,4 +134,31 @@ div.threecolumn
   -moz-column-count:3; /* Firefox */
   -webkit-column-count:3; /* Safari and Chrome */
   column-count:3;
+}
+
+/* --- Phase 1 mobile-readability patch (issue #4) --- */
+/* Temporary. Proper template-driven redesign lands with the SSG
+   migration in #13. */
+
+/* Canvas sizing is intentionally not constrained here. With CSS scaling
+   (`max-width: 100%`), the canvas bitmap stays at its declared size while
+   display size shrinks, so touch coordinates can mismatch hit-testing.
+   geomlib 0.2.0 ships a Pointer Events refactor (brownnrl/euclid#55) that
+   resolves the underlying coord-mapping problem and sets
+   `touch-action: none` on each canvas from JS, so no `canvas { ... }`
+   rule is needed here. */
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .ldiagram, .rdiagram {
+        float: none;
+        width: auto;
+    }
+    .just {
+        float: none;
+        width: auto;
+    }
 }

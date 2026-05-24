@@ -37,7 +37,7 @@ python3 -m http.server 8000
 ```
 
 Click into any proposition. The `geomlib` bundle is loaded from
-`https://unpkg.com/@brownnrl/geomlib@0.1.1/dist/bundle.js`. Drag a free
+`https://unpkg.com/@brownnrl/geomlib@0.2.0/dist/bundle.js`. Drag a free
 point (red) and the rest of the construction follows.
 
 ## Updating the geomlib bundle version

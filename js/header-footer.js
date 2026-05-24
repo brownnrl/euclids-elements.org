@@ -3,6 +3,23 @@
 // booktable is a list of the 13 books
 //   first the subdirectory, then the Book name
 //
+
+// Inject a viewport meta tag at script-load time so phone browsers
+// don't render at desktop width. This runs in <head> (the script tag
+// is in <head>), before the body is laid out. Run-once guard avoids
+// double-injecting on pages that already declare viewport. No
+// maximum-scale cap — that's an accessibility anti-pattern (blocks
+// pinch-zoom for low-vision users).
+(function () {
+    if (!document.querySelector('meta[name="viewport"]')) {
+        var meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content = "width=device-width, initial-scale=1.0";
+        document.head.appendChild(meta);
+    }
+})();
+
+
 var booktable=[
     ["bookI","Book I"],
     ["bookII","Book II"],
