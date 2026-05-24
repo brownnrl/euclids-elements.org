@@ -140,16 +140,13 @@ div.threecolumn
 /* Temporary. Proper template-driven redesign lands with the SSG
    migration in #13. */
 
-/* Don't scale canvases with `max-width: 100%`. CSS-scaling the
-   canvas leaves the bitmap at its declared width/height, so touch
-   events (which fire in CSS pixels) no longer line up with
-   geomlib's hit-testing (which is in canvas-internal pixels). The
-   pages still have a "maximize" button for users who want a bigger
-   view. Proper fix lives in geomlib (event-coord → canvas-coord
-   mapping); see brownnrl/euclid#55. */
-canvas {
-    touch-action: manipulation;
-}
+/* Canvas sizing is intentionally not constrained here. With CSS scaling
+   (`max-width: 100%`), the canvas bitmap stays at its declared size while
+   display size shrinks, so touch coordinates can mismatch hit-testing.
+   geomlib 0.2.0 ships a Pointer Events refactor (brownnrl/euclid#55) that
+   resolves the underlying coord-mapping problem and sets
+   `touch-action: none` on each canvas from JS, so no `canvas { ... }`
+   rule is needed here. */
 
 @media (max-width: 768px) {
     body {
