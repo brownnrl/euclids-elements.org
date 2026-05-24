@@ -6,3 +6,10 @@ __pycache__/
 
 # c8 raw coverage data — only the HTML report under geomlib/coverage/ is shipped
 geomlib/coverage/tmp/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
