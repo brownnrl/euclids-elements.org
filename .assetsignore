@@ -10,3 +10,7 @@
 
 # Maintenance script for re-running the wget→site migration
 migrate.py
+
+# Worker entrypoint — runs on the edge, not served as a static asset
+_worker.js
+wrangler.jsonc

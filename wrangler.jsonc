@@ -1,13 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "euclids-elements-org",
+  "main": "./_worker.js",
   "compatibility_date": "2026-05-24",
   "observability": {
     "enabled": true
   },
   "assets": {
     "directory": ".",
-    "html_handling": "none"
+    "html_handling": "none",
+    "binding": "ASSETS"
   },
   "compatibility_flags": [
     "nodejs_compat"
