@@ -135,3 +135,28 @@ div.threecolumn
   -webkit-column-count:3; /* Safari and Chrome */
   column-count:3;
 }
+
+/* --- Phase 1 mobile-readability patch (issue #4) --- */
+/* Temporary. Proper template-driven redesign lands with the SSG
+   migration in #13. */
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .ldiagram, .rdiagram {
+        float: none;
+        width: auto;
+    }
+    .just {
+        float: none;
+        width: auto;
+    }
+}
