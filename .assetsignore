@@ -1,0 +1,12 @@
+# Files excluded from Cloudflare Workers Static Assets upload.
+# Format: same as .gitignore.
+# https://developers.cloudflare.com/workers/static-assets/binding/
+
+# Repo internals — present in CF's build clone but never deployable
+.git/
+.github/
+.gitignore
+.assetsignore
+
+# Maintenance script for re-running the wget→site migration
+migrate.py
