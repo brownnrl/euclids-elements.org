@@ -1,0 +1,90 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 17</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 17</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 17</h1>
+<div class="statement">In any triangle the sum of any two angles is less than two right angles.</div>
+<p>Let <em>ABC</em> be a triangle.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.17 diagram" src="propI17.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.17",
+        elements: [
+            "A;point;free;80,30",
+            "B;point;free;30,180",
+            "C;point;free;140,180",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;lineSlider;B,C,220,180",
+            "BD;line;connect;B,D"
+        ],
+    });
+</script>
+</figure><p>I say that the sum of any two angles of the triangle <em>ABC</em> is less than two right angles.</p>
+<div class="just"><a href="../../postulates/post2/">I.Post.2</a></div><p>Produce <em>BC</em> to <em>D.</em></p>
+<div class="just"><a href="../propI16/">I.16</a><br><a href="../../commonnotions/cn1/">C.N.</a></div><p>Since the angle <em>ACD</em> is an exterior angle of the triangle <em>ABC,</em> therefore it is greater than the interior and opposite angle <em>ABC.</em> Add the angle <em>ACB</em> to each. Then the sum of the angles <em>ACD</em> and <em>ACB</em> is greater than the sum of the angles <em>ABC</em> and <em>BCA.</em></p>
+<div class="just"><a href="../propI13/">I.13</a></div><p>But the sum of the angles <em>ACD</em> and <em>ACB</em> is equal to two right angles. Therefore the sum of the angles <em>ABC</em> and <em>BCA</em> is less than two right angles.</p>
+<p>Similarly we can prove that the sum of the angles <em>BAC</em> and <em>ACB</em> is also less than two right angles, and so the sum of the angles <em>CAB</em> and <em>ABC</em> as well.</p>
+<p>Therefore <em>in any triangle the sum of any two angles is less than two right angles.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>The statements</p>
+<blockquote><p>... the angle <em>ACD</em> ... is greater than the interior and opposite angle <em>ABC.</em> Add the angle <em>ACB</em> to each. Then the sum of the angles <em>ACD</em> and <em>ACB</em> is greater than the sum of the angles <em>ABC</em> and <em>BCA.</em></p>
+</blockquote>
+<p>use the property of magnitudes</p>
+<blockquote><p>If <em>x</em> &gt; <em>y,</em> then <em>x</em> + <em>z</em> &gt; <em>y</em> + <em>z.</em></p>
+</blockquote>
+<p>This property is not listed among the <a href="../../commonnotions/cn1/">Common Notions</a>.</p>
+<p>This proposition is strengthened in Proposition <a href="../propI32/">I.32</a> to say the sum of all three angles in a triangle equals two right angles.</p>
+<h4>Use of Proposition 17</h4>
+<p>This proposition is used in <a href="../../../bookIII/propositions/propIII16/">III.16</a> and a couple other propositions of Books III, and a few in Books VI and XI.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

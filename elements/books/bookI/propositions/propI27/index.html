@@ -1,0 +1,133 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 27</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 27</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 27</h1>
+<div class="statement">If a straight line falling on two straight lines makes the alternate angles equal to one another, then the straight lines are parallel to one another.</div>
+<p>Let the straight line <em>EF</em> falling on the two straight lines <em>AB</em> and <em>CD</em> make the alternate angles <em>AEF</em> and <em>EFD</em> equal to one another.</p>
+<p>I say that <em>AB</em> is parallel to <em>CD.</em></p>
+<p>If not, <em>AB</em> and <em>CD</em> when produced meet either in the direction of <em>B</em> and <em>D</em> or towards <em>A</em> and <em>C.</em></p>
+<p>Let them be produced and meet, in the direction of <em>B</em> and <em>D,</em> at <em>G.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="140" tabindex="0"></canvas>
+<noscript><img alt="I.27 diagram" src="propI27.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.27",
+        elements: [
+            "A;point;free;40,40",
+            "B;point;free;160,40;0,0,0;0",
+            "AB;line;connect;A,B",
+            "C;point;free;40,80",
+            "CD;line;parallel;C,A,B",
+            "D;point;last;CD;0,0,0;0",
+            "E;point;lineSlider;AB,100,40",
+            "F;point;lineSlider;CD,120,80",
+            "E';point;extend;F,E,F,E;0;0",
+            "F';point;extend;E,F,E,F;0;0",
+            "EF;line;connect;E',F'",
+            "M;point;midpoint;A,C;0;0",
+            "N;point;midpoint;B,D;0;0",
+            "G;point;lineSlider;M,N,240,50",
+            "BG;line;connect;B,G",
+            "DG;line;connect;D,G"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../propI16/">I.16</a></div><p>Then, in the triangle <em>GEF,</em> the exterior angle <em>AEF</em> equals the interior and opposite angle <em>EFG,</em> which is impossible.</p>
+<p>Therefore <em>AB</em> and <em>CD</em> when produced do not meet in the direction of <em>B</em> and <em>D.</em></p>
+<p>Similarly it can be proved that neither do they meet towards <em>A</em> and <em>C.</em></p>
+<div class="just"><a href="../../definitions/defI23/">I.Def.23</a></div><p>But straight lines which do not meet in either direction are parallel. Therefore <em>AB</em> is parallel to <em>CD.</em></p>
+<p>Therefore <em>if a straight line falling on two straight lines makes the alternate angles equal to one another, then the straight lines are parallel to one another.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>There is implicitly assumed an ambient plane. The term alternate angles doesn't have a meaning unless the lines all lie in a plane.</p>
+<p>Note that Euclid does not consider two other possible ways that the two lines could meet, namely, in the directions <em>A</em> and <em>D</em> or toward <em>B</em> and <em>C.</em></p>
+<h4>About logical converses, contrapositives, and inverses</h4>
+<p>Although this is the first proposition about parallel lines, it does not require the parallel postulate <a href="../../postulates/post5/">Post.5</a> as an assumption. This proposition I.27 and the parallel postulate can be made to look more similar if they are reworded (with the help of <a href="../propI13/">I.13</a>).</p>
+<p><strong>Proposition 1.27.</strong> If a straight line falls on two straight lines, then if the alternate angles are equal, then the straight lines do not meet.</p>
+<p><strong>Postulate 5.</strong> If a straight line falls on two straight lines, then if the alternate angles are not equal, then the straight lines meet [on a certain side of the line].</p>
+<p>If the remark about the side is dropped, then the conclusions are logical inverses of each other, and the logical inverse of a statement is logically equivalent to the converse.</p>
+<p>This little table summarizes the logical relations between similarly looking statements.</p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Statement</td>
+<td>If <em>P</em> then <em>Q.</em></td>
+<td></td>
+</tr>
+<tr>
+<td>Converse</td>
+<td>If <em>Q</em> then <em>P.</em></td>
+<td>Not logically equivalent to the statement.</td>
+</tr>
+<tr>
+<td>Contrapositive</td>
+<td>If not <em>Q</em> then not <em>P.</em></td>
+<td>Logically equivalent to the statement.</td>
+</tr>
+<tr>
+<td>Inverse</td>
+<td>If not <em>P</em> then not <em>Q.</em></td>
+<td>Logically equivalent to the converse.</td>
+</tr>
+</tbody>
+</table>
+<p>Although the contrapositive is logically equivalent to the statement, Euclid always proves the contrapositive separately using a proof by contradiction and the original statement. Similarly, the inverse is proved using the converse. Sometimes all four statements appear in separate propositions as in propositions <a href="../../../bookX/propositions/propX5/">X.5</a> through X.8. Other times the four appear as four statements in one proposition as in <a href="../../../bookX/propositions/propX9/">X.9</a>. More often than not, however, the contrapositive and inverse make no appearance, and, of course, the converse only appears when it can be proved.</p>
+<h4>Use of Proposition 27</h4>
+<p>At this point, parallel lines have yet to be constructed. That occurs in proposition <a href="../propI31/">I.31</a> which uses this proposition to verify that lines constructed there are parallel. This proposition is also used in the next one and in <a href="../propI33/">I.33</a>.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 10</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 10</h1>
+<div class="statement">To bisect a given finite straight line.</div>
+<p>Let <em>AB</em> be the given finite straight line.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="240" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.10 diagram" src="propI10.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.10",
+    pivot: "D",
+    elements: [
+        "A;point;free;40,170",
+        "B;point;free;200,170",
+        "ABC;polygon;equilateralTriangle;A,B;0;0;black;random",
+        "C;point;vertex;ABC,3",
+        "D;point;midpoint;A,B;black;green",
+        "CD;line;connect;C,D"
+    ],
+});
+</script>
+</figure><p>It is required to bisect the finite straight line <em>AB.</em></p>
+<div class="just"><a href="../propI1/">I.1</a>, <a href="../propI9/">I.9</a></div><p>Construct the equilateral triangle <em>ABC</em> on it, and bisect the angle <em>ACB</em> by the straight line <em>CD.</em></p>
+<p>I say that the straight line <em>AB</em> is bisected at the point <em>D.</em></p>
+<div class="just"><a href="../../definitions/defI20/">I.Def.20</a><br><a href="../propI4/">I.4</a></div><p>Since <em>CA</em> equals <em>CB,</em> and <em>CD</em> is common, therefore the two sides <em>CA</em> and <em>CD</em> equal the two sides <em>CB</em> and <em>CD</em> respectively, and the angle <em>ACD</em> equals the angle <em>BCD,</em> therefore the base <em>AD</em> equals the base <em>BD.</em></p>
+<p>Therefore the given straight line <em>AB</em> is bisected at <em>D.</em></p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>While this construction divides a line into two equal parts, the construction in proposition <a href="../../../bookVI/propositions/propVI9/">VI.9</a> divides a line into any given number of equal parts.</p>
+<h4>Construction steps</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="353" height="257" tabindex="0"></canvas>
+<noscript><img alt="I.10 construction steps" src="propI10a.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_1",
+    background: "0,0,100",
+    title: "I.10",
+    elements: [
+        "A;point;free;121,128",
+        "B;point;free;231,128",
+        "AB;line;connect;A,B",
+        "Acirc;circle;radius;A,B;0;0;black;300,30,100",
+        "Bcirc;circle;radius;B,A;0;0;black;300,30,100",
+        "CE;line;bichord;Acirc,Bcirc",
+        "E;point;first;CE",
+        "C;point;last;CE",
+        "D;point;intersection;A,B,C,E"
+    ],
+});
+</script>
+</figure><p>This method for bisecting lines takes less actual work than it appears to. It is really no more than the double-equilateral-triangle.</p>
+<p>First, the equilateral triangle <em>ABC</em> needs to be constructed. According to <a href="../propI1/">I.1</a> two circles need to be drawn: one with center <em>A</em> and radius <em>AB,</em> the other with center <em>B</em> and radius <em>BA.</em> One of the points of intersection of the two circles is <em>C.</em> Then to bisect angle <em>ACB,</em> according to <a href="../propI9/">I.9</a>, an arbitrary point is chosen on one side of the angle, and it might as well be the point <em>A</em> on the side <em>AC,</em> and a point equally far from <em>C</em> on the side <em>BC,</em> which is, of course, <em>B.</em> Then an equilateral triangle is constructed on the line <em>AB.</em> There are two such equilateral triangles, the one already constructed <em>ACB,</em> and another one, call it <em>AEB.</em> The point <em>E</em> is the other intersection of the two circles already drawn. Then, by I.9, the line <em>CE</em> bisects the angle <em>ACB,</em> and according to this proposition, the point <em>D</em> bisects the line <em>AB.</em></p>
+<p>Actually, only two circles and the straight line <em>CE</em> need to be drawn. The straight lines <em>AC, CB, AE,</em> and <em>EB,</em> aren't necessary for the construction; they are only used to show that the construction is correct.</p>
+<h4>Use of Proposition 10</h4>
+<p>The construction of this proposition in Book I is used in propositions <a href="../propI12/">I.12</a>, <a href="../propI16/">I.16</a>, and <a href="../propI42/">I.42</a>. It is also used in several propositions in the Books II, III, IV, X, and XIII.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

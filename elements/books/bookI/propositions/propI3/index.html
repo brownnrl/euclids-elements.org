@@ -1,0 +1,97 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 3</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 3</h1>
+<div class="statement">To cut off from the greater of two given unequal straight lines a straight line equal to the less.</div>
+<p>Let <em>AB</em> and <em>C</em> be the two given unequal straight lines, and let <em>AB</em> be the greater of them.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="350" height="270" tabindex="0"></canvas>
+<noscript><img alt="I.3 diagram" src="propI3.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.3",
+    elements: [
+        "C0;point;free;-1000,50;0,0",
+        "C3;point;free;1000,50;0,0",
+        "C1;point;lineSlider;C0,C3,250,50;0",
+        "C2;point;lineSlider;C0,C3,320,50;0",
+        "C;line;connect;C1,C2;0,0,0",
+        "A;point;free;140,150",
+        "B;point;free;290,150",
+        "AB;line;connect;A,B",
+        "E;point;cutoff;AB,C",
+        "DEF;circle;radius;A,E",
+        "D;point;circleSlider;DEF,100,120",
+        "AD;line;connect;A,D",
+        "F;point;extend;D,A,D,A;0,0,0;0"
+    ],
+});
+</script>
+</figure><p>It is required to cut off from <em>AB</em> the greater a straight line equal to <em>C</em> the less.</p>
+<div class="just"><a href="../propI2/">I.2</a><br><a href="../../postulates/post3/">I.Post.3</a></div><p>Place <em>AD</em> at the point <em>A</em> equal to the straight line <em>C,</em> and describe the circle <em>DEF</em> with center <em>A</em> and radius <em>AD.</em></p>
+<div class="just"><a href="../../definitions/defI15/">I.Def.15</a></div><p>Now, since the point <em>A</em> is the center of the circle <em>DEF,</em> therefore <em>AE</em> equals <em>AD.</em></p>
+<div class="just"><a href="../../commonnotions/cn1/">C.N.1</a></div><p>But <em>C</em> also equals <em>AD,</em> therefore each of the straight lines <em>AE</em> and <em>C</em> equals <em>AD,</em> so that <em>AE</em> also equals <em>C.</em></p>
+<p>Therefore, given the two straight lines <em>AB</em> and <em>C, AE</em> has been cut off from <em>AB</em> the greater equal to <em>C</em> the less.</p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>Now it is clear that the purpose of Proposition 2 is to effect the construction in this proposition.</p>
+<p>According to Proclus (410–485 C.E.) in his <em>Commentary on Book I,</em> Hippocrates of Chios (fl. ca. 430 B.C.E.) was the first to write an <em>Elements.</em> Leon and Theudius also wrote versions before Euclid (fl. ca. 295 B.C.E.). These other <em>Elements</em> have all been lost since Euclid's replaced them. It is conceivable that in some of these earlier versions the construction in proposition I.2 was not known, so this proposition would instead have been a postulate (a stronger version of <a href="../../postulates/post3/">I.Post.3</a>). Once the construction in I.2 was discovered, the current weaker <a href="../../postulates/post3/">I.Post.3</a> would do. Then again, I.2 might go back to the time of Hippocrates.</p>
+<h4>Construction steps</h4>
+<p>This construction takes one more step beyond that of <a href="../propI2/">I.2</a>, and that is the final circle, the circle shown in the diagram accompanying this proposition. Altogether, therefore, five circles and two lines are required for this construction.</p>
+<p>Frequently, though, one end of the line <em>C</em> is already placed at <em>A,</em> and then the construction of I.2 isn't required. In that case, only one circle needs to be drawn.</p>
+<h4>Use of Proposition 3</h4>
+<p>This proposition begins the geometric arithmetic of lines. Explicitly, it allows lines to be subtracted, but it can also be used to compare lines for equality and to add lines, that is, one line can be placed alongside another to determine if they are equal, or if not, which is greater. In other words, this construction justifies the law of trichotomy for lines.</p>
+<p>The construction is use more often in the <em>Elements</em> than any other starting with proposition <a href="../propI5/">I.5</a>. It is used in all the books on geometry, that is in Books I through IV, VI, and XI through XIII.</p>
+<p>Naturally a construction of this sort is needed in the solid geometry of Books XI through XIII. Surprisingly, the construction given here also works in solid geometry, even the lines <em>AB</em> and <em>C</em> don't lie in the same plane. Since the point <em>A</em> and the line <em>C</em> lie in one plane, the construction of <a href="../propI2/">I.2</a> produces a line <em>AD</em> equal to <em>C</em> in that plane. Now <em>AD</em> and <em>AB</em> also lie in one plane, but not the same one, and the circle <em>AEF</em> can be drawn there.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

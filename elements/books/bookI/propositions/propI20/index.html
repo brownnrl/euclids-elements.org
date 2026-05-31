@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 20</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 20</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 20</h1>
+<div class="statement">In any triangle the sum of any two sides is greater than the remaining one.</div>
+<p>Let <em>ABC</em> be a triangle.</p>
+<p>I say that in the triangle <em>ABC</em> the sum of any two sides is greater than the remaining one, that is, the sum of <em>BA</em> and <em>AC</em> is greater than <em>BC,</em> the sum of <em>AB</em> and <em>BC</em> is greater than <em>AC,</em> and the sum of <em>BC</em> and <em>CA</em> is greater than <em>AB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="220" height="220" tabindex="0"></canvas>
+<noscript><img alt="I.20 diagram" src="propI20.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.20",
+        elements: [
+            "A;point;free;70,130",
+            "B;point;free;40,180",
+            "C;point;free;180,180",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "AD;line;extend;B,A,A,C",
+            "D;point;last;AD",
+            "CD;line;connect;C,D",
+            "ACD;polygon;triangle;A,C,D;0;0;0;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../../postulates/post2/">I.Post.2</a>, <a href="../propI3/">I.3</a></div><p>Draw <em>BA</em> through to the point <em>D,</em> and make <em>DA</em> equal to <em>CA.</em></p>
+<div class="just"><a href="../../postulates/post1/">I.Post.1</a></div><p>Join <em>DC.</em></p>
+<div class="just"><a href="../propI5/">I.5</a>, <a href="../../commonnotions/cn5/">C.N.5</a></div><p>Since <em>DA</em> equals <em>AC,</em> therefore the angle <em>ADC</em> also equals the angle <em>ACD.</em> Therefore the angle <em>BCD</em> is greater than the angle <em>ADC.</em></p>
+<div class="just"><a href="../propI19/">I.19</a></div><p>Since <em>DCB</em> is a triangle having the angle <em>BCD</em> greater than the angle <em>BDC,</em> and the side opposite the greater angle is greater, therefore <em>DB</em> is greater than <em>BC.</em></p>
+<p>But <em>DA</em> equals <em>AC,</em> therefore the sum of <em>BA</em> and <em>AC</em> is greater than <em>BC.</em></p>
+<p>Similarly we can prove that the sum of <em>AB</em> and <em>BC</em> is also greater than <em>CA,</em> and the sum of <em>BC</em> and <em>CA</em> is greater than <em>AB.</em></p>
+<p>Therefore <em>in any triangle the sum of any two sides is greater than the remaining one.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>This proposition is known as the triangle inequality. It is part of the statement that the shortest path between two points is a straight line. With this proposition you can show that among all polygonal paths between two points, the shortest one is the one that consists of a single line joining the two points. There are, of course, many other conceivable paths besides polygonal paths.</p>
+<h4>A minimum distance</h4>
+<p>This proposition on the triangle inequality, along with <a href="../propI15/">I.15</a> on vertical angles, allows us to solve a problem on minimum distance, described and solved by Heron of Alexandria (ca. 10–ca. 70).</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="280" height="300" tabindex="0"></canvas>
+<noscript><img alt="Minimum distance" src="propI20a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Minimum distance",
+        elements: [
+            "A;point;free;70,30",
+            "B;point;free;190,70",
+            "C;point;free;50,180",
+            "D;point;free;240,150",
+            "C1;point;extend;C,D,C,D;0;0",
+            "D1;point;extend;D,C,D,C;0;0",
+            "CD;line;connect;C1,D1",
+            "P;point;lineSlider;CD,75,0",
+            "AP;line;connect;A,P",
+            "PB;line;connect;P,B",
+            "F;point;foot;B,CD",
+            "B';point;extend;B,F,B,F",
+            "AB';line;connect;A,B'",
+            "E;point;intersection;AB',CD",
+            "EB;line;connect;E,B",
+            "PB';line;connect;P,B'",
+            "BB';line;connect;B,B'"
+        ],
+    });
+</script>
+</figure><p>Suppose there are two points <em>A</em> and <em>B</em> on the same side of a line <em>CD.</em> The problem is to find the shortest path which goes first from the point <em>A</em> to some point <em>P</em> on the line <em>CD,</em> then from <em>P</em> to the point <em>B.</em> We will only consider paths that are made out of straight lines; call such a path a <em>bent line.</em> But that still leaves us the question of which point <em>P</em> to choose on the line <em>CD</em> to minimize the sum of the distances <em>AP</em> plus <em>PB.</em></p>
+<p>The solution is that the shortest path will be the path <em>AEB</em> where angle of incidence, namely, angle <em>AEC,</em> equals the angle of reflection, namely, angle <em>BED.</em></p>
+<p>First, we should show how to construct the bent line where the angle of incidence equals the angle of reflection. Draw a perpendicular <em>BF</em> from the point <em>B</em> to the line <em>CD</em> (<a href="../propI12/">I.12</a>), and extend it to <em>B'</em> so that <em>FB'</em> = <em>BF</em> (<a href="../../postulates/post2/">I.Post.2</a>, <a href="../propI3/">I.3</a>). Draw <em>AB'</em> and let <em>E</em> be the point where <em>AB'</em> intersects <em>CD.</em> (There will be a point of intersection since <em>A</em> and <em>B'</em> are on opposite sides of <em>CD.</em>) Draw <em>BE.</em></p>
+<p>Now, triangles <em>BFE</em> and <em>B'FE</em> are congruent since they have two sides and the included angle equal (<a href="../propI4/">I.4</a>), the included angles being right angles. Therefore, angles <em>BFE</em> and <em>BF'E</em> are equal. The vertical angle <em>AEC</em> across from angle <em>B'ED</em> also equals these angles (<a href="../propI15/">I.15</a>). Thus, the angle of incidence <em>AEC</em> equals the angle of reflection <em>BED.</em></p>
+<p>We still have to show that the distance <em>AE</em> + <em>EB</em> is less than any distance <em>AP</em> + <em>EP</em> for any point <em>P</em> other than <em>E</em> that lies on the line <em>CD.</em> Let <em>P</em> be such a point and draw lines <em>AP, BP,</em> and <em>B'P.</em> Then by proposition I.20, above, <em>AP</em> + <em>EP</em> is less than <em>AB'.</em> But <em>AB'</em> = <em>AE</em> + <em>EB',</em> and <em>EB'</em> = <em>EB,</em>
+therefore <em>AP</em> + <em>EP</em> is less than <em>AE</em> + <em>EB.</em></p>
+<p>Thus, the shortest bent line between two points on the same side of a line that meets that line is the one where the angle of incidence equals the angle of reflection.</p>
+<p>Q.E.D.</p>
+<h4>Use of Proposition 20</h4>
+<p>This proposition is used in the next two propositions, several in Book III, and <a href="../../../bookXI/propositions/propXI20/">XI.20</a>.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

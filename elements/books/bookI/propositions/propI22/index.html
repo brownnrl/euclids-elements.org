@@ -1,0 +1,113 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 22</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 22</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 22</h1>
+<div class="statement">To construct a triangle out of three straight lines which equal three given straight lines: thus it is necessary that the sum of any two of the straight lines should be greater than the remaining one.</div>
+<div class="just"><a href="../propI20/">I.20</a></div><p>Let the three given straight lines be <em>A, B,</em> and <em>C,</em> and let the sum of any two of these be greater than the remaining one, namely, <em>A</em> plus <em>B</em> greater than <em>C, A</em> plus <em>C</em> greater than <em>B,</em> and <em>B</em> plus <em>C</em> greater than <em>B.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="360" height="310" tabindex="0"></canvas>
+<noscript><img alt="I.22 diagram" src="propI22.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.22",
+        elements: [
+            "A0;point;free;-1000,50;0,0",
+            "A3;point;free;1000,50;0,0",
+            "A1;point;lineSlider;A0,A3,230,50;0",
+            "A2;point;lineSlider;A0,A3,320,50;0",
+            "A;line;connect;A1,A2;black",
+            "B0;point;free;-1000,90;0,0",
+            "B0B3;line;parallel;B0,A0,A3;0;0;0",
+            "B3;point;last;B0B3;0,0",
+            "B1;point;lineSlider;B0,B3,260,100;0",
+            "B2;point;lineSlider;B0,B3,320,100;0",
+            "B;line;connect;B1,B2;black",
+            "C0;point;free;-1000,130;0,0",
+            "C0C3;line;parallel;C0,A0,A3;0;0;0",
+            "C3;point;last;C0C3;0,0",
+            "C1;point;lineSlider;C0,C3,265,100;0",
+            "C2;point;lineSlider;C0,C3,320,100;0",
+            "C;line;connect;C1,C2;black",
+            "D;point;free;50,200",
+            "E;point;free;320,200",
+            "DE;line;connect;D,E",
+            "DF;line;cutoff;DE,A;0;0;0",
+            "F;point;last;DF",
+            "FG;line;cutoff;F,E,B1,B2;0;0;0",
+            "G;point;last;FG",
+            "GH;line;cutoff;G,E,C1,C2;0;0;0",
+            "H;point;last;GH",
+            "DKL;circle;radius;F,D;0;0;black;random",
+            "KLH;circle;radius;GH;0;0;black;random",
+            "KL;line;bichord;DKL,KLH;0;0;0",
+            "K;point;last;KL",
+            "L;point;first;KL",
+            "FGK;polygon;triangle;F,G,K;0;0;black;random"
+        ],
+    });
+</script>
+</figure><p>It is required to construct a triangle out of straight lines equal to <em>A, B,</em> and <em>C.</em></p>
+<div class="just"><a href="../../postulates/post2/">I.Post.2</a><br><a href="../propI3/">I.3</a></div><p>Set out a straight line <em>DE,</em> terminated at <em>D</em> but of infinite length in the direction of <em>E.</em> Make <em>DF</em> equal to A, FG equal to <em>B,</em> and <em>GH</em> equal to <em>C.</em></p>
+<div class="just"><a href="../../postulates/post3/">I.Post.3</a><br><a href="../../postulates/post1/">I.Post.1</a></div><p>Describe the circle <em>DKL</em> with center <em>F</em> and radius <em>FD.</em> Again, describe the circle <em>KLH</em> with center <em>G</em> and radius <em>GH.</em> Join <em>KF</em> and <em>KG.</em></p>
+<p>I say that the triangle <em>KFG</em> has been constructed out of three straight lines equal to <em>A, B,</em> and <em>C.</em></p>
+<div class="just"><a href="../../definitions/defI15/">I.Def.16</a><br><a href="../../commonnotions/cn1/">C.N.1</a></div><p>Since the point <em>F</em> is the center of the circle <em>DKL,</em> therefore <em>FD</em> equals <em>FK.</em> But <em>FD</em> equals <em>A,</em> therefore <em>KF</em> also equals <em>A.</em></p>
+<div class="just"><a href="../../definitions/defI15/">I.Def.16</a><br><a href="../../commonnotions/cn1/">C.N.1</a></div><p>Again, since the point <em>G</em> is the center of the circle <em>LKH,</em> therefore <em>GH</em> equals <em>GK.</em> But <em>GH</em> equals <em>C,</em> therefore <em>KG</em> also equals <em>C.</em></p>
+<p>And <em>FG</em> also equals <em>B,</em> therefore the three straight lines <em>KF, FG,</em> and GK equal the three straight lines <em>A, B,</em> and C.</p>
+<p>Therefore out of the three straight lines <em>KF, FG,</em> and <em>GK,</em> which equal the three given straight lines <em>A, B,</em> and C, the triangle <em>KFG</em> has been constructed.</p>
+<div class="qed">Q.E.F.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>(Be sure to change the lengths of <em>B</em>, <em>C</em>, and <em>D</em> in the diagram to see what effect that has. You can drag their ends to change their lengths.)</p>
+<p>The qualifier in the statement of the proposition, "thus it is necessary that the sum of any two of the straight lines should be greater than the remaining one," refers to the triangle inequality, Proposition <a href="../propI20/">I.20</a>. This condition is, indeed, necessary. It is also sufficient, but Euclid failed to show that sufficiency. Perhaps Euclid (or some later commentator) meant this clause to be a postulate. A full statement of such a postulate might read "If the sum of the radii of two circles is greater than the line joining their centers, and if the sum of each radius and the line joining the centers is greater than the other radius, then the two circles intersect."</p>
+<p>This construction is actually a generalization of the very first proposition <a href="../propI1/">I.1</a> in which the three lines are all equal. There too, as was noted, Euclid failed to prove that the two circles intersected.</p>
+<h4>Use of Proposition 22</h4>
+<p>The construction in this proposition is used for the construction in proposition <a href="../propI23/">I.23</a>. It is also used in <a href="../../../bookXI/propositions/propXI22/">XI.22</a></p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

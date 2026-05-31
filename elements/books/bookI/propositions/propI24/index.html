@@ -1,0 +1,91 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 24</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 24</h1>
+<div class="statement">If two triangles have two sides equal to two sides respectively, but have one of the angles contained by the equal straight lines greater than the other, then they also have the base greater than the base.</div>
+<p>Let <em>ABC</em> and <em>DEF</em> be two triangles having the two sides <em>AB</em> and <em>AC</em> equal to the two sides <em>DE</em> and <em>DF</em> respectively, so that <em>AB</em> equals <em>DE,</em> and <em>AC</em> equals <em>DF,</em> and let the angle at <em>A</em> be greater than the angle at <em>D.</em></p>
+<p>I say that the base <em>BC</em> is greater than the base <em>EF.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="330" height="270" tabindex="0"></canvas>
+<noscript><img alt="I.24 diagram" src="propI24.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.24",
+        elements: [
+            "D;point;free;225,40",
+            "E;point;free;300,180",
+            "F;point;free;230,240",
+            "DEF;polygon;triangle;D,E,F;0;0;0,0,0;random",
+            "A;point;free;80,40",
+            "ABcirc;circle;radius;A,D,E;0;0;0;0",
+            "ACcirc;circle;radius;A,D,F;0;0;0;0",
+            "B;point;circleSlider;ABcirc,140,150",
+            "C;point;circleSlider;ACcirc,40,170",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "DEG;polygon;similar;D,E,A,B,C;0;0;0,0,0;0",
+            "G;point;vertex;DEG,3",
+            "FG;line;connect;F,G"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../propI23/">I.23</a><br><a href="../propI3/">I.3</a><br><a href="../../postulates/post1/">I.Post.1</a></div><p>Since the angle <em>BAC</em> is greater than the angle <em>EDF,</em> construct the angle <em>EDG</em> equal to the angle <em>BAC</em> at the point <em>D</em> on the straight line <em>DE.</em> Make <em>DG</em> equal to either of the two straight lines <em>AC</em> or <em>DF.</em> Join <em>EG</em> and <em>FG.</em></p>
+<div class="just"><a href="../propI4/">I.4</a></div><p>Since <em>AB</em> equals <em>DE,</em> and <em>AC</em> equals <em>DG,</em> the two sides <em>BA</em> and <em>AC</em> equal the two sides <em>ED</em> and <em>DG,</em> respectively, and the angle <em>BAC</em> equals the angle <em>EDG,</em> therefore the base <em>BC</em> equals the base <em>EG.</em></p>
+<div class="just"><a href="../propI5/">I.5</a></div><p>Again, since <em>DF</em> equals <em>DG,</em> therefore the angle <em>DGF</em> equals the angle <em>DFG.</em> Therefore the angle <em>DFG</em> is greater than the angle <em>EGF.</em></p>
+<p>Therefore the angle <em>EFG</em> is much greater than the angle <em>EGF.</em></p>
+<div class="just"><a href="../propI19/">I.19</a></div><p>Since <em>EFG</em> is a triangle having the angle <em>EFG</em> greater than the angle <em>EGF,</em> and side opposite the greater angle is greater, therefore the side <em>EG</em> is also greater than <em>EF.</em></p>
+<p>But <em>EG</em> equals <em>BC,</em> therefore <em>BC</em> is also greater than <em>EF.</em></p>
+<p>Therefore <em>if two triangles have two sides equal to two sides respectively, but have one of the angles contained by the equal straight lines greater than the other, then they also have the base greater than the base.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<h4>Use of Proposition 24</h4>
+<p>This proposition is used in the next proposition as well as a few in Book III and <a href="../../../bookXI/propositions/propXI22/">XI.22</a>.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

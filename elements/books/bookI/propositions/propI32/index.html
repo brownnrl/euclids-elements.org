@@ -1,0 +1,91 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 32</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 32</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 32</h1>
+<div class="statement">In any triangle, if one of the sides is produced, then the exterior angle equals the sum of the two interior and opposite angles, and the sum of the three interior angles of the triangle equals two right angles.</div>
+<p>Let <em>ABC</em> be a triangle, and let one side of it <em>BC</em> be produced to <em>D.</em></p>
+<p>I say that the exterior angle <em>ACD</em> equals the sum of the two interior and opposite angles <em>CAB</em> and <em>ABC,</em> and the sum of the three interior angles of the triangle <em>ABC, BCA,</em> and <em>CAB</em> equals two right angles.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="240" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.32 diagram" src="propI32.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.32",
+        elements: [
+            "A;point;free;70,40",
+            "B;point;free;40,160",
+            "C;point;free;130,160",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "D;point;lineSlider;B,C,200,160",
+            "CD;line;connect;C,D",
+            "E';point;parallelogram;A,B,C;0;0",
+            "E;point;lineSlider;C,E',170,40",
+            "CE;line;connect;C,E"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../propI31/">I.31</a></div><p>Draw <em>CE</em> through the point <em>C</em> parallel to the straight line <em>AB.</em></p>
+<div class="just"><a href="../propI29/">I.29</a></div><p>Since <em>AB</em> is parallel to <em>CE,</em> and <em>AC</em> falls upon them, therefore the alternate angles <em>BAC</em> and <em>ACE</em> equal one another.</p>
+<div class="just"><a href="../propI29/">I.29</a></div><p>Again, since <em>AB</em> is parallel to <em>CE,</em> and the straight line <em>BD</em> falls upon them, therefore the exterior angle <em>ECD</em> equals the interior and opposite angle <em>ABC.</em></p>
+<p>But the angle <em>ACE</em> was also proved equal to the angle <em>BAC.</em> Therefore the whole angle <em>ACD</em> equals the sum of the two interior and opposite angles <em>BAC</em> and <em>ABC.</em></p>
+<div class="just"><a href="../../commonnotions/cn2/">C.N.2</a></div><p>Add the angle <em>ACB</em> to each. Then the sum of the angles <em>ACD</em> and <em>ACB</em> equals the sum of the three angles <em>ABC, BCA,</em> and <em>CAB.</em></p>
+<div class="just"><a href="../propI13/">I.13</a><br><a href="../../commonnotions/cn1/">C.N.1</a></div><p>But the sum of the angles <em>ACD</em> and <em>ACB</em> equals two right angles. Therefore the sum of the angles <em>ABC, BCA,</em> and <em>CAB</em> also equals two right angles.</p>
+<p>Therefore <em>in any triangle, if one of the sides is produced, then the exterior angle equals the sum of the two interior and opposite angles, and the sum of the three interior angles of the triangle equals two right angles.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<h4>Corollaries of Proclus</h4>
+<p>There are two corollaries of this proposition given by Proclus.</p>
+<p><strong>Corollary 1.</strong> The sum of the interior angles of a convex rectilinear figure equals twice as many angles as the figure has sides, less four.</p>
+<p><strong>Corollary 2.</strong> The sum of the exterior angles of any convex rectilinear figure together equal four right angles.</p>
+<h4>Use of Proposition 32</h4>
+<p>Although this proposition isn't used in the rest of Book I, it is frequently used in the rest of the books on geometry, namely Books II, III, IV, VI, XI, XII, and XIII. The corollaries, however, are not used in the <em>Elements.</em></p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

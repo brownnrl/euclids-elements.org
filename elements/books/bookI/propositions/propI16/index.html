@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 16</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 16</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 16</h1>
+<div class="statement">In any triangle, if one of the sides is produced, then the exterior angle is greater than either of the interior and opposite angles.</div>
+<p>Let <em>ABC</em> be a triangle, and let one side of it <em>BC</em> be produced to <em>D.</em></p>
+<p>I say that the exterior angle <em>ACD</em> is greater than either of the interior and opposite angles <em>CBA</em> and <em>BAC.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="250" tabindex="0"></canvas>
+<noscript><img alt="I.16 diagram" src="propI16.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.16",
+        elements: [
+            "A;point;free;80,30",
+            "B;point;free;30,180",
+            "C;point;free;140,180",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;lineSlider;B,C,220,180",
+            "CD;line;connect;C,D",
+            "E;point;midpoint;A,C",
+            "F;point;extend;B,E,B,E",
+            "BF;line;connect;B,F",
+            "FC;line;connect;F,C",
+            "G;point;lineSlider;A,C,170,220",
+            "CG;line;connect;C,G"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../propI10/">I.10</a>, <a href="../../postulates/post1/">I.Post.1</a><br><a href="../../postulates/post2/">I.Post.2</a></div><p>Bisect <em>AC</em> at <em>E.</em> Join <em>BE,</em> and
+produce it in a straight line to <em>F.</em></p>
+<div class="just"><a href="../propI3/">I.3</a>, <a href="../../postulates/post1/">I.Post.1</a><br><a href="../../postulates/post2/">I.Post.2</a></div><p>Make <em>EF</em> equal to <em>BE,</em> join <em>FC,</em>
+and draw <em>AC</em> through to <em>G.</em></p>
+<div class="just"><a href="../propI15/">I.15</a><br><a href="../propI4/">I.4</a></div><p>Since <em>AE</em> equals <em>EC,</em> and <em>BE</em> equals <em>EF,</em> therefore the two sides <em>AE</em> and <em>EB</em> equal the two sides <em>CE</em> and <em>EF</em> respectively, and the angle <em>AEB</em> equals the angle <em>FEC,</em> for they are vertical angles. Therefore the base <em>AB</em> equals the base <em>FC,</em> the triangle <em>ABE</em> equals the triangle <em>CFE,</em> and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides. Therefore the angle <em>BAE</em> equals the angle <em>ECF.</em></p>
+<div class="just"><a href="../../commonnotions/cn5/">C.N.5</a></div><p>But the angle <em>ECD</em> is greater than the angle <em>ECF,</em> therefore the angle <em>ACD</em> is greater than the angle <em>BAE.</em></p>
+<div class="just"><a href="../propI15/">I.15</a></div><p>Similarly, if <em>BC</em> is bisected, then the angle <em>BCG,</em> that is, the angle <em>ACD,</em> can also be proved to be greater than the angle <em>ABC.</em></p>
+<p>Therefore <em>in any triangle, if one of the sides is produced, then the exterior angle is greater than either of the interior and opposite angles.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>In the later proposition <a href="../propI32/">I.32</a>, after he invokes the parallel postulate <a href="../../postulates/post5/">I.Post.5</a>, Euclid shows the stronger result that the exterior angle of a triangle equals the sum of the interior, opposite angles.</p>
+<h4>Elliptic geometry</h4>
+<p>There are geometries besides Euclidean geometry. Two of the more important geometries are elliptic geometry and hyperbolic geometry, which were developed in the nineteenth century. The first 15 propositions in Book I hold in elliptic geometry, but not this one. (For more on hyperbolic geometry, see the <a href="../propI29/#hyperbolic">note</a> after Proposition I.29.)</p>
+<p>Plane elliptic geometry is closely related to spherical geometry, but it differs in that antipodal points on the sphere are identified. Thus, a "point" in an elliptic plane is a pair of antipodal points on the sphere. A "straight line" in an elliptic plane is an arc of great circle on the sphere. When a "straight line" is extended, its ends eventually meet so that, topologically, it becomes a circle. This is very different from Euclidean geometry since here the ends of a line never meet when extended.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="300" height="300" tabindex="0"></canvas>
+<noscript><img alt="Elliptic plane" src="propI16a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Elliptic plane",
+        elements: [
+            "O;point;free;150,150;0;0",
+            "P;point;free;260,150;0;0",
+            "disk;circle;radius;O,P;0;0;blue;random",
+            "A;point;free;70,140",
+            "B;point;free;150,170",
+            "C;point;free;125,90",
+            "A#;point;proportion;O,A,O,P,O,P,O,A;0;0",
+            "A*;point;extend;A,O,O,A#;0;0",
+            "C#;point;proportion;O,C,O,P,O,P,O,C;0;0",
+            "C*;point;extend;C,O,O,C#;0;0",
+            "ABcirc;circle;circumcircle;A,B,A*;0;0;0;0",
+            "Dchord;line;bichord;disk,ABcirc;0;0;0",
+            "D;point;first;Dchord",
+            "D ;point;last;Dchord",
+            "DD;sector;arc;D ,B,D;0;0;black;0",
+            "CBcirc;circle;circumcircle;C,B,C*;0;0;0;0",
+            "Echord;line;bichord;disk,CBcirc;0;0;0",
+            "E;point;last;Echord",
+            "E ;point;first;Echord",
+            "EE;sector;arc;E,B,E ;0;0;black;0",
+            "ACcirc;circle;circumcircle;A,C,A*;0;0;0;0",
+            "Fchord;line;bichord;disk,ACcirc;0;0;0",
+            "F;point;last;Fchord",
+            "F ;point;first;Fchord",
+            "FF;sector;arc;F,C,F ;0;0;black;0"
+        ],
+    });
+</script>
+</figure><p>The illustration on the right shows the stereographic projection of one hemisphere. Since only one hemisphere is displayed, each "point" is represented by one point except those "points" such as <em>D, E,</em> and <em>F</em> on the blue bounding great circle which appear twice.</p>
+<p>A "triangle" in elliptic geometry, such as <em>ABC,</em> is a spherical triangle (or, more precisely, a pair of antipodal spherical triangles). The internal angle sum of a spherical triangle is always greater than 180°, but less than 540°, whereas in Euclidean geometry, the internal angle sum of a triangle is 180° as shown in Proposition <a href="../propI32/">I.32</a>.</p>
+<p>Elliptic geometry satisfies some of the postulates of Euclidean geometry, but not all of them under all interpretations. Usually, <a href="../../postulates/post1/">I.Post.1</a>, to draw a straight line from any point to any point, is interpreted to include the uniqueness of that line. But in elliptic geometry a completed "straight line" is topologically a circle so that any pair of points on it divide it into two arcs. Therefore, in elliptic geometry exactly two "straight lines" join any two given "points."</p>
+<p>Also, <a href="../../postulates/post2/">I.Post.2</a>, to produce a finite straight line continuously in a straight line, is sometimes interpreted to include the condition that its ends don't meet when extended. Under that interpretation, elliptic geometry fails Postulate 2.</p>
+<p>Elliptic geometry fails <a href="../../postulates/post5/">I.Post.5</a>, the parallel postulate, as well, since any two "straight lines" in an elliptic plane meet. That is, any two great circles on the sphere meet at a pair of antipodal points.</p>
+<p>Finally, a completed "straight line" in the elliptic plane does not divide the plane into two parts as infinite straight lines do in the Euclidean plane. A completed "straight line" in the elliptic plane is a great circle on the sphere. Any two "points" not on that "straight line" include two points in the same hemisphere, and they can be joined by an arc that doesn't meet the great circle. Therefore two "points" lie on the same side of the completed "straight line."</p>
+<p>The proof of this particular proposition fails for elliptic geometry, and the statement of the proposition is false for elliptic geometry. In particular, the statement "the angle <em>ECD</em> is greater than the angle <em>ECF</em>" is not true of all triangles in elliptic geometry. The line <em>CF</em> need not be contained in the angle <em>ACD.</em> All the previous propositions do hold in elliptic geometry and some of the later propositions, too, but some need different proofs.</p>
+<h4>Use of Proposition 16</h4>
+<p>This proposition is used in the proofs of the next two propositions, a few others in this book, and a couple in Book III.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

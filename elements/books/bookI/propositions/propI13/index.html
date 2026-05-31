@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 13</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 13</h1>
+<div class="statement">If a straight line stands on a straight line, then it makes either two right angles or angles whose sum equals two right angles.</div>
+<p>Let any straight line <em>AB</em> standing on the straight line <em>CD</em> make the angles <em>CBA</em> and <em>ABD.</em></p>
+<p>I say that either the angles <em>CBA</em> and <em>ABD</em> are two right angles or their sum equals two right angles.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="220" tabindex="0"></canvas>
+<noscript><img alt="I.13 diagram" src="propI13.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.13",
+    elements: [
+        "D;point;free;40,180",
+        "C;point;free;230,180",
+        "CD;line;connect;C,D",
+        "A;point;free;175,50",
+        "B;point;lineSlider;CD,125,180",
+        "AB;line;connect;A,B",
+        "BE;line;perpendicular;B,C",
+        "E;point;last;BE"
+    ],
+});
+</script>
+</figure><div class="just"><a href="../../definitions/defI10/">I.Def.10</a></div><p>Now, if the angle <em>CBA</em> equals the angle <em>ABD,</em> then they are two right angles.</p>
+<div class="just"><a href="../propI11/">I.11</a></div><p>But, if not, draw <em>BE</em> from the point <em>B</em> at right angles to <em>CD.</em> Therefore the angles <em>CBE</em> and <em>EBD</em> are two right angles.</p>
+<div class="just"><a href="../../commonnotions/cn2/">C.N.2</a></div><p>Since the angle <em>CBE</em> equals the sum of the two angles <em>CBA</em> and <em>ABE,</em> add the angle <em>EBD</em> to each, therefore the sum of the angles <em>CBE</em> and <em>EBD</em> equals the sum of the three angles <em>CBA, ABE,</em> and <em>EBD.</em></p>
+<div class="just"><a href="../../commonnotions/cn2/">C.N.2</a></div><p>Again, since the angle <em>DBA</em> equals the sum of the two angles <em>DBE</em> and <em>EBA,</em> add the angle <em>ABC</em> to each, therefore the sum of the angles <em>DBA</em> and <em>ABC</em> equals the sum of the three angles <em>DBE, EBA,</em> and <em>ABC.</em></p>
+<div class="just"><a href="../../commonnotions/cn1/">C.N.1</a></div><p>But the sum of the angles <em>CBE</em> and <em>EBD</em> was also proved equal to the sum of the same three angles, and things which equal the same thing also equal one another, therefore the sum of the angles <em>CBE</em> and <em>EBD</em> also equals the sum of the angles <em>DBA</em> and <em>ABC.</em> But the angles <em>CBE</em> and <em>EBD</em> are two right angles, therefore the sum of the angles <em>DBA</em> and <em>ABC</em> also equals two right angles.</p>
+<p>Therefore <em>if a straight line stands on a straight line, then it makes either two right angles or angles whose sum equals two right angles.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>With this proposition, we begin to see what the arithmetic of magnitudes means to Euclid, in particular, how to add angles. Euclid says that the angle <em>CBE</em> equals the sum of the two angles <em>CBA</em> and <em>ABE.</em> So, one way a sum of angles occurs is when the two angles have a common vertex (<em>B</em> in this case) and a common side (<em>BA</em> in this case), and the angles lie on opposite sides of their common side. Thus, addition of angles can be performed by joining adjacent angles.</p>
+<p>But that's not the only addition that occurs here. Euclid also says that the sum of the angles <em>CBE</em> and <em>EBD</em> equals the sum of the three angles <em>CBA, ABE,</em> and <em>EBD.</em> That sum being mentioned is a straight angle, which is not to be considered as an angle according to Euclid. It is a formal sum equal to two right angles. In other propositions formal sums of four right angles occur. These and larger formal sums are not angles themselves, merely sums of angles. Only if an angle sum is less than two right angles can it be identified with a single angle.</p>
+<h4>Use of Proposition 13</h4>
+<p>This proposition is used in the proofs of the next two propositions and several others in this book as well as a few propositions in Books IV and VI.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

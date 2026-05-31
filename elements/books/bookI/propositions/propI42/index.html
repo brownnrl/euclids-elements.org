@@ -1,0 +1,104 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 42</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 42</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 42</h1>
+<div class="statement">To construct a parallelogram equal to a given triangle in a given rectilinear angle.</div>
+<p>Let <em>ABC</em> be the given triangle, and <em>D</em> the given rectilinear angle.</p>
+<p>It is required to construct in <em>D</em> a parallelogram equal to the triangle <em>ABC</em> in the rectilinear angle.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="320" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.42 diagram" src="propI42.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.42",
+        elements: [
+            "B0;point;free;-1000,180;0;0",
+            "B3;point;free;1000,180;0;0",
+            "B;point;lineSlider;B0,B3,90,0",
+            "C;point;lineSlider;B0,B3,210,0",
+            "A;point;free;120,30",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "D1;point;free;45,25;0",
+            "D2;point;free;30,75;0",
+            "D3;point;free;80,75;0",
+            "D1D2;line;connect;D1,D2",
+            "D2D3;line;connect;D2,D3",
+            "D;polygon;triangle;D1,D2,D3;0,0,0;0;0;0",
+            "E;point;midpoint;B,C",
+            "AE;line;connect;A,E",
+            "F';point;similar;C,E,D3,D2,D1;0;0",
+            "G';point;parallelogram;C,B,A;0;0",
+            "F;point;intersection;A,G',E,F'",
+            "EF;line;connect;E,F",
+            "G;point;parallelogram;C,E,F",
+            "CG;line;connect;C,G",
+            "AG;line;connect;A,G",
+            "FG;line;connect;F,G"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../propI10/">I.10</a><br><a href="../../postulates/post1/">I.Post.1</a><br><a href="../propI23/">I.23</a>, <a href="../propI31/">I.31</a></div><p>Bisect <em>BC</em> at <em>E,</em> and join <em>AE.</em> Construct the angle <em>CEF</em> on the straight line <em>EC</em> at the point <em>E</em> on it equal to the angle <em>D.</em> Draw <em>AG</em> through <em>A</em> parallel to <em>EC,</em> and draw <em>CG</em> through <em>C</em> parallel to <em>EF.</em></p>
+<p>Then <em>FECG</em> is a parallelogram.</p>
+<div class="just"><a href="../propI38/">I.38</a></div><p>Since <em>BE</em> equals <em>EC,</em> therefore the triangle <em>ABE</em> also equals the triangle <em>AEC,</em> for they are on equal bases <em>BE</em> and <em>EC</em> and in the same parallels <em>BC</em> and <em>AG.</em> Therefore the triangle <em>ABC</em> is double the triangle <em>AEC.</em></p>
+<div class="just"><a href="../propI41/">I.41</a><br><a href="../../commonnotions/cn1/">C.N.1</a></div><p>But the parallelogram <em>FECG</em> is also double the triangle <em>AEC,</em> for it has the same base with it and is in the same parallels with it, therefore the parallelogram <em>FECG</em> equals the triangle <em>ABC.</em></p>
+<p>And it has the angle <em>CEF</em> equal to the given angle <em>D.</em></p>
+<p>Therefore the parallelogram <em>FECG</em> has been constructed equal to the given triangle <em>ABC,</em> in the angle <em>CEF</em> which equals <em>D.</em></p>
+<div class="qed">Q.E.F.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>The idea of the construction is as follows. First make a triangle half the size of the given triangle. Next skew the half-size triangle to make one of its angles the desired angle without changing its area. Complete the resulting half-size triangle to a parallelogram. that's the desired parallelogram equal to the original triangle in the desired angle.</p>
+<h4>Application of areas</h4>
+<p>With this proposition Euclid moves to the next phase in his study of areas, the application of areas. Before this, he has exhibited various situations when triangles or parallelograms have equal areas, or when a triangle has half the area of a parallelogram. But now he's interested in constructing another figure with the same area as a given figure.</p>
+<p>In this proposition, he constructs a parallelogram that has a given angle and has the same area as a given triangle. But his goals are coming up, application of areas in I.45 and quadrature in II.14. In proposition <a href="../propI45/">I.45</a>, given a rectilinear figure an equal parallelogram is constructed on a given side within a given angle. This kind of construction is called "applying" an area to a side. The area is sort of laid along the line. It may be that before Euclid the area was always applied to a rectangle along the line, but Euclid generalized the construction to parallelograms. This extra generalization is not often used.</p>
+<p>Later, in proposition <a href="../../../bookII/propositions/propII14/">II.14</a> a square is constructed equal to a given rectilinear figure, a process called quadrature (making into a square) of the figure. This square is a canonical measure of the area.</p>
+<h4>Use of Proposition 42</h4>
+<p>This construction is used as part of the constructions in the two propositions following the next one.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

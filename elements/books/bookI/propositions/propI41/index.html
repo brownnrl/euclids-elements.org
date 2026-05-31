@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 41</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 41</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 41</h1>
+<div class="statement">If a parallelogram has the same base with a triangle and is in the same parallels, then the parallelogram is double the triangle.</div>
+<p>Let the parallelogram <em>ABCD</em> have the same base <em>BC</em> with the triangle <em>EBC,</em> and let it be in the same parallels <em>BC</em> and <em>AE.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="250" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.41 diagram" src="propI41.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.41",
+        elements: [
+            "B;point;free;60,170",
+            "C;point;free;130,170",
+            "A;point;free;40,40",
+            "ABCD;polygon;parallelogram;A,B,C",
+            "D;point;vertex;ABCD,4",
+            "E;point;lineSlider;A,D,210,40",
+            "BCE;polygon;triangle;B,C,E;0;0;0,0,0;random",
+            "DE;line;connect;D,E",
+            "AC;line;connect;A,C"
+        ],
+    });
+</script>
+</figure><p>I say that the parallelogram <em>ABCD</em> is double the triangle <em>BEC.</em></p>
+<div class="just"><a href="../../postulates/post1/">I.Post.1</a></div><p>Join <em>AC.</em></p>
+<div class="just"><a href="../propI37/">I.37</a></div><p>Then the triangle <em>ABC</em> equals the triangle <em>EBC,</em> for it is on the same base <em>BC</em> with it and in the same parallels <em>BC</em> and <em>AE.</em></p>
+<div class="just"><a href="../propI34/">I.34</a></div><p>But the parallelogram <em>ABCD</em> is double the triangle <em>ABC,</em> for the diameter <em>AC</em> bisects it, so that the parallelogram <em>ABCD</em> is also double the triangle <em>EBC.</em></p>
+<p>Therefore <em>if a parallelogram has the same base with a triangle and is in the same parallels, then the parallelogram is double the triangle.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>This partially generalizes <a href="../propI34/">I.34</a>, that a parallelogram is twice the triangle by its diameter and two of its sides. A slightly more general statement would be that If a parallelogram has an equal base with a triangle and is in the same parallels, then the parallelogram is double the triangle.</p>
+<h4>Use of Proposition 41</h4>
+<p>This proposition is used in the next one, <a href="../propI47/">I.47</a>, <a href="../../../bookVI/propositions/propVI1/">VI.1</a>, and <a href="../../../bookX/propositions/propX38/">X.38</a>.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

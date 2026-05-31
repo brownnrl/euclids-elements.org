@@ -1,0 +1,107 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 19</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 19</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 19</h1>
+<div class="statement">In any triangle the side opposite the greater angle is greater.</div>
+<p>Let <em>ABC</em> be a triangle having the angle <em>ABC</em> greater than the angle <em>BCA.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="170" height="220" tabindex="0"></canvas>
+<noscript><img alt="I.19 diagram" src="propI19.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.19",
+        elements: [
+            "A;point;free;130,40",
+            "B;point;free;40,80",
+            "C;point;free;70,180",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random"
+        ],
+    });
+</script>
+</figure><p>I say that the side <em>AC</em> is greater than the side <em>AB.</em></p>
+<p>If not, either <em>AC</em> equals <em>AB</em> or it is less than it.</p>
+<div class="just"><a href="../propI5/">I.5</a></div><p>Now <em>AC</em> does not equal <em>AB,</em> for then the angle <em>ABC</em> would equal the angle <em>ACB,</em> but it does not. Therefore <em>AC</em> does not equal <em>AB.</em></p>
+<div class="just"><a href="../propI18/">I.18</a></div><p>Neither is <em>AC</em> less than <em>AB,</em> for then the angle <em>ABC</em> would be less than the angle <em>ACB,</em> but it is not. Therefore <em>AC</em> is not less than <em>AB.</em></p>
+<p>And it was proved that it is not equal either. Therefore <em>AC</em> is greater than <em>AB.</em></p>
+<p>Therefore <em>in any triangle the side opposite the greater angle is greater.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>As mentioned before, this proposition is a disguised converse of the previous one. As Euclid often does, he uses a proof by contradiction involving the already proved converse to prove this proposition. It is not that there is a logical connection between this statement and its converse that makes this tactic work, but some kind of symmetry involved. In this case, if one side is less than another, then the other is greater than the one, and the previous proposition applies. So the relevant symmetry is between "lesser" and "greater."</p>
+<h4>The law of sines</h4>
+<p>Although some of the geometric underpinnings of trigonometry appear in the <em>Elements,</em> trigonometry itself does not. Trigonometry makes its appearance among later Greek mathematics where the the basic trigonometric function is the <em>chord,</em> which is related to the <em>sine.</em></p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="250" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.19 law of sines" src="propI19a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "I.19",
+        elements: [
+            "A;point;free;50,100",
+            "B;point;free;200,50",
+            "C;point;free;180,150",
+            "a;line;connect;B,C;black",
+            "b;line;connect;A,C;black",
+            "c;line;connect;A,B;black",
+            "ABC;polygon;triangle;A,B,C;0;0;0;random"
+        ],
+    });
+</script>
+</figure><p>Without going into details, the law of sines contains more precise information about the relation between angles and sides of a triangle than this and the last proposition did. The law of sines states that</p>
+<center><img alt="sin A divided by BC equals sin B divided by AC equals sin C divided by AB" src="propI19b.gif"></center><p>where <em>a</em> denotes the side opposite angle <em>A</em>, <em>b</em> denotes the side opposite angle <em>B</em>, and <em>c</em> denotes the side opposite angle <em>C</em>. In other words, the sine of an angle in a triangle is proportional to the opposite side.</p>
+<p>By means of the law of sines the size of a angle can be related directly to the length of the opposite side.</p>
+<h4>Use of Proposition 19</h4>
+<p>This proposition is used in the proofs of propositions <a href="../propI20/">I.20</a>, <a href="../propI24/">I.24</a>, and some others in Book III.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

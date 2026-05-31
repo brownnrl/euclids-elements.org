@@ -1,0 +1,85 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 33</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 33</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 33</h1>
+<div class="statement">Straight lines which join the ends of equal and parallel straight lines in the same directions are themselves equal and parallel.</div>
+<p>Let <em>AB</em> and <em>CD</em> be equal and parallel, and let the straight lines <em>AC</em> and <em>BD</em> join them at their ends in the same directions.</p>
+<p>I say that <em>AC</em> and <em>BD</em> are also equal and parallel.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="160" tabindex="0"></canvas>
+<noscript><img alt="I.33 diagram" src="propI33.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.33",
+        elements: [
+            "A;point;free;40,40",
+            "B;point;free;180,40",
+            "C;point;free;80,120",
+            "CABD;polygon;parallelogram;C,A,B;0;0;0,0,0;0",
+            "D;point;vertex;CABD,4",
+            "BC;line;connect;B,C"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../../postulates/post1/">I.Post.1</a></div><p>Join <em>BC.</em></p>
+<div class="just"><a href="../propI29/">I.29</a></div><p>Since <em>AB</em> is parallel to <em>CD,</em> and <em>BC</em> falls upon them, therefore the alternate angles <em>ABC</em> and <em>BCD</em> equal one another.</p>
+<div class="just"><a href="../propI4/">I.4</a></div><p>Since <em>AB</em> equals <em>CD,</em> and <em>BC</em> is common, the two sides <em>AB</em> and <em>BC</em> equal the two sides <em>DC</em> and <em>CB,</em> and the angle <em>ABC</em> equals the angle <em>BCD,</em> therefore the base <em>AC</em> equals the base <em>BD,</em> the triangle <em>ABC</em> equals the triangle <em>DCB,</em> and the remaining angles equals the remaining angles respectively, namely those opposite the equal sides. Therefore the angle <em>ACB</em> equals the angle <em>CBD.</em></p>
+<div class="just"><a href="../propI27/">I.27</a></div><p>Since the straight line <em>BC</em> falling on the two straight lines <em>AC</em> and <em>BD</em> makes the alternate angles equal to one another, therefore <em>AC</em> is parallel to <em>BD.</em></p>
+<p>And it was also proved equal to it.</p>
+<p>Therefore <em>straight lines which join the ends of equal and parallel straight lines in the same directions are themselves equal and parallel.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>The qualifier "in the same directions" in the statement of this proposition is necessary since without it the lines <em>AD</em> and <em>BC</em> could join the endpoints of the parallel lines, and <em>AD</em> and <em>BC</em> are not parallel but intersect. But these words of Euclid words are informal, and it would take some work to determine geometrically which end of <em>AD</em> corresponds to which end of a parallel line <em>BC.</em></p>
+<p>In general, given four points <em>A, B, C,</em> and <em>D,</em> exactly one of the three pairs of lines, <em>AB</em> and <em>CD, AC</em> and <em>BD,</em> and <em>AD</em> and <em>BC,</em> intersects. (If extended to infinite lines, all three pairs of lines might intersect, but as line segments only one pair does.) This statement belongs to the fundamental part of plane geometry that includes betweenness and sides of lines that wasn't developed until the late nineteenth century.</p>
+<h4>Use of Proposition 33</h4>
+<p>This proposition is used in <a href="../propI36/">I.36</a>, <a href="../propI45/">I.45</a>, and a few propositions in Books XI through XIII.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

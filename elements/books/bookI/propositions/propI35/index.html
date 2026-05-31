@@ -1,0 +1,122 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 35</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 35</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 35</h1>
+<div class="statement">Parallelograms which are on the same base and in the same parallels equal one another.</div>
+<p>Let <em>ABCD</em> and <em>EBCF</em> be parallelograms on the same base <em>BC</em> and in the same parallels <em>AF</em> and <em>BC.</em></p>
+<p>I say that <em>ABCD</em> equals the parallelogram <em>EBCF.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.35 diagram" src="propI35.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.35",
+        elements: [
+            "B;point;free;70,180",
+            "C;point;free;160,180",
+            "BC;line;connect;B,C",
+            "A;point;free;30,40",
+            "AB;line;connect;A,B",
+            "D;point;parallelogram;A,B,C",
+            "CD;line;connect;C,D",
+            "E1;point;free;10000,0",
+            "E';point;extend;A,D,A,E1;0;0",
+            "E;point;lineSegmentSlider;D,E',180,40",
+            "BE;line;connect;B,E",
+            "F;point;parallelogram;E,B,C",
+            "CF;line;connect;C,F",
+            "DE;line;connect;D,E",
+            "AF;line;connect;A,F",
+            "G;point;intersection;CD,BE"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../propI34/">I.34</a></div><p>Since <em>ABCD</em> is a parallelogram, therefore <em>AD</em> equals <em>BC.</em></p>
+<div class="just"><a href="../../commonnotions/cn1/">C.N.1</a><br><a href="../../commonnotions/cn2/">C.N.2</a></div><p>For the same reason <em>EF</em> equals <em>BC,</em> so that <em>AD</em> also equals <em>EF.</em> And <em>DE</em> is common, therefore the whole <em>AE</em> equals the whole <em>DF.</em></p>
+<div class="just"><a href="../propI34/">I.34</a><br><a href="../propI29/">I.29</a><br><a href="../propI4/">I.4</a></div><p>But <em>AB</em> also equals <em>DC.</em> Therefore the two sides <em>EA</em> and <em>AB</em> equal the two sides <em>FD</em> and <em>DC</em> respectively, and the angle <em>FDC</em> equals the angle <em>EAB,</em> the exterior equals the interior. Therefore the base <em>EB</em> equals the base <em>FC,</em> and the triangle <em>EAB</em> equals the triangle <em>FDC.</em></p>
+<div class="just"><a href="../../commonnotions/cn3/">C.N.3</a></div><p>Subtract <em>DGE</em> from each. Then the trapezium <em>ABGD</em> which remains equals the trapezium <em>EGCF</em> which remains.</p>
+<div class="just"><a href="../../commonnotions/cn2/">C.N.2</a></div><p>Add the triangle <em>GBC</em> to each. Then the whole parallelogram <em>ABCD</em> equals the whole parallelogram <em>EBCF.</em></p>
+<p>Therefore <em>parallelograms which are on the same base and in the same parallels equal one another.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>Euclid's proof specifically treats the case when the point <em>D</em> lies between <em>A</em> and <em>E</em> in which case subtraction of a triangle is necessary. There are other cases to consider, for instance, when <em>E</em> lies between <em>A</em> and <em>D.</em> In that case the point <em>G</em> is irrelevant and the trapezium <em>BCED</em> may be added to the congruent triangles <em>ABE</em> and <em>DCF</em> to derive the conclusion. Euclid often supplies a proof for only one case, although occasionally he gives proofs for two or three cases.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="270" height="170" tabindex="0"></canvas>
+<noscript><img alt="I.35 alternate case" src="propI35a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "I.35",
+        elements: [
+            "B;point;free;60,140",
+            "C;point;free;170,140",
+            "BC;line;connect;B,C",
+            "A;point;free;30,40",
+            "AB;line;connect;A,B",
+            "D;point;parallelogram;A,B,C",
+            "CD;line;connect;C,D",
+            "E;point;lineSegmentSlider;A,D,120,40",
+            "BE;line;connect;B,E",
+            "F;point;parallelogram;E,B,C",
+            "CF;line;connect;C,F",
+            "DE;line;connect;D,E",
+            "AF;line;connect;A,F"
+        ],
+    });
+</script>
+</figure><h4>Rectilinear figures as magnitudes</h4>
+<p>We see how Euclid treats figures as magnitudes by adding as subtracting them. The triangles <em>EAB</em> and <em>FDC</em> are shown directly to be equal. Then the triangle <em>DGE,</em> which is contained in each, is subtracted from each, and Euclid concludes that the remaining trapezia <em>ABGD</em> and <em>EGCF</em> are therefore equal. These trapezia are not congruent, but they do have the same area. Next, the triangle <em>GBC</em> is added to each trapezium to conclude the two parallelograms <em>ABCD</em> and <em>EBCF</em> are equal.</p>
+<p>These are the same kinds of cut-and-paste operations that Euclid used on lines and angles earlier in Book I, but these are applied to rectilinear figures. In later books cut-and-paste operations will be applied to other kinds of magnitudes such as solid figures and arcs of circles.</p>
+<h4>Use of Proposition 35</h4>
+<p>This proposition is used in the next two propositions and in <a href="../../../bookXI/propositions/propXI31/">XI.31</a>.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

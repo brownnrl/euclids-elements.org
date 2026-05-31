@@ -1,0 +1,108 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 45</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 45</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 45</h1>
+<div class="statement">To construct a parallelogram equal to a given rectilinear figure in a given rectilinear angle.</div>
+<p>Let <em>ABCD</em> be the given rectilinear figure and <em>E</em> the given rectilinear angle.</p>
+<p>It is required to construct a parallelogram equal to the rectilinear figure <em>ABCD</em> in the given angle <em>E.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="400" height="240" tabindex="0"></canvas>
+<noscript><img alt="I.45 diagram" src="propI45.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.45",
+        elements: [
+            "A;point;free;40,60",
+            "B;point;free;100,200",
+            "C;point;free;150,80",
+            "D;point;free;100,40",
+            "BD;line;connect;B,D",
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;0,0,0;random",
+            "E1;point;free;180,120;0",
+            "E2;point;free;170,150;0",
+            "E3;point;free;200,150;0",
+            "E1E2;line;connect;E1,E2",
+            "E2E3;line;connect;E2,E3",
+            "E;polygon;triangle;E1,E2,E3;0,0,0;0;0;0",
+            "K;point;free;230,190",
+            "F;point;free;270,70",
+            "H';point;similar;F,K,E1,E2,E3;0;0",
+            "ABD;polygon;triangle;A,B,D;0;0;0;0",
+            "DBC;polygon;triangle;D,B,C;0;0;0;0",
+            "KFGH;polygon;application;ABD,K,F,H';0;0;0,0,0;random",
+            "H;point;vertex;KFGH,4",
+            "G;point;vertex;KFGH,3",
+            "M';point;similar;G,H,E1,E2,E3;0;0",
+            "HGLM;polygon;application;DBC,H,G,M';0;0;0,0,0;random",
+            "M;point;vertex;HGLM,4",
+            "L;point;vertex;HGLM,3"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../../postulates/post1/">I.Post.1</a><br><a href="../propI42/">I.42</a><br><a href="../propI44/">I.44</a></div><p>Join <em>DB.</em> Construct the parallelogram <em>FH</em> equal to the triangle <em>ABD</em> in the angle <em>HKF</em> which equals <em>E.</em> Apply the parallelogram <em>GM</em> equal to the triangle <em>DBC</em> to the straight line <em>GH</em> in the angle <em>GHM</em> which equals <em>E.</em></p>
+<div class="just"><a href="../../commonnotions/cn1/">C.N.1</a></div><p>Since the angle <em>E</em> equals each of the angles <em>HKF</em> and <em>GHM,</em> therefore the angle <em>HKF</em> also equals the angle <em>GHM.</em></p>
+<div class="just"><a href="../../commonnotions/cn2/">C.N.2</a></div><p>Add the angle <em>KHG</em> to each. Therefore the sum of the angles <em>FKH</em> and <em>KHG</em> equals the sum of the angles <em>KHG</em> and <em>GHM.</em></p>
+<div class="just"><a href="../propI29/">I.29</a><br><a href="../../commonnotions/cn1/">C.N.1</a></div><p>But the sum of the angles <em>FKH</em> and <em>KHG</em> equals two right angles, therefore the sum of the angles <em>KHG</em> and <em>GHM</em> also equals two right angles.</p>
+<div class="just"><a href="../propI14/">I.14</a></div><p>Thus, with a straight line <em>GH,</em> and at the point <em>H</em> on it, two straight lines <em>KH</em> and <em>HM</em> not lying on the same side make the adjacent angles together equal to two right angles, therefore <em>KH</em> is in a straight line with <em>HM.</em></p>
+<div class="just"><a href="../propI29/">I.29</a></div><p>Since the straight line <em>HG</em> falls upon the parallels <em>KM</em> and <em>FG,</em> therefore the alternate angles <em>MHG</em> and <em>HGF</em> equal one another.</p>
+<div class="just"><a href="../../commonnotions/cn2/">C.N.2</a></div><p>Add the angle <em>HGL</em> to each. Then the sum of the angles <em>MHG</em> and <em>HGL</em> equals the sum of the angles <em>HGF</em> and <em>HGL.</em></p>
+<div class="just"><a href="../propI29/">I.29</a>, <a href="../../commonnotions/cn1/">C.N.1</a><br><a href="../propI14/">I.14</a></div><p>But the sum of the angles <em>MHG</em> and <em>HGL</em> equals two right angles, therefore the sum of the angles <em>HGF</em> and <em>HGL</em> also equals two right angles. Therefore <em>FG</em> is in a straight line with <em>GL.</em></p>
+<div class="just"><a href="../propI34/">I.34</a>, <a href="../propI30/">I.30</a><br><a href="../../commonnotions/cn1/">C.N.1</a>, <a href="../propI33/">I.33</a></div><p>Since <em>FK</em> is equal and parallel to <em>HG,</em> and <em>HG</em> equal and parallel to <em>ML</em> also, therefore <em>KF</em> is also equal and parallel to <em>ML,</em> and the straight lines <em>KM</em> and <em>FL</em> join them at their ends. Therefore <em>KM</em> and <em>FL</em> are also equal and parallel. Therefore <em>KFLM</em> is a parallelogram.</p>
+<div class="just"><a href="../../commonnotions/cn2/">C.N.2</a></div><p>Since the triangle <em>ABD</em> equals the parallelogram <em>FH,</em> and <em>DBC</em> equals <em>GM,</em> therefore the whole rectilinear figure <em>ABCD</em> equals the whole parallelogram <em>KFLM.</em></p>
+<p>Therefore the parallelogram <em>KFLM</em> has been constructed equal to the given rectilinear figure <em>ABCD</em> in the angle <em>FKM</em> which equals the given angle <em>E.</em></p>
+<div class="qed">Q.E.F.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>With this construction any rectilinear area can be applied to a line in an angle, that is, it can be transformed into a parallelogram with whatever angle you want and with one side whatever you want. That is a satisfactory solution to the question "what's the area of this figure?"</p>
+<p>But the question "what's the area of a circle?" is not answered in the <em>Elements.</em> See the note on <a href="../../../bookII/propositions/propII14/#squaring">squaring the circle</a> after proposition II.14 for more discussion of this question.</p>
+<h4>Use of Proposition 45</h4>
+<p>This construction is used in propositions <a href="../../../bookII/propositions/propII14/">II.14</a>, <a href="../../../bookVI/propositions/propVI25/">VI.25</a>, and <a href="../../../bookXI/propositions/propXI32/">XI.32</a>. Like many of the other constructions in Book I, it is used to make constructions in different planes as is done in XI.32.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

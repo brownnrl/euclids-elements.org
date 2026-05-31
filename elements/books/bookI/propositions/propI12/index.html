@@ -1,0 +1,95 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 12</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 12</h1>
+<div class="statement">To draw a straight line perpendicular to a given infinite straight line from a given point not on it.</div>
+<p>Let <em>AB</em> be the given infinite straight line, and <em>C</em> the given point which is not on it.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="330" height="250" tabindex="0"></canvas>
+<noscript><img alt="I.12 diagram" src="propI12.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.12",
+    pivot: "H",
+    elements: [
+        "A;point;free;30,180",
+        "B;point;free;290,180",
+        "AB;line;connect;A,B",
+        "C;point;free;160,130",
+        "D;point;free;180,220",
+        "EFG;circle;radius;C,D",
+        "EG;line;chord;AB,EFG;0;0;0",
+        "E;point;first;EG",
+        "G;point;last;EG",
+        "H;point;midpoint;EG;black;green",
+        "CG;line;connect;C,G",
+        "CH;line;connect;C,H",
+        "CE;line;connect;C,E",
+        "FF';line;chord;CH,EFG",
+        "F;point;first;FF'"
+    ],
+});
+</script>
+</figure><p>It is required to draw a straight line perpendicular to the given infinite straight line <em>AB</em> from the given point <em>C</em> which is not on it.</p>
+<div class="just"><a href="../../postulates/post3/">I.Post.3</a><br><a href="../propI10/">I.10</a>, <a href="../../postulates/post1/">I.Post.1</a></div><p>Take an arbitrary point <em>D</em> on the other side of the straight line <em>AB,</em> and describe the circle <em>EFG</em> with center <em>C</em> and radius <em>CD.</em> Bisect the straight line <em>EG</em> at <em>H,</em> and join the straight lines <em>CG, CH,</em> and <em>CE.</em></p>
+<p>I say that <em>CH</em> has been drawn perpendicular to the given infinite straight line <em>AB</em> from the given point <em>C</em> which is not on it.</p>
+<div class="just"><a href="../../definitions/defI15/">I.Def.15</a><br><a href="../propI8/">I.8</a></div><p>Since <em>GH</em> equals <em>HE,</em> and <em>HC</em> is common, therefore the two sides <em>GH</em> and <em>HC</em> equal the two sides <em>EH</em> and <em>HC</em> respectively, and the base <em>CG</em> equals the base <em>CE.</em> Therefore the angle <em>CHG</em> equals the angle <em>EHC,</em> and they are adjacent angles.</p>
+<div class="just"><a href="../../definitions/defI10/">I.Def.10</a></div><p>But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, and the straight line standing on the other is called a perpendicular to that on which it stands.</p>
+<p>Therefore <em>CH</em> has been drawn perpendicular to the given infinite straight line <em>AB</em> from the given point <em>C</em> which is not on it.</p>
+<div class="qed">Q.E.F.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>Again, the double-equilateral-triangle construction is used, but this time the preparation of the starting line <em>EG</em> is different. The point <em>D</em> is taken on the other side of the line <em>AB</em> to insure that circle meets the line <em>AB</em> in at least two points, <em>E</em> and <em>G.</em> If <em>D</em> is taken on the line <em>AB,</em> it might be taken at <em>H,</em> and the resulting circle would touch the line only at <em>H</em>; and if <em>D</em> is taken on the same side of <em>AB,</em> then the circle could miss the line entirely.</p>
+<p>Euclid does not precede this proposition with propositions investigating how lines meet circles. He is much more careful in Book III on circles in which the first dozen or so propositions lay foundations. For instance, Proposition <a href="../../../bookIII/propositions/propIII10/">III.10</a> states that a circle does not cut a circle at more than two points. Even so, some propositions are missing. One is needed for this proposition to justify the existence of the two points <em>C</em> and <em>E</em> where the line <em>AB</em> meets circle with center <em>C</em> and radius <em>CD.</em> Such a proposition would state "A circle whose center is on one side of a line and on whose circumference lies a point on the other side of the line meets the line at two points."</p>
+<p>Incidentally, Proclus explains in his commentary on Book I that the problem of constructing the perpendicular was investigated by Oenopides of Chios who lived sometime in the middle of the fifth century B.C.E., a century and a half before Euclid.</p>
+<h4>Use of Proposition 12</h4>
+<p>The construction of this proposition is not used in Book I, but it is used on occasion in the remaining geometric books, namely, Books II through IV, VI, and XI through XIII.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

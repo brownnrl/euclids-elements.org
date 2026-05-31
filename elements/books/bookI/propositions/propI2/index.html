@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 2</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 2</h1>
+<div class="statement">To place a straight line equal to a given straight line with one end at a given point.</div>
+<p>Let <em>A</em> be the given point, and <em>BC</em> the given straight line.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="340" height="320" tabindex="0"></canvas>
+<noscript><img alt="I.2 diagram" src="propI2.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.2",
+    pivot: "D",
+    elements: [
+        "A;point;free;160,190",
+        "B;point;free;190,160",
+        "C;point;free;180,90",
+        "BC;line;connect;B,C",
+        "DAB;polygon;equilateralTriangle;A,B;0;0;0;0",
+        "D;point;vertex;DAB,3;black;green",
+        "AL;line;extend;D,A,B,C",
+        "L;point;last;AL",
+        "LE;line;extend;A,L,A,B",
+        "E;point;last;LE;black;0",
+        "BG;line;extend;D,B,B,C",
+        "G;point;last;BG",
+        "GF;line;extend;B,G,A,B",
+        "F;point;last;GF;black;0",
+        "CGH;circle;radius;BC;0;0;0;0",
+        "BH;line;extend;G,B,G,B;0;0;0",
+        "H;point;last;BH;black;0",
+        "GKL;circle;radius;D,G;0;0;black;darker",
+        "CGH*;circle;radius;BC;0;0;black;brighter",
+        "DK;line;extend;G,D,G,D;0;0;0",
+        "K;point;last;DK;black;0",
+        "DAB*;polygon;equilateralTriangle;A,B;0;0;black;random"
+    ],
+});
+</script>
+</figure><p>It is required to place a straight line equal to the given straight line <em>BC</em> with one end at the point <em>A.</em></p>
+<div class="just"><a href="../../postulates/post1/">Post. 1</a>, <a href="../propI1/">I.1.</a></div><p>Join the straight line <em>AB</em> from the point <em>A</em> to the point <em>B,</em> and construct the equilateral triangle <em>DAB</em> on it.</p>
+<div class="just"><a href="../../postulates/post2/">Post.2</a><br><a href="../../postulates/post3/">Post.3</a></div><p>Produce the straight lines <em>AE</em> and <em>BF</em> in a straight line with <em>DA</em> and <em>DB.</em> Describe the circle <em>CGH</em> with center <em>B</em> and radius <em>BC,</em> and again, describe the circle <em>GKL</em> with center <em>D</em> and radius <em>DG.</em></p>
+<div class="just"><a href="../../definitions/defI15/">I.Def.15</a></div><p>Since the point <em>B</em> is the center of the circle <em>CGH,</em> therefore <em>BC</em> equals <em>BG.</em> Again, since the point <em>D</em> is the center of the circle <em>GKL,</em> therefore <em>DL</em> equals <em>DG.</em></p>
+<div class="just"><a href="../../commonnotions/cn3/">C.N.3</a></div><p>And in these <em>DA</em> equals <em>DB,</em> therefore the remainder <em>AL</em> equals the remainder <em>BG.</em></p>
+<div class="just"><a href="../../commonnotions/cn1/">C.N.1</a></div><p>But <em>BC</em> was also proved equal to <em>BG,</em> therefore each of the straight lines <em>AL</em> and <em>BC</em> equals <em>BG.</em> And things which equal the same thing also equal one another, therefore <em>AL</em> also equals <em>BC.</em></p>
+<p>Therefore the straight line <em>AL</em> equal to the given straight line <em>BC</em> has been placed with one end at the given point <em>A.</em></p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>This is a very clever construction to solve what seems to be a simple problem. One would like simply to slide the line <em>BC</em> along so that one end coincides with the point <em>A.</em> But there is no motion in the geometry of Euclid. There is something like motion used in proposition <a href="../propI4/">I.4</a>, but nothing is actually moved there. The only basic constructions that Euclid allows are those described in Postulates 1, 2, and 3. Euclid then builds new constructions (such as the one in this proposition) out of previously described constructions. So at this point, the only constructions available are those of the three postulates and the construction in proposition <a href="../propI1/">I.1</a>, and Euclid uses all four here.</p>
+<p>Another, different, expectation is that one might use a compass to transfer the distance <em>BC</em> over to the point <em>A.</em> It is clear from Euclid's use of postulate 3 that the point to be used for the center and a point that will be on the circumference must be constructed before applying the postulate; postulate 3 is not used to transfer distance. Sometimes postulate 3 is likened to a collapsing compass, that is, when the compass is lifted off the drawing surface, it collapses.</p>
+<p>It could well be that in some earlier Greek geometric theory abstracted compasses that could transfer distances. If that speculation is correct, then this proposition would be a late addition to the theory. The construction of the proposition allows a weaker postulate (namely postulate 3) to be assumed.</p>
+<h4>Construction steps</h4>
+<p>When using a compass and a straightedge to perform this construction there are more circles drawn than shown in the diagram that accompanies the proposition. These are the two circles needed to construct the equilateral triangle <em>ABD.</em> One side, <em>AB,</em> of that triangle isn't necessary for the construction.</p>
+<p>Altogether, four circles and two lines are required for this construction.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="300" height="320" tabindex="0"></canvas>
+<noscript><img alt="I.2 construction steps" src="propI2a.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_1",
+    background: "0,0,100",
+    title: "I.2",
+    pivot: "D",
+    elements: [
+        "A;point;free;150,190",
+        "B;point;free;180,160",
+        "C;point;free;170,90",
+        "BC;line;connect;B,C;0;0;blue",
+        "ABcirc;circle;radius;A,B",
+        "BAcirc;circle;radius;B,A",
+        "D'D;line;bichord;ABcirc,BAcirc;0;0;0",
+        "D;point;last;D'D;black;green",
+        "DA;line;connect;D,A",
+        "DB;line;connect;D,B",
+        "BCcirc;circle;radius;B,C",
+        "G;point;extend;D,B,B,C",
+        "BG;line;connect;B,G;0;0;blue",
+        "DGcirc;circle;radius;D,G",
+        "L;point;extend;D,A,B,C",
+        "AL;line;connect;A,L;0;0;blue",
+        "LE;line;extend;A,L,A,B",
+        "GF;line;extend;B,G,A,B"
+    ],
+});
+</script>
+</figure><h4>Use of Proposition 2</h4>
+<p>The construction in this proposition is only used in Proposition <a href="../propI3/">I.3</a>.</p>
+<p>Note that this construction assumes that all the point <em>A</em> and the line <em>BC</em> lie in a plane. It may also be used in space, however, since Proposition <a href="../../../bookXI/propositions/propXI2/">XI.2</a> implies that <em>A</em> and <em>BC</em> do lie in a plane.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

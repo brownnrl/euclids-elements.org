@@ -1,0 +1,327 @@
+body
+{
+  background-color:#ffffff;
+}
+
+@font-face {
+  font-family: 'Felipa';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Felipa'), local('Felipa-Regular'), url(https://themes.googleusercontent.com/static/fonts/felipa/v1/CGA4sfSyBqMA9-nMl4k29-vvDin1pK8aKteLpeZ5c0A.ttf) format('truetype');
+}
+
+h1 {font-family: 'Felipa';
+  color:#0020C2; 
+  font-weight:normal;
+  text-align: center;}
+h2 {font-family: 'Felipa';
+  color:#0020C2;
+  text-align: center;}
+h3 {font-family: 'Felipa';
+  color:#0020C2;}
+h4 {font-family: 'Felipa';
+  color:#0020C2;}
+  
+div.theorem {
+  background-color:#ffe9cd;
+  border:1px solid #000000;
+  height:auto;
+  width:auto;
+  padding:5px;
+  /* Contain floated children (figure/diagram, div.just) so the beige
+     background extends to enclose them. Without this the theorem
+     box ends at the last in-flow text, leaving floats hanging out
+     the bottom — same bug the hand-authored site had. */
+  display: flow-root;
+}
+
+div.theorem p {
+  font-weight:normal;
+  padding:4px;
+  border:0px solid #000000;
+  margin:1px;
+}
+
+div.theorem h1 {
+  font-family: 'Felipa';
+  color:#0020C2; 
+  font-weight:normal;
+  text-align: center;
+  border:0px solid #000000;
+  margin:5px;
+  padding:5px;
+}
+div.theorem h2 {
+  font-family: 'Felipa';
+  color:#0020C2;
+}
+div.theorem h3 {
+  font-family: 'Felipa';
+  color:#0020C2;
+}
+div.theorem h4 {
+  font-family: 'Felipa';
+  color:#0020C2;
+}
+
+div.title {
+  font-family: 'Felipa';
+  color:#0020C2; 
+  font-size:200%;
+  font-weight:normal;
+  text-align: center;
+  border:0px solid #000000;
+  margin:5px;
+  padding:5px;
+}
+
+div.statement {
+  text-align:center;
+  font-weight:normal;
+  font-style:italic;
+  font-size:120%;
+  border:0px solid #000000;
+  margin:5px;
+  padding:5px;
+}
+
+div.just {
+  text-align:right;
+  float:right;
+  clear:right;
+  font-weight:normal;
+  font-size:75%;
+  border:0px solid #000000;
+  width:70px;
+  margin:4px;
+  padding:2px;
+}
+
+div.ldiagram {
+  float:left;
+  border:0px solid #000000;
+  margin:5px;
+}
+
+div.ldiagram {
+  ;
+  border:0px solid #000000;
+  margin:5px;
+}
+
+div.rdiagram {
+  float:right;
+  border:0px solid #000000;
+  margin:5px;
+}
+
+div.qed {
+  text-align:right;
+  font-size:75%;
+  border:0px solid #000000;
+  margin:0px;
+}
+
+/* a.hover to hide a link until the mouse is over it */
+  a.hover:link {text-decoration:none;}    /* unvisited link */
+  a.hover:visited {text-decoration:none;} /* visited link */
+  a.hover:hover {text-decoration:underline;}   /* mouse over link */
+  a.hover:active {text-decoration:underline;}  /* selected link */
+  
+div.twocolumn
+{
+  -moz-column-count:2; /* Firefox */
+  -webkit-column-count:2; /* Safari and Chrome */
+  column-count:2;
+}
+
+  
+div.threecolumn
+{
+  -moz-column-count:3; /* Firefox */
+  -webkit-column-count:3; /* Safari and Chrome */
+  column-count:3;
+}
+
+/* --- Phase 1 mobile-readability patch (issue #4) --- */
+/* Temporary. Proper template-driven redesign lands with the SSG
+   migration in #13. */
+
+/* Canvas sizing is intentionally not constrained here. With CSS scaling
+   (`max-width: 100%`), the canvas bitmap stays at its declared size while
+   display size shrinks, so touch coordinates can mismatch hit-testing.
+   geomlib 0.2.0 ships a Pointer Events refactor (brownnrl/euclid#55) that
+   resolves the underlying coord-mapping problem and sets
+   `touch-action: none` on each canvas from JS, so no `canvas { ... }`
+   rule is needed here. */
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .ldiagram, .rdiagram {
+        float: none;
+        width: auto;
+    }
+    .just {
+        float: none;
+        width: auto;
+    }
+}
+/* --- Static site header/footer (Lektor rebuild) ---
+   The hand-authored site uses loadHeader()/loadFooter() JS to inject
+   navigation. The Lektor version emits everything at build time so
+   the page works with JS disabled, matching the noscript fallback
+   intent already in place for the canvas diagrams. */
+
+.site-header {
+    margin-bottom: 0.6em;
+}
+
+.site-header h1 {
+    margin: 0.15em 0;
+    /* h1 already gets font-family: Felipa + color #0020C2 + centered
+       + font-weight:normal from the global rule near the top of this
+       file. Just tighten the per-line spacing for the stack. */
+}
+
+.site-header h1 a.hover {
+    color: #0020C2;
+    text-decoration: none;
+}
+
+.site-header h1 a.hover:hover {
+    text-decoration: underline;
+}
+
+/* Footer rendered by /js/footer-nav.js — both the nav table and the
+   credit/copyright block live inside <div id="footer">. */
+#footer {
+    clear: both;
+    margin-top: 1.5em;
+}
+hr.footer-sep {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0.4em 0;
+}
+table.footer-nav {
+    margin: 0.6em auto;
+    border-collapse: collapse;
+}
+table.footer-nav td {
+    padding: 0.2em 0.6em;
+    vertical-align: top;
+}
+p.footer-credit {
+    font-size: 80%;
+    color: #444;
+    margin: 0.6em 0.9em;
+}
+p.footer-credit a {
+    color: #0020C2;
+}
+
+/* Hierarchical breadcrumb under the main header — supplements the
+   stacked h1 titles by showing the full path from root.
+   "Home › Table of Contents › Book I › Proposition 1" */
+.breadcrumbs {
+    font-size: 85%;
+    color: #666;
+    margin: 0.3em 0.9em 1em;
+    text-align: center;
+}
+.breadcrumbs a {
+    color: #0020C2;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.breadcrumbs .crumb-sep {
+    color: #aaa;
+    margin: 0 0.3em;
+}
+.breadcrumbs .crumb-current {
+    color: #444;
+}
+
+/* Heading anchors (book section headings, master-TOC group titles,
+   section-index titles when linked from the book page) should always
+   render as a heading — blue, no underline — regardless of visited
+   state. They're navigation, not prose links. */
+h2 a:link,    h2 a:visited,
+h3 a:link,    h3 a:visited,
+h4 a:link,    h4 a:visited {
+    color: #0020C2;
+    text-decoration: none;
+}
+h2 a:hover, h3 a:hover, h4 a:hover {
+    text-decoration: underline;
+}
+
+/* Blue-highlighted axiom statements (formal axioms introduced in the
+   Common Notions guide and elsewhere). Plain <blockquote> remains
+   for derived properties, proofs, and other indented prose. */
+blockquote.axiom {
+    color: #0000ff;
+}
+
+/* Markdown tables in guide bodies — used for reference summaries
+   like the Common Notions properties table. Center on the page and
+   give cells a bit of breathing room. */
+table {
+    margin: 0.8em auto;
+    border-collapse: collapse;
+}
+table th, table td {
+    padding: 0.25em 0.6em;
+    vertical-align: top;
+}
+
+/* Geomlib applet figure inside a guide body. Floats left so the
+   surrounding prose wraps around it — replaces the old two-column
+   <table> layout with semantic, text-flow-friendly markup.
+   `figure class="diagram rdiagram"` flips to a right float; mobile
+   collapses to a centered block. */
+figure.diagram {
+    float: left;
+    margin: 0.3em 1.2em 0.6em 0;
+    text-align: center;
+}
+figure.diagram.rdiagram {
+    float: right;
+    margin: 0.3em 0 0.6em 1.2em;
+}
+figure.diagram canvas {
+    display: inline-block;
+    /* Let the canvas shrink to fit the viewport on small screens so
+       the auto-margin centering in the mobile rule below actually
+       takes effect. geomlib 0.2.0+ remaps touch coords through its
+       Pointer Events refactor so CSS scaling no longer breaks
+       hit-testing. */
+    max-width: 100%;
+    height: auto;
+}
+/* Stack vertically only on true mobile widths. At narrow desktop /
+   tablet sizes the canvas is usually small enough (~280-340px) that
+   floating with text wrapping still reads better than stacked. */
+@media (max-width: 480px) {
+    figure.diagram, figure.diagram.rdiagram {
+        float: none;
+        margin: 1em auto;
+        display: block;
+    }
+}
+
+/* `red_highlight: yes` on a definition / postulate / common notion /
+   proposition record colors the entry's text in Joyce's red. The
+   class is applied to both <dt> and <dd> so the trailing "." after
+   the label and the full statement render red. Anchors inside keep
+   their default link color, matching the source bookI.html where
+   the <font color=bb0033> wrap is overridden by browser link
+   styling on the <a> itself. */
+.red-highlight {
+    color: #bb0033;
+}

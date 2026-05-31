@@ -1,0 +1,89 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 14</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 14</h1>
+<div class="statement">If with any straight line, and at a point on it, two straight lines not lying on the same side make the sum of the adjacent angles equal to two right angles, then the two straight lines are in a straight line with one another.</div>
+<p>With any straight line <em>AB,</em> and at the point <em>B</em> on it, let the two straight lines <em>BC</em> and <em>BD</em> not lying on the same side make the sum of the adjacent angles <em>ABC</em> and <em>ABD</em> equal to two right angles.</p>
+<p>I say that <em>BD</em> is in a straight line with <em>CB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="220" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.14 diagram" src="propI14.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.14",
+        elements: [
+            "A;point;free;60,60",
+            "B;point;free;70,180",
+            "AB;line;connect;A,B",
+            "C;point;free;40,180",
+            "D;point;lineSlider;B,C,170,180",
+            "CD;line;connect;C,D",
+            "Acirc;circle;radius;A,B;0;0;0;0",
+            "E;point;circleSlider;Acirc,160,150",
+            "BE;line;connect;B,E"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="../../postulates/post2/">I.Post.2</a></div><p>If <em>BD</em> is not in a straight line with <em>BC,</em> then produce <em>BE</em> in a straight line with <em>CB.</em></p>
+<div class="just"><a href="../propI13/">I.13</a><br><a href="../../postulates/post4/">I.Post.4</a><br><a href="../../commonnotions/cn1/">C.N.1</a></div><p>Since the straight line <em>AB</em> stands on the straight line <em>CBE,</em> therefore the sum of the angles <em>ABC</em> and <em>ABE</em> equals two right angles. But the sum of the angles <em>ABC</em> and <em>ABD</em> also equals two right angles, therefore the sum of the angles <em>CBA</em> and <em>ABE</em> equals the sum of the angles <em>CBA</em> and <em>ABD.</em></p>
+<div class="just"><a href="../../commonnotions/cn3/">C.N.3</a></div><p>Subtract the angle <em>CBA</em> from each. Then the remaining angle <em>ABE</em> equals the remaining angle <em>ABD,</em> the less equals the greater, which is impossible. Therefore <em>BE</em> is not in a straight line with <em>CB.</em></p>
+<p>Similarly we can prove that neither is any other straight line except <em>BD.</em> Therefore <em>CB</em> is in a straight line with <em>BD.</em></p>
+<p>Therefore <em>if with any straight line, and at a point on it, two straight lines not lying on the same side make the sum of the adjacent angles equal to two right angles, then the two straight lines are in a straight line with one another.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>This is a converse of the last proposition.</p>
+<p>This is a proposition in plane geometry. If <em>A, B, C,</em> and <em>D</em> do not lie in a plane, then <em>CBD</em> cannot be a straight line. An ambient plane is necessary to talk about the sides of the line <em>AB</em></p>
+<p>The qualifying sentence, "Similarly we can prove that neither is any other straight line except <em>BD,</em>" is meant to take care of the cases when <em>E</em> does not lie inside the angle <em>ABD.</em></p>
+<p>This is the first use of <a href="../../postulates/post4/">Postulate 4</a> that all right angles are equal.</p>
+<h4>Use of Proposition 14</h4>
+<p>This proposition is used in propositions <a href="../propI45/">I.45</a>, <a href="../propI47/">I.47</a>, and a few in Books VI and XI.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

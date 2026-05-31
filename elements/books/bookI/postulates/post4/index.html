@@ -1,0 +1,81 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Postulate 4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Postulates</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Postulate 4</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Postulate 4</h1>
+<div class="statement">That all right angles equal one another.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<figure class="diagram">
+<canvas id="canvas_0" width="310" height="160" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="post4.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "I.Post.4",
+        elements: [
+            "A;point;free;40,130",
+            "B;point;free;160,130",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;AB,90,130",
+            "D;point;perpendicular;C,B",
+            "CD;line;connect;C,D",
+            "E;point;free;160,40",
+            "F;point;free;270,130",
+            "EF;line;connect;E,F",
+            "G;point;lineSlider;EF,215,85",
+            "H;point;perpendicular;G,F",
+            "GH;line;connect;G,H"
+        ],
+    });
+</script>
+</figure><p>In the definition of right angle, it is clear that the two angles at the foot of a perpendicular, such as angles <em>ACD</em> and <em>BCD,</em> are equal. This postulate says that an angle at the foot of one perpendicular, such as angle <em>ACD,</em> equals an angle at the foot of any other perpendicular, such as angle <em>EGH.</em></p>
+<p>This postulate forms the basis of angle measurement. The only angle measurement that occurs in the <em>Elements</em> is in terms of right angles. For instance, in proposition <a href="../../propositions/propI17/">I.17</a> the sum of two angles is shown to be less than two right angles. Another example is in the proof of proposition <a href="../../../bookII/propositions/propII9/">II.9</a> in which two angles are shown to each be half of a right angle, so they are equal. Also, in proposition <a href="../../../bookIII/propositions/propIII16/">III.16</a> this postulate is used to claim that two angles cannot sum to less than two right angles yet be equal to two other right angles.</p>
+<p>This postulate is first explicitly used in proposition <a href="../../propositions/propI14/">I.14</a>.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

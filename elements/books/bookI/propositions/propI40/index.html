@@ -1,0 +1,91 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 40</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 40</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 40</h1>
+<div class="statement">Equal triangles which are on equal bases and on the same side are also in the same parallels.</div>
+<p>Let <em>ABC</em> and <em>CDE</em> be equal triangles on equal bases <em>BC</em> and <em>CE</em> and on the same side.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.40 diagram" src="propI40.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.40",
+        elements: [
+            "B;point;free;30,170",
+            "C;point;free;130,170",
+            "A;point;free;60,40",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "AD';line;parallel;A,B,C;0;0;0",
+            "D;point;lineSlider;AD',190,40",
+            "E;point;extend;B,C,B,C",
+            "DCE;polygon;triangle;D,C,E;0;0;0,0,0;random",
+            "AD;line;connect;A,D",
+            "F;point;lineSlider;C,D,135,60",
+            "AF;line;connect;A,F",
+            "EF;line;connect;E,F"
+        ],
+    });
+</script>
+</figure><p>I say that they are also in the same parallels.</p>
+<div class="just"><a href="../../postulates/post1/">I.Post.1</a></div><p>Join <em>AD.</em> I say that <em>AD</em> is parallel to <em>BE.</em></p>
+<div class="just"><a href="../propI31/">I.31</a>, <a href="../../postulates/post1/">I.Post.1</a></div><p>If not, draw <em>AF</em> through <em>A</em> parallel to <em>BE,</em> and join <em>FE.</em></p>
+<div class="just"><a href="../propI38/">I.38</a></div><p>Therefore the triangle <em>ABC</em> equals the triangle <em>FCE,</em> for they are on equal bases <em>BC</em> and <em>CE</em> and in the same parallels <em>BE</em> and <em>AF.</em></p>
+<div class="just"><a href="../../commonnotions/cn1/">C.N.1</a></div><p>But the triangle <em>ABC</em> equals the triangle <em>DCE,</em> therefore the triangle <em>DCE</em> also equals the triangle <em>FCE,</em> the greater equals the less, which is impossible. Therefore <em>AF</em> is not parallel to <em>BE.</em></p>
+<p>Similarly we can prove that neither is any other straight line except <em>AD,</em> therefore <em>AD</em> is parallel to <em>BE.</em></p>
+<p>Therefore <em>equal triangles which are on equal bases and on the same side are also in the same parallels.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>The statement and the setting out of this proposition are not up to Euclid's standards. This is supposed to be a converse to <a href="../propI38/">I.38</a>. The statement should state the the bases are along the same line, but it doesn't. There is no justification for assuming that the point <em>C</em> is a common vertex of the two triangles. Fortunately, the proof works just as well if <em>C</em> is split into two points.</p>
+<p>For some of the propositions and many of the lemmas and corollaries in the <em>Elements,</em> there is evidence that Euclid did not write them, but they were added later. The process of incorporating new material in textbooks was almost automatic when the books were copied by hand instead of printed. Scholars wrote comments (called "scholia", singular "scholium") in the margins of the texts, and copyists (some of whom were later scholars) would include those comments as part of the text in their new copies.</p>
+<p>Heiberg could show by means of an early papyrus fragment that this proposition was an early interpolation. For others, such as <a href="../propI37/">I.37</a> there is no direct evidence, only a doubt that a mathematician of Euclid's caliber would have included them.</p>
+<p>Unlike the other propositions in Book I, this one is not used later in the <em>Elements.</em></p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

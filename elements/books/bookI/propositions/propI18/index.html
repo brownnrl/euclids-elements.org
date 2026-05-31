@@ -1,0 +1,93 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 18</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 18</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 18</h1>
+<div class="statement">In any triangle the angle opposite the greater side is greater.</div>
+<p>Let <em>ABC</em> be a triangle having the side <em>AC</em> greater than <em>AB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.18 diagram" src="propI18.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.18",
+        elements: [
+            "A;point;free;40,30",
+            "B;point;free;80,170",
+            "C;point;free;220,170",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "D;point;cutoff;A,C,A,B",
+            "BD;line;connect;B,D"
+        ],
+    });
+</script>
+</figure><p>I say that the angle <em>ABC</em> is also greater than the angle <em>BCA.</em></p>
+<div class="just"><a href="../propI3/">I.3</a>, <a href="../../postulates/post1/">I.Post.1</a></div><p>Since <em>AC</em> is greater than <em>AB,</em> make <em>AD</em> equal to <em>AB,</em> and join <em>BD.</em></p>
+<div class="just"><a href="../propI16/">I.16</a></div><p>Since the angle <em>ADB</em> is an exterior angle of the triangle <em>BCD,</em> therefore it is greater than the interior and opposite angle <em>DCB.</em></p>
+<div class="just"><a href="../propI5/">I.5</a></div><p>But the angle <em>ADB</em> equals the angle <em>ABD,</em> since the side <em>AB</em> equals <em>AD,</em> therefore the angle <em>ABD</em> is also greater than the angle <em>ACB.</em> Therefore the angle <em>ABC</em> is much greater than the angle <em>ACB.</em></p>
+<p>Therefore <em>in any triangle the angle opposite the greater side is greater.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<h4>On word order</h4>
+<p>In this translation of Euclid's <em>Elements</em> the order of the words differs from the original Greek. In each of Euclid's Greek sentences, the data, that is the geometric objects given or already constructed, appear first, and the remaining geometric objects appear later. This is possible in Greek since it is an inflected language and the word order is very flexible. On the other hand, the word order in English is intrinsic to the syntax and semantics of the sentence and is not very flexible.</p>
+<p>Take, for instance, the statements of this and the next proposition.
+Very literal translations of these are (I.18) "In any triangle, the greater side [as subject] the greater angle [as object] subtends," and (I.19) "In any triangle, the greater angle [as object] the greater side [as subject] subtends."</p>
+<p>Heath keeps the word order in his translation but makes the second statement passive: (I.18) "In any triangle the greater side subtends the greater angle," and (I.19) "In any triangle the greater angle is subtended by the greater side." Without the understanding that the data come first, these two sentences are logically equivalent.</p>
+<p>In this translation the original word order is abandoned in order to make for more readable sentences and to clarify the meaning. Thus, (I.18)
+"In any triangle the angle opposite the greater side is greater," and (I.19)
+"In any triangle the side opposite the greater angle is greater."</p>
+<p>It may sound like these two propositions really do say the same thing, but they don't. they're actually disguised converses of each other. I.18 says</p>
+<center>if side <i>AC</i> > side <i>AB,</i> then angle <i>ABC</i> > angle <i>BCA</i>,</center><p>while I.19 says</p>
+<center>if angle <i>ABC</i> > angle <i>BCA,</i> then side <i>AC</i> > side <i>AB.</i></center><h4>Use of Proposition 18</h4>
+<p>This proposition is used in the proof of proposition <a href="../propI19/">I.19</a>.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>

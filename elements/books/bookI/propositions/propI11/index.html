@@ -1,0 +1,116 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js" type="text/javascript"></script>
+<script src="/js/footer-nav.js"></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+<nav class="breadcrumbs"><a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 11</span>
+</nav>
+
+
+
+<div class="theorem">
+<h1>Proposition 11</h1>
+<div class="statement">To draw a straight line at right angles to a given straight line from a given point on it.</div>
+<p>Let <em>AB</em> be the given straight line, and <em>C</em> the given point on it.</p>
+<p>It is required to draw a straight line at right angles to the straight line <em>AB</em> from the point <em>C.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="190" tabindex="0"></canvas>
+<noscript><img alt="I.11 diagram" src="propI11.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.11",
+    pivot: "F",
+    elements: [
+        "A;point;free;30,150",
+        "B;point;free;240,150",
+        "AB;line;connect;A,B",
+        "C;point;lineSlider;AB,135,150",
+        "D;point;lineSlider;AB,70,150",
+        "E;point;extend;D,C,D,C",
+        "DEF;polygon;equilateralTriangle;D,E;0;0;0;random",
+        "F;point;vertex;DEF,3;black;green",
+        "DF;line;connect;D,F",
+        "EF;line;connect;E,F",
+        "CF;line;connect;C,F"
+    ],
+});
+</script>
+</figure><div class="just"><a href="../propI3/">I.3</a>, <a href="../propI1/">I.1</a><br><a href="../../postulates/post1/">I.Post.1</a></div><p>Take an arbitrary point <em>D</em> on <em>AC.</em> Make <em>CE</em> equal to <em>CD.</em> Construct the equilateral triangle <em>FDE</em> on <em>DE,</em> and join <em>CF.</em></p>
+<p>I say that the straight line <em>CF</em> has been drawn at right angles to the given straight line <em>AB</em> from <em>C</em> the given point on it.</p>
+<div class="just"><a href="../../definitions/defI20/">I.Def.20</a><br><a href="../propI8/">I.8</a></div><p>Since <em>CD</em> equals <em>CE,</em> and <em>CF</em> is common, therefore the two sides <em>CD</em> and <em>CF</em> equal the two sides <em>CE</em> and <em>CF</em> respectively, and the base <em>DF</em> equals the base <em>EF.</em> Therefore the angle <em>DCF</em> equals the angle <em>ECF,</em> and they are adjacent angles.</p>
+<div class="just"><a href="../../definitions/defI10/">I.Def.10</a></div><p>But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, therefore each of the angles <em>DCF</em> and <em>FCE</em> is right.</p>
+<p>Therefore the straight line <em>CF</em> has been drawn at right angles to the given straight line <em>AB</em> from the given point <em>C</em> on it.</p>
+<div class="qed">Q.E.F.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>This and the next proposition both construct a perpendicular to a line through a given point. The difference is that the given point lies on the line in this proposition but doesn't in the next.</p>
+<h4>Construction steps</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="371" height="272" tabindex="0"></canvas>
+<noscript><img alt="I.11 construction steps" src="propI11a.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_1",
+    background: "0,0,100",
+    title: "I.11",
+    elements: [
+        "A;point;free;75,136",
+        "B;point;free;295,136",
+        "AB;line;connect;A,B",
+        "C;point;lineSlider;AB,185,136",
+        "D;point;lineSlider;AB,125,136",
+        "Ccirc;circle;radius;C,D",
+        "E;point;extend;D,C,D,C",
+        "Dcirc;circle;radius;D,E",
+        "Ecirc;circle;radius;E,D",
+        "GF;line;bichord;Dcirc,Ecirc",
+        "G;point;first;GF",
+        "F;point;last;GF"
+    ],
+});
+</script>
+</figure><p>The actual construction here is the same double-equilateral-triangle construction of the previous proposition that is used to bisect the line <em>DE,</em> except that it is preceded by the selection of points <em>D</em> and <em>E</em> on <em>AB</em> equidistant from <em>C.</em></p>
+<p>This construction actually only requires drawing three circles and the one line <em>FG</em>.</p>
+<h4>Use of Proposition 11</h4>
+<p>This construction is used in propositions <a href="../propI13/">I.13</a>, <a href="../propI46/">I.46</a>, <a href="../propI48/">I.48</a>, and numerous propositions in Books II, III, VI, VI, XI, XII, and XIII.</p>
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+</body>
+</html>
