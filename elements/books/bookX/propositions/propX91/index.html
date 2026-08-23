@@ -1,0 +1,184 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 91</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 91</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 91</h1>
+    <div class="statement">If an area is contained by a rational straight line and a first apotome, then the side of the area is an apotome.</div>
+    <p>Let the area <em>AB</em> be contained by the rational straight line <em>AC</em> and the first apotome <em>AD</em>.</p>
+<p>I say that the side of the area <em>AB</em> is an apotome.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="410" height="190" tabindex="0"></canvas>
+<noscript><img alt="X.91 diagram" src="propX91.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.91",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "A;point;lineSlider;A0,A3,40,0",
+            "D;point;lineSlider;A0,A3,80,0",
+            "C';point;perpendicular;A,D;0;0",
+            "C;point;lineSlider;A,C',0,150",
+            "B;point;parallelogram;C,A,D",
+            "ACBD;polygon;quadrilateral;A,C,B,D;0;0;black;random",
+            "G;point;lineSlider;A0,A3,200,0",
+            "E;point;midpoint;G,D",
+            "AGmid;point;midpoint;A,G;0;0",
+            "AGquar;point;midpoint;G,AGmid;0;0",
+            "GEcirc;circle;radius;G,E;0;0;0;0",
+            "GAcirc;circle;radius;AGquar,G;0;0;0;0",
+            "bich;line;bichord;GEcirc,GAcirc;0;0;0",
+            "F';point;first;bich;0;0",
+            "F;point;cutoff;AGmid,G,AGmid,F'",
+            "H;point;parallelogram;C,A,E",
+            "I;point;parallelogram;C,A,F",
+            "K;point;parallelogram;C,A,G",
+            "DFIB;polygon;quadrilateral;D,F,I,B;0;0;black;random",
+            "EH;line;connect;E,H",
+            "IFGK;polygon;quadrilateral;I,F,G,K;0;0;black;140,80,100",
+            "R0;point;free;-1000,160;0;0",
+            "R3;point;free;1000,160;0;0",
+            "R;point;lineSlider;R0,R3,240,0",
+            "M;point;meanProportional;A,F,F,I,R,R3",
+            "RMPL;polygon;square;R,M;0;0;black;random",
+            "P;point;vertex;RMPL,3",
+            "L;point;vertex;RMPL,4",
+            "N;point;meanProportional;F,I,I,K,P,L",
+            "PNXO;polygon;square;P,N;0;0;black;140,80,100",
+            "O;point;vertex;PNXO,4",
+            "X;point;vertex;PNXO,3;0",
+            "S;point;intersection;L,R,X,O",
+            "T;point;intersection;R,M,X,N",
+            "SX;line;connect;S,X",
+            "TX;line;connect;T,X",
+            "RP;line;connect;R,P",
+            "Z;point;midpoint;X,O;0;0",
+            "U;point;cutoff;X,S,X,Z",
+            "V;point;cutoff;X,P,X,Z",
+            "W;point;cutoff;X,T,X,Z",
+            "UVW;sector;arc;W,V,U;0;0;gray;0"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookX/propositions/propX73/">X.73</a><br><a href="/elements/books/bookX/definitions/defX.III.1/">X.Def.III.1</a></div>
+<p>Since <em>AD</em> is a first apotome, let <em>DG</em> be its annex, therefore <em>AG</em> and <em>GD</em> are rational straight lines commensurable in square only. Also, the whole <em>AG</em> is commensurable with the rational straight line <em>AC</em> set out, and the square on <em>AG</em> is greater than the square on <em>GD</em> by the square on a straight line commensurable in length with <em>AG</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX17/">X.17</a></div>
+<p>Therefore if there is applied to <em>AG</em> a parallelogram equal to the fourth part of the square on <em>DG</em> and deficient by a square figure, then it divides it into commensurable parts.</p>
+<p>Bisect <em>DG</em> at <em>E</em>, apply to <em>AG</em> a parallelogram equal to the square on <em>EG</em> and deficient by a square figure, and let it be the rectangle <em>AF</em> by <em>FG</em>. Then <em>AF</em> is commensurable with <em>FG</em>.</p>
+<p>Draw <em>EH</em>, <em>FI</em>, and <em>GK</em> through the points <em>E</em>, <em>F</em>, and <em>G</em> parallel to <em>AC</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX15/">X.15</a></div>
+<p>Now, since <em>AF</em> is commensurable in length with <em>FG</em>, therefore <em>AG</em> is also commensurable in length with each of the straight lines <em>AF</em> and <em>FG</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX12/">X.12</a></div>
+<p>But <em>AG</em> is commensurable with <em>AC</em>, therefore each of the straight lines <em>AF</em> and <em>FG</em> is commensurable in length with <em>AC</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX19/">X.19</a></div>
+<p>And <em>AC</em> is rational, therefore each of the straight lines <em>AF</em> and <em>FG</em> is also rational, so that each of the rectangles <em>AI</em> and <em>FK</em> is also rational.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX15/">X.15</a></div>
+<p>Now, since <em>DE</em> is commensurable in length with <em>EG</em>, therefore <em>DG</em> is also commensurable in length with each of the straight lines <em>DE</em> and <em>EG</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX13/">X.13</a><br><a href="/elements/books/bookX/propositions/propX21/">X.21</a></div>
+<p>But <em>DG</em> is rational and incommensurable in length with <em>AC</em>, therefore each of the straight lines <em>DE</em> and <em>EG</em> is also rational and incommensurable in length with <em>AC</em>. Therefore each of the rectangles <em>DH</em> and <em>EK</em> is medial.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI26/">VI.26</a></div>
+<p>Now make the square <em>LM</em> equal to <em>AI</em>, and subtract the square <em>NO</em> having a common angle with it, the angle <em>LPM</em>, and equal to <em>FK</em>. Then the squares <em>LM</em> and <em>NO</em> are about the same diameter.</p>
+<p>Let <em>PR</em> be their diameter, and draw the figure.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a></div>
+<p>Since the rectangle <em>AF</em> by <em>FG</em> equals the square on <em>EG</em>, therefore <em>AF</em> is to <em>EG</em> as <em>EG</em> is to <em>FG</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>But <em>AF</em> is to <em>EG</em> as <em>AI</em> is to <em>EK</em>, and <em>EG</em> is to <em>FG</em> as <em>EK</em> is to <em>KF</em>, therefore <em>EK</em> is a mean proportional between <em>AI</em> and <em>KF</em>.</p>
+<p>But it was proved before that <em>MN</em> is also a mean proportional between <em>LM</em> and <em>NO</em>, and <em>AI</em> equals the square <em>LM</em>, and <em>KF</em> equals <em>NO</em>, therefore <em>MN</em> also equals <em>EK</em>. <div class="just"><a href="/elements/books/bookX/propositions/propX54/#lemma">X.54's Lemma</a></div></p>
+<p>But <em>EK</em> equals <em>DH</em>, and <em>MN</em> equals <em>LO</em>, therefore <em>DK</em> equals the gnomon <em>UVW</em> and <em>NO</em>.</p>
+<p>But <em>AK</em> also equals the sum of the squares <em>LM</em> and <em>NO</em>, therefore the remainder <em>AB</em> equals <em>ST</em>.</p>
+<p>But <em>ST</em> is the square on <em>LN</em>, therefore the square on <em>LN</em> equals <em>AB</em>. Therefore <em>LN</em> is the side of <em>AB</em>.</p>
+<p>I say next that <em>LN</em> is an apotome.</p>
+<p>Since each of the rectangles <em>AI</em> and <em>FK</em> is rational, and they equal <em>LM</em> and <em>NO</em>, therefore each of the squares <em>LM</em> and <em>NO</em>, that is, the squares on <em>LP</em> and <em>PN</em> respectively, is also rational. Therefore each of the straight lines <em>LP</em> and <em>PN</em> is also rational.</p>
+<p>Again, since <em>DH</em> is medial and equals <em>LO</em>, therefore <em>LO</em> is also medial.</p>
+<p>Since, then, <em>LO</em> is medial, while <em>NO</em> is rational, therefore <em>LO</em> is incommensurable with <em>NO</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a>, <a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>But <em>LO</em> is to <em>NO</em> as <em>LP</em> is to <em>PN</em>, therefore <em>LP</em> is incommensurable in length with <em>PN</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX73/">X.73</a></div>
+<p>And both are rational, therefore <em>LP</em> and <em>PN</em> are rational straight lines commensurable in square only. Therefore <em>LN</em> is an apotome.</p>
+<p>And it is the side of the area <em>AB</em>, therefore the side of the area <em>AB</em> is an apotome.</p>
+<p>Therefore, <em>if an area is contained by a rational straight line and a first apotome, then the side of the area is an apotome.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in <a href="/elements/books/bookX/propositions/propX108/">X.108</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX108/">X.108</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

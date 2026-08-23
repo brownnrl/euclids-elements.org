@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book V</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book V</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 24</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 24</h1>
+    <div class="statement">If a first magnitude has to a second the same ratio as a third has to a fourth, and also a fifth has to the second the same ratio as a sixth to the fourth, then the sum of the first and fifth has to the second the same ratio as the sum of the third and sixth has to the fourth.</div>
+    <p>Let a first magnitude <em>AB</em> have to a second <em>C</em> the same ratio as a third <em>DE</em> has to a fourth <em>F,</em> and let also a fifth <em>BG</em> have to the second <em>C</em> the same ratio as a sixth <em>EH</em> has to the fourth <em>F.</em></p>
+<p>I say that the sum of the first and fifth, <em>AG,</em> has to the second <em>C</em> the same ratio as the sum of the third and sixth, <em>DH,</em> has to the fourth <em>F.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="150" tabindex="0"></canvas>
+<noscript><img alt="V.24 diagram" src="propV24.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "V.24",
+        elements: [
+            "U0;point;free;-1000,30;0;0",
+            "U1;point;free;1000,30;0;0",
+            "V0;point;free;-1000,60;0;0",
+            "V1;point;free;1000,60;0;0",
+            "W0;point;free;-1000,100;0;0",
+            "W1;point;free;1000,100;0;0",
+            "X0;point;free;-1000,130;0;0",
+            "X1;point;free;1000,130;0;0",
+            "A;point;lineSlider;U0,U1,50,30",
+            "B;point;lineSlider;U0,U1,200,30",
+            "C;point;lineSlider;V0,V1,50,60",
+            "C1;point;lineSlider;V0,V1,110,60;0",
+            "CC1;line;connect;C,C1;0;0;red",
+            "D;point;lineSlider;W0,W1,50,100",
+            "E;point;lineSlider;W0,W1,150,100",
+            "F;point;lineSlider;X0,X1,50,130",
+            "F1;point;proportion;A,B,D,E,C,C1,F,X1;0",
+            "FF1;line;connect;F,F1;0;0;green",
+            "G;point;lineSlider;U0,U1,270,30",
+            "AG;line;connect;A,G;0;0;red",
+            "H;point;proportion;C,C1,F,F1,B,G,E,W1",
+            "DH;line;connect;D,H;0;0;green"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookV/propositions/propV7/#cor">V.7.Cor</a></div>
+<p>Since <em>BG</em> is to <em>C</em> as <em>EH</em> is to <em>F,</em> inversely, <em>C</em> is to <em>BG</em> as <em>F</em> is to <em>EH.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV22/">V.22</a></div>
+<p>Then, since <em>AB</em> is to <em>C</em> as <em>DE</em> is to <em>F,</em> and <em>C</em> is to <em>BG</em> as <em>F</em> is to <em>EH,</em> therefore, <em>ex aequali, AB</em> is to <em>BG</em> as <em>DE</em> is to <em>EH.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV18/">V.18</a></div>
+<p>And, since the magnitudes are proportional taken separately, they are also proportional taken jointly, therefore <em>AG</em> is to <em>GB</em> as <em>DH</em> is to <em>HE.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV22/">V.22</a></div>
+<p>But also <em>BG</em> is to <em>C</em> as <em>EH</em> is to <em>F,</em> therefore, <em>ex aequali, AG</em> is to <em>C</em> as <em>DH</em> is to <em>F.</em></p>
+<p>Therefore, <em>if a first magnitude has to a second the same ratio as a third has to a fourth, and also a fifth has to the second the same ratio as a sixth to the fourth, then the sum of the first and fifth has to the second the same ratio as the sum of the third and sixth has to the fourth.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition says that if <em>u</em> : <em>v</em> = <em>w</em> : <em>x</em> and <em>y</em> : <em>v</em> = <em>z</em> : <em>x,</em> then (<em>u</em> + <em>y</em>) : <em>v</em> = (<em>w</em> + <em>z</em>) : <em>x.</em></p>
+<p>The argument goes as follows. Start by inverting the second proportion <em>y</em> : <em>v</em> = <em>z</em> : <em>x</em> to get
+<em>v</em> : <em>y</em> = <em>x</em> : <em>z</em>. Compound the first proportion with that to get <em>u</em> : <em>y</em> = <em>w</em> : <em>z</em>. Take that last proportion jointly to get (<em>u</em> + <em>y</em>) : <em>y</em> = (<em>w</em> + <em>z</em>) : <em>z</em>. Compound that with the second proportion to get (<em>u</em> + <em>y</em>) : <em>v</em> = (<em>w</em> + <em>z</em>) : <em>x</em>, which was the goal.</p>
+<p>Although the proposition is stated using the antecedent terms of the proportions, by inversion it applies to the consequent terms as well.</p>
+<h4>Addition of ratios</h4>
+<p>This is as close as Euclid gets to defining the sum of two ratios. Although it only applies when the consequents of the two ratios are the same, by use of fourth proportionals it could be extended to define the sum of any two ratios. That is, given <em>a</em> : <em>b</em> of one kind and <em>c</em> : <em>d</em> of another, let <em>e</em> be such that
+<em>c</em> : <em>d</em> = <em>e</em> : <em>b</em>, then define the sum of the two original ratios to be (<em>a</em> + <em>e</em>) : <em>b</em>. Although such a definition is possible, Euclid apparently didn't have any need for adding ratios.</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is used in proposition <a href="/elements/books/bookVI/propositions/propVI31/">VI.31</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI31/">VI.31</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

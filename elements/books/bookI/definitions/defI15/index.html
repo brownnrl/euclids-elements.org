@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Definition 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Definitions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Definition 15</span>
+</nav>
+
+
+
+
+
+  
+  
+  
+    <a id="15"></a>
+    <div class="theorem">
+    <h1>Definition 15</h1>
+    <div class="statement">A <i>circle</i> is a plane figure contained by one line such that all the straight lines falling upon it from one point among those lying within the figure equal one another.</div>
+    </div>
+    
+    
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI1/">I.1</a>, <a href="/elements/books/bookI/propositions/propI2/">I.2</a>, <a href="/elements/books/bookI/propositions/propI3/">I.3</a>, <a href="/elements/books/bookI/propositions/propI12/">I.12</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a>, <a href="/elements/books/bookIII/propositions/propIII2/">III.2</a>, <a href="/elements/books/bookIII/propositions/propIII3/">III.3</a>, <a href="/elements/books/bookIII/propositions/propIII5/">III.5</a>, <a href="/elements/books/bookIII/propositions/propIII6/">III.6</a></td></tr>
+  
+</table>
+    <br>
+  
+    <a id="16"></a>
+    <div class="theorem">
+    <h1>Definition 16</h1>
+    <div class="statement">And the point is called the <i>center</i> of the circle.</div>
+    </div>
+    
+    
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI22/">I.22</a></td></tr>
+  
+</table>
+    <br>
+  
+    <a id="17"></a>
+    <div class="theorem">
+    <h1>Definition 17</h1>
+    <div class="statement">A <i>diameter</i> of the circle is any straight line drawn through the center and terminated in both directions by the circumference of the circle, and such a straight line also bisects the circle.</div>
+    </div>
+    
+    
+    <br>
+  
+    <a id="18"></a>
+    <div class="theorem">
+    <h1>Definition 18</h1>
+    <div class="statement">A <i>semicircle</i> is the figure contained by the diameter and the circumference cut off by it.  And the center of the semicircle is the same as that of the circle.</div>
+    </div>
+    
+    
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII14/">II.14</a></td></tr>
+  
+</table>
+    
+  
+  
+    <h2 id="guide">Guide</h2>
+    <p>A definition such as this describes what circles are. Definitions do not guarantee the existence of the things they define. The existence of circles follows from a postulate, namely, <a href="/elements/books/bookI/postulates/post3/">I.Post.3</a>.</p>
+<p>Note that a circle for Euclid is a two-dimensional figure. But in modern mathematics, usually the word circle refers to what Euclid calls the circumference of a circle.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_0" width="270" height="250" tabindex="0"></canvas>
+<noscript><img alt="Definitions 15-18 diagram" src="defI15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "I.Def.15-18",
+        elements: [
+            "C;point;free;135,125",
+            "A;point;free;40,125",
+            "circ;circle;radius;C,A;0;black;black;random",
+            "B;point;extend;A,C,A,C",
+            "AB;line;connect;A,B",
+            "D;point;circleSlider;circ,30,30",
+            "CD;line;connect;C,D",
+            "semi;sector;sector;C,A,B;0;0;0;random"
+        ],
+    });
+</script>
+</figure><p>The center of the circle in the diagram is the point <em>C.</em> It's interesting that the English word "center" derives from the Greek word which also means a prod or a poker, and it refers to the fixed leg of a compass used to draw a circle.</p>
+<p>There is no assumption in the definition that there is only one center of a circle. Proposition <a href="/elements/books/bookIII/propositions/propIII1/">III.1</a> gives a construction for the center of a circle, and the proof of that proposition shows that the center is unique.</p>
+<p>The (curved) line <em>ABD</em> that contains the circle is its circumference. Euclid typically names a circle by three points on its circumference. Perhaps a better translation than "circumference" would be "periphery" since that is the Greek word while "circumference" derives from the Latin.</p>
+<p>Euclid doesn't have a term for radius other than "that from the center," but radius is such a useful word that it is used here to translate "that from the center," such as the radius <em>CD.</em></p>
+<p>An example diameter is the line <em>AB</em> which passes through the center. Of course, a diameter is twice a radius, and since the radii are all equal to each other by definition, the diameters are also all equal to each other.</p>
+<p>That diameters "also bisects the circle" should not be part of the definition, but either assumed as a postulate or proved as a proposition. It depends on the fact that circles are drawn on planes, and planes have constant curvature. The analogous figure on a surface of nonconstant curvature does not have this property. For such figures the two "semicircles" on either side of a "diameter" need not be equal.</p>
+<p>Although circles are used throughout Book I to measure and transfer distances, the proper theory of circles doesn't begin until <a href="../../../bookIII/">Book III</a>. That book begins with more definitions relating to circles including the equality of circles, when circles touch (are tangent to) lines and other circles, and so forth.</p>
+
+  
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

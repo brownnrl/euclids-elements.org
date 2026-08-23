@@ -1,0 +1,131 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 27</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 27</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 27</h1>
+    <div class="statement">To find medial straight lines commensurable in square only which contain a rational rectangle.</div>
+    <div class="just"><a href="/elements/books/bookX/propositions/propX10/">X.10</a>, <a href="/elements/books/bookVI/propositions/propVI13/">VI.13</a><br><a href="/elements/books/bookVI/propositions/propVI12/">VI.12</a></div>
+<p>Set out two rational straight lines <em>A</em> and <em>B</em> commensurable in square only. Take a mean proportional <em>C</em> between <em>A</em> and <em>B</em>. Let it be contrived that <em>A</em> is to <em>B</em> as <em>C</em> is to <em>D.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="150" height="200" tabindex="0"></canvas>
+<noscript><img alt="X.27 diagram" src="propX27.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.27",
+        elements: [
+            "A0;point;free;30,-1000;0;0",
+            "A3;point;free;30,1000;0;0",
+            "A1;point;lineSlider;A0,A3,30,30;0",
+            "A2;point;lineSlider;A0,A3,30,170;0",
+            "A;line;connect;A1,A2;black",
+            "B0;point;free;60,-1000;0;0",
+            "B3;point;free;60,1000;0;0",
+            "B1;point;lineSlider;B0,B3,60,30;0",
+            "B2;point;lineSlider;B0,B3,60,140;0",
+            "B;line;connect;B1,B2;black",
+            "C0;point;free;90,-1000;0;0",
+            "C3;point;free;90,1000;0;0",
+            "C1;point;lineSlider;C0,C3,90,30;0",
+            "C2;point;meanProportional;A1,A2,B1,B2,C1,C3;0",
+            "C;line;connect;C1,C2;black",
+            "D0;point;free;120,-1000;0;0",
+            "D3;point;free;120,1000;0;0",
+            "D1;point;lineSlider;D0,D3,120,30;0",
+            "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0",
+            "D;line;connect;D1,D2;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a><br><a href="/elements/books/bookX/propositions/propX21/">X.21</a></div>
+<p>Then, since <em>A</em> and <em>B</em> are rational and commensurable in square only, therefore the rectangle <em>A</em> by <em>B,</em> that is, the square on <em>C,</em> is medial. Therefore <em>C</em> is medial.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>And since <em>A</em> is to <em>B</em> as <em>C</em> is to <em>D,</em> and <em>A</em> and <em>B</em> are commensurable in square only, therefore <em>C</em> and <em>D</em> are also commensurable in square only.</p>
+<p>And <em>C</em> is medial, therefore <em>D</em> is also medial. <div class="just"><a href="/elements/books/bookX/propositions/propX23/#note">X.23.Note</a></div></p>
+<p>Therefore <em>C</em> and <em>D</em> are medial and commensurable in square only.</p>
+<p>I say that they also contain a rational rectangle.</p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>Since <em>A</em> is to <em>B</em> as <em>C</em> is to <em>D,</em> therefore, alternately, <em>A</em> is to <em>C</em> as <em>B</em> is to <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a><br><a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a></div>
+<p>But <em>A</em> is to <em>C</em> as <em>C</em> is to <em>B,</em> therefore <em>C</em> is to <em>B</em> as <em>B</em> is to <em>D.</em> Therefore the rectangle <em>C</em> by <em>D</em> equals the square on <em>B.</em> But the square on <em>B</em> is rational, therefore the rectangle <em>C</em> by <em>D</em> is also rational.</p>
+<p>Therefore medial straight lines commensurable in square only have been found which contain a rational rectangle.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>If we set <em>A</em> to have length 1, and <em>B</em> length √<em>b,</em> an irrational number where <em>b</em> is rational, then <em>C</em> has length <em>b</em><sup>1/4</sup> and <em>D</em> has length <em>b</em><sup>3/4</sup>. Then <em>C</em> and <em>D</em> are medial and commensurable in square only, and the <em>b</em><sup>1/4</sup> by <em>b</em><sup>3/4</sup> rectangle they contain has area <em>b,</em> a rational number.</p>
+<p>This proposition is not used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

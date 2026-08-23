@@ -1,0 +1,201 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 12</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 12</h1>
+    <div class="statement">Similar cones and cylinders are to one another in triplicate ratio of the diameters of their bases.</div>
+    <p>Let there be similar cones and cylinders, let the circles <em>ABCD</em> and <em>EFGH</em> be their bases, <em>BD</em> and <em>FH</em> the diameters of the bases, and <em>KL</em> and <em>MN</em> the axes of the cones and cylinders.</p>
+<p>I say that the cone with circular base <em>ABCD</em> and vertex <em>L</em> has to the cone with circular base <em>EFGH</em> and vertex <em>N</em> the ratio triplicate of that which <em>BD</em> has to <em>FH.</em></p>
+<center>
+<canvas id="canvas_0" width="560" height="280" tabindex="0"></canvas>
+<noscript><img alt="XII.12 diagram" src="propXII12.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.12",
+        elements: [
+            "A0;point;free;-1000,160;0;0",
+            "A3;point;free;1000,160;0;0",
+            "B;point;lineSlider;A0,A3,40,0",
+            "D;point;lineSlider;A0,A3,180,0",
+            "K;point;midpoint;B,D",
+            "Kcirc;circle;radius;K,B;0;0;black;random",
+            "C;point;perpendicular;K,B",
+            "A;point;extend;C,K,K,B",
+            "T';point;midpoint;A,B;0;0",
+            "T;point;cutoff;K,T',K,B",
+            "U';point;midpoint;B,C;0;0",
+            "U;point;cutoff;K,U',K,B",
+            "V';point;midpoint;C,D;0;0",
+            "V;point;cutoff;K,V',K,B",
+            "W';point;midpoint;D,A;0;0",
+            "W;point;cutoff;K,W',K,B",
+            "BUCVDWAT;polygon;octagon;B,U,C,V,D,W,A,T;0;0;black;random",
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random",
+            "BD;line;connect;B,D",
+            "H;point;lineSlider;A0,A3,220,0",
+            "F;point;lineSlider;A0,A3,390,0",
+            "M;point;midpoint;H,F",
+            "Mcirc;circle;radius;M,H;0;0;black;random",
+            "G;point;perpendicular;M,H",
+            "E;point;extend;G,M,M,H",
+            "P';point;midpoint;E,F;0;0",
+            "P;point;cutoff;M,P',M,H",
+            "Q';point;midpoint;F,G;0;0",
+            "Q;point;cutoff;M,Q',M,H",
+            "R';point;midpoint;G,H;0;0",
+            "R;point;cutoff;M,R',M,H",
+            "S';point;midpoint;H,E;0;0",
+            "S;point;cutoff;M,S',M,H",
+            "HRGQFPES;polygon;octagon;H,R,G,Q,F,P,E,S;0;0;black;random",
+            "EFGH;polygon;quadrilateral;E,F,G,H;0;0;black;random",
+            "EG;line;connect;E,G",
+            "L3;point;free;-12000,-20000;0;0",
+            "L;point;lineSlider;K,L3,50,60",
+            "KL;line;connect;K,L;0;0;darkGray",
+            "N3;point;free;12000,-20000;0;0",
+            "N;point;proportion;K,B,H,M,K,L,M,N3",
+            "MN;line;connect;M,N;0;0;darkGray",
+            "O0;point;free;440,220;0;0",
+            "O1;point;free;440,140;0;0",
+            "O2;point;free;480,190;0;0",
+            "O3;point;free;510,220;0;0",
+            "O;polyhedron;parallelepiped;O0,O1,O2,O3;black;0;black;random",
+            "BL;line;connect;B,L;0;0;darkGray",
+            "TL;line;connect;T,L;0;0;darkGray",
+            "FN;line;connect;F,N;0;0;darkGray",
+            "PN;line;connect;P,N;0;0;darkGray"
+        ],
+    });
+</script>
+</center><p>For, if the cone <em>ABCDL</em> does not have to the cone <em>EFGHN</em> the ratio triplicate of that which <em>BD</em> has to <em>FH,</em> then the cone <em>ABCDL</em> has that triplicate ratio either to some solid less than the cone <em>EFGHN</em> or to a greater.</p>
+<div class="just"><a href="/elements/books/bookIV/propositions/propIV6/">IV.6</a></div>
+<p>First, let it have that triplicate ratio to a less solid <em>O.</em> Inscribe the square <em>EFGH</em> in the circle <em>EFGH.</em> Therefore the square <em>EFGH</em> is greater than the half of the circle <em>EFGH.</em></p>
+<p>Now set up on the square <em>EFGH</em> a pyramid with the same vertex as the cone. Therefore the pyramid so set up is greater than the half part of the cone. Bisect the circumferences <em>EF, FG, GH,</em> and <em>HE</em> at the points <em>P, Q, R,</em> and <em>S,</em> and join <em>EP, PF, FQ, QG, GR, RH, HS,</em> and <em>SE.</em></p>
+<p>Therefore each of the triangles <em>EPF, FQG, GRH,</em> and <em>HSE</em> is also greater than the half part of that segment of the circle <em>EFGH</em> about it.</p>
+<p>Now set up on each of the triangles <em>EPF, FQG, GRH,</em> and <em>HSE</em> a pyramid with the same vertex as the cone.</p>
+<p>Therefore each of the pyramids so set up is also greater than the half part of that segment of the cone about it.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX1/">X.1</a></div>
+<p>Thus, bisecting the circumferences so left, joining straight lines, setting up on each of the triangles pyramids with the same vertex as the cone, and doing this repeatedly, we shall leave some segments of the cone which are less than the excess by which the cone <em>EFGHN</em> exceeds the solid <em>O.</em></p>
+<p>Let such be left, and let them be the segments on <em>EP, PF, FQ, QG, GR, RH, HS,</em> and <em>SE.</em> Therefore the remainder, the pyramid with the polygonal base <em>EPFQGRHS</em> and vertex <em>N,</em> is greater than the solid <em>O.</em></p>
+<p>Now inscribe in the circle <em>ABCD</em> the polygon <em>ATBUCVDW</em> similar and similarly situated to the polygon <em>EPFQGRHS,</em> and set up on the polygon <em>ATBUCVDW</em> a pyramid with the same vertex as the cone.</p>
+<p>Let <em>LBT</em> be one off the triangles containing the pyramid with polygonal base <em>ATBUCVDW</em> and vertex <em>L,</em> and let <em>NFP</em> be one of the triangles containing the pyramid with polygonal base <em>EPFQGRHS</em> and vertex <em>N.</em> Join <em>KT</em> and <em>MP.</em></p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI24/">XI.Def.24</a></div>
+<p>Now, since the cone <em>ABCDL</em> is similar to the cone <em>EFGHN,</em> therefore <em>BD</em> is to <em>FH</em> as the axis <em>KL</em> is to the axis <em>MN.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>But <em>BD</em> is to <em>FH</em> as <em>BK</em> is to <em>FM,</em> therefore <em>BK</em> is to <em>FM</em> as <em>KL</em> to <em>MN.</em> And, alternately <em>BK</em> is to <em>KL</em> as <em>FM</em> is to <em>MN.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a></div>
+<p>And the sides are proportional about equal angles, namely the angles <em>BKL</em> and <em>FMN,</em> therefore the triangle <em>BKL</em> is similar to the triangle <em>FMN.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a></div>
+<p>Again, since <em>BK</em> is to <em>KT</em> as <em>FM</em> is to <em>MP,</em> and they are about equal angles, namely the angles <em>BKT</em> and <em>FMP,</em> for whatever part the angle <em>BKT</em> is of the four right angles at the center <em>K,</em> it is the same part as the angle <em>FMP</em> of the four right angles at the center <em>M.</em> Then, since the sides are proportional about equal angles, therefore the triangle <em>BKT</em> is similar to the triangle <em>FMP.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a></div>
+<p>Again, since it was proved that <em>BK</em> is to <em>KL</em> as <em>FM</em> is to <em>MN,</em> while <em>BK</em> equals <em>KT,</em> and <em>FM</em> equals <em>PM,</em> therefore <em>TK</em> is to <em>KL</em> as <em>PM</em> is to <em>MN.</em> And the sides are proportional about equal angles, namely the angles <em>TKL</em> and <em>PMN,</em> for they are right, therefore the triangle <em>LKT</em> is similar to the triangle <em>NMP.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a></div>
+<p>And since the triangles <em>LKB</em> and <em>NMF</em> are similar, therefore <em>LB</em> is to <em>BK</em> as <em>NF</em> is to <em>FM.</em> And since the triangles <em>BKT</em> and <em>FMP</em> are similar, therefore <em>KB</em> is to <em>BT</em> as <em>MF</em> is to <em>FP.</em> Therefore, <em>ex aequali, LB</em> is to <em>BT</em> as <em>NF</em> is to <em>FP.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a></div>
+<p>Again, since the triangles <em>LTK</em> and <em>NPM</em> are similar, therefore <em>LT</em> is to <em>TK</em> as <em>NP</em> is to <em>PM,</em> and since the triangles <em>TKB</em> and <em>PMF</em> are similar, therefore <em>KT</em> is to <em>TB</em> as <em>MP</em> is to <em>PF.</em> Therefore, <em>ex aequali, LT</em> is to <em>TB</em> as <em>NP</em> is to <em>PF.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV22/">V.22</a></div>
+<p>But it was also proved that <em>TB</em> is to <em>BL</em> as <em>PF</em> is to <em>FN.</em> Therefore, <em>ex aequali, TL</em> is to <em>LB</em> as <em>PN</em> is to <em>NF.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI5/">VI.5</a>, <a href="/elements/books/bookVI/definitions/defVI1/">VI.Def.1</a></div>
+<p>Therefore in the triangles <em>LTB</em> and <em>NPF</em> the sides are proportional. Therefore the triangles <em>LTB</em> and <em>NPF</em> are equiangular, hence they are also similar.</p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI9/">XI.Def.9</a></div>
+<p>Therefore the pyramid with triangular base <em>BKT</em> and vertex <em>L</em> is similar to the pyramid with triangular base <em>FMP</em> and vertex <em>N,</em> for they are contained by similar planes equal in multitude.</p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII8/">XII.8</a></div>
+<p>But similar pyramids with triangular bases are to one another in the triplicate ratio of their corresponding sides.</p>
+<p>Therefore the pyramid <em>BKTL</em> has to the pyramid <em>FMPN</em> the ratio triplicate of that which <em>BK</em> has to <em>FM.</em></p>
+<p>Similarly, by joining straight lines from <em>A, W, D, V, C,</em> and <em>U</em> to <em>K,</em> and from <em>E, S, H, R, G,</em> and <em>Q</em> to <em>M,</em> and setting up on each of the triangles pyramids with the same vertex as the cones, we can prove that each of the similarly arranged pyramids also has to each similarly arranged pyramid the ratio triplicate of that which the corresponding side <em>BK</em> has to the corresponding side <em>FM,</em> that is, which <em>BD</em> has to <em>FH.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV12/">V.12</a></div>
+<p>And one of the antecedents is to one of the consequents as all the antecedents are to all the consequents, therefore the pyramid <em>BKTL</em> is to the pyramid <em>FMPN</em> as the whole pyramid with polygonal base <em>ATBUCVDW</em> and vertex <em>L</em> is to the whole pyramid with polygonal base <em>EPFQGRHS</em> and vertex <em>N,</em> hence the pyramid with base <em>ATBUCVDW</em> and vertex <em>L</em> has to the pyramid with polygonal base <em>EPFQGRHS</em> and vertex <em>N</em> the ratio triplicate of that which <em>BD</em> has to <em>FH.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>But, by hypothesis, the cone with circular base <em>ABCD</em> and vertex <em>L</em> also has to the solid <em>O</em> the ratio triplicate of that which <em>BD</em> has to <em>FH,</em> therefore the cone with circular base <em>ABCD</em> and vertex <em>L</em> is to the solid 0 as the pyramid with polygonal base <em>ATBUCVDW</em> and vertex <em>L</em> is to the pyramid with polygonal base <em>EPFQGRHS</em> and vertex <em>N.</em> Therefore, alternately the cone with circular base <em>ABCD</em> and vertex <em>L</em> is to the pyramid contained in it with polygonal base <em>ATBUCVDW</em> and vertex <em>L</em> as the solid <em>O</em> is to the pyramid with the polygonal base <em>EPFQGRHS</em> and vertex <em>N.</em></p>
+<p>But the said cone is greater than the pyramid in it, for it encloses it. Therefore the solid <em>O</em> is also greater than the pyramid with polygonal base <em>EPFQGRHS</em> and vertex <em>N.</em> But it is also less, which is impossible.</p>
+<p>Therefore the cone with circular base <em>ABCD</em> and vertex <em>L</em> does not have to any solid less than the cone of with circular base <em>EFGH</em> and vertex <em>N</em> the ratio triplicate of that which <em>BD</em> has to <em>FH.</em></p>
+<p>Similarly we can prove that neither has the cone <em>EFGHN</em> to any solid less than the cone <em>ABCDL</em> the ratio triplicate of that which <em>FH</em> has to <em>BD.</em></p>
+<p>I say next that neither has the cone <em>ABCDL</em> to any solid greater than the cone <em>EFGHN</em> the ratio triplicate of that which <em>BD</em> has to <em>FH.</em></p>
+<p>For, if possible, let it have that ratio to a greater solid <em>O.</em> Therefore, inversely, the solid <em>O</em> has to the cone <em>ABCDL</em> the ratio triplicate of that which <em>FH</em> has to <em>BD.</em> But the solid <em>O</em> is to the cone <em>ABCDL</em> as the cone <em>EFGHN</em> is to some solid less than the cone <em>ABCDL.</em></p>
+<p>Therefore the cone <em>EFGHN</em> also has to some solid less than the cone <em>ABCDL</em> the ratio triplicate of that which <em>FH</em> has to <em>BD,</em> which was proved impossible.</p>
+<p>Therefore the cone <em>ABCDL</em> does not have to any solid greater than the cone <em>EFGHN</em> the ratio triplicate of that which <em>BD</em> has to <em>FH.</em></p>
+<p>But it was proved that neither has it this ratio to a less solid than the cone <em>EFGHN.</em> Therefore the cone <em>ABCDL</em> has to the cone <em>EFGHN</em> the ratio triplicate of that which <em>BD</em> has to <em>FH.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII10/">XII.10</a></div>
+<p>But the cone is to the cone as the cylinder is to the cylinder, for the cylinder with the same base as the cone and of equal height with it is triple the cone. Therefore the cylinder also has to the cylinder the ratio triplicate of that which <em>BD</em> has to <em>FH.</em></p>
+<p>Therefore, <em>similar cones and cylinders are to one another in triplicate ratio of the diameters of their bases.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>An alternate proof would use the previous proposition (cylinders of the same height are proportional to their bases) and <a href="/elements/books/bookXII/propositions/propXII14/">XII.14</a> (cylinders on equal bases are proportional to their heights), which doesn't depend on this one. Instead Euclid proves this proposition afresh in a manner like that of the previous proposition but necessarily more complicated.</p>
+<p>This proposition is not used in later ones.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

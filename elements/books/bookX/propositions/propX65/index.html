@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 65</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 65</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 65</h1>
+    <div class="statement">The square on the side of the sum of two medial areas applied to a rational straight line produces as breadth the sixth binomial.</div>
+    <p>Let <em>AB</em> be the side of the sum of two medial areas, divided at <em>C</em>, let <em>DE</em> be a rational straight line, and let there be applied to <em>DE</em> the parallelogram <em>DF</em> equal to the square on <em>AB</em>, producing <em>DG</em> as its breadth.</p>
+<p>I say that <em>DG</em> is a sixth binomial straight line.</p>
+<p>Make the same construction as before.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="200" tabindex="0"></canvas>
+<noscript><img alt="X.65 diagram" src="propX60.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.65",
+        elements: [
+            "A0;point;free;-1000,160;0;0",
+            "A3;point;free;1000,160;0;0",
+            "D0;point;free;40,-1000;0;0",
+            "D3;point;free;40,1000;0;0",
+            "A;point;lineSlider;A0,A3,60,0",
+            "B;point;lineSlider;A0,A3,180,0",
+            "C;point;lineSlider;A0,A3,130,0",
+            "AB;line;connect;A,B",
+            "D;point;lineSlider;D0,D3,0,40",
+            "E;point;lineSlider;D0,D3,0,120",
+            "G';point;parallelogram;D,A0,A3;0;0",
+            "G;point;proportion;D,E,A,B,A,B,D,G'",
+            "F;point;parallelogram;E,D,G",
+            "EDGF;polygon;quadrilateral;E,D,G,F;0;0;black;random",
+            "K;point;proportion;D,E,A,C,A,C,D,G'",
+            "EDKH;polygon;parallelogram;E,D,K;0;0;black;random",
+            "H;point;vertex;EDKH,4",
+            "M;point;proportion;D,E,B,C,B,C,K,G'",
+            "HKML;polygon;parallelogram;H,K,M;0;0;black;random",
+            "L;point;vertex;HKML,4",
+            "N;point;midpoint;M,G",
+            "O;point;parallelogram;E,D,N",
+            "NO;line;connect;N,O"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookX/propositions/propX41/">X.41</a></div>
+<p>Since <em>AB</em> is the side of the sum of two medial areas divided at <em>C</em>, therefore <em>AC</em> and <em>CB</em> are straight lines incommensurable in square which make the sum of the squares on them medial, the rectangle contained by them medial, and moreover the sum of the squares on them incommensurable with the rectangle contained by them.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX22/">X.22</a></div>
+<p>So that, in accordance with what was before proved, each of the rectangles <em>DL</em> and <em>MF</em> is medial. And they are applied to the rational straight line <em>DE</em>, therefore each of the straight lines <em>DM</em> and <em>MG</em> is rational and incommensurable in length with <em>DE</em>.</p>
+<p>Since the sum of the squares on <em>AC</em> and <em>CB</em> is incommensurable with twice the rectangle <em>AC</em> by <em>CB</em>, therefore <em>DL</em> is incommensurable with <em>MF</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a>, <a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>Therefore <em>DM</em> is also incommensurable with <em>MG</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX36/">X.36</a></div>
+<p>Therefore <em>DM</em> and <em>MG</em> are rational straight lines commensurable in square only. Therefore <em>DG</em> is binomial.</p>
+<p>I say next that it is a sixth binomial straight line.</p>
+<p>Similarly again we can prove that the rectangle <em>DK</em> by <em>KM</em> equals the square on <em>MN</em>, and that <em>DK</em> is incommensurable in length with <em>KM</em>, and, for the same reason, the square on <em>DM</em> is greater than the square <em>MG</em> by the square on a straight line incommensurable in length with <em>DM</em>.</p>
+<p>And neither of the straight lines <em>DM</em> nor <em>MG</em> is commensurable in length with the rational straight line <em>DE</em> set out.</p>
+<p>Therefore <em>DG</em> is a sixth binomial straight line.</p>
+<p>Therefore, <em>the square on the side of the sum of two medial areas applied to a rational straight line produces as breadth the sixth binomial.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in <a href="/elements/books/bookX/propositions/propX72/">X.72</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX72/">X.72</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 12</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 12</h1>
+    <div class="statement">To draw a straight line perpendicular to a given infinite straight line from a given point not on it.</div>
+    <p>Let <span class="elem-ref" data-elem="AB">AB</span> be the given infinite straight line, and <span class="elem-ref" data-elem="C">C</span> the given point which is not on it.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="330" height="250" tabindex="0"></canvas>
+<noscript><img alt="I.12 diagram" src="propI12.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.12",
+    pivot: "H",
+    elements: [
+        // The given infinite line AB and the point C off it.
+        "A;point;free;30,180",
+        "B;point;free;290,180",
+        "AB;line;connect;A,B",
+        "C;point;free;160,130",
+        // D taken on the other side of AB; the circle EFG (centre C,
+        // radius CD) cuts AB at E and G; H bisects EG; CH is the
+        // perpendicular. F (foot of CH on the circle) names it "EFG".
+        "D;point;free;180,220",
+        "EFG;circle;radius;C,D",
+        "EG;line;chord;AB,EFG;0;0;0",
+        "E;point;first;EG",
+        "G;point;last;EG",
+        "H;point;midpoint;EG;black;green",
+        "CG;line;connect;C,G",
+        "CH;line;connect;C,H",
+        "CE;line;connect;C,E",
+        "FF';line;chord;CH,EFG;0;0;0",
+        "F;point;first;FF'",
+        // Zero-color hover targets for the prose's segment refs: the two
+        // halves of EG bisected at H, and the radius CD.
+        "GH;line;connect;G,H;0;0;0",
+        "HE;line;connect;H,E;0;0;0",
+        "CD;line;connect;C,D;0;0;0",
+        // The two right angles CH makes at H (0.8.0 angleMarker; hidden in
+        // the static figure, swept on their slide). Adjacent at arm HC;
+        // named to match the prose tokens.
+        "CHG;sector;angleMarker;H,C,G",
+        "EHC;sector;angleMarker;H,E,C"
+    ],
+    // D is the arbitrary point taken mid-construction; everything else is
+    // given or derived. (E, G, H, F are derived — they appear via their
+    // slide's visible set rather than the draggable auto-union.)
+    deferDraggables: ["D"],
+    aliases: {
+        "HC": "CH",
+        "EH": "HE"
+    },
+    slides: [
+        { text: "Let {AB} be the given infinite straight line, and {C} the given point which is not on it.",
+          visible: ["AB"] },
+        { text: "It is required to draw a straight line perpendicular to the given infinite straight line {AB} from the given point {C} which is not on it.",
+          visible: ["AB"],
+          highlighted: ["AB","C"] },
+        { text: "Take an arbitrary point {D} on the other side of the straight line {AB}, and describe the circle {EFG} with center {C} and radius {CD}.",
+          visible: ["AB","D","EFG","E","G","F"],
+          highlighted: ["CD"],
+          transition: {
+              animations: [
+                  { elem: "D",   name: geomlib.A.Point.appear },
+                  { elem: "EFG", name: geomlib.A.Circle.compass },
+                  { elem: "E",   name: geomlib.A.Point.appear },
+                  { elem: "G",   name: geomlib.A.Point.appear },
+                  { elem: "F",   name: geomlib.A.Point.appear }
+              ]
+          },
+          justifications: [{ ref: "I.Post.3" }] },
+        { text: "Bisect the straight line {EG} at {H}, and join the straight lines {CG}, {CH}, and {CE}.",
+          visible: ["AB","D","EFG","E","G","F","H","CG","CH","CE"],
+          highlighted: ["EG","H"],
+          transition: {
+              animations: [
+                  { elem: "H",  name: geomlib.A.Point.appear },
+                  { elem: "CG", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "CH", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "CE", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          },
+          justifications: [{ ref: "I.10" }, { ref: "I.Post.1" }] },
+        { text: "I say that {CH} has been drawn perpendicular to the given infinite straight line {AB} from the given point {C} which is not on it.",
+          visible: ["AB","D","EFG","E","G","F","H","CG","CH","CE"],
+          highlighted: ["CH"] },
+        { text: "Since {GH} equals {HE}, and {HC} is common, therefore the two sides {GH} and {HC} equal the two sides {EH} and {HC} respectively, and the base {CG} equals the base {CE}.",
+          visible: ["AB","D","EFG","E","G","F","H","CG","CH","CE"],
+          highlighted: ["GH","HE","CH","CG","CE"],
+          justifications: [{ ref: "I.Def.15" }] },
+        { text: "Therefore the angle {CHG} equals the angle {EHC}, and they are adjacent angles.",
+          visible: ["AB","D","EFG","E","G","F","H","CG","CH","CE","CHG","EHC"],
+          highlighted: ["CHG","EHC"],
+          transition: {
+              mode: "parallel",
+              animations: [
+                  { elem: "CHG", name: geomlib.A.Sector.sweep },
+                  { elem: "EHC", name: geomlib.A.Sector.sweep }
+              ]
+          },
+          justifications: [{ ref: "I.8" }] },
+        { text: "But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, and the straight line standing on the other is called a perpendicular to that on which it stands.",
+          visible: ["AB","D","EFG","E","G","F","H","CG","CH","CE","CHG","EHC"],
+          highlighted: ["CHG","EHC"],
+          justifications: [{ ref: "I.Def.10" }] },
+        { text: "Therefore {CH} has been drawn perpendicular to the given infinite straight line {AB} from the given point {C} which is not on it.",
+          visible: ["AB","D","EFG","E","G","F","H","CG","CH","CE","CHG","EHC"],
+          highlighted: ["CH"],
+          justifications: [{ ref: "Q.E.F." }] }
+    ],
+    resolveJustification: function(ref) {
+        return (window.eucrefs && window.eucrefs[ref]) || null;
+    }
+});
+
+// Per-page citation lookup for the slideshow's resolveJustification
+// callback — same hand-authored pattern as the earlier props.
+window.eucrefs = (window.eucrefs || {});
+Object.assign(window.eucrefs, {
+    "I.Post.1": "/elements/books/bookI/postulates/post1/",
+    "I.Post.3": "/elements/books/bookI/postulates/post3/",
+    "I.8":      "/elements/books/bookI/propositions/propI8/",
+    "I.10":     "/elements/books/bookI/propositions/propI10/",
+    "I.Def.10": "/elements/books/bookI/definitions/defI10/",
+    "I.Def.15": "/elements/books/bookI/definitions/defI15/"
+});
+</script>
+</figure><p>It is required to draw a straight line perpendicular to the given infinite straight line <span class="elem-ref" data-elem="AB">AB</span> from the given point <span class="elem-ref" data-elem="C">C</span> which is not on it.</p>
+<div class="just"><a href="/elements/books/bookI/postulates/post3/">I.Post.3</a><br><a href="/elements/books/bookI/propositions/propI10/">I.10</a>, <a href="/elements/books/bookI/postulates/post1/">I.Post.1</a></div>
+<p>Take an arbitrary point <span class="elem-ref" data-elem="D">D</span> on the other side of the straight line <span class="elem-ref" data-elem="AB">AB</span>, and describe the circle <span class="elem-ref" data-elem="EFG">EFG</span> with center <span class="elem-ref" data-elem="C">C</span> and radius <span class="elem-ref" data-elem="CD">CD</span>. Bisect the straight line <span class="elem-ref" data-elem="EG">EG</span> at <span class="elem-ref" data-elem="H">H</span>, and join the straight lines <span class="elem-ref" data-elem="CG">CG</span>, <span class="elem-ref" data-elem="CH">CH</span>, and <span class="elem-ref" data-elem="CE">CE</span>.</p>
+<p>I say that <span class="elem-ref" data-elem="CH">CH</span> has been drawn perpendicular to the given infinite straight line <span class="elem-ref" data-elem="AB">AB</span> from the given point <span class="elem-ref" data-elem="C">C</span> which is not on it.</p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a><br><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>Since <span class="elem-ref" data-elem="GH">GH</span> equals <span class="elem-ref" data-elem="HE">HE</span>, and <span class="elem-ref" data-elem="HC">HC</span> is common, therefore the two sides <span class="elem-ref" data-elem="GH">GH</span> and <span class="elem-ref" data-elem="HC">HC</span> equal the two sides <span class="elem-ref" data-elem="EH">EH</span> and <span class="elem-ref" data-elem="HC">HC</span> respectively, and the base <span class="elem-ref" data-elem="CG">CG</span> equals the base <span class="elem-ref" data-elem="CE">CE</span>. Therefore the angle <span class="elem-ref" data-elem="CHG">CHG</span> equals the angle <span class="elem-ref" data-elem="EHC">EHC</span>, and they are adjacent angles.</p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI10/">I.Def.10</a></div>
+<p>But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, and the straight line standing on the other is called a perpendicular to that on which it stands.</p>
+<p>Therefore <span class="elem-ref" data-elem="CH">CH</span> has been drawn perpendicular to the given infinite straight line <span class="elem-ref" data-elem="AB">AB</span> from the given point <span class="elem-ref" data-elem="C">C</span> which is not on it.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Again, the double-equilateral-triangle construction is used, but this time the preparation of the starting line <span class="elem-ref" data-elem="EG">EG</span> is different. The point <span class="elem-ref" data-elem="D">D</span> is taken on the other side of the line <span class="elem-ref" data-elem="AB">AB</span> to insure that circle meets the line <span class="elem-ref" data-elem="AB">AB</span> in at least two points, <span class="elem-ref" data-elem="E">E</span> and <span class="elem-ref" data-elem="G">G</span>. If <span class="elem-ref" data-elem="D">D</span> is taken on the line <span class="elem-ref" data-elem="AB">AB</span>, it might be taken at <span class="elem-ref" data-elem="H">H</span>, and the resulting circle would touch the line only at <span class="elem-ref" data-elem="H">H</span>; and if <span class="elem-ref" data-elem="D">D</span> is taken on the same side of <span class="elem-ref" data-elem="AB">AB</span>, then the circle could miss the line entirely.</p>
+<p>Euclid does not precede this proposition with propositions investigating how lines meet circles. He is much more careful in Book III on circles in which the first dozen or so propositions lay foundations. For instance, Proposition <a href="/elements/books/bookIII/propositions/propIII10/">III.10</a> states that a circle does not cut a circle at more than two points. Even so, some propositions are missing. One is needed for this proposition to justify the existence of the two points <span class="elem-ref" data-elem="C">C</span> and <span class="elem-ref" data-elem="E">E</span> where the line <span class="elem-ref" data-elem="AB">AB</span> meets circle with center <span class="elem-ref" data-elem="C">C</span> and radius <span class="elem-ref" data-elem="CD">CD</span>. Such a proposition would state "A circle whose center is on one side of a line and on whose circumference lies a point on the other side of the line meets the line at two points."</p>
+<p>Incidentally, Proclus explains in his commentary on Book I that the problem of constructing the perpendicular was investigated by Oenopides of Chios who lived sometime in the middle of the fifth century B.C.E., a century and a half before Euclid.</p>
+<h4>Use of Proposition 12</h4>
+<p>The construction of this proposition is not used in Book I, but it is used on occasion in the remaining geometric books, namely, Books II through IV, VI, and XI through XIII.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII12/">II.12</a>, <a href="/elements/books/bookII/propositions/propII13/">II.13</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII14/">III.14</a>, <a href="/elements/books/bookIII/propositions/propIII15/">III.15</a>, <a href="/elements/books/bookIII/propositions/propIII16/">III.16</a>, <a href="/elements/books/bookIII/propositions/propIII18/">III.18</a>, <a href="/elements/books/bookIII/propositions/propIII33/">III.33</a>, <a href="/elements/books/bookIII/propositions/propIII35/">III.35</a></td></tr>
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV4/">IV.4</a>, <a href="/elements/books/bookIV/propositions/propIV13/">IV.13</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI31/">VI.31</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI11/">XI.11</a>, <a href="/elements/books/bookXI/propositions/propXI35/">XI.35</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII16/">XII.16</a>, <a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII10/">XIII.10</a>, <a href="/elements/books/bookXIII/propositions/propXIII18/">XIII.18</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

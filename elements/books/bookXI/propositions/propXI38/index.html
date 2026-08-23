@@ -1,0 +1,157 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 38</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 38</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 38</h1>
+    <div class="statement">If the sides of the opposite planes of a cube are bisected, and the planes are carried through the points of section, then the intersection of the planes and the diameter of the cube bisect one another.</div>
+    <p>Let the sides of the opposite planes <em>CF</em> and <em>AH</em> of the cube <em>AF</em> be bisected at the points <em>K, L, M, N, O, Q, P,</em> and <em>R,</em> and through the points of section let the planes <em>KN</em> and <em>OR</em> be carried. Let <em>US</em> be the common section of the planes, and <em>DG</em> the diameter of the cube <em>AF.</em></p>
+<p>I say that <em>UT</em> equals <em>TS,</em> and <em>DT</em> equals <em>TG.</em></p>
+<p>Join <em>DU, UE, BS,</em> and <em>SG.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="360" height="340" tabindex="0"></canvas>
+<noscript><img alt="XI.38 diagram" src="propXI38.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.38",
+        pivot: "T",
+        elements: [
+            "A;point;fixed;140,300,0",
+            "1X;point;fixed;340,273,36;0;0",
+            "1Y;point;fixed;85,180,160;0;0",
+            "1Z;point;fixed;140,444,123;0;0",
+            "floor;plane;3points;A,1X,1Y;0;0;0;0",
+            "C;point;lineSlider;A,1Z,160,80,0",
+            "circ;circle;radius;A,A,C,floor;0;0;0;0",
+            "B;point;circleSlider;circ,120,210,0",
+            "G;point;perpendicular;A,B,floor",
+            "D;point;parallelogram;B,A,C",
+            "E;point;parallelogram;G,A,C",
+            "H;point;parallelogram;B,A,G",
+            "F;point;parallelogram;H,A,C",
+            "BDFH;polygon;quadrilateral;B,D,F,H;0;0;black;330,30,100",
+            "BDEG;polygon;quadrilateral;B,D,E,G;0;0;black;330,30,100",
+            "GHFE;polygon;quadrilateral;G,H,F,E;0;0;black;330,30,100",
+            "ACEG;polygon;quadrilateral;A,C,E,G;0;0;black;0",
+            "AB;line;connect;A,B",
+            "CD;line;connect;C,D",
+            "K;point;midpoint;D,F",
+            "L;point;midpoint;C,E",
+            "M;point;midpoint;B,H",
+            "N;point;midpoint;A,G",
+            "O;point;midpoint;C,D",
+            "P;point;midpoint;E,F",
+            "Q;point;midpoint;A,B",
+            "R;point;midpoint;G,H",
+            "KLNM;polygon;quadrilateral;K,L,N,M;0;0;black;0",
+            "OPRQ;polygon;quadrilateral;O,P,R,Q;0;0;black;0",
+            "S;point;midpoint;B,G",
+            "U;point;midpoint;D,E",
+            "DE;line;connect;D,E",
+            "BG;line;connect;B,G",
+            "SU;line;connect;S,U",
+            "DG;line;connect;D,G",
+            "T;point;midpoint;D,G;black;green"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Then, since <em>DO</em> is parallel to <em>PE,</em> therefore the alternate angles <em>DOU</em> and <em>UPE</em> equal one another.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Since <em>DO</em> equals <em>PE,</em> and <em>OU</em> equals <em>UP,</em> and they contain equal angles, therefore the base <em>DU</em> equals the base <em>UE,</em> the triangle <em>DOU</em> equals the triangle <em>PUE,</em> and the remaining angles equal the remaining angles. Therefore the angle <em>OUD</em> equals the angle <em>PUE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI14/">I.14</a></div>
+<p>Therefore <em>DUE</em> is a straight line. For the same reason <em>BSG</em> is also a straight line, and <em>BS</em> equals <em>SG.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI9/">XI.9</a></div>
+<p>Now, since <em>CA</em> equals and is parallel to <em>DB,</em> while <em>CA</em> also equals and is parallel to <em>EG,</em> therefore <em>DB</em> equals and is parallel to <em>EG.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI33/">I.33</a></div>
+<p>And the straight lines <em>DE</em> and <em>BG</em> join their ends, therefore <em>DE</em> is parallel to <em>BG.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a><br><a href="/elements/books/bookI/propositions/propI15/">I.15</a></div>
+<p>Therefore the angle <em>EDT</em> equals the angle <em>BGT,</em> for they are alternate, and the angle <em>DTU</em> equals the angle <em>GTS.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI26/">I.26</a></div>
+<p>Therefore <em>DTU</em> and <em>GTS</em> are two triangles which have two angles equal to two angles and one side equal to one side, namely that opposite one of the equal angles, that is, <em>DU</em> equals <em>GS,</em> for they are the halves of <em>DE</em> and <em>BG,</em> therefore the remaining sides equal the remaining sides. Therefore <em>DT</em> equals <em>TG,</em> and <em>UT</em> equals <em>TS.</em></p>
+<p>Therefore, <em>if the sides of the opposite planes of a cube are bisected, and the planes are carried through the points of section, then the intersection of the planes and the diameter of the cube bisect one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition takes care of a specific situation that occurs in proposition <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a>. In XIII.17 a dodecahedron is constructed based on a cube, and the fact proven here in XI.38 is needed to show that the point <em>T</em> where <em>SU</em> intersects <em>DG</em> is the center of a sphere circumscribing the cube.</p>
+<p>There are a couple of details missing from this proof. For instance, it is not shown that <em>KL</em> and <em>MN</em> actually lie in one plane, and that the line <em>SU</em> actually intersects the line <em>DG.</em></p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

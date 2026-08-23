@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 7</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 7</h1>
+    <div class="statement">If three angles of an equilateral pentagon, taken either in order or not in order, are equal, then the pentagon is equiangular.</div>
+    <p>First, let three angles <em>A, B,</em> and <em>C</em> taken in order in the equilateral pentagon <em>ABCDE</em> be equal to one another.</p>
+<p>I say that the pentagon <em>ABCDE</em> is equiangular.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="265" height="240" tabindex="0"></canvas>
+<noscript><img alt="XIII.7 diagram" src="propXIII7.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.7",
+        elements: [
+            "A;point;free;130,40",
+            "B;point;free;39,106",
+            "ABCDE;polygon;regularPolygon;A,B,5;0;0;black;random",
+            "C;point;vertex;ABCDE,3",
+            "D;point;vertex;ABCDE,4",
+            "E;point;vertex;ABCDE,5",
+            "AC;line;connect;A,C",
+            "BE;line;connect;B,E",
+            "F;point;intersection;AC,BE",
+            "FC;line;connect;F,D",
+            "BD;line;connect;B,D"
+        ],
+    });
+</script>
+</figure><p>Join <em>AC, BE,</em> and <em>FD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Now, since the two sides <em>CB</em> and <em>BA</em> equal the two sides <em>BA</em> and <em>AE</em> respectively, and the angle <em>CBA</em> equals the angle <em>BAE,</em> therefore the base <em>AC</em> equals the base <em>BE,</em> the triangle <em>ABC</em> equals the triangle <em>ABE,</em> and the remaining angles equal the remaining angles, namely those opposite the equal sides, that is, the angle <em>BCA</em> equals the angle <em>BEA,</em> and the angle <em>ABE</em> equals the angle <em>CAB.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
+<p>Hence the side <em>AF</em> also equals the side <em>BF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>But the whole <em>AC</em> equals the whole <em>BE,</em> therefore the remainder <em>FC</em> equals the remainder <em>FE.</em> But <em>CD</em> also equals <em>DE.</em> Therefore the two sides <em>FC</em> and <em>CD</em> equal the two sides <em>FE</em> and <em>ED,</em> and the base <em>FD</em> is common to them, therefore the angle <em>FCD</em> equals the angle <em>FED.</em></p>
+<p>But the angle <em>BCA</em> was also proved equal to the angle <em>AEB,</em> therefore the whole angle <em>BCD</em> equals the whole angle <em>AED.</em> And, by hypothesis, the angle <em>BCD</em> equals the angles at <em>A</em> and <em>B,</em> therefore the angle <em>AED</em> also equals the angles at <em>A</em> and <em>B.</em> Similarly we can prove that the angle <em>CDE</em> also equals the angles at <em>A, B,</em> and <em>C.</em> Therefore the pentagon <em>ABCDE</em> is equiangular.</p>
+<hr width="40%">
+
+<p>Next, let the given equal angles not be angles taken in order, but let the angles at the points <em>A, C,</em> and <em>D</em> be equal.</p>
+<p>I say that in this case too the pentagon <em>ABCDE</em> is equiangular.</p>
+<p>Join <em>BD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Then, since the two sides <em>BA</em> and <em>AE</em> equal the two sides <em>BC</em> and <em>CD,</em> and they contain equal angles, therefore the base <em>BE</em> equals the base <em>BD,</em> the triangle <em>ABE</em> equals the triangle <em>BCD,</em> and the remaining angles equal the remaining angles, namely those opposite the equal sides. Therefore the angle <em>AEB</em> equals the angle <em>CDB.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>But the angle <em>BED</em> also equals the angle <em>BDE,</em> since the side <em>BE</em> equals the side <em>BD.</em></p>
+<p>Therefore the whole angle <em>AED</em> equals the whole angle <em>CDE.</em></p>
+<p>But the angle <em>CDE</em> is, by hypothesis, equal to the angles at <em>A</em> and <em>C,</em> therefore the angle <em>AED</em> also equals the angles at <em>A</em> and <em>C.</em></p>
+<p>For the same reason the angle <em>ABC</em> also equals the angles at <em>A, C,</em> and <em>D.</em> Therefore the pentagon <em>ABCDE</em> is equiangular.</p>
+<p>Therefore, <em>if three angles of an equilateral pentagon, taken either in order or not in order, are equal, then the pentagon is equiangular.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Use of this proposition</h4>
+<p>This proposition is needed in <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a> to show that the dodecahedron constructed there has equiangular pentagons as faces.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

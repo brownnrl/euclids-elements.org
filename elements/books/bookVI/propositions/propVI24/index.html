@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 24</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 24</h1>
+    <div class="statement">In any parallelogram the parallelograms about the diameter are similar both to the whole and to one another.</div>
+    <p>Let <em>ABCD</em> be a parallelogram, and <em>AC</em> its diameter, and let <em>EG</em> and <em>HK</em> be parallelograms about <em>AC.</em></p>
+<p>I say that each of the parallelograms <em>EG</em> and <em>HK</em> is similar both to the whole <em>ABCD</em> and to the other.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="350" height="300" tabindex="0"></canvas>
+<noscript><img alt="VI.24 diagram" src="propVI24.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.24",
+        elements: [
+            "A;point;free;40,40",
+            "B;point;free;240,40",
+            "C;point;free;290,260",
+            "D;point;parallelogram;A,B,C",
+            "ABCD;polygon;quadrilateral;A,B,C,D",
+            "AC;line;connect;A,C",
+            "F;point;lineSlider;A,C,120,120",
+            "G';point;parallelogram;A,B,F;0;0",
+            "G;point;intersection;A,D,F,G'",
+            "E;point;parallelogram;A,G,F",
+            "AGFE;polygon;quadrilateral;A,G,F,E;0;0;black;random",
+            "H;point;intersection;G,F,B,C",
+            "K;point;intersection;E,F,C,D",
+            "FHCK;polygon;quadrilateral;F,H,C,K;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVI/propositions/propVI2/">VI.2</a></div>
+<p>For, since <em>EF</em> is parallel to a side <em>BC</em> of the triangle <em>ABC,</em> proportionally, <em>BE</em> is to <em>EA</em> as <em>CF</em> is to <em>FA.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI2/">VI.2</a></div>
+<p>Again, since <em>FG</em> is parallel to a side <em>CD</em> of the triangle <em>ACD,</em> proportionally, <em>CF</em> is to <em>FA</em> as <em>DG</em> is to <em>GA.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV18/">V.18</a><br><a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>But it was proved that <em>CF</em> is to <em>FA</em> as <em>BE</em> is to <em>EA,</em> therefore <em>BE</em> is to <em>EA</em> as <em>DG</em> is to <em>GA.</em>  Therefore, taken jointly, <em>BA</em> is to <em>AE</em> as <em>DA</em> is to <em>AG,</em> and, alternately, <em>BA</em> is to <em>AD</em> as <em>EA</em> is to <em>AG.</em></p>
+<p>Therefore in the parallelograms <em>ABCD</em> and <em>EG,</em> the sides about the common angle <em>BAD</em> are proportional.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>And, since <em>GF</em> is parallel to <em>DC,</em> the angle <em>AFG</em> equals the angle <em>ACD,</em> and the angle <em>DAC</em> is common to the two triangles <em>ADC</em> and <em>AGF,</em> therefore the triangle <em>ADC</em> is equiangular with the triangle <em>AGF.</em></p>
+<p>For the same reason the triangle <em>ACB</em> is also equiangular with the triangle <em>AFE,</em> and the whole parallelogram <em>ABCD</em> is equiangular with the parallelogram <em>EG.</em></p>
+<p>Therefore, proportionally, <em>AD</em> is to <em>DC</em> as <em>AG</em> is to <em>GF, DC</em> is to <em>CA</em> as <em>GF</em> is to <em>FA, AC</em> is to <em>CB</em> as <em>AF</em> is to <em>FE,</em> and  <em>CB</em> is to <em>BA</em> as <em>FE</em> is to <em>EA.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV22/">V.22</a></div>
+<p>And, since it was proved that <em>DC</em> is to <em>CA</em> as <em>GF</em> is to <em>FA,</em> and <em>AC</em> is to <em>CB</em> as <em>AF</em> is to <em>FE,</em> therefore, <em>ex aequali, DC</em> is to <em>CB</em> as <em>GF</em> is to <em>FE.</em></p>
+<div class="just"><a href="/elements/books/bookVI/definitions/defVI1/">VI.Def.1</a></div>
+<p>Therefore in the parallelograms <em>ABCD</em> and <em>EG</em> the sides about the equal angles are proportional.  Therefore the parallelogram <em>ABCD</em> is similar to the parallelogram <em>EG.</em></p>
+<p>For the same reason the parallelogram <em>ABCD</em> is also similar to the parallelogram <em>KH.</em>  Therefore each of the parallelograms <em>EG</em> and <em>HK</em> is similar to <em>ABCD.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI21/">VI.21</a></div>
+<p>But figures similar to the same rectilinear figure are also similar to one another, therefore the parallelogram <em>EG</em> is also similar to the parallelogram <em>HK.</em></p>
+<p>Therefore, <em>in any parallelogram the parallelograms about the diameter are similar both to the whole and to one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>With this proposition Euclid returns to applications of areas.  Back in proposition <a href="/elements/books/bookI/propositions/propI45/">I.45</a> rectilinear areas were applied to lines.  In the upcoming propositions <a href="/elements/books/bookVI/propositions/propVI28/">VI.28</a> and <a href="/elements/books/bookVI/propositions/propVI29/">VI.29</a>, rectilinear areas will be applied to lines but the areas will fall short of or extend beyond the end of the lines. Those propositions geometric solve two kinds of quadratic equations. This proposition is preparatory to them.  It is used in the proofs of <a href="/elements/books/bookVI/propositions/propVI26/">VI.26</a> (its converse) and VI.29.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI26/">VI.26</a>, <a href="/elements/books/bookVI/propositions/propVI29/">VI.29</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

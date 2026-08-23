@@ -1,0 +1,157 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 17</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book V</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book V</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 17</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 17</h1>
+    <div class="statement">If magnitudes are proportional taken jointly, then they are also proportional taken separately.</div>
+    <div class="just"><a href="/elements/books/bookV/definitions/defV14/">V.Def.14</a></div>
+<p>Let <em>AB, BE, CD,</em> and <em>DF</em> be magnitudes proportional taken jointly, so that <em>AB</em> is to <em>BE</em> as <em>CD</em> is to <em>DF.</em></p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV15/">V.Def.15</a></div>
+<p>I say that they are also proportional taken separately, that is, <em>AE</em> is to <em>EB</em> as <em>CF</em> is to <em>DF.</em></p>
+<p>Take equimultiples <em>GH, HK, LM,</em> and <em>MN</em> of <em>AE, EB, CF,</em> and <em>FD,</em> and take other, arbitrary, equimultiples, <em>KO</em> and <em>NP</em> of <em>EB</em> and <em>FD.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="470" height="120" tabindex="0"></canvas>
+<noscript><img alt="V.17 diagram" src="propV17.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "V.17",
+        elements: [
+            "U0;point;free;-1000,30;0;0",
+            "U1;point;free;1000,30;0;0",
+            "V0;point;free;-1000,70;0;0",
+            "V1;point;free;1000,70;0;0",
+            "W0;point;free;-1000,100;0;0",
+            "W1;point;free;1000,100;0;0",
+            "A;point;lineSlider;U0,U1,100,30",
+            "B;point;lineSlider;U0,U1,220,30",
+            "AB;line;connect;A,B;0;0;red",
+            "C;point;lineSlider;U0,U1,280,30",
+            "D;point;lineSlider;U0,U1,370,30",
+            "CD;line;connect;C,D;0;0;green",
+            "E;point;lineSlider;A,B,180,30",
+            "F;point;proportion;A,B,C,D,A,E,C,D",
+            "G;point;lineSlider;V0,V1,50,70",
+            "G1;point;cutoff;G,V1,A,E;0;lightGray",
+            "H;point;cutoff;G1,V1,A,E",
+            "H1;point;cutoff;H,V1,E,B;0;lightGray",
+            "K;point;cutoff;H1,V1,E,B",
+            "K1;point;cutoff;K,V1,E,B;0;lightGray",
+            "K2;point;cutoff;K1,V1,E,B;0;lightGray",
+            "O;point;cutoff;K2,V1,E,B",
+            "GO;line;connect;G,O;0;0;red",
+            "L;point;lineSlider;W0,W1,100,100",
+            "L1;point;cutoff;L,W1,C,F;0;lightGray",
+            "M;point;cutoff;L1,W1,C,F",
+            "M1;point;cutoff;M,W1,F,D;0;lightGray",
+            "N;point;cutoff;M1,W1,F,D",
+            "N1;point;cutoff;N,W1,F,D;0;lightGray",
+            "N2;point;cutoff;N1,W1,F,D;0;lightGray",
+            "P;point;cutoff;N2,W1,F,D",
+            "LP;line;connect;L,P;0;0;green"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookV/propositions/propV1/">V.1</a></div>
+<p>Then, since <em>GH</em> is the same multiple of <em>AE</em> that <em>HK</em> is of <em>EB,</em> therefore <em>GH</em> is the same multiple of <em>AE</em> that <em>GK</em> is of <em>AB.</em></p>
+<p>But <em>GH</em> is the same multiple of <em>AE</em> that <em>LM</em> is of <em>CF,</em> therefore <em>GK</em> is the same multiple of <em>AB</em> that <em>LM</em> is of <em>CF.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV1/">V.1</a></div>
+<p>Again, since <em>LM</em> is the same multiple of <em>CF</em> that <em>MN</em> is of <em>FD,</em> therefore <em>LM</em> is the same multiple of <em>CF</em> that <em>LN</em> is of <em>CD.</em></p>
+<p>But <em>LM</em> was the same multiple of <em>CF</em> that <em>GK</em> is of <em>AB,</em> therefore <em>GK</em> is the same multiple of <em>AB</em> that <em>LN</em> is of <em>CD.</em></p>
+<p>Therefore <em>GK</em> and <em>LN</em> are equimultiples of <em>AB</em> and <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV2/">V.2</a></div>
+<p>Again, since <em>HK</em> is the same multiple of <em>EB</em> that <em>MN</em> is of <em>FD,</em> and <em>KO</em> is also the same multiple of <em>EB</em> that <em>NP</em> is of <em>FD,</em> therefore the sum <em>HO</em> is also the same multiple of <em>EB</em> that <em>MP</em> is of <em>FD.</em></p>
+<p>And, since <em>AB</em> is to <em>BE</em> as <em>CD</em> is to <em>DF,</em> and of <em>AB</em> and <em>CD</em> equimultiples <em>GK</em> and <em>LN</em> have been taken, and of <em>EB</em> and <em>FD</em> equimultiples <em>HO</em> and <em>MP,</em> therefore, if <em>GK</em> is in excess of <em>HO,</em> and <em>LN</em> is also in excess of <em>MP</em>; if equal, equal; and if less, less.</p>
+<p>Let <em>GK</em> be in excess of <em>HO.</em> Subtract <em>HK</em> from each. Therefore <em>GH</em> is also in excess of <em>KO.</em></p>
+<p>But we saw that, if <em>GK</em> was in excess of <em>HO,</em> then <em>LN</em> was also in excess of <em>MP,</em> therefore <em>LN</em> is also in excess of <em>MP,</em> and, if <em>MN</em> is subtracted from each, then <em>LM</em> is also in excess of <em>NP,</em> so that, if <em>GH</em> is in excess of <em>KO,</em> then <em>LM</em> is also in excess of <em>NP.</em></p>
+<p>Similarly we can prove that, if <em>GH</em> equals <em>KO,</em> then <em>LM</em> also equals <em>NP</em>; and if less, less.</p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV5/">V.Def.5</a></div>
+<p>And <em>GH</em> and <em>LM</em> are equimultiples of <em>AE</em> and <em>CF,</em> while <em>KO</em> and <em>NP</em> are other, arbitrary, equimultiples of <em>EB</em> and <em>FD,</em> therefore <em>AE</em> is to <em>EB</em> as <em>CF</em> is to <em>FD.</em></p>
+<p>Therefore, <em>if magnitudes are proportional taken jointly, then they are also proportional taken separately.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The proposition says that if (<em>w</em> + <em>x</em>) : <em>x</em> = (<em>y</em> + <em>z</em>) : <em>z,</em> then <em>w</em> : <em>x</em> = <em>y</em> : <em>z.</em> Two of the magnitudes <em>w</em> and <em>x</em> can be of one kind while the other two <em>y</em> and <em>z</em> are of another kind.</p>
+<p>The converse is given in the next proposition.</p>
+<p>This proposition is used in the next two propositions and a couple in Book X.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book V</th><td><a href="/elements/books/bookV/propositions/propV18/">V.18</a>, <a href="/elements/books/bookV/propositions/propV19/">V.19</a></td></tr>
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX14/">X.14</a>, <a href="/elements/books/bookX/propositions/propX112/">X.112</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 45</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 45</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 45</h1>
+    <div class="statement">To construct a parallelogram equal to a given rectilinear figure in a given rectilinear angle.</div>
+    <p>Let <span class="elem-ref" data-elem="ABCD">ABCD</span> be the given rectilinear figure and <span class="elem-ref" data-elem="E">E</span> the given rectilinear angle.</p>
+<p>It is required to construct a parallelogram equal to the rectilinear figure <span class="elem-ref" data-elem="ABCD">ABCD</span> in the given angle <span class="elem-ref" data-elem="E">E</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="400" height="240" tabindex="0"></canvas>
+<noscript><img alt="I.45 diagram" src="propI45.gif"/></noscript>
+<script type="text/javascript">
+    // Closes the application-of-areas run: any rectilinear figure becomes a
+    // parallelogram in any angle. The diagonal DB cuts ABCD into two triangles;
+    // I.42 turns the first into a parallelogram, I.44 applies the second onto
+    // its side, and the long middle stretch proves the two line up into one
+    // parallelogram (KH straight with HM, FG straight with GL, both by I.14).
+    //
+    // COLOUR CARRIES THE WHOLE ARGUMENT, and it is a sum this time rather than
+    // a pair: ABCD splits into ABD (orange) + DBC (green); each becomes a
+    // parallelogram of the SAME colour — FH orange, GM green; and the two
+    // together are KFLM. So the given figure and the constructed parallelogram
+    // are both cyan, and both are visibly orange + green. Slide 13 is where
+    // that pays off: four regions on screen, matched in pairs by colour.
+    //
+    // Angle colours follow the same rule. Every angle the proof shows equal to
+    // E is magenta — E itself, HKF, GHM and (via the alternate-angle step) HGF.
+    // The two supplements added along the way, KHG and HGL, are equal to each
+    // other, so they are both yellow. Radii pinned to 22: KHG/GHM are adjacent
+    // at H and HGF/HGL adjacent at G, so #103 must not step them apart.
+    //
+    // euclid#138: helpers H'(350,190) and M'(390,190) are on-canvas, so the
+    // drift here is only -15px horizontally. Nothing to work around.
+    var GIV = ["A","B","C","D","ABCD","E","E1","E2","E3","E1E2","E2E3","angE"];
+    var SPL = ["A","B","C","D","BD","ABD","DBC","E","E1","E2","E3","E1E2","E2E3","angE"];
+    var B1  = ["A","B","C","D","BD","ABD","DBC","E","E1","E2","E3","E1E2","E2E3","angE",
+               "K","F","G","H","KF","FG","GH","HK","KFGH","angFKH"];
+    var B2  = B1.concat(["L","M","GL","LM","MH","KM","FL","HGLM","angGHM"]);
+    var A1  = B2.concat(["angKHG"]);
+    var A2  = A1.concat(["angHGF"]);
+    var A3  = A2.concat(["angHGL"]);
+    var PG  = ["A","B","C","D","BD","ABD","DBC","E","E1","E2","E3","E1E2","E2E3","angE",
+               "K","F","G","H","L","M","KF","FG","GH","HK","GL","LM","MH","KM","FL",
+               "angFKH","angGHM","angKHG","angHGF","angHGL","KFLM"];
+    var DONE= ["A","B","C","D","ABCD","E","E1","E2","E3","E1E2","E2E3","angE",
+               "K","F","G","H","L","M","KF","FG","GH","HK","GL","LM","MH","KM","FL",
+               "angFKH","KFLM"];
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.45",
+        elements: [
+            "A;point;free;40,60",
+            "B;point;free;100,200",
+            "C;point;free;150,80",
+            "D;point;free;100,40",
+            "BD;line;connect;B,D",
+            // The given figure, and the two triangles the diagonal cuts it into.
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;0,0,0;cyan",
+            "ABD;polygon;triangle;A,B,D;0;0;0;orange",
+            "DBC;polygon;triangle;D,B,C;0;0;0;green",
+            // The given angle E: two arms plus a label-only polygon.
+            "E1;point;free;180,120;0",
+            "E2;point;free;170,150;0",
+            "E3;point;free;200,150;0",
+            "E1E2;line;connect;E1,E2",
+            "E2E3;line;connect;E2,E3",
+            "E;polygon;triangle;E1,E2,E3;0,0,0;0;0;0",
+            "K;point;free;230,190",
+            "F;point;free;270,70",
+            // FH = the I.42 parallelogram on KF equal to triangle ABD, angle HKF = E.
+            "H';point;similar;F,K,E1,E2,E3;0;0",
+            "KFGH;polygon;application;ABD,K,F,H';0;0;0;orange",
+            "H;point;vertex;KFGH,4",
+            "G;point;vertex;KFGH,3",
+            // GM = the I.44 parallelogram applied to GH equal to triangle DBC,
+            // angle GHM = E.
+            "M';point;similar;G,H,E1,E2,E3;0;0",
+            "HGLM;polygon;application;DBC,H,G,M';0;0;0;green",
+            "M;point;vertex;HGLM,4",
+            "L;point;vertex;HGLM,3",
+            // The result: the two parallelograms joined. Equal to ABCD, so cyan.
+            "KFLM;polygon;quadrilateral;K,F,L,M;0;0;0;cyan",
+            // Every segment the proof names, drawn in its own right so the
+            // outlines stand whichever region fills are gated off.
+            "KF;line;connect;K,F",
+            "FG;line;connect;F,G",
+            "GH;line;connect;G,H",
+            "HK;line;connect;H,K",
+            "GL;line;connect;G,L",
+            "LM;line;connect;L,M",
+            "MH;line;connect;M,H",
+            // KM and FL are the joined lines the proof establishes as straight;
+            // already drawn by their halves, so hover targets only.
+            "KM;line;connect;K,M;0;0;0",
+            "FL;line;connect;F,L;0;0;0",
+            // Angles. Magenta = shown equal to E; yellow = the two supplements,
+            // which are equal to each other. Radii pinned so #103 leaves the
+            // adjacent pairs at H and at G alone.
+            "angE;sector;angleMarker;E2,E1,E3;0;0;magenta;magenta",
+            "angFKH;sector;angleMarker;K,F,H,22;0;0;magenta;magenta",
+            "angGHM;sector;angleMarker;H,G,M,22;0;0;magenta;magenta",
+            "angHGF;sector;angleMarker;G,H,F,22;0;0;magenta;magenta",
+            "angKHG;sector;angleMarker;H,K,G,22;0;0;yellow;yellow",
+            "angHGL;sector;angleMarker;G,H,L,22;0;0;yellow;yellow"
+        ],
+        aliases: { "FH": "KFGH", "GM": "HGLM", "DB": "BD",
+                   "HKF": "angFKH", "FKH": "angFKH", "FKM": "angFKH",
+                   "GHM": "angGHM", "MHG": "angGHM",
+                   "KHG": "angKHG", "HGF": "angHGF", "HGL": "angHGL",
+                   "FK": "KF", "HG": "GH", "KH": "HK", "HM": "MH",
+                   "ML": "LM", "MK": "KM", "LF": "FL", "GF": "FG", "LG": "GL" },
+        // K and F are free points, so without this they would be auto-unioned
+        // into every slide and stand on the canvas from slide 1 — before the
+        // proof introduces them with the I.42 construction on slide 3.
+        deferDraggables: ["K","F"],
+        initiallyHidden: ["ABD","DBC","KFLM"],
+        slides: [
+            { text: "Let {ABCD} be the given rectilinear figure and {E} the given rectilinear angle. It is required to construct a parallelogram equal to {ABCD} in the given angle {E}.",
+              visible: GIV,
+              highlighted: ["ABCD","E","angE"],
+              transition: { animations: [ { elem: "angE", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Join {DB}. It cuts the figure into the triangles {ABD} and {DBC}.",
+              visible: SPL,
+              highlighted: ["BD","ABD","DBC"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "BD",  name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "ABD", name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "DBC", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ ref: "I.Post.1" }] },
+            { text: "Construct the parallelogram {FH} equal to the triangle {ABD} in the angle {HKF} which equals {E}.",
+              visible: B1,
+              highlighted: ["KFGH","ABD","angFKH"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "KFGH",   name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "angFKH", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.42" }] },
+            { text: "Apply the parallelogram {GM} equal to the triangle {DBC} to the straight line {GH} in the angle {GHM} which equals {E}.",
+              visible: B2,
+              highlighted: ["HGLM","DBC","angGHM","GH"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "HGLM",   name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "angGHM", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.44" }] },
+            { text: "Since the angle {E} equals each of the angles {HKF} and {GHM}, therefore the angle {HKF} also equals the angle {GHM}.",
+              visible: B2,
+              highlighted: ["angE","angFKH","angGHM"],
+              justifications: [{ ref: "C.N.1" }] },
+            { text: "Add the angle {KHG} to each. Therefore the sum of the angles {FKH} and {KHG} equals the sum of the angles {KHG} and {GHM}.",
+              visible: A1,
+              highlighted: ["angKHG","angFKH","angGHM"],
+              transition: { animations: [ { elem: "angKHG", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "C.N.2" }] },
+            { text: "But the sum of the angles {FKH} and {KHG} equals two right angles, therefore the sum of {KHG} and {GHM} also equals two right angles.",
+              visible: A1,
+              highlighted: ["angFKH","angKHG","angGHM"],
+              justifications: [{ ref: "I.29" }, { ref: "C.N.1" }] },
+            { text: "So with the straight line {GH}, at the point {H}, the two straight lines {KH} and {HM} make adjacent angles equal to two right angles — therefore {KH} is in a straight line with {HM}.",
+              visible: A1,
+              highlighted: ["HK","MH","KM"],
+              justifications: [{ ref: "I.14" }] },
+            { text: "Since the straight line {HG} falls upon the parallels {KM} and {FG}, the alternate angles {MHG} and {HGF} equal one another.",
+              visible: A2,
+              highlighted: ["angGHM","angHGF","GH"],
+              transition: { animations: [ { elem: "angHGF", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.29" }] },
+            { text: "Add the angle {HGL} to each. Then the sum of {MHG} and {HGL} equals the sum of {HGF} and {HGL}.",
+              visible: A3,
+              highlighted: ["angHGL","angGHM","angHGF"],
+              transition: { animations: [ { elem: "angHGL", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "C.N.2" }] },
+            { text: "But the sum of {MHG} and {HGL} equals two right angles, so the sum of {HGF} and {HGL} does too. Therefore {FG} is in a straight line with {GL}.",
+              visible: A3,
+              highlighted: ["angHGF","angHGL","FG","GL","FL"],
+              justifications: [{ ref: "I.29" }, { ref: "C.N.1" }, { ref: "I.14" }] },
+            { text: "Since {FK} is equal and parallel to {HG}, and {HG} to {ML}, therefore {KF} is equal and parallel to {ML}, and {KM} and {FL} join them at their ends. So {KFLM} is a parallelogram.",
+              visible: PG,
+              highlighted: ["KFLM","KM","FL"],
+              transition: { animations: [ { elem: "KFLM", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ ref: "I.34" }, { ref: "I.30" }, { ref: "C.N.1" }, { ref: "I.33" }] },
+            { text: "Since the triangle {ABD} equals the parallelogram {FH}, and {DBC} equals {GM}, therefore the whole figure {ABCD} equals the whole parallelogram {KFLM}.",
+              visible: A3,
+              highlighted: ["ABD","KFGH","DBC","HGLM"],
+              justifications: [{ ref: "C.N.2" }] },
+            { text: "So the parallelogram {KFLM} has been constructed equal to the given rectilinear figure {ABCD}, in the angle {FKM} which equals the given angle {E}.",
+              visible: DONE,
+              highlighted: ["KFLM","ABCD","angFKH"],
+              justifications: [{ ref: "Q.E.F." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.14":     "/elements/books/bookI/propositions/propI14/",
+        "I.29":     "/elements/books/bookI/propositions/propI29/",
+        "I.30":     "/elements/books/bookI/propositions/propI30/",
+        "I.33":     "/elements/books/bookI/propositions/propI33/",
+        "I.34":     "/elements/books/bookI/propositions/propI34/",
+        "I.42":     "/elements/books/bookI/propositions/propI42/",
+        "I.44":     "/elements/books/bookI/propositions/propI44/",
+        "C.N.1":    "/elements/books/bookI/commonnotions/cn1/",
+        "C.N.2":    "/elements/books/bookI/commonnotions/cn2/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a><br><a href="/elements/books/bookI/propositions/propI42/">I.42</a><br><a href="/elements/books/bookI/propositions/propI44/">I.44</a></div>
+<p>Join <span class="elem-ref" data-elem="DB">DB</span>. Construct the parallelogram <span class="elem-ref" data-elem="FH">FH</span> equal to the triangle <span class="elem-ref" data-elem="ABD">ABD</span> in the angle <span class="elem-ref" data-elem="angFKH">HKF</span> which equals <span class="elem-ref" data-elem="E">E</span>. Apply the parallelogram <span class="elem-ref" data-elem="GM">GM</span> equal to the triangle <span class="elem-ref" data-elem="DBC">DBC</span> to the straight line <span class="elem-ref" data-elem="GH">GH</span> in the angle <span class="elem-ref" data-elem="angGHM">GHM</span> which equals <span class="elem-ref" data-elem="E">E</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>Since the angle <span class="elem-ref" data-elem="E">E</span> equals each of the angles <span class="elem-ref" data-elem="angFKH">HKF</span> and <span class="elem-ref" data-elem="angGHM">GHM</span>, therefore the angle <span class="elem-ref" data-elem="angFKH">HKF</span> also equals the angle <span class="elem-ref" data-elem="angGHM">GHM</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>Add the angle <span class="elem-ref" data-elem="angKHG">KHG</span> to each. Therefore the sum of the angles <span class="elem-ref" data-elem="angFKH">FKH</span> and <span class="elem-ref" data-elem="angKHG">KHG</span> equals the sum of the angles <span class="elem-ref" data-elem="angKHG">KHG</span> and <span class="elem-ref" data-elem="angGHM">GHM</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>But the sum of the angles <span class="elem-ref" data-elem="angFKH">FKH</span> and <span class="elem-ref" data-elem="angKHG">KHG</span> equals two right angles, therefore the sum of the angles <span class="elem-ref" data-elem="angKHG">KHG</span> and <span class="elem-ref" data-elem="angGHM">GHM</span> also equals two right angles.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI14/">I.14</a></div>
+<p>Thus, with a straight line <span class="elem-ref" data-elem="GH">GH</span>, and at the point <span class="elem-ref" data-elem="H">H</span> on it, two straight lines <span class="elem-ref" data-elem="KH">KH</span> and <span class="elem-ref" data-elem="HM">HM</span> not lying on the same side make the adjacent angles together equal to two right angles, therefore <span class="elem-ref" data-elem="KH">KH</span> is in a straight line with <span class="elem-ref" data-elem="HM">HM</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Since the straight line <span class="elem-ref" data-elem="HG">HG</span> falls upon the parallels <span class="elem-ref" data-elem="KM">KM</span> and <span class="elem-ref" data-elem="FG">FG</span>, therefore the alternate angles <span class="elem-ref" data-elem="angGHM">MHG</span> and <span class="elem-ref" data-elem="angHGF">HGF</span> equal one another.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>Add the angle <span class="elem-ref" data-elem="angHGL">HGL</span> to each. Then the sum of the angles <span class="elem-ref" data-elem="angGHM">MHG</span> and <span class="elem-ref" data-elem="angHGL">HGL</span> equals the sum of the angles <span class="elem-ref" data-elem="angHGF">HGF</span> and <span class="elem-ref" data-elem="angHGL">HGL</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a>, <a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a><br><a href="/elements/books/bookI/propositions/propI14/">I.14</a></div>
+<p>But the sum of the angles <span class="elem-ref" data-elem="angGHM">MHG</span> and <span class="elem-ref" data-elem="angHGL">HGL</span> equals two right angles, therefore the sum of the angles <span class="elem-ref" data-elem="angHGF">HGF</span> and <span class="elem-ref" data-elem="angHGL">HGL</span> also equals two right angles. Therefore <span class="elem-ref" data-elem="FG">FG</span> is in a straight line with <span class="elem-ref" data-elem="GL">GL</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a>, <a href="/elements/books/bookI/propositions/propI30/">I.30</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a>, <a href="/elements/books/bookI/propositions/propI33/">I.33</a></div>
+<p>Since <span class="elem-ref" data-elem="FK">FK</span> is equal and parallel to <span class="elem-ref" data-elem="HG">HG</span>, and <span class="elem-ref" data-elem="HG">HG</span> equal and parallel to <span class="elem-ref" data-elem="ML">ML</span> also, therefore <span class="elem-ref" data-elem="KF">KF</span> is also equal and parallel to <span class="elem-ref" data-elem="ML">ML</span>, and the straight lines <span class="elem-ref" data-elem="KM">KM</span> and <span class="elem-ref" data-elem="FL">FL</span> join them at their ends. Therefore <span class="elem-ref" data-elem="KM">KM</span> and <span class="elem-ref" data-elem="FL">FL</span> are also equal and parallel. Therefore <span class="elem-ref" data-elem="KFLM">KFLM</span> is a parallelogram.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>Since the triangle <span class="elem-ref" data-elem="ABD">ABD</span> equals the parallelogram <span class="elem-ref" data-elem="FH">FH</span>, and <span class="elem-ref" data-elem="DBC">DBC</span> equals <span class="elem-ref" data-elem="GM">GM</span>, therefore the whole rectilinear figure <span class="elem-ref" data-elem="ABCD">ABCD</span> equals the whole parallelogram <span class="elem-ref" data-elem="KFLM">KFLM</span>.</p>
+<p>Therefore the parallelogram <span class="elem-ref" data-elem="KFLM">KFLM</span> has been constructed equal to the given rectilinear figure <span class="elem-ref" data-elem="ABCD">ABCD</span> in the angle <span class="elem-ref" data-elem="angFKH">FKM</span> which equals the given angle <span class="elem-ref" data-elem="E">E</span>.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>With this construction any rectilinear area can be applied to a line in an angle, that is, it can be transformed into a parallelogram with whatever angle you want and with one side whatever you want. That is a satisfactory solution to the question "what's the area of this figure?"</p>
+<p>But the question "what's the area of a circle?" is not answered in the <em>Elements.</em> See the note on <a href="../../../bookII/propositions/propII14/#squaring">squaring the circle</a> after proposition II.14 for more discussion of this question.</p>
+<h4>Use of Proposition 45</h4>
+<p>This construction is used in propositions <a href="/elements/books/bookII/propositions/propII14/">II.14</a>, <a href="/elements/books/bookVI/propositions/propVI25/">VI.25</a>, and <a href="/elements/books/bookXI/propositions/propXI32/">XI.32</a>. Like many of the other constructions in Book I, it is used to make constructions in different planes as is done in XI.32.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII14/">II.14</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI25/">VI.25</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI32/">XI.32</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

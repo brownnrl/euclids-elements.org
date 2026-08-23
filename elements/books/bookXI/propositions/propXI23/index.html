@@ -1,0 +1,327 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 23</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 23</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 23</h1>
+    <div class="statement">To construct a solid angles out of three plane angles such that the sum of any two is greater than the remaining one: thus the sum of the three angles must be less than four right angles.</div>
+    <div class="just"><a href="/elements/books/bookXI/propositions/propXI20/">XI.20</a><br><a href="/elements/books/bookXI/propositions/propXI21/">XI.21</a></div>
+<p>Let the angles <em>ABC, DEF,</em> and <em>GHK</em> be the three given plane angles, and let the sum of any two of them be greater than the remaining one, and further, let the sum of all three be less than four right angles.</p>
+<p>It is required to construct a solid angle out of angles equal to the angles <em>ABC, DEF,</em> and <em>GHK.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a></div>
+<p>Cut off <em>AB, BC, DE, EF, GH,</em> and <em>HK</em> equal to one another, and join <em>AC, DF,</em> and <em>GK.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI22/">XI.22</a></div>
+<p>It is therefore possible to construct a triangle out of straight lines equal to <em>AC, DF,</em> and <em>GK.</em> Construct <em>LMN</em> so that <em>AC</em> equals <em>LM, DF</em> equals <em>MN,</em> and <em>GK</em> equals <em>NL.</em></p>
+<center>
+<canvas id="canvas_0" width="600" height="270" tabindex="0"></canvas>
+<noscript><img alt="XI.23 diagram" src="propXI23a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.23",
+        elements: [
+            "A0;point;free;-1000,170;0;0",
+            "A3;point;free;1000,170;0;0",
+            "D0;point;free;-1000,230;0;0",
+            "D3;point;free;1000,230;0;0",
+            "A;point;lineSlider;A0,A3,30,160",
+            "C;point;lineSlider;A0,A3,130,160",
+            "ACmid;point;midpoint;A,C;0;0",
+            "B';point;perpendicular;ACmid,A;0;0",
+            "B;point;lineSlider;ACmid,B',70,40",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;lineSlider;D0,D3,140,160",
+            "F;point;lineSlider;D0,D3,250,160",
+            "Dcirc;circle;radius;D,A,B;0;0;0;0",
+            "Fcirc;circle;radius;F,A,B;0;0;0;0",
+            "EE';line;bichord;Dcirc,Fcirc;0;0;0",
+            "E;point;last;EE'",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "G;point;lineSlider;A0,A3,260,160",
+            "K;point;lineSlider;A0,A3,375,160",
+            "Gcirc;circle;radius;G,A,B;0;0;0;0",
+            "Kcirc;circle;radius;K,A,B;0;0;0;0",
+            "HH';line;bichord;Gcirc,Kcirc;0;0;0",
+            "H;point;last;HH'",
+            "GHK;polygon;triangle;G,H,K;0;0;black;random",
+            "L;point;free;440,180",
+            "LMcirc;circle;radius;L,A,C;0;0;0;0",
+            "M;point;circleSlider;LMcirc,440,100",
+            "LNcirc;circle;radius;L,G,K;0;0;0;0",
+            "MNcirc;circle;radius;M,D,F;0;0;0;0",
+            "NN';line;bichord;LNcirc,MNcirc;0;0;0",
+            "N;point;first;NN'",
+            "LMNcirc;circle;circumcircle;L,M,N;0;0;black;random",
+            "LMN;polygon;triangle;L,M,N",
+            "O;point;center;LMNcirc",
+            "OL;line;connect;O,L",
+            "OM;line;connect;O,M",
+            "ON;line;connect;O,N",
+            "P';point;midpoint;O,L;0;0",
+            "P;point;midpoint;P',L",
+            "Q;point;cutoff;O,M,O,P",
+            "PQ;line;connect;P,Q"
+        ],
+    });
+</script>
+</center><div class="just"><a href="/elements/books/bookIV/propositions/propIV5/">IV.5</a>, <a href="/elements/books/bookIII/propositions/propIII1/">III.1</a></div>
+<p>Describe the circle <em>LMN</em> about the triangle <em>LMN,</em> and take its center <em>O.</em> Join <em>LO, MO,</em> and <em>NO.</em></p>
+<p>I say that <em>AB</em> is greater than <em>LO.</em></p>
+<p>For, if not, <em>AB</em> either equals <em>LO,</em> or is less.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>First, let it be equal. Then, since <em>AB</em> equals <em>LO,</em> while <em>AB</em> equals <em>BC,</em> and <em>LO</em> equals <em>OM,</em> therefore the two sides <em>AB</em> and <em>BC</em> equal the two sides <em>LO</em> and <em>OM</em> respectively. And, by hypothesis, the base <em>AC</em> equals the base <em>LM,</em> therefore the angle <em>ABC</em> equals the angle <em>LOM.</em></p>
+<p>For the same reason the angle <em>DEF</em> also equals the angle <em>MON,</em> and the angle <em>GHK</em> equals the angle <em>NOL.</em> Therefore the sum of the three angles <em>ABC, DEF,</em> and <em>GHK</em> equals the sum of the three angles <em>LOM, MON,</em> and <em>NOL.</em></p>
+<p>But the sum of the three angles <em>LOM, MON,</em> and <em>NOL</em> equals four right angles, therefore the sum of the three angles <em>ABC, DEF,</em> and <em>GHK</em> equals four right angles.</p>
+<p>But the sum is also, by hypothesis, less than four right angles, which is absurd. Therefore <em>AB</em> is not equal to <em>LO.</em></p>
+<p>I say next that neither is <em>AB</em> less than <em>LO.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a></div>
+<p>For, if possible, let it be so. Make <em>OP</em> equal to <em>AB,</em> and <em>OQ</em> equal to <em>BC,</em> and join <em>PQ.</em></p>
+<p>Then, since <em>AB</em> equals <em>BC,</em> therefore <em>OP</em> also equals <em>OQ,</em> so that the remainder <em>LP</em> equals <em>QM.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI2/">VI.2</a>, <a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Therefore <em>LM</em> is parallel to <em>PQ,</em> and <em>LMO</em> is equiangular with <em>PQO.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI4/">VI.4</a>, <a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>Therefore, <em>OL</em> is to <em>LM</em> as <em>OP</em> is to <em>PQ,</em> and alternately, <em>LO</em> is to <em>OP</em> as <em>LM</em> is to <em>PQ.</em></p>
+<p>But <em>LO</em> is greater than <em>OP,</em> therefore <em>LM</em> is greater than <em>PQ.</em> And <em>LM</em> equals <em>AC,</em> therefore <em>AC</em> is greater than <em>PQ.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI25/">I.25</a></div>
+<p>Since, then, the two sides <em>AB</em> and <em>BC</em> equal the two sides <em>PO</em> and <em>OQ,</em> and the base <em>AC</em> is greater than the base <em>PQ,</em> therefore the angle <em>ABC</em> is greater than the angle <em>POQ.</em></p>
+<p>Similarly we can prove that the angle <em>DEF</em> is also greater than the angle <em>MON,</em> and the angle <em>GHK</em> is greater than the angle <em>NOL.</em></p>
+<p>Therefore the sum of the three angles <em>ABC, DEF,</em> and <em>GHK</em> is greater than the sum of the three angles <em>LOM, MON,</em> and <em>NOL.</em> But, by hypothesis, the sum of the angles <em>ABC, DEF,</em> and <em>GHK</em> is less than four right angles, therefore the sum of the angles <em>LOM, MON,</em> and <em>NOL</em> is much less than four right angles. But the sum also equals four right angles, which is absurd. Therefore <em>AB</em> is not less than <em>LO.</em></p>
+<p>And it was proved that neither is it equal, therefore <em>AB</em> is greater than <em>LO.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI12/">XI.12</a><br><a href="#lemma">Lemma below</a></div><p>Next set up <em>OR</em> from the point <em>O</em> at right angles to the plane of the circle <em>LMN</em> so that the square on <em>OR</em> equals the square on <em>AB</em> minus the square on <em>LO.</em> Join <em>RL, RM,</em> and <em>RN.</em></p>
+<center>
+<canvas id="canvas_1" width="600" height="270" tabindex="0"></canvas>
+<noscript><img alt="XI.23 diagram" src="propXI23b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "XI.23",
+        elements: [
+            "A0;point;free;-1000,170;0;0",
+            "A3;point;free;1000,170;0;0",
+            "D0;point;free;-1000,230;0;0",
+            "D3;point;free;1000,230;0;0",
+            "A;point;lineSlider;A0,A3,40,160",
+            "C;point;lineSlider;A0,A3,120,160",
+            "ACmid;point;midpoint;A,C;0;0",
+            "B';point;perpendicular;ACmid,A;0;0",
+            "B;point;lineSlider;ACmid,B',70,40",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;lineSlider;D0,D3,140,160",
+            "F;point;lineSlider;D0,D3,240,160",
+            "Dcirc;circle;radius;D,A,B;0;0;0;0",
+            "Fcirc;circle;radius;F,A,B;0;0;0;0",
+            "EE';line;bichord;Dcirc,Fcirc;0;0;0",
+            "E;point;last;EE'",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "G;point;lineSlider;A0,A3,265,160",
+            "K;point;lineSlider;A0,A3,380,160",
+            "Gcirc;circle;radius;G,A,B;0;0;0;0",
+            "Kcirc;circle;radius;K,A,B;0;0;0;0",
+            "HH';line;bichord;Gcirc,Kcirc;0;0;0",
+            "H;point;last;HH'",
+            "GHK;polygon;triangle;G,H,K;0;0;black;random",
+            "Acirc;circle;radius;A,D,F;0;0;0;0",
+            "Ccirc;circle;radius;C,G,K;0;0;0;0",
+            "aa';line;bichord;Acirc,Ccirc;0;0;0;0",
+            "a;point;first;aa';0;0",
+            "b;point;circumcenter;A,C,a;0;0",
+            "O;point;free;490,200",
+            "z;point;fixed;490,0,70;0;0",
+            "xyplane;plane;perpendicular;O,z;0;0;0;0",
+            "LMNcirc;circle;radius;O,A,b,xyplane;0;0;black;random",
+            "L;point;circleSlider;LMNcirc,370,200,0",
+            "LMcirc;circle;radius;L,A,C,xyplane;0;0;0;0",
+            "MM';line;bichord;LMNcirc,LMcirc;0;0;0",
+            "M;point;first;MM'",
+            "LNcirc;circle;radius;L,G,K,xyplane;0;0;0;0",
+            "NN';line;bichord;LNcirc,LMNcirc;0;0;0",
+            "N;point;first;NN'",
+            "LMN;polygon;triangle;L,M,N",
+            "OL;line;connect;O,L",
+            "OM;line;connect;O,M",
+            "ON;line;connect;O,N",
+            "c;point;midpoint;A,B;0;0",
+            "ccirc;circle;radius;c,A;0;0;0;0",
+            "ALOcirc;circle;radius;A,L,O;0;0;0;0",
+            "dd';line;bichord;ccirc,ALOcirc;0;0;0",
+            "d;point;first;dd';0;0",
+            "R;point;perpendicular;xyplane,O,d,B",
+            "OR;line;connect;O,R",
+            "pyr;polyhedron;pyramid;R,LMN;0;0;black;random"
+        ],
+    });
+</script>
+</center><div class="just"><a href="/elements/books/bookXI/definitions/defXI3/">XI.Def.3</a><br><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Then, since <em>RO</em> is at right angles to the plane of the circle <em>LMN,</em> therefore <em>RO</em> is also at right angles to each of the straight lines <em>LO, MO,</em> and <em>NO.</em> And, since <em>LO</em> equals <em>OM,</em> and <em>OR</em> is common and at right angles, therefore the base <em>RL</em> equals the base <em>RM.</em></p>
+<p>For the same reason <em>RN</em> also equals each of the straight lines <em>RL</em> and <em>RM.</em> Therefore the three straight lines <em>RL, RM,</em> and <em>RN</em> equal one another.</p>
+<p>Next, since by hypothesis the square on <em>OR</em> equals equals the square on <em>AB</em> minus the square on <em>LO,</em> therefore the square on <em>AB</em> equals the sum of the squares on <em>LO</em> and <em>OR.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the square on <em>LR</em> equals the sum of the squares on <em>LO</em> and <em>OR,</em> for the angle <em>LOR</em> is right, therefore the square on <em>AB</em> equals the square on <em>RL.</em> Therefore <em>AB</em> equals <em>RL.</em></p>
+<p>But each of the straight lines <em>BC, DE, EF, GH,</em> and <em>HK</em> equals <em>AB,</em> while each of the straight lines <em>RM</em> and <em>RN</em> equals <em>RL,</em> therefore each of the straight lines <em>AB, BC, DE, EF, GH,</em> and <em>HK</em> equals each of the straight lines <em>RL, RM,</em> and <em>RN.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>Since the two sides <em>LR</em> and <em>RM</em> equal the two sides <em>AB</em> and <em>BC,</em> and, by hypothesis, the base <em>LM</em> equals the base <em>AC,</em> therefore the angle <em>LRM</em> equals the angle <em>ABC.</em> For the same reason the angle <em>MRN</em> equals the angle <em>DEF,</em> and the angle <em>LRN</em> equals the angle <em>GHK.</em></p>
+<p>Therefore, out of the three plane angles <em>LRM, MRN,</em> and <em>LRN,</em> which equal the three given angles <em>ABC, DEF,</em> and <em>GHK,</em> the solid angle at <em>R</em> has been constructed, which is contained by the angles <em>LRM, MRN,</em> and <em>LRN.</em></p>
+<div class="qed">Q.E.F.</div><p><a name="lemma"></a></p>
+<h3>Lemma</h3>
+<p>But how it is possible to take the square on <em>OR</em> equal to the square on <em>AB</em> minus the square on <em>LO</em> we can show as follows.</p>
+<figure class="diagram">
+<canvas id="canvas_2" width="220" height="180" tabindex="0"></canvas>
+<noscript><img alt="XI.23 lemma diagram" src="propXI23l.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_2",
+        background: "35,19,100",
+        title: "XI.23, Lemma",
+        elements: [
+            "A;point;free;40,140",
+            "B;point;free;180,140",
+            "O;point;midpoint;A,B;0;0",
+            "circ;circle;radius;O,A;0;0;0;0",
+            "C;point;circleSlider;circ,80,40",
+            "semi;sector;arc;B,C,A;0;0;black;random",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookIV/propositions/propIV1/">IV.1</a></div>
+<p>Set out the straight lines <em>AB</em> and <em>LO,</em> and let <em>AB</em> be the greater. Describe the semicircle <em>ABC</em> on <em>AB.</em> Fit <em>AC</em> into the semicircle <em>ABC</em> equal to the straight line <em>LO,</em> not being greater than the diameter <em>AB.</em> Join <em>CB.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII31/">III.31</a></div>
+<p>Since the angle <em>ACB</em> is an angle in the semicircle <em>ACB,</em> therefore the angle <em>ACB</em> is right.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>Therefore the square on <em>AB</em> equals the sum of the squares on <em>AC</em> and <em>CB.</em></p>
+<p>Hence the square on <em>AB</em> equals the square on <em>AC</em> minus the square on <em>CB.</em> But <em>AC</em> equals <em>LO.</em> Therefore the square on <em>AB</em> equals the square on <em>LO</em> minus the square on <em>CB.</em> Therefore if we cut off <em>OR</em> equal to <em>BC,</em> then the square on <em>AB</em> will equal the square on <em>LO</em> minus the square on <em>OR.</em></p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition shows that the necessary conditions for constructing a solid angle found in <a href="/elements/books/bookXI/propositions/propXI20/">XI.20</a> (the sum any two angles must be less than the third) and <a href="/elements/books/bookXI/propositions/propXI21/">XI.21</a> (the sum of the three angles must be less than four right angles) are, in fact, sufficient. It is interesting to see how parts of the construction disappear as the angles <em>B, E,</em> and <em>H</em> grow so that these conditions fail.</p>
+<p>This proposition completes the introductory portion of Book XI. Most of the remainder deals with parallelepipedal solids and their properties.</p>
+<h4>About the proof</h4>
+<center>
+<canvas id="canvas_3" width="600" height="260" tabindex="0"></canvas>
+<noscript><img alt="XI.23 guide diagram" src="propXI23d.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_3",
+        background: "0,0,100",
+        title: "XI.23",
+        elements: [
+            "A0;point;free;-1000,170;0;0",
+            "A3;point;free;1000,170;0;0",
+            "D0;point;free;-1000,230;0;0",
+            "D3;point;free;1000,230;0;0",
+            "A;point;lineSlider;A0,A3,40,160",
+            "C;point;lineSlider;A0,A3,110,160",
+            "ACmid;point;midpoint;A,C;0;0",
+            "B';point;perpendicular;ACmid,A;0;0",
+            "B;point;lineSlider;ACmid,B',70,40",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;lineSlider;D0,D3,110,160",
+            "F;point;lineSlider;D0,D3,245,160",
+            "Dcirc;circle;radius;D,A,B;0;0;0;0",
+            "Fcirc;circle;radius;F,A,B;0;0;0;0",
+            "EE';line;bichord;Dcirc,Fcirc;0;0;0",
+            "E;point;last;EE'",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "G;point;lineSlider;A0,A3,260,160",
+            "K;point;lineSlider;A0,A3,355,160",
+            "Gcirc;circle;radius;G,A,B;0;0;0;0",
+            "Kcirc;circle;radius;K,A,B;0;0;0;0",
+            "HH';line;bichord;Gcirc,Kcirc;0;0;0",
+            "H;point;last;HH'",
+            "GHK;polygon;triangle;G,H,K;0;0;black;random",
+            "L;point;free;540,160",
+            "LMcirc;circle;radius;L,A,C;0;0;0;0",
+            "M;point;circleSlider;LMcirc,460,220",
+            "LNcirc;circle;radius;L,G,K;0;0;0;0",
+            "MNcirc;circle;radius;M,D,F;0;0;0;0",
+            "NN';line;bichord;LNcirc,MNcirc;0;0;0",
+            "N;point;first;NN'",
+            "LMNcirc;circle;circumcircle;L,M,N;0;0;black;random",
+            "LMN;polygon;triangle;L,M,N",
+            "O;point;center;LMNcirc",
+            "OL;line;connect;O,L",
+            "OM;line;connect;O,M",
+            "ON;line;connect;O,N"
+        ],
+    });
+</script>
+</center><p>This is a rather long proof that has several stages. First, the base <em>LMN</em> for the proposed solid angle is constructed. This first stage has been set off as the previous proposition <a href="/elements/books/bookXI/propositions/propXI24/">XI.24</a>.</p>
+<p>After the circumcircle for this base is constructed, it is shown that the proposed edges for the solid angle, which are all equal, are greater than the radius of the circle. That part of the demonstration takes some time, and it is separated into two parts to show, first, that the edges can't equal the radius, and, second, that the edges can't be less than the radius.</p>
+<p>The next stage is to place the proposed vertex <em>R</em> for the solid angle. It is placed above the center <em>O</em> of the circumcircle so that <em>OR</em><sup>2</sup> is the difference of the square of the edge and the square of the radius. A separate lemma appears after the proposition to construct a line of this particular length. This lemma is the same as the <a href="/elements/books/bookX/propositions/propX14/#lemma">lemma</a> for proposition X.14 in Book X.</p>
+<p>The remainder of the proof is the verification that the proposed solid angle satisfies the requirements of the construction.</p>
+<p>The proof only covers the case when the circumcenter <em>O</em> of the triangle <em>LMN</em> lies within that triangle. Two other cases need to be considered as well—when <em>O</em> lies outside the triangle and when <em>O</em> lies on the boundary of the triangle. The three different cases need only be considered in the stage which shows that the proposed edges are greater than the radius of the circumcircle; the proof doesn't have to be split into three cases for the other stages of the proof.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

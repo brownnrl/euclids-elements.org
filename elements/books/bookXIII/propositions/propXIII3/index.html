@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 3</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 3</h1>
+    <div class="statement">If a straight line is cut in extreme and mean ratio, then the square on the sum of the lesser segment and the half of the greater segment is five times the square on the half of the greater segment.</div>
+    <p>Cut any straight line <em>AB</em> in extreme and mean ratio at the point <em>C,</em> and let <em>AC</em> be the greater segment. Bisect <em>AC</em> at <em>D.</em></p>
+<p>I say that the square on <em>BD</em> is five times the square on <em>DC.</em></p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_0" width="280" height="270" tabindex="0"></canvas>
+<noscript><img alt="XIII.3 diagram" src="propXIII3.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.3",
+        elements: [
+            "A;point;free;30,30",
+            "B;point;free;240,30",
+            "BATE;polygon;square;B,A;0;0;black;random",
+            "T;point;vertex;BATE,3;0;0",
+            "E;point;vertex;BATE,4",
+            "X;point;midpoint;A,B;0;0",
+            "Y;point;extend;A,X,X,E;0;0",
+            "C;point;cutoff;A,B,B,Y",
+            "D;point;midpoint;A,C",
+            "BT;line;connect;B,T",
+            "L;point;parallelogram;D,B,E",
+            "S;point;parallelogram;C,B,E",
+            "DL;line;connect;D,L",
+            "CS;line;connect;C,S",
+            "K;point;intersection;B,T,D,L",
+            "U;point;intersection;B,T,C,S",
+            "H;point;parallelogram;T,L,K",
+            "N;point;parallelogram;H,T,E",
+            "HN;line;connect;H,N",
+            "R;point;parallelogram;T,S,U",
+            "M;point;parallelogram;R,T,E",
+            "RM;line;connect;R,M",
+            "F;point;intersection;C,S,H,N",
+            "G;point;intersection;D,L,R,M",
+            "O;point;midpoint;G,U",
+            "P;point;cutoff;U,B,U,O",
+            "Q;point;cutoff;U,S,U,O",
+            "QPO;sector;arc;Q,P,O;0;0;gray"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a></div>
+<p>Describe the square <em>AE</em> on <em>AB,</em> and draw the figure.</p>
+<p>Since <em>AC</em> is double <em>DC,</em> therefore the square on <em>AC</em> is quadruple the square on <em>DC,</em> that is, <em>RS</em> is quadruple <em>FG.</em></p>
+<p>And, since the rectangle <em>AB</em> by <em>BC</em> equals the square on <em>AC,</em> and <em>CE</em> is the rectangle <em>AB</em> by <em>BC,</em> therefore <em>CE</em> equals <em>RS.</em></p>
+<p>But <em>RS</em> is quadruple <em>FG,</em> therefore <em>CE</em> is also quadruple <em>FG.</em></p>
+<p>Again, since <em>AD</em> equals <em>DC,</em> therefore <em>HK</em> also equals <em>KF.</em></p>
+<p>Hence the square <em>GF</em> equals the square <em>HL.</em></p>
+<p>Therefore <em>GK</em> equals <em>KL,</em> that is <em>MN</em> equals <em>NE,</em> hence <em>MF</em> equals <em>FE.</em></p>
+<p>But <em>MF</em> equals <em>CG,</em> therefore <em>CG</em> equals <em>FE.</em></p>
+<p>Add <em>CN</em> to each, therefore the gnomon <em>OPQ</em> equals <em>CE.</em></p>
+<p>But <em>CE</em> was proved quadruple <em>GF,</em> therefore the gnomon <em>OPQ</em> is also quadruple the square <em>FG.</em> Therefore the sum of the gnomon <em>OPQ</em> and the square <em>FG</em> is five times <em>FG.</em></p>
+<p>But the sum of the gnomon <em>OPQ</em> and the square <em>FG</em> is the square <em>DN.</em> And <em>DN</em> is the square on <em>DB,</em> and <em>GF</em> is the square on <em>DC.</em> Therefore the square on <em>DB</em> is five times the square on <em>DC.</em></p>
+<p>Therefore, <em>if a straight line is cut in extreme and mean ratio, then the square on the sum of the lesser segment and the half of the greater segment is five times the square on the half of the greater segment.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Use of this proposition</h4>
+<p>This result is needed in proposition <a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a> to show the icosahedron is inscribed in the given sphere.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

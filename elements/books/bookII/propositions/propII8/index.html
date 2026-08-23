@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book II</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book II</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 8</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 8</h1>
+    <div class="statement">If a straight line is cut at random, then four times the rectangle contained by the whole and one of the segments plus the square on the remaining segment equals the square described on the whole and the aforesaid segment as on one straight line.</div>
+    <p>Let a straight line <em>AB</em> be cut at random at the point <em>C.</em></p>
+<p>I say that four times the rectangle <em>AB</em> by <em>BC</em> plus the square on <em>AC</em> equals the square described on <em>AB</em> and <em>BC</em> as on one straight line.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="300" tabindex="0"></canvas>
+<noscript><img src="propII8.gif" alt="II.8"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "II.8",
+        elements: [
+            "A0;point;free;-1000,40;0,0",
+            "A3;point;free;1000,40;0,0",
+            "A;point;lineSlider;A0,A3,40,0",
+            "B;point;lineSlider;A0,A3,210,0",
+            "C;point;lineSlider;A0,A3,160,0",
+            "D;point;extend;A,B,C,B",
+            "DAEF;polygon;square;D,A",
+            "E;point;vertex;DAEF,3",
+            "F;point;vertex;DAEF,4",
+            "DE;line;connect;D,E",
+            "CH;line;parallel;C,D,F",
+            "H;point;last;CH",
+            "BL;line;parallel;B,D,F",
+            "L;point;last;BL",
+            "K;point;intersection;D,E,B,L",
+            "Q;point;intersection;D,E,C,H",
+            "M;point;parallelogram;K,B,A",
+            "O;point;parallelogram;Q,C,A",
+            "MN;line;parallel;M,A,D",
+            "OP;line;parallel;O,A,D",
+            "N;point;last;MN",
+            "P;point;last;OP",
+            "G;point;intersection;M,N,C,H",
+            "R;point;intersection;B,L,O,P",
+            "OQHE;polygon;quadrilateral;O,Q,H,E;0;0;0;random",
+            "N';point;midpoint;K,N;0;0",
+            "S;point;cutoff;Q,O,K,N';black;lightGray",
+            "T;point;cutoff;K,D,K,N';black;lightGray",
+            "U;point;cutoff;Q,H,K,N';black;lightGray",
+            "UTS;sector;arc;U,T,S;0;0;lightGray;0"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a>, <a href="/elements/books/bookI/propositions/propI46/">I.46</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Produce the straight line <em>BD</em> in a straight line with <em>AB,</em> and make <em>BD</em> equal to <em>CB.</em> Describe the square <em>AEFD</em> on <em>AD,</em> and let the figure be drawn.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
+<p>Then, since <em>CB</em> equals <em>BD,</em> while <em>CB</em> equals <em>GK,</em> and <em>BD</em> equals <em>KN,</em> therefore <em>GK</em> also equals <em>KN.</em></p>
+<p>For the same reason <em>QR</em> also equals <em>RP.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI36/">I.36</a></div>
+<p>And, since <em>BC</em> equals <em>BD,</em> and <em>GK</em> equals <em>KN,</em> therefore <em>CK</em> also equals <em>KD,</em> and <em>GR</em> equals <em>RN.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI43/">I.43</a></div>
+<p>But <em>CK</em> equals <em>RN,</em> for they are complements of the parallelogram <em>CP.</em> Therefore <em>KD</em> also equals <em>GR.</em>  Therefore the four areas <em>DK, CK, GR, RN</em> equal one another. Therefore the four are quadruple of <em>CK.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
+<p>Again, since <em>CB</em> equals <em>BD,</em> while <em>BD</em> equals <em>BK,</em> that is <em>CG,</em> and <em>CB</em> equals <em>GK,</em> that is <em>GQ,</em> therefore <em>CG</em> also equals <em>GQ.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI36/">I.36</a></div>
+<p>And, since <em>CG</em> equals <em>GQ,</em> and <em>QR</em> equals <em>RP, AG</em> also equals <em>MQ,</em> and <em>QL</em> equals <em>RF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI43/">I.43</a></div>
+<p>But <em>MQ</em> equals <em>QL,</em> for they are complements of the parallelogram <em>ML,</em> therefore <em>AG</em> also equals <em>RF.</em>  Therefore the four areas <em>AG, MQ, QL, RF</em> equal one another. Therefore the four are quadruple of <em>AG.</em> But the four areas <em>CK, KD, GR, RN</em> were proved to be quadruple of <em>CK,</em> therefore the eight areas, which contain the gnomon <em>STU,</em> are quadruple of <em>AK.</em></p>
+<p>Now, since <em>AK</em> is the rectangle <em>AB</em> by <em>BD,</em> for <em>BK</em> equals <em>BD,</em> therefore four times the rectangle <em>AB</em> by <em>BD</em> is quadruple of <em>AK.</em></p>
+<p>But the gnomon <em>STU</em> was also proved to be quadruple of <em>AK,</em> therefore four times the rectangle <em>AB</em> by <em>BD</em> equals the gnomon <em>STU</em>.</p>
+<p>Add <em>OH,</em> which equals the square on <em>AC,</em> to each.  Therefore four times the rectangle <em>AB</em> by <em>BD</em> plus the square on <em>AC</em> equals the gnomon <em>STU</em> plus <em>OH.</em></p>
+<p>But the gnomon <em>STU</em> and <em>OH</em> are the whole square <em>AEFD,</em> which is described on <em>AD.</em> Therefore four times the rectangle <em>AB</em> by <em>BD</em> plus the square on <em>AC</em> equals the square on <em>AD.</em></p>
+<p>But <em>BD</em> equals <em>BC.</em></p>
+<p>Therefore four times the rectangle <em>AB</em> by <em>BC</em> together with the square on <em>AC</em> equals the square on <em>AD,</em> that is to the square described on <em>AB</em> and <em>BC</em> as on one straight line.</p>
+<p>Therefore <em>if a straight line is cut at random, then four times the rectangle contained by the whole and one of the segments plus the square on the remaining segment equals the square described on the whole and the aforesaid segment as on one straight line.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Algebraically, if <em>x</em> = <em>y</em> + <em>z,</em> then 4<em>xy</em> + <em>z</em><sup>2</sup> = (<em>x</em> + <em>y</em>)<sup>2</sup>.  As an identity,</p>
+<center>4<i>xy</i> + (<i>x</i> – <i>y</i>)<sup>2</sup> = (<i>x</i> + <i>y</i>)<sup>2</sup>.</center><p>This proposition is not used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

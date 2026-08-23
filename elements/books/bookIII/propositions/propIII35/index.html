@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 35</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 35</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 35</h1>
+    <div class="statement">If in a circle two straight lines cut one another, then the rectangle contained by the segments of the one equals the rectangle contained by the segments of the other.</div>
+    <p>For in the circle <em>ABCD</em> let the two straight lines <em>AC</em> and <em>BD</em> cut one another at the point <em>E.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="220" tabindex="0"></canvas>
+<noscript><img alt="III.35a diagram" src="propIII35a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.35a",
+        pivot: "E",
+        elements: [
+            "A;point;free;60,50",
+            "C;point;free;200,170",
+            "E;point;midpoint;A,C;black;green",
+            "ABCD;circle;radius;E,A;0;0;black;random",
+            "B;point;circleSlider;ABCD,50,110",
+            "D;point;extend;B,E,B,E",
+            "AC;line;connect;A,C",
+            "BD;line;connect;B,D"
+        ],
+    });
+</script>
+</figure><p>I say that the rectangle  <em>AE</em> by <em>EC</em> equals the rectangle  <em>DE</em> by <em>EB.</em></p>
+<p>If now <em>AC</em> and <em>BD</em> are through the center, so that <em>E</em> is the center of the circle <em>ABCD,</em> it is manifest that, <em>AE, EC, DE,</em> and <em>EB</em> being equal, the rectangle <em>AE</em> by <em>EC</em> also equals the rectangle  <em>DE</em> by <em>EB.</em></p>
+<hr width="30%">
+
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="260" height="270" tabindex="0"></canvas>
+<noscript><img alt="III.35b diagram" src="propIII35b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "III.35b",
+        elements: [
+            "A;point;free;40,80",
+            "C;point;free;160,230",
+            "AC;line;connect;A,C",
+            "G;point;midpoint;A,C",
+            "GF';line;perpendicular;G,A;0;0;0",
+            "F;point;lineSlider;GF',130,140",
+            "FG;line;connect;F,G",
+            "ABCD;circle;radius;F,A;0;0;black;random",
+            "B;point;circleSlider;ABCD,100,230",
+            "D;point;circleSlider;ABCD,210,80",
+            "BD;line;connect;B,D",
+            "E;point;intersection;A,C,B,D",
+            "EF;line;connect;E,F",
+            "BF;line;connect;B,F",
+            "CF;line;connect;C,F",
+            "H;point;midpoint;B,D",
+            "HF;line;connect;H,F"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a><br><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>Next let <em>AC</em> and <em>DB</em> not be through the center.  Take the center <em>F</em> let the center of <em>ABCD.</em>  Draw <em>FG</em> and <em>FH</em> from <em>F</em> perpendicular  to the straight lines <em>AC</em> and <em>DB.</em>  Join <em>FB, FC,</em> and <em>FE.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII3/">III.3</a></div>
+<p>Then, since a straight line <em>GF</em> through the center cuts a straight line <em>AC</em> not through the center at right angles, it also bisects it, therefore <em>AG</em> equals <em>GC.</em></p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII5/">II.5</a></div>
+<p>Since, then, the straight line <em>AC</em> has been cut into equal parts at <em>G</em> and into unequal parts at <em>E,</em> the rectangle <em>AE</em> by <em>EC</em> together with the square on <em>EG</em> equals the square on <em>GC.</em></p>
+<p>Add the square on <em>GF.</em>  Therefore the rectangle <em>AE</em> by <em>EC</em> plus the sum of the squares on <em>GE</em> and <em>GF</em> equals the sum of the squares on <em>CG</em> and <em>GF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the square on <em>FE</em> equals the sum of the squares on <em>EG</em> and <em>GF,</em> and the square on <em>FC</em> equals the sum of the squares on <em>CG</em> and <em>GF.</em> Therefore the rectangle <em>AE</em> by <em>EC</em> plus the square on <em>FE</em> equals the square on <em>FC.</em></p>
+<p>And <em>FC</em> equals <em>FB,</em> therefore the rectangle <em>AE</em> by <em>EC</em> plus the square on <em>EF</em> equals the square on <em>FB.</em></p>
+<p>For the same reason, also, the rectangle <em>DE</em> by <em>EB</em> plus the square on <em>FE</em> equals the square on <em>FB.</em></p>
+<p>But the rectangle <em>AE</em> by <em>EC</em> plus the square on <em>FE</em> was also proved equal to the square on <em>FB,</em> therefore the rectangle <em>AE</em> by <em>EC</em> plus the square on <em>FE</em> equals the rectangle <em>DE</em> by <em>EB</em> plus the square on <em>FE.</em></p>
+<p>Subtract the square on <em>FE</em> from each.  Therefore the remaining rectangle <em>AE</em> by <em>EC</em> equals the rectangle <em>DE</em> by <em>EB.</em></p>
+<p>Therefore <em>if in a circle two straight lines cut one another, then the rectangle contained by the segments of the one equals the rectangle contained by the segments of the other.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>By means of proposition <a href="/elements/books/bookVI/propositions/propVI16/">VI.16</a>, the statement, "the rectangle <em>AE</em> by <em>EC</em> equals the rectangle <em>DE</em> by <em>EB,</em>" may be converted into one about ratios, namely, "<em>AE</em> : <em>EB</em> = <em>DE</em> : <em>EC.</em>"</p>
+<p>This proposition is not used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

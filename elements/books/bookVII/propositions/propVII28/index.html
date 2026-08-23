@@ -1,0 +1,128 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 28</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 28</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 28</h1>
+    <div class="statement">If two numbers are relatively prime, then their sum is also prime to each of them; and, if the sum of two numbers is relatively prime to either of them, then the original numbers are also relatively prime.</div>
+    <p>Let two relatively prime numbers <em>AB</em> and <em>BC</em> be added.</p>
+<p>I say that their sum <em>AC</em> is also relatively prime to each of the numbers <em>AB</em> and <em>BC.</em></p>
+<p>If <em>CA</em> and <em>AB</em> are not relatively prime, then some number <em>D</em> measures <em>CA</em> and <em>AB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="250" height="115" tabindex="0"></canvas>
+<noscript><img alt="VII.28 diagram" src="propVII28.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.28",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "D0;point;free;-1000,75;0;0",
+            "D3;point;free;1000,75;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,150,0",
+            "C;point;lineSlider;A0,A3,220,0",
+            "AC;line;connect;A,C",
+            "M;point;midpoint;B,C;0;0",
+            "D1;point;lineSlider;D0,D3,100,0;0",
+            "D2;point;cutoff;D1,D3,B,M;0",
+            "D;line;connect;D1,D2;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVII/definitions/defVII12/">VII.Def.12</a></div>
+<p>Since then <em>D</em> measures <em>CA</em> and <em>AB,</em> therefore it also measures the remainder <em>BC.</em> But it also measures <em>BA,</em> therefore <em>D</em> measures <em>AB</em> and <em>BC</em> which are relatively prime, which is impossible.</p>
+<p>Therefore no number measures the numbers <em>CA</em> and <em>AB.</em> Therefore <em>CA</em> and <em>AB</em> are relatively prime. For the same reason <em>AC</em> and <em>CB</em> are also relatively prime. Therefore <em>CA</em> is relatively prime to each of the numbers <em>AB</em> and <em>BC.</em></p>
+<hr width="50%">
+
+<p>Next, let <em>CA</em> and <em>AB</em> be relatively prime.</p>
+<p>I say that <em>AB</em> and <em>BC</em> are also relatively prime.</p>
+<p>If <em>AB</em> and <em>BC</em> are not relatively prime, then some number <em>D</em> measures <em>AB</em> and <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII12/">VII.Def.12</a></div>
+<p>Now, since <em>D</em> measures each of the numbers <em>AB</em> and <em>BC,</em> therefore it also measures the whole <em>CA.</em> But it measures <em>AB,</em> therefore <em>D</em> measures <em>CA</em> and <em>AB</em> which are relatively prime, which is impossible.</p>
+<p>Therefore no number measures the numbers <em>AB</em> and <em>BC.</em> Therefore <em>AB</em> and <em>BC</em> are relatively prime.</p>
+<p>Therefore, <em>if two numbers are relatively prime, then their sum is also prime to each of them; and, if the sum of two numbers is relatively prime to either of them, then the original numbers are also relatively prime.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in <a href="/elements/books/bookIX/propositions/propIX15/">IX.15</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book IX</th><td><a href="/elements/books/bookIX/propositions/propIX15/">IX.15</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

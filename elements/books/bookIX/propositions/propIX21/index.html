@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 21</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IX</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IX</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 21</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 21</h1>
+    <div class="statement">If as many even numbers as we please are added together, then the sum is even.</div>
+    <p>Let as many even numbers as we please, <em>AB, BC, CD,</em> and <em>DE,</em> be added together.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="70" tabindex="0"></canvas>
+<noscript><img alt="IX.21 diagram" src="propIX21.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IX.21",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,72,0",
+            "C;point;lineSlider;A0,A3,120,0",
+            "D;point;lineSlider;A0,A3,194,0",
+            "E;point;lineSlider;A0,A3,220,0",
+            "AE;line;connect;A,E"
+        ],
+    });
+</script>
+</figure><p>I say that the sum <em>AE</em> is even.</p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII6/">VII.Def.6</a></div>
+<p>Since each of the numbers <em>AB, BC, CD,</em> and <em>DE</em> is even, therefore each has a half part, so that the sum <em>AE</em> also has a half part. But an even number is that which is divisible into two equal parts, therefore <em>AE</em> is even.</p>
+<p>Therefore, <em>if as many even numbers as we please are added together, then the sum is even.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>With this proposition, Euclid commences the study of even and odd numbers. The study continues through proposition <a href="/elements/books/bookIX/propositions/propIX34/">IX.34</a>. The statements of these propositions probably constitute the oldest part of the <em>Elements</em> and date back to the Pythagoreans. Indeed, their proofs depend on no other propositions (except <a href="/elements/books/bookIX/propositions/propIX31/">IX.31</a> which discusses prime numbers and may have been inserted among these propositions because it involves odd numbers), so that the statements together with the proofs may be the oldest part of the <em>Elements.</em></p>
+<h4>Commutativity and associativity of addition</h4>
+<p>The proof of this proposition implicitly relies on a principle that the order that numbers are summed is irrelevant. For example, when showing that the sum of the two even numbers <em>a</em> and <em>b</em> is even, first <em>a</em> is divided into two equal parts, <em>a</em> = <em>c</em> + <em>c,</em> and <em>b</em> is divided into two equal parts, <em>b</em> = <em>d</em> + <em>d,</em> therefore</p>
+<center><i>a</i> + <i>b</i> = (<i>c</i> + <i>c</i>) + (<i>d</i> + <i>d</i>).</center><p>But to reach the conclusion that <em>a</em> + <em>b</em> is divisible into two equal parts, we need</p>
+<center><i>a</i> + <i>b</i> = (<i>c</i> + <i>d</i>) + (<i>c</i> + <i>d</i>),</center><p>which adds the terms in a different order.</p>
+<p>Of course the order that the terms are added has no effect on the sum. That is an implicit assumption made by Euclid and most everyone after him until the 19th century.</p>
+<p>The modern way to deal with this question is to recognize two properties of addition of numbers. One of them is <em>commutativity.</em> Addition is commutative since for any two numbers <em>a</em> and <em>b,</em></p>
+<center><i>a</i> + <i>b</i> = <i>b</i> + <i>a.</i></center><p>Commutativity says we can two numbers in any order and get the same result.</p>
+<p>The other property, <em>associativity,</em> is more subtle. When computing the sum <em>a</em> + <em>b</em> + <em>c</em> of three numbers, there is still a choice of which numbers to add first. You can either add <em>a</em> + <em>b</em> first to get <em>d,</em> then add <em>d</em> + <em>c</em> to get the sum, or you can add <em>b</em> + <em>c</em> first to get <em>e,</em> then add <em>a</em> + <em>e</em> to get the sum. The same sum should result. As an equation, associativity says you can move the parentheses around:</p>
+<center>(<i>a</i> + <i>b</i>) + <i>c</i> = <i>a</i> + (<i>b</i> + <i>c</i>).</center><p>These two properties, commutativity and associativity, are enough to guarantee that when you add any number of terms together, the order that they're added is irrelvant.</p>
+<p>These properties should either be taken as postulates about numbers, or else proven from more basic assumptions. Besides these properties of addition, Euclid missed some other basic properties of the arithmetic operations.</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is used in the next two and in <a href="/elements/books/bookIX/propositions/propIX28/">IX.28</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book IX</th><td><a href="/elements/books/bookIX/propositions/propIX22/">IX.22</a>, <a href="/elements/books/bookIX/propositions/propIX23/">IX.23</a>, <a href="/elements/books/bookIX/propositions/propIX28/">IX.28</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

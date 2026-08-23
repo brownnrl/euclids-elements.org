@@ -1,0 +1,130 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 20</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 20</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 20</h1>
+    <div class="statement">If a solid angle is contained by three plane angles, then the sum of any two is greater than the remaining one.</div>
+    <p>Let the solid angle at <em>A</em> be contained by the three plane angles <em>BAC, CAD,</em> and <em>DAB.</em></p>
+<p>I say that the sum of any two of the angles <em>BAC, CAD,</em> and <em>DAB</em> is greater than the remaining one.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="200" tabindex="0"></canvas>
+<noscript><img alt="XI.20 diagram" src="propXI20.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.20",
+        elements: [
+            "A;point;free;150,130",
+            "B;point;free;40,170",
+            "C;point;free;230,170",
+            "D;point;free;150,40",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "ABD;polygon;triangle;A,B,D;0;0;black;random",
+            "ACD;polygon;triangle;A,C,D;0;0;black;random",
+            "E';point;similar;B,A,D,A,B;0;0",
+            "E;point;intersection;B,C,A,E'",
+            "AE;line;connect;A,E"
+        ],
+    });
+</script>
+</figure><p>If the angles <em>BAC, CAD,</em> and <em>DAB</em> are equal to one another, then it is clear that the sum of any two is greater than the remaining one.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookI/propositions/propI3/">I.3</a></div>
+<p>But, if not, let <em>BAC</em> be greater. In the plane through <em>BA</em> and <em>AC,</em> construct the angle <em>BAE</em> equal to the angle <em>DAB</em> at the point <em>A</em> on the straight line <em>AB.</em> Make <em>AE</em> equal to <em>AD,</em> draw <em>BEC</em> across through the point <em>E</em> cutting the straight lines <em>AB</em> and <em>AC</em> at the points <em>B</em> and <em>C,</em> and join <em>DB</em> and <em>DC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Now, since <em>DA</em> equals <em>AE,</em> and <em>AB</em> is common, therefore two sides are equal to two sides. And the angle <em>DAB</em> equals the angle <em>BAE,</em> therefore the base <em>DB</em> equals the base <em>BE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI20/">I.20</a></div>
+<p>And, since the sum of the two sides <em>BD</em> and <em>DC</em> is greater than <em>BC,</em> and of these <em>DB</em> was proved equal to <em>BE,</em> therefore the remainder <em>DC</em> is greater than the remainder <em>EC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI25/">I.25</a></div>
+<p>Now, since <em>DA</em> equals <em>AE,</em> and <em>AC</em> is common, and the base <em>DC</em> is greater than the base <em>EC,</em> therefore the angle <em>DAC</em> is greater than the angle <em>EAC.</em></p>
+<p>But the angle <em>BAE</em> equals the angle <em>DAB,</em> therefore the sum of the angles <em>DAB</em> and <em>DAC</em> is greater than the angle <em>BAC.</em></p>
+<p>Similarly we can prove that the sum of any two of the remaining angles is greater than the remaining one.</p>
+<p>Therefore, <em>if a solid angle is contained by three plane angles, then the sum of any two is greater than the remaining one.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This is one of two necessary conditions for constructing a solid angle out of three plane angles. The next necessary condition is stated in the next proposition, and the two conditions together are shown to be sufficient in <a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a>.</p>
+<h4>About the proof</h4>
+<p>The structure of the proof is not entirely clear. The goal is to show that the sum of any two of the angles is greater than the third. Notice is made that if they are all equal, then the goal is clearly satisfied. Then, under the assumption that if one is greater than a second, then the sum of the second and third is greater than the first. Then the other cases are declared to be similarly provable.</p>
+<p>Various interpretations have been made of the intent of the form of proof, but all require minor changes to clarify the structure.</p>
+<h4>About three-dimensional analogues of two-dimensional constructions</h4>
+<p>Up until this proposition, each construction in Book XI takes place within a plane, although different constructions in the same proposition may occur in different planes. One of the constructions here, however, takes place in two different planes. The angle <em>BAE</em> is constructed in one plane to equal a given angle <em>DAB</em> in a different plane. The construction in <a href="/elements/books/bookI/propositions/propI23/">I.23</a> to construct one angle equal to a given angle, strictly speaking, takes place in only one plane. Tracing that construction back through Book I leads through proposition <a href="/elements/books/bookI/propositions/propI22/">I.22</a> to <a href="/elements/books/bookI/propositions/propI3/">I.3</a>. Proposition I.3 cuts one line off equal to another line. That basic construction can easily be modified so that the two lines are in different planes. Once that's done, the rest of the constructions in Book I also apply when their components lie in different planes. Still, the details should be verified before applying the results as done in the proof of this proposition.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI21/">XI.21</a>, <a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

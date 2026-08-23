@@ -1,0 +1,225 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 32</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 32</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 32</h1>
+    <div class="statement">In any triangle, if one of the sides is produced, then the exterior angle equals the sum of the two interior and opposite angles, and the sum of the three interior angles of the triangle equals two right angles.</div>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> be a triangle, and let one side of it <span class="elem-ref" data-elem="BC">BC</span> be produced to <span class="elem-ref" data-elem="D">D</span>.</p>
+<p>I say that the exterior angle <span class="elem-ref" data-elem="ACD">ACD</span> equals the sum of the two interior and opposite angles <span class="elem-ref" data-elem="CAB">CAB</span> and <span class="elem-ref" data-elem="CBA">ABC</span>, and the sum of the three interior angles of the triangle <span class="elem-ref" data-elem="CBA">ABC</span>, <span class="elem-ref" data-elem="BCA">BCA</span>, and <span class="elem-ref" data-elem="CAB">CAB</span> equals two right angles.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="240" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.32 diagram" src="propI32.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.32",
+        elements: [
+            "A;point;free;70,40",
+            "B;point;free;40,160",
+            "C;point;free;130,160",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "D;point;lineSlider;B,C,200,160",
+            "CD;line;connect;C,D",
+            "E';point;parallelogram;A,B,C;0;0",
+            "E;point;lineSlider;C,E',170,40",
+            "CE;line;connect;C,E",
+            // Side hover targets (the triangle polygon draws them; these only
+            // light up when a prose/caption ref names the side).
+            "AB;line;connect;A,B;0;0;0",
+            "AC;line;connect;A,C;0;0;0",
+            "BC;line;connect;B,C;0;0;0",
+            "BD;line;connect;B,D;0;0;0",
+            // Angle markers (#91), colour-matched: the interior angles A (red)
+            // and B (blue) reappear at C as ∠ACE and ∠ECD, so the three angles
+            // at C — ∠BCA (green) + ∠ACE (red) + ∠ECD (blue) — tile the straight
+            // line BCD = ∠A+∠B+∠C. Radii pinned (#103): the three tiling angles
+            // at 22px, the exterior ∠ACD as an outer arc at 30px.
+            "CAB;sector;angleMarker;A,C,B,22;0;0;red;red",
+            "CBA;sector;angleMarker;B,C,A,22;0;0;blue;blue",
+            "BCA;sector;angleMarker;C,B,A,22;0;0;green;green",
+            "ACE;sector;angleMarker;C,A,E,22;0;0;red;red",
+            "ECD;sector;angleMarker;C,E,D,22;0;0;blue;blue",
+            "ACD;sector;angleMarker;C,A,D,30;0;0;orange;0"
+        ],
+        aliases: { "BAC": "CAB", "ACB": "BCA" },
+        deferDraggables: ["E"],
+        slides: [
+            { text: "Let {ABC} be a triangle, and let one side {BC|BC} be produced to {D}.",
+              visible: ["ABC","BC","CD","D"],
+              highlighted: ["ABC","BC"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "CD", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "D",  name: geomlib.A.Point.appear } ] } },
+            { text: "I say that the exterior angle {ACD} equals the sum of the two interior and opposite angles {CAB} and {ABC|CBA}, and that the three interior angles {ABC|CBA}, {BCA}, and {CAB} together equal two right angles.",
+              visible: ["ABC","BC","CD","D","CAB","CBA","BCA","ACD"],
+              highlighted: ["ACD"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "CAB", name: geomlib.A.Sector.sweep },
+                  { elem: "CBA", name: geomlib.A.Sector.sweep },
+                  { elem: "BCA", name: geomlib.A.Sector.sweep },
+                  { elem: "ACD", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Draw {CE} through the point {C} parallel to the straight line {AB|AB}.",
+              visible: ["ABC","BC","CD","D","AB","CE","E"],
+              highlighted: ["CE","AB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "E",  name: geomlib.A.Point.appear },
+                  { elem: "CE", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "I.31" }] },
+            { text: "Since {AB|AB} is parallel to {CE} and {AC|AC} falls upon them, the alternate angles {BAC|CAB} and {ACE} are equal.",
+              visible: ["ABC","BC","CD","D","AB","AC","CE","E","CAB","ACE"],
+              highlighted: ["CAB","ACE"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "CAB", name: geomlib.A.Sector.sweep },
+                  { elem: "ACE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.29" }] },
+            { text: "Again, since {AB|AB} is parallel to {CE} and {BD|BD} falls upon them, the exterior angle {ECD} equals the interior and opposite angle {ABC|CBA}.",
+              visible: ["ABC","BC","CD","D","AB","BD","CE","E","CAB","ACE","CBA","ECD"],
+              highlighted: ["CBA","ECD"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "CBA", name: geomlib.A.Sector.sweep },
+                  { elem: "ECD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.29" }] },
+            { text: "But {ACE} was proved equal to {BAC|CAB}. So the whole exterior angle {ACD} equals the sum of the two interior and opposite angles {BAC|CAB} and {ABC|CBA}.",
+              visible: ["ABC","BC","CD","D","CE","E","CAB","ACE","CBA","ECD","ACD"],
+              highlighted: ["ACD","ACE","ECD"],
+              transition: { animations: [ { elem: "ACD", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Add the angle {ACB|BCA} to each. Then {ACD} and {ACB|BCA} together equal the three interior angles {ABC|CBA}, {BCA}, and {CAB}.",
+              visible: ["ABC","BC","CD","D","CE","E","CAB","ACE","CBA","ECD","ACD","BCA"],
+              highlighted: ["BCA","ACD"],
+              transition: { animations: [ { elem: "BCA", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "C.N.2" }] },
+            { text: "But {ACD} and {ACB|BCA} together equal two right angles — they fill the straight line {BD|BD}. Therefore the three interior angles {ABC|CBA}, {BCA}, and {CAB} equal two right angles.",
+              visible: ["ABC","BC","BD","CD","D","CE","E","BCA","ACE","ECD","CAB","CBA"],
+              highlighted: ["BCA","ACE","ECD","BD"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "BCA", name: geomlib.A.Sector.sweep },
+                  { elem: "ACE", name: geomlib.A.Sector.sweep },
+                  { elem: "ECD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.13" }, { ref: "C.N.1" }] },
+            { text: "So in any triangle, if one side is produced, the exterior angle equals the sum of the two interior and opposite angles, and the three interior angles equal two right angles.",
+              visible: ["ABC","BC","BD","CD","D","CE","E","BCA","ACE","ECD","CAB","CBA"],
+              highlighted: ["BCA","ACE","ECD","CAB","CBA"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.13":  "/elements/books/bookI/propositions/propI13/",
+        "I.29":  "/elements/books/bookI/propositions/propI29/",
+        "I.31":  "/elements/books/bookI/propositions/propI31/",
+        "C.N.1": "/elements/books/bookI/commonnotions/cn1/",
+        "C.N.2": "/elements/books/bookI/commonnotions/cn2/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Draw <span class="elem-ref" data-elem="CE">CE</span> through the point <span class="elem-ref" data-elem="C">C</span> parallel to the straight line <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Since <span class="elem-ref" data-elem="AB">AB</span> is parallel to <span class="elem-ref" data-elem="CE">CE</span>, and <span class="elem-ref" data-elem="AC">AC</span> falls upon them, therefore the alternate angles <span class="elem-ref" data-elem="BAC">BAC</span> and <span class="elem-ref" data-elem="ACE">ACE</span> equal one another.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Again, since <span class="elem-ref" data-elem="AB">AB</span> is parallel to <span class="elem-ref" data-elem="CE">CE</span>, and the straight line <span class="elem-ref" data-elem="BD">BD</span> falls upon them, therefore the exterior angle <span class="elem-ref" data-elem="ECD">ECD</span> equals the interior and opposite angle <span class="elem-ref" data-elem="CBA">ABC</span>.</p>
+<p>But the angle <span class="elem-ref" data-elem="ACE">ACE</span> was also proved equal to the angle <span class="elem-ref" data-elem="BAC">BAC</span>. Therefore the whole angle <span class="elem-ref" data-elem="ACD">ACD</span> equals the sum of the two interior and opposite angles <span class="elem-ref" data-elem="BAC">BAC</span> and <span class="elem-ref" data-elem="CBA">ABC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>Add the angle <span class="elem-ref" data-elem="ACB">ACB</span> to each. Then the sum of the angles <span class="elem-ref" data-elem="ACD">ACD</span> and <span class="elem-ref" data-elem="ACB">ACB</span> equals the sum of the three angles <span class="elem-ref" data-elem="CBA">ABC</span>, <span class="elem-ref" data-elem="BCA">BCA</span>, and <span class="elem-ref" data-elem="CAB">CAB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI13/">I.13</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>But the sum of the angles <span class="elem-ref" data-elem="ACD">ACD</span> and <span class="elem-ref" data-elem="ACB">ACB</span> equals two right angles. Therefore the sum of the angles <span class="elem-ref" data-elem="CBA">ABC</span>, <span class="elem-ref" data-elem="BCA">BCA</span>, and <span class="elem-ref" data-elem="CAB">CAB</span> also equals two right angles.</p>
+<p>Therefore <em>in any triangle, if one of the sides is produced, then the exterior angle equals the sum of the two interior and opposite angles, and the sum of the three interior angles of the triangle equals two right angles.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Corollaries of Proclus</h4>
+<p>There are two corollaries of this proposition given by Proclus.</p>
+<p><strong>Corollary 1.</strong> The sum of the interior angles of a convex rectilinear figure equals twice as many angles as the figure has sides, less four.</p>
+<p><strong>Corollary 2.</strong> The sum of the exterior angles of any convex rectilinear figure together equal four right angles.</p>
+<h4>Use of Proposition 32</h4>
+<p>Although this proposition isn't used in the rest of Book I, it is frequently used in the rest of the books on geometry, namely Books II, III, IV, VI, XI, XII, and XIII. The corollaries, however, are not used in the <em>Elements.</em></p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII9/">II.9</a>, <a href="/elements/books/bookII/propositions/propII10/">II.10</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII20/">III.20</a>, <a href="/elements/books/bookIII/propositions/propIII22/">III.22</a>, <a href="/elements/books/bookIII/propositions/propIII31/">III.31</a>, <a href="/elements/books/bookIII/propositions/propIII32/">III.32</a></td></tr>
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV2/">IV.2</a>, <a href="/elements/books/bookIV/propositions/propIV3/">IV.3</a>, <a href="/elements/books/bookIV/propositions/propIV10/">IV.10</a>, <a href="/elements/books/bookIV/propositions/propIV15/">IV.15</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI5/">VI.5</a>, <a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a>, <a href="/elements/books/bookVI/propositions/propVI7/">VI.7</a>, <a href="/elements/books/bookVI/propositions/propVI8/">VI.8</a>, <a href="/elements/books/bookVI/propositions/propVI18/">VI.18</a>, <a href="/elements/books/bookVI/propositions/propVI20/">VI.20</a>, <a href="/elements/books/bookVI/propositions/propVI32/">VI.32</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI21/">XI.21</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII1/">XII.1</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII8/">XIII.8</a>, <a href="/elements/books/bookXIII/propositions/propXIII9/">XIII.9</a>, <a href="/elements/books/bookXIII/propositions/propXIII10/">XIII.10</a>, <a href="/elements/books/bookXIII/propositions/propXIII11/">XIII.11</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

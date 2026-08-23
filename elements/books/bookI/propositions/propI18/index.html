@@ -1,0 +1,210 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 18</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 18</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 18</h1>
+    <div class="statement">In any triangle the angle opposite the greater side is greater.</div>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> be a triangle having the side <span class="elem-ref" data-elem="AC">AC</span> greater than <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.18 diagram" src="propI18.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.18",
+        elements: [
+            "A;point;free;40,30",
+            "B;point;free;80,170",
+            "C;point;free;220,170",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            // D cuts AD = AB off the greater side AC; BD joined (△ABD is
+            // isosceles, △BCD the one whose exterior angle is ∠ADB).
+            "D;point;cutoff;A,C,A,B",
+            "BD;line;connect;B,D",
+            "BCD;polygon;triangle;B,C,D;0;0;0;0",
+            // Zero-color hover targets for the sides / cut-off.
+            "AC;line;connect;A,C;0;0;0",
+            "AB;line;connect;A,B;0;0;0",
+            "AD;line;connect;A,D;0;0;0",
+            // Angle markers. Angle at B named CBA (the triangle owns
+            // "ABC"; prose uses {ABC|CBA}). At C, ∠BCA = ∠DCB since D is on
+            // CA — aliases ACB, DCB → BCA. At B, ∠ABD nests inside ∠CBA.
+            "CBA;sector;angleMarker;B,C,A",
+            "BCA;sector;angleMarker;C,B,A",
+            "ADB;sector;angleMarker;D,A,B",
+            "ABD;sector;angleMarker;B,A,D"
+        ],
+        aliases: {
+            "ACB": "BCA",
+            "DCB": "BCA"
+        },
+        slides: [
+            { text: "Let {ABC} be a triangle having the side {AC} greater than {AB}.",
+              visible: ["ABC"],
+              highlighted: ["AC","AB"] },
+            { text: "I say that the angle {ABC|CBA} is also greater than the angle {BCA}.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["CBA","BCA"],
+              transition: {
+                  mode: "parallel",
+                  animations: [
+                      { elem: "CBA", name: geomlib.A.Sector.sweep },
+                      { elem: "BCA", name: geomlib.A.Sector.sweep }
+                  ]
+              } },
+            { text: "Since {AC} is greater than {AB}, make {AD} equal to {AB}, and join {BD}.",
+              visible: ["ABC","CBA","BCA","D","BD"],
+              highlighted: ["AD","AB"],
+              transition: {
+                  animations: [
+                      { elem: "D",  name: geomlib.A.Point.appear },
+                      { elem: "BD", name: geomlib.A.Line.straightEdgeConnect }
+                  ]
+              },
+              justifications: [{ ref: "I.3" }, { ref: "I.Post.1" }] },
+            { text: "Since the angle {ADB} is an exterior angle of the triangle {BCD}, therefore it is greater than the interior and opposite angle {DCB}.",
+              visible: ["ABC","CBA","BCA","D","BD","BCD","ADB"],
+              highlighted: ["ADB","BCA"],
+              transition: {
+                  animations: [
+                      { elem: "ADB", name: geomlib.A.Sector.sweep }
+                  ]
+              },
+              justifications: [{ ref: "I.16" }] },
+            { text: "But the angle {ADB} equals the angle {ABD}, since the side {AB} equals {AD}, therefore the angle {ABD} is also greater than the angle {ACB}.",
+              visible: ["ABC","CBA","BCA","D","BD","ADB","ABD"],
+              highlighted: ["ADB","ABD","AB","AD","BCA"],
+              transition: {
+                  animations: [
+                      { elem: "ABD", name: geomlib.A.Sector.sweep }
+                  ]
+              },
+              justifications: [{ ref: "I.5" }] },
+            { text: "Therefore the angle {ABC|CBA} is much greater than the angle {ACB}.",
+              visible: ["ABC","CBA","BCA","D","BD","ABD"],
+              highlighted: ["CBA","BCA"] },
+            { text: "Therefore in any triangle the angle opposite the greater side is greater.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["CBA","BCA"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification
+    // callback — same hand-authored pattern as the earlier props.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.3":      "/elements/books/bookI/propositions/propI3/",
+        "I.5":      "/elements/books/bookI/propositions/propI5/",
+        "I.16":     "/elements/books/bookI/propositions/propI16/"
+    });
+</script>
+</figure><p>I say that the angle <span class="elem-ref" data-elem="CBA">ABC</span> is also greater than the angle <span class="elem-ref" data-elem="BCA">BCA</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a>, <a href="/elements/books/bookI/postulates/post1/">I.Post.1</a></div>
+<p>Since <span class="elem-ref" data-elem="AC">AC</span> is greater than <span class="elem-ref" data-elem="AB">AB</span>, make <span class="elem-ref" data-elem="AD">AD</span> equal to <span class="elem-ref" data-elem="AB">AB</span>, and join <span class="elem-ref" data-elem="BD">BD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI16/">I.16</a></div>
+<p>Since the angle <span class="elem-ref" data-elem="ADB">ADB</span> is an exterior angle of the triangle <span class="elem-ref" data-elem="BCD">BCD</span>, therefore it is greater than the interior and opposite angle <span class="elem-ref" data-elem="DCB">DCB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>But the angle <span class="elem-ref" data-elem="ADB">ADB</span> equals the angle <span class="elem-ref" data-elem="ABD">ABD</span>, since the side <span class="elem-ref" data-elem="AB">AB</span> equals <span class="elem-ref" data-elem="AD">AD</span>, therefore the angle <span class="elem-ref" data-elem="ABD">ABD</span> is also greater than the angle <span class="elem-ref" data-elem="ACB">ACB</span>. Therefore the angle <span class="elem-ref" data-elem="CBA">ABC</span> is much greater than the angle <span class="elem-ref" data-elem="ACB">ACB</span>.</p>
+<p>Therefore <em>in any triangle the angle opposite the greater side is greater.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>On word order</h4>
+<p>In this translation of Euclid's <em>Elements</em> the order of the words differs from the original Greek. In each of Euclid's Greek sentences, the data, that is the geometric objects given or already constructed, appear first, and the remaining geometric objects appear later. This is possible in Greek since it is an inflected language and the word order is very flexible. On the other hand, the word order in English is intrinsic to the syntax and semantics of the sentence and is not very flexible.</p>
+<p>Take, for instance, the statements of this and the next proposition.
+Very literal translations of these are (I.18) "In any triangle, the greater side [as subject] the greater angle [as object] subtends," and (I.19) "In any triangle, the greater angle [as object] the greater side [as subject] subtends."</p>
+<p>Heath keeps the word order in his translation but makes the second statement passive: (I.18) "In any triangle the greater side subtends the greater angle," and (I.19) "In any triangle the greater angle is subtended by the greater side." Without the understanding that the data come first, these two sentences are logically equivalent.</p>
+<p>In this translation the original word order is abandoned in order to make for more readable sentences and to clarify the meaning. Thus, (I.18)
+"In any triangle the angle opposite the greater side is greater," and (I.19)
+"In any triangle the side opposite the greater angle is greater."</p>
+<p>It may sound like these two propositions really do say the same thing, but they don't. they're actually disguised converses of each other. I.18 says</p>
+<center>if side <span class="elem-ref" data-elem="AC">AC</span> > side <span class="elem-ref" data-elem="AB">AB</span>, then angle <span class="elem-ref" data-elem="CBA">ABC</span> > angle <span class="elem-ref" data-elem="BCA">BCA</span>,</center><p>while I.19 says</p>
+<center>if angle <span class="elem-ref" data-elem="CBA">ABC</span> > angle <span class="elem-ref" data-elem="BCA">BCA</span>, then side <span class="elem-ref" data-elem="AC">AC</span> > side <span class="elem-ref" data-elem="AB">AB</span>.</center><h4>Use of Proposition 18</h4>
+<p>This proposition is used in the proof of proposition <a href="/elements/books/bookI/propositions/propI19/">I.19</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI19/">I.19</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

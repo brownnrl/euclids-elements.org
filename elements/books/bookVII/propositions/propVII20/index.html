@@ -1,0 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 20</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 20</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 20</h1>
+    <div class="statement">The least numbers of those which have the same ratio with them measure those which have the same ratio with them the same number of times; the greater the greater; and the less the less.</div>
+    <p>Let <em>CD</em> and <em>EF</em> be the least numbers of those which have the same ratio with <em>A</em> and <em>B.</em></p>
+<p>I say that <em>CD</em> measures <em>A</em> the same number of times that <em>EF</em> measures <em>B.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="160" height="280" tabindex="0"></canvas>
+<noscript><img alt="VII.20 diagram" src="propVII20.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.20",
+        elements: [
+            "A0;point;free;30,-1000;0;0",
+            "A3;point;free;30,1000;0;0",
+            "A1;point;lineSlider;A0,A3,30,30;0",
+            "A2;point;lineSlider;A0,A3,30,240;0",
+            "A;line;connect;A1,A2;black",
+            "B0;point;free;60,-1000;0;0",
+            "B3;point;free;60,1000;0;0",
+            "B1;point;lineSlider;B0,B3,60,30;0",
+            "B2;point;lineSlider;B0,B3,60,190;0",
+            "B;line;connect;B1,B2;black",
+            "C0;point;free;100,-1000;0;0",
+            "C3;point;free;100,1000;0;0",
+            "C;point;lineSlider;C0,C3,100,30",
+            "M;point;midpoint;A1,A2;0;0",
+            "D;point;cutoff;C,C3,A1,M",
+            "CD;line;connect;C,D",
+            "G;point;midpoint;CD",
+            "E0;point;free;130,-1000;0;0",
+            "E3;point;free;130,1000;0;0",
+            "E;point;lineSlider;E0,E3,130,30",
+            "F;point;proportion;A1,A2,B1,B2,C,D,E,E3",
+            "EF;line;connect;E,F",
+            "H;point;midpoint;EF"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVII/propositions/propVII13/">VII.13</a><br><a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a></div>
+<p>Now <em>CD</em> is not parts of <em>A.</em> If possible, let it be so. Therefore <em>EF</em> is also the same parts of <em>B</em> that <em>CD</em> is of <em>A.</em></p>
+<p>Therefore there are as many parts of <em>B</em> in <em>EF</em> are there are parts of <em>A</em> in <em>CD.</em></p>
+<p>Divide <em>CD</em> into the parts of <em>A,</em> namely <em>CG</em> and <em>GD,</em> and divide <em>EF</em> into the parts of <em>B,</em> namely <em>EH</em> and <em>HF.</em> Thus the multitude of <em>CG</em> and <em>GD</em> equals the multitude of <em>EH</em> and <em>HF.</em></p>
+<p>Now, since the numbers <em>CG</em> and <em>GD</em> equal one another, and the numbers <em>EH</em> and <em>HF</em> also equal one another, while the multitude of <em>CG</em> and <em>GD</em> equals the multitude of <em>EH</em> and <em>HF,</em> therefore <em>CG</em> is to <em>EH</em> as <em>GD</em> is to <em>HF.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII12/">VII.12</a></div>
+<p>Since one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents, therefore <em>CG</em> is to <em>EH</em> as <em>CD</em> is to <em>EF.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII4/">VII.4</a></div>
+<p>Therefore <em>CG</em> and <em>EH</em> are in the same ratio with <em>CD</em> and <em>EF,</em> being less than they, which is impossible, for by hypothesis <em>CD</em> and <em>EF</em> are the least numbers of those which have the same ratio with them. Therefore <em>CD</em> is not parts of <em>A,</em> therefore it is a part of it.</p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII13/">VII.13</a><br><a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a></div>
+<p>And <em>EF</em> is the same part of <em>B</em> that <em>CD</em> is of <em>A,</em> therefore <em>CD</em> measures <em>A</em> the same number of times that <em>EF</em> measures <em>B.</em></p>
+<p>Therefore, <em>the least numbers of those which have the same ratio with them measure those which have the same ratio with them the same number of times; the greater the greater; and the less the less.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition says that given a ratio <em>a</em> : <em>b,</em> if <em>c</em> : <em>d</em> is the same ratio and the least among all those ratios with the same ratio, then, first of all, <em>c</em> divides <em>a,</em> and <em>d</em> divides <em>b,</em> but also, <em>c</em> divides <em>a</em> the same number of times that <em>d</em> divides <em>b.</em> For example, the ratio 91 : 132 is the same ratio as 7 : 11, which is least among all the ratios equal to 91 : 132, that is to say 91 : 132 reduces to 7 : 11 in lowest terms, therefore 7 divides 91 the same number of times that 11 divides 132, namely, 13 times.</p>
+<p>The proof goes along like this. Suppose <em>a</em> : <em>b</em> reduces to <em>c</em> : <em>e</em> in lowest terms. In order to show that <em>c</em> divides <em>a,</em> assume that it doesn't, assume that <em>c</em> = (<em>m/n</em>)<em>a.</em> Since <em>a</em> : <em>b</em> is the same ratio as <em>c</em> : <em>e,</em> therefore <em>e</em> = (<em>m/n</em>)<em>d.</em> But then <em>c/m</em> = (1/<em>n</em>)<em>a,</em> and <em>e/m</em> = (1/<em>n</em>)<em>b.</em> Therefore <em>c/m</em> : <em>e/m</em> is the same ratio as <em>a</em> : <em>b,</em> which shows that <em>c</em> : <em>e</em> is not in lowest terms, a contradiction. Therefore <em>c</em> does divide <em>a,</em> and <em>e</em> divides <em>b</em> the same number of times.</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is used frequently in Books VII through IX starting with the next proposition.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VII</th><td><a href="/elements/books/bookVII/propositions/propVII21/">VII.21</a>, <a href="/elements/books/bookVII/propositions/propVII24/">VII.24</a>, <a href="/elements/books/bookVII/propositions/propVII30/">VII.30</a>, <a href="/elements/books/bookVII/propositions/propVII34/">VII.34</a></td></tr>
+  <tr><th>Book VIII</th><td><a href="/elements/books/bookVIII/propositions/propVIII1/">VIII.1</a>, <a href="/elements/books/bookVIII/propositions/propVIII4/">VIII.4</a>, <a href="/elements/books/bookVIII/propositions/propVIII8/">VIII.8</a>, <a href="/elements/books/bookVIII/propositions/propVIII20/">VIII.20</a>, <a href="/elements/books/bookVIII/propositions/propVIII21/">VIII.21</a></td></tr>
+  <tr><th>Book IX</th><td><a href="/elements/books/bookIX/propositions/propIX12/">IX.12</a>, <a href="/elements/books/bookIX/propositions/propIX16/">IX.16</a>, <a href="/elements/books/bookIX/propositions/propIX17/">IX.17</a>, <a href="/elements/books/bookIX/propositions/propIX36/">IX.36</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Definition 23</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Definitions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Definition 23</span>
+</nav>
+
+
+
+
+
+  
+  
+  
+    <a id="21"></a>
+    <div class="theorem">
+    <h1>Definition 21</h1>
+    <div class="statement">When a rectangular parallelogram with one side of those about the right angle remains fixed is carried round and restored again to the same position from which it began to be moved, the figure so comprehended is a <i>cylinder</i>.</div>
+    </div>
+    
+    
+    <br>
+  
+    <a id="22"></a>
+    <div class="theorem">
+    <h1>Definition 22</h1>
+    <div class="statement">The <i>axis of the cylinder</i> is the straight line which remains fixed and about which the parallelogram is turned.</div>
+    </div>
+    
+    
+    <br>
+  
+    <a id="23"></a>
+    <div class="theorem">
+    <h1>Definition 23</h1>
+    <div class="statement">And the <i>bases</i> are the circles described by the two sides opposite to one another which are carried round.</div>
+    </div>
+    
+    
+    
+  
+  
+    <h2 id="guide">Guide</h2>
+    <figure class="diagram rdiagram">
+<canvas id="canvas_0" width="170" height="220" tabindex="0"></canvas>
+<noscript><img alt="XI.Def.21-23 diagram" src="defXI21.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "Def.XI.21-23",
+        elements: [
+            "origin;point;free;70,220;0;0",
+            "z;point;fixed;70,80,100;0;0",
+            "xyplane;plane;perpendicular;origin,z;0;0;0;0",
+            "A;point;planeSlider;xyplane,80,120,0",
+            "B;point;planeSlider;xyplane,120,120,0",
+            "D;point;extend;B,A,B,A;0",
+            "C';point;perpendicular;A,xyplane,A,B;0;0",
+            "C;point;lineSlider;A,C',70,140,200",
+            "E;point;parallelogram;C,A,B",
+            "F;point;parallelogram;C,A,D",
+            "Acircle;circle;radius;A,B,xyplane;0;0;black;150,50,100",
+            "Cplane;plane;parallel;xyplane,C;0;0;0;0",
+            "Ccircle;circle;radius;C,E,Cplane;0;0;black;150,50,100",
+            "CBD;polygon;quadrilateral;B,D,F,E;0;0;black;150,50,100",
+            "AC;line;connect;A,C"
+        ],
+    });
+</script>
+</figure><p>Rectangle <em>ABEC</em> is rotated around the side <em>AC</em> to produce a cylinder. Its axis is <em>AC</em> and it has two circles for bases.</p>
+<p>The concept of cylinder has been generalized since Euclid's time as have so many ancient mathematical concepts. Euclid's cylinders are right, circular cylinders since their axes are at right angles to their bases and their bases are circles.</p>
+
+  
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

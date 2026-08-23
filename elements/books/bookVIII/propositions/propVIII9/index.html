@@ -1,0 +1,172 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 9</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 9</h1>
+    <div class="statement">If two numbers are relatively prime, and numbers fall between them in continued proportion, then, however many numbers fall between them in continued proportion, so many also fall between each of them and a unit in continued proportion.</div>
+    <p>Let <em>A</em> and <em>B</em> be two numbers relatively prime, and let <em>C</em> and <em>D</em> fall between them in continued proportion, and let the unit <em>E</em> be set out.</p>
+<p>I say that, as many numbers fall between <em>A</em> and <em>B</em> in continued proportion as fall between either of the numbers <em>A</em> or <em>B</em> and the unit in continued proportion.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="500" height="170" tabindex="0"></canvas>
+<noscript><img alt="VIII.9 diagram" src="propVIII9.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VIII.9",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "C0;point;free;-1000,70;0;0",
+            "C3;point;free;1000,70;0;0",
+            "D0;point;free;-1000,110;0;0",
+            "D3;point;free;1000,110;0;0",
+            "B0;point;free;-1000,150;0;0",
+            "B3;point;free;1000,150;0;0",
+            "H0;point;free;-1000,50;0;0",
+            "H3;point;free;1000,50;0;0",
+            "E0;point;free;-1000,90;0;0",
+            "E3;point;free;1000,90;0;0",
+            "L0;point;free;-1000,130;0;0",
+            "L3;point;free;1000,130;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;lineSlider;A0,A3,110,0;0",
+            "A;line;connect;A1,A2;black",
+            "C1;point;lineSlider;C0,C3,30,0;0",
+            "C2;point;lineSlider;C0,C3,130,0;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;D0,D3,30,0;0",
+            "D2;point;proportion;A1,A2,C1,C2,C1,C2,D1,D3;0",
+            "D;line;connect;D1,D2;black",
+            "B1;point;lineSlider;B0,B3,30,0;0",
+            "B2;point;proportion;A1,A2,C1,C2,D1,D2,B1,B3;0",
+            "B;line;connect;B1,B2;black",
+            "E1;point;lineSlider;E0,E3,180,0;0",
+            "E2;point;lineSlider;E0,E3,202,0;0",
+            "E;line;connect;E1,E2;black",
+            "F1;point;lineSlider;C0,C3,230,0;0",
+            "F2;point;lineSlider;C0,C3,260,0;0",
+            "F;line;connect;F1,F2;black",
+            "G1;point;lineSlider;D0,D3,230,0;0",
+            "G2;point;proportion;A1,A2,C1,C2,F1,F2,G1,D3;0",
+            "G;line;connect;G1,G2;black",
+            "H1;point;lineSlider;H0,H3,290,0;0",
+            "H2;point;proportion;E1,E2,F1,F2,F1,F2,H1,H3;0",
+            "H;line;connect;H1,H2;black",
+            "K1;point;lineSlider;E0,E3,290,0;0",
+            "K2;point;proportion;E1,E2,F1,F2,G1,G2,K1,E3;0",
+            "K;line;connect;K1,K2;black",
+            "L1;point;lineSlider;L0,L3,290,0;0",
+            "L2;point;proportion;E1,E2,G1,G2,G1,G2,L1,L3;0",
+            "L;line;connect;L1,L2;black",
+            "M1;point;lineSlider;A0,A3,380,0;0",
+            "M2;point;proportion;E1,E2,F1,F2,H1,H2,M1,A3;0",
+            "M;line;connect;M1,M2;black",
+            "N1;point;lineSlider;C0,C3,380,0;0",
+            "N2;point;proportion;F1,F2,H1,H2,K1,K2,N1,C3;0",
+            "N;line;connect;N1,N2;black",
+            "O1;point;lineSlider;D0,D3,380,0;0",
+            "O2;point;proportion;G1,G2,K1,K2,L1,L2,O1,D3;0",
+            "O;line;connect;O1,O2;black",
+            "P1;point;lineSlider;B0,B3,380,0;0",
+            "P2;point;proportion;E1,E2,G1,G2,L1,L2,P1,B3;0",
+            "P;line;connect;P1,P2;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVIII/propositions/propVIII2/">VIII.2</a></div>
+<p>Take two numbers <em>F</em> and <em>G,</em> the least that are in the ratio of <em>A, C, D,</em> and <em>B,</em> three numbers <em>H, K,</em> and <em>L</em> with the same property, and others more by one continually, until their multitude equals the multitude of <em>A, C, D,</em> and <em>B.</em> Let them be <em>M, N, O,</em> and <em>P.</em></p>
+<div class="just"><a href="/elements/books/bookVIII/propositions/propVIII2/#cor">VIII.2.Cor</a></div>
+<p>It is now manifest that <em>F</em> multiplied by itself makes <em>H</em> and multiplied by <em>H</em> makes <em>M,</em> while <em>G</em> multiplied by itself makes <em>L</em> and multiplied by <em>L</em> makes <em>P.</em></p>
+<div class="just"><a href="/elements/books/bookVIII/propositions/propVIII1/">VIII.1</a></div>
+<p>And, since <em>M, N, O,</em> and <em>P</em> are the least of those which have the same ratio with <em>F</em> and <em>G,</em> and <em>A, C, D,</em> and <em>B</em> are also the least of those which have the same ratio with <em>F</em> and <em>G,</em> while the multitude of the numbers <em>M, N, O,</em> and <em>P</em> equals the multitude of the numbers <em>A, C, D,</em> and <em>B,</em> therefore <em>M, N, O,</em> and <em>P</em> equal <em>A, C, D,</em> and <em>B</em> respectively. Therefore <em>M</em> equals <em>A,</em> and <em>P</em> equals <em>B.</em></p>
+<p>Now, since <em>F</em> multiplied by itself makes <em>H,</em> therefore <em>F</em> measures <em>H</em> according to the units in <em>F.</em> But the unit <em>E</em> also measures <em>F</em> according to the units in it, therefore the unit <em>E</em> measures the number <em>F</em> the same number of times as <em>F</em> measures <em>H.</em></p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a></div>
+<p>Therefore the unit <em>E</em> is to the number <em>F</em> as <em>F</em> is to <em>H.</em></p>
+<p>Again, since <em>F</em> multiplied by <em>H</em> makes <em>M,</em> therefore <em>H</em> measures <em>M</em> according to the units in <em>F.</em> But the unit <em>E</em> also measures the number <em>F</em> according to the units in it, therefore the unit <em>E</em> measures the number <em>F</em> the same number of times as <em>H</em> measures <em>M.</em></p>
+<p>Therefore the unit <em>E</em> is to the number <em>F</em> as <em>H</em> is to <em>M.</em></p>
+<p>But it was also proved that the unit <em>E</em> is to the number <em>F</em> as <em>F</em> is to <em>H,</em> therefore the unit <em>E</em> is to the number <em>F</em> as <em>F</em> is to <em>H,</em> and as <em>H</em> is to <em>M.</em> But <em>M</em> equals <em>A,</em> therefore the unit <em>E</em> is to the number <em>F</em> as <em>F</em> is to <em>H,</em> and as <em>H</em> is to <em>A.</em> For the same reason also the unit <em>E</em> is to the number <em>G</em> as <em>G</em> is to <em>L</em> and as <em>L</em> is to <em>B.</em></p>
+<p>Therefore as many numbers fall between <em>A</em> and <em>B</em> in continued proportion as fall between each of the numbers <em>A</em> and <em>B</em> and the unit <em>E</em> in continued proportion.</p>
+<p>Therefore, <em>If two numbers are relatively prime, and numbers fall between them in continued proportion, then, however many numbers fall between them in continued proportion, so many also fall between each of them and a unit in continued proportion.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The proposition says that if <em>a</em> and <em>b</em> are relatively prime, and they are the ends of a continued proportion with <em>n</em> terms, then <em>a</em> and <em>b</em> are each (<em>n</em>–1)<sup>st</sup> powers.</p>
+<p>For example, <em>a</em> = 8 and <em>b</em> = 27 are relative prime and are the ends of the continued proportion, 8 : 12 : 18 : 27, therefore 8 and 27 are both cubes.</p>
+<h4>Outline of the proof</h4>
+<p>Suppose that relatively prime numbers <em>a</em> and <em>b</em> are the ends of a continued proportion with <em>n</em> terms, and that <em>f</em> : <em>g</em> is the ratio for the continued proportion in lowest terms. Then Euclid shows that <em>a</em> is the <em>n</em> 1<sup>st</sup> power of <em>f,</em> and <em>b</em> is the <em>n</em> 1<sup>st</sup> power of <em>g.</em> The argument is that the sequence</p>
+<center><i>f</i><sup> <i>n</i>-1</sup>, <i>f</i><sup> <i>n</i>-2</sup><i>g,</i> <i>f</i><sup> <i>n</i>-3</sup><i>g</i><sup>2</sup>, ..., <i>f</i><i>g</i><sup><i>n</i>-2</sup>, <i>g</i><sup><i>n</i>-1</sup></center><p>is in continued proportion with the correct ratio with relatively prime ends, so by <a href="/elements/books/bookVIII/propositions/propVIII1/">VIII.1</a> they're the same sequence.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

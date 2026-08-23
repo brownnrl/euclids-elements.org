@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 34</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 34</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 34</h1>
+    <div class="statement">From a given circle to cut off a segment admitting an angle equal to a given rectilinear angle. </font color></div>
+    <p>Let <em>ABC</em> be the given circle, and the angle at <em>D</em> the given rectilinear angle.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="320" height="240" tabindex="0"></canvas>
+<noscript><img alt="III.34 diagram" src="propIII34.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.34",
+        elements: [
+            "D1;point;free;290,120;0",
+            "D2;point;free;240,180;0",
+            "D3;point;free;300,180;0",
+            "D12;line;connect;D1,D2",
+            "D23;line;connect;D2,D3",
+            "D;polygon;triangle;D1,D2,D3;black;0;0;0",
+            "A;point;free;185,195",
+            "E;point;free;30,210",
+            "F;point;free;30,30",
+            "EF;line;connect;E,F",
+            "B;point;lineSlider;EF,30,120",
+            "BO';line;perpendicular;B,E;0;0;0",
+            "M;point;midpoint;B,A;0;0",
+            "MM';line;perpendicular;M,A;0;0;0",
+            "O;point;intersection;BO',MM';0;0",
+            "ABC;circle;radius;O,B;0;0;black;random",
+            "C';point;similar;F,B,D1,D2,D3;0;0",
+            "BC;line;chord;B,C',ABC;0;0;0",
+            "C;point;last;BC",
+            "triABC;polygon;triangle;A,B,C;0;0;black;random"
+        ],
+    });
+</script>
+</figure><p>It is required to cut off from the circle <em>ABC</em> a segment admitting an angle equal to the given rectilinear angle, the angle at <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII17/">III.17</a><br><a href="/elements/books/bookI/propositions/propI23/">I.23</a></div>
+<p>Draw <em>EF</em> touching <em>ABC</em> at the point <em>B.</em>  Construct the angle <em>FBC</em> equal to the angle at <em>D</em> on the straight line <em>FB</em> and at the point <em>B</em> on it.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII32/">III.32</a></div>
+<p>Then, since a straight line <em>EF</em> touches the circle <em>ABC,</em> and <em>BC</em> has been drawn across from the point of contact at <em>B,</em> the angle <em>FBC</em> equals the angle constructed in the alternate segment <em>BAC.</em></p>
+<p>But the angle <em>FBC</em> equals the angle at <em>D,</em> therefore the angle in the segment <em>BAC</em> equals the angle at <em>D.</em></p>
+<p>Therefore from the given circle <em>ABC</em> the segment <em>BAC</em> has been cut off admitting an angle equal to the given rectilinear angle, the angle at <em>D.</em></p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is not used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

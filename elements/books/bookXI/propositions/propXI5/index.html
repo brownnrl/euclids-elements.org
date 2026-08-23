@@ -1,0 +1,129 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 5</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 5</h1>
+    <div class="statement">If a straight line is set up at right angles to three straight lines which meet one another at their common point of section, then the three straight lines lie in one plane.</div>
+    <p>Let a straight line <em>AB</em> be set up at right angles to the three straight lines <em>BC, BD,</em> and <em>BE</em> at their intersection <em>B.</em></p>
+<p>I say that <em>BC, BD,</em> and <em>BE</em> lie in one plane.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="230" tabindex="0"></canvas>
+<noscript><img alt="XI.5 diagram" src="propXI5.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.5",
+        elements: [
+            "P1;point;free;30,200;0;0,75,100",
+            "P2;point;free;220,200;0;0,75,100",
+            "P3;point;free;70,70;0;0,75,100",
+            "plane;polygon;parallelogram;P3,P1,P2;0;0;lightGray;brighter",
+            "A;point;free;80,40",
+            "B;point;free;80,140",
+            "C;point;free;170,60",
+            "D;point;free;200,140",
+            "E;point;free;190,170",
+            "AB;line;connect;A,B",
+            "BC;line;connect;B,C",
+            "BD;line;connect;B,D",
+            "BE;line;connect;B,E",
+            "F;point;free;200,110",
+            "BF;line;connect;B,F"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookXI/propositions/propXI3/">XI.3</a></div>
+<p>For suppose that they do not, but, if possible, let <em>BD</em> and <em>BE</em> lie in the plane of reference and <em>BC</em> in one more elevated. Produce the plane through <em>AB</em> and <em>BC.</em></p>
+<p>It intersects the plane of reference in a straight line. Let the intersection be <em>BF.</em> Therefore the three straight lines <em>AB, BC,</em> and <em>BF</em> lie in one plane, namely that drawn through <em>AB</em> and <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI4/">XI.4</a></div>
+<p>Now, since <em>AB</em> is at right angles to each of the straight lines <em>BD</em> and <em>BE,</em> therefore <em>AB</em> is also at right angles to the plane through <em>BD</em> and <em>BE.</em></p>
+<p>But the plane through <em>BD</em> and <em>BE</em> is the plane of reference, therefore <em>AB</em> is at right angles to the plane of reference.</p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI3/">XI.Def.3</a></div>
+<p>Thus <em>AB</em> also makes right angles with all the straight lines which meet it and lie in the plane of reference.</p>
+<p>But <em>BF,</em> which is the plane of reference, meets it, therefore the angle <em>ABF</em> is right. And, by hypothesis, the angle <em>ABC</em> is also right, therefore the angle <em>ABF</em> equals the angle <em>ABC,</em> and they lie in one plane, which is impossible.</p>
+<p>Therefore the straight line <em>BC</em> is not in a more elevated plane. Therefore the three straight lines <em>BC, BC,</em> and <em>BE</em> lie in one plane.</p>
+<p>Therefore, <em>if a straight line is set up at right angles to three straight lines which meet one another at their common point of section, then the three straight lines lie in one plane.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in the proof of the next.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI6/">XI.6</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 5</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 5</h1>
+    <div class="statement">Commensurable magnitudes have to one another the ratio which a number has to a number.</div>
+    <p>Let <em>A</em> and <em>B</em> be commensurable magnitudes.</p>
+<p>I say that <em>A</em> has to <em>B</em> the ratio which a number has to a number.</p>
+<p>Since <em>A</em> and <em>B</em> are commensurable, some magnitude <em>C</em> measures them.</p>
+<p>As many times as <em>C</em> measures <em>A,</em> let so many units be in <em>D,</em> and, as many times as <em>C</em> measures <em>B,</em> let so many units be in <em>E.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="90" tabindex="0"></canvas>
+<noscript><img alt="X.5 diagram" src="propX5.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.5",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "D0;point;free;-1000,65;0;0",
+            "D3;point;free;1000,65;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,10;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;lineSlider;A0,A3,120,0;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;lineSlider;A0,A3,150,0;0",
+            "B2;point;lineSlider;A0,A3,200,0;0",
+            "B;line;connect;B1,B2;black",
+            "C1;point;lineSlider;A0,A3,230,0;0",
+            "C2;point;lineSlider;A0,A3,245,0;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;D0,D3,30,0;0",
+            "D2;point;proportion;C1,C2,A1,A2,U1,U2,D1,D3;0",
+            "D;line;connect;D1,D2;black;0;blue",
+            "E1;point;lineSlider;D0,D3,150,0;0",
+            "E2;point;proportion;C1,C2,B1,B2,U1,U2,E1,D3;0",
+            "E;line;connect;E1,E2;black;0;blue"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a><br><a href="/elements/books/bookV/propositions/propV7/#cor">V.7.Cor</a></div>
+<p>Since <em>C</em> measures <em>A</em> according to the units in <em>D,</em> while the unit also measures <em>D</em> according to the units in it, therefore the unit measures the number <em>D</em> the same number of times as the magnitude <em>C</em> measures <em>A.</em> Therefore <em>C</em> is to <em>A</em> as the unit is to <em>D.</em> Therefore, inversely, <em>A</em> is to <em>C</em> as <em>D</em> is to the unit.</p>
+<p>Again, since <em>C</em> measures <em>B</em> according to the units in <em>E,</em> while the unit also measures <em>E</em> according to the units in it, therefore the unit measures <em>E</em> the same number of times as <em>C</em> measures <em>B.</em> Therefore <em>C</em> is to <em>B</em> as the unit is to <em>E.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV22/">V.22</a></div>
+<p>But it was also proved that <em>A</em> is to <em>C</em> as <em>D</em> is to the unit, therefore, <em>ex aequali,</em> <em>A</em> is to <em>B</em> as the number <em>D</em> is to <em>E.</em></p>
+<p>Therefore the commensurable magnitudes <em>A</em> and <em>B</em> have to one another the ratio which the number <em>D</em> has to the number <em>E.</em></p>
+<p>Therefore, <em>commensurable magnitudes have to one another the ratio which a number has to a number.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition equates ratios of magnitudes to ratios of numbers. Both magnitudes and numbers are represented as lines. To help distinguish them in this edition of the <em>Elements,</em> lines that represent numbers are drawn in blue.</p>
+<p>The proposition states that if <em>A</em> = <em>mC</em> and <em>B</em> = <em>nC,</em> then <em>A</em> : <em>B</em> = <em>m</em> : <em>n.</em></p>
+<p>The proof here assumes that numbers are magnitudes, that is to say, the two definitions of proportion <a href="/elements/books/bookV/definitions/defV5/">V.Def.5</a> and <a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a> are compatible.</p>
+<p>This proposition is used in <a href="/elements/books/bookX/propositions/propX8/">X.8</a>, its contrapositive, and a few propositions after that.</p>
+<p>The next proposition is the converse of this one, and the two following that are its contrapositive and the contrapositive of this one. It is not clear why these four statements are separated into four propositions, but the following four statements are bundled together into one proposition <a href="/elements/books/bookX/propositions/propX9/">X.9</a> instead of being separate. Perhaps originally each group of four was bundled together, but later the first group was separated.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX8/">X.8</a>, <a href="/elements/books/bookX/propositions/propX9/">X.9</a>, <a href="/elements/books/bookX/propositions/propX11/">X.11</a>, <a href="/elements/books/bookX/propositions/propX12/">X.12</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

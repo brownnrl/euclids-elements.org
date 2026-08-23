@@ -1,0 +1,137 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 16</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 16</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 16</h1>
+    <div class="statement">If two parallel planes are cut by any plane, then their intersections are parallel.</div>
+    <div class="just"><a href="/elements/books/bookXI/propositions/propXI3/">XI.3</a></div>
+<p>Let the two parallel planes <em>AB</em> and <em>CD</em> be cut by the plane <em>EFGH,</em> and let <em>EF</em> and <em>GH</em> be their intersections.</p>
+<p>I say that <em>EF</em> is parallel to <em>GH.</em></p>
+<p>If not, then <em>EF</em> and <em>GH</em> will, when produced, meet either in the direction of <em>F</em> and <em>H</em> or in the direction of <em>E</em> and <em>G.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="320" height="230" tabindex="0"></canvas>
+<noscript><img alt="XI.16 diagram" src="propXI16.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.16",
+        elements: [
+            "X;point;free;100000,200",
+            "Y;point;free;200,-100000",
+            "Z;point;free;30000,-100000",
+            "A;point;free;40,100",
+            "B;point;free;170,30",
+            "P1;point;intersection;A,X,B,Z;0;0",
+            "P3;point;intersection;B,X,A,Z;0;0",
+            "P;polygon;quadrilateral;A,P1,B,P3;0;0;gray;brighter",
+            "C;point;free;40,180",
+            "D;point;free;170,110",
+            "Q1;point;intersection;C,X,D,Z;0;0",
+            "Q3;point;intersection;D,X,C,Z;0;0",
+            "Q;polygon;quadrilateral;C,Q1,D,Q3;0;0;gray;brighter",
+            "E;point;lineSlider;A,P3,40,50",
+            "F;point;intersection;E,X,B,P1",
+            "EF;line;connect;E,F",
+            "G;point;lineSlider;C,Q3,60,160",
+            "H;point;intersection;G,X,D,Q1",
+            "GH;line;connect;G,H",
+            "EG;line;connect;E,G",
+            "FH;line;connect;F,H",
+            "M;point;midpoint;E,G;0;0",
+            "K;point;lineSlider;M,X,270,100",
+            "FK;line;connect;F,K",
+            "HK;line;connect;H,K"
+        ],
+    });
+</script>
+</figure><p>First, let them meet when produced in the direction of <em>F</em> and <em>H</em> at <em>K.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI1/">XI.1</a></div>
+<p>Now, since <em>EFK</em> lies in the plane <em>AB,</em> therefore all the points on <em>EFK</em> also lie in the plane <em>AB.</em> But <em>K</em> is one of the points on the straight line <em>EFK,</em> therefore <em>K</em> lies in the plane <em>AB.</em> For the same reason <em>K</em> also lies in the plane <em>CD.</em> Therefore the planes <em>AB</em> and <em>CD</em> will meet when produced.</p>
+<p>But they do not meet, because, by hypothesis, they are parallel. Therefore the straight lines <em>EF</em> and <em>GH</em> do not meet when produced in the direction of <em>F</em> and <em>H.</em></p>
+<p>Similarly we can prove that neither do the straight lines <em>EF</em> and <em>GH</em> meet when produced in the direction of <em>E</em> and <em>G.</em></p>
+<p>But straight lines which do not meet in either direction are parallel. Therefore <em>EF</em> is parallel to <em>GH.</em></p>
+<p>Therefore, <em>if two parallel planes are cut by any plane, then their intersections are parallel.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in the proof of the next proposition as well as proposition <a href="/elements/books/bookXI/propositions/propXI24/">XI.24</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI17/">XI.17</a>, <a href="/elements/books/bookXI/propositions/propXI24/">XI.24</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 15</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 15</h1>
+    <div class="statement">In equal triangles which have one angle equal to one angle the sides about the equal angles are reciprocally proportional; and those triangles which have one angle equal to one angle, and in which the sides about the equal angles are reciprocally proportional, are equal.</div>
+    <p>Let <em>ABC</em> and <em>ADE</em> be equal triangles having one angle equal to one angle, namely the angle <em>BAC</em> equal to the angle <em>DAE.</em></p>
+<p>I say that in the triangles <em>ABC</em> and <em>ADE</em> the sides about the equal angles are reciprocally proportional, that is to say, that <em>CA</em> is to <em>AD</em> as <em>EA</em> is to <em>AB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="270" tabindex="0"></canvas>
+<noscript><img alt="VI.15 diagram" src="propVI15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.15",
+        elements: [
+            "A;point;free;140,110",
+            "B;point;free;80,30",
+            "C;point;free;30,200",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;lineSlider;A,C,200,50",
+            "E';point;extend;B,A,B,A;0;0",
+            "E;point;proportion;A,D,A,C,A,B,A,E'",
+            "ADE;polygon;triangle;A,D,E;0;0;black;random",
+            "BD;line;connect;B,D"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI14/">I.14</a></div>
+<p>Place them so that <em>CA</em> is in a straight line with <em>AD.</em> Therefore <em>EA</em> is also in a straight line with <em>AB.</em></p>
+<p>Join <em>BD.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV7/">V.7</a></div>
+<p>Since then the triangle <em>ABC</em> equals the triangle <em>ADE,</em> and <em>ABD</em> is another triangle, therefore the triangle <em>ABC</em> is to the triangle <em>ABD</em> as the triangle <em>ADE</em> is to the triangle <em>ABD.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a></div>
+<p>But <em>ABC</em> is to <em>ABD</em> as <em>AC</em> is to <em>AD,</em> and <em>ADE</em> is to <em>ABD</em> as <em>AE</em> is to <em>AB.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>Therefore also <em>AC</em> is to <em>AD</em> as <em>AE</em> is to <em>AB.</em></p>
+<p>Therefore in the triangles <em>ABC</em> and <em>ADE</em> the sides about the equal angles are reciprocally proportional.</p>
+<hr width="50%">
+
+<p>Next, let the sides of the triangles <em>ABC</em> and <em>ADE</em> be reciprocally proportional, that is to say, let <em>AE</em> be to <em>AB</em> as <em>CA</em> is to <em>AD.</em></p>
+<p>I say that the triangle <em>ABC</em> equals the triangle <em>ADE.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>If <em>BD</em> is again joined, since <em>AC</em> is to <em>AD</em> as <em>AE</em> is to <em>AB,</em> while <em>AC</em> is to <em>AD</em> as the triangle <em>ABC</em> is to the triangle <em>ABD,</em> and <em>AE</em> is to <em>AB</em> as the triangle <em>ADE</em> is to the triangle <em>ABD,</em> therefore the triangle <em>ABC</em> is to the triangle <em>ABD</em> as the triangle <em>ADE</em> is to the triangle <em>ABD.</em></p>
+<p>Therefore each of the triangles <em>ABC</em> and <em>ADE</em> has the same ratio to <em>ABD.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV9/">V.9</a></div>
+<p>Therefore the triangle <em>ABC</em> equals the triangle <em>ADE.</em></p>
+<p>Therefore, <em>in equal triangles which have one angle equal to one angle the sides about the equal angles are reciprocally proportional; and those triangles which have one angle equal to one angle, and in which the sides about the equal angles are reciprocally proportional, are equal.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in the proof of proposition <a href="/elements/books/bookVI/propositions/propVI19/">VI.19</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI19/">VI.19</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

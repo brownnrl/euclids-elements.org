@@ -1,0 +1,535 @@
+body
+{
+  background-color:#ffffff;
+}
+
+@font-face {
+  font-family: 'Felipa';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Felipa'), local('Felipa-Regular'), url(https://themes.googleusercontent.com/static/fonts/felipa/v1/CGA4sfSyBqMA9-nMl4k29-vvDin1pK8aKteLpeZ5c0A.ttf) format('truetype');
+}
+
+h1 {font-family: 'Felipa';
+  color:#0020C2; 
+  font-weight:normal;
+  text-align: center;}
+h2 {font-family: 'Felipa';
+  color:#0020C2;
+  text-align: center;}
+h3 {font-family: 'Felipa';
+  color:#0020C2;}
+h4 {font-family: 'Felipa';
+  color:#0020C2;}
+  
+div.theorem {
+  background-color:#ffe9cd;
+  border:1px solid #000000;
+  height:auto;
+  width:auto;
+  padding:5px;
+  /* Contain floated children (figure/diagram, div.just) so the beige
+     background extends to enclose them. Without this the theorem
+     box ends at the last in-flow text, leaving floats hanging out
+     the bottom — same bug the hand-authored site had. */
+  display: flow-root;
+  /* Vertical breathing room between sibling theorem boxes on the
+     multi-section pages (X.29 with two lemmas + the prop, X.41 with
+     post-lemma, X.111 with remark, etc.). */
+  margin-bottom: 1.5em;
+}
+
+div.theorem p {
+  font-weight:normal;
+  padding:4px;
+  border:0px solid #000000;
+  margin:1px;
+}
+
+/* Element reference (emitted by the eucref plugin's `{!NAME}` shortcode).
+   Italic to preserve Joyce's letter-label convention; the dotted underline
+   on hover hints that the span is interactive. `.active` is set by the
+   browser-side JS when a touch/tap toggles sticky highlight. */
+span.elem-ref {
+  font-style: italic;
+  cursor: pointer;
+  border-bottom: 1px dotted transparent;
+  transition: border-bottom-color 120ms ease-out, color 120ms ease-out,
+              background-color 120ms ease-out;
+}
+span.elem-ref:hover,
+span.elem-ref.active {
+  border-bottom-color: currentColor;
+}
+/* `.lit` is set by the browser-side JS in response to geomlib's
+   `geomlib:highlight` event (geomlib >= 0.11.0, #108): every prose
+   reference to an element currently highlighted on the canvas — whether
+   by hovering any one of its refs, pinning it, or a slide's `highlighted`
+   set — gets the same golden emphasis as the figure.
+
+   A gold highlighter wash + dark amber text reads on the tan page where
+   plain gold text did not. The bold look is faked with `text-shadow`
+   instead of `font-weight` so lighting a ref never reflows the prose
+   (hovering one ref lights every other ref to the same element at once).
+   The padding is balanced by an equal negative margin so the wash never
+   shifts surrounding text. */
+span.elem-ref.lit {
+  color: #4a3a00;
+  background-color: rgba(255, 196, 0, 0.55);
+  border-radius: 2px;
+  padding: 0 2px;
+  margin: 0 -2px;
+  text-shadow: 0.02em 0 0 currentColor, -0.02em 0 0 currentColor;
+}
+
+div.theorem h1 {
+  font-family: 'Felipa';
+  color:#0020C2; 
+  font-weight:normal;
+  text-align: center;
+  border:0px solid #000000;
+  margin:5px;
+  padding:5px;
+}
+div.theorem h2 {
+  font-family: 'Felipa';
+  color:#0020C2;
+}
+div.theorem h3 {
+  font-family: 'Felipa';
+  color:#0020C2;
+}
+div.theorem h4 {
+  font-family: 'Felipa';
+  color:#0020C2;
+}
+
+div.title {
+  font-family: 'Felipa';
+  color:#0020C2; 
+  font-size:200%;
+  font-weight:normal;
+  text-align: center;
+  border:0px solid #000000;
+  margin:5px;
+  padding:5px;
+}
+
+div.statement {
+  text-align:center;
+  font-weight:normal;
+  font-style:italic;
+  font-size:120%;
+  border:0px solid #000000;
+  margin:5px;
+  padding:5px;
+}
+
+div.just {
+  text-align:right;
+  float:right;
+  clear:right;
+  font-weight:normal;
+  font-size:75%;
+  border:0px solid #000000;
+  width:70px;
+  margin:4px;
+  padding:2px;
+}
+
+/* When a .just appears after a right-floating figure, don't clear past
+   the figure's bottom — the prose is already flowing alongside the
+   figure, and the .just should sit in that same column to its left. */
+figure.diagram.rdiagram ~ div.just {
+  clear: none;
+}
+
+div.ldiagram {
+  float:left;
+  border:0px solid #000000;
+  margin:5px;
+}
+
+div.ldiagram {
+  ;
+  border:0px solid #000000;
+  margin:5px;
+}
+
+div.rdiagram {
+  float:right;
+  border:0px solid #000000;
+  margin:5px;
+}
+
+div.qed {
+  text-align:right;
+  font-size:75%;
+  border:0px solid #000000;
+  margin:0px;
+}
+
+/* a.hover to hide a link until the mouse is over it */
+  a.hover:link {text-decoration:none;}    /* unvisited link */
+  a.hover:visited {text-decoration:none;} /* visited link */
+  a.hover:hover {text-decoration:underline;}   /* mouse over link */
+  a.hover:active {text-decoration:underline;}  /* selected link */
+  
+div.twocolumn
+{
+  -moz-column-count:2; /* Firefox */
+  -webkit-column-count:2; /* Safari and Chrome */
+  column-count:2;
+}
+
+div.threecolumn
+{
+  -moz-column-count:3; /* Firefox */
+  -webkit-column-count:3; /* Safari and Chrome */
+  column-count:3;
+}
+
+/* Keep each logical group (a book's <dl>, the prematter <dl>) intact
+   within a column — the default browser behavior lets the column
+   break mid-<dl>, splitting Book V's Propositions row away from its
+   Definitions row. Equivalents for older browsers included. */
+div.twocolumn > dl,
+div.threecolumn > dl {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Mobile-aware column counts. .twocolumn collapses straight to 1
+   below 640px (two cols are uncomfortable below that anyway).
+   .threecolumn steps down: 3 → 2 → 1 so the subject index stays
+   dense on tablets / narrow desktops without forcing tiny columns. */
+@media (max-width: 900px) {
+  div.threecolumn {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (max-width: 640px) {
+  div.twocolumn,
+  div.threecolumn {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+
+/* --- Phase 1 mobile-readability patch (issue #4) --- */
+/* Temporary. Proper template-driven redesign lands with the SSG
+   migration in #13. */
+
+/* Canvas sizing is intentionally not constrained here. With CSS scaling
+   (`max-width: 100%`), the canvas bitmap stays at its declared size while
+   display size shrinks, so touch coordinates can mismatch hit-testing.
+   geomlib 0.2.0 ships a Pointer Events refactor (brownnrl/euclid#55) that
+   resolves the underlying coord-mapping problem and sets
+   `touch-action: none` on each canvas from JS, so no `canvas { ... }`
+   rule is needed here. */
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .ldiagram, .rdiagram {
+        float: none;
+        width: auto;
+    }
+    .just {
+        float: none;
+        width: auto;
+    }
+}
+/* --- Static site header/footer (Lektor rebuild) ---
+   The hand-authored site uses loadHeader()/loadFooter() JS to inject
+   navigation. The Lektor version emits everything at build time so
+   the page works with JS disabled, matching the noscript fallback
+   intent already in place for the canvas diagrams. */
+
+.site-header {
+    margin-bottom: 0.6em;
+}
+
+.site-header h1 {
+    margin: 0.15em 0;
+    /* h1 already gets font-family: Felipa + color #0020C2 + centered
+       + font-weight:normal from the global rule near the top of this
+       file. Just tighten the per-line spacing for the stack. */
+}
+
+.site-header h1 a.hover {
+    color: #0020C2;
+    text-decoration: none;
+}
+
+.site-header h1 a.hover:hover {
+    text-decoration: underline;
+}
+
+/* Footer rendered by /js/footer-nav.js — both the nav table and the
+   credit/copyright block live inside <div id="footer">. */
+#footer {
+    clear: both;
+    margin-top: 1.5em;
+}
+/* Static footer for /other-works/ pages (prev / up / next).
+   Needs clear:both for the same reason #footer does — content above
+   often ends with a floated <figure class="diagram"> and without
+   clear the nav table wraps up alongside the figure. The override
+   on table.footer-nav width is so the prev/next links can use the
+   full page width rather than shrinking to text width and crowding
+   into a narrow column. */
+footer.other-works-nav {
+    clear: both;
+    margin-top: 1.5em;
+}
+footer.other-works-nav table.footer-nav {
+    width: 100%;
+}
+hr.footer-sep {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0.4em 0;
+}
+table.footer-nav {
+    margin: 0.6em auto;
+    border-collapse: collapse;
+}
+table.footer-nav td {
+    padding: 0.2em 0.6em;
+    vertical-align: top;
+}
+p.footer-credit {
+    font-size: 80%;
+    color: #444;
+    margin: 0.6em 0.9em;
+}
+p.footer-credit a {
+    color: #0020C2;
+}
+
+/* Hierarchical breadcrumb under the main header — supplements the
+   stacked h1 titles by showing the full path from root.
+   "Home › Table of Contents › Book I › Proposition 1" */
+.breadcrumbs {
+    font-size: 85%;
+    color: #666;
+    margin: 0.3em 0.9em 1em;
+    text-align: center;
+}
+.breadcrumbs a {
+    color: #0020C2;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.breadcrumbs .crumb-sep {
+    color: #aaa;
+    margin: 0 0.3em;
+}
+.breadcrumbs .crumb-current {
+    color: #444;
+}
+
+/* Heading anchors (book section headings, master-TOC group titles,
+   section-index titles when linked from the book page) should always
+   render as a heading — blue, no underline — regardless of visited
+   state. They're navigation, not prose links. */
+h2 a:link,    h2 a:visited,
+h3 a:link,    h3 a:visited,
+h4 a:link,    h4 a:visited {
+    color: #0020C2;
+    text-decoration: none;
+}
+h2 a:hover, h3 a:hover, h4 a:hover {
+    text-decoration: underline;
+}
+
+/* Blue-highlighted axiom statements (formal axioms introduced in the
+   Common Notions guide and elsewhere). Plain <blockquote> remains
+   for derived properties, proofs, and other indented prose. */
+blockquote.axiom {
+    color: #0000ff;
+}
+
+/* Markdown tables in guide bodies — used for reference summaries
+   like the Common Notions properties table. Center on the page and
+   give cells a bit of breathing room. */
+table {
+    margin: 0.8em auto;
+    border-collapse: collapse;
+}
+table th, table td {
+    padding: 0.25em 0.6em;
+    vertical-align: top;
+}
+
+/* Geomlib applet figure inside a guide body. Floats left so the
+   surrounding prose wraps around it — replaces the old two-column
+   <table> layout with semantic, text-flow-friendly markup.
+   `figure class="diagram rdiagram"` flips to a right float; mobile
+   collapses to a centered block. */
+figure.diagram {
+    float: left;
+    margin: 0.3em 1.2em 0.6em 0;
+    text-align: center;
+}
+figure.diagram.rdiagram {
+    float: right;
+    margin: 0.3em 0 0.6em 1.2em;
+}
+/* Block (non-floating) variant. Use when a figure logically belongs
+   ON ITS OWN LINE between two paragraphs rather than alongside prose.
+   The figure sits centered, prose flows above and below it without
+   wrapping. Pairs naturally with an h3/h4 heading marking a new
+   section — keeps the figure visibly tied to its own prose instead
+   of letting wrapping mix it with the next section. */
+figure.diagram.block,
+figure.diagram.block.rdiagram {
+    float: none;
+    clear: both;
+    display: block;
+    margin: 1em auto;
+}
+figure.diagram canvas {
+    display: inline-block;
+    /* Let the canvas shrink to fit the viewport on small screens so
+       the auto-margin centering in the mobile rule below actually
+       takes effect. geomlib 0.2.0+ remaps touch coords through its
+       Pointer Events refactor so CSS scaling no longer breaks
+       hit-testing. */
+    max-width: 100%;
+    height: auto;
+}
+/* Stack vertically only on true mobile widths. At narrow desktop /
+   tablet sizes the canvas is usually small enough (~280-340px) that
+   floating with text wrapping still reads better than stacked. */
+@media (max-width: 480px) {
+    figure.diagram, figure.diagram.rdiagram {
+        float: none;
+        margin: 1em auto;
+        display: block;
+    }
+}
+
+/* --- Mobile-pass: header tightening + footer-nav stacking --- */
+
+/* Stacked-h1 site header (book-leaf pages render "Euclid's Elements"
+   + "Book I" as two h1s, both 200% Felipa). On a phone that's ~64px
+   of header before the page even starts. Halve the line spacing and
+   drop the font down a step at narrow widths. */
+@media (max-width: 640px) {
+    .site-header h1 {
+        font-size: 150%;
+        margin: 0.05em 0;
+    }
+}
+
+/* Stack the JS-driven footer nav table cells vertically on phones.
+   The original two-column layout (Next/Prev on one side, <select>
+   dropdowns on the other) makes both columns ~150px on a 320px
+   phone — too cramped, and the selects can overflow. Force each
+   <td> to render as its own row. Same treatment for the static
+   other-works prev/up/next footer (3-column at desktop width). */
+@media (max-width: 640px) {
+    #footer table.footer-nav,
+    #footer table.footer-nav tbody,
+    #footer table.footer-nav tr,
+    #footer table.footer-nav td,
+    footer.other-works-nav table.footer-nav,
+    footer.other-works-nav table.footer-nav tbody,
+    footer.other-works-nav table.footer-nav tr,
+    footer.other-works-nav table.footer-nav td {
+        display: block;
+        width: auto !important;
+        text-align: center !important;
+    }
+    #footer table.footer-nav td,
+    footer.other-works-nav table.footer-nav td {
+        padding: 0.35em 0;
+    }
+    /* The JS footer's selects sit inside the table cells — give them
+       a sensible max-width so they don't push past the viewport. */
+    #footer table.footer-nav select {
+        max-width: 90%;
+    }
+}
+
+/* `red_highlight: yes` on a definition / postulate / common notion /
+   proposition record colors the entry's text in Joyce's red. The
+   class is applied to both <dt> and <dd> so the trailing "." after
+   the label and the full statement render red. Anchors inside keep
+   their default link color, matching the source bookI.html where
+   the <font color=bb0033> wrap is overridden by browser link
+   styling on the <a> itself. */
+.red-highlight {
+    color: #bb0033;
+}
+
+/* Reference table (lektor-eucrefs `referenced_by` / `forward_refs`):
+   citation cross-references grouped by book, under a "Referenced by"
+   <h4> at the bottom of the page. The h4 picks up the page's Felipa-blue
+   heading style (like "Use of Proposition N"); the cells inherit the
+   serif body text so the table reads as part of the page. */
+table.ref-table {
+    margin: 0.2em 0 0.6em;
+    border-collapse: collapse;
+}
+table.ref-table th {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.1em 1.2em 0.1em 0;
+    white-space: nowrap;
+    font-weight: normal;
+}
+table.ref-table td {
+    padding: 0.1em 0;
+}
+
+/* Editorial footnotes — corrections to the source text. A superscript
+   marker (sup.fn-ref) links down to a numbered note in section.footnotes
+   at the end of the page; each note links back up (a.fn-back). Kept small
+   and dimmed so it reads as an aside, with the page's link blue. */
+sup.fn-ref {
+    line-height: 0;
+}
+sup.fn-ref a {
+    color: #0020C2;
+    text-decoration: none;
+    padding: 0 0.05em;
+}
+sup.fn-ref a:hover {
+    text-decoration: underline;
+}
+hr.footnotes-sep {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 2em 0 0.6em;
+}
+section.footnotes {
+    font-size: 85%;
+    color: #444;
+}
+section.footnotes ol {
+    margin: 0;
+    padding-left: 1.4em;
+}
+section.footnotes li {
+    margin: 0.2em 0;
+}
+section.footnotes a.fn-back {
+    color: #0020C2;
+    text-decoration: none;
+    margin-left: 0.3em;
+}
+/* Make the note jumped to from its marker briefly stand out. */
+section.footnotes li:target {
+    background: rgba(255, 196, 0, 0.18);
+}

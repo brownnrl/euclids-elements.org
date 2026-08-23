@@ -1,0 +1,131 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 20</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 20</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 20</h1>
+    <div class="statement">In a circle the angle at the center is double the angle at the circumference when the angles have the same circumference as base.</div>
+    <p>Let <em>ABC</em> be a circle, let the angle <em>BEC</em> be an angle at its center, and the angle <em>BAC</em> an angle at the circumference, and let them have the same circumference <em>BC</em> as base.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="270" tabindex="0"></canvas>
+<noscript><img alt="III.20 diagram" src="propIII20.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.20",
+        pivot: "E",
+        elements: [
+            "A;point;free;40,110",
+            "F;point;free;240,170",
+            "E;point;midpoint;A,F;black;green",
+            "ABC;circle;radius;E,A;0;0;black;random",
+            "B;point;circleSlider;ABC,190,210",
+            "C;point;circleSlider;ABC,220,80",
+            "AC;line;connect;A,C",
+            "AB;line;connect;A,B",
+            "EC;line;connect;E,C",
+            "EB;line;connect;E,B",
+            "AF;line;connect;A,F",
+            "D;point;circleSlider;ABC,170,40",
+            "DC;line;connect;D,C",
+            "DB;line;connect;D,B",
+            "G;point;extend;D,E,D,E",
+            "DG;line;connect;D,G"
+        ],
+    });
+</script>
+</figure><p>I say that the angle <em>BEC</em> is double the angle <em>BAC.</em></p>
+<p>Join <em>AE,</em> and draw it through to <em>F.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>Then, since <em>EA</em> equals <em>EB,</em> the angle <em>EAB</em> also equals the angle <em>EBA.</em> Therefore the sum of the angles the angles <em>EAB</em> and <em>EBA</em> is double the angle <em>EAB.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>But the angle <em>BEF</em> equals the sum of the angles <em>EAB</em> and <em>EBA,</em> therefore the angle <em>BEF,</em> is also double the angle <em>EAB.</em></p>
+<p>For the same reason the angle <em>FEC</em> is also double the angle <em>EAC.</em></p>
+<p>Therefore the whole angle <em>BEC</em> is double the whole angle <em>BAC.</em></p>
+<p>Again let another straight line be inflected, and let there be another angle <em>BDC.</em>  Join <em>DE</em> and produced it to <em>G.</em></p>
+<p>Similarly then we can prove that the angle <em>GEC</em> is double the angle <em>EDC,</em> of which the angle <em>GEB</em> is double the angle <em>EDB.</em> Therefore the remaining angle <em>BEC</em> is double the angle <em>BDC.</em></p>
+<p>Therefore <em>in a circle the angle at the center is double the angle at the circumference when the angles have the same circumference as base.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in the next one and <a href="/elements/books/bookIII/propositions/propIII27/">III.27</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII21/">III.21</a>, <a href="/elements/books/bookIII/propositions/propIII27/">III.27</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI33/">VI.33</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 1</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 1</h1>
+    <div class="statement">To construct an equilateral triangle on a given finite straight line.</div>
+    <p>Let <span class="elem-ref" data-elem="AB">AB</span> be the given finite straight line.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="340" height="260" tabindex="0"></canvas>
+<noscript><img alt="I.1 diagram" src="propI1.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.1",
+    pivot: "C",
+    elements: [
+        "A;point;free;125,130",
+        "B;point;free;215,130",
+        "AB;line;connect;A,B",
+        // Circles named for the three labelled points they pass through
+        // (BCD = the circle centred at A through B,C,D; ACE = centred at B
+        // through A,C,E). Joyce's prose uses these three-point names; the
+        // geometry is unchanged from the original Acirc / Bcirc.
+        "BCD;circle;radius;A,B",
+        "ACE;circle;radius;B,A",
+        "CD;line;bichord;ACE,BCD;0;0;0",
+        "C;point;first;CD;black;green",
+        "AC;line;connect;A,C",
+        "BC;line;connect;B,C",
+        "AE;line;extend;AB,AB;0;0;0",
+        "E;point;last;AE;black;0",
+        "BD;line;extend;B,A,A,B;0;0;0",
+        "D;point;last;BD;black;0",
+        "ABC;polygon;triangle;A,B,C;0;0;0;random"
+    ],
+    // Joyce's prose names the same circle or line by every conventional
+    // letter-permutation ("circle CDB" = "circle BCD", "line BA" = "line
+    // AB", etc.). Register those as aliases so the `{NAME}` shortcode
+    // resolves them to the canonical element without forcing a separate
+    // invisible duplicate per name.
+    aliases: {
+        "CDB": "BCD",
+        "CAE": "ACE",
+        "BA":  "AB",
+        "CA":  "AC",
+        "CB":  "BC"
+    },
+    // Slideshow walk-through (geomlib >= 0.5.0). Each slide declares
+    // its visible / highlighted element sets and any marginal
+    // justifications; geomlib renders the "▶ Present" button in the
+    // slate-controls row and walks Next/Prev through these slides.
+    // Justification URLs come from window.eucrefs (emitted further
+    // down on this page). Slides that introduce a new construction
+    // also carry transition.animations entries (geomlib >= 0.6.0):
+    // straightedge strokes for lines, compass sweeps for circles,
+    // a marker pop for point C, outline-and-fill for the final
+    // triangle. Proof-step slides 6-12 only relight highlights and
+    // intentionally stay un-annotated.
+    slides: [
+        { text: "Let {AB} be the given finite straight line.",
+          visible: ["AB"],
+          transition: {
+              animations: [
+                  { elem: "AB", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          } },
+        { text: "It is required to construct an equilateral triangle on the straight line {AB}.",
+          visible: ["AB","ABC"],
+          highlighted: ["ABC"] },
+        { text: "Describe the circle {BCD} with centre {A} and radius {AB}.",
+          visible: ["AB","BCD","D"],
+          transition: {
+              animations: [
+                  { elem: "BCD", name: geomlib.A.Circle.compass }
+              ]
+          },
+          justifications: [{ ref: "I.Post.3" }] },
+        { text: "Again describe the circle {ACE} with centre {B} and radius {BA}.",
+          visible: ["AB","BCD","ACE","D","E"],
+          transition: {
+              animations: [
+                  { elem: "ACE", name: geomlib.A.Circle.compass }
+              ]
+          },
+          justifications: [{ ref: "I.Post.3" }] },
+        { text: "Join the straight lines {CA} and {CB} from the point {C} at which the circles cut one another.",
+          visible: ["AB","BCD","ACE","C","AC","BC"],
+          transition: {
+              // Cascade matches the proof's verb order: point C lands
+              // at the intersection, then each line straightedge-traces.
+              animations: [
+                  { elem: "C",  name: geomlib.A.Point.appear },
+                  { elem: "AC", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "BC", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          },
+          justifications: [{ ref: "I.Post.1" }] },
+        { text: "Since the point {A} is the centre of the circle {CDB}, therefore {AC} equals {AB}.",
+          highlighted: ["A","BCD","AC","AB"],
+          justifications: [{ ref: "I.Def.15" }] },
+        { text: "Again, since the point {B} is the centre of the circle {CAE}, therefore {BC} equals {BA}.",
+          highlighted: ["B","ACE","BC","AB"],
+          justifications: [{ ref: "I.Def.15" }] },
+        { text: "But {AC} was proved equal to {AB}.",
+          highlighted: ["AC","AB"] },
+        { text: "Therefore each of the straight lines {AC} and {BC} equals {AB}.",
+          highlighted: ["AC","BC","AB"] },
+        { text: "And things which equal the same thing also equal one another,",
+          highlighted: ["AC","BC","AB"],
+          justifications: [{ ref: "C.N.1" }] },
+        { text: "therefore {AC} also equals {BC}.",
+          highlighted: ["AC","BC"] },
+        { text: "Therefore the three straight lines {AC}, {AB}, and {BC} equal one another.",
+          highlighted: ["AC","AB","BC"] },
+        { text: "Therefore the triangle {ABC} is equilateral, and it has been constructed on the given finite straight line {AB}.",
+          visible: ["A","B","C","D","E","AB","BCD","ACE","CD","AC","BC","AE","BD","ABC"],
+          transition: {
+              animations: [
+                  { elem: "ABC", name: geomlib.A.Polygon.outlineAndFill }
+              ]
+          },
+          highlighted: ["A","B","C","AB","AC","BC","ABC"],
+          justifications: [{ ref: "I.Def.20" }, { ref: "Q.E.F." }] }
+    ],
+    resolveJustification: function(ref) {
+        return (window.eucrefs && window.eucrefs[ref]) || null;
+    }
+});
+
+// Per-page lookup that the slideshow's resolveJustification callback
+// consults. Hand-authored for propI.1 — once more props get slides,
+// move this into a Jinja filter on the eucref plugin that emits the
+// page's resolved citations site-wide.
+window.eucrefs = (window.eucrefs || {});
+Object.assign(window.eucrefs, {
+    "I.Post.1": "/elements/books/bookI/postulates/post1/",
+    "I.Post.3": "/elements/books/bookI/postulates/post3/",
+    "I.Def.15": "/elements/books/bookI/definitions/defI15/",
+    "I.Def.20": "/elements/books/bookI/definitions/defI20/",
+    "C.N.1":    "/elements/books/bookI/commonnotions/cn1/"
+});
+</script>
+</figure><p>It is required to construct an equilateral triangle on the straight line <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/postulates/post3/">I.Post.3</a><br><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a></div>
+<p>Describe the circle <span class="elem-ref" data-elem="BCD">BCD</span> with center <span class="elem-ref" data-elem="A">A</span> and radius <span class="elem-ref" data-elem="AB">AB</span>. Again describe the circle <span class="elem-ref" data-elem="ACE">ACE</span> with center <span class="elem-ref" data-elem="B">B</span> and radius <span class="elem-ref" data-elem="BA">BA</span>. Join the straight lines <span class="elem-ref" data-elem="CA">CA</span> and <span class="elem-ref" data-elem="CB">CB</span> from the point <span class="elem-ref" data-elem="C">C</span> at which the circles cut one another to the points <span class="elem-ref" data-elem="A">A</span> and <span class="elem-ref" data-elem="B">B</span>.</p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a></div>
+<p>Now, since the point <span class="elem-ref" data-elem="A">A</span> is the center of the circle <span class="elem-ref" data-elem="CDB">CDB</span>, therefore <span class="elem-ref" data-elem="AC">AC</span> equals <span class="elem-ref" data-elem="AB">AB</span>. Again, since the point <span class="elem-ref" data-elem="B">B</span> is the center of the circle <span class="elem-ref" data-elem="CAE">CAE</span>, therefore <span class="elem-ref" data-elem="BC">BC</span> equals <span class="elem-ref" data-elem="BA">BA</span>.</p>
+<p>But <span class="elem-ref" data-elem="AC">AC</span> was proved equal to <span class="elem-ref" data-elem="AB">AB</span>, therefore each of the straight lines <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="BC">BC</span> equals <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>And things which equal the same thing also equal one another, therefore <span class="elem-ref" data-elem="AC">AC</span> also equals <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<p>Therefore the three straight lines <span class="elem-ref" data-elem="AC">AC</span>, <span class="elem-ref" data-elem="AB">AB</span>, and <span class="elem-ref" data-elem="BC">BC</span> equal one another.</p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI20/">I.Def.20</a></div>
+<p>Therefore the triangle <span class="elem-ref" data-elem="ABC">ABC</span> is equilateral, and it has been constructed on the given finite straight line <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<div class="qed">Q.E.F.</div>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is a very pleasant choice for the first proposition in the <em>Elements.</em> The construction of the triangle is clear, and the proof that it is an equilateral triangle is evident. Of course, there are two choices for the point <em>C,</em> but either one will do.</p>
+<p>Euclid could have chosen proposition <a href="/elements/books/bookI/propositions/propI4/">I.4</a> to come first, since it doesn't logically depend on the previous three, but there are some good reasons for putting I.1 first. For one thing, the <em>Elements</em> ends with constructions of the five regular solids in Book XIII, so it is a nice aesthetic touch to begin with the construction of a regular triangle. More important, though, is I.1 is needed in <a href="/elements/books/bookI/propositions/propI2/">I.2</a>, and that in <a href="/elements/books/bookI/propositions/propI3/">I.3</a>. Propositions I.2 and I.3 give constructions for moving lines, and I.4, although not logically dependent on I.2 or I.3, does use the concept of superposition which involves, in some sense, moving points and lines.</p>
+<h4>Marginal references to postulates, definitions, etc.</h4>
+<p>The abbreviations in the right column refer to postulates, definitions, common notions, and previously proved propositions. Each indicates a justification of a construction or conclusion in a sentence to its left. They are not part of Euclid's <em>Elements,</em> but it is a tradition to include them as a guide to the reader.</p>
+<p>Sometimes the justification is quoted in full as C.N.1 is here, but usually it is left to the reader to determine the justification.</p>
+<h4>Q.E.F. and Q.E.D. at the ends of proofs</h4>
+<p>The Q.E.F. at the end of the proof is an abbreviation for the Latin words <em>quod erat faciendum</em> which means "which was to be done." A few of the propositions, as this one and the next two, solve problems by constructions. These are the ones that end with Q.E.F. (they're also printed in red here in the listings of propositions for each book.)</p>
+<p>The rest of the proofs end with Q.E.D. instead, an abbreviation for <em>quod erat demonstrandum</em> which means "which was to be demonstrated." It's convenient to have a standard way to indicate the end of a proof. These Latin abbreviations are a bit of an anachronism. It would be less of an anachronism to use abbreviations for the original Greek phrase, or abbreviations for a modern English phrase since the rest of this version of the <em>Elements</em> is in English. But by now, Q.E.F. and Q.E.D. are traditional. In recent decades a small square has become common as a symbol to indicate the end of a proof.</p>
+<h4>Critiques of the proof</h4>
+<p>It is surprising that such a short, clear, and understandable proof can be so full of holes. These are logical gaps where statements are made with insufficient justification. Since the first proof in the <em>Elements</em> is the one in this proposition, it has received more criticism over the centuries than any other.</p>
+<p><strong>Why does the point <em>C</em> exist?</strong> Near the beginning of the proof, the point <em>C</em> is mentioned where the circles are supposed to intersect, but there is no justification for its existence. The only one of Euclid's postulate that says a point exists the parallel postulate, and that postulate is not relevant here.</p>
+<p>Indeed, some postulate is needed for that conclusion, such as "If the sum of the radii of two circles is greater than the line joining their centers, then the two circles intersect." Such a postulate is also needed in Proposition <a href="/elements/books/bookI/propositions/propI22/">I.22</a>.</p>
+<p>There are models of geometry in which the circles do not intersect. Thus, other postulates not mentioned by Euclid are required. In Book III, Euclid takes some care in analyzing the possible ways that circles can meet, but even with more care, there are missing postulates.</p>
+<p><strong>Why is <em>ABC</em> a plane figure?</strong> After concluding the three straight lines <em>AC, AB,</em> and <em>BC</em> are equal, what is the justification that they contain a plane figure <em>ABC</em>? Recall that a triangle is a plane figure bounded by contained by three lines. These lines have not been shown to lie in a plane and that the entire figure lies in a plane. It is proposition <a href="/elements/books/bookXI/propositions/propXI1/">XI.1</a> that claims that all parts of a line lie in a plane, and <a href="/elements/books/bookXI/propositions/propXI2/">XI.2</a> that claims that the entire triangle lie in a plane. Logically, they should precede I.1. The reason they don't, of course, is that those propositions belong to solid geometry, and plane geometry is developed first in the <em>Elements,</em> also, no doubt, plane geometry developed first historically.</p>
+<p><strong>Why does <em>ABC</em> contain an equilateral triangle?</strong> Proclus relates that early on there were critiques of the proof and describes that of Zeno of Sidon, an Epicurean philosopher of the early first century B.C.E. (not to be confused with Zeno of Elea famous of the paradoxes who lived long before Euclid), and whose criticisms, Proclus says, were refuted in a book by Posidonius. The critique is sound, however, and the refutation faulty.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="318" height="231" tabindex="0"></canvas>
+<noscript><img alt="Zeno of Sidon counter-figure" src="propI1a.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_1",
+    background: "0,0,100",
+    title: "Zeno of Sidon",
+    elements: [
+        "A;point;free;110,130",
+        "B;point;free;208,130",
+        "AB;line;connect;A,B",
+        "Acirc;circle;radius;A,B",
+        "Bcirc;circle;radius;B,A",
+        "CD;line;bichord;Bcirc,Acirc;0;0;0",
+        "C;point;first;CD",
+        "E;point;lineSlider;CD,159,95",
+        "ABE;polygon;triangle;A,B,E;0;0;black;random",
+        "CE;line;connect;C,E",
+        // Invisible target lines for Zeno's conceptual segments. In
+        // Zeno's argument "AC" and "BC" are the straight lines from
+        // A or B up through E to C — the same paths the polygon edge
+        // (A→E, B→E) and the CE line trace, but addressable by name
+        // so {AC} / {BC} highlight the full A↔C and B↔C runs.
+        "AC;line;connect;A,C;0;0;0",
+        "BC;line;connect;B,C;0;0;0"
+    ],
+    // Joyce's prose forms: AEC explicitly names E on the line A→C
+    // ("the straight line AEC"); EC reverses CE; CA / CB the
+    // letter-reversed forms.
+    aliases: {
+        "AEC": "AC",
+        "BEC": "BC",
+        "EC":  "CE",
+        "CA":  "AC",
+        "CB":  "BC"
+    }
+});
+</script>
+</figure><p>Zeno of Sidon criticized the proof because it was not shown that the sides do not meet before they reach the vertices. Suppose <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="BC">BC</span> meet at <span class="elem-ref" data-elem="E">E</span> before they reach <span class="elem-ref" data-elem="C">C</span>, that is, the straight lines <span class="elem-ref" data-elem="AEC">AEC</span> and <span class="elem-ref" data-elem="BEC">BEC</span> have a common segment <span class="elem-ref" data-elem="EC">EC</span>. Then they would contain a triangle <span class="elem-ref" data-elem="ABE">ABE</span> which is not equilateral, but isosceles.</p>
+<p>Zeno recognized that in order to destroy his counterexample it was necessary to assume that straight lines cannot have a common segment. Proclus relates a supposed proof of that statement, the same one found in proposition <a href="/elements/books/bookXI/propositions/propXI1/">XI.1</a>, but it is faulty. Proclus and Posidonius quoted properties of lines and circles that were never proven and never explicitly assumed as postulates.</p>
+<p>The possibilities that haven't been excluded are much more numerous than Zeno's example. The sides could meet numerous times and the region they contain could look like a necklace of bubbles. What needs to be shown (or assumed as a postulate) is that two infinitely extended straight lines can meet in at most one point.</p>
+<h4>Use of Proposition 1</h4>
+<p>The construction in this proposition is directly used in propositions <a href="/elements/books/bookI/propositions/propI2/">I.2</a>, <a href="/elements/books/bookI/propositions/propI9/">I.9</a>, <a href="/elements/books/bookI/propositions/propI10/">I.10</a>, <a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookXI/propositions/propXI11/">XI.11</a>, and <a href="/elements/books/bookXI/propositions/propXI22/">XI.22</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI2/">I.2</a>, <a href="/elements/books/bookI/propositions/propI9/">I.9</a>, <a href="/elements/books/bookI/propositions/propI10/">I.10</a>, <a href="/elements/books/bookI/propositions/propI11/">I.11</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI22/">XI.22</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII13/">XIII.13</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

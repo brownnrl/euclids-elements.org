@@ -1,0 +1,107 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Postulate 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Postulates</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Postulate 5</span>
+</nav>
+
+
+
+
+<div class="theorem">
+<h1>Postulate 5</h1>
+<div class="statement">That, if a straight line falling on two straight lines makes the interior angles on the same side less than two right angles, the two straight lines, if produced indefinitely, meet on that side on which are the angles less than the two right angles.</div>
+</div>
+
+
+<h2 id="guide">Guide</h2>
+<p>Of course, this is a postulate for plane geometry. It should include the condition that the two straight lines lie in a plane, otherwise, skew lines in space would satisfy the hypotheses. Also, without an ambient plane, the term "that side [of the straight line]" has no meaning.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_0" width="280" height="160" tabindex="0"></canvas>
+<noscript><img alt="java applet or image" src="post5.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "I.Post.5",
+        elements: [
+            "A;point;free;40,40",
+            "C;point;free;220,40",
+            "AC;line;connect;A,C",
+            "B;point;lineSlider;AC,130,40",
+            "D;point;free;60,110",
+            "F;point;free;240,120",
+            "DF;line;connect;D,F",
+            "E;point;lineSlider;DF,180,120",
+            "BE;line;connect;B,E"
+        ],
+    });
+</script>
+</figure><p>In the diagram, if angle <em>ABE</em> plus angle <em>BED</em> is less than two right angles (180°), then lines <em>AC</em> and <em>DF</em> will meet when extended in the direction of <em>A</em> and <em>D.</em></p>
+<p>This postulate is usually called the "parallel postulate" since it can be used to prove properties of parallel lines. Euclid develops the theory of parallel lines in propositions <a href="/elements/books/bookI/propositions/propI27/">I.27</a> through I.31.</p>
+<p>The parallel postulate is historically the most interesting postulate. Geometers throughout the ages have tried to show that it could be proved from the remaining postulates so that it wasn't necessary to assume it. The process tried was to assume its falsehood, then derive a contradiction. Many strange conclusions follow from denying the parallel postulate, and several geometers found such great absurdities that they concluded that the parallel postulate did follow from the rest.</p>
+<p>Nevertheless, these apparent absurdities are not contradictions. In the early nineteenth century, Bolyai, Lobachevsky, and Gauss found ways of dealing with this non-Euclidean geometry by means of analysis and accepted it as a valid kind of geometry, although very different from Euclidean geometry. This hyperbolic geometry, as it is called, is just as consistent as Euclidean geometry and has many uses.</p>
+<p>Thus, we know now that we must include the parallel postulate to derive Euclidean geometry. For more on non-Euclidean geometries, see the notes on <a href="../../propositions/propI29/#hyperbolic">hyperbolic geometry</a> after I.29 and <a href="../../propositions/propI16/#elliptic">elliptic geometry</a> after I.16.</p>
+<p>Euclid does not use this parallel postulate until Proposition I.29, but nearly all of the rest of Book I depends on it. For more commentary about the postulate see the Guides to <a href="../../propositions/propI29/#guide">I.29</a> and <a href="../../propositions/propI30/#guide">I.30</a>.</p>
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI29/">I.29</a>, <a href="/elements/books/bookI/propositions/propI44/">I.44</a></td></tr>
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII10/">II.10</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI4/">VI.4</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

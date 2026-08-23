@@ -1,0 +1,138 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 31</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 31</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 31</h1>
+    <div class="statement">In a circle the angle in the semicircle is right, that in a greater segment less than a right angle, and that in a less segment greater than a right angle; further the angle of the greater segment is greater than a right angle, and the angle of the less segment is less than a right angle.</div>
+    <p>Let <em>ABCD</em> be a circle, let <em>BC</em> be its diameter, and <em>E</em> its center.  Join <em>BA, AC, AD,</em> and <em>DC.</em></p>
+<p>I say that the angle <em>BAC</em> in the semicircle <em>BAC</em> is right, the angle <em>ABC</em> in the segment <em>ABC</em> greater than the semicircle is less than a right angle, and the angle <em>ADC</em> in the segment <em>ADC</em> less than the semicircle is greater than a right angle.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="280" tabindex="0"></canvas>
+<noscript><img alt="III.31 diagram" src="propIII31.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.31",
+        pivot: "E",
+        elements: [
+            "B;point;free;130,240",
+            "C;point;free;210,40",
+            "BC;line;connect;B,C",
+            "E;point;midpoint;BC;black;green",
+            "ABCD;circle;radius;E,B;0;0;0,0,0;random",
+            "A;point;circleSlider;ABCD,60,90",
+            "D;point;circleSlider;ABCD,80,40",
+            "AB;line;connect;A,B",
+            "AC;line;connect;A,C",
+            "AD;line;connect;A,D",
+            "CD;line;connect;C,D",
+            "AE;line;connect;A,E",
+            "F;point;lineSlider;A,B,30,30",
+            "FA;line;connect;F,A"
+        ],
+    });
+</script>
+</figure><p>Join <em>AE,</em> and carry <em>BA</em> through to <em>F.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>Then, since <em>BE</em> equals <em>EA,</em> the angle <em>ABE</em> also equals the angle <em>BAE.</em>  Again, since <em>CE</em> equals <em>EA,</em> the angle <em>ACE</em> also equals the angle <em>CAE.</em>  Therefore the whole angle <em>BAC</em> equals the sum of the two angles <em>ABC</em> and <em>ACB.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>But the angle <em>FAC</em> exterior to the triangle <em>ABC</em> also equals the sum of the two angles <em>ABC</em> and <em>ACB.</em>  Therefore the angle <em>BAC</em> also equals the angle <em>FAC.</em>  Therefore each is right.  Therefore the angle <em>BAC</em> in the semicircle <em>BAC</em> is right.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI17/">I.17</a></div>
+<p>Next, since in the triangle <em>ABC</em> the sum of the two angles <em>ABC</em> and <em>BAC</em> is less than two right angles, and the angle <em>BAC</em> is a right angle, the angle <em>ABC</em> is less than a right angle.  And it is the angle in the segment <em>ABC</em> greater than the semicircle.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII22/">III.22</a></div>
+<p>Next, since <em>ABCD</em> is a quadrilateral in a circle, and the sum of the opposite angles of quadrilaterals in circles equals two right angles, while the angle <em>ABC</em> is less than a right angle, therefore the remaining angle <em>ADC</em> is greater than a right angle.  And it is the angle in the segment <em>ADC</em> less than the semicircle.</p>
+<p>I say further that the angle of the greater segment, namely that contained by the circumference <em>ABC</em> and the straight line <em>AC,</em> is greater than a right angle, and the angle of the less segment, namely that contained by the circumference <em>ADC</em> and the straight line <em>AC,</em> is less than a right angle.</p>
+<p>This is at once manifest.  For, since the angle contained by the straight lines <em>BA</em> and <em>AC</em> is right, the angle contained by the circumference <em>ABC</em> and the straight line <em>AC</em> is greater than a right angle.</p>
+<p>Again, since the angle contained by the straight lines <em>AC</em> and <em>AF</em> is right, the angle contained by the straight line <em>CA</em> and the circumference <em>ADC</em> is less than a right angle.</p>
+<p>Therefore <em>in a circle the angle in the semicircle is right, that in a greater segment less than a right angle, and that in a less segment greater than a right angle; further the angle of the greater segment is greater than a right angle, and the angle of the less segment is less than a right angle.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The part of this proposition which says that an angle inscribed in a semicircle is a right angle is often called <em>Thale's theorem</em>.</p>
+<p>This proposition is used in <a href="/elements/books/bookIII/propositions/propIII32/">III.32</a> and in each of the rest of the geometry books, namely, Books IV, VI, XI, XII, XIII.  It is also used in Book X.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII32/">III.32</a>, <a href="/elements/books/bookIII/propositions/propIII33/">III.33</a></td></tr>
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV5/">IV.5</a>, <a href="/elements/books/bookIV/propositions/propIV6/">IV.6</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI13/">VI.13</a></td></tr>
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX14/">X.14</a>, <a href="/elements/books/bookX/propositions/propX29/">X.29</a>, <a href="/elements/books/bookX/propositions/propX30/">X.30</a>, <a href="/elements/books/bookX/propositions/propX34/">X.34</a>, <a href="/elements/books/bookX/propositions/propX35/">X.35</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII1/">XII.1</a>, <a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII12/">XIII.12</a>, <a href="/elements/books/bookXIII/propositions/propXIII14/">XIII.14</a>, <a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

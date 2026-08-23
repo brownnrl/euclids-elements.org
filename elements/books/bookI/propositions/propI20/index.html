@@ -1,0 +1,370 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 20</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 20</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 20</h1>
+    <div class="statement">In any triangle the sum of any two sides is greater than the remaining one.</div>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> be a triangle.</p>
+<p>I say that in the triangle <span class="elem-ref" data-elem="ABC">ABC</span> the sum of any two sides is greater than the remaining one, that is, the sum of <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AC">AC</span> is greater than <span class="elem-ref" data-elem="BC">BC</span>, the sum of <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="BC">BC</span> is greater than <span class="elem-ref" data-elem="AC">AC</span>, and the sum of <span class="elem-ref" data-elem="BC">BC</span> and <span class="elem-ref" data-elem="CA">CA</span> is greater than <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="220" height="220" tabindex="0"></canvas>
+<noscript><img alt="I.20 diagram" src="propI20.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.20",
+        elements: [
+            "A;point;free;70,130",
+            "B;point;free;40,180",
+            "C;point;free;180,180",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            // BA produced beyond A by AC to D (so DB = BA + AC); DC joined.
+            // △ACD is isosceles (DA = AC).
+            "AD;line;extend;B,A,A,C",
+            "D;point;last;AD",
+            "CD;line;connect;C,D",
+            "ACD;polygon;triangle;A,C,D;0;0;0;random",
+            // △DCB (the one whose greater angle gives the longer side) +
+            // the long side DB, all zero-color hover targets.
+            "DCB;polygon;triangle;D,C,B;0;0;0;0",
+            "DB;line;connect;D,B;0;0;0",
+            "AB;line;connect;A,B;0;0;0",
+            "BC;line;connect;B,C;0;0;0",
+            "AC;line;connect;A,C;0;0;0",
+            // Angle markers. ∠ADC = ∠BDC (D on line BA, A between B and D).
+            // ∠ACD's marker is DCA — the name "ACD" already belongs to the
+            // isosceles polygon, so prose uses {ACD|DCA}. At C, ∠ACD nests
+            // inside ∠BCD (#103).
+            "ADC;sector;angleMarker;D,A,C",
+            "DCA;sector;angleMarker;C,D,A",
+            "BCD;sector;angleMarker;C,B,D"
+        ],
+        aliases: {
+            "BA":  "AB",
+            "CA":  "AC",
+            "DA":  "AD",
+            "DC":  "CD",
+            "BDC": "ADC"
+        },
+        slides: [
+            { text: "Let {ABC} be a triangle.",
+              visible: ["ABC"] },
+            { text: "I say that in the triangle {ABC} the sum of any two sides is greater than the remaining one, that is, the sum of {BA} and {AC} is greater than {BC}, the sum of {AB} and {BC} is greater than {AC}, and the sum of {BC} and {CA} is greater than {AB}.",
+              visible: ["ABC"],
+              highlighted: ["AB","BC","AC"] },
+            { text: "Draw {BA} through to the point {D}, and make {DA} equal to {CA}.",
+              visible: ["ABC","AD","D"],
+              highlighted: ["AD","AC"],
+              transition: {
+                  animations: [
+                      { elem: "AD", name: geomlib.A.Line.straightEdgeExtend },
+                      { elem: "D",  name: geomlib.A.Point.appear }
+                  ]
+              },
+              justifications: [{ ref: "I.Post.2" }, { ref: "I.3" }] },
+            { text: "Join {DC}.",
+              visible: ["ABC","AD","D","CD","ACD"],
+              transition: {
+                  animations: [
+                      { elem: "CD",  name: geomlib.A.Line.straightEdgeConnect }
+                  ]
+              },
+              justifications: [{ ref: "I.Post.1" }] },
+            { text: "Since {DA} equals {AC}, therefore the angle {ADC} also equals the angle {ACD|DCA}. Therefore the angle {BCD} is greater than the angle {ADC}.",
+              visible: ["ABC","AD","D","CD","ACD","ADC","DCA","BCD"],
+              highlighted: ["AD","AC","ADC","DCA","BCD"],
+              transition: {
+                  mode: "parallel",
+                  animations: [
+                      { elem: "ADC", name: geomlib.A.Sector.sweep },
+                      { elem: "DCA", name: geomlib.A.Sector.sweep },
+                      { elem: "BCD", name: geomlib.A.Sector.sweep }
+                  ]
+              },
+              justifications: [{ ref: "I.5" }, { ref: "C.N.5" }] },
+            { text: "Since {DCB} is a triangle having the angle {BCD} greater than the angle {BDC}, and the side opposite the greater angle is greater, therefore {DB} is greater than {BC}.",
+              visible: ["ABC","AD","D","CD","ACD","ADC","BCD","DCB"],
+              highlighted: ["BCD","ADC","DB","BC"],
+              transition: {
+                  animations: [
+                      { elem: "DCB", name: geomlib.A.Polygon.outline }
+                  ]
+              },
+              justifications: [{ ref: "I.19" }] },
+            { text: "But {DA} equals {AC}, therefore the sum of {BA} and {AC} is greater than {BC}.",
+              visible: ["ABC","AD","D","CD","ACD"],
+              highlighted: ["AD","AC","AB","BC"] },
+            { text: "Similarly we can prove that the sum of {AB} and {BC} is also greater than {CA}, and the sum of {BC} and {CA} is greater than {AB}.",
+              visible: ["ABC"],
+              highlighted: ["AB","BC","AC"] },
+            { text: "Therefore in any triangle the sum of any two sides is greater than the remaining one.",
+              visible: ["ABC"],
+              highlighted: ["AB","BC","AC"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification
+    // callback — same hand-authored pattern as the earlier props.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.Post.2": "/elements/books/bookI/postulates/post2/",
+        "I.3":      "/elements/books/bookI/propositions/propI3/",
+        "I.5":      "/elements/books/bookI/propositions/propI5/",
+        "I.19":     "/elements/books/bookI/propositions/propI19/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/postulates/post2/">I.Post.2</a>, <a href="/elements/books/bookI/propositions/propI3/">I.3</a></div>
+<p>Draw <span class="elem-ref" data-elem="BA">BA</span> through to the point <span class="elem-ref" data-elem="D">D</span>, and make <span class="elem-ref" data-elem="DA">DA</span> equal to <span class="elem-ref" data-elem="CA">CA</span>.</p>
+<div class="just"><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a></div>
+<p>Join <span class="elem-ref" data-elem="DC">DC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a>, <a href="/elements/books/bookI/commonnotions/cn5/">C.N.5</a></div>
+<p>Since <span class="elem-ref" data-elem="DA">DA</span> equals <span class="elem-ref" data-elem="AC">AC</span>, therefore the angle <span class="elem-ref" data-elem="ADC">ADC</span> also equals the angle <span class="elem-ref" data-elem="DCA">ACD</span>. Therefore the angle <span class="elem-ref" data-elem="BCD">BCD</span> is greater than the angle <span class="elem-ref" data-elem="ADC">ADC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI19/">I.19</a></div>
+<p>Since <span class="elem-ref" data-elem="DCB">DCB</span> is a triangle having the angle <span class="elem-ref" data-elem="BCD">BCD</span> greater than the angle <span class="elem-ref" data-elem="BDC">BDC</span>, and the side opposite the greater angle is greater, therefore <span class="elem-ref" data-elem="DB">DB</span> is greater than <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<p>But <span class="elem-ref" data-elem="DA">DA</span> equals <span class="elem-ref" data-elem="AC">AC</span>, therefore the sum of <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AC">AC</span> is greater than <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<p>Similarly we can prove that the sum of <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="BC">BC</span> is also greater than <span class="elem-ref" data-elem="CA">CA</span>, and the sum of <span class="elem-ref" data-elem="BC">BC</span> and <span class="elem-ref" data-elem="CA">CA</span> is greater than <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<p>Therefore <em>in any triangle the sum of any two sides is greater than the remaining one.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is known as the triangle inequality. It is part of the statement that the shortest path between two points is a straight line. With this proposition you can show that among all polygonal paths between two points, the shortest one is the one that consists of a single line joining the two points. There are, of course, many other conceivable paths besides polygonal paths.</p>
+<h4>A minimum distance</h4>
+<p>This proposition on the triangle inequality, along with <a href="/elements/books/bookI/propositions/propI15/">I.15</a> on vertical angles, allows us to solve a problem on minimum distance, described and solved by Heron of Alexandria (ca. 10–ca. 70).</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="280" height="300" tabindex="0"></canvas>
+<noscript><img alt="Minimum distance" src="propI20a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Minimum distance",
+        elements: [
+            "A;point;free;70,30",
+            "B;point;free;190,70",
+            "C;point;free;50,180",
+            "D;point;free;240,150",
+            "C1;point;extend;C,D,C,D;0;0",
+            "D1;point;extend;D,C,D,C;0;0",
+            "CD;line;connect;C1,D1",
+            "P;point;lineSlider;CD,75,0",
+            "AP;line;connect;A,P",
+            "PB;line;connect;P,B",
+            "F;point;foot;B,CD",
+            "B';point;extend;B,F,B,F",
+            "AB';line;connect;A,B'",
+            "E;point;intersection;AB',CD",
+            "EB;line;connect;E,B",
+            "PB';line;connect;P,B'",
+            "BB';line;connect;B,B'",
+            // Hover targets for the Heron discussion below: the perpendicular
+            // BF and its reflection FB', the path-distance segments, and the
+            // angle of incidence (AEC) = angle of reflection (BED).
+            "BF;line;connect;B,F;0;0;0",
+            "FB';line;connect;F,B';0;0;0",
+            "AE;line;connect;A,E;0;0;0",
+            "EP;line;connect;E,P;0;0;0",
+            "EB';line;connect;E,B';0;0;0",
+            // The optimal bent path A→E→B as ONE open route (#121, geomlib
+            // 0.13.0), so the Guide's "the path AEB" hover-lights the whole
+            // route instead of two separate segments.
+            "AEB;line;path;A,E,B;0;0;0",
+            "AEC;sector;angleMarker;E,A,C",
+            "BED;sector;angleMarker;E,B,D",
+            // The congruent triangles BFE ≅ B'FE (zero-color outlines) and
+            // the remaining angles of that step: the right angles at F and
+            // the vertical angle B'ED across from AEC. The angle markers
+            // get "ang"-prefixed names so {BFE}/{B'FE} stay the triangles
+            // (prose uses {BFE|angBFE}, {BF'E|angB'FE} for the angles).
+            "BFE;polygon;triangle;B,F,E;0;0;0;0",
+            "B'FE;polygon;triangle;B',F,E;0;0;0;0",
+            "angBFE;sector;angleMarker;F,B,E",
+            "angB'FE;sector;angleMarker;F,B',E",
+            "B'ED;sector;angleMarker;E,B',D"
+        ],
+        aliases: {
+            "BE":  "EB",
+            "BP":  "PB",
+            "B'P": "PB'"
+        },
+        // The Heron min-distance Guide is itself a proof, so this canvas
+        // also gets a slideshow (an exception to "only the proposition
+        // canvas gets slides"). P, the variable point, is revealed on
+        // slide 2; the rest of the construction is derived.
+        deferDraggables: ["P"],
+        slides: [
+            { text: "Suppose there are two points {A} and {B} on the same side of a line {CD}.",
+              visible: ["CD"],
+              highlighted: ["A","B"],
+              transition: { animations: [ { elem: "CD", name: geomlib.A.Line.straightEdgeConnect } ] } },
+            { text: "The problem is to find the shortest path which goes first from the point {A} to some point {P} on the line {CD}, then from {P} to the point {B}.",
+              visible: ["CD","P","AP","PB"],
+              transition: { animations: [
+                  { elem: "P",  name: geomlib.A.Point.appear },
+                  { elem: "AP", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "PB", name: geomlib.A.Line.straightEdgeConnect } ] } },
+            { text: "But that still leaves us the question of which point {P} to choose on the line {CD} to minimize the sum of the distances {AP} plus {PB}.",
+              visible: ["CD","P","AP","PB"],
+              highlighted: ["AP","PB"] },
+            { text: "The solution is that the shortest path will be the path {AEB} where angle of incidence, namely, angle {AEC}, equals the angle of reflection, namely, angle {BED}.",
+              visible: ["CD","P","AP","PB","E","AE","EB","AEB","AEC","BED"],
+              highlighted: ["AEB","AEC","BED"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "E",   name: geomlib.A.Point.appear },
+                  { elem: "EB",  name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "AEC", name: geomlib.A.Sector.sweep },
+                  { elem: "BED", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Draw a perpendicular {BF} from the point {B} to the line {CD}, and extend it to {B'} so that {FB'} = {BF}.",
+              visible: ["CD","E","AE","EB","AEC","BED","F","BB'","B'","BF","FB'"],
+              highlighted: ["AE","BF","FB'"],
+              transition: { animations: [
+                  { elem: "F",   name: geomlib.A.Point.appear },
+                  { elem: "BB'", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "B'",  name: geomlib.A.Point.appear } ] },
+              justifications: [{ ref: "I.12" }, { ref: "I.Post.2" }, { ref: "I.3" }] },
+            { text: "Draw {AB'} and let {E} be the point where {AB'} intersects {CD}. Draw {BE}.",
+              visible: ["CD","E","AE","EB","AEC","BED","F","BB'","B'","BF","FB'","AB'"],
+              highlighted: ["AB'","E"],
+              transition: { animations: [ { elem: "AB'", name: geomlib.A.Line.straightEdgeConnect } ] } },
+            { text: "Now, triangles {BFE} and {B'FE} are congruent since they have two sides and the included angle equal, the included angles being right angles.",
+              visible: ["CD","E","AE","EB","AEC","BED","F","BB'","B'","BF","FB'","AB'","BFE","B'FE"],
+              highlighted: ["BFE","B'FE"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "BFE",  name: geomlib.A.Polygon.outline },
+                  { elem: "B'FE", name: geomlib.A.Polygon.outline } ] },
+              justifications: [{ ref: "I.4" }] },
+            { text: "Therefore, angles {BFE|angBFE} and {BF'E|angB'FE} are equal. The vertical angle {AEC} across from angle {B'ED} also equals these angles. Thus, the angle of incidence {AEC} equals the angle of reflection {BED}.",
+              visible: ["CD","E","AE","EB","AEC","BED","F","BB'","B'","BF","FB'","AB'","BFE","B'FE","angBFE","angB'FE","B'ED"],
+              highlighted: ["angBFE","angB'FE","AEC","B'ED","BED"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "angBFE",  name: geomlib.A.Sector.sweep },
+                  { elem: "angB'FE", name: geomlib.A.Sector.sweep },
+                  { elem: "B'ED",    name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.15" }] },
+            { text: "We still have to show that the distance {AE} + {EB} is less than any distance {AP} + {EP} for any point {P} other than {E} that lies on the line {CD}. Let {P} be such a point and draw lines {AP}, {BP}, and {B'P}.",
+              visible: ["CD","P","AP","PB","E","AE","EB","AEC","BED","F","BB'","B'","BF","FB'","AB'","BFE","B'FE","angBFE","angB'FE","B'ED","PB'","EP"],
+              highlighted: ["AP","PB","PB'"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "P",   name: geomlib.A.Point.appear },
+                  { elem: "AP",  name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "PB",  name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "PB'", name: geomlib.A.Line.straightEdgeConnect } ] } },
+            { text: "Then by proposition I.20, above, {AP} + {EP} is less than {AB'}. But {AB'} = {AE} + {EB'}, and {EB'} = {EB}, therefore {AP} + {EP} is less than {AE} + {EB}.",
+              visible: ["CD","P","AP","PB","E","AE","EB","AEC","BED","F","BB'","B'","BF","FB'","AB'","BFE","B'FE","angBFE","angB'FE","B'ED","PB'","EP","EB'"],
+              highlighted: ["AP","EP","AB'","AE","EB'","EB"],
+              justifications: [{ ref: "I.20" }] },
+            { text: "Thus, the shortest bent line between two points on the same side of a line that meets that line is the one where the angle of incidence equals the angle of reflection.",
+              visible: ["CD","P","AP","PB","E","AE","EB","AEC","BED","F","BB'","B'","BF","FB'","AB'"],
+              highlighted: ["AE","EB","AEC","BED"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Heron-Guide citations (added to the shared page lookup).
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.12": "/elements/books/bookI/propositions/propI12/",
+        "I.4":  "/elements/books/bookI/propositions/propI4/",
+        "I.15": "/elements/books/bookI/propositions/propI15/",
+        "I.20": "/elements/books/bookI/propositions/propI20/"
+    });
+</script>
+</figure><p>Suppose there are two points <span class="elem-ref" data-elem="A">A</span> and <span class="elem-ref" data-elem="B">B</span> on the same side of a line <span class="elem-ref" data-elem="CD">CD</span>. The problem is to find the shortest path which goes first from the point <span class="elem-ref" data-elem="A">A</span> to some point <span class="elem-ref" data-elem="P">P</span> on the line <span class="elem-ref" data-elem="CD">CD</span>, then from <span class="elem-ref" data-elem="P">P</span> to the point <span class="elem-ref" data-elem="B">B</span>. We will only consider paths that are made out of straight lines; call such a path a <em>bent line.</em> But that still leaves us the question of which point <span class="elem-ref" data-elem="P">P</span> to choose on the line <span class="elem-ref" data-elem="CD">CD</span> to minimize the sum of the distances <span class="elem-ref" data-elem="AP">AP</span> plus <span class="elem-ref" data-elem="PB">PB</span>.</p>
+<p>The solution is that the shortest path will be the path <span class="elem-ref" data-elem="AEB">AEB</span> where angle of incidence, namely, angle <span class="elem-ref" data-elem="AEC">AEC</span>, equals the angle of reflection, namely, angle <span class="elem-ref" data-elem="BED">BED</span>.</p>
+<p>First, we should show how to construct the bent line where the angle of incidence equals the angle of reflection. Draw a perpendicular <span class="elem-ref" data-elem="BF">BF</span> from the point <span class="elem-ref" data-elem="B">B</span> to the line <span class="elem-ref" data-elem="CD">CD</span> (<a href="/elements/books/bookI/propositions/propI12/">I.12</a>), and extend it to <span class="elem-ref" data-elem="B'">B'</span> so that <span class="elem-ref" data-elem="FB'">FB'</span> = <span class="elem-ref" data-elem="BF">BF</span> (<a href="/elements/books/bookI/postulates/post2/">I.Post.2</a>, <a href="/elements/books/bookI/propositions/propI3/">I.3</a>). Draw <span class="elem-ref" data-elem="AB'">AB'</span> and let <span class="elem-ref" data-elem="E">E</span> be the point where <span class="elem-ref" data-elem="AB'">AB'</span> intersects <span class="elem-ref" data-elem="CD">CD</span>. (There will be a point of intersection since <span class="elem-ref" data-elem="A">A</span> and <span class="elem-ref" data-elem="B'">B'</span> are on opposite sides of <span class="elem-ref" data-elem="CD">CD</span>.) Draw <span class="elem-ref" data-elem="BE">BE</span>.</p>
+<p>Now, triangles <span class="elem-ref" data-elem="BFE">BFE</span> and <span class="elem-ref" data-elem="B'FE">B'FE</span> are congruent since they have two sides and the included angle equal (<a href="/elements/books/bookI/propositions/propI4/">I.4</a>), the included angles being right angles. Therefore, angles <span class="elem-ref" data-elem="angBFE">BFE</span> and <span class="elem-ref" data-elem="angB'FE">BF'E</span> are equal. The vertical angle <span class="elem-ref" data-elem="AEC">AEC</span> across from angle <span class="elem-ref" data-elem="B'ED">B'ED</span> also equals these angles (<a href="/elements/books/bookI/propositions/propI15/">I.15</a>). Thus, the angle of incidence <span class="elem-ref" data-elem="AEC">AEC</span> equals the angle of reflection <span class="elem-ref" data-elem="BED">BED</span>.</p>
+<p>We still have to show that the distance <span class="elem-ref" data-elem="AE">AE</span> + <span class="elem-ref" data-elem="EB">EB</span> is less than any distance <span class="elem-ref" data-elem="AP">AP</span> + <span class="elem-ref" data-elem="EP">EP</span> for any point <span class="elem-ref" data-elem="P">P</span> other than <span class="elem-ref" data-elem="E">E</span> that lies on the line <span class="elem-ref" data-elem="CD">CD</span>. Let <span class="elem-ref" data-elem="P">P</span> be such a point and draw lines <span class="elem-ref" data-elem="AP">AP</span>, <span class="elem-ref" data-elem="BP">BP</span>, and <span class="elem-ref" data-elem="B'P">B'P</span>. Then by proposition I.20, above, <span class="elem-ref" data-elem="AP">AP</span> + <span class="elem-ref" data-elem="EP">EP</span> is less than <span class="elem-ref" data-elem="AB'">AB'</span>. But <span class="elem-ref" data-elem="AB'">AB'</span> = <span class="elem-ref" data-elem="AE">AE</span> + <span class="elem-ref" data-elem="EB'">EB'</span>, and <span class="elem-ref" data-elem="EB'">EB'</span> = <span class="elem-ref" data-elem="EB">EB</span>,
+therefore <span class="elem-ref" data-elem="AP">AP</span> + <span class="elem-ref" data-elem="EP">EP</span> is less than <span class="elem-ref" data-elem="AE">AE</span> + <span class="elem-ref" data-elem="EB">EB</span>.</p>
+<p>Thus, the shortest bent line between two points on the same side of a line that meets that line is the one where the angle of incidence equals the angle of reflection.</p>
+<p>Q.E.D.</p>
+<h4>Use of Proposition 20</h4>
+<p>This proposition is used in the next two propositions, several in Book III, and <a href="/elements/books/bookXI/propositions/propXI20/">XI.20</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI21/">I.21</a>, <a href="/elements/books/bookI/propositions/propI22/">I.22</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII7/">III.7</a>, <a href="/elements/books/bookIII/propositions/propIII8/">III.8</a>, <a href="/elements/books/bookIII/propositions/propIII11/">III.11</a>, <a href="/elements/books/bookIII/propositions/propIII12/">III.12</a>, <a href="/elements/books/bookIII/propositions/propIII15/">III.15</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI20/">XI.20</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

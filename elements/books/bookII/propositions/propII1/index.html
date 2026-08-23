@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book II</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book II</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 1</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 1</h1>
+    <div class="statement">If there are two straight lines, and one of them is cut into any number of segments whatever, then the rectangle contained by the two straight lines equals the sum of the rectangles contained by the uncut straight line and each of the segments.</div>
+    <p>Let <em>A</em> and <em>BC</em> be two straight lines, and let <em>BC</em> be cut at random at the points <em>D</em> and <em>E.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="330" height="250" tabindex="0"></canvas>
+<noscript><img src="propII1.gif" alt="II.1"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "II.1",
+        elements: [
+            "A0;point;free;-1000,40;0,0",
+            "A3;point;free;1000,40;0,0",
+            "A1;point;lineSlider;A0,A3,90,40;0",
+            "A2;point;lineSlider;A0,A3,200,40;0",
+            "A;line;connect;A1,A2;0,0,0",
+            "B;point;free;40,70",
+            "C';point;parallelogram;B,A;0;0",
+            "C;point;lineSlider;B,C',290,70",
+            "BC;line;connect;B,C",
+            "D;point;lineSlider;BC,110,70",
+            "E;point;lineSlider;BC,220,70",
+            "BF';line;perpendicular;B,C;0;0;0",
+            "F;point;lineSlider;BF',30,210",
+            "BF;line;connect;B,F",
+            "G;point;cutoff;BF,A",
+            "DBGK;polygon;parallelogram;D,B,G;0;0;0,0,0;random",
+            "K;point;vertex;DBGK,4",
+            "EDKL;polygon;parallelogram;E,D,K;0;0;0,0,0;random",
+            "L;point;vertex;EDKL,4",
+            "CELH;polygon;parallelogram;C,E,L;0;0;0,0,0;random",
+            "H;point;vertex;CELH,4"
+        ],
+    });
+</script>
+</figure><p>I say that the rectangle <em>A</em> by <em>BC</em> equals the sum of the rectangle <em>A</em> by <em>BD,</em> the rectangle <em>A</em> by <em>DE,</em> and the rectangle <em>A</em> by <em>EC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Draw <em>BF</em> from <em>B</em> at right angles to <em>BC.</em>  Make <em>BG</em> equal to <em>A.</em>  Draw <em>GH</em> through <em>G</em> parallel to <em>BC.</em>   Through <em>D, E,</em> and <em>C</em> draw <em>DK, EL,</em> and <em>CH</em> parallel to <em>BG.</em></p>
+<p>Then <em>BH</em> equals the sum of <em>BK, DL,</em> and <em>EH.</em></p>
+<div class="just"><a href="/elements/books/bookII/definitions/defII1/">II.Def.1</a><br><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
+<p>Now <em>BH</em> is the rectangle <em>A</em> by <em>BC,</em> for it is contained by <em>GB</em> and <em>BC,</em> and <em>BG</em> equals <em>A</em>; <em>BK</em> is the rectangle <em>A</em> by <em>BD,</em> for it is contained by <em>GB</em> and <em>BD,</em> and <em>BG</em> equals <em>A</em>; and <em>DL</em> is the rectangle <em>A</em> by <em>DE,</em> for <em>DK,</em> that is <em>BG,</em> equals <em>A.</em>  Similarly also <em>EH</em> is the rectangle <em>A</em> by <em>EC.</em></p>
+<p>Therefore the rectangle <em>A</em> by <em>BC</em> equals the sum of the rectangle <em>A</em> by <em>BD,</em> the rectangle <em>A</em> by <em>DE,</em> and the rectangle <em>A</em> by <em>EC.</em></p>
+<p>Therefore <em>if there are two straight lines, and one of them is cut into any number of segments whatever, then the rectangle contained by the two straight lines equals the sum of the rectangles contained by the uncut straight line and each of the segments.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>As described in <a href="/elements/books/bookII/definitions/defII1/">II.Def.1</a>, the phrase "the rectangle contained by the two straight lines" means any rectangle constructed with two sides equal to the two given sides.  In some sense this is the product of the two lines.
+When the sides have names, such as <em>A</em> and <em>BC,</em> we will refer to that rectangle by "the rectangle <em>A</em> by <em>BC</em>" since that is a little clearer than Euclid's terse "the rectangle <em>A, BC.</em>"</p>
+<p>In this proposition Euclid proves that if</p>
+<center><i>BC</i> = <i>BD</i> + <i>DE</i> + <i>EC,</i></center><p>then</p>
+<center>(<i>A</i> by <i>BC</i>) = (<i>A</i> by <i>BD</i>) + (<i>A</i> by <i>DE</i>) + (<i>A</i> by <i>EC</i>).</center><p>In modern algebraic notation this could be stated as follows:
+If <em>y</em> = <em>y</em><sub>1</sub> + <em>y</em><sub>2</sub> + ... + <em>y<sub>n</sub>,</em> then <em>xy</em> = <em>x</em> <em>y</em><sub>1</sub> + <em>x</em> <em>y</em><sub>2</sub> + ... + <em>x y<sub>n</sub>.</em>  This can also be stated in a single equation as</p>
+<center><i>x</i> (<i>y</i><sub>1</sub> + <i>y</i><sub>2</sub> + ... + <i>y<sub>n</sub></i>) = <i>x y</i><sub>1</sub> + <i>x y</i><sub>2</sub> + ... + <i>x y<sub>n</sub>.</i></center><p>Here <em>x</em> and the various <em>y<sub>i</sub></em>'s are all lines, and <em>n</em> is an arbitrary number.   In modern terminology this identity is called the <em>distributive law</em> for multiplication over addition.</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is not specifically invoked in the rest of the <em>Elements.</em>  The next two propositions, however, are special cases of it, and they are each explicitly used once.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

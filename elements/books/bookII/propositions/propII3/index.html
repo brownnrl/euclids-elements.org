@@ -1,0 +1,124 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book II</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book II</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 3</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 3</h1>
+    <div class="statement">If a straight line is cut at random, then the rectangle contained by the whole and one of the segments equals the sum of the rectangle contained by the segments and the square on the aforesaid segment.</div>
+    <p>Let the straight line <em>AB</em> be cut at random at <em>C.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="200" tabindex="0"></canvas>
+<noscript><img src="propII3.gif" alt="II.3"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "II.3",
+        elements: [
+            "A0;point;free;-1000,30;0,0",
+            "A3;point;free;1000,30;0,0",
+            "A;point;lineSlider;A0,A3,40,0",
+            "B;point;lineSlider;A0,A3,240,0",
+            "C;point;lineSlider;A0,A3,110,0",
+            "BCDE;polygon;square;B,C;0;0;0,0,0;random",
+            "E;point;vertex;BCDE,4",
+            "D;point;vertex;BCDE,3",
+            "DCAF;polygon;parallelogram;D,C,A;0;0;0,0,0;random",
+            "F;point;vertex;DCAF,4"
+        ],
+    });
+</script>
+</figure><p>I say that the rectangle <em>AB</em> by <em>BC</em> equals the sum of the rectangle <em>AC</em> by <em>CB</em> and the square on <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Describe the square <em>CDEB</em> on <em>CB.</em>  Draw <em>ED</em>  through to <em>F,</em> and draw <em>AF</em> through <em>A</em> parallel to either <em>CD</em> or <em>BE.</em></p>
+<p>Then <em>AE</em> equals <em>AD</em> plus <em>CE.</em></p>
+<p>Now <em>AE</em> is the rectangle <em>AB</em> by <em>BC,</em> for it is contained by <em>AB</em> and <em>BE,</em> and <em>BE</em> equals <em>BC</em>;  <em>AD</em> is the rectangle <em>AC</em> by <em>CB,</em> for <em>DC</em> equals <em>CB</em>; and <em>DB</em> is the square on <em>CB.</em></p>
+<p>Therefore the rectangle  <em>AB</em> by <em>BC</em> equals the sum of the rectangle <em>AC</em> by <em>CB</em> and the square on <em>BC.</em></p>
+<p>Therefore <em>if a straight line is cut at random, then the rectangle contained by the whole and one of the segments equals the sum of the rectangle contained by the segments and the square on the aforesaid segment.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is another special case of <a href="/elements/books/bookII/propositions/propII1/">II.1</a>.
+In modern algebraic notation it says that if <em>x</em> = <em>y</em> + <em>z,</em> then <em>xy</em> = <em>y</em><sup>2</sup> + <em>yz.</em>  Identities that are logically equivalent to this implication can be found by eliminating one of the three variables <em>x, y,</em>
+or <em>z.</em>  Here are two of them.</p>
+<center>(<i>y</i> + <i>z</i>) <i>y</i> = <i>y</i><sup>2</sup> + <i>yz,</i></center><p>and</p>
+<center><i>xy</i> = <i>y</i><sup>2</sup> + <i>y</i> (<i>x</i> – <i>y</i>).</center><h4>Use of this proposition</h4>
+<p>This proposition refers to lines and rectangles, but the analogous statement for numbers is used in a proposition in one of the Euclid's books on number theory, namely, of proposition <a href="/elements/books/bookIX/propositions/propIX15/">IX.15</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book IX</th><td><a href="/elements/books/bookIX/propositions/propIX15/">IX.15</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

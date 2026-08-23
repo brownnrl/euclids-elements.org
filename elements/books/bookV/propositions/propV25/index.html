@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 25</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book V</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book V</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 25</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 25</h1>
+    <div class="statement">If four magnitudes are proportional, then the sum of the greatest and the least is greater than the sum of the remaining two.</div>
+    <p>Let the four magnitudes <em>AB, CD, E,</em> and <em>F</em> be proportional so that <em>AB</em> is to <em>CD</em> as <em>E</em> is to <em>F,</em> and let <em>AB</em> be the greatest of them and <em>F</em> the least.</p>
+<p>I say that the sum of <em>AB</em> and <em>F</em> is greater than the sum of <em>CD</em> and <em>E.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="150" tabindex="0"></canvas>
+<noscript><img alt="V.25 diagram" src="propV25.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "V.25",
+        elements: [
+            "U0;point;free;-1000,30;0;0",
+            "U1;point;free;1000,30;0;0",
+            "V0;point;free;-1000,60;0;0",
+            "V1;point;free;1000,60;0;0",
+            "W0;point;free;-1000,100;0;0",
+            "W1;point;free;1000,100;0;0",
+            "X0;point;free;-1000,130;0;0",
+            "X1;point;free;1000,130;0;0",
+            "A;point;lineSlider;U0,U1,30,30",
+            "B;point;lineSlider;U0,U1,270,30",
+            "AB;line;connect;A,B;0;0;green",
+            "C;point;lineSlider;W0,W1,30,100",
+            "D;point;lineSlider;W0,W1,220,100",
+            "CD;line;connect;C,D;0;0;green",
+            "E1;point;lineSlider;V0,V1,30,60;0",
+            "E2;point;lineSlider;V0,V1,170,60;0",
+            "E;line;connect;E1,E2;black;0;green",
+            "F1;point;lineSlider;X0,X1,30,130;0",
+            "F2;point;proportion;A,B,C,D,E1,E2,F1,X1;0",
+            "F;line;connect;F1,F2;black;0;green",
+            "G;point;cutoff;A,B,E1,E2",
+            "H;point;cutoff;C,D,F1,F2"
+        ],
+    });
+</script>
+</figure><p>Make <em>AG</em> equal to <em>E,</em> and <em>CH</em> equal to <em>F.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV7/">V.7</a><br><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>Since <em>AB</em> is to <em>CD</em> as <em>E</em> is to <em>F,</em> and <em>E</em> equals <em>AG,</em> and <em>F</em> equals <em>CH,</em> therefore <em>AB</em> is to <em>CD</em> as <em>AG</em> is to <em>CH.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV19/">V.19</a></div>
+<p>And since the whole <em>AB</em> is to the whole <em>CD</em> as the part <em>AG</em> subtracted is to the part <em>CH</em> subtracted, therefore the remainder <em>GB</em> is also to the remainder <em>HD</em> as the whole <em>AB</em> is to the whole <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV5/">V.Def.5</a></div>
+<p>But <em>AB</em> is greater than <em>CD,</em> therefore <em>GB</em> is also greater than <em>HD.</em></p>
+<p>And, since <em>AG</em> equals <em>E,</em> and <em>CH</em> equals <em>F,</em> therefore the sum of <em>AG</em> and <em>F</em> equals the sum of <em>CH</em> and <em>E.</em></p>
+<p>And if, <em>GB</em> and <em>HD</em> being unequal, and <em>GB</em> greater, the sum of <em>AG</em> and <em>F</em> is added to <em>GB,</em> and the sum of <em>CH</em> and <em>E</em> is added to <em>HD,</em> it follows that the sum of <em>AB</em> and <em>F</em> is greater than the sum of <em>CD</em> and <em>E.</em></p>
+<p>Therefore, <em>if four magnitudes are proportional, then the sum of the greatest and the least is greater than the sum of the remaining two.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition says that if <em>w</em> : <em>x</em> = <em>y</em> : <em>z</em> and <em>w</em> is the greatest of the four magnitudes while <em>z</em> is the least, then <em>w</em> + <em>z</em> &gt; <em>x</em> + <em>y.</em> All four magnitudes must be of the same kind.</p>
+<p>The argument goes as follows. Since <em>w</em> : <em>x</em> = <em>y</em> : <em>z</em>, therefore (<em>w</em> – <em>y</em>) : (<em>x</em> – <em>z</em>) = <em>w</em> : <em>x</em>, by <a href="/elements/books/bookV/propositions/propV19/">V.19</a>. But since <em>w</em> &gt; <em>x</em>, therefore <em>w</em> – <em>y</em> &gt; <em>x</em> – <em>z</em>. Thus <em>w</em> + <em>z</em> &gt; <em>x</em> + <em>y</em>.</p>
+<p>This proposition is not used in the rest of the <em>Elements</em> but is an end in itself.</p>
+<h4>Arithmetic and geometric means</h4>
+<p>A special case of this proposition occurs when the middle terms are the same:
+<em>x</em> : <em>y</em> = <em>y</em> : <em>z.</em> In that case <em>y</em> is the mean proportional, equivalent to the geometric mean for real numbers and described as the square root of the product <em>xz.</em>
+The conclusion of the proposition, after dividing by 2, says (<em>x</em> + <em>z</em>)/2 &gt; <em>y.</em> The arithmetic mean, or average, of two magnitudes is half their sum. Thus, this proposition gives as a corollary</p>
+<blockquote><p>The arithmetic mean of two magnitudes is less than their geometric mean.</p>
+</blockquote>
+<p>This proposition relies on treating <a href="/elements/books/bookV/definitions/defV4/">V.Def.4</a> as an axiom of comparability. Infinitesimal counterexample: when <em>y</em> is infinitesimal with respect to <em>x,</em> consider the proportion (<em>x</em> + 5<em>y</em>) : (<em>x</em> + 2<em>y</em>) = (<em>x</em> + 4<em>y</em>) : <em>x.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

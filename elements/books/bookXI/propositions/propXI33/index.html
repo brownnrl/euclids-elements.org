@@ -1,0 +1,191 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 33</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 33</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 33</h1>
+    <div class="statement">Similar parallelepipedal solids are to one another in the triplicate ratio of their corresponding sides.</div>
+    <p>Let <em>AB</em> and <em>CD</em> be similar parallelepipedal solids, and let <em>AE</em> be the side corresponding to <em>CF.</em></p>
+<p>I say that the solid <em>AB</em> has to the solid <em>CD</em> the ratio triplicate of that which <em>AE</em> has to <em>CF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Produce <em>EK, EL,</em> and <em>EM</em> in a straight line with <em>AE, GE,</em> and <em>HE.</em> Make <em>EK</em> equal to <em>CF, EL</em> equal to <em>FN,</em> and <em>EM</em> equal to <em>FR.</em> Complete the parallelogram <em>KL</em> and the solid <em>KP.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="500" height="350" tabindex="0"></canvas>
+<noscript><img alt="XI.33 diagram" src="propXI33.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.33",
+        elements: [
+            "C0;point;free;-1000,80;0;0",
+            "C3;point;free;1000,80;0;0",
+            "C;point;lineSlider;C0,C3,40,0",
+            "F;point;lineSlider;C0,C3,120,0",
+            "N;point;free;140,45",
+            "R;point;free;150,160",
+            "D;point;parallelogram;N,F,R;black;green",
+            "a;point;parallelogram;N,F,C;0",
+            "b;point;parallelogram;C,F,R;0",
+            "c;point;parallelogram;D,N,a;0",
+            "aCFN;polygon;quadrilateral;a,C,F,N;0;0;black;80,50,100",
+            "FNDR;polygon;quadrilateral;F,N,D,R;0;0;black;80,75,100",
+            "bCFR;polygon;quadrilateral;b,C,F,R;0;0;black;80,100,100",
+            "ac;line;connect;a,c",
+            "bc;line;connect;b,c",
+            "Dc;line;connect;D,c",
+            "d;point;lineSlider;C0,C3,200,0;0",
+            "H;point;lineSlider;C0,C3,300,0",
+            "B';point;parallelogram;N,F,H;0;0",
+            "B;point;proportion;C,F,F,N,d,H,H,B'",
+            "e;point;parallelogram;d,H,B;0",
+            "E';point;parallelogram;R,F,H;0;0",
+            "E;point;proportion;C,F,F,R,d,H,H,E'",
+            "A;point;parallelogram;d,H,E",
+            "G;point;parallelogram;B,H,E",
+            "f;point;parallelogram;e,H,E;0",
+            "edHB;polygon;quadrilateral;e,d,H,B;0;0;black;150,50,100",
+            "HBGE;polygon;quadrilateral;H,B,G,E;0;0;black;150,75,100",
+            "AdHE;polygon;quadrilateral;A,d,H,E;0;0;black;150,100,100",
+            "ef;line;connect;e,f",
+            "Af;line;connect;A,f",
+            "Gf;line;connect;G,f",
+            "K;point;extend;A,E,C,F",
+            "L;point;extend;G,E,F,N",
+            "M;point;extend;H,E,F,R",
+            "P;point;parallelogram;L,E,M",
+            "g;point;parallelogram;L,E,K;0;0",
+            "h;point;parallelogram;K,E,M;0;0",
+            "i;point;parallelogram;L,E,h;0;0",
+            "ELgK;polygon;quadrilateral;E,L,g,K;0;0;black;20,40,100",
+            "gKhi;polygon;quadrilateral;g,K,h,i;0;0;black;20,70,100",
+            "PLgi;polygon;quadrilateral;P,L,g,i;0;0;black;20,90,100",
+            "EM;line;connect;E,M",
+            "PM;line;connect;P,M",
+            "hM;line;connect;h,M",
+            "j;point;parallelogram;G,E,K;0",
+            "Q;point;parallelogram;H,E,K",
+            "O;point;parallelogram;B,E,K",
+            "k;point;parallelogram;H,E,L;0",
+            "l;point;parallelogram;Q,E,L;0",
+            "KjOQ;polygon;quadrilateral;K,j,O,Q;0;0;black;0",
+            "Gj;line;connect;G,j",
+            "HQlk;polygon;quadrilateral;H,Q,l,k;0;0;black;0",
+            "kL;line;connect;k,L",
+            "lg;line;connect;l,g",
+            "BO;line;connect;B,O"
+        ],
+    });
+</script>
+</figure><p>Now, since the two sides <em>KE</em> and <em>EL</em> equal the two sides <em>CF</em> and <em>FN,</em> while the angle <em>KEL</em> equals the angle <em>CFN,</em> for the angle <em>AEG</em> also equals the angle <em>CFN</em> because <em>AB</em> and <em>CD</em> are similar solids, therefore the parallelogram <em>KL</em> equals and is similar to the parallelogram <em>CN.</em> For the same reason the parallelogram <em>KM</em> equals and is similar to <em>CR,</em> and <em>EP</em> equals and is similar to <em>DF.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI24/">XI.24</a><br><a href="/elements/books/bookXI/definitions/defXI10/">XI.Def.10</a></div>
+<p>Therefore three parallelograms of the solid <em>KP</em> equal and are similar to three parallelograms of the solid <em>CD.</em> But the former three parallelograms equal and are similar to their opposites, and the latter three equal and are similar to their opposites, therefore the whole solid <em>KP</em> equals and is similar to the whole solid <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Complete the parallelogram <em>GK,</em> and complete the solids <em>EO</em> and <em>LQ</em> on the parallelograms <em>GK</em> and <em>KL</em> as bases with the same height as that of <em>AB.</em></p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI9/">XI.Def.9</a></div>
+<p>Then since the solids <em>AB</em> and <em>CD</em> are similar, therefore <em>AE</em> is to <em>CF</em> as <em>EG</em> is to <em>FN,</em> and as <em>EH</em> is to <em>FR.</em> And <em>CF</em> equals <em>EK, FN</em> equals <em>EL,</em> and <em>FR</em> equals <em>EM,</em> therefore <em>AE</em> is to <em>EK</em> as <em>GE</em> is to <em>EL,</em> and as <em>HE</em> is to <em>EM.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a></div>
+<p>But <em>AE</em> is to <em>EK</em> as <em>AG</em> is to the parallelogram <em>GK,</em> therefore <em>GE</em> is to <em>EL</em> as <em>GK</em> is to <em>KL,</em> and <em>HE</em> is to <em>EM</em> as <em>QE</em> is to <em>KM.</em> Therefore the parallelogram <em>AG</em> is to <em>GK</em> as <em>GK</em> to is <em>KL,</em> and as <em>QE</em> is to <em>KM.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI32/">XI.32</a></div>
+<p>But <em>AG</em> is to <em>GK</em> as the solid <em>AB</em> is to the solid <em>EO, GK</em> is to <em>KL</em> as the solid <em>OE</em> is to the solid <em>QL,</em> and <em>QE</em> is to <em>KM</em> as the solid <em>QL</em> is to the solid <em>KP,</em> therefore the solid <em>AB</em> is to <em>EO</em> as <em>EO</em> is <em>to QL,</em> and as <em>QL</em> is to <em>KP.</em></p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV10/">V.Def.10</a></div>
+<p>But, if four magnitudes are continuously proportional, then the first has to the fourth the ratio triplicate of that which it has to the second, therefore the solid <em>AB</em> has to <em>KP</em> the ratio triplicate of that which <em>AB</em> has to <em>EO.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a></div>
+<p>But <em>AB</em> is to <em>EO</em> as the parallelogram <em>AG</em> is to <em>GK,</em> and as the straight line <em>AE</em> is to <em>EK,</em> hence the solid <em>AB</em> also has to <em>KP</em> the ratio triplicate of that which <em>AE</em> has to <em>EK.</em></p>
+<p>But the solid <em>KP</em> equals the solid <em>CD,</em> and the straight line <em>EK</em> equals <em>CF,</em> therefore the solid <em>AB</em> has also to the solid <em>CD</em> the ratio triplicate of that which the corresponding side of it, <em>AE,</em> has to the corresponding side <em>CF.</em></p>
+<p>Therefore, <em>Similar parallelepipedal solids are to one another in the triplicate ratio of their corresponding sides.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="cor">Corollary.</h1>
+    
+    <p>If four straight lines are continuously proportional, then the first is to the fourth as a parallelepipedal solid on the first is to the similar and similarly situated parallelepipedal solid on the second, in as much as the first has to the fourth the ratio triplicate of that which it has to the second.</p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in the proof of proposition <a href="/elements/books/bookXI/propositions/propXI37/">XI.37</a> and later in <a href="/elements/books/bookXII/propositions/propXII8/">XII.8</a>, an analogous proposition about similar pyramids.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI37/">XI.37</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII8/">XII.8</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

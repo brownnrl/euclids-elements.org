@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 21</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 21</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 21</h1>
+    <div class="statement">The rectangle contained by rational straight lines commensurable in square only is irrational, and the side of the square equal to it is irrational. Let the latter be called <i>medial.</i></div>
+    <p>Let the rectangle <em>AC</em> be contained by the rational straight lines <em>AB</em> and <em>BC</em> commensurable in square only.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="180" height="220" tabindex="0"></canvas>
+<noscript><img alt="X.21 diagram" src="propX21.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.21",
+        elements: [
+            "A0;point;free;-1000,130;0;0",
+            "A3;point;free;1000,130;0;0",
+            "A;point;lineSlider;A0,A3,140,0",
+            "B;point;lineSlider;A0,A3,40,0",
+            "AD;polygon;square;B,A;0;0;black;random",
+            "D;point;vertex;AD,4",
+            "C;point;lineSlider;B,D,0,200",
+            "AC;polygon;parallelogram;A,B,C"
+        ],
+    });
+</script>
+</figure><p>I say that <em>AC</em> is irrational, and the side of the square equal to it is irrational, and let the latter be called medial.</p>
+<div class="just"><a href="/elements/books/bookX/definitions/defX.I.4/">X.Def.I.4</a></div>
+<p>Describe the square <em>AD</em> on <em>AB</em>. Then <em>AD</em> is rational.</p>
+<p>And, since <em>AB</em> is incommensurable in length with <em>BC</em>, for by hypothesis they are commensurable in square only, while <em>AB</em> equals <em>BD</em>, therefore <em>DB</em> is also incommensurable in length with <em>BC</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a>, <a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>And <em>DB</em> is to <em>BC</em> as <em>AD</em> is to <em>AC</em>, therefore <em>DA</em> is incommensurable with <em>AC</em>.</p>
+<div class="just"><a href="/elements/books/bookX/definitions/defX.I.4/">X.Def.I.4</a></div>
+<p>But <em>DA</em> is rational, therefore <em>AC</em> is irrational, so that the side of the square <em>AC</em> is also irrational.</p>
+<p>Let the latter be called <em>medial</em>.</p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The two lines <em>AB</em> and <em>BC</em> are rational lines. That means, according to Definition 3, that each is commensurable in square to some unmentioned, standard straight line. It's convenient to assign that standard line a length of 1 and the standard square on it a square of area 1. Euclid did not, but doing so allows us to assign lengths to those lines. So if <em>a</em> is the length of <em>AB</em>, that means <em>a</em>² is a rational number, that is, a ratio of two whole numbers. Likewise, if <em>b</em> is the length of <em>BC</em>, then <em>b</em>² is a rational number.</p>
+<p>Now <em>AB</em> and <em>BC</em> are also commensurable in square only. First of all, they're commensurable in square, so the squares on them are in a numeric ratio, and that means <em>a</em>²/<em>b</em>² is a rational number, which we already know since both <em>a</em>² and <em>b</em>² are rational numbers themselves. But they're also commensurable in square <em>only</em>. That means that <em>a</em>/<em>b</em> is an irrational number. In summary, <em>a</em>² and <em>b</em>² are rational, but <em>a</em>/<em>b</em> is irrational.</p>
+<p>In the proof, it's noted that the rectangle <em>AC</em> (which is a <em>a</em> by <em>b</em> rectangle), is irrational, that is, <em>ab</em> is an irrational number. The side of a square equal equal to that rectangle is also irrational, and it's called <em>medial</em>. The length of that side is √(<em>ab</em>).</p>
+<p>Another way of saying that is that the length √(<em>ab</em>) of a medial line is the geometric mean of two numbers <em>a</em> and <em>b</em> whose squares are rational and whose ratio is irrational.</p>
+<h4>Example and interpretation</h4>
+<p>Let <em>AB</em> be the standard line and <em>BC</em> be the diagonal of the standard square, then √(<em>ab</em>) = √(√2), the 4<sup>th</sup> root of 2.</p>
+<p>In fact, all medial lines have lengths 4<sup>th</sup> roots of rational numbers whose square roots are irrational. If <em>a</em>² and <em>b</em>² are rational numbers but <em>a</em>/<em>b</em> is an irrational number, then √(<em>ab</em>) is a number whose fourth power, <em>a</em>²<em>b</em>², is a rational number but whose square, <em>ab</em>, is an irrational number.</p>
+<p>Thus, we could call a number whose square is an irrational number but whose fourth power is a rational number a <em>medial number</em>.</p>
+<h4>Medial squares and rectangles</h4>
+<p>Only medial lines were defined in this proposition, but the adjective medial is applied to squares and rectangles starting with Proposition <a href="/elements/books/bookX/propositions/propX24/">X.24</a>. From the way it is used, we can tell that a <em>medial</em> square is one whose side is a medial line, and a medial rectangle is one equal to a square whose side is a medial line.</p>
+<h4>Use of this proposition.</h4>
+<p>This proposition is used frequently in Book X starting with the next proposition.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX22/">X.22</a>, <a href="/elements/books/bookX/propositions/propX23/">X.23</a>, <a href="/elements/books/bookX/propositions/propX25/">X.25</a>, <a href="/elements/books/bookX/propositions/propX27/">X.27</a>, <a href="/elements/books/bookX/propositions/propX28/">X.28</a>, <a href="/elements/books/bookX/propositions/propX31/">X.31</a>, <a href="/elements/books/bookX/propositions/propX32/">X.32</a>, <a href="/elements/books/bookX/propositions/propX33/">X.33</a>, <a href="/elements/books/bookX/propositions/propX42/">X.42</a>, <a href="/elements/books/bookX/propositions/propX55/">X.55</a>, <a href="/elements/books/bookX/propositions/propX56/">X.56</a>, <a href="/elements/books/bookX/propositions/propX57/">X.57</a>, <a href="/elements/books/bookX/propositions/propX58/">X.58</a>, <a href="/elements/books/bookX/propositions/propX59/">X.59</a>, <a href="/elements/books/bookX/propositions/propX60/">X.60</a>, <a href="/elements/books/bookX/propositions/propX61/">X.61</a>, <a href="/elements/books/bookX/propositions/propX79/">X.79</a>, <a href="/elements/books/bookX/propositions/propX91/">X.91</a>, <a href="/elements/books/bookX/propositions/propX92/">X.92</a>, <a href="/elements/books/bookX/propositions/propX93/">X.93</a>, <a href="/elements/books/bookX/propositions/propX94/">X.94</a>, <a href="/elements/books/bookX/propositions/propX95/">X.95</a>, <a href="/elements/books/bookX/propositions/propX96/">X.96</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

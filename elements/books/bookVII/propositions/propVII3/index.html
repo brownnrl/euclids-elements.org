@@ -1,0 +1,163 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 3</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 3</h1>
+    <div class="statement">To find the greatest common measure of three given numbers not relatively prime.</div>
+    <p>Let <em>A, B,</em> and <em>C</em> be the three given numbers not relatively prime.</p>
+<p>It is required to find the greatest common measure of <em>A, B,</em> and <em>C.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="210" height="250" tabindex="0"></canvas>
+<noscript><img alt="VII.3 diagram" src="propVII3.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.3",
+        elements: [
+            "A0;point;free;30,-1000;0;0",
+            "A3;point;free;30,1000;0;0",
+            "A1;point;lineSlider;A0,A3,30,30;0",
+            "B0;point;free;60,-1000;0;0",
+            "B3;point;free;60,1000;0;0",
+            "B1;point;lineSlider;B0,B3,60,30;0",
+            "C0;point;free;90,-1000;0;0",
+            "C3;point;free;90,1000;0;0",
+            "C1;point;lineSlider;C0,C3,90,30;0",
+            "D0;point;free;120,-1000;0;0",
+            "D3;point;free;120,1000;0;0",
+            "D1;point;lineSlider;D0,D3,120,30;0",
+            "E0;point;free;150,-1000;0;0",
+            "E3;point;free;150,1000;0;0",
+            "E1;point;lineSlider;E0,E3,150,30;0",
+            "F0;point;free;180,-1000;0;0",
+            "F3;point;free;180,1000;0;0",
+            "F1;point;lineSlider;F0,F3,180,30;0",
+            "E2;point;lineSlider;E0,E3,150,60;0",
+            "E;line;connect;E1,E2;black",
+            "D';point;cutoff;D1,D3,E1,E2;0;0",
+            "D2;point;cutoff;D',D3,E1,E2;0",
+            "D;line;connect;D1,D2;black",
+            "B';point;cutoff;B1,B3,D1,D2;0;0",
+            "B2;point;cutoff;B',B3,D1,D2;0",
+            "B;line;connect;B1,B2;black",
+            "C';point;cutoff;C1,C3,D1,D2;0;0",
+            "C2;point;cutoff;C',C3,E1,E2;0",
+            "C;line;connect;C1,C2;black",
+            "A';point;cutoff;A1,A3,B1,B2;0;0",
+            "A2;point;cutoff;A',A3,D1,D2;0",
+            "A;line;connect;A1,A2;black",
+            "F2;point;cutoff;F1,F3,E1,E2;0",
+            "F;line;connect;F1,F2;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVII/propositions/propVII2/">VII.2</a></div>
+<p>Take the greatest common measure, <em>D,</em> of the two numbers <em>A</em> and <em>B.</em> Then either <em>D</em> measures, or does not measure, <em>C.</em></p>
+<p>First, let <em>D</em> measure <em>C.</em></p>
+<p>But it measures <em>A</em> and <em>B</em> also, therefore <em>D</em> measures <em>A, B,</em> and <em>C.</em> Therefore <em>D</em> is a common measure of <em>A, B,</em> and <em>C.</em></p>
+<p>I say that it is also the greatest.</p>
+<p>If <em>D</em> is not the greatest common measure of <em>A, B,</em> and <em>C,</em> then some number <em>E,</em> greater than <em>D,</em> measures the numbers <em>A, B,</em> and <em>C.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII2/#cor">VII.2,Cor.</a></div><p>Since then <em>E</em> measures <em>A, B,</em> and <em>C,</em> therefore it measures <em>A</em> and <em>B.</em> Therefore it also measures the greatest common measure of <em>A</em> and <em>B.</em> But the greatest common measure of <em>A</em> and <em>B</em> is <em>D,</em> therefore <em>E</em> measures <em>D,</em> the greater the less, which is impossible.</p>
+<p>Therefore no number which is greater than <em>D</em> measures the numbers <em>A, B,</em> and <em>C.</em> Therefore <em>D</em> is the greatest common measure of <em>A, B,</em> and <em>C.</em></p>
+<p>Next, let <em>D</em> not measure <em>C.</em></p>
+<p>I say first that <em>C</em> and <em>D</em> are not relatively prime.</p>
+<p>Since <em>A, B,</em> and <em>C</em> are not relatively prime, therefore some number measures them.</p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII2/#cor">VII.2,Cor.</a></div><p>Now that which measures <em>A, B,</em> and <em>C</em> also measures <em>A</em> and <em>B,</em> and therefore measures <em>D,</em> the greatest common measure of <em>A</em> and <em>B.</em> But it measures <em>C</em> also, therefore some number measures the numbers <em>D</em> and <em>C.</em> Therefore <em>D</em> and <em>C</em> are not relatively prime.</p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII2/">VII.2</a></div>
+<p>Take their greatest common measure <em>E.</em></p>
+<p>Then, since <em>E</em> measures <em>D,</em> and <em>D</em> measures <em>A</em> and <em>B,</em> therefore <em>E</em> also measures <em>A</em> and <em>B.</em> But it measures <em>C</em> also, therefore <em>E</em> measures <em>A, B,</em> and <em>C.</em> Therefore <em>E</em> is a common measure of <em>A, B,</em> and <em>C.</em></p>
+<p>I say next that it is also the greatest.</p>
+<p>If <em>E</em> is not the greatest common measure of <em>A, B,</em> and <em>C,</em> then some number <em>F,</em> greater than <em>E,</em> measures the numbers <em>A, B,</em> and <em>C.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII2/#cor">VII.2,Cor.</a></div><p>Now, since <em>F</em> measures <em>A, B,</em> and <em>C,</em> it also measures <em>A</em> and <em>B,</em> therefore it measures the greatest common measure of <em>A</em> and <em>B.</em> But the greatest common measure of <em>A</em> and <em>B</em> is <em>D,</em> therefore <em>F</em> measures <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII2/#cor">VII.2,Cor.</a></div><p>And it measures <em>C</em> also, therefore <em>F</em> measures <em>D</em> and <em>C.</em> Therefore it also measures the greatest common measure of <em>D</em> and <em>C.</em> But the greatest common measure of <em>D</em> and <em>C</em> is <em>E,</em> therefore <em>F</em> measures <em>E,</em> the greater the less, which is impossible.</p>
+<p>Therefore no number which is greater than <em>E</em> measures the numbers <em>A, B,</em> and <em>C.</em> Therefore <em>E</em> is the greatest common measure of <em>A, B,</em> and <em>C.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>A common modern notation for the greatest common divisor of two numbers <em>a</em> and <em>b</em> is <small>GCD</small>(<em>a, b</em>). Also, the notation <em>a</em> | <em>b</em> is typically used to indicate that <em>a</em> divides <em>b.</em></p>
+<p>This proposition constructs the <small>GCD</small>(<em>a, b, c</em>) as <small>GCD</small>(<small>GCD</small>(<em>a, b</em>), <em>c</em>).</p>
+<p>The proof that this construction works is simplified if 1 is considered to be a number. Then, two numbers are relatively prime when their <small>GCD</small> is 1, and Euclid's first case in the proof is subsumed in the second.</p>
+<p>Let <em>d</em> = <small>GCD</small>(<em>a, b</em>), and let <em>e</em> = <small>GCD</small>(<em>d, c</em>). Since <em>e</em> | <em>d, d</em> | <em>a,</em> and <em>d</em> | <em>b,</em> it follows that <em>e</em> | <em>a</em> and <em>e</em> | <em>b,</em> so <em>e,</em> in fact, is a common divisor of <em>a, b,</em> and <em>c.</em></p>
+<p>In order to show that <em>e</em> is the greatest common divisor, let <em>f</em> be any common divisor of <em>a, b,</em> and <em>c.</em> Then as <em>f</em> | <em>a</em> and <em>f</em> | <em>b,</em> therefore <em>f</em> | <small>GCD</small>(<em>a, b</em>), that is, <em>f</em> | <em>d.</em> Also, as <em>f</em> | <em>d</em> and <em>f</em> | <em>c,</em> therefore <em>f</em> | <small>GCD</small>(<em>d, c</em>), that is <em>f</em> | <em>e.</em> Therefore <em>e</em> is the greatest common divisor of <em>a, b,</em> and <em>c.</em> <small>Q.E.D.</small></p>
+<p>This is the same proposition as <a href="/elements/books/bookX/propositions/propX4/">X.4</a>.</p>
+<p>This proposition is used in <a href="/elements/books/bookVII/propositions/propVII33/">VII.33</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VII</th><td><a href="/elements/books/bookVII/propositions/propVII33/">VII.33</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

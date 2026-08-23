@@ -1,0 +1,174 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 15</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 15</h1>
+    <div class="statement">In equal cones and cylinders the bases are reciprocally proportional to the heights; and those cones and cylinders in which the bases are reciprocally proportional to the heights are equal.</div>
+    <p>Let there be equal cones and cylinders with the circular bases <em>ABCD</em> and <em>EFGH.</em> Let <em>AC</em> and <em>EG</em> be the diameters of the bases, and <em>KL</em> and <em>MN</em> the axes, which are also the heights of the cones or cylinders</p>
+<p>Complete the cylinders <em>AO</em> and <em>EP.</em></p>
+<p>I say that in the cylinders <em>AO</em> and <em>EP</em> the bases are reciprocally proportional to the heights, that is, the base <em>ABCD</em> is to the base <em>EFGH</em> as the height <em>MN</em> is to the height <em>KL.</em></p>
+<center>
+<canvas id="canvas_0" width="550" height="270" tabindex="0"></canvas>
+<noscript><img alt="XII.15 diagram" src="propXII15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.15",
+        fontsize: "16",
+        elements: [
+            "K0;point;fixed;110,100,0;0;0",
+            "Ky;point;fixed;110,-1000,400;0;0",
+            "Kx;point;fixed;1000,100,0;0;0",
+            "K;point;lineSlider;K0,Ky,0,220,0",
+            "L;point;lineSlider;K0,Ky,0,80,0",
+            "A';point;parallelogram;K,K0,Kx;0;0",
+            "A;point;lineSlider;K,A',30,0,0",
+            "C;point;extend;A,K,A,K",
+            "O;point;parallelogram;L,K,C",
+            "Kplane;plane;perpendicular;K,Ky;0;0;0;0",
+            "Lplane;plane;perpendicular;L,Ky;0;0;0;0",
+            "Lcirc;circle;radius;L,O,Lplane;0;0;black;180,40,100",
+            "ACO;polygon;parallelogram;A,C,O;0;0;0;180,40,100",
+            "Kcirc;circle;radius;K,A,Kplane;0;0;black;240,40,100",
+            "ACL;polygon;triangle;A,C,L;0;0;black;240,40,100",
+            "LK;line;connect;L,K",
+            "OC;line;connect;O,C",
+            "AA'';line;parallel;A,K,L",
+            "B;point;perpendicular;K,A,Kplane;black;0",
+            "D;point;extend;B,K,B,K;black;0",
+            "N0;point;fixed;400,140,0;0;0",
+            "Nx;point;fixed;0,140,300;0;0",
+            "Ny;point;fixed;400,-1000,0;0;0",
+            "N;point;lineSlider;N0,Nx,510,0,0",
+            "M;point;lineSlider;N0,Nx,200,0,0",
+            "E';point;parallelogram;N,N0,Ny;0;0",
+            "E;point;lineSlider;N,E',0,90,0",
+            "G;point;extend;E,N,E,N",
+            "R;point;parallelogram;M,N,E",
+            "P;point;extend;R,M,R,M",
+            "Mplane;plane;perpendicular;M,Nx;0;0;0;0",
+            "Nplane;plane;perpendicular;N,Nx;0;0;0;0",
+            "Mcirc;circle;radius;M,R,Mplane;0;0;black;0,40,100",
+            "EGPR;polygon;quadrilateral;E,G,P,R;0;0;0;0,40,100",
+            "Ncirc;circle;radius;N,E,Nplane;0;0;black;340,70,100",
+            "EGM;polygon;triangle;E,G,M;0;0;black;340,70,100",
+            "MN;line;connect;M,N",
+            "ER;line;connect;E,R",
+            "GP;line;connect;G,P",
+            "F;point;circleSlider;Ncirc,440,130,0;black;0",
+            "H;point;extend;F,N,F,N;black;0",
+            "Q;point;cutoff;N,M,K,L",
+            "S;point;parallelogram;G,N,Q",
+            "U;point;parallelogram;E,N,Q",
+            "Qplane;plane;perpendicular;Q,Nx;0;0;0;0",
+            "Qcirc;circle;radius;Q,N,E,Qplane;0;0;black;0",
+            "T;point;parallelogram;F,N,Q;black;0",
+            "SUM;polygon;triangle;S,U,M;0;0;black;0"
+        ],
+    });
+</script>
+</center><p>For the height <em>LK</em> is either equal to the height <em>MN</em> or unequal.</p>
+<p>First, let it be equal.</p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a></div>
+<p>Now the cylinder <em>AO</em> also equals the cylinder <em>EP.</em> But cones and cylinders of the same height are to one another as their bases, therefore the base <em>ABCD</em> equals the base <em>EFGH.</em></p>
+<p>Hence, reciprocally, the base <em>ABCD</em> is to the base <em>EFGH</em> as the height <em>MN</em> is to the height <em>KL.</em></p>
+<p>Next, let the height <em>LK</em> be unequal to <em>MN,</em> and let <em>MN</em> be greater.</p>
+<p>Cut <em>QN</em> off the height <em>MN</em> equal to <em>KL.</em> Through the point <em>Q</em> let the cylinder <em>EP</em> be cut by the plane <em>TUS</em> parallel to the planes of the circles <em>EFGH</em> and <em>RP.</em> Erect the cylinder <em>ES</em> from the circle <em>EFGH</em> as base and with height <em>NQ.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV7/">V.7</a></div>
+<p>Now, since the cylinder <em>AO</em> equals the cylinder <em>EP,</em> therefore the cylinder <em>AO</em> is to the cylinder <em>ES</em> as the cylinder <em>EP</em> is to the cylinder <em>ES.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a><br><a href="/elements/books/bookXII/propositions/propXII13/">XII.13</a><br><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>But the cylinder <em>AO</em> is to the cylinder <em>ES</em> as the base <em>ABCD</em> is to the base <em>EFGH,</em> for the cylinders <em>AO</em> and <em>ES</em> are of the same height. And the cylinder <em>EP</em> is to the cylinder <em>ES</em> as the height <em>MN</em> is to the height <em>QN,</em> for the cylinder <em>EP</em> is cut by a plane parallel to its opposite planes. Therefore the base <em>ABCD</em> is to the base <em>EFGH</em> as the height <em>MN</em> is to the height <em>QN.</em></p>
+<p>But the height <em>QN</em> equals the height <em>KL,</em> therefore the base <em>ABCD</em> is to the base <em>EFGH</em> as the height <em>MN</em> is to the height <em>KL.</em></p>
+<p>Therefore in the cylinders <em>AO</em> and <em>EP</em> the bases are reciprocally proportional to the heights.</p>
+<hr width="50%">
+
+<p>Next, in the cylinders <em>AO</em> and <em>EP</em> let the bases be reciprocally proportional to the heights, that is, as the base <em>ABCD</em> is to the base <em>EFGH,</em> so let the height <em>MN</em> be to the height <em>KL.</em></p>
+<p>I say that the cylinder <em>AO</em> equals the cylinder <em>EP.</em></p>
+<p>With the same construction, since the base <em>ABCD</em> is to the base <em>EFGH</em> as the height <em>MN</em> is to the height <em>KL,</em> and the height <em>KL</em> equals the height <em>QN,</em> therefore the base <em>ABCD</em> is to the base <em>EFGH</em> as the height <em>MN</em> is to the height <em>QN.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a><br><a href="/elements/books/bookXII/propositions/propXII13/">XII.13</a>, <a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>But the base <em>ABCD</em> is to the base <em>EFGH</em> as the cylinder <em>AO</em> is to the cylinder <em>ES,</em> for they have the same height. And the height <em>MN</em> is to <em>QN</em> as the cylinder <em>EP</em> is to the cylinder <em>ES,</em> therefore the cylinder <em>AO</em> is to the cylinder <em>ES</em> as the cylinder <em>EP</em> is to the cylinder <em>ES.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV9/">V.9</a></div>
+<p>Therefore the cylinder <em>AO</em> equals the cylinder <em>EP.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII10/">XII.10</a></div>
+<p>And the same is true for the cones also.</p>
+<p>Therefore, <em>in equal cones and cylinders the bases are reciprocally proportional to the heights; and those cones and cylinders in which the bases are reciprocally proportional to the heights are equal.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proof of this proposition applies to a more general situation than cones and cylinders. Whenever a magnitude <em>x</em> is proportional to two other magnitudes <em>y</em> and <em>z,</em> that is to say when <em>y</em> is fixed then <em>x</em> is proportional to <em>z</em> and when <em>x</em> is fixed then <em>y</em> is proportional to <em>z,</em> it follows that when <em>x</em> is fixed then <em>y</em> and <em>z</em> are reciprocally proportional.</p>
+<p>This proposition completes the theory of the volumes of cones and cylinders. The remaining three propositions in this book concern the volume of spheres.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

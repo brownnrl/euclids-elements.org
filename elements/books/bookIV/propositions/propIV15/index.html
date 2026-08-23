@@ -1,0 +1,160 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IV</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IV</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 15</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 15</h1>
+    <div class="statement">To inscribe an equilateral and equiangular hexagon in a given circle.</div>
+    <p>Let <em>ABCDEF</em> be the given circle.</p>
+<p>It is required to inscribe an equilateral and equiangular hexagon in the circle <em>ABCDEF.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a></div>
+<p>Draw the diameter <em>AD</em> of the circle <em>ABCDEF.</em>  Take the center <em>G</em> of the circle.  Describe the circle <em>EGCH</em> with center <em>D</em> and radius <em>DG.</em>  Join <em>EG</em> and <em>CG</em> and carry them through to the points <em>B</em> and <em>F.</em>  Join <em>AB,</em> <em>BC, CD, DE, EF,</em> and <em>FA.</em></p>
+<p>I say that the hexagon <em>ABCDEF</em> is equilateral and equiangular.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="380" tabindex="0"></canvas>
+<noscript><img alt="IV.15 diagram" src="propIV15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IV.15",
+        pivot: "G",
+        elements: [
+            "A;point;free;150,340",
+            "D;point;free;150,140",
+            "AD;line;connect;A,D",
+            "G;point;midpoint;A,D;black;green",
+            "ABCDEF;circle;radius;G,A;0;0;black;random",
+            "EGCH;circle;radius;D,G;0;0;black;0",
+            "CE;line;bichord;ABCDEF,EGCH;0;0;0",
+            "C;point;first;CE",
+            "E;point;last;CE",
+            "B;point;extend;E,G,E,G",
+            "F;point;extend;C,G,C,G",
+            "H;point;extend;G,D,G,D;black;0",
+            "BE;line;connect;B,E",
+            "CF;line;connect;C,F",
+            "hexagon;polygon;hexagon;A,B,C,D,E,F;0;0;black;random"
+        ],
+    });
+</script>
+</figure><p>For, since the point <em>G</em> is the center of the circle <em>ABCDEF, GE</em> equals <em>GD.</em></p>
+<p>Again, since the point <em>D</em> is the center of the circle <em>GCH, DE</em> equals <em>DG.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>But <em>GE</em> was proved equal to <em>GD,</em> therefore <em>GE</em> also equals <em>ED.</em>  Therefore the triangle <em>EGD</em> is equilateral, and therefore its three angles <em>EGD,</em> <em>GDE,</em> and <em>DEG</em> equal one another, inasmuch as, in isosceles triangles, the angles at the base equal one another.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>And the sum of the three angles of the triangle equals two right angles, therefore the angle <em>EGD</em> is one-third of two right angles.</p>
+<p>Similarly, the angle <em>DGC</em> can also be proved to be one third of two right angles.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI13/">I.13</a></div>
+<p>And, since the straight line <em>CG</em> standing on <em>EB</em> makes the sum of the adjacent angles <em>EGC</em> and <em>CGB</em> equal to two right angles, therefore the remaining angle <em>CGB</em> is also one-third of two right angles.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI15/">I.15</a></div>
+<p>Therefore the angles <em>EGD, DGC,</em> and <em>CGB</em> equal one another, so that the angles vertical to them, the angles <em>BGA, AGF,</em> and <em>FGE,</em> are equal.</p>
+<p>Therefore the six angles <em>EGD, DGC, CGB, BGA, AGF,</em> and <em>FGE</em> equal one another.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII26/">III.26</a></div>
+<p>But equal angles stand on equal circumferences, therefore the six circumferences <em>AB, BC, CD, DE, EF,</em> and <em>FA</em> equal one another.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII29/">III.29</a></div>
+<p>And straight lines that cut off equal circumferences are equal, therefore the six straight lines equal one another.  Therefore the hexagon <em>ABCDEF</em> is equilateral.</p>
+<p>I say next that it is also equiangular.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII27/">III.27</a></div>
+<p>For, since the circumference <em>FA</em> equals the circumference <em>ED,</em> add the circumference <em>ABCD</em> to each, therefore the whole <em>FABCD</em> equals the whole <em>EDCBA.</em>  And the angle <em>FED</em> stands on the circumference <em>FABCD,</em> and the angle <em>AFE</em> on the circumference <em>EDCBA,</em> therefore the angle <em>AFE</em> equals the angle <em>DEF.</em></p>
+<p>Similarly it can be proved that the remaining angles of the hexagon <em>ABCDEF</em> are also severally equal to each of the angles <em>AFE</em> and <em>FED,</em> therefore the hexagon <em>ABCDEF</em> is equiangular.</p>
+<p>But it was also proved equilateral, and it has been inscribed in the circle <em>ABCDEF.</em></p>
+<p>Therefore an equilateral and equiangular hexagon has been inscribed in the given circle.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="cor">Corollary.</h1>
+    
+    <p>From this it is clear that the side of the hexagon equals the radius of the circle.</p>
+<p><font color="a00044"></p>
+<p>And, in like manner as in the case of the pentagon, if through the points of division on the circle we draw tangents to the circle, there will be circumscribed about the circle an equilateral and equiangular hexagon in conformity with what was explained in the case of the pentagon.</p>
+<p>And further by means similar to those explained in the case of the pentagon we can both inscribe a circle in a given hexagon and circumscribe one about it.</p>
+<p>&lt;/font&gt;</p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The corollary is used in several propositions in Book XIII starting with <a href="/elements/books/bookXIII/propositions/propXIII9/">XIII.9</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII9/">XIII.9</a>, <a href="/elements/books/bookXIII/propositions/propXIII10/">XIII.10</a>, <a href="/elements/books/bookXIII/propositions/propXIII12/">XIII.12</a>, <a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a>, <a href="/elements/books/bookXIII/propositions/propXIII18/">XIII.18</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

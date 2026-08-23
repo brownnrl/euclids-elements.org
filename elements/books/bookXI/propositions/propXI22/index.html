@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 22</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 22</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 22</h1>
+    <div class="statement">If there are three plane angles such that the sum of any two is greater than the remaining one, and they are contained by equal straight lines, then it is possible to construct a triangle out of the straight lines joining the ends of the equal straight lines.</div>
+    <p>Let there be three plane angles <em>ABC, DEF,</em> and <em>GHK,</em> of which the sum of any two is greater than the remaining one, so that the sum of the angles <em>ABC</em> and <em>DEF</em> is greater than the angle <em>GHK,</em> the sum of the angles <em>DEF</em> and <em>GHK</em> is greater than the angle <em>ABC,</em> and, further, the sum of the angles <em>GHK</em> and <em>ABC</em> is greater than the angle <em>DEF.</em> Also let the straight lines <em>AB, BC, DE, EF, GH,</em> and <em>HK</em> be equal.</p>
+<p>Join <em>AC, DF,</em> and <em>GK.</em></p>
+<p>I say that it is possible to construct a triangle out of straight lines equal to <em>AC, DF,</em> and <em>GK,</em> that is, that the sum of any two of the straight lines <em>AC, DF,</em> and <em>GK</em> is greater than the remaining one.</p>
+<center>
+<canvas id="canvas_0" width="550" height="200" tabindex="0"></canvas>
+<noscript><img alt="XI.22 diagram" src="propXI22.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.22",
+        elements: [
+            "A;point;free;40,160",
+            "B;point;free;80,55",
+            "Bcirc;circle;radius;B,A;0;0;0;0",
+            "C;point;circleSlider;Bcirc,120,160",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "E;point;free;260,61",
+            "Ecirc;circle;radius;E,A,B;0;0;0;0",
+            "D;point;circleSlider;Ecirc,210,160",
+            "F;point;circleSlider;Ecirc,310,160",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "H;point;free;400,50",
+            "Hcirc;circle;radius;H,A,B;0;0;0;0",
+            "G;point;circleSlider;Hcirc,380,160",
+            "K;point;circleSlider;Hcirc,420,160",
+            "GHK;polygon;triangle;G,H,K;0;0;black;random",
+            "L';point;similar;K,H,A,B,C;0;0",
+            "L;point;cutoff;H,L',A,B",
+            "HKL;polygon;triangle;H,K,L;0;0;black;random",
+            "GL;line;connect;G,L"
+        ],
+    });
+</script>
+</center><div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a><br><a href="/elements/books/bookI/propositions/propI1/">I.1</a></div>
+<p>Now, if the angles <em>ABC, DEF,</em> and <em>GHK</em> equal one another, then it is clear that, <em>AC, DF,</em> and <em>GK</em> also being equal, it is possible to construct a triangle out of straight lines equal to <em>AC, DF,</em> and <em>GK.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookI/propositions/propI3/">I.3</a></div>
+<p>But, if not, let them be unequal. Construct the angle <em>KHL</em> equal to the angle <em>ABC</em> at the point <em>H</em> on the straight line <em>HK.</em> Make <em>HL</em> equal to any one of the straight lines <em>AB, BC, DE, EF, GH,</em> or <em>HK.</em> Join <em>KL</em> and <em>GL.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Now, since the two sides <em>AB</em> and <em>BC</em> equal the two sides <em>KH</em> and <em>HL,</em> and the angle at <em>B</em> equals the angle <em>KHL,</em> therefore the base <em>AC</em> equals the base <em>KL.</em></p>
+<p>And, since the sum of the angles <em>ABC</em> and <em>GHK</em> is greater than the angle <em>DEF,</em> while the angle <em>ABC</em> equals the angle <em>KHL,</em> therefore the angle <em>GHL</em> is greater than the angle <em>DEF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI24/">I.24</a></div>
+<p>And, since the two sides <em>GH</em> and <em>HL</em> equal the two sides <em>DE</em> and <em>EF,</em> and the angle <em>GHL</em> is greater than the angle <em>DEF,</em> therefore the base <em>GL</em> is greater than the base <em>DF.</em></p>
+<p>But the sum of <em>GK</em> and <em>KL</em> is greater than <em>GL.</em> Therefore the sum of <em>GK</em> and <em>KL</em> is much greater than <em>DF.</em></p>
+<p>But <em>KL</em> equals <em>AC,</em> therefore the sum of <em>AC</em> and <em>GK</em> is greater than the remaining straight line <em>DF.</em></p>
+<p>Similarly we can prove that the sum of <em>AC</em> and <em>DF</em> is greater than <em>GK,</em> and further, the sum of <em>DF</em> and <em>GK</em> is greater than <em>AC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI22/">I.22</a></div>
+<p>Therefore it is possible to construct a triangle out of straight lines equal to <em>AC, DF,</em> and <em>GK.</em></p>
+<p>Therefore, <em>if there are three plane angles such that the sum of any two is greater than the remaining one, and they are contained by equal straight lines, then it is possible to construct a triangle out of the straight lines joining the ends of the equal straight lines.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This construction is the first stage of the construction in the next proposition to make a solid angle given three plane angles.</p>
+<p>The proof succeeds in showing that if each of the three plane angles is less than the sum of the other two, then each of the three lines <em>AC, DF,</em> and <em>DK</em> is less than the sum of the other two. The latter is a necessary condition for a triangle to be made with its three sides equal to those three lines according to <a href="/elements/books/bookI/propositions/propI20/">I.20</a>. But it was never shown to be sufficient to make such a triangle in <a href="/elements/books/bookI/propositions/propI22/">I.22</a>, and it is that sufficiency which is being invoked in this proof. Thus, there is a serious flaw in the proof.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

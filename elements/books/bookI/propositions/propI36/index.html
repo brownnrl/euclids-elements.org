@@ -1,0 +1,205 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 36</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 36</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 36</h1>
+    <div class="statement">Parallelograms which are on equal bases and in the same parallels equal one another.</div>
+    <p>Let <span class="elem-ref" data-elem="ABCD">ABCD</span> and <span class="elem-ref" data-elem="EFGH">EFGH</span> be parallelograms which are on the equal bases <span class="elem-ref" data-elem="BC">BC</span> and <span class="elem-ref" data-elem="FG">FG</span> and in the same parallels <span class="elem-ref" data-elem="AH">AH</span> and <span class="elem-ref" data-elem="BG">BG</span>.</p>
+<p>I say that the parallelogram <span class="elem-ref" data-elem="ABCD">ABCD</span> equals <span class="elem-ref" data-elem="EFGH">EFGH</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="370" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.36 diagram" src="propI36.gif"/></noscript>
+<script type="text/javascript">
+    // The two given parallelograms (ABCD cyan, EFGH pink) and the parallels
+    // stay on screen for every slide — they don't overlap. Only the
+    // construction additions are gated to the step that introduces them: the
+    // joins BE / CH (slide 2 onward) and the bridge parallelogram EBCH
+    // (slide 4 onward). Per-slide `highlighted` guides the eye.
+    var FULL = ["A","B","C","D","E","F","G","H",
+                "AH","BG","AB","CD","EF","GH","BC","FG","EH",
+                "ABCD","EFGH"];
+    var JOIN = FULL.concat(["BE","CH"]);
+    var BRIDGE = JOIN.concat(["EBCH"]);
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.36",
+        elements: [
+            "B;point;free;70,170",
+            "C;point;free;160,170",
+            "A;point;free;40,40",
+            "D;point;parallelogram;A,B,C",
+            "E;point;lineSlider;A,D,240,40",
+            "H;point;parallelogram;E,B,C",
+            "F;point;lineSlider;B,C,220,170",
+            "G;point;parallelogram;H,E,F",
+            // The two parallels (top AH through A,D,E,H; bottom BG through
+            // B,C,F,G) and the four slanted sides of the given parallelograms.
+            "AH;line;connect;A,H",
+            "BG;line;connect;B,G",
+            "AB;line;connect;A,B",
+            "CD;line;connect;C,D",
+            "EF;line;connect;E,F",
+            "GH;line;connect;G,H",
+            // The joins that build the bridge parallelogram EBCH (gated).
+            "BE;line;connect;B,E",
+            "CH;line;connect;C,H",
+            // Sub-segment hover targets on the parallels / shared edges (the
+            // fills + parallels already draw these; these only light on ref).
+            "BC;line;connect;B,C;0;0;0",
+            "FG;line;connect;F,G;0;0;0",
+            "EH;line;connect;E,H;0;0;0",
+            // The two given parallelograms as fillable regions (cyan / pink),
+            // and the bridge EBCH (orange) that equals each of them by I.35.
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;0;cyan",
+            "EFGH;polygon;quadrilateral;E,F,G,H;0;0;0;pink",
+            "EBCH;polygon;quadrilateral;E,B,C,H;0;0;0;orange"
+        ],
+        aliases: { "EB": "BE", "HC": "CH", "HE": "EH", "GF": "FG", "CB": "BC" },
+        slides: [
+            { text: "Let {ABCD} and {EFGH} be parallelograms on the equal bases {BC} and {FG} and in the same parallels {AH} and {BG}. I say that {ABCD} equals {EFGH}.",
+              visible: FULL,
+              highlighted: ["ABCD","EFGH","BC","FG"] },
+            { text: "Join {BE} and {CH}.",
+              visible: JOIN,
+              highlighted: ["BE","CH"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "BE", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "CH", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "I.Post.1" }] },
+            { text: "Since {BC} equals {FG} and {FG} equals {EH}, therefore {BC} equals {EH}.",
+              visible: JOIN,
+              highlighted: ["BC","FG","EH"],
+              justifications: [{ ref: "I.34" }, { ref: "C.N.1" }] },
+            { text: "But {BC} and {EH} are also parallel, and {EB} and {HC} join them. So {EBCH} is a parallelogram.",
+              visible: BRIDGE,
+              highlighted: ["EBCH"],
+              transition: { animations: [ { elem: "EBCH", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ ref: "I.33" }] },
+            { text: "And {EBCH} equals {ABCD}, for it has the same base {BC} and lies in the same parallels {AH} and {BG}.",
+              visible: BRIDGE,
+              highlighted: ["EBCH","ABCD","BC"],
+              justifications: [{ ref: "I.35" }] },
+            { text: "For the same reason {EFGH} equals {EBCH}, for they have the same base {EH} and lie in the same parallels.",
+              visible: BRIDGE,
+              highlighted: ["EFGH","EBCH","EH"],
+              justifications: [{ ref: "I.35" }] },
+            { text: "So {ABCD} equals {EBCH} equals {EFGH}. Parallelograms on equal bases and in the same parallels equal one another.",
+              visible: FULL,
+              highlighted: ["ABCD","EFGH"],
+              justifications: [{ ref: "C.N.1" }, { ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.33":     "/elements/books/bookI/propositions/propI33/",
+        "I.34":     "/elements/books/bookI/propositions/propI34/",
+        "I.35":     "/elements/books/bookI/propositions/propI35/",
+        "C.N.1":    "/elements/books/bookI/commonnotions/cn1/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a></div>
+<p>Join <span class="elem-ref" data-elem="BE">BE</span> and <span class="elem-ref" data-elem="CH">CH</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>Since <span class="elem-ref" data-elem="BC">BC</span> equals <span class="elem-ref" data-elem="FG">FG</span> and <span class="elem-ref" data-elem="FG">FG</span> equals <span class="elem-ref" data-elem="EH">EH</span>, therefore <span class="elem-ref" data-elem="BC">BC</span> equals <span class="elem-ref" data-elem="EH">EH</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI33/">I.33</a></div>
+<p>But they are also parallel, and <span class="elem-ref" data-elem="EB">EB</span> and <span class="elem-ref" data-elem="HC">HC</span> join them. But straight lines joining equal and parallel straight lines in the same directions are equal and parallel, therefore <span class="elem-ref" data-elem="EBCH">EBCH</span> is a parallelogram.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI35/">I.35</a></div>
+<p>And it equals <span class="elem-ref" data-elem="ABCD">ABCD</span>, for it has the same base <span class="elem-ref" data-elem="BC">BC</span> with it and is in the same parallels <span class="elem-ref" data-elem="BC">BC</span> and <span class="elem-ref" data-elem="AH">AH</span> with it.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>For the same reason also <span class="elem-ref" data-elem="EFGH">EFGH</span> equals the same <span class="elem-ref" data-elem="EBCH">EBCH</span>, so that the parallelogram <span class="elem-ref" data-elem="ABCD">ABCD</span> also equals <span class="elem-ref" data-elem="EFGH">EFGH</span>.</p>
+<p>Therefore <em>parallelograms which are on equal bases and in the same parallels equal one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is a generalization of the previous proposition <a href="/elements/books/bookI/propositions/propI35/">I.35</a>, and its proof depends directly on it. Euclid could have bundled the two propositions into one. Then the special case of I.35 would have been proven first and then used to prove the general case of I.36. In an introductory book like Book I this separation makes it easier to follow the logic, but in later books special cases are often bundled into the general proposition.</p>
+<h4>Use of Proposition 36</h4>
+<p>This proposition is used in <a href="/elements/books/bookI/propositions/propI38/">I.38</a>, a few propositions in Books II and VI, and <a href="/elements/books/bookXI/propositions/propXI29/">XI.29</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI38/">I.38</a></td></tr>
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII5/">II.5</a>, <a href="/elements/books/bookII/propositions/propII6/">II.6</a>, <a href="/elements/books/bookII/propositions/propII8/">II.8</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI27/">VI.27</a>, <a href="/elements/books/bookVI/propositions/propVI28/">VI.28</a>, <a href="/elements/books/bookVI/propositions/propVI29/">VI.29</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI29/">XI.29</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

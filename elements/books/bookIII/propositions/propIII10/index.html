@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 10</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 10</h1>
+    <div class="statement">A circle does not cut a circle at more than two points.</div>
+    <p>For, if possible, let the circle <em>ABC</em> cut the circle <em>DEF</em> at more points than two, namely <em>B, G, F,</em> and <em>H.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="300" tabindex="0"></canvas>
+<noscript><img alt="III.10 diagram" src="propIII10.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.10",
+        pivot: "P",
+        elements: [
+            "B;point;free;150,40",
+            "F;point;free;150,260",
+            "H;point;free;40,180",
+            "ABC;circle;circumcircle;B,F,H;0;0;black;random",
+            "P;point;center;ABC;black;green",
+            "G;point;circleSlider;ABC,210,150",
+            "HB;line;connect;H,B",
+            "BG;line;connect;B,G",
+            "K;point;midpoint;HB",
+            "L;point;midpoint;BG",
+            "S;point;midpoint;H,F;0;0",
+            "BHY;polygon;equilateralTriangle;B,H;0;0;0;0",
+            "Y;point;vertex;BHY,3;0;0",
+            "Z;point;intersection;H,Y,S,P;0;0",
+            "W;point;intersection;B,Y,L,P;0;0",
+            "X;point;intersection;F,Z,G,W;0;0",
+            "arcFG;sector;sector;X,F,G;0;0;black;0",
+            "arcGB;sector;sector;W,G,B;0;0;black;0",
+            "arcBH;sector;sector;Y,B,H;0;0;black;0",
+            "arcHF;sector;sector;Z,H,F;0;0;black;0",
+            "A;point;cutoff;P,K,P,B",
+            "C;point;extend;A,P,A,P",
+            "AC;line;connect;A,C",
+            "O;point;cutoff;P,L,P,B",
+            "N;point;extend;O,P,O,P",
+            "circGB;circle;radius;W,B;0;0;0;0",
+            "circHF;circle;radius;Z,H;0;0;0;0",
+            "EE';line;chord;N,O,circGB;0;0;0",
+            "MM';line;chord;N,O,circHF;0;0;0",
+            "E;point;last;EE'",
+            "M;point;first;MM'",
+            "EM;line;connect;E,M",
+            "D;point;cutoff;Y,A,Y,B;black;0"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI10/">I.10</a><br><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
+<p>Join <em>BH</em> and <em>BG,</em> and bisect them at the points <em>K</em> and <em>L.</em> Draw  <em>KC</em> and <em>LM</em> from <em>K</em> and <em>L</em> at right angles to <em>BH</em> and <em>BG,</em>  and carry them through to the points <em>A</em> and <em>E.</em></p>
+<div class="just"><a href="../propIII1/#cor">III.1,Cor</a></div><p>Then, since in the circle <em>ABC</em> a straight line <em>AC</em> cuts a straight line <em>BH</em> into two equal parts and at right angles, the center of the circle <em>ABC</em> lies on <em>AC.</em>  Again, since in the same circle <em>ABC</em> a straight line <em>NO</em> cuts a straight line <em>BG</em> into two equal parts and at right angles, the center of the circle <em>ABC</em> lies on <em>NO.</em></p>
+<p>But it was also proved to lie on <em>AC,</em> and the straight lines <em>AC</em> and <em>NO</em> meet at no point except at <em>P,</em> therefore the point <em>P</em> is the center of the circle <em>ABC.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII5/">III.5</a></div>
+<p>Similarly we can prove that <em>P</em> is also the center of the circle <em>DEF,</em> therefore the two circles <em>ABC</em> and <em>DEF</em> which cut one another have the same center <em>P,</em> which is impossible.</p>
+<p>Therefore <em>a circle does not cut a circle at more than two points.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear=all></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The figure is another impossible figure.  Both curves are supposed to be circumferences of circles, but, of course, they cannot both be drawn as circles since the situation is proved not to occur.  Although Euclid names four points where the circles meet, only three, <em>B, G,</em> and <em>H,</em> are used in the proof.</p>
+<p>The proof actually shows that the two circles cannot <em>meet</em> in more than two points, where "meet" could be either cut or touch.</p>
+<p>Heath remarks that the lines bisecting <em>BG</em> and <em>BH</em> have not been shown to meet.  In fact, they have, since the center of the circle <em>ABC</em> has been shown to be on both.</p>
+<p>This proposition is used in <a href="/elements/books/bookIII/propositions/propIII24/">III.24</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII24/">III.24</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

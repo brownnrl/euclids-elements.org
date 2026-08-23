@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 3</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem" class="red-highlight">
+    <h1 id="prop">Proposition 3</h1>
+    <div class="statement">To find the greatest common measure of two given commensurable magnitudes.</div>
+    <p>Let the two given commensurable magnitudes be <em>AB</em> and <em>CD</em> with <em>AB</em> the less.</p>
+<p>It is required to find the greatest common measure of <em>AB</em> and <em>CD.</em></p>
+<p>Now the magnitude <em>AB</em> either measures <em>CD</em> or it does not.</p>
+<p>If it measures it, and it does measures itself, then <em>AB</em> is a common measure of <em>AB</em> and <em>CD.</em> And it is manifest that it is also the greatest, for a greater magnitude than the magnitude <em>AB</em> does not measure <em>AB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="100" tabindex="0"></canvas>
+<noscript><img alt="X.3 diagram" src="propX3.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.3",
+        elements: [
+            "A0;point;free;-1000,35;0;0",
+            "A3;point;free;1000,35;0;0",
+            "C0;point;free;-1000,70;0;0",
+            "C3;point;free;1000,70;0;0",
+            "A;point;lineSlider;A0,A3,160,0",
+            "B;point;lineSlider;A0,A3,260,0",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;C0,C3,30,0",
+            "D;point;lineSlider;C0,C3,260,0",
+            "CD;line;connect;C,D",
+            "E1;point;cutoff;D,C,A,B;0;0",
+            "E;point;cutoff;E1,C,A,B",
+            "F1;point;cutoff;B,A,C,E;0;0",
+            "F;point;cutoff;F1,A,C,E",
+            "G1;point;lineSlider;A0,A3,30,0;0",
+            "G2;point;lineSlider;A0,A3,80,0;0",
+            "G;line;connect;G1,G2;black"
+        ],
+    });
+</script>
+</figure><p>Next, let <em>AB</em> not measure <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX2/">X.2</a></div>
+<p>Then, if the less is continually subtracted in turn from the greater, then that which is left over will sometime measure the one before it, because <em>AB</em> and <em>CD</em> are not incommensurable.</p>
+<p>Let <em>AB,</em> measuring <em>ED,</em> leave <em>EC</em> less than itself, let <em>EC,</em> measuring <em>FB,</em> leave <em>AF</em> less than itself, and let <em>AF</em> measure <em>CE.</em></p>
+<p>Since, then, <em>AF</em> measures <em>CE,</em> while <em>CE</em> measures <em>FB,</em> therefore <em>AF</em> also measures <em>FB.</em> But it measures itself also, therefore <em>AF</em> also measures the whole <em>AB.</em> But <em>AB</em> measures <em>DE,</em> therefore <em>AF</em> also measures <em>ED.</em> But it measures <em>CE</em> also, therefore it also measures the whole <em>CD.</em></p>
+<p>Therefore <em>AF</em> is a common measure of <em>AB</em> and <em>CD.</em></p>
+<p>I say next that it is also the greatest.</p>
+<p>If not, then there there is some magnitude <em>G</em> greater than <em>AF</em> which measures <em>AB</em> and <em>CD.</em> Since then <em>G</em> measures <em>AB,</em> while <em>AB</em> measures <em>ED,</em> therefore <em>G</em> also measures <em>ED.</em></p>
+<p>But it measures the whole <em>CD</em> also, therefore <em>G</em> measures the remainder <em>CE.</em> But <em>CE</em> measures <em>FB,</em> therefore <em>G</em> also measures <em>FB.</em></p>
+<p>But it measures the whole <em>AB</em> also, and it therefore measures the remainder <em>AF,</em> the greater the less, which is impossible.</p>
+<p>Therefore no magnitude greater than <em>AF</em> measures <em>AB</em> and <em>CD.</em> Therefore <em>AF</em> is the greatest common measure of <em>AB</em> and <em>CD.</em></p>
+<p>Therefore the greatest common measure of the two given commensurable magnitudes <em>AB</em> and <em>CD</em> has been found.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="cor">Corollary.</h1>
+    <div class="statement">If a magnitude measures two magnitudes, then it also measures their greatest common measure.</div>
+    <p>From this it is clear that, <em>if a magnitude measures two magnitudes, then it also measures their greatest common measure.</em></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This is the same proposition as <a href="/elements/books/bookVII/propositions/propVII3/">VII.3</a> with the same diagram and the same corollary, only the terminology is slightly different.</p>
+<p>This proposition and its corollary are used in the next proposition.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX4/">X.4</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

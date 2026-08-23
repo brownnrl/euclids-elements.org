@@ -1,0 +1,181 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book V</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book V</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 4</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 4</h1>
+    <div class="statement">If a first magnitude has to a second the same ratio as a third to a fourth, then any equimultiples whatever of the first and third also have the same ratio to any equimultiples whatever of the second and fourth respectively, taken in corresponding order.</div>
+    <p>Let a first magnitude <em>A</em> have to a second <em>B</em> the same ratio as a third <em>C</em> to a fourth <em>D,</em> and let equimultiples <em>E</em> and <em>F</em> be taken of <em>A</em> and <em>C,</em> and <em>G</em> and <em>H</em> other, arbitrary, equimultiples of <em>B</em> and <em>D.</em></p>
+<p>I say that <em>E</em> is to <em>G</em> as <em>F</em> is to <em>H.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="350" height="265" tabindex="0"></canvas>
+<noscript><img alt="V.4 diagram" src="propV4.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "V.4",
+        elements: [
+            "U1;point;free;0,0;0;0",
+            "U2;point;free;25,0;0;0",
+            "U;line;connect;U1,U2;0;0;0",
+            "A1;point;free;20,30;0",
+            "A3;point;parallelogram;A1,U;0;0",
+            "A2;point;lineSlider;A1,A3,70,0;0",
+            "A;line;connect;A1,A2;black;0;magenta",
+            "B1;point;free;320,30;0",
+            "B3;point;parallelogram;B1,U2,U1;0;0",
+            "B2;point;lineSlider;B1,B3,293,0;0",
+            "B;line;connect;B1,B2;black;0;magenta",
+            "C1;point;free;20,160;0",
+            "C3;point;parallelogram;C1,U;0;0",
+            "C2;point;lineSlider;C1,C3,80,0;0",
+            "C;line;connect;C1,C2;black;0;green",
+            "D1;point;free;320,160;0",
+            "D3;point;parallelogram;D1,U2,U1;0;0",
+            "D2;point;proportion;A,B,C,D1,D3;0",
+            "D;line;connect;D1,D2;black;0;green",
+            "E0;point;free;20,60;0",
+            "E';point;parallelogram;E0,U;0;0",
+            "E1;point;cutoff;E0,E',A;0;lightGray",
+            "E2;point;extend;E0,E1,A;0",
+            "E;line;connect;E0,E2;black;0;magenta",
+            "F0;point;free;20,190;0",
+            "F';point;parallelogram;F0,U;0;0",
+            "F1;point;cutoff;F0,F',C;0;lightGray",
+            "F2;point;extend;F0,F1,C;0",
+            "F;line;connect;F0,F2;black;0;green",
+            "G0;point;free;320,60;0",
+            "G';point;parallelogram;G0,U2,U1;0;0",
+            "G1;point;cutoff;G0,G',B;0;lightGray",
+            "G2;point;extend;G0,G1,B;0;lightGray",
+            "G3;point;extend;G0,G2,B;0",
+            "G;line;connect;G0,G3;black;0;magenta",
+            "H0;point;free;320,190;0",
+            "H';point;parallelogram;H0,U2,U1;0;0",
+            "H1;point;cutoff;H0,H',D;0;lightGray",
+            "H2;point;extend;H0,H1,D;0;lightGray",
+            "H3;point;extend;H0,H2,D;0",
+            "H;line;connect;H0,H3;black;0;green",
+            "K0;point;free;20,90;0",
+            "K';point;parallelogram;K0,U;0;0",
+            "K1;point;cutoff;K0,K',E;0;lightGray",
+            "K2;point;extend;K0,K1,E;0",
+            "K;line;connect;K0,K2;black;0;magenta",
+            "L0;point;free;20,220;0",
+            "L';point;parallelogram;L0,U;0;0",
+            "L1;point;cutoff;L0,L',F;0;lightGray",
+            "L2;point;extend;L0,L1,F;0",
+            "L;line;connect;L0,L2;black;0;green",
+            "M0;point;free;320,120;0",
+            "M';point;parallelogram;M0,U2,U1;0;0",
+            "M1;point;cutoff;M0,M',G;0;lightGray",
+            "M2;point;extend;M0,M1,G;0;lightGray",
+            "M3;point;extend;M0,M2,G;0",
+            "M;line;connect;M0,M3;black;0;magenta",
+            "N0;point;free;320,250;0",
+            "N';point;parallelogram;N0,U2,U1;0;0",
+            "N1;point;cutoff;N0,N',H;0;lightGray",
+            "N2;point;extend;N0,N1,H;0;lightGray",
+            "N3;point;extend;N0,N2,H;0",
+            "N;line;connect;N0,N3;black;0;green"
+        ],
+    });
+</script>
+</figure><p>Take equimultiples <em>K</em> and <em>L</em> of <em>E</em> and <em>F,</em> and other, arbitrary, equimultiples <em>M</em> and <em>N</em> of <em>G</em> and <em>H.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV3/">V.3</a></div>
+<p>Since <em>E</em> is the same multiple of <em>A</em> that <em>F</em> is of <em>C,</em> and equimultiples <em>K</em> and <em>L</em> of <em>E</em> and <em>F</em> have been taken, therefore <em>K</em> is the same multiple of <em>A</em> that <em>L</em> is of <em>C.</em> For the same reason <em>M</em> is the same multiple of <em>B</em> that <em>N</em> is of <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV5/">V.Def.5</a></div>
+<p>And, since <em>A</em> is to <em>B</em> as <em>C</em> is to <em>D,</em> and equimultiples <em>K</em> and <em>L</em> have been taken of <em>A</em> and <em>C,</em> and other, arbitrary, equimultiples <em>M</em> and <em>N</em> of <em>B</em> and <em>D,</em> therefore, if <em>K</em> is in excess of <em>M,</em> then <em>L</em> is in excess of <em>N</em>; if it is equal, equal; and if less, less.</p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV5/">V.Def.5</a></div>
+<p>And <em>K</em> and <em>L</em> are equimultiples of <em>E</em> and <em>F,</em> and <em>M</em> and <em>N</em> are other, arbitrary, equimultiples of <em>G</em> and <em>H,</em> therefore <em>E</em> is to <em>G</em> as <em>F</em> is to <em>H.</em></p>
+<p>Therefore, <em>if a first magnitude has to a second the same ratio as a third to a fourth, then any equimultiples whatever of the first and third also have the same ratio to any equimultiples whatever of the second and fourth respectively, taken in corresponding order.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The statement of the proposition says that</p>
+<center>if <i>a</i> : <i>b</i> = <i>c</i> : <i>d</i>, then <i>pa</i> : <i>qb</i> = <i>pc</i> : <i>qd</i> for any numbers <i>p</i> and <i>q</i>.</center><p>Note how Euclid uses the definition to prove that the two ratios <em>pa</em> : <em>qb</em> and <em>pc</em> : <em>qd</em> are the same. (Here, <em>a</em> and <em>b</em> are magnitudes of one kind, and <em>c</em> and <em>d</em> are magnitudes of another kind, but <em>p</em> and <em>q</em> are numbers.) We are given <em>a</em> : <em>b</em> = <em>c</em> : <em>d.</em> That means for any numbers <em>m</em> and <em>n</em> that</p>
+<center>if <i>ma</i> >=< <i>nb,</i> then <i>mc</i> >=< <i>nd.</i></center><p>We have to prove that <em>pa</em> : <em>qb</em> = <em>pc</em> : <em>qd</em> for any numbers <em>p</em> and <em>q.</em> That means, we have to prove that for any <em>m</em> and <em>n,</em></p>
+<center>if <i>mpa</i> >=< <i>nqb,</i> then <i>mpc</i> >=< <i>nqd.</i></center><p>But that's just a special case of the given relation</p>
+<center>if <i>ma</i> >=< <i>nb,</i> then <i>mc</i> >=< <i>nd.</i></center><h4>Use of this proposition</h4>
+<p>Proposition V.4 is used in the proof of one other proposition, namely, <a href="/elements/books/bookV/propositions/propV22/">V.22</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book V</th><td><a href="/elements/books/bookV/propositions/propV22/">V.22</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

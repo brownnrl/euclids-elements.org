@@ -1,0 +1,219 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 24</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 24</h1>
+    <div class="statement">If two triangles have two sides equal to two sides respectively, but have one of the angles contained by the equal straight lines greater than the other, then they also have the base greater than the base.</div>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> and <span class="elem-ref" data-elem="DEF">DEF</span> be two triangles having the two sides <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="AC">AC</span> equal to the two sides <span class="elem-ref" data-elem="DE">DE</span> and <span class="elem-ref" data-elem="DF">DF</span> respectively, so that <span class="elem-ref" data-elem="AB">AB</span> equals <span class="elem-ref" data-elem="DE">DE</span>, and <span class="elem-ref" data-elem="AC">AC</span> equals <span class="elem-ref" data-elem="DF">DF</span>, and let the angle at <span class="elem-ref" data-elem="A">A</span> be greater than the angle at <span class="elem-ref" data-elem="D">D</span>.</p>
+<p>I say that the base <span class="elem-ref" data-elem="BC">BC</span> is greater than the base <span class="elem-ref" data-elem="EF">EF</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="330" height="270" tabindex="0"></canvas>
+<noscript><img alt="I.24 diagram" src="propI24.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.24",
+        elements: [
+            "D;point;free;225,40",
+            "E;point;free;300,180",
+            "F;point;free;230,240",
+            "DEF;polygon;triangle;D,E,F;0;0;0,0,0;random",
+            "A;point;free;80,40",
+            "ABcirc;circle;radius;A,D,E;0;0;0;0",
+            "ACcirc;circle;radius;A,D,F;0;0;0;0",
+            "B;point;circleSlider;ABcirc,140,150",
+            "C;point;circleSlider;ACcirc,40,170",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "DEG;polygon;similar;D,E,A,B,C;0;0;0,0,0;0",
+            "G;point;vertex;DEG,3",
+            "FG;line;connect;F,G",
+            // Angle markers (subject is angles → #91; same-vertex pairs
+            // auto-nest #103). At D: the given ∠EDF and the copied ∠EDG
+            // (EDG ⊃ EDF). At G: ∠DGF and ∠EGF. At F: ∠DFG and ∠EFG.
+            // ∠EFG's marker is "angEFG" so the name "EFG" stays the triangle
+            // (prose: {EFG|angEFG} for the angle, {EFG} for the triangle).
+            "BAC;sector;angleMarker;A,B,C",
+            "EDF;sector;angleMarker;D,E,F",
+            "EDG;sector;angleMarker;D,E,G",
+            "DGF;sector;angleMarker;G,D,F",
+            "EGF;sector;angleMarker;G,E,F",
+            "DFG;sector;angleMarker;F,D,G",
+            "angEFG;sector;angleMarker;F,E,G",
+            // The I.19 triangle EFG (zero-color outline / hover target).
+            "EFG;polygon;triangle;E,F,G;0;0;0;0",
+            // Zero-color side hover targets (the polygons give no per-edge
+            // hover). FG is already a drawn line above.
+            "AB;line;connect;A,B;0;0;0",
+            "AC;line;connect;A,C;0;0;0",
+            "BC;line;connect;B,C;0;0;0",
+            "DE;line;connect;D,E;0;0;0",
+            "DF;line;connect;D,F;0;0;0",
+            "EF;line;connect;E,F;0;0;0",
+            "EG;line;connect;E,G;0;0;0",
+            "DG;line;connect;D,G;0;0;0"
+        ],
+        aliases: {
+            "BA": "AB",
+            "ED": "DE"
+        },
+        slides: [
+            { text: "Let {ABC} and {DEF} be two triangles having the two sides {AB} and {AC} equal to the two sides {DE} and {DF} respectively, so that {AB} equals {DE}, and {AC} equals {DF}, and let the angle at {A} be greater than the angle at {D}.",
+              visible: ["ABC","DEF","BAC","EDF"],
+              highlighted: ["AB","AC","DE","DF","BAC","EDF"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "BAC", name: geomlib.A.Sector.sweep },
+                  { elem: "EDF", name: geomlib.A.Sector.sweep } ] } },
+            { text: "I say that the base {BC} is greater than the base {EF}.",
+              visible: ["ABC","DEF","BAC","EDF"],
+              highlighted: ["BC","EF"] },
+            { text: "Since the angle {BAC} is greater than the angle {EDF}, construct the angle {EDG} equal to the angle {BAC} at the point {D} on the straight line {DE}. Make {DG} equal to either of the two straight lines {AC} or {DF}. Join {EG} and {FG}.",
+              visible: ["ABC","DEF","BAC","EDF","DEG","G","EDG","EG","DG","FG"],
+              highlighted: ["BAC","EDG","DG","AC","DF","EG","FG"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "G",   name: geomlib.A.Point.appear },
+                  { elem: "DEG", name: geomlib.A.Polygon.outline },
+                  { elem: "FG",  name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "EDG", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.23" }, { ref: "I.3" }, { ref: "I.Post.1" }] },
+            { text: "Since {AB} equals {DE}, and {AC} equals {DG}, the two sides {BA} and {AC} equal the two sides {ED} and {DG}, respectively, and the angle {BAC} equals the angle {EDG}, therefore the base {BC} equals the base {EG}.",
+              visible: ["ABC","DEF","BAC","EDF","DEG","G","EDG","EG","DG","FG"],
+              highlighted: ["AB","DE","AC","DG","BAC","EDG","BC","EG"],
+              justifications: [{ ref: "I.4" }] },
+            { text: "Again, since {DF} equals {DG}, therefore the angle {DGF} equals the angle {DFG}. Therefore the angle {DFG} is greater than the angle {EGF}.",
+              visible: ["ABC","DEF","BAC","EDF","DEG","G","EDG","EG","DG","FG","DGF","DFG","EGF"],
+              highlighted: ["DF","DG","DGF","DFG","EGF"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "DGF", name: geomlib.A.Sector.sweep },
+                  { elem: "DFG", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.5" }] },
+            { text: "Therefore the angle {EFG|angEFG} is much greater than the angle {EGF}.",
+              visible: ["ABC","DEF","BAC","EDF","DEG","G","EDG","EG","DG","FG","DGF","DFG","EGF","angEFG"],
+              highlighted: ["angEFG","EGF"],
+              transition: { animations: [ { elem: "angEFG", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Since {EFG} is a triangle having the angle {EFG|angEFG} greater than the angle {EGF}, and the side opposite the greater angle is greater, therefore the side {EG} is also greater than {EF}.",
+              visible: ["ABC","DEF","BAC","EDF","DEG","G","EDG","EG","DG","FG","DGF","DFG","EGF","angEFG","EFG"],
+              highlighted: ["EFG","angEFG","EGF","EG","EF"],
+              transition: { animations: [ { elem: "EFG", name: geomlib.A.Polygon.outline } ] },
+              justifications: [{ ref: "I.19" }] },
+            { text: "But {EG} equals {BC}, therefore {BC} is also greater than {EF}.",
+              visible: ["ABC","DEF","BAC","EDF","DEG","G","EDG","EG","DG","FG","DGF","DFG","EGF","angEFG","EFG"],
+              highlighted: ["EG","BC","EF"] },
+            { text: "Therefore if two triangles have two sides equal to two sides respectively, but have one of the angles contained by the equal straight lines greater than the other, then they also have the base greater than the base.",
+              visible: ["ABC","DEF","BAC","EDF","DEG","G","EDG","EG","DG","FG","DGF","DFG","EGF","angEFG","EFG"],
+              highlighted: ["BC","EF","BAC","EDF"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.3":      "/elements/books/bookI/propositions/propI3/",
+        "I.4":      "/elements/books/bookI/propositions/propI4/",
+        "I.5":      "/elements/books/bookI/propositions/propI5/",
+        "I.19":     "/elements/books/bookI/propositions/propI19/",
+        "I.23":     "/elements/books/bookI/propositions/propI23/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a></div>
+<p>Since the angle <span class="elem-ref" data-elem="BAC">BAC</span> is greater than the angle <span class="elem-ref" data-elem="EDF">EDF</span>, construct the angle <span class="elem-ref" data-elem="EDG">EDG</span> equal to the angle <span class="elem-ref" data-elem="BAC">BAC</span> at the point <span class="elem-ref" data-elem="D">D</span> on the straight line <span class="elem-ref" data-elem="DE">DE</span>. Make <span class="elem-ref" data-elem="DG">DG</span> equal to either of the two straight lines <span class="elem-ref" data-elem="AC">AC</span> or <span class="elem-ref" data-elem="DF">DF</span>. Join <span class="elem-ref" data-elem="EG">EG</span> and <span class="elem-ref" data-elem="FG">FG</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Since <span class="elem-ref" data-elem="AB">AB</span> equals <span class="elem-ref" data-elem="DE">DE</span>, and <span class="elem-ref" data-elem="AC">AC</span> equals <span class="elem-ref" data-elem="DG">DG</span>, the two sides <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AC">AC</span> equal the two sides <span class="elem-ref" data-elem="ED">ED</span> and <span class="elem-ref" data-elem="DG">DG</span>, respectively, and the angle <span class="elem-ref" data-elem="BAC">BAC</span> equals the angle <span class="elem-ref" data-elem="EDG">EDG</span>, therefore the base <span class="elem-ref" data-elem="BC">BC</span> equals the base <span class="elem-ref" data-elem="EG">EG</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>Again, since <span class="elem-ref" data-elem="DF">DF</span> equals <span class="elem-ref" data-elem="DG">DG</span>, therefore the angle <span class="elem-ref" data-elem="DGF">DGF</span> equals the angle <span class="elem-ref" data-elem="DFG">DFG</span>. Therefore the angle <span class="elem-ref" data-elem="DFG">DFG</span> is greater than the angle <span class="elem-ref" data-elem="EGF">EGF</span>.</p>
+<p>Therefore the angle <span class="elem-ref" data-elem="angEFG">EFG</span> is much greater than the angle <span class="elem-ref" data-elem="EGF">EGF</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI19/">I.19</a></div>
+<p>Since <span class="elem-ref" data-elem="EFG">EFG</span> is a triangle having the angle <span class="elem-ref" data-elem="angEFG">EFG</span> greater than the angle <span class="elem-ref" data-elem="EGF">EGF</span>, and side opposite the greater angle is greater, therefore the side <span class="elem-ref" data-elem="EG">EG</span> is also greater than <span class="elem-ref" data-elem="EF">EF</span>.</p>
+<p>But <span class="elem-ref" data-elem="EG">EG</span> equals <span class="elem-ref" data-elem="BC">BC</span>, therefore <span class="elem-ref" data-elem="BC">BC</span> is also greater than <span class="elem-ref" data-elem="EF">EF</span>.</p>
+<p>Therefore <em>if two triangles have two sides equal to two sides respectively, but have one of the angles contained by the equal straight lines greater than the other, then they also have the base greater than the base.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Use of Proposition 24</h4>
+<p>This proposition is used in the next proposition as well as a few in Book III and <a href="/elements/books/bookXI/propositions/propXI22/">XI.22</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI25/">I.25</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII7/">III.7</a>, <a href="/elements/books/bookIII/propositions/propIII8/">III.8</a>, <a href="/elements/books/bookIII/propositions/propIII15/">III.15</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI22/">XI.22</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

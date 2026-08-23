@@ -1,0 +1,325 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 2</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 2</h1>
+    <div class="statement">To place a straight line equal to a given straight line with one end at a given point.</div>
+    <p>Let <span class="elem-ref" data-elem="A">A</span> be the given point, and <span class="elem-ref" data-elem="BC">BC</span> the given straight line.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="340" height="320" tabindex="0"></canvas>
+<noscript><img alt="I.2 diagram" src="propI2.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.2",
+    pivot: "D",
+    elements: [
+        "A;point;free;160,190",
+        "B;point;free;190,160",
+        "C;point;free;180,90",
+        "BC;line;connect;B,C",
+        // Joined on slide 3 of the walk-through ("Join the straight
+        // line AB"). The original figure leaves AB implicit in the
+        // triangle's edge; the slideshow needs it addressable.
+        "AB;line;connect;A,B",
+        // Transitionary circles for the verbose I.1 construction on
+        // slide 3 — centre A radius AB and centre B radius BA, the
+        // two compass sweeps whose intersection locates D. Zero
+        // colors keep them out of the static figure entirely
+        // (geomlib >= 0.6.1): they render in the gold emphasis
+        // stroke only while their compass animation runs, stay up
+        // through D's appearance, then fade out with the
+        // post-animation emphasis taper.
+        "ABcirc;circle;radius;A,B;0;0;0;0",
+        "BAcirc;circle;radius;B,A;0;0;0;0",
+        // Invisible helper triangle that derives D (vertex 3). The
+        // prose name "DAB" belongs to the visible polygon at the end
+        // of the list, so this helper carries the -h suffix.
+        "DABh;polygon;equilateralTriangle;A,B;0;0;0;0",
+        "D;point;vertex;DABh,3;black;green",
+        "AL;line;extend;D,A,B,C",
+        "L;point;last;AL",
+        "LE;line;extend;A,L,A,B",
+        "E;point;last;LE;black;0",
+        "BG;line;extend;D,B,B,C",
+        "G;point;last;BG",
+        "GF;line;extend;B,G,A,B",
+        "F;point;last;GF;black;0",
+        // Invisible z-order helper from the original applet ordering;
+        // the visible CGH (brighter face) draws later, on top of GKL.
+        // Renamed from "CGH" so the prose name resolves to the
+        // visible circle below.
+        "CGHh;circle;radius;BC;0;0;0;0",
+        "BH;line;extend;G,B,G,B;0;0;0",
+        "H;point;last;BH;black;0",
+        "GKL;circle;radius;D,G;0;0;black;darker",
+        "CGH;circle;radius;BC;0;0;black;brighter",
+        "DK;line;extend;G,D,G,D;0;0;0",
+        "K;point;last;DK;black;0",
+        "DAB;polygon;equilateralTriangle;A,B;0;0;black;random",
+        // Invisible highlight-target lines (the Zeno pattern from
+        // propI.1): zero-color edges draw nothing normally but render
+        // in the gold highlight stroke when a slide or a {NAME} span
+        // calls them out. They name the proof's conceptual segments
+        // that aren't standalone drawn elements — the triangle sides
+        // DA / DB, the full radius runs DL (D→A→L) and DG (D→B→G),
+        // and the produced lines AE (A→L→E) and BF (B→G→F).
+        "DA;line;connect;D,A;0;0;0",
+        "DB;line;connect;D,B;0;0;0",
+        "DL;line;connect;D,L;0;0;0",
+        "DG;line;connect;D,G;0;0;0",
+        "AE;line;connect;A,E;0;0;0",
+        "BF;line;connect;B,F;0;0;0"
+    ],
+    // Slideshow walk-through (geomlib >= 0.5.0) with slide-transition
+    // animations (>= 0.6.0). Slides that introduce a construction
+    // animate it in compass-and-straightedge style; the proof-step
+    // slides (7-11) only relight highlights. Slide 3 plays the full
+    // I.1 equilateral-triangle construction — both compass sweeps and
+    // the intersection point D — then the transitionary circles
+    // disappear on the next slide, their work done.
+    slides: [
+        { text: "Let {A} be the given point, and {BC} the given straight line.",
+          visible: ["BC"],
+          transition: {
+              animations: [
+                  { elem: "BC", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          } },
+        { text: "It is required to place a straight line equal to the given straight line {BC} with one end at the point {A}.",
+          visible: ["BC","AL"],
+          transition: {
+              animations: [
+                  { elem: "AL", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          } },
+        { text: "Join the straight line {AB} from the point {A} to the point {B}, and construct the equilateral triangle {DAB} on it. [the construction of I.1 is shown in full]",
+          visible: ["BC","AB","ABcirc","BAcirc","D","DAB"],
+          transition: {
+              // The verbose I.1 dance: straightedge AB, compass sweep
+              // about A, compass sweep about B, D lands at the
+              // intersection, the triangle traces and fills.
+              animations: [
+                  { elem: "AB",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "ABcirc", name: geomlib.A.Circle.compass },
+                  { elem: "BAcirc", name: geomlib.A.Circle.compass },
+                  { elem: "D",      name: geomlib.A.Point.appear },
+                  { elem: "DAB",    name: geomlib.A.Polygon.outlineAndFill }
+              ]
+          },
+          justifications: [{ ref: "I.Post.1" }, { ref: "I.1" }] },
+        { text: "Produce the straight lines {AE} and {BF} in a straight line with {DA} and {DB}.",
+          // The zero-color highlight-target lines named in the caption
+          // must be IN the visible set for hover emphasis to render —
+          // drawEdge bails on visible=false before checking emphasis.
+          visible: ["BC","AB","D","DAB","AL","L","LE","E","BG","G","GF","F","AE","BF","DA","DB"],
+          transition: {
+              // Each produced line runs as one continuous gesture:
+              // A out to L and on to E, then B out to G and on to F.
+              animations: [
+                  { elem: "AL", name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "LE", name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "BG", name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "GF", name: geomlib.A.Line.straightEdgeExtend }
+              ]
+          },
+          justifications: [{ ref: "I.Post.2" }] },
+        { text: "Describe the circle {CGH} with center {B} and radius {BC}.",
+          visible: ["BC","AB","D","DAB","AL","L","LE","E","BG","G","GF","F","CGH","H"],
+          transition: {
+              animations: [
+                  { elem: "CGH", name: geomlib.A.Circle.compass }
+              ]
+          },
+          justifications: [{ ref: "I.Post.3" }] },
+        { text: "And again, describe the circle {GKL} with center {D} and radius {DG}.",
+          // DG included so the caption's {DG} hover can render (see
+          // slide 4's note on zero-color highlight targets).
+          visible: ["BC","AB","D","DAB","AL","L","LE","E","BG","G","GF","F","CGH","H","GKL","K","DG"],
+          transition: {
+              animations: [
+                  { elem: "GKL", name: geomlib.A.Circle.compass }
+              ]
+          },
+          justifications: [{ ref: "I.Post.3" }] },
+        { text: "Since the point {B} is the center of the circle {CGH}, therefore {BC} equals {BG}.",
+          highlighted: ["B","CGH","BC","BG"],
+          justifications: [{ ref: "I.Def.15" }] },
+        { text: "Again, since the point {D} is the center of the circle {GKL}, therefore {DL} equals {DG}.",
+          highlighted: ["D","GKL","DL","DG"],
+          justifications: [{ ref: "I.Def.15" }] },
+        { text: "And in these {DA} equals {DB}, therefore the remainder {AL} equals the remainder {BG}.",
+          highlighted: ["DA","DB","AL","BG"],
+          justifications: [{ ref: "C.N.3" }] },
+        { text: "But {BC} was also proved equal to {BG}, therefore each of the straight lines {AL} and {BC} equals {BG}.",
+          highlighted: ["BC","BG","AL"] },
+        { text: "And things which equal the same thing also equal one another, therefore {AL} also equals {BC}.",
+          highlighted: ["AL","BC"],
+          justifications: [{ ref: "C.N.1" }] },
+        { text: "Therefore the straight line {AL} equal to the given straight line {BC} has been placed with one end at the given point {A}.",
+          highlighted: ["AL","BC","A"],
+          justifications: [{ ref: "Q.E.F." }] }
+    ],
+    resolveJustification: function(ref) {
+        return (window.eucrefs && window.eucrefs[ref]) || null;
+    }
+});
+
+// Per-page citation lookup for the slideshow's resolveJustification
+// callback — same hand-authored pattern as propI.1.
+window.eucrefs = (window.eucrefs || {});
+Object.assign(window.eucrefs, {
+    "I.Post.1": "/elements/books/bookI/postulates/post1/",
+    "I.Post.2": "/elements/books/bookI/postulates/post2/",
+    "I.Post.3": "/elements/books/bookI/postulates/post3/",
+    "I.1":      "/elements/books/bookI/propositions/propI1/",
+    "I.Def.15": "/elements/books/bookI/definitions/defI15/",
+    "C.N.3":    "/elements/books/bookI/commonnotions/cn3/",
+    "C.N.1":    "/elements/books/bookI/commonnotions/cn1/"
+});
+</script>
+</figure><p>It is required to place a straight line equal to the given straight line <span class="elem-ref" data-elem="BC">BC</span> with one end at the point <span class="elem-ref" data-elem="A">A</span>.</p>
+<div class="just"><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a>, <a href="/elements/books/bookI/propositions/propI1/">I.1</a></div>
+<p>Join the straight line <span class="elem-ref" data-elem="AB">AB</span> from the point <span class="elem-ref" data-elem="A">A</span> to the point <span class="elem-ref" data-elem="B">B</span>, and construct the equilateral triangle <span class="elem-ref" data-elem="DAB">DAB</span> on it.</p>
+<div class="just"><a href="/elements/books/bookI/postulates/post2/">I.Post.2</a><br><a href="/elements/books/bookI/postulates/post3/">I.Post.3</a></div>
+<p>Produce the straight lines <span class="elem-ref" data-elem="AE">AE</span> and <span class="elem-ref" data-elem="BF">BF</span> in a straight line with <span class="elem-ref" data-elem="DA">DA</span> and <span class="elem-ref" data-elem="DB">DB</span>. Describe the circle <span class="elem-ref" data-elem="CGH">CGH</span> with center <span class="elem-ref" data-elem="B">B</span> and radius <span class="elem-ref" data-elem="BC">BC</span>, and again, describe the circle <span class="elem-ref" data-elem="GKL">GKL</span> with center <span class="elem-ref" data-elem="D">D</span> and radius <span class="elem-ref" data-elem="DG">DG</span>.</p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a></div>
+<p>Since the point <span class="elem-ref" data-elem="B">B</span> is the center of the circle <span class="elem-ref" data-elem="CGH">CGH</span>, therefore <span class="elem-ref" data-elem="BC">BC</span> equals <span class="elem-ref" data-elem="BG">BG</span>. Again, since the point <span class="elem-ref" data-elem="D">D</span> is the center of the circle <span class="elem-ref" data-elem="GKL">GKL</span>, therefore <span class="elem-ref" data-elem="DL">DL</span> equals <span class="elem-ref" data-elem="DG">DG</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn3/">C.N.3</a></div>
+<p>And in these <span class="elem-ref" data-elem="DA">DA</span> equals <span class="elem-ref" data-elem="DB">DB</span>, therefore the remainder <span class="elem-ref" data-elem="AL">AL</span> equals the remainder <span class="elem-ref" data-elem="BG">BG</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>But <span class="elem-ref" data-elem="BC">BC</span> was also proved equal to <span class="elem-ref" data-elem="BG">BG</span>, therefore each of the straight lines <span class="elem-ref" data-elem="AL">AL</span> and <span class="elem-ref" data-elem="BC">BC</span> equals <span class="elem-ref" data-elem="BG">BG</span>. And things which equal the same thing also equal one another, therefore <span class="elem-ref" data-elem="AL">AL</span> also equals <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<p>Therefore the straight line <span class="elem-ref" data-elem="AL">AL</span> equal to the given straight line <span class="elem-ref" data-elem="BC">BC</span> has been placed with one end at the given point <span class="elem-ref" data-elem="A">A</span>.</p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This is a very clever construction to solve what seems to be a simple problem. One would like simply to slide the line <span class="elem-ref" data-elem="BC">BC</span> along so that one end coincides with the point <span class="elem-ref" data-elem="A">A</span>. But there is no motion in the geometry of Euclid. There is something like motion used in proposition <a href="/elements/books/bookI/propositions/propI4/">I.4</a>, but nothing is actually moved there. The only basic constructions that Euclid allows are those described in Postulates 1, 2, and 3. Euclid then builds new constructions (such as the one in this proposition) out of previously described constructions. So at this point, the only constructions available are those of the three postulates and the construction in proposition <a href="/elements/books/bookI/propositions/propI1/">I.1</a>, and Euclid uses all four here.</p>
+<p>Another, different, expectation is that one might use a compass to transfer the distance <span class="elem-ref" data-elem="BC">BC</span> over to the point <span class="elem-ref" data-elem="A">A</span>. It is clear from Euclid's use of postulate 3 that the point to be used for the center and a point that will be on the circumference must be constructed before applying the postulate; postulate 3 is not used to transfer distance. Sometimes postulate 3 is likened to a collapsing compass, that is, when the compass is lifted off the drawing surface, it collapses.</p>
+<p>It could well be that in some earlier Greek geometric theory abstracted compasses that could transfer distances. If that speculation is correct, then this proposition would be a late addition to the theory. The construction of the proposition allows a weaker postulate (namely postulate 3) to be assumed.</p>
+<h4>Construction steps</h4>
+<p>When using a compass and a straightedge to perform this construction there are more circles drawn than shown in the diagram that accompanies the proposition. These are the two circles needed to construct the equilateral triangle <span class="elem-ref" data-elem="ABD">ABD</span>. One side, <span class="elem-ref" data-elem="AB" data-canvas="canvas_1">AB</span>, of that triangle isn't necessary for the construction.</p>
+<p>Altogether, four circles and two lines are required for this construction.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="300" height="320" tabindex="0"></canvas>
+<noscript><img alt="I.2 construction steps" src="propI2a.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_1",
+    background: "0,0,100",
+    title: "I.2",
+    pivot: "D",
+    elements: [
+        "A;point;free;150,190",
+        "B;point;free;180,160",
+        "C;point;free;170,90",
+        "BC;line;connect;B,C;0;0;blue",
+        "ABcirc;circle;radius;A,B",
+        "BAcirc;circle;radius;B,A",
+        "D'D;line;bichord;ABcirc,BAcirc;0;0;0",
+        "D;point;last;D'D;black;green",
+        "DA;line;connect;D,A",
+        "DB;line;connect;D,B",
+        "BCcirc;circle;radius;B,C",
+        "G;point;extend;D,B,B,C",
+        "BG;line;connect;B,G;0;0;blue",
+        "DGcirc;circle;radius;D,G",
+        "L;point;extend;D,A,B,C",
+        "AL;line;connect;A,L;0;0;blue",
+        "LE;line;extend;A,L,A,B",
+        "GF;line;extend;B,G,A,B",
+        // Invisible highlight targets for the guide prose: {ABD} and
+        // {AB} draw nothing normally but render in the gold highlight
+        // stroke on hover/tap (the Zeno pattern from propI.1). The
+        // side AB is deliberately not drawn in this figure — the
+        // prose point is that it isn't needed — so the ref outlines
+        // it only on demand.
+        "AB;line;connect;A,B;0;0;0",
+        "ABD;polygon;triangle;A,B,D;0;0;0;0"
+    ],
+});
+</script>
+</figure><h4>Use of Proposition 2</h4>
+<p>The construction in this proposition is only used in Proposition <a href="/elements/books/bookI/propositions/propI3/">I.3</a>.</p>
+<p>Note that this construction assumes that all the point <em>A</em> and the line <em>BC</em> lie in a plane. It may also be used in space, however, since Proposition <a href="/elements/books/bookXI/propositions/propXI2/">XI.2</a> implies that <em>A</em> and <em>BC</em> do lie in a plane.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI3/">I.3</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

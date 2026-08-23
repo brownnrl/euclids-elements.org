@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 23</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 23</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 23</h1>
+    <div class="statement">Equiangular parallelograms have to one another the ratio compounded of the ratios of their sides.</div>
+    <p>Let <em>AC</em> and <em>CF</em> be equiangular parallelograms having the angle <em>BCD</em> equal to the angle <em>ECG.</em></p>
+<p>I say that the parallelogram <em>AC</em> has to the parallelogram <em>CF</em> the ratio compounded of the ratios of the sides.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI14/">I.14</a></div>
+<p>Let them be placed so that <em>BC</em> is in a straight line with <em>CG.</em>  Then <em>DC</em> is also in a straight line with <em>CE.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="380" height="270" tabindex="0"></canvas>
+<noscript><img alt="VI.23 diagram" src="propVI23.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.23",
+        elements: [
+            "A;point;free;150,30",
+            "F;point;free;270,230",
+            "H;point;free;330,30",
+            "Y;point;parallelogram;A,H,F;0;0",
+            "C;point;free;200,100",
+            "E';point;parallelogram;F,H,C;0;0",
+            "E;point;intersection;C,E',F,Y",
+            "D;point;intersection;H,A,C,E'",
+            "B';point;parallelogram;F,Y,C;0;0",
+            "B;point;intersection;C,B',A,Y",
+            "G;point;intersection;C,B',H,F",
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random",
+            "FECG;polygon;quadrilateral;F,E,C,G;0;0;black;random",
+            "DCGH;polygon;quadrilateral;D,C,G,H;0;0;black;random",
+            "K0;point;free;30,-1000;0;0",
+            "K3;point;free;30,1000;0;0",
+            "K1;point;lineSlider;K0,K3,0,50;0",
+            "K2;point;lineSlider;K0,K3,0,100;0",
+            "K;line;connect;K1,K2;black",
+            "L0;point;free;60,-1000;0;0",
+            "L3;point;free;60,1000;0;0",
+            "L1;point;lineSlider;L0,L3,0,50;0",
+            "L2;point;proportion;B,C,C,G,K1,K2,L1,L3;0",
+            "L;line;connect;L1,L2;black",
+            "M0;point;free;90,-1000;0;0",
+            "M3;point;free;90,1000;0;0",
+            "M1;point;lineSlider;M0,M3,0,50;0",
+            "M2;point;proportion;D,C,C,E,L1,L2,M1,M3;0",
+            "M;line;connect;M1,M2;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI31/">I.31</a><br><a href="/elements/books/bookVI/propositions/propVI12/">VI.12</a></div>
+<p>Complete the parallelogram <em>DG.</em>  Set out a straight line <em>K,</em> and make it so that <em>BC</em> is to <em>CG</em> as <em>K</em> is to <em>L,</em> and <em>DC</em> is to <em>CE</em> as <em>L</em> is to <em>M.</em></p>
+<p>Then the ratios of <em>K</em> to <em>L</em> and of <em>L</em> to <em>M</em> are the same as the ratios of the sides, namely of <em>BC</em> to <em>CG</em> and of <em>DC</em> to <em>CE.</em></p>
+<p>But the ratio of <em>K</em> to <em>M</em> is compounded of the ratio of <em>K</em> to <em>L</em> and of that of <em>L</em> to <em>M,</em> so that <em>K</em> has also to <em>M</em> the ratio compounded of the ratios of the sides.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>Now since <em>BC</em> is to <em>CG</em> as the parallelogram <em>AC</em> is to the parallelogram <em>CH,</em> and <em>BC</em> is to <em>CG</em> as <em>K</em> is to <em>L,</em> therefore <em>K</em> is to <em>L</em> as <em>AC</em> is to <em>CH.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>Again, since <em>DC</em> is to <em>CE</em> as the parallelogram <em>CH</em> is to <em>CF,</em>  and <em>DC</em> is to <em>CE</em> as <em>L</em> is to <em>M,</em> therefore <em>L</em> is to <em>M</em> as the parallelogram <em>CH</em> is to the parallelogram <em>CF.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV22/">V.22</a></div>
+<p>Since then it was proved that <em>K</em> is to <em>L</em> as the parallelogram <em>AC</em> is to the parallelogram <em>CH,</em> and <em>L</em> is to <em>M</em> as the parallelogram <em>CH</em> is to the parallelogram <em>CF,</em> therefore, <em>ex aequali K</em> is to <em>M</em> as <em>AC</em> is to the parallelogram <em>CF.</em></p>
+<p>But <em>K</em> has to <em>M</em> the ratio compounded of the ratios of the sides, therefore <em>AC</em> also has to <em>CF</em> the ratio compounded of the ratios of the sides.</p>
+<p>Therefore, <em>equiangular parallelograms have to one another the ratio compounded of the ratios of their sides.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is a generalization of the basic formula for the area of a rectangle, that is, the area of a rectangle is the product of its length and width.  Such a formula depends on predetermined units of length and area so that the unit area is the area of a square whose sides have length equal to the unit length.  Euclid and other Greek mathematicians did not use predetermined units of length or area, so they expressed this formula as a proportion. We would state that proportion as saying the ratio of the area of a given rectangle to the area of a given square is the product of the ratios of the lengths of the sides of the rectangle to the length of a side of the square.  Of course, Euclid would say that without using the words area and length as follows: the ratio of the a given rectangle to a given square is the product of the ratios of the sides of the rectangle to a side of the square.</p>
+<p>Note that his terminology for a product of ratios involves "compounding the ratios."  A natural generalization of the ratio of a rectangle to a square is the ratio of a rectangle to a rectangle.  A broader generalization is the ratio of one parallelogram to another parallelogram having the same angles.  That gives the generalization as stated in this proposition.</p>
+<h4>Areas of rectangles and parallelograms</h4>
+<p>These areas have been treated earlier in the <em>Elements.</em>
+Back in Book I and II the basic concept was "quadrature," that is, finding a square or
+other shaped figure of the same area as the given rectangle or parallelogram.  That began with Proposition <a href="/elements/books/bookI/propositions/propI35/">I.35</a> which said two triangles on the same base and
+with the same height are equal, and ended with <a href="/elements/books/bookI/propositions/propI14/">I.14</a> which constructed a square equal to a given rectangle.</p>
+<p>Early in this book was the proposition <a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a> generalizing I.35 which said that parallelograms with the same height are proportional to their bases.  Finally, in this proposition we have the full statement about areas of rectangles and parallelograms.</p>
+<h4>Analogous statements in other books</h4>
+<p>Proposition <a href="/elements/books/bookVIII/propositions/propVIII5/">VIII.5</a> states that plane numbers have to one another the ratio compounded of the ratios of their sides.  That proposition is probably a much older version that may go back to the Pythagoreans when "all was number."  The discovery of incommensurable lines showed there were serious limitations to that version of the proposition.</p>
+<p>In Book XI there are analogous statements for volumes of parallelepipeds.  For instance, Proposition <a href="/elements/books/bookXI/propositions/propXI33/">XI.33</a> states that similar parallelepipeds are to one another in the triplicate ratio of their corresponding sides.  That statement for parallelepipeds is analogous to this one for parallelograms.</p>
+<h4>Use of this theorem</h4>
+<p>Although this is a basic proposition on areas, it is actually not used in the rest of the
+<em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

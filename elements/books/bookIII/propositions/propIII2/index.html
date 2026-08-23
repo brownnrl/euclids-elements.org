@@ -1,0 +1,127 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 2</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 2</h1>
+    <div class="statement">If two points are taken at random on the circumference of a circle, then the straight line joining the points falls within the circle.</div>
+    <p>Let <em>ABC</em> be a circle, and let two points <em>A</em> and <em>B</em> be taken at random on its circumference.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="260" tabindex="0"></canvas>
+<noscript><img alt="III.2 diagram" src="propIII2.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.2",
+        pivot: "D",
+        elements: [
+            "A;point;free;50,130",
+            "B;point;free;120,200",
+            "C;point;free;200,50;black;0",
+            "ABC;circle;circumcircle;A,B,C;0;0;black;random",
+            "D;point;center;ABC;black;green",
+            "E;point;free;70,210",
+            "AEB;sector;arc;A,E,B;0;0;black;0",
+            "DE;line;connect;D,E",
+            "F;point;cutoff;D,E,D,A"
+        ],
+    });
+</script>
+</figure><p>I say that the straight line joined from <em>A</em> to <em>B</em> falls within the circle.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a></div>
+<p>For suppose it does not, but, if possible, let it fall outside, as <em>AEB.</em> Take the center <em>D</em> of the circle <em>ABC.</em> Join <em>DA</em> and <em>DB,</em> and draw <em>DFE</em> through.</p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a><br><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>Then, since <em>DA</em> equals <em>DB,</em> the angle <em>DAE</em> also equals the angle <em>DBE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI16/">I.16</a></div>
+<p>And, since one side <em>AEB</em> of the triangle <em>DAE</em> is produced, the angle <em>DEB</em> is greater than the angle <em>DAE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI19/">I.19</a><br><a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a></div>
+<p>And the angle <em>DAE</em> equals the angle <em>DBE,</em> therefore the angle <em>DEB</em> is greater than the angle <em>DBE.</em>  And the side opposite the greater angle is greater, therefore <em>DB</em> is greater than <em>DE.</em>  But <em>DB</em> equals <em>DF,</em> therefore <em>DF</em> is greater than <em>DE,</em> the less greater than the greater, which is impossible.</p>
+<p>Therefore the straight line joined from <em>A</em> to <em>B</em> does not fall outside the circle.</p>
+<p>Similarly we can prove that neither does it fall on the circumference itself, therefore it falls within.</p>
+<p>Therefore <em>if two points are taken at random on the circumference of a circle, then the straight line joining the points falls within the circle.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The figure for this proposition is rather strange, but that is necessary since it refers to a hypothetical situation which is shown to be impossible.  In this figure <em>AEB</em> is supposed to be a straight line that lies on outside the circle.  There are other impossible figures in later propositions in this Book.</p>
+<p>That Euclid even has this proposition is remarkable.  Of course, it should be included, but there are equally obvious statements (but difficult to prove) left out in earlier books.  For instance, that the two circles constructed in a plane on a line <em>AB</em> intersect is not proved although it is used in <a href="/elements/books/bookI/propositions/propI1/">I.1</a>.  This indicates that more care has been given to the foundations for this book than for the previous books.</p>
+<p>Euclid leaves to the reader to prove that <em>AB</em> cannot lie <em>on</em> the circumference, and that is not particularly difficult to prove.</p>
+<p>This proposition is used in <a href="/elements/books/bookIII/propositions/propIII13/">III.13</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII13/">III.13</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

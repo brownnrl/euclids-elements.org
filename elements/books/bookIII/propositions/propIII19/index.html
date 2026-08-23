@@ -1,0 +1,125 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 19</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 19</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 19</h1>
+    <div class="statement">If a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.</div>
+    <div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
+<p>For let a straight line <em>DE</em> touch the circle <em>ABC</em> at the point <em>C.</em> Draw <em>CA</em> from <em>C</em> at right angles to <em>DE.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="250" tabindex="0"></canvas>
+<noscript><img alt="III.19 diagram" src="propIII19.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.19",
+        elements: [
+            "D;point;free;40,220",
+            "E;point;free;230,220",
+            "DE;line;connect;D,E",
+            "C;point;lineSlider;DE,125,220",
+            "CA';line;perpendicular;C,E;0;0;0",
+            "A;point;lineSlider;CA',125,30",
+            "O;point;midpoint;A,C;0;0",
+            "ABC;circle;radius;O,C;0;0;0,0,0;random",
+            "AC;line;connect;A,C",
+            "B;point;circleSlider;ABC,180,80;0,0,0;0",
+            "F;point;free;140,120",
+            "CF;line;connect;C,F"
+        ],
+    });
+</script>
+</figure><p>I say that the center of the circle is on <em>AC.</em></p>
+<p>For suppose it is not, but, if possible, let <em>F</em> be the center, and join <em>CF.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII18/">III.18</a></div>
+<p>Since a straight line <em>DE</em> touches the circle <em>ABC,</em> and <em>FC</em> has been joined from the center to the point of contact, <em>FC</em> is perpendicular to <em>DE.</em> Therefore the angle <em>FCE</em> is right.</p>
+<p>But the angle <em>ACE</em> is also right, therefore the angle <em>FCE</em> equals the angle <em>ACE,</em> the less equals the greater, which is impossible.</p>
+<p>Therefore <em>F</em> is not the center of the circle <em>ABC.</em></p>
+<p>Similarly we can prove that neither is any other point except a point on <em>AC.</em></p>
+<p>Therefore <em>if a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in proposition <a href="/elements/books/bookIII/propositions/propIII32/">III.32</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII32/">III.32</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

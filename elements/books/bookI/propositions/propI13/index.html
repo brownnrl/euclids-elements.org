@@ -1,0 +1,214 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 13</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 13</h1>
+    <div class="statement">If a straight line stands on a straight line, then it makes either two right angles or angles whose sum equals two right angles.</div>
+    <p>Let any straight line <span class="elem-ref" data-elem="AB">AB</span> standing on the straight line <span class="elem-ref" data-elem="CD">CD</span> make the angles <span class="elem-ref" data-elem="CBA">CBA</span> and <span class="elem-ref" data-elem="ABD">ABD</span>.</p>
+<p>I say that either the angles <span class="elem-ref" data-elem="CBA">CBA</span> and <span class="elem-ref" data-elem="ABD">ABD</span> are two right angles or their sum equals two right angles.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="220" tabindex="0"></canvas>
+<noscript><img alt="I.13 diagram" src="propI13.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.13",
+    elements: [
+        // The base line CD (B slides on it) and the line AB standing on
+        // it at B, making the angles ∠CBA and ∠ABD.
+        "D;point;free;40,180",
+        "C;point;free;230,180",
+        "CD;line;connect;C,D",
+        "A;point;free;175,50",
+        "B;point;lineSlider;CD,125,180",
+        "AB;line;connect;A,B",
+        // BE erected perpendicular to CD at B (the auxiliary, I.11) —
+        // drawn only in the unequal case.
+        "BE;line;perpendicular;B,C",
+        "E;point;last;BE",
+        // The angles at B (0.8.0 angleMarker; hidden in the static figure,
+        // swept on their slide; #103 nests this same-vertex set). Named to
+        // match the prose tokens; the permuted spellings (ABC, DBA, EBA,
+        // DBE) map on via aliases.
+        "CBA;sector;angleMarker;B,C,A",
+        "ABD;sector;angleMarker;B,A,D",
+        "CBE;sector;angleMarker;B,C,E",
+        "EBD;sector;angleMarker;B,E,D",
+        "ABE;sector;angleMarker;B,A,E"
+    ],
+    aliases: {
+        "BA":  "AB",
+        "ABC": "CBA",
+        "DBA": "ABD",
+        "EBA": "ABE",
+        "DBE": "EBD"
+    },
+    slides: [
+        { text: "Let any straight line {AB} standing on the straight line {CD} make the angles {CBA} and {ABD}.",
+          visible: ["CD","AB","CBA","ABD"],
+          transition: {
+              mode: "parallel",
+              animations: [
+                  { elem: "CBA", name: geomlib.A.Sector.sweep },
+                  { elem: "ABD", name: geomlib.A.Sector.sweep }
+              ]
+          } },
+        { text: "I say that either the angles {CBA} and {ABD} are two right angles or their sum equals two right angles.",
+          visible: ["CD","AB","CBA","ABD"],
+          highlighted: ["CBA","ABD"] },
+        { text: "Now, if the angle {CBA} equals the angle {ABD}, then they are two right angles.",
+          visible: ["CD","AB","CBA","ABD"],
+          highlighted: ["CBA","ABD"],
+          justifications: [{ ref: "I.Def.10" }] },
+        { text: "But, if not, draw {BE} from the point {B} at right angles to {CD}. Therefore the angles {CBE} and {EBD} are two right angles.",
+          visible: ["CD","AB","BE","E","CBE","EBD"],
+          highlighted: ["CBE","EBD"],
+          transition: {
+              animations: [
+                  { elem: "BE",  name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "E",   name: geomlib.A.Point.appear },
+                  { elem: "CBE", name: geomlib.A.Sector.sweep },
+                  { elem: "EBD", name: geomlib.A.Sector.sweep }
+              ]
+          },
+          justifications: [{ ref: "I.11" }] },
+        { text: "Since the angle {CBE} equals the sum of the two angles {CBA} and {ABE}, add the angle {EBD} to each, therefore the sum of the angles {CBE} and {EBD} equals the sum of the three angles {CBA}, {ABE}, and {EBD}.",
+          visible: ["CD","AB","BE","E","CBE","EBD","CBA","ABE"],
+          highlighted: ["CBA","ABE","EBD"],
+          transition: {
+              animations: [
+                  { elem: "ABE", name: geomlib.A.Sector.sweep }
+              ]
+          },
+          justifications: [{ ref: "C.N.2" }] },
+        { text: "Again, since the angle {DBA} equals the sum of the two angles {DBE} and {EBA}, add the angle {ABC} to each, therefore the sum of the angles {DBA} and {ABC} equals the sum of the three angles {DBE}, {EBA}, and {ABC}.",
+          visible: ["CD","AB","BE","E","ABD","EBD","ABE","CBA"],
+          highlighted: ["EBD","ABE","CBA"],
+          justifications: [{ ref: "C.N.2" }] },
+        { text: "But the sum of the angles {CBE} and {EBD} was also proved equal to the sum of the same three angles, and things which equal the same thing also equal one another, therefore the sum of the angles {CBE} and {EBD} also equals the sum of the angles {DBA} and {ABC}.",
+          visible: ["CD","AB","BE","E","CBE","EBD","ABD","CBA"],
+          highlighted: ["CBE","EBD","ABD","CBA"],
+          justifications: [{ ref: "C.N.1" }] },
+        { text: "But the angles {CBE} and {EBD} are two right angles, therefore the sum of the angles {DBA} and {ABC} also equals two right angles.",
+          visible: ["CD","AB","BE","E","CBE","EBD","ABD","CBA"],
+          highlighted: ["ABD","CBA"] },
+        { text: "Therefore if a straight line stands on a straight line, then it makes either two right angles or angles whose sum equals two right angles.",
+          visible: ["CD","AB","CBA","ABD"],
+          highlighted: ["CBA","ABD"],
+          justifications: [{ ref: "Q.E.D." }] }
+    ],
+    resolveJustification: function(ref) {
+        return (window.eucrefs && window.eucrefs[ref]) || null;
+    }
+});
+
+// Per-page citation lookup for the slideshow's resolveJustification
+// callback — same hand-authored pattern as the earlier props.
+window.eucrefs = (window.eucrefs || {});
+Object.assign(window.eucrefs, {
+    "I.11":     "/elements/books/bookI/propositions/propI11/",
+    "I.Def.10": "/elements/books/bookI/definitions/defI10/",
+    "C.N.1":    "/elements/books/bookI/commonnotions/cn1/",
+    "C.N.2":    "/elements/books/bookI/commonnotions/cn2/"
+});
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/definitions/defI10/">I.Def.10</a></div>
+<p>Now, if the angle <span class="elem-ref" data-elem="CBA">CBA</span> equals the angle <span class="elem-ref" data-elem="ABD">ABD</span>, then they are two right angles.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
+<p>But, if not, draw <span class="elem-ref" data-elem="BE">BE</span> from the point <span class="elem-ref" data-elem="B">B</span> at right angles to <span class="elem-ref" data-elem="CD">CD</span>. Therefore the angles <span class="elem-ref" data-elem="CBE">CBE</span> and <span class="elem-ref" data-elem="EBD">EBD</span> are two right angles.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>Since the angle <span class="elem-ref" data-elem="CBE">CBE</span> equals the sum of the two angles <span class="elem-ref" data-elem="CBA">CBA</span> and <span class="elem-ref" data-elem="ABE">ABE</span>, add the angle <span class="elem-ref" data-elem="EBD">EBD</span> to each, therefore the sum of the angles <span class="elem-ref" data-elem="CBE">CBE</span> and <span class="elem-ref" data-elem="EBD">EBD</span> equals the sum of the three angles <span class="elem-ref" data-elem="CBA">CBA</span>, <span class="elem-ref" data-elem="ABE">ABE</span>, and <span class="elem-ref" data-elem="EBD">EBD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>Again, since the angle <span class="elem-ref" data-elem="DBA">DBA</span> equals the sum of the two angles <span class="elem-ref" data-elem="DBE">DBE</span> and <span class="elem-ref" data-elem="EBA">EBA</span>, add the angle <span class="elem-ref" data-elem="ABC">ABC</span> to each, therefore the sum of the angles <span class="elem-ref" data-elem="DBA">DBA</span> and <span class="elem-ref" data-elem="ABC">ABC</span> equals the sum of the three angles <span class="elem-ref" data-elem="DBE">DBE</span>, <span class="elem-ref" data-elem="EBA">EBA</span>, and <span class="elem-ref" data-elem="ABC">ABC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>But the sum of the angles <span class="elem-ref" data-elem="CBE">CBE</span> and <span class="elem-ref" data-elem="EBD">EBD</span> was also proved equal to the sum of the same three angles, and things which equal the same thing also equal one another, therefore the sum of the angles <span class="elem-ref" data-elem="CBE">CBE</span> and <span class="elem-ref" data-elem="EBD">EBD</span> also equals the sum of the angles <span class="elem-ref" data-elem="DBA">DBA</span> and <span class="elem-ref" data-elem="ABC">ABC</span>. But the angles <span class="elem-ref" data-elem="CBE">CBE</span> and <span class="elem-ref" data-elem="EBD">EBD</span> are two right angles, therefore the sum of the angles <span class="elem-ref" data-elem="DBA">DBA</span> and <span class="elem-ref" data-elem="ABC">ABC</span> also equals two right angles.</p>
+<p>Therefore <em>if a straight line stands on a straight line, then it makes either two right angles or angles whose sum equals two right angles.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>With this proposition, we begin to see what the arithmetic of magnitudes means to Euclid, in particular, how to add angles. Euclid says that the angle <span class="elem-ref" data-elem="CBE">CBE</span> equals the sum of the two angles <span class="elem-ref" data-elem="CBA">CBA</span> and <span class="elem-ref" data-elem="ABE">ABE</span>. So, one way a sum of angles occurs is when the two angles have a common vertex (<span class="elem-ref" data-elem="B">B</span> in this case) and a common side (<span class="elem-ref" data-elem="BA">BA</span> in this case), and the angles lie on opposite sides of their common side. Thus, addition of angles can be performed by joining adjacent angles.</p>
+<p>But that's not the only addition that occurs here. Euclid also says that the sum of the angles <span class="elem-ref" data-elem="CBE">CBE</span> and <span class="elem-ref" data-elem="EBD">EBD</span> equals the sum of the three angles <span class="elem-ref" data-elem="CBA">CBA</span>, <span class="elem-ref" data-elem="ABE">ABE</span>, and <span class="elem-ref" data-elem="EBD">EBD</span>. That sum being mentioned is a straight angle, which is not to be considered as an angle according to Euclid. It is a formal sum equal to two right angles. In other propositions formal sums of four right angles occur. These and larger formal sums are not angles themselves, merely sums of angles. Only if an angle sum is less than two right angles can it be identified with a single angle.</p>
+<h4>Use of Proposition 13</h4>
+<p>This proposition is used in the proofs of the next two propositions and several others in this book as well as a few propositions in Books IV and VI.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI14/">I.14</a>, <a href="/elements/books/bookI/propositions/propI15/">I.15</a>, <a href="/elements/books/bookI/propositions/propI17/">I.17</a>, <a href="/elements/books/bookI/propositions/propI28/">I.28</a>, <a href="/elements/books/bookI/propositions/propI29/">I.29</a>, <a href="/elements/books/bookI/propositions/propI32/">I.32</a></td></tr>
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV3/">IV.3</a>, <a href="/elements/books/bookIV/propositions/propIV15/">IV.15</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI7/">VI.7</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

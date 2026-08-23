@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book II</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book II</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 14</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 14</h1>
+    <div class="statement">To construct a square equal to a given rectilinear figure.</div>
+    <p>Let <em>A</em> be the given rectilinear figure.</p>
+<p>It is required to construct a square equal to the rectilinear figure <em>A.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI45/">I.45</a></div>
+<p>Construct the rectangular parallelogram <em>BD</em> equal to the rectilinear figure <em>A.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="470" height="260" tabindex="0"></canvas>
+<noscript><img src="propII14.gif" alt="II.14"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "II.14",
+        elements: [
+            "A1;point;free;80,40;0",
+            "A2;point;free;160,80;0",
+            "A3;point;free;120,180;0",
+            "A4;point;free;40,100;0",
+            "A;polygon;quadrilateral;A1,A2,A3,A4;0,0,0;0;0,0,0;random",
+            "B;point;free;200,140",
+            "C;point;free;200,190",
+            "BE1;line;perpendicular;B,C",
+            "E1;point;last;BE1;0;0",
+            "BCDE;polygon;application;A,B,C,E1;0;0;0,0,0;random",
+            "D;point;vertex;BCDE,3",
+            "E;point;vertex;BCDE,4",
+            "EF;line;extend;B,E,E,D",
+            "F;point;last;EF",
+            "G;point;midpoint;B,F",
+            "BHF;sector;sector;G,F,B",
+            "Gcirc;circle;radius;G,B;0;0;0;0",
+            "H';line;perpendicular;E,G;0;0;0",
+            "HH2;line;chord;H',Gcirc;0;0;0",
+            "H;point;first;HH2",
+            "EH;line;connect;E,H",
+            "GH;line;connect;G,H"
+        ],
+    });
+</script>
+</figure><p>Then, if <em>BE</em> equals <em>ED,</em> then that which was proposed is done, for a square <em>BD</em> has been constructed equal to the rectilinear figure <em>A.</em></p>
+<p>But, if not, one of the straight lines <em>BE</em> or <em>ED</em> is greater.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a>, <a href="/elements/books/bookI/propositions/propI10/">I.10</a></div>
+<p>Let <em>BE</em> be greater, and  produce it to <em>F.</em> Make <em>EF</em> equal to <em>ED,</em> and bisect <em>BF</em> at <em>G.</em></p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI18/">I.Def.18</a></div>
+<p>Describe the semicircle <em>BHF</em> with center <em>G</em> and radius one of the straight lines <em>GB</em> or <em>GF.</em> Produce <em>DE</em> to <em>H,</em> and join <em>GH.</em></p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII5/">II.5</a></div>
+<p>Then, since the straight line <em>BF</em> has been cut into equal segments at <em>G</em> and into unequal segments at <em>E,</em> the rectangle <em>BE</em> by <em>EF</em> together with the square on <em>EG</em> equals the square on <em>GF.</em></p>
+<p>But <em>GF</em> equals <em>GH,</em> therefore the rectangle <em>BE</em> by <em>EF</em> together with the square on <em>GE</em> equals the square on <em>GH.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the sum of the squares on <em>HE</em> and <em>EG</em> equals the square on <em>GH,</em> therefore the rectangle <em>BE</em> by <em>EF</em> together with the square on <em>GE</em> equals the sum of the squares on <em>HE</em> and <em>EG.</em></p>
+<p>Subtract the square on <em>GE</em> from each. Therefore the remaining rectangle <em>BE</em> by <em>EF</em> equals the square on <em>EH.</em></p>
+<p>But the rectangle <em>BE</em> by <em>EF</em> is <em>BD,</em> for <em>EF</em> equals <em>ED,</em> therefore the parallelogram <em>BD</em> equals the square on <em>HE.</em></p>
+<p>And <em>BD</em> equals the rectilinear figure <em>A.</em></p>
+<p>Therefore the rectilinear figure <em>A</em> also equals the square which can be described on <em>EH.</em></p>
+<p>Therefore a square, namely that which can be described on <em>EH,</em> has been constructed equal to the given rectilinear figure <em>A.</em></p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The construction of a square equal to a given rectilinear figure is short as described in the proof. The verification that this construction works is also short with the help of Proposition <a href="/elements/books/bookII/propositions/propII5/">II.5</a> and Proposition <a href="/elements/books/bookI/propositions/propI47/">I.47</a>, the Pythagorean theorem.  First, Prop. II.5 allows us to convert the rectangle, <em>BE</em> by <em>ED,</em> into the difference of two squares, <em>GF</em><sup>2</sup> – <em>GE</em><sup>2</sup>.  Note that <em>GF</em> equals <em>GH,</em> the hypotenuse of a right triangle <em>GHE.</em> Using I.47 we can replace the difference of two squares, <em>GH</em><sup>2</sup> – <em>GE</em><sup>2</sup>, by the single square, <em>EH</em><sup>2</sup>.  Thus, the original rectangle equals the square <em>EH</em><sup>2</sup>.</p>
+<h4>Quadrature of rectilinear figures</h4>
+<p>This proposition finishes the quadrature of rectilinear figures.  The narrow meaning of the word "quadrature" is to find a square with the same area of a given figure, also called "squaring" the figure.  In a broader sense, quadrature means finding the area of a given figure.</p>
+<p>Proposition <a href="/elements/books/bookI/propositions/propI45/">I.45</a> on application of areas of rectilinear figures allows us to replace the figure under question with a rectangle of the same area.  Now, the semicircle construction in this proposition finds what is called the mean proportional between the sides of the rectangle.  If the sides of the rectangle are denoted <em>a</em> and <em>b,</em> then the mean proportional <em>x</em> between them satisfies the proportion <em>a</em> : <em>x</em> = <em>x</em> : <em>b,</em> and that's equivalent to an equality of areas <em>ab</em> = <em>x</em><sup>2</sup>, that is to say, the square on this mean proportional has the same area as the rectangle.  Thus, any rectilinear figure can be squared.</p>
+<p>This result is an end in itself. It is not used in the rest of the <em>Elements.</em></p>
+<p>There is another proof of this proposition that is based on similar triangles.  Referring to the figure in the proposition, draw lines <em>BH</em> and <em>BF,</em> and you'll see three similar right triangles: <em>BFH, BHE,</em> and <em>HGE.</em>  From their similarity it follows that <em>BE</em> : <em>EH</em> = <em>EH</em> : <em>EF.</em>  That says <em>EH</em> is the required mean proportional.</p>
+<p>Proportions aren't developed until <a href="../../../bookV/">Book V</a>, and similar triangles aren't mentioned until <a href="../../../bookVI/">Book VI</a>. So in order to complete the theory of quadrature of rectilinear figures early in the <em>Elements,</em> Euclid chose a different proof that doesn't depend on similar triangles.  Note that this same result appears in the garb of proportions in Proposition <a href="/elements/books/bookVI/propositions/propVI13/">VI.13</a>.  Also in Book VI, Proposition <a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a> shows that the square on the mean proportional equals the rectangle on the two straight lines.</p>
+<h4>Squaring the circle</h4>
+<p>What about circles and other shapes?  The general theory of circles is treated in Book III, but there are no propositions about the areas of circles until book XII.  Proposition <a href="/elements/books/bookXII/propositions/propXII2/">XII.2</a> says the areas of circles are proportional to the squares on their diameters.  That allows the area of two circles to be compared, but it doesn't answer the question "what's the area of this circle?" in the same way that this proposition does for rectilinear figures.  That would require finding a square equal to a given circle.</p>
+<p>This problem of quadrature of the circle was one of three famous problems that goes back at least to the time of Anaxagoras, about 150 years before Euclid.  It is equivalent to constructing a line segment of length <em>π</em> (relative to a unit length).  This problem was solved by ancient Greek geometers but not by means of the Euclidean tools of straightedge and compass; higher curves were required.  In fact, by the time of Pappus it was believed that the circle could not be squared using only straightedge, compass, and, furthermore, couldn't be squared even with the help of the conic sections (parabola, hyperbola, and ellipse).  But the ancient Greeks had no mathematical proof that it could not be squared.</p>
+<p>That the circle could not be squared with Euclidean tools was not shown until 1882 when Lindemann proved that <em>π</em> is a transcendental number.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

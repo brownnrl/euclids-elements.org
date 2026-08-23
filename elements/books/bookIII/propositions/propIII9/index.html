@@ -1,0 +1,129 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 9</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 9</h1>
+    <div class="statement">If a point is taken within a circle, and more than two equal straight lines fall from the point on the circle, then the point taken is the center of the circle.</div>
+    <p>Let <em>D</em> a point within a circle <em>ABC,</em> and from <em>D</em> let more than two equal straight lines, namely <em>DA</em> and <em>DB</em> and <em>DC,</em> fall on the circle <em>ABC.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="250" height="240" tabindex="0"></canvas>
+<noscript><img alt="III.9 diagram" src="propIII9.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.9",
+        pivot: "D",
+        elements: [
+            "A;point;free;70,190",
+            "B;point;free;70,50",
+            "C;point;free;210,90",
+            "ABC;circle;circumcircle;A,B,C",
+            "D;point;center;ABC;black;green",
+            "ABD;polygon;triangle;A,B,D;0;0;black;random",
+            "BCD;polygon;triangle;B,C,D;0;0;black;random",
+            "E;point;midpoint;A,B",
+            "F;point;midpoint;B,C",
+            "GK;line;chord;D,E,ABC",
+            "G;point;first;GK",
+            "K;point;last;GK",
+            "HL;line;chord;D,F,ABC",
+            "H;point;first;HL",
+            "L;point;last;HL"
+        ],
+    });
+</script>
+</figure><p>I say that the point <em>D</em> is the center of the circle <em>ABC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI10/">I.10</a></div>
+<p>Join <em>AB</em> and <em>BC,</em> and bisect them at the points <em>E</em> and <em>F.</em>  Join <em>ED</em> and <em>FD,</em> and draw them through to the points <em>G, K, H,</em> and <em>L.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>Then, since <em>AE</em> equals <em>EB,</em> and <em>ED</em> is common, the two sides <em>AE</em> and <em>ED</em> equal the two sides <em>BE</em> and <em>ED,</em> and the base <em>DA</em> equals the base <em>DB,</em> therefore the angle <em>AED</em> equals the angle <em>BED.</em></p>
+<p>Therefore the angles <em>AED</em> and <em>BED</em> are each right. Therefore <em>GK</em> cuts <em>AB</em> into two equal parts and at right angles.</p>
+<div class="just"><a href="../propIII1/#cor">III.1,Cor</a></div><p>And since, if in a circle a straight line cuts a straight line into two equal parts and at right angles, the center of the circle is on the cutting straight line, therefore the center of the circle is on <em>GK.</em></p>
+<p>For the same reason the center of the circle <em>ABC</em> is also on <em>HL.</em></p>
+<p>And the straight lines <em>GK</em> and <em>HL</em> have no other point common but the point <em>D,</em> therefore the point <em>D</em> is the center of the circle <em>ABC.</em></p>
+<p>Therefore <em>if a point is taken within a circle, and more than two equal straight lines fall from the point on the circle, then the point taken is the center of the circle.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The statement of this proposition is already covered by the last part of Proposition <a href="/elements/books/bookIII/propositions/propIII7/">III.7</a> which says for a point in a circle that is not the center at most two points lie on the circumference at any distance from that point.</p>
+<p>This proposition is used in <a href="/elements/books/bookIII/propositions/propIII25/">III.25</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII25/">III.25</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 30</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 30</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 30</h1>
+    <div class="statement">Straight lines parallel to the same straight line are also parallel to one another.</div>
+    <p>Let each of the straight lines <em>AB</em> and <em>CD</em> be parallel to <em>EF.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="240" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.30 diagram" src="propI30.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.30",
+        elements: [
+            "A;point;free;40,60",
+            "B;point;free;200,60",
+            "AB;line;connect;A,B",
+            "C;point;free;40,160",
+            "D';point;parallelogram;C,A,B;0;0",
+            "D;point;lineSlider;C,D',200,160",
+            "CD;line;connect;C,D",
+            "E;point;free;40,120",
+            "F';point;parallelogram;E,A,B;0;0",
+            "F;point;lineSlider;E,F',200,120",
+            "EF;line;connect;E,F",
+            "G;point;lineSlider;A,B,80,60",
+            "K;point;lineSlider;C,D,140,160",
+            "H;point;intersection;E,F,G,K",
+            "G';point;extend;K,G,K,G;0;0",
+            "K';point;extend;G,K,G,K;0;0",
+            "GK;line;connect;G',K'",
+            // The three alternate angles the transversal makes, one per
+            // crossing: ∠AGK at G (on AB), ∠GHF at H (on EF), ∠GKD at K (on
+            // CD). Different vertices, so no #103 nesting.
+            "AGK;sector;angleMarker;G,A,K",
+            "GHF;sector;angleMarker;H,G,F",
+            "GKD;sector;angleMarker;K,G,D"
+        ],
+        deferDraggables: ["G", "K"],
+        slides: [
+            { text: "Let each of the straight lines {AB} and {CD} be parallel to {EF}.",
+              visible: ["AB","CD","D","EF","F"],
+              highlighted: ["AB","CD","EF"] },
+            { text: "I say that {AB} is also parallel to {CD}.",
+              visible: ["AB","CD","D","EF","F"],
+              highlighted: ["AB","CD"] },
+            { text: "Let the straight line {GK} fall upon them. Since the straight line {GK} falls on the parallel straight lines {AB} and {EF}, therefore the angle {AGK} equals the angle {GHF}.",
+              visible: ["AB","CD","D","EF","F","G","K","H","GK","AGK","GHF"],
+              highlighted: ["GK","AGK","GHF"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "G",   name: geomlib.A.Point.appear },
+                  { elem: "K",   name: geomlib.A.Point.appear },
+                  { elem: "GK",  name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "AGK", name: geomlib.A.Sector.sweep },
+                  { elem: "GHF", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.29" }] },
+            { text: "Again, since the straight line {GK} falls on the parallel straight lines {EF} and {CD}, therefore the angle {GHF} equals the angle {GKD}.",
+              visible: ["AB","CD","D","EF","F","G","K","H","GK","AGK","GHF","GKD"],
+              highlighted: ["GHF","GKD"],
+              transition: { animations: [ { elem: "GKD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.29" }] },
+            { text: "But the angle {AGK} was also proved equal to the angle {GHF}. Therefore the angle {AGK} also equals the angle {GKD}, and they are alternate.",
+              visible: ["AB","CD","D","EF","F","G","K","H","GK","AGK","GHF","GKD"],
+              highlighted: ["AGK","GHF","GKD"],
+              justifications: [{ ref: "C.N.1" }] },
+            { text: "Therefore {AB} is parallel to {CD}.",
+              visible: ["AB","CD","D","EF","F","G","K","H","GK","AGK","GKD"],
+              highlighted: ["AB","CD","AGK","GKD"] },
+            { text: "Therefore straight lines parallel to the same straight line are also parallel to one another.",
+              visible: ["AB","CD","D","EF","F","G","K","H","GK","AGK","GKD"],
+              highlighted: ["AB","CD","EF"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.29":  "/elements/books/bookI/propositions/propI29/",
+        "C.N.1": "/elements/books/bookI/commonnotions/cn1/"
+    });
+</script>
+</figure><p>I say that <span class="elem-ref" data-elem="AB">AB</span> is also parallel to <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Let the straight line <span class="elem-ref" data-elem="GK">GK</span> fall upon them. Since the straight line <span class="elem-ref" data-elem="GK">GK</span> falls on the parallel straight lines <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="EF">EF</span>, therefore the angle <span class="elem-ref" data-elem="AGK">AGK</span> equals the angle <span class="elem-ref" data-elem="GHF">GHF</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Again, since the straight line <span class="elem-ref" data-elem="GK">GK</span> falls on the parallel straight lines <span class="elem-ref" data-elem="EF">EF</span> and <span class="elem-ref" data-elem="CD">CD</span>, therefore the angle <span class="elem-ref" data-elem="GHF">GHF</span> equals the angle <span class="elem-ref" data-elem="GKD">GKD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>But the angle <span class="elem-ref" data-elem="AGK">AGK</span> was also proved equal to the angle <span class="elem-ref" data-elem="GHF">GHF</span>. Therefore the angle <span class="elem-ref" data-elem="AGK">AGK</span> also equals the angle <span class="elem-ref" data-elem="GKD">GKD</span>, and they are alternate.</p>
+<p>Therefore <span class="elem-ref" data-elem="AB">AB</span> is parallel to <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<p>Therefore <em>straight lines parallel to the same straight line are also parallel to one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>For this proposition it is supposed that the three lines lie in one plane. Proposition <a href="/elements/books/bookXI/propositions/propXI9/">XI.9</a> applies to the case where the three lines do not lie in a plane.</p>
+<h4>Playfair's axiom</h4>
+<p>A number of the propositions in the <em>Elements</em> are equivalent to the parallel postulate <a href="/elements/books/bookI/postulates/post5/">I.Post.5</a> in the sense that if the rest of the postulates are assumed and any one of these propositions is assumed, then the parallel postulate can be proved as a proposition. This one I.30, the last <a href="/elements/books/bookI/propositions/propI29/">I.29</a>, either part of <a href="/elements/books/bookI/propositions/propI32/">I.32</a>, and almost any later one. Thus, Euclid had many statements to choose from to take as a postulate.</p>
+<p>In many modern expositions of synthetic geometry, Playfair's axiom (John Playfair, 1748–1819) is chosen as that postulate instead of Euclid's parallel postulate Post.5. Playfair's axiom states that there is at most one line parallel to a given line passing through a given point. (That there is at least one follows from the next proposition <a href="/elements/books/bookI/propositions/propI31/">I.31</a>, which doesn't depend on the parallel postulate.)</p>
+<p>Two advantages of Playfair's axiom over Euclid's parallel postulate are that it is a simpler statement, and it emphasizes the distinction between Euclidean and hyperbolic geometry.</p>
+<p>Two disadvantages are that it does not have the historical importance of Euclid's parallel postulate, and the proof of the parallel postulate from Playfair's axiom is nonconstructive. That proof is a proof by contradiction that begins assuming that a point does not exist, deriving a contradiction, and concluding that the point must exist, but does not construct it. It may well be that Euclid chose to make the construction an assumption of his parallel postulate rather rather than choosing some other equivalent statement for his postulate.</p>
+<h4>Elegance in mathematics</h4>
+<p>Euclid's <em>Elements</em> form one of the most beautiful works of science in the history of humankind. This beauty lies more in the logical development of geometry rather than in geometry itself. It is not the diagrams that excite our interest; rather it is the concepts, the way the concepts interconnect, and the way Euclid selected and presented these concepts and their interconnections. The <em>Elements</em> are elegant. Elegance in mathematics is characterized by simplicity and clarity. An elegant presentation is easy for the reader to follow. But elegance is not only in the presentation, it is in the selection of definitions and proofs. The elegant definition is the one that makes the rest of the theory easy. The elegant proof is the one that is easiest to follow, one that is designed just right to fit the goal. Extraneous concepts should not be involved. Even the goals need to be adjusted to the right level of generality to cover the concepts, but not so abstract that the abstraction itself obscures the goal.</p>
+<p>One of the criticisms of Euclid's parallel postulate was that it isn't simple. The statement of this proposition, I.30, is much simpler, and Playfair's axiom is much simpler. As they're each logically equivalent to Euclid's parallel postulate, if elegance were the primary goal, then Euclid would have chosen one of them in place of his postulate. Perhaps the reasons mentioned above explain why Euclid used Post.5 instead.</p>
+<h4>Use of Proposition 30</h4>
+<p>This proposition is used in <a href="/elements/books/bookI/propositions/propI45/">I.45</a> and <a href="/elements/books/bookIV/propositions/propIV7/">IV.7</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI45/">I.45</a></td></tr>
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV7/">IV.7</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

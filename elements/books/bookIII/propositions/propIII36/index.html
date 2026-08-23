@@ -1,0 +1,170 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 36</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 36</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 36</h1>
+    <div class="statement">If a point is taken outside a circle and two straight lines fall from it on the circle, and if one of them cuts the circle and the other touches it, then the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference equals the square on the tangent.</div>
+    <p>Let a point <em>D</em> be taken outside the circle <em>ABC,</em> and from <em>D</em> let the two straight lines <em>DCA</em> and <em>DB</em> fall on the circle <em>ABC.</em>  Let <em>DCA</em> cut the circle <em>ABC,</em> and let <em>BD</em> touch it.</p>
+<p>I say that the rectangle  <em>AD</em> by <em>DC</em> equals the square on <em>DB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="250" tabindex="0"></canvas>
+<noscript><img alt="III.36a diagram" src="propIII36a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.36a",
+        pivot: "F",
+        elements: [
+            "A;point;free;200,50",
+            "D;point;free;54,220",
+            "AD;line;connect;A,D",
+            "C;point;lineSlider;AD,80,180",
+            "F;point;midpoint;A,C;black;green",
+            "ABC;circle;radius;F,A;0;0;black;random",
+            "M;point;midpoint;D,F;0;0",
+            "BDF;circle;radius;M,D;0;0;0;0",
+            "BB';line;bichord;ABC,BDF;0;0;0",
+            "B;point;first;BB'",
+            "BF;line;connect;B,F",
+            "BD;line;connect;B,D"
+        ],
+    });
+</script>
+</figure><p>Then <em>DCA</em> is either through the center or not through the center.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII18/">III.18</a></div>
+<p>First let it be through the center, and let <em>F</em> be the center of the circle <em>ABC.</em>  Join <em>FB.</em>  Therefore the angle <em>FBD</em> is right.</p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII6/">II.6</a></div>
+<p>And, since <em>AC</em> has been bisected at <em>F,</em> and <em>CD</em> is added to it, the rectangle <em>AD</em> by <em>DC</em> plus the square on <em>FC</em> equals the square on <em>FD.</em></p>
+<p>But <em>FC</em> equals <em>FB,</em> therefore the rectangle <em>AD</em> by <em>DC</em> plus the square on <em>FB</em> equals the square on <em>FD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>And the sum of the squares on <em>FB</em> and <em>BD</em> equals the square on <em>FD,</em> therefore the rectangle <em>AD</em> by <em>DC</em> plus the square on <em>FB</em> equals the sum of the squares on <em>FB</em> and <em>BD.</em></p>
+<p>Subtract the square on <em>FB</em> from each.  Therefore the remaining rectangle <em>AD</em> by <em>DC</em> equals the square on the tangent <em>DB.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a></div>
+<p>Again, let <em>DCA</em> not be through the center of the circle <em>ABC.</em> Take the center <em>E,</em> and draw <em>EF</em> from <em>E</em> perpendicular to <em>AC.</em>  Join <em>EB, EC,</em> and <em>ED.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII18/">III.18</a></div>
+<p>Then the angle <em>EBD</em> is right.</p>
+<figure class="diagram">
+<canvas id="canvas_1" width="280" height="230" tabindex="0"></canvas>
+<noscript><img alt="III.36b diagram" src="propIII36b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "III.36b",
+        elements: [
+            "A;point;free;220,170",
+            "D;point;free;30,204",
+            "AD;line;connect;A,D",
+            "E;point;free;150,115",
+            "ABC;circle;radius;E,A;0;0;black;random",
+            "AC;line;chord;A,D,ABC;0;0;0",
+            "C;point;last;AC",
+            "F;point;midpoint;A,C;black;green",
+            "DE;line;connect;D,E",
+            "EF;line;connect;E,F",
+            "EC;line;connect;E,C",
+            "M;point;midpoint;D,E;0;0",
+            "BDE;circle;radius;M,D;0;0;0;0",
+            "B'B;line;bichord;ABC,BDE;0;0;0",
+            "B;point;last;B'B",
+            "BE;line;connect;B,E",
+            "BD;line;connect;B,D"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookIII/propositions/propIII3/">III.3</a></div>
+<p>And, since a straight line <em>EF</em> through the center cuts a straight line <em>AC</em> not through the center at right angles, it also bisects it, therefore <em>AF</em> equals <em>FC.</em></p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII6/">II.6</a></div>
+<p>Now, since the straight line <em>AC</em> has been bisected at the point <em>F,</em> and <em>CD</em> is added to it, the rectangle <em>AD</em> by <em>DC</em> plus the square on <em>FC</em> equals the square on <em>FD.</em></p>
+<p>Add the square on <em>FE</em> to each.  Therefore the rectangle <em>AD</em> by <em>DC</em> plus the sum of the squares on <em>CF</em> and <em>FE</em> equals the sum of the squares on <em>FD</em> and <em>FE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the square on <em>EC</em> equals the sum of the squares on <em>CF</em> and <em>FE,</em> for the angle <em>EFC</em> is right, and the square on <em>ED</em> equals the sum of the squares on <em>DF</em> and <em>FE,</em> therefore the rectangle <em>AD</em> by <em>DC</em> plus the square on <em>EC</em> equals the square on <em>ED.</em></p>
+<p>And <em>EC</em> equals <em>EB,</em> therefore the rectangle <em>AD</em> by <em>DC</em> plus the square on <em>EB</em> equals the square on <em>ED.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the sum of the squares on <em>EB</em> and <em>BD</em> equals the square on <em>ED,</em> for the angle <em>EBD</em> is right, therefore the rectangle <em>AD</em> by <em>DC</em> plus the square on <em>EB</em> equals the sum of the squares on <em>EB</em> and <em>BD.</em></p>
+<p>Subtract the square on <em>EB</em> from each.  Therefore the remaining rectangle <em>AD</em> by <em>DC</em> equals the square on <em>DB.</em></p>
+<p>Therefore <em>if a point is taken outside a circle and two straight lines fall from it on the circle, and if one of them cuts the circle and the other touches it, then the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference equals the square on the tangent.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in the next one.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII37/">III.37</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

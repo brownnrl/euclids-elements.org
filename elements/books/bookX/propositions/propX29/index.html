@@ -1,0 +1,302 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 29</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 29</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="lemma1">Lemma 1.</h1>
+    <div class="statement">To find two square numbers such that their sum is also square.</div>
+    <div class="just"><a href="/elements/books/bookIX/propositions/propIX24/">IX.24</a><br><a href="/elements/books/bookIX/propositions/propIX26/">IX.26</a></div>
+<p>Set out two numbers <em>AB</em> and <em>BC,</em> and let them be either both even or both odd. Then since, whether an even number is subtracted from an even number, or an odd number from an odd number, the remainder is even, therefore the remainder <em>AC</em> is even.</p>
+<p>Bisect <em>AC</em> at <em>D.</em> Let <em>AB</em> and <em>BC</em> also be either similar plane numbers, or square numbers, which are themselves also similar plane numbers.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="60" tabindex="0"></canvas>
+<noscript><img alt="X.29 diagram" src="propX29l1.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "Lemma 1",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,230,0",
+            "AB;line;connect;A,B;0;0;blue",
+            "C;point;lineSlider;A0,A3,180,0",
+            "D;point;midpoint;A,C"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookII/propositions/propII6/">II.6</a><br><a href="/elements/books/bookIX/propositions/propIX1/">IX.1</a></div>
+<p>Now the product of <em>AB</em> and <em>BC</em> together with the square on <em>CD</em> equals the square on <em>BD.</em> And the product of <em>AB</em> and <em>BC</em> is square, inasmuch as it was proved that, if two similar plane numbers multiplied by one another make some number, the product is square. Therefore two square numbers, the product of <em>AB</em> and <em>BC,</em> and the square on <em>CD,</em> have been found which, when added together, make the square on <em>BD.</em></p>
+<p>And it is clear that two square numbers, the square on <em>BD</em> and the square on <em>CD,</em> have again been found such that their difference, the product of <em>AB</em> and <em>BC,</em> is a square, whenever <em>AB</em> and <em>BC</em> are similar plane numbers. But when they are not similar plane numbers, two square numbers, the square on <em>BD</em> and the square on <em>DC,</em> have been found such that their difference, the product of <em>AB</em> and <em>BC,</em> is not square.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="lemma2">Lemma 2.</h1>
+    <div class="statement">To find two square numbers such that their sum is not square.</div>
+    <p>Let the product of <em>AB</em> and <em>BC</em> we said, be square, and <em>CA</em> even. Bisect <em>CA</em> by <em>D.</em></p>
+<p>It is then clear that the square product of <em>AB</em> and <em>BC</em> together with the square on <em>CD</em> equals the square on <em>BD.</em> <div class="just"><a href="/elements/books/bookX/propositions/propX29/#lemma1">Lemma 1</a></div></p>
+<p>Subtract the unit <em>DE.</em> Therefore the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE</em> is less than the square on <em>BD.</em></p>
+<figure class="diagram">
+<canvas id="canvas_1" width="350" height="60" tabindex="0"></canvas>
+<noscript><img alt="X.29 Lemma 2 diagram" src="propX29l2.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "Lemma 2",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,310,0",
+            "AB;line;connect;A,B;0;0;blue",
+            "C;point;lineSlider;A0,A3,250,0",
+            "D;point;midpoint;A,C",
+            "U1;point;free;0,1000;0;0",
+            "U2;point;free;20,1000;0;0",
+            "E;point;cutoff;D,B,U1,U2",
+            "F;point;cutoff;E,B,U1,U2",
+            "G';point;cutoff;A,B,U1,U2;0;0",
+            "G;point;cutoff;G',B,U1,U2",
+            "H';point;cutoff;A,B,D,F;0;0",
+            "H;point;cutoff;H',B,D,F"
+        ],
+    });
+</script>
+</figure><p>I say then that the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE</em> is not square.</p>
+<p>If it is square, then it either equals the square on <em>BE,</em> or is less than the square on <em>BE,</em> but cannot be greater lest the unit be divided.</p>
+<p>First, if possible, let the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE</em> equal the square on <em>BE,</em> and let <em>GA</em> be double the unit <em>DE.</em></p>
+<p>Since the whole <em>AC</em> is double the whole <em>CD,</em> and in them <em>AG</em> is double <em>DE,</em> therefore the remainder <em>GC</em> is also double the remainder <em>EC.</em> Therefore <em>GC</em> is bisected by <em>E.</em></p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII6/">II.6</a></div>
+<p>Therefore the product of <em>GB</em> and <em>BC</em> together with the square on <em>CE</em> equals the square on <em>BE.</em></p>
+<p>But the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE</em> also, by hypothesis, equals the square on <em>BE,</em> therefore the product of <em>GB</em> and <em>BC</em> together with the square on <em>CE</em> equals the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE.</em></p>
+<p>And, if the common square on <em>CE</em> is subtracted, then it follows that <em>AB</em> equals <em>GB,</em> which is absurd.</p>
+<p>Therefore the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE</em> does not equal the square on <em>BE.</em></p>
+<p>I say next that neither is it less than the square on <em>BE.</em></p>
+<p>For, if possible, let it equal the square on <em>BF,</em> and let <em>HA</em> be double <em>DF.</em></p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII6/">II.6</a></div>
+<p>Now it will again follow that <em>HC</em> is double <em>CF,</em> so that <em>CH</em> is bisected at <em>F,</em> and for this reason the product of <em>HB</em> and <em>BC</em> together with the square on <em>FC</em> equals the square on <em>BF.</em></p>
+<p>But, by hypothesis, the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE</em> also equals the square on <em>BF.</em></p>
+<p>Thus the product of <em>HB</em> and <em>BC</em> together with the square on <em>CF</em> also equals the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE,</em> which is absurd.</p>
+<p>Therefore the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE</em> is not less than the square on <em>BE.</em></p>
+<p>And it was proved that neither does it equal the square on <em>BE.</em></p>
+<p>Therefore the product of <em>AB</em> and <em>BC</em> together with the square on <em>CE</em> is not square.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem" class="red-highlight">
+    <h1 id="prop">Proposition 29</h1>
+    <div class="statement">To find two rational straight lines commensurable in square only such that the square on the greater is greater than the square on the less by the square on a straight line commensurable in length with the greater.</div>
+    <p>Set out any rational straight line <em>AB,</em> and two square numbers <em>CD</em> and <em>DE</em> such that their difference <em>CE</em> is not square.</p>
+<figure class="diagram">
+<canvas id="canvas_2" width="260" height="200" tabindex="0"></canvas>
+<noscript><img alt="X.29 diagram" src="propX29.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_2",
+        background: "35,19,100",
+        title: "X.29",
+        elements: [
+            "A0;point;free;-1000,130;0;0",
+            "A3;point;free;1000,130;0;0",
+            "C0;point;free;-1000,160;0;0",
+            "C3;point;free;1000,160;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,230,0",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;C0,C3,40,0",
+            "D;point;lineSlider;C0,C3,200,0",
+            "CD;line;connect;C,D;0;0;blue",
+            "E;point;lineSlider;C0,C3,130,0",
+            "M;point;midpoint;A,B;0;0",
+            "ABF;circle;radius;M,A;0;0;0;0",
+            "G;point;meanProportional;D,C,C,E,C,D;0;0",
+            "F';point;proportion;D,C,C,G,A,B,A,B;0;0",
+            "AFcirc;circle;radius;A,F';0;0;0;0",
+            "FF'';line;bichord;ABF,AFcirc;0;0;0",
+            "F;point;first;FF''",
+            "semi;sector;arc;B,F,A;0;0;black;random",
+            "tri;polygon;triangle;A,B,F;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookX/propositions/propX6/#cor">X.6.Cor</a></div>
+<p>Describe the semicircle <em>AFB</em> on <em>AB,</em> and let it be contrived that <em>DC</em> is to <em>CE</em> as the square on <em>BA</em> is to the square on <em>AF.</em> Join <em>FB.</em></p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX6/">X.6</a></div>
+<p>Since the square on <em>BA</em> is to the square on <em>AF</em> as <em>DC</em> is to <em>CE,</em> therefore the square on <em>BA</em> has to the square on <em>AF</em> the ratio which the number <em>DC</em> has to the number <em>CE.</em> Therefore the square on <em>BA</em> is commensurable with the square on <em>AF.</em></p>
+<div class="just"><a href="/elements/books/bookX/definitions/defX.I.4/">X.Def.I.4</a></div>
+<p>But the square on <em>AB</em> is rational, therefore the square on <em>AF</em> is also rational. Therefore <em>AF</em> is also rational.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX9/">X.9</a></div>
+<p>And, since <em>DC</em> does not have to <em>CE</em> the ratio which a square number has to a square number, neither does the square on <em>BA</em> have to the square on <em>AF</em> the ratio which a square number has to a square number, therefore <em>AB</em> is incommensurable in length with <em>AF.</em></p>
+<p>Therefore <em>BA</em> and <em>AF</em> are rational straight lines commensurable in square only.</p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV19/#cor">V.19.Cor</a><br><a href="/elements/books/bookIII/propositions/propIII31/">III.31</a>, <a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>And since <em>DC</em> is to <em>CE</em> as the square on <em>BA</em> is to the square on <em>AF,</em> therefore, in conversion, <em>CD</em> is to <em>DE</em> as the square on <em>AB</em> is to the square on <em>BF.</em></p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX9/">X.9</a></div>
+<p>But <em>CD</em> has to <em>DE</em> the ratio which a square number has to a square number, therefore the square on <em>AB</em> has to the square on <em>BF</em> the ratio which a square number has to a square number. Therefore <em>AB</em> is commensurable in length with <em>BF.</em></p>
+<p>And the square on <em>AB</em> equals the sum of the squares on <em>AF</em> and <em>FB,</em> therefore the square on <em>AB</em> is greater than the square on <em>AF</em> by the square on <em>BF</em> commensurable with <em>AB.</em></p>
+<p>Therefore there have been found two rational straight lines <em>BA</em> and <em>AF</em> commensurable in square only such that the square on the greater <em>AB</em> is greater than the square on the less <em>AF</em> by the square on <em>BF</em> commensurable in length with <em>AB.</em></p>
+<div class="qed">Q.E.D.</div>
+</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>About Lemma 1</h4>
+<p>Euclid records in Lemma 1 a method to generate Pythagorean triples. As it depends only on the material in Book IX, logically, it could have appeared there rather than here in Book X. It appears here since it is needed in the proof of the proposition. It is likely much older than the rest of Book X.</p>
+<p>Here is a paraphrase of the method of lemma 1, written in a modern algebraic notation. Let <em>n</em><sup>2</sup> (= <em>AB</em>) and <em>m</em><sup>2</sup> (= <em>BC</em>) be two numbers of the same parity with <em>n</em><sup>2</sup> larger. Then <em>n</em><sup>2</sup> – <em>m</em><sup>2</sup> is an even number, so let <em>k</em> (= <em>CD</em>) be its half. Then</p>
+<center>
+<i>n</i><sup>2</sup><i>m</i><sup>2</sup> + <i>k</i><sup>2</sup> = (<i>m</i><sup>2</sup> + <i>k</i> )<sup>2</sup>.
+</center><p>Therefore,</p>
+<center>
+(<i>nm</i>)<sup>2</sup> + ((<i>n</i><sup>2</sup> – <i>m</i><sup>2</sup>)/2)<sup>2</sup> = ((<i>n</i><sup>2</sup> + <i>m</i><sup>2</sup>)/2)<sup>2</sup>,
+</center><p>which gives the two square numbers (<em>nm</em>)<sup>2</sup> and ((<em>n</em><sup>2</sup> – <em>m</em><sup>2</sup>)/2)<sup>2</sup> whose sum is also a square.</p>
+<h4>Pythagorean triples</h4>
+<p>Three numbers <em>x, y,</em> and <em>z</em> where the sum of squares of the first two is the square of the third form what is now called a <em>Pythagorean triple</em> <em>x</em> : <em>y</em> : <em>z.</em> This lemma shows that if <em>n</em> and <em>m</em> have the same parity and <em>n</em> &gt; <em>m,</em> then <em>n</em> and <em>m</em> generate the Pythagorean triple</p>
+<center>
+<i>nm</i> : (<i>n</i><sup>2</sup> – <i>m</i><sup>2</sup>)/2 : (<i>n</i><sup>2</sup> + <i>m</i><sup>2</sup>)/2
+</center><p>It is easy to see that if <em>x</em> : <em>y</em> : <em>z</em> is a Pythagorean triple, then so is any multiple <em>ax</em> : <em>ay</em> : <em>az</em> of it. A Pythagorean triple that is not a multiple of another Pythagorean triple is called a <em>primitive</em> Pythagorean triple. The numbers <em>n</em> and <em>m</em> are relatively prime if and only if the Pythagorean triple that they generate is primitive. Thus, when <em>n</em> and <em>m</em> are relatively prime odd numbers and <em>n</em> &gt; <em>m,</em> then a primitive Pythagorean triple is generated.</p>
+<p>Here's a table of a few small Pythagorean triples, indexed by <em>n</em> and <em>m.</em> Those that aren't primitive are colored with a gray background.</p>
+<center>
+<table border="1" cellpadding="3" bgcolor="ffffff">
+<tr align="center">
+   <th></th><th>1</th><th>3</th><th>5</th><th>7</th><th>9</th>
+   <th>11</th><th>13</th>
+</tr>
+<tr align="center"><th>3</th>
+   <td>3 : 4 : 5</td>
+</tr>
+<tr align="center"><th>5</th>
+   <td>5 : 12 : 13</td>
+   <td>15 : 8 : 17</td>
+</tr>
+<tr align="center"><th>7</th>
+   <td>7 : 24 : 25</td>
+   <td>21 : 20 : 29</td>
+   <td>35 : 12 : 37</td>
+</tr>
+<tr align="center"><th>9</th>
+   <td>9 : 40 : 41</td>
+   <td bgcolor="cccccc">27 : 36 : 45</td>
+   <td>45 : 28 : 53</td>
+   <td>63 : 16 : 65</td>
+</tr>
+<tr align="center"><th>11</th>
+   <td>11 : 60 : 61</td>
+   <td>33 : 56 : 65</td>
+   <td>55 : 48 : 73</td>
+   <td>77 : 36 : 85</td>
+   <td>99 : 20 : 101</td>
+</tr>
+<tr align="center"><th>13</th>
+   <td>13 : 84 : 85</td>
+   <td>39 : 80 : 89</td>
+   <td>65 : 72 : 97</td>
+   <td>91 : 60 : 109</td>
+   <td>117 : 44 : 125</td>
+   <td>143 : 24 : 145</td>
+</tr>
+<tr align="center"><th>15</th>
+   <td>15 : 112 : 113</td>
+   <td bgcolor="cccccc">45 : 108 : 117</td>
+   <td bgcolor="cccccc">75 : 100 : 125</td>
+   <td>105 : 88 : 137</td>
+   <td bgcolor="cccccc">135 : 72 : 153</td>
+   <td>165 : 52 : 173</td>
+   <td>195 : 28 : 197</td>
+</tr>
+</table>
+</center><h4>About Proposition 29</h4>
+<p>This proposition constructs a right triangle <em>ABF</em> with right angle at <em>F</em> so that sides <em>AB</em> and <em>AF</em> are rational lines commensurable in square only so that <em>BF</em> is commensurable to <em>AB.</em></p>
+<p>If we let <em>a,</em> <em>b,</em> and <em>f</em> be the lengths of the sides opposite the angles <em>A,</em> <em>B,</em> and <em>F,</em> respectively, that means that <em>f</em><sup> 2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup>; <em>a</em><sup>2</sup>, <em>b</em><sup>2</sup>, and <em>c</em><sup>2</sup> are all rational numbers; <em>f</em>/<em>b</em> is irrational; and <em>f</em>/<em>a</em> is rational. That can be accomplished by making the proportion <em>a</em> : <em>b</em> : <em>f</em> = <em>d</em> : √(<em>c</em><sup>2</sup> – <em>d</em><sup>2</sup>) : <em>c,</em> where <em>c</em> and <em>d</em> are (whole) numbers such that <em>c</em><sup>2</sup> – <em>d</em><sup>2</sup> is not a square.</p>
+<p>That's what's done here, where <em>c</em><sup>2</sup> is <em>CD,</em> and <em>d</em><sup>2</sup> is <em>DE.</em></p>
+<h4>Use of this proposition</h4>
+<p>Proposition X.29 is used in <a href="/elements/books/bookX/propositions/propX31/">X.31</a> and <a href="/elements/books/bookX/propositions/propX32/">X.32</a>. Lemma 2 is used in <a href="/elements/books/bookX/propositions/propX30/">X.30</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX31/">X.31</a>, <a href="/elements/books/bookX/propositions/propX32/">X.32</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

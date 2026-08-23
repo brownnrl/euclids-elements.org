@@ -1,0 +1,206 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book II</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book II</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 9</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 9</h1>
+    <div class="statement">If a straight line is cut into equal and unequal segments, then the sum of the squares on the unequal segments of the whole is double the sum of the square on the half and the square on the straight line between the points of section.</div>
+    <p>Let a straight line <em>AB</em> be cut into equal segments at <em>C,</em> and into unequal segments at <em>D.</em></p>
+<p>I say that the sum of the squares on <em>AD</em> and <em>DB</em> is double the sum of the squares on <em>AC</em> and <em>CD.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="310" height="250" tabindex="0"></canvas>
+<noscript><img src="propII9.gif" alt="II.9"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "II.9",
+        elements: [
+            "A;point;free;40,190",
+            "B;point;free;270,190",
+            "AB;line;connect;A,B",
+            "C;point;midpoint;AB",
+            "D;point;lineSlider;AB,200,190",
+            "CE;line;perpendicular;C,B",
+            "E;point;last;CE",
+            "AE;line;connect;A,E",
+            "BE;line;connect;B,E",
+            "F';point;parallelogram;E,C,D;0;0",
+            "F;point;intersection;D,F',B,E",
+            "FG;line;parallel;F,D,C",
+            "G;point;last;FG",
+            "AF;line;connect;A,F",
+            "DF;line;connect;D,F"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Draw <em>CE</em> from <em>C</em> at right angles to <em>AB,</em> and make it equal to either <em>AC</em> or <em>CB.</em> Join <em>EA</em> and <em>EB.</em> Draw <em>DF</em> through <em>D</em> parallel to <em>EC</em> and <em>FG</em> through <em>F</em> parallel to <em>AB.</em> Join <em>AF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>Then, since <em>AC</em> equals <em>CE,</em> the angle <em>EAC</em> also equals the angle <em>AEC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>And, since the angle at <em>C</em> is right, the sum of the remaining angles <em>EAC</em> and <em>AEC</em> equals one right angle.</p>
+<p>And they are equal, therefore each of the angles <em>CEA</em> and <em>CAE</em> is half of a right angle.</p>
+<p>For the same reason each of the angles <em>CEB</em> and <em>EBC</em> is also half of a right angle, therefore the whole angle <em>AEB</em> is right.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a><br><a href="/elements/books/bookI/propositions/propI32/">I.32</a><br><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
+<p>And, since the angle <em>GEF</em> is half of a right angle, and the angle <em>EGF</em> is right, for it equals the interior and opposite angle <em>ECB,</em> the remaining angle <em>EFG</em> is half of a right angle.  Therefore the angle <em>GEF</em> equals the angle <em>EFG,</em> so that the side <em>EG</em> also equals <em>GF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a><br><a href="/elements/books/bookI/propositions/propI32/">I.32</a><br><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
+<p>Again, since the angle at <em>B</em> is half of a right angle, and the angle <em>FDB</em> is right, for it is again equal to the interior and opposite angle <em>ECB,</em> the remaining angle <em>BFD</em> is half of a right angle.  Therefore the angle at <em>B</em> equals the angle <em>DFB,</em> so that the side <em>FD</em> also equals the side <em>DB.</em></p>
+<p>Now, since <em>AC</em> equals <em>CE,</em> the square on <em>AC</em> also equals the square on <em>CE,</em> therefore the sum of the squares on <em>AC</em> and <em>CE</em> is double the square on <em>AC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the square on <em>EA</em> equals the sum of the squares on <em>AC</em> and <em>CE,</em> for the angle <em>ACE</em> is right, therefore the square on <em>EA</em> is double the square on <em>AC.</em></p>
+<p>Again, since <em>EG</em> equals <em>GF,</em> the square on <em>EG</em> also equals the square on <em>GF.</em>  Therefore the sum of the squares on <em>EG</em> and <em>GF</em> is double the square on <em>GF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the square on <em>EF</em> equals the sum of the squares on <em>EG</em> and <em>GF,</em> therefore the square on <em>EF</em> is double the square on <em>GF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
+<p>But <em>GF</em> equals <em>CD,</em> therefore the square on <em>EF</em> is double the square on <em>CD.</em></p>
+<p>But the square on <em>EA</em> is also double of the square on <em>AC,</em> therefore the sum of the squares on <em>AE</em> and <em>EF</em> is double the sum of the squares on <em>AC</em> and <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>And the square on <em>AF</em> equals sum of the squares on <em>AE</em> and <em>EF,</em> for the angle <em>AEF</em> is right.  Therefore the square on <em>AF</em> is double the sum of the squares on <em>AC</em> and <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the sum of the squares on <em>AD</em> and <em>DF</em> equals the square on <em>AF,</em> for the angle at <em>D</em> is right, therefore the sum of the squares on <em>AD</em> and <em>DF</em> is double the sum the squares on <em>AC</em> and <em>CD.</em></p>
+<p>And <em>DF</em> equals <em>DB.</em></p>
+<p>Therefore the sum of the squares on <em>AD</em> and <em>DB</em> is double the sum of the squares on <em>AC</em> and <em>CD.</em></p>
+<p>Therefore <em>if a straight line is cut into equal and unequal segments, then the sum of the squares on the unequal segments of the whole is double the sum of the square on the half and the square on the straight line between the points of section.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Outline of the proof</h4>
+<p>Start with the given line <em>AB</em> bisected at <em>C</em> and cut at another point <em>D.</em>  The construction will result in a line <em>AF</em> whose square is
+simultaneously equal to both <em>AD</em><sup>2</sup> + <em>DB</em><sup>2</sup> and 2(<em>AC</em><sup>2</sup>+<em>CD</em><sup>2</sup>).</p>
+<p>Draw <em>CE</em> at right angles to <em>AB</em> and equal to half of it.  Finish the diagram by drawing parallel lines and connecting points.  That results in four isosceles right triangles, <em>ACE, ECB, EGF,</em> and <em>FDB,</em>
+as well as two other right triangles, <em>AEB</em> and <em>AEF.</em> Then,</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>A</mi><msup><mi>F</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><msup><mi>E</mi><mn>2</mn></msup><mo>+</mo><mi>E</mi><msup><mi>F</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mo stretchy="false">(</mo><mi>A</mi><msup><mi>C</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi><msup><mi>E</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">(</mo><mi>E</mi><msup><mi>G</mi><mn>2</mn></msup><mo>+</mo><mi>G</mi><msup><mi>F</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn><mo stretchy="false">(</mo><mi>A</mi><msup><mi>C</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi><msup><mi>D</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+AF^2 &amp;= AE^2 + EF^2 \\
+     &amp;= (AC^2 + CE^2) + (EG^2 + GF^2) \\
+     &amp;= 2(AC^2 + CD^2)
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.2723em;vertical-align:-1.8862em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.3862em;"><span style="top:-4.5221em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.9979em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.4738em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8862em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.3862em;"><span style="top:-4.5221em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.9979em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">G</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-1.4738em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8862em;"><span></span></span></span></span></span></span></span></span></span></span></span><p>But also,</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>A</mi><msup><mi>F</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><msup><mi>D</mi><mn>2</mn></msup><mo>+</mo><mi>D</mi><msup><mi>F</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><msup><mi>D</mi><mn>2</mn></msup><mo>+</mo><mi>D</mi><msup><mi>B</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+AF^2 &amp;= AD^2 + DF^2 \\
+     &amp;= AD^2 + DB^2
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.7482em;vertical-align:-1.1241em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6241em;"><span style="top:-3.76em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.2359em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1241em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6241em;"><span style="top:-3.76em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.2359em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1241em;"><span></span></span></span></span></span></span></span></span></span></span></span><p>Thus, <em>AD</em><sup>2</sup> + <em>DB</em><sup>2</sup> = 2(<em>AC</em><sup>2</sup>+<em>CD</em><sup>2</sup>), as desired.</p>
+<h4>An alternate cut-and-paste proof</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="280" height="280" tabindex="0"></canvas>
+<noscript><img src="propII9a.gif" alt="II.9"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "II.9",
+        elements: [
+            "A;point;free;40,240",
+            "B;point;free;240,240",
+            "AB;line;connect;A,B",
+            "C;point;midpoint;AB",
+            "D;point;lineSlider;AB,180,0",
+            "E;point;perpendicular;A,B",
+            "F;point;parallelogram;B,A,E",
+            "AEFB;polygon;quadrilateral;A,E,F,B",
+            "G;point;parallelogram;C,A,E",
+            "CG;line;connect;C,G",
+            "H;point;parallelogram;D,A,E",
+            "DH;line;connect;D,H",
+            "K;point;midpoint;A,E",
+            "L;point;midpoint;F,B",
+            "KL;line;connect;K,L",
+            "M;point;intersection;C,G,K,L",
+            "N;point;intersection;D,H,K,L",
+            "O;point;cutoff;A,E,A,D",
+            "P;point;cutoff;B,F,A,D",
+            "Q;point;intersection;C,G,O,P",
+            "R;point;intersection;H,D,O,P",
+            "OP;line;connect;O,P",
+            "ADRO;polygon;quadrilateral;A,D,R,O;0;0;0;random",
+            "PRHF;polygon;quadrilateral;P,R,H,F;0;0;0;random"
+        ],
+    });
+</script>
+</figure><p>Up until this proposition, Euclid has only used cut-and-paste proofs, and such a proof can  be made for this proposition as well.  It would start with the same line <em>AB</em> bisected at <em>C</em> and also cut at <em>D.</em>  Then lines at right angles and parallel to line <em>AB</em> would be constructed to make squares and rectangles of various sizes.</p>
+<p>The goal is to show that</p>
+<center><i>AD</i><sup>2</sup> + <i>DB</i><sup>2</sup> = 2(<i>AC</i><sup>2</sup> + <i>CD</i><sup>2</sup>).</center><p>The left hand side of the equation is displayed to the right as the two squares <em>AR</em> plus <em>RF.</em>  Cut out the rectangle <em>KQ</em> and move it to the right to cover the rectangle <em>MP.</em>  Also move the rectangle <em>CN</em> up to the rectangle <em>MH.</em> Now the upper right square <em>MF</em> is completely covered once, with two extra coverings of the small square <em>MR.</em> That is, two squares of size <em>AC</em><sup>2</sup> are covered as well as two squares of size <em>CD</em><sup>2</sup>.  The two sides of the equation are, therefore, equal.</p>
+<h4>Interpretations of the proposition</h4>
+<p>The equation, <em>AD</em><sup>2</sup> + <em>DB</em><sup>2</sup> =
+2(<em>AC</em><sup>2</sup>+<em>CD</em><sup>2</sup>), can be interpreted in various ways depending on which information are taken as given. These interpretations are more of an aid to the modern reader than as intrinsic aspects of the proposition, since they are interpretations in modern symbolic algebra.</p>
+<p>For instance, when <em>AC</em> and <em>CB</em> are set to <em>y</em> while <em>CD</em> is set to <em>z,</em> then the algebraic identity</p>
+<center>(<i>y</i> + <i>z</i>)<sup>2</sup> + (<i>y</i> – <i>z</i>)<sup>2</sup> = 2 (<i>y</i><sup>2</sup> + <i>z</i><sup>2</sup>)</center><p>results.</p>
+<p>Alternatively, when <em>AC</em> and <em>CB</em> are set to <em>y</em> while <em>BC</em> is set to <em>x,</em>, then we get the identity</p>
+<center>(2<i>y</i> – <i>x</i>)<sup>2</sup> + <i>x</i><sup>2</sup> = 2 (<i>y</i><sup>2</sup> + (<i>y</i> – <i>x</i>)<sup>2</sup>)</center><p>There are yet other interpretations. This proposition is used in Book X to prove a lemma for <a href="/elements/books/bookX/propositions/propX60/">X.60</a>, and in that lemma, <em>w</em> = <em>AD</em> and <em>x</em> = <em>DB</em> are given first, so that</p>
+<center><i>w</i><sup>2</sup> + <i>x</i><sup>2</sup> = 2 (((<i>w</i> + <i>x</i>)/2)<sup>2</sup> + ((<i>w</i> – <i>x</i>)/2)<sup>2</sup>)</center>
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX60/">X.60</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

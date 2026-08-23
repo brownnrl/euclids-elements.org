@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 37</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 37</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 37</h1>
+    <div class="statement">If four straight lines are proportional, then parallelepipedal solids on them which are similar and similarly described are also proportional; and, if the parallelepipedal solids on them which are similar and similarly described are proportional, then the straight lines themselves are also proportional.</div>
+    <p>Let <em>AB, CD, EF,</em> and <em>GH</em> be four straight lines in proportion, so that <em>AB</em> is to <em>CD</em> as <em>EF</em> is to <em>GH,</em> and let there be described on <em>AB, CD, EF,</em> and <em>GH</em> the similar and similarly situated parallelepipedal solids <em>KA, LC, ME, NG.</em></p>
+<p>I say that <em>KA</em> is to <em>LC</em> as <em>ME</em> is to <em>NG.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="550" height="290" tabindex="0"></canvas>
+<noscript><img alt="XI.37 diagram" src="propXI37.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.37",
+        elements: [
+            "B;point;fixed;100,250,0;black;green",
+            "1X;point;fixed;412,250,-91;0;0",
+            "1Y;point;fixed;65,550,-120;0;0",
+            "1Z;point;fixed;184,375,288;0;0",
+            "floor;plane;3points;B,1X,1Y;0;0;0;0",
+            "A;point;lineSlider;B,1X,40,280,0",
+            "b;point;planeSlider;floor,120,200,0;0",
+            "c;point;lineSlider;B,1Y,150,210,160;0",
+            "K;point;parallelogram;b,B,c",
+            "AK;polyhedron;parallelepiped;B,A,b,c;0;0;black;random",
+            "C;point;lineSlider;B,1X,150,250,0",
+            "D;point;lineSlider;B,1X,240,250,0",
+            "E;point;lineSlider;B,1X,290,250,0",
+            "F;point;lineSlider;B,1X,350,250,0",
+            "G;point;lineSlider;B,1X,400,250,0",
+            "H';point;extend;A,G,A,G;0;0",
+            "H;point;proportion;A,B,C,D,E,F,G,H'",
+            "d;point;similar;C,D,floor,A,B,b,floor;0;0",
+            "f;point;similar;E,F,floor,A,B,b,floor;0;0",
+            "h;point;similar;G,H,floor,A,B,b,floor;0;0",
+            "e';point;parallelogram;c,B,D;0;0",
+            "e;point;proportion;A,B,C,D,B,c,D,e';0;0",
+            "g';point;parallelogram;c,B,F;0;0",
+            "g;point;proportion;A,B,E,F,B,c,F,g';0;0",
+            "i';point;parallelogram;c,B,H;0;0",
+            "i;point;proportion;A,B,G,H,B,c,H,i';0;0",
+            "CL;polyhedron;parallelepiped;D,C,d,e;0;0;black;random",
+            "EM;polyhedron;parallelepiped;F,E,f,g;0;0;black;random",
+            "GN;polyhedron;parallelepiped;H,G,h,i;0;0;black;random",
+            "L;point;parallelogram;d,D,e",
+            "M;point;parallelogram;f,F,g",
+            "N;point;parallelogram;h,H,i"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookXI/propositions/propXI33/">XI.33</a></div>
+<p>Since the parallelepipedal solid <em>KA</em> is similar to <em>LC,</em> therefore <em>KA</em> has to <em>LC</em> the ratio triplicate of that which <em>AB</em> has to <em>CD.</em> For the same reason <em>ME</em> has to <em>NG</em> the ratio triplicate of that which <em>EF</em> has to <em>GH.</em></p>
+<p>And <em>AB</em> is to <em>CD</em> as <em>EF</em> is to <em>GH.</em> Therefore <em>AK</em> is to <em>LC</em> as <em>ME</em> is to <em>NG.</em></p>
+<hr width="50%">
+
+<p>Next as the solid <em>AK</em> is to the solid <em>LC,</em> so let the solid <em>ME</em> be to the solid <em>NG.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI33/">XI.33</a></div>
+<p>I say that the straight line <em>AB</em> is to <em>CD</em> as <em>EF</em> is to <em>GH.</em> Since, again, <em>KA</em> has to <em>LC</em> the ratio triplicate of that which <em>AB</em> has to <em>CD,</em> and <em>ME</em> also has to <em>NG</em> the ratio triplicate of that which <em>EF</em> has to <em>GH,</em> and <em>KA</em> is to <em>LC</em> as <em>ME</em> is to <em>NG,</em> therefore <em>AB</em> is to <em>CD</em> as <em>EF</em> is to <em>GH.</em></p>
+<p>Therefore, <em>if four straight lines are proportional, then parallelepipedal solids on them which are similar and similarly described are also proportional; and, if the parallelepipedal solids on them which are similar and similarly described are proportional, then the straight lines themselves are also proportional.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition completes the theory of volumes of parallelepipeds.</p>
+<p>In the proof of this proposition it is assumed that two ratios are equal if and only if their triplicate ratios are equal. The required proof is long and detailed, but not difficult.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://unpkg.com/@brownnrl/geomlib@0.14.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 2</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 2</h1>
+    <div class="statement">If a straight line is drawn parallel to one of the sides of a triangle, then it cuts the sides of the triangle proportionally; and, if the sides of the triangle are cut proportionally, then the line joining the points of section is parallel to the remaining side of the triangle.</div>
+    <p>Let <em>DE</em> be drawn parallel to <em>BC,</em> one of the sides of the triangle <em>ABC.</em></p>
+<p>I say that <em>BD</em> is to <em>AD</em> as <em>CE</em> is to <em>AE.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="300" tabindex="0"></canvas>
+<noscript><img alt="VI.2 diagram" src="propVI2.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.2",
+        elements: [
+            "A;point;free;100,40",
+            "B;point;free;30,270",
+            "C;point;free;250,270",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;lineSlider;A,B,60,190",
+            "DC;line;connect;D,C",
+            "E';point;parallelogram;C,B,D;0;0",
+            "E;point;intersection;D,E',A,C",
+            "DE;line;connect;D,E",
+            "BE;line;connect;B,E"
+        ],
+    });
+</script>
+</figure><p>Join <em>BE</em> and <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI37/">I.37</a></div>
+<p>Therefore the triangle <em>BDE</em> equals the triangle <em>CDE,</em> for they are on the same base <em>DE</em> and in the same parallels <em>DE</em> and <em>BC.</em></p>
+<p>And <em>ADE</em> is another triangle.</p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV7/">V.7</a></div>
+<p>But equals have the same ratio to the same, therefore the triangle <em>BDE</em> is to the triangle <em>ADE</em> as the triangle <em>CDE</em> is to the triangle <em>ADE.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a></div>
+<p>But the triangle <em>BDE</em> is to <em>ADE</em> as <em>BD</em> is to <em>AD,</em> for, being under the same height, the perpendicular drawn from <em>E</em> to <em>AB,</em> they are to one another as their bases.</p>
+<p>For the same reason, the triangle <em>CDE</em> is to <em>ADE</em> as <em>CE</em> is to <em>AE.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>Therefore <em>BD</em> is to <em>AD</em> also as <em>CE</em> is to <em>AE.</em></p>
+<hr width="50%">
+
+<p>Next, let the sides <em>AB</em> and <em>AC</em> of the triangle <em>ABC</em> be cut proportionally, so that <em>BD</em> is to <em>AD</em> as <em>CE</em> is to <em>AE.</em> Join <em>DE.</em></p>
+<p>I say that <em>DE</em> is parallel to <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>With the same construction, since <em>BD</em> is to <em>AD</em> as <em>CE</em> is to <em>AE,</em> but <em>BD</em> is to <em>AD</em> as the triangle <em>BDE</em> is to the triangle <em>ADE,</em> and <em>CE</em> is to <em>AE</em> as the triangle <em>CDE</em> is to the triangle <em>ADE,</em> therefore the triangle <em>BDE</em> is to the triangle <em>ADE</em> as the triangle <em>CDE</em> is to the triangle <em>ADE.</em></p>
+<p>Therefore each of the triangles <em>BDE</em> and <em>CDE</em> has the same ratio to <em>ADE.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV9/">V.9</a></div>
+<p>Therefore the triangle <em>BDE</em> equals the triangle <em>CDE,</em> and they are on the same base <em>DE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI39/">I.39</a></div>
+<p>But equal triangles which are on the same base are also in the same parallels. Therefore <em>DE</em> is parallel to <em>BC.</em></p>
+<p>Therefore, <em>if a straight line is drawn parallel to one of the sides of a triangle, then it cuts the sides of the triangle proportionally; and, if the sides of the triangle are cut proportionally, then the line joining the points of section is parallel to the remaining side of the triangle.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Euclid prefers to prove a pair of converses in two stages, but in some propositions, as this one, the proofs in the two stages are almost inverses of each other, so both could be proved at once.</p>
+<p>In this proposition we have a given triangle <em>ABC</em> and a line <em>DE</em> joining a point <em>D</em> on the side <em>BC</em> to a point <em>E</em> on the side <em>AC.</em> The claim is that</p>
+<center><i>BD</i> : <i>AD</i> = <i>CE</i> : <i>AE</i> if and only if <i>DE</i> || <i>BC.</i></center><p>By the previous proposition <a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a> we know in any case that</p>
+<center><i>BD</i> : <i>AD</i> = triangle <i>BDE</i> : triangle <i>ADE,</i> and
+<br><i>CE</i> : <i>AE</i> = triangle <i>CDE</i> : triangle <i>ADE.</i></center><p>Hence,</p>
+<center><i>BD</i> : <i>AD</i> = <i>CE</i> : <i>AE</i> if and only if <i>BDE</i> : <i>ADE</i> = <i>CDE</i> : <i>ADE.</i></center><p>By propositions <a href="/elements/books/bookV/propositions/propV7/">V.7</a> and <a href="/elements/books/bookV/propositions/propV9/">V.9</a> the latter condition is equivalent to <em>BDE</em> = <em>CDE,</em> and that, in turn, by propositions <a href="/elements/books/bookI/propositions/propI37/">I.37</a> and <a href="/elements/books/bookI/propositions/propI39/">I.39</a> is equivalent to <em>DE</em> || <em>BC.</em></p>
+<h4>Note</h4>
+<p>It should be noted that a proportion such as <em>BD</em> : <em>AD</em> = <em>AE</em> : <em>CE</em> is not intended. In that case the sides are cut proportionally, but the correspondence is not the intended one.</p>
+<h4>Use of this theorem</h4>
+<p>This proposition is frequently used in the rest of Book VI starting with the next proposition. It is also used in Books XI and XII.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI3/">VI.3</a>, <a href="/elements/books/bookVI/propositions/propVI4/">VI.4</a>, <a href="/elements/books/bookVI/propositions/propVI9/">VI.9</a>, <a href="/elements/books/bookVI/propositions/propVI10/">VI.10</a>, <a href="/elements/books/bookVI/propositions/propVI11/">VI.11</a>, <a href="/elements/books/bookVI/propositions/propVI12/">VI.12</a>, <a href="/elements/books/bookVI/propositions/propVI24/">VI.24</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI17/">XI.17</a>, <a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII3/">XII.3</a>, <a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>
