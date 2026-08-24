@@ -1,0 +1,214 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 29</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 29</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 29</h1>
+    <div class="statement">To apply a parallelogram equal to a given rectilinear figure to a given straight line but exceeding it by a parallelogram similar to a given one.</div>
+    <p>Let <em>C</em> be the given rectilinear figure, <em>AB</em> be the given straight line, and <em>D</em> the parallelogram to which the excess is required to be similar.</p>
+<p>It is required to apply a parallelogram equal to the the rectilinear figure <em>C</em>  to the straight line <em>AB</em> but exceeding it by a parallelogram similar to <em>D.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="550" height="250" tabindex="0"></canvas>
+<noscript><img alt="VI.29 diagram" src="propVI29.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.29",
+        elements: [
+            "Z0;point;free;-1000,180;0;0",
+            "Z1;point;free;1000,180;0;0",
+            "A;point;lineSlider;Z0,Z1,170,180",
+            "B;point;lineSlider;Z0,Z1,300,250",
+            "E;point;midpoint;A,B",
+            "C1;point;free;30,160;0",
+            "C2;point;free;40,80;0",
+            "C3;point;free;90,40;0",
+            "C4;point;free;100,160;0",
+            "C5;point;free;80,200;0",
+            "C;polygon;pentagon;C1,C2,C3,C4,C5;black;0;black;random",
+            "Y0;point;free;-1000,140;0;0",
+            "Y1;point;free;1000,140;0;0",
+            "D1;point;free;140,80;0",
+            "D2;point;lineSlider;Y0,Y1,130,140;0",
+            "D3;point;lineSlider;Y0,Y1,190,140;0",
+            "D;polygon;parallelogram;D1,D2,D3;black;0;black;random",
+            "D4;point;vertex;D,4;0",
+            "F;point;similar;E,B,D2,D3,D1",
+            "L;point;similar;E,B,D2,D3,D4",
+            "EBLF;polygon;quadrilateral;E,B,L,F;0;0;0;0",
+            "FAA'F';polygon;application;C,E,F,A;0;0;0;0;0",
+            "F';point;vertex;FAA'F',4;0;0",
+            "A';point;vertex;FAA'F',3;0;0",
+            "BLA'F';polygon;quadrilateral;B,L,A',F';0;0;0;0",
+            "D';polygon;application;BLA'F',D3,D4,D2;0;0;0;0",
+            "D6;point;vertex;D',4;0;0",
+            "X0;point;free;-1000,50;0;0",
+            "X1;point;free;1000,50;0;0",
+            "K;point;lineSlider;X0,X1,410,50",
+            "H;point;meanProportional;D2,D3,D3,D6,K,X1",
+            "G';point;similar;K,H,D1,D4,D2;0;0",
+            "GH;polygon;application;BLA'F',K,H,G';0;0;black;random",
+            "G;point;vertex;GH,4",
+            "M;point;cutoff;F,L,K,H",
+            "N;point;cutoff;F,E,K,G",
+            "O;point;parallelogram;N,F,M",
+            "FO;line;connect;F,O",
+            "P;point;intersection;A,B,M,O",
+            "Q;point;intersection;L,B,N,O",
+            "AO;polygon;parallelogram;A,P,O;0;0;black;random",
+            "FP;polygon;parallelogram;F,E,P;0;0;black;random",
+            "LQ;line;connect;L,Q",
+            "EN;line;connect;E,N",
+            "Y;point;midpoint;B,P;0;0",
+            "V;point;cutoff;B,L,B,Y;black;0",
+            "W;point;cutoff;B,O,B,Y;black;0",
+            "X;point;cutoff;B,A,B,Y;black;0",
+            "XWV;sector;arc;X,W,V;0;0;darkGray;0"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVI/propositions/propVI25/">VI.25</a></div>
+<p>Bisect <em>AB</em> at <em>E.</em> Describe the parallelogram <em>BF</em> on <em>EB</em> similar and similarly situated to <em>D,</em> and construct <em>GH</em> equal to the sum of <em>BF</em> and <em>C</em> and similar and similarly situated to <em>D.</em></p>
+<p>Let <em>KH</em> correspond to <em>FL</em> and <em>KG</em> to <em>FE.</em></p>
+<p>Now, since <em>GH</em> is greater than <em>FB,</em> therefore <em>KH</em> is also greater than <em>FL,</em> and <em>KG</em> greater than <em>FE.</em></p>
+<p>Produce <em>FL</em> and <em>FE.</em>  Make <em>FLM</em> equal to <em>KH,</em> and <em>FEN</em> equal to <em>KG.</em> Complete <em>MN.</em>  Then <em>MN</em> is both equal and similar to <em>GH.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI21/">VI.21</a>, <a href="/elements/books/bookVI/propositions/propVI26/">VI.26</a></div>
+<p>But <em>GH</em> is similar to <em>EL,</em> therefore <em>MN</em> is also similar to <em>EL,</em>  therefore <em>EL</em> is about the same diameter with <em>MN.</em></p>
+<p>Draw their diameter <em>FO,</em> and describe the figure.</p>
+<p>Since <em>GH</em> equals the sum of <em>EL</em> and <em>C,</em> while <em>GH</em> equals <em>MN,</em> therefore <em>MN</em> also equals the sum of <em>EL</em> and <em>C.</em></p>
+<p>Subtract <em>EL</em> from each.  Therefore the remainder, the gnomon <em>XWV,</em> equals <em>C.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI36/">I.36</a>, <a href="/elements/books/bookI/propositions/propI43/">I.43</a></div>
+<p>Now, since <em>AE</em> equals <em>EB,</em> therefore <em>AN</em> equals <em>NB,</em> that is, <em>LP.</em></p>
+<p>Add <em>EO</em> to each.  Therefore the whole <em>AO</em> equals the gnomon <em>VWX.</em></p>
+<p>But the gnomon <em>VWX</em> equals <em>C,</em> therefore <em>AO</em> also equals <em>C.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI24/">VI.24</a></div>
+<p>Therefore the parallelogram <em>AO</em> equal to the given rectilinear figure <em>C</em> has been applied to the given straight line <em>AB</em> but exceeding it by a parallelogram <em>QP</em> similar to <em>D,</em> since <em>PQ</em> is also similar to <em>EL.</em></p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The construction in this proposition is a generalization of that described in the <a href="../../../bookII/propositions/propII6/#guide">Guide</a> for II.6.  In that proposition, the figure <em>D</em> is a square.</p>
+<h4>The outline of a simplified proof for rectangles</h4>
+<figure class="diagram">
+<canvas id="canvas_1" width="250" height="270" tabindex="0"></canvas>
+<noscript><img alt="VI.29 simplified diagram" src="propVI29a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "VI.29",
+        elements: [
+            "Z0;point;free;-1000,180;0;0",
+            "Z1;point;free;1000,180;0;0",
+            "A;point;lineSlider;Z0,Z1,30,0",
+            "B;point;lineSlider;Z0,Z1,160,0",
+            "E;point;midpoint;A,B",
+            "C1;point;free;30,20;0",
+            "C2;point;free;200,20;0",
+            "C3;point;free;200,80;0",
+            "C4;point;free;30,80;0",
+            "C;polygon;quadrilateral;C1,C2,C3,C4;black;0;black;random",
+            "F;point;perpendicular;E,B",
+            "L;point;parallelogram;F,E,B",
+            "FAA'F';polygon;application;C,E,F,A;0;0;0;0",
+            "A';point;vertex;FAA'F',3;0;0",
+            "M;point;meanProportional;L,A',B,L,F,L",
+            "N;point;cutoff;F,E,F,M",
+            "O;point;parallelogram;N,F,M",
+            "FO;line;connect;F,O",
+            "P;point;intersection;A,B,M,O",
+            "Q;point;intersection;L,B,N,O",
+            "AQ;polygon;parallelogram;A,B,Q;0;0;black;random",
+            "PQ;polygon;parallelogram;P,B,Q;0;0;black;random",
+            "MN;polygon;parallelogram;M,F,N;0;0;black;0",
+            "BL;line;connect;B,L"
+        ],
+    });
+</script>
+</figure><p>Like the last proposition, this one is more easily understood when the given parallelogram <em>D</em> is a square.</p>
+<p>In that case of this proposition a rectangle <em>AO</em> equal to a given rectilinear figure <em>C</em> is applied to a given straight line <em>AB</em> but exceeds it by a square (<em>BQOP</em> in the figure). So the rectangle being laid alongside the line extends past the end of the line <em>AB,</em> but the part that extends beyond the end is a square.</p>
+<p>For the construction, bisect <em>AB</em> at <em>E,</em> construct the square <em>BEFL,</em> then make the square <em>FNOM</em> equal to the square <em>BEFL</em> plus the figure <em>C,</em> and complete the figure.</p>
+<p>As in the last proposition we can understand the meaning of this construction more easily if we interpret it algebraically. Let <em>a</em> stand for the known quantity <em>AB</em> and <em>x</em> stand for the unknown quantity <em>BP.</em> Then this
+construction finds <em>x</em> so that (<em>a</em> + <em>x</em>) <em>x</em> = <em>C.</em> In other words it solves the quadratic equation <em>ax</em> + <em>x</em><sup>2</sup> = <em>C.</em></p>
+<p>The construction of this proposition is used in the next proposition to cut a straight line in extreme and mean ratio.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI30/">VI.30</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

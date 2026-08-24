@@ -1,0 +1,180 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 41</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 41</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 41</h1>
+    <div class="statement">If two straight lines incommensurable in square which make the sum of the squares on them medial and the rectangle contained by them medial and also incommensurable with the sum of the squares on them are added together, then the whole straight line is irrational; let it be called the <i>side of the sum of two medial areas.</i></div>
+    <div class="just"><a href="/elements/books/bookX/propositions/propX35/">X.35</a></div>
+<p>Let two straight lines <em>AB</em> and <em>BC</em> incommensurable in square and satisfying the given conditions be added together.</p>
+<p>I say that <em>AC</em> is irrational.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="210" height="350" tabindex="0"></canvas>
+<noscript><img alt="X.41 diagram" src="propX41.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.41",
+        elements: [
+            "A0;point;free;-1000,320;0;0",
+            "A3;point;free;1000,320;0;0",
+            "D0;point;free;-1000,280;0;0",
+            "D3;point;free;1000,280;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,120,0",
+            "C;point;lineSlider;A0,A3,170,0",
+            "AC;line;connect;A,C",
+            "D;point;lineSlider;D0,D3,60,0",
+            "E;point;lineSlider;D0,D3,140,0",
+            "DD';line;perpendicular;D,E;0;0;0",
+            "D2;point;last;DD';0;0",
+            "D';point;cutoff;D,D2,A0,A3;0;0",
+            "G';point;proportion;D,E,A,B,A,B,D,D';0;0",
+            "G;point;proportion;D,E,B,C,B,C,G',D'",
+            "F;point;parallelogram;E,D,G",
+            "DEFG;polygon;quadrilateral;D,E,F,G;0;0;black;random",
+            "K';point;proportion;G,F,B,C,A,B,G,D';0;0",
+            "K;point;extend;D,K',G,K'",
+            "FGKH;polygon;parallelogram;F,G,K;0;0;black;random",
+            "H;point;vertex;FGKH,4"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookII/propositions/propII4/">II.4</a></div>
+<p>Set out a rational straight line <em>DE</em>. Apply to <em>DE</em> the rectangle <em>DF</em> equal to the sum of the squares on <em>AB</em> and <em>BC</em>, and apply to <em>DE</em> the rectangle <em>GH</em> equal to twice the rectangle <em>AB</em> by <em>BC</em>. Then the whole <em>DH</em> equals the square on <em>AC</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX22/">X.22</a></div>
+<p>Now, since the sum of the squares on <em>AB</em> and <em>BC</em> is medial, and equals <em>DF</em>, therefore <em>DF</em> is also medial. And it is applied to the rational straight line <em>DE</em>, therefore <em>DG</em> is rational and incommensurable in length with <em>DE</em>. For the same reason <em>GK</em> is also rational and incommensurable in length with <em>GF</em>, that is, <em>DE</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>Since the sum of the squares on <em>AB</em> and <em>BC</em> is incommensurable with twice the rectangle <em>AB</em> by <em>BC</em>, therefore <em>DF</em> is incommensurable with <em>GH</em>, so that <em>DG</em> is also incommensurable with <em>GK</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX36/">X.36</a></div>
+<p>And they are rational, therefore <em>DG</em> and <em>GK</em> are rational straight lines commensurable in square only. Therefore <em>DK</em> is irrational and what is called binomial.</p>
+<div class="just"><a href="/elements/books/bookX/definitions/defX.I.4/">X.Def.I.4</a></div>
+<p>But <em>DE</em> is rational, therefore <em>DH</em> is irrational, and the side of the square which equals it is irrational.</p>
+<p>But <em>AC</em> is the side of the square equal to <em>HD</em>, therefore <em>AC</em> is irrational. Let it be called the side of the sum two medial areas.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="lemma">Lemma.</h1>
+    <div class="statement">And that <i>the aforesaid irrational straight lines are divided only in one way into the straight lines of which they are the sum and which produce the types in question</i> we will now prove after premising the following lemma.</div>
+    <p>Set out the straight line <em>AB</em>, cut the whole into unequal parts at each of the points <em>C</em> and <em>D</em>, and let <em>AC</em> be supposed greater than <em>DB</em>.</p>
+<p>I say that the sum of the squares on <em>AC</em> and <em>CB</em> is greater than the sum of the squares on <em>AD</em> and <em>DB</em>.</p>
+<p>Bisect <em>AB</em> at <em>E</em>.</p>
+<p>Since <em>AC</em> is greater than <em>DB</em>, subtract <em>DC</em> from each, therefore the remainder <em>AD</em> is greater than the remainder <em>CB</em>.</p>
+<figure class="diagram">
+<canvas id="canvas_1" width="270" height="60" tabindex="0"></canvas>
+<noscript><img alt="X.41 lemma diagram" src="propX41l.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "Lemma",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,230,0",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;A0,A3,180,0",
+            "D;point;lineSlider;A0,A3,100,0",
+            "E;point;midpoint;A,B"
+        ],
+    });
+</script>
+</figure><p>But <em>AE</em> equals <em>EB</em>, therefore <em>DE</em> is less than <em>EC</em>. Therefore the points <em>C</em> and <em>D</em> are not equidistant from the point of bisection.</p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII5/">II.5</a></div>
+<p>Since the rectangle <em>AC</em> by <em>CB</em> together with the square on <em>EC</em> equals the square on <em>EB</em>, and, further, the rectangle <em>AD</em> by <em>DB</em> together with the square on <em>DE</em> equals the square on <em>EB</em>, therefore the rectangle <em>AC</em> by <em>CB</em> together with the square on <em>EC</em> equals the rectangle <em>AD</em> by <em>DB</em> together with the square on <em>DE</em>.</p>
+<p>And of these the square on <em>DE</em> is less than the square on <em>EC</em>, therefore the remainder, the rectangle <em>AC</em> by <em>CB</em>, is also less than the rectangle <em>AD</em> by <em>DB</em> so that twice the rectangle <em>AC</em> by <em>CB</em> is also less than twice the rectangle <em>AD</em> by <em>DB</em>.</p>
+<p>Therefore the remainder, the sum of the squares on <em>AC</em> and <em>CB</em>, is greater than the sum of the squares on <em>AD</em> and <em>DB</em>.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in <a href="/elements/books/bookX/propositions/propX59/">X.59</a>, <a href="/elements/books/bookX/propositions/propX65/">X.65</a> and <a href="/elements/books/bookX/propositions/propX70/">X.70</a>.</p>
+<p>The lemma is used in <a href="/elements/books/bookX/propositions/propX44/">X.44</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX59/">X.59</a>, <a href="/elements/books/bookX/propositions/propX65/">X.65</a>, <a href="/elements/books/bookX/propositions/propX70/">X.70</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

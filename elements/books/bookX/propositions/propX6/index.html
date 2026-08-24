@@ -1,0 +1,172 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 6</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 6</h1>
+    <div class="statement">If two magnitudes have to one another the ratio which a number has to a number, then the magnitudes are commensurable.</div>
+    <p>Let the two magnitudes <em>A</em> and <em>B</em> have to one another the ratio which the number <em>D</em> has to the number <em>E.</em></p>
+<p>I say that the magnitudes <em>A</em> and <em>B</em> are commensurable.</p>
+<p>Divide <em>A</em> into as many equal parts as there are units in <em>D,</em> and let <em>C</em> equal one of them, and let <em>F</em> be made up of as many magnitudes equal to <em>C</em> as there are units in <em>E.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="120" tabindex="0"></canvas>
+<noscript><img alt="X.6 diagram" src="propX6.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.6",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "D0;point;free;-1000,70;0;0",
+            "D3;point;free;1000,70;0;0",
+            "E0;point;free;-1000,100;0;0",
+            "E3;point;free;1000,100;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,20;0;0",
+            "C1;point;lineSlider;A0,A3,230,0;0",
+            "C2;point;lineSlider;A0,A3,260,0;0",
+            "C;line;connect;C1,C2;black",
+            "A;point;lineSlider;A0,A3,30,0",
+            "A1;point;cutoff;A,A3,C1,C2;0",
+            "A4;point;cutoff;A1,A3,C1,C2;0",
+            "A5;point;cutoff;A4,A3,C1,C2;0",
+            "AA5;line;connect;A,A5",
+            "B1;point;lineSlider;A0,A3,140,0;0",
+            "B2;point;cutoff;B1,A3,A,A4;0",
+            "B;line;connect;B1,B2;black",
+            "D1;point;lineSlider;D0,D3,30,0;0",
+            "D2;point;proportion;C1,C2,A,A5,U1,U2,D1,D3;0",
+            "D;line;connect;D1,D2;black;0;blue",
+            "E1;point;lineSlider;D0,D3,120,0;0",
+            "E2;point;proportion;C1,C2,B1,B2,U1,U2,E1,D3;0",
+            "E;line;connect;E1,E2;black;0;blue",
+            "F1;point;lineSlider;D0,D3,190,0;0",
+            "F2;point;cutoff;F1,D3,B1,B2;0",
+            "F;line;connect;F1,F2;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a></div>
+<p>Since then there are in <em>A</em> as many magnitudes equal to <em>C</em> as there are units in <em>D,</em> whatever part the unit is of <em>D,</em> the same part is <em>C</em> of <em>A</em> also. Therefore <em>C</em> is to <em>A</em> as the unit is to <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV7/#cor">V.7.Cor</a></div>
+<p>But the unit measures the number <em>D,</em> therefore <em>C</em> also measures <em>A.</em> And since <em>C</em> is to <em>A</em> as the unit is to <em>D,</em> therefore, inversely, <em>A</em> is to <em>C</em> as the number <em>D</em> is to the unit.</p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a></div>
+<p>Again, since there are in <em>F</em> as many magnitudes equal to <em>C</em> as there are units in <em>E,</em> therefore <em>C</em> is to <em>F</em> as the unit is to <em>E.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV22/">V.22</a></div>
+<p>But it was also proved that <em>A</em> is to <em>C</em> as <em>D</em> is to the unit, therefore, <em>ex aequali,</em> <em>A</em> is to <em>F</em> as <em>D</em> is to <em>E.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>But <em>D</em> is to <em>E</em> as <em>A</em> is to <em>B,</em> therefore <em>A</em> is to <em>B</em> as it is to <em>F</em> also.</p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV9/">V.9</a></div>
+<p>Therefore <em>A</em> has the same ratio to each of the magnitudes <em>B</em> and <em>F.</em> Therefore <em>B</em> equals <em>F.</em></p>
+<p>But <em>C</em> measures <em>F,</em> therefore it measures <em>B</em> also. Further it measures <em>A</em> also, therefore <em>C</em> measures <em>A</em> and <em>B.</em></p>
+<div class="just"><a href="/elements/books/bookX/definitions/defX.I.1/">X.Def.I.1</a></div>
+<p>Therefore <em>A</em> is commensurable with <em>B.</em></p>
+<p>Therefore, <em>if two magnitudes have to one another the ratio which a number has to a number, then the magnitudes are commensurable.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="cor">Corollary.</h1>
+    
+    <div class="just"><a href="/elements/books/bookVI/propositions/propVI9/">VI.9</a></div>
+<p>From this it is clear that, <em>if there are two numbers as D and E, and a straight line as A, then it is possible to make a straight line F such that the given straight line is to it as the number D is to the number E.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI19/#cor">VI.19.Cor</a></div>
+<p>And <em>if a mean proportional is also taken between A and F, as B, then A is to F as the square on A is to the square on B, that is, the first is to the third as the figure on the first is to that which is similar and similarly described on the second.</em></p>
+<p>But <em>A</em> is to <em>F</em> as the number <em>D</em> is to the number <em>E,</em> therefore the number <em>D</em> is to the number <em>E</em> as the figure on the straight line <em>A</em> is to the figure on the straight line <em>B.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>If <em>A</em> : <em>B</em> = <em>m</em> : <em>n,</em> then, with <em>C</em> equal to <em>A/m,</em> it follows that <em>A</em> = <em>mC</em> and <em>B</em> = <em>nC.</em></p>
+<p>The proof assumes that magnitudes are divisible. Not all magnitudes, however, are constructively divisible. For instance, a 60° angle cannot be trisected by a Euclidean construction. An alternate proof which does not depend on divisibility of magnitudes can be based on antenaresis.</p>
+<p>Although the proposition refers to magnitudes of any kind, the corollary only applies to lines in the first statement and plane figures in the second.</p>
+<h4>Use of this proposition</h4>
+<p>The proposition is used in very frequently in Book X starting with the next proposition, its contrapositive. It is also used in proposition <a href="/elements/books/bookXIII/propositions/propXIII6/">XIII.6</a>. The corollary is also used frequently in Book X starting with <a href="/elements/books/bookX/propositions/propX10/">X.10</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX7/">X.7</a>, <a href="/elements/books/bookX/propositions/propX9/">X.9</a>, <a href="/elements/books/bookX/propositions/propX10/">X.10</a>, <a href="/elements/books/bookX/propositions/propX11/">X.11</a>, <a href="/elements/books/bookX/propositions/propX12/">X.12</a>, <a href="/elements/books/bookX/propositions/propX17/">X.17</a>, <a href="/elements/books/bookX/propositions/propX18/">X.18</a>, <a href="/elements/books/bookX/propositions/propX26/">X.26</a>, <a href="/elements/books/bookX/propositions/propX29/">X.29</a>, <a href="/elements/books/bookX/propositions/propX34/">X.34</a>, <a href="/elements/books/bookX/propositions/propX36/">X.36</a>, <a href="/elements/books/bookX/propositions/propX38/">X.38</a>, <a href="/elements/books/bookX/propositions/propX39/">X.39</a>, <a href="/elements/books/bookX/propositions/propX44/">X.44</a>, <a href="/elements/books/bookX/propositions/propX48/">X.48</a>, <a href="/elements/books/bookX/propositions/propX49/">X.49</a>, <a href="/elements/books/bookX/propositions/propX50/">X.50</a>, <a href="/elements/books/bookX/propositions/propX51/">X.51</a>, <a href="/elements/books/bookX/propositions/propX52/">X.52</a>, <a href="/elements/books/bookX/propositions/propX53/">X.53</a>, <a href="/elements/books/bookX/propositions/propX73/">X.73</a>, <a href="/elements/books/bookX/propositions/propX75/">X.75</a>, <a href="/elements/books/bookX/propositions/propX81/">X.81</a>, <a href="/elements/books/bookX/propositions/propX85/">X.85</a>, <a href="/elements/books/bookX/propositions/propX86/">X.86</a>, <a href="/elements/books/bookX/propositions/propX87/">X.87</a>, <a href="/elements/books/bookX/propositions/propX88/">X.88</a>, <a href="/elements/books/bookX/propositions/propX89/">X.89</a>, <a href="/elements/books/bookX/propositions/propX90/">X.90</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII6/">XIII.6</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

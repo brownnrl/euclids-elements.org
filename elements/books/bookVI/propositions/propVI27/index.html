@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 27</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 27</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 27</h1>
+    <div class="statement">Of all the parallelograms applied to the same straight line falling short by parallelogrammic figures similar and similarly situated to that described on the half of the straight line, that parallelogram is greatest which is applied to the half of the straight line and is similar to the difference.</div>
+    <p>Let <em>AB</em> be a straight line and let it be bisected at <em>C.</em>  Let there be applied to the straight line <em>AB</em> the parallelogram <em>AD</em> falling short by the parallelogrammic figure <em>DB</em> described on the half of <em>AB,</em> that is, <em>CB.</em></p>
+<p>I say that, of all the parallelograms applied to <em>AB</em> falling short by parallelogrammic figures similar and similarly situated to <em>DB, AD</em> is greatest.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="350" height="250" tabindex="0"></canvas>
+<noscript><img alt="VI.27 diagram" src="propVI27.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.27",
+        elements: [
+            "A;point;free;70,210",
+            "B;point;free;310,210",
+            "C;point;midpoint;A,B",
+            "D;point;free;150,50",
+            "E;point;parallelogram;B,C,D",
+            "AE;polygon;parallelogram;A,B,E;0;0;black;random",
+            "BD;line;connect;B,D",
+            "F;point;lineSlider;BD,190,100",
+            "K';point;parallelogram;B,E,F;0;0",
+            "K;point;intersection;F,K',A,B",
+            "AKFG;polygon;parallelogram;A,K,F;0;0;black;random",
+            "G;point;vertex;AKFG,4",
+            "DC;line;connect;D,C",
+            "H;point;parallelogram;B,K,F",
+            "FH;line;connect;F,H",
+            "X;point;intersection;D,E,F,K;0;0",
+            "FX;line;connect;F,X",
+            "N;point;midpoint;X,F;black;0",
+            "M;point;cutoff;F,H,F,N;black;0",
+            "L;point;cutoff;F,G,F,N;black;0",
+            "LMN;sector;arc;L,M,N;0;0;darkGray;0"
+        ],
+    });
+</script>
+</figure><p>Let there be applied to the straight line <em>AB</em> the parallelogram <em>AF</em> falling short by the parallelogrammic figure <em>FB</em> similar and similarly situated to <em>DB.</em></p>
+<p>I say that <em>AD</em> is greater than <em>AF.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI26/">VI.26</a></div>
+<p>Since the parallelogram <em>DB</em> is similar to the parallelogram <em>FB,</em> therefore they are about the same diameter.</p>
+<p>Draw their diameter <em>DB,</em> and describe the figure.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI43/">I.43</a></div>
+<p>Then, since <em>CF</em> equals <em>FE,</em>  and <em>FB</em> is common, therefore the whole <em>CH</em> equals the whole <em>KE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI36/">I.36</a></div>
+<p>But <em>CH</em> equals <em>CG,</em> since <em>AC</em> also equals <em>CB.</em></p>
+<p>Therefore <em>CG</em> also equals <em>KE.</em></p>
+<p>Add <em>CF</em> to each.  Therefore the whole <em>AF</em> equals the gnomon <em>LMN,</em> so that the parallelogram <em>DB,</em> that is, <em>AD,</em> is greater than the parallelogram <em>AF.</em></p>
+<p>Therefore, <em>of all the parallelograms applied to the same straight line falling short by parallelogrammic figures similar and similarly situated to that described on the half of the straight line, that parallelogram is greatest which is applied to the half of the straight line and is similar to the difference.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition clarifies the limitations of the next one, <a href="/elements/books/bookVI/propositions/propVI28/">VI.28</a>. In VI.28 a construction is made to apply a parallelogram equal to a given rectilinear figure to a line falling short by a parallelogrammic figure.  This proposition implies that that construction cannot be made if the given rectilinear figure is too large.</p>
+<p>When that proposition is applied, the part which falls short is usually a square, not just any parallelogram, and this and the next proposition are much more easily understood in that case.  In that case, the next proposition applies a rectangle equal to a given area to a line but falling short by a square.  And this proposition implies that can only be done if the given area is at least the square on half the line, since that square is the greatest rectangle that can be so applied.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI28/">VI.28</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

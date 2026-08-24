@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 1</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 1</h1>
+    <div class="statement">Two unequal magnitudes being set out, if from the greater there is subtracted a magnitude greater than its half, and from that which is left a magnitude greater than its half, and if this process is repeated continually, then there will be left some magnitude less than the lesser magnitude set out. And the theorem can similarly be proven even if the parts subtracted are halves.</div>
+    <p>Let <em>AB</em> and <em>C</em> be two unequal magnitudes of which <em>AB</em> is the greater.</p>
+<p>I say that, if from <em>AB</em> there is subtracted a magnitude greater than its half, and from that which is left a magnitude greater than its half, and if this process is repeated continually, then there will be left some magnitude which is less than the magnitude <em>C.</em></p>
+<div class="just">cf. <a href="/elements/books/bookV/definitions/defV4/">V.Def.4</a></div><p>Some multiple <em>DE</em> of <em>C</em> is greater than <em>AB.</em></p>
+<p>Divide <em>DE</em> into the parts <em>DF, FG,</em> and <em>GE</em> equal to <em>C.</em> From <em>AB</em> subtract <em>BH</em> greater than its half, and from <em>AH</em> subtract <em>HK</em> greater than its half, and repeat this process continually until the divisions in <em>AB</em> are equal in multitude with the divisions in <em>DE.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="100" tabindex="0"></canvas>
+<noscript><img alt="X.1 diagram" src="propX1.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.1",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "D0;point;free;-1000,70;0;0",
+            "D3;point;free;1000,70;0;0",
+            "A;point;lineSlider;A0,A3,30,0",
+            "B;point;lineSlider;A0,A3,160,0",
+            "AB;line;connect;A,B",
+            "C1;point;lineSlider;A0,A3,200,0;0",
+            "C2;point;lineSlider;A0,A3,250,0;0",
+            "C;line;connect;C1,C2;black",
+            "D;point;lineSlider;D0,D3,30,0",
+            "F;point;cutoff;D,D3,C1,C2",
+            "G;point;cutoff;F,D3,C1,C2",
+            "E;point;cutoff;G,D3,C1,C2",
+            "DE;line;connect;D,E",
+            "ABmid;point;midpoint;A,B;0;0",
+            "H;point;lineSegmentSlider;A,ABmid,85,0",
+            "AHmid;point;midpoint;A,H;0;0",
+            "K;point;lineSegmentSlider;A,AHmid,55,0"
+        ],
+    });
+</script>
+</figure><p>Let, then, <em>AK, KH,</em> and <em>HB</em> be divisions equal in multitude with <em>DF, FG,</em> and <em>GE.</em></p>
+<p>Now, since <em>DE</em> is greater than <em>AB,</em> and from <em>DE</em> there has been subtracted <em>EG</em> less than its half, and, from <em>AB, BH</em> greater than its half, therefore the remainder <em>GD</em> is greater than the remainder <em>HA.</em></p>
+<p>And, since <em>GD</em> is greater than <em>HA,</em> and there has been subtracted from <em>GD</em> the half <em>GF,</em> and from <em>HA, HK</em> greater than its half, therefore the remainder <em>DF</em> is greater than the remainder <em>AK.</em></p>
+<p>But <em>DF</em> equals <em>C,</em> therefore <em>C</em> is also greater than <em>AK.</em> Therefore <em>AK</em> is less than <em>C.</em></p>
+<p>Therefore there is left of the magnitude <em>AB</em> the magnitude <em>AK</em> which is less than the lesser magnitude set out, namely <em>C.</em></p>
+<p>Therefore, <em>two unequal magnitudes being set out, if from the greater there is subtracted a magnitude greater than its half, and from that which is left a magnitude greater than its half, and if this process is repeated continually, then there will be left some magnitude less than the lesser magnitude set out.</em></p>
+<div class="qed">Q.E.D.</div><p>And the theorem can similarly be proven even if the parts subtracted are halves.</p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The proof begins with two magnitudes <em>C</em> and <em>AB</em> and claims that some multiple of <em>C</em> is greater then <em>AB.</em> Definition <a href="/elements/books/bookV/definitions/defV4/">V.Def.4</a> is not a justification for this statement. Euclid himself proved that a horn angle is less than any rectilinear angle in proposition <a href="/elements/books/bookIII/propositions/propIII16/">III.16</a> and must have recognized that if the magnitude <em>C</em> is a horn angle, and the magnitude <em>AB</em> is a rectilinear angle, then no multiple of <em>C</em> is greater than <em>AB.</em> Nonetheless, he did not qualify this proposition to say that it only holds for certain kinds of magnitudes.</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is the foundation of the method of exhaustion of Book XII. It is not used in the rest of Book X and would, perhaps, be better placed at the beginning of Book XII. This method is used in the propositions concerning areas of circles and volumes of solids. It is specifically used in propositions <a href="/elements/books/bookXII/propositions/propXII2/">XII.2</a>, <a href="/elements/books/bookXII/propositions/propXII5/">XII.5</a>, <a href="/elements/books/bookXII/propositions/propXII10/">XII.10</a>, <a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a>, <a href="/elements/books/bookXII/propositions/propXII12/">XII.12</a>, and <a href="/elements/books/bookXII/propositions/propXII16/">XII.16</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII2/">XII.2</a>, <a href="/elements/books/bookXII/propositions/propXII5/">XII.5</a>, <a href="/elements/books/bookXII/propositions/propXII10/">XII.10</a>, <a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a>, <a href="/elements/books/bookXII/propositions/propXII12/">XII.12</a>, <a href="/elements/books/bookXII/propositions/propXII16/">XII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 114</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 114</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 114</h1>
+    <div class="statement">If an area is contained by an apotome and the binomial straight line the terms of which are commensurable with the terms of the apotome and in the same ratio, then the side of the area is rational.</div>
+    <p>Let an area, the rectangle <em>AB</em> by <em>CD</em>, be contained by the apotome <em>AB</em> and the binomial straight line <em>CD</em>, and let <em>CE</em> be the greater term of the latter, let the terms <em>CE</em> and <em>ED</em> of the binomial straight line be commensurable with the terms <em>AF</em> and <em>FB</em> of the apotome and in the same ratio, and let the side of the rectangle <em>AB</em> by <em>CD</em> be <em>G</em>.</p>
+<p>I say that <em>G</em> is rational.</p>
+<p>Set out a rational straight line <em>H</em>, and to <em>CD</em> apply a rectangle equal to the square on <em>H</em> and producing <em>KL</em> as breadth. Then <em>KL</em> is an apotome.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="250" height="200" tabindex="0"></canvas>
+<noscript><img alt="X.114 diagram" src="propX114.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.114",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "C0;point;free;-1000,65;0;0",
+            "C3;point;free;1000,65;0;0",
+            "G0;point;free;-1000,100;0;0",
+            "G3;point;free;1000,100;0;0",
+            "H0;point;free;-1000,135;0;0",
+            "H3;point;free;1000,135;0;0",
+            "K0;point;free;-1000,170;0;0",
+            "K3;point;free;1000,170;0;0",
+            "A;point;lineSlider;A0,A3,60,0",
+            "B;point;lineSlider;A0,A3,130,0",
+            "C;point;lineSlider;C0,C3,30,0",
+            "D;point;lineSlider;C0,C3,210,0",
+            "CD;line;connect;C,D",
+            "E;point;lineSlider;C0,C3,160,0",
+            "F;point;proportion;C,E,E,D,A,B,B,A3",
+            "AF;line;connect;A,F",
+            "G1;point;lineSlider;G0,G3,60,0;0",
+            "G2;point;meanProportional;A,B,C,D,G1,G3;0",
+            "G;line;connect;G1,G2;black",
+            "H1;point;lineSlider;H0,H3,50,0;0",
+            "H2;point;lineSlider;H0,H3,200,0;0",
+            "H;line;connect;H1,H2;black",
+            "K;point;lineSlider;K0,K3,40,0",
+            "L;point;proportion;C,D,H1,H2,H1,H2,K,K3",
+            "M;point;proportion;C,E,E,D,K,L,L,K3",
+            "KM;line;connect;K,M"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookX/propositions/propX112/">X.112</a></div>
+<p>Let its terms be <em>KM</em> and <em>ML</em> commensurable with the terms <em>CE</em> and <em>ED</em> of the binomial straight line and in the same ratio.</p>
+<p>But <em>CE</em> and <em>ED</em> are also commensurable with <em>AF</em> and <em>FB</em> and in the same ratio, therefore <em>AF</em> is to <em>FB</em> as <em>KM</em> is to <em>ML</em>.</p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV19/">V.19</a></div>
+<p>Therefore, alternately, <em>AF</em> is to <em>KM</em> as <em>BF</em> is to <em>LM</em>. Therefore the remainder <em>AB</em> is to the remainder <em>KL</em> as <em>AF</em> is to <em>KM</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX12/">X.12</a>, <a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>But <em>AF</em> is commensurable with <em>KM</em>, therefore <em>AB</em> is also commensurable with <em>KL</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>And <em>AB</em> is to <em>KL</em> as the rectangle <em>CD</em> by <em>AB</em> is to the rectangle <em>CD</em> by <em>KL</em>, therefore the rectangle <em>CD</em> by <em>AB</em> is also commensurable with the rectangle <em>CD</em> by <em>KL</em>.</p>
+<p>But the rectangle <em>CD</em> by <em>KL</em> equals the square on <em>H</em>, therefore the rectangle <em>CD</em> by <em>AB</em> is commensurable with the square on <em>H</em>.</p>
+<p>But the square on <em>G</em> equals the rectangle <em>CD</em> by <em>AB</em>, therefore the square on <em>G</em> is commensurable with the square on <em>H</em>.</p>
+<p>But the square on <em>H</em> is rational, therefore the square on <em>G</em> is also rational.</p>
+<p>Therefore <em>G</em> is rational. And it is the side of the rectangle <em>CD</em> by <em>AB</em>.</p>
+<p>Therefore, <em>if an area is contained by an apotome and the binomial straight line the terms of which are commensurable with the terms of the apotome and in the same ratio, then the side of the area is rational.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="cor">Corollary.</h1>
+    <div class="statement">It is possible for a rational area to be contained by irrational straight lines.</div>
+    
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is not used in the rest of the <em>Elements</em>.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

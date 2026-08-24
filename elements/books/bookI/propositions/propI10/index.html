@@ -1,0 +1,346 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 10</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 10</h1>
+    <div class="statement">To bisect a given finite straight line.</div>
+    <p>Let <span class="elem-ref" data-elem="AB">AB</span> be the given finite straight line.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="240" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.10 diagram" src="propI10.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.10",
+    pivot: "D",
+    elements: [
+        "A;point;free;40,170",
+        "B;point;free;200,170",
+        "AB;line;connect;A,B",
+        "ABC;polygon;equilateralTriangle;A,B;0;0;black;random",
+        "C;point;vertex;ABC,3",
+        "D;point;midpoint;A,B;black;green",
+        "CD;line;connect;C,D",
+        // Transitory construction — real-colored, but listed in
+        // initiallyHidden below (geomlib 0.9.0) so they stay out of the
+        // static figure and appear only on the build/bisect slides: the
+        // two equilateral-triangle circles, the lower intersection E,
+        // and the second triangle's sides (the I.9 double-triangle
+        // bisection). The Guide canvas runs the same construction but
+        // keeps its circles; here they vanish, returning to △ABC + CD.
+        "Acirc;circle;radius;A,B;0;0;black;300,30,100",
+        "Bcirc;circle;radius;B,A;0;0;black;300,30,100",
+        "ABbi;line;bichord;Acirc,Bcirc;0;0;0",
+        "E;point;first;ABbi;black;green",
+        "AE;line;connect;A,E;0;0;black",
+        "EB;line;connect;E,B;0;0;black",
+        // Bisector drawn C → E on the bisect slide (through D to the
+        // lower apex); transitory (initiallyHidden) — it settles to the
+        // persistent CD on the next slide, Joyce's figure.
+        "CE;line;connect;C,E;0;0;black",
+        // Zero-color highlight targets for the prose's {NAME} refs.
+        "CA;line;connect;C,A;0;0;0",
+        "CB;line;connect;C,B;0;0;0",
+        "AD;line;connect;A,D;0;0;0",
+        "BD;line;connect;B,D;0;0;0",
+        // Angle markers at C (0.8.0 angleMarker): the whole angle ACB
+        // and the two halves ACD/BCD. 3 markers at C overlap at the
+        // default radius until 0.8.1 auto-nesting (deck-tracker.md).
+        "angACB;sector;angleMarker;C,A,B",
+        "angACD;sector;angleMarker;C,A,D",
+        "angBCD;sector;angleMarker;C,B,D"
+    ],
+    // Real-colored construction scaffolding kept out of the static
+    // figure (0.9.0). Angle markers auto-hide; these need listing.
+    initiallyHidden: ["Acirc","Bcirc","E","AE","EB","CE"],
+    aliases: {
+        "ACB": "angACB",
+        "ACD": "angACD",
+        "BCD": "angBCD"
+    },
+    slides: [
+        { text: "Let {AB} be the given finite straight line.",
+          visible: ["AB"] },
+        { text: "It is required to bisect the finite straight line {AB}.",
+          visible: ["AB"],
+          highlighted: ["AB"] },
+        { text: "Construct the equilateral triangle {ABC} on it,",
+          visible: ["AB","Acirc","Bcirc","C","ABC"],
+          transition: {
+              animations: [
+                  { elem: "Acirc", name: geomlib.A.Circle.compass },
+                  { elem: "Bcirc", name: geomlib.A.Circle.compass },
+                  { elem: "C",     name: geomlib.A.Point.appear },
+                  { elem: "ABC",   name: geomlib.A.Polygon.outlineAndFill }
+              ]
+          },
+          justifications: [{ ref: "I.1" }] },
+        { text: "and bisect the angle {ACB} by the straight line {CD}.",
+          visible: ["AB","Acirc","Bcirc","C","ABC","angACB","E","AE","EB","CE","D","angACD","angBCD"],
+          transition: {
+              animations: [
+                  { elem: "angACB", name: geomlib.A.Sector.sweep },
+                  { elem: "E",      name: geomlib.A.Point.appear },
+                  { elem: "AE",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "EB",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "CE",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "D",      name: geomlib.A.Point.appear },
+                  { elem: "angACD", name: geomlib.A.Sector.sweep },
+                  { elem: "angBCD", name: geomlib.A.Sector.sweep }
+              ]
+          },
+          justifications: [{ ref: "I.9" }] },
+        { text: "I say that the straight line {AB} is bisected at the point {D}.",
+          visible: ["AB","ABC","C","CD","D"],
+          highlighted: ["AB","D"] },
+        { text: "Since {CA} equals {CB}, and {CD} is common, therefore the two sides {CA} and {CD} equal the two sides {CB} and {CD} respectively, and the angle {ACD} equals the angle {BCD},",
+          visible: ["AB","ABC","C","CD","D","CA","CB","angACD","angBCD"],
+          highlighted: ["CA","CB","CD","angACD","angBCD"] },
+        { text: "therefore the base {AD} equals the base {BD}.",
+          visible: ["AB","ABC","C","CD","D","CA","CB","AD","BD"],
+          highlighted: ["AD","BD"],
+          justifications: [{ ref: "I.Def.20" }, { ref: "I.4" }] },
+        { text: "Therefore the given straight line {AB} is bisected at {D}.",
+          visible: ["AB","ABC","C","CD","D","AD","BD"],
+          highlighted: ["AD","BD","D"],
+          justifications: [{ ref: "Q.E.F." }] }
+    ],
+    resolveJustification: function(ref) {
+        return (window.eucrefs && window.eucrefs[ref]) || null;
+    }
+});
+
+// Per-page citation lookup shared by both figures' resolveJustification
+// (window.eucrefs is global; canvas_1's callback reads it too).
+window.eucrefs = (window.eucrefs || {});
+Object.assign(window.eucrefs, {
+    "I.1":       "/elements/books/bookI/propositions/propI1/",
+    "I.4":       "/elements/books/bookI/propositions/propI4/",
+    "I.9":       "/elements/books/bookI/propositions/propI9/",
+    "I.Def.20":  "/elements/books/bookI/definitions/defI20/"
+});
+</script>
+</figure><p>It is required to bisect the finite straight line <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI1/">I.1</a>, <a href="/elements/books/bookI/propositions/propI9/">I.9</a></div>
+<p>Construct the equilateral triangle <span class="elem-ref" data-elem="ABC">ABC</span> on it, and bisect the angle <span class="elem-ref" data-elem="ACB">ACB</span> by the straight line <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<p>I say that the straight line <span class="elem-ref" data-elem="AB">AB</span> is bisected at the point <span class="elem-ref" data-elem="D">D</span>.</p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI20/">I.Def.20</a><br><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Since <span class="elem-ref" data-elem="CA">CA</span> equals <span class="elem-ref" data-elem="CB">CB</span>, and <span class="elem-ref" data-elem="CD">CD</span> is common, therefore the two sides <span class="elem-ref" data-elem="CA">CA</span> and <span class="elem-ref" data-elem="CD">CD</span> equal the two sides <span class="elem-ref" data-elem="CB">CB</span> and <span class="elem-ref" data-elem="CD">CD</span> respectively, and the angle <span class="elem-ref" data-elem="ACD">ACD</span> equals the angle <span class="elem-ref" data-elem="BCD">BCD</span>, therefore the base <span class="elem-ref" data-elem="AD">AD</span> equals the base <span class="elem-ref" data-elem="BD">BD</span>.</p>
+<p>Therefore the given straight line <span class="elem-ref" data-elem="AB">AB</span> is bisected at <span class="elem-ref" data-elem="D">D</span>.</p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>While this construction divides a line into two equal parts, the construction in proposition <a href="/elements/books/bookVI/propositions/propVI9/">VI.9</a> divides a line into any given number of equal parts.</p>
+<h4>Construction steps</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="353" height="257" tabindex="0"></canvas>
+<noscript><img alt="I.10 construction steps" src="propI10a.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_1",
+    background: "0,0,100",
+    title: "I.10",
+    elements: [
+        "A;point;free;121,128",
+        "B;point;free;231,128",
+        "AB;line;connect;A,B",
+        "Acirc;circle;radius;A,B;0;0;black;300,30,100",
+        "Bcirc;circle;radius;B,A;0;0;black;300,30,100",
+        "CEbi;line;bichord;Acirc,Bcirc;0;0;0",
+        "E;point;first;CEbi",
+        "C;point;last;CEbi",
+        "D;point;intersection;A,B,C,E",
+        // Visible bisector drawn C → E (top-down) — a connect line so the
+        // straightEdge stroke runs from C to E; the bichord above is kept
+        // only as a hidden helper to derive the C and E intersections.
+        "CE;line;connect;C,E",
+        // Illustrative triangle sides + the two halves (zero-color;
+        // Joyce: these "aren't necessary ... only used to show the
+        // construction is correct"). Shown gold on their slides,
+        // invisible in the static figure (Joyce's two circles + CE).
+        "AC;line;connect;A,C;0;0;0",
+        "CB;line;connect;C,B;0;0;0",
+        "AE;line;connect;A,E;0;0;0",
+        "EB;line;connect;E,B;0;0;0",
+        // Zero-color triangle outlines for the prose's {ACB}/{AEB} hover
+        // refs (the two equilateral triangles). Gold on hover/highlight;
+        // suffixed names so the {ACB} angle alias isn't shadowed — refs
+        // use the {DISPLAY|element} override.
+        "ACBtri;polygon;triangle;A,C,B;0;0;0;0",
+        "AEBtri;polygon;triangle;A,E,B;0;0;0;0",
+        "AD;line;connect;A,D;0;0;0",
+        "BD;line;connect;B,D;0;0;0",
+        // The angle being bisected (shows in the static figure — Q2).
+        "angACB;sector;angleMarker;C,A,B"
+    ],
+    aliases: {
+        "BA":  "AB",
+        "BC":  "CB",
+        "ACB": "angACB"
+    },
+    slides: [
+        { text: "This method for bisecting lines takes less actual work than it appears to. It is really no more than the double-equilateral-triangle.",
+          visible: ["AB"] },
+        { text: "First, the equilateral triangle ABC needs to be constructed. According to I.1 two circles need to be drawn: one with center {A} and radius {AB}, the other with center {B} and radius {BA}.",
+          visible: ["AB","Acirc","Bcirc"],
+          transition: {
+              animations: [
+                  { elem: "Acirc", name: geomlib.A.Circle.compass },
+                  { elem: "Bcirc", name: geomlib.A.Circle.compass }
+              ]
+          },
+          justifications: [{ ref: "I.1" }] },
+        { text: "One of the points of intersection of the two circles is {C}.",
+          visible: ["AB","Acirc","Bcirc","C"],
+          highlighted: ["AC","CB"],
+          transition: {
+              animations: [
+                  { elem: "C",  name: geomlib.A.Point.appear },
+                  { elem: "AC", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "CB", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          } },
+        { text: "Then to bisect angle {ACB}, according to I.9, an arbitrary point is chosen on one side of the angle, and it might as well be the point {A} on the side {AC}, and a point equally far from {C} on the side {BC}, which is, of course, {B}.",
+          visible: ["AB","Acirc","Bcirc","C"],
+          highlighted: ["AC","CB","angACB"],
+          transition: {
+              animations: [
+                  { elem: "angACB", name: geomlib.A.Sector.sweep }
+              ]
+          },
+          justifications: [{ ref: "I.9" }] },
+        { text: "Then an equilateral triangle is constructed on the line {AB}. There are two such equilateral triangles, the one already constructed {ACB|ACBtri}, and another one, call it {AEB|AEBtri}.",
+          visible: ["AB","Acirc","Bcirc","C","E"],
+          highlighted: ["ACBtri","AEBtri"],
+          transition: {
+              animations: [
+                  { elem: "E",  name: geomlib.A.Point.appear },
+                  { elem: "AE", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "EB", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          } },
+        { text: "The point {E} is the other intersection of the two circles already drawn.",
+          visible: ["AB","Acirc","Bcirc","C","E"],
+          highlighted: ["E"] },
+        { text: "Then, by I.9, the line {CE} bisects the angle {ACB},",
+          visible: ["AB","Acirc","Bcirc","C","E","CE"],
+          highlighted: ["CE","angACB","AC","CB"],
+          transition: {
+              animations: [
+                  { elem: "CE", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          },
+          justifications: [{ ref: "I.9" }] },
+        { text: "and according to this proposition, the point {D} bisects the line {AB}.",
+          visible: ["AB","Acirc","Bcirc","C","E","CE","D"],
+          highlighted: ["D","AD","BD"],
+          transition: {
+              animations: [
+                  { elem: "D", name: geomlib.A.Point.appear }
+              ]
+          } },
+        { text: "Actually, only two circles and the straight line {CE} need to be drawn. The straight lines {AC}, {CB}, {AE}, and {EB}, aren't necessary for the construction; they are only used to show that the construction is correct.",
+          visible: ["AB","Acirc","Bcirc","C","E","CE","D"],
+          highlighted: ["AC","CB","AE","EB"] }
+    ],
+    resolveJustification: function(ref) {
+        return (window.eucrefs && window.eucrefs[ref]) || null;
+    }
+});
+</script>
+</figure><p>This method for bisecting lines takes less actual work than it appears to. It is really no more than the double-equilateral-triangle.</p>
+<p>First, the equilateral triangle <em>ABC</em> needs to be constructed. According to <a href="/elements/books/bookI/propositions/propI1/">I.1</a> two circles need to be drawn: one with center <span class="elem-ref" data-elem="A">A</span> and radius <span class="elem-ref" data-elem="AB">AB</span>, the other with center <span class="elem-ref" data-elem="B">B</span> and radius <span class="elem-ref" data-elem="BA">BA</span>. One of the points of intersection of the two circles is <span class="elem-ref" data-elem="C">C</span>. Then to bisect angle <span class="elem-ref" data-elem="ACB">ACB</span>, according to <a href="/elements/books/bookI/propositions/propI9/">I.9</a>, an arbitrary point is chosen on one side of the angle, and it might as well be the point <span class="elem-ref" data-elem="A">A</span> on the side <span class="elem-ref" data-elem="AC">AC</span>, and a point equally far from <span class="elem-ref" data-elem="C">C</span> on the side <span class="elem-ref" data-elem="BC">BC</span>, which is, of course, <span class="elem-ref" data-elem="B">B</span>. Then an equilateral triangle is constructed on the line <span class="elem-ref" data-elem="AB">AB</span>. There are two such equilateral triangles, the one already constructed <em>ACB</em>, and another one, call it <em>AEB</em>. The point <span class="elem-ref" data-elem="E">E</span> is the other intersection of the two circles already drawn. Then, by I.9, the line <span class="elem-ref" data-elem="CE">CE</span> bisects the angle <span class="elem-ref" data-elem="ACB">ACB</span>, and according to this proposition, the point <span class="elem-ref" data-elem="D">D</span> bisects the line <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<p>Actually, only two circles and the straight line <span class="elem-ref" data-elem="CE">CE</span> need to be drawn. The straight lines <span class="elem-ref" data-elem="AC">AC</span>, <span class="elem-ref" data-elem="CB">CB</span>, <span class="elem-ref" data-elem="AE">AE</span>, and <span class="elem-ref" data-elem="EB">EB</span>, aren't necessary for the construction; they are only used to show that the construction is correct.</p>
+<h4>Use of Proposition 10</h4>
+<p>The construction of this proposition in Book I is used in propositions <a href="/elements/books/bookI/propositions/propI12/">I.12</a>, <a href="/elements/books/bookI/propositions/propI16/">I.16</a>, and <a href="/elements/books/bookI/propositions/propI42/">I.42</a>. It is also used in several propositions in the Books II, III, IV, X, and XIII.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI12/">I.12</a>, <a href="/elements/books/bookI/propositions/propI16/">I.16</a>, <a href="/elements/books/bookI/propositions/propI42/">I.42</a></td></tr>
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII11/">II.11</a>, <a href="/elements/books/bookII/propositions/propII14/">II.14</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a>, <a href="/elements/books/bookIII/propositions/propIII9/">III.9</a>, <a href="/elements/books/bookIII/propositions/propIII10/">III.10</a>, <a href="/elements/books/bookIII/propositions/propIII25/">III.25</a>, <a href="/elements/books/bookIII/propositions/propIII30/">III.30</a>, <a href="/elements/books/bookIII/propositions/propIII33/">III.33</a></td></tr>
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV5/">IV.5</a>, <a href="/elements/books/bookIV/propositions/propIV8/">IV.8</a></td></tr>
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX17/">X.17</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII3/">XII.3</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

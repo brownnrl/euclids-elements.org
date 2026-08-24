@@ -1,0 +1,225 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 28</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 28</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 28</h1>
+    <div class="statement">To apply a parallelogram equal to a given rectilinear figure to a given straight line but falling short by a parallelogram similar to a given one; thus the given rectilinear figure must not be greater than the parallelogram described on the half of the straight line and similar to the given parallelogram.</div>
+    <div class="just"><a href="/elements/books/bookVI/propositions/propVI27/">VI.27</a></div>
+<p>Let <em>C</em> be the given rectilinear figure, <em>AB</em> the given straight line,  and <em>D</em> the given parallelogram, and let <em>C</em> not be greater than the parallelogram described on the half of <em>AB</em> similar to the given parallelogram <em>D.</em></p>
+<p>It is required to apply a parallelogram equal to the given rectilinear figure <em>C</em> to the given straight line <em>AB</em> but falling short by a parallelogram similar to <em>D.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="540" height="280" tabindex="0"></canvas>
+<noscript><img alt="VI.28 diagram" src="propVI28.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.28",
+        elements: [
+            "Z0;point;free;-1000,250;0;0",
+            "Z1;point;free;1000,250;0;0",
+            "A;point;lineSlider;Z0,Z1,70,250",
+            "B;point;lineSlider;Z0,Z1,230,250",
+            "E;point;midpoint;A,B",
+            "C1;point;free;230,30;0",
+            "C2;point;free;250,120;0",
+            "C3;point;free;340,110;0",
+            "C4;point;free;370,30;0",
+            "C;polygon;quadrilateral;C1,C2,C3,C4;black;0;black;random",
+            "D1;point;free;300,160;0",
+            "D2;point;lineSlider;Z0,Z1,320,250;0",
+            "D3;point;lineSlider;Z0,Z1,360,250;0",
+            "D;polygon;parallelogram;D1,D2,D3;black;0;black;random",
+            "D4;point;vertex;D,4;0",
+            "F;point;similar;E,B,D2,D3,D4",
+            "G;point;similar;E,B,D2,D3,D1",
+            "ABFH;polygon;parallelogram;A,B,F;0;0;black;random",
+            "H;point;vertex;ABFH,4",
+            "GE;line;connect;G,E",
+            "FBB'F';polygon;application;C,F,B,H;0;0;0;0",
+            "F';point;vertex;FBB'F',4;0;0",
+            "B';point;vertex;FBB'F',3;0;0",
+            "GEB'F';polygon;quadrilateral;G,E,B',F';0;0;0;0",
+            "C';polygon;application;GEB'F',D3,D4,D2;0;0;0;0",
+            "D6;point;vertex;C',4;0;0",
+            "K;point;lineSlider;Z0,Z1,450,250",
+            "N;point;meanProportional;D2,D3,D3,D6,K,Z1",
+            "L';point;similar;K,N,D2,D3,D1;0;0",
+            "KNML;polygon;application;GEB'F',K,N,L';0;0;black;random",
+            "M;point;vertex;KNML,3",
+            "L;point;vertex;KNML,4",
+            "O;point;cutoff;G,E,K,L",
+            "P;point;cutoff;G,F,L,M",
+            "BG;line;connect;B,G",
+            "T;point;parallelogram;A,E,O",
+            "R;point;intersection;T,O,F,B",
+            "Q;point;intersection;B,G,T,O",
+            "S;point;intersection;P,Q,A,B",
+            "ASQT;polygon;parallelogram;A,S,Q;0;0;black;random",
+            "QR;line;connect;Q,R",
+            "QP;line;connect;Q,P",
+            "Y;point;midpoint;Q,R;0;0",
+            "V;point;cutoff;Q,T,Q,Y;black;0",
+            "W;point;cutoff;Q,B,Q,Y;black;0",
+            "U;point;cutoff;Q,P,Q,Y;black;0",
+            "VWU;sector;arc;V,W,U;0;0;darkGray;0"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI9/">I.9</a><br><a href="/elements/books/bookVI/propositions/propVI18/">VI.18</a></div>
+<p>Bisect <em>AB</em> at the point <em>E.</em>  Describe <em>EBFG</em> similar and similarly situated to <em>D</em> on <em>EB,</em> and complete the parallelogram <em>AG.</em></p>
+<p>If then <em>AG</em> equals <em>C,</em> that which was proposed is done, for the parallelogram <em>AG</em> equal to the given rectilinear figure <em>C</em> has been applied to the given straight line <em>AB</em> but falling short by a parallelogram <em>GB</em> similar to <em>D.</em></p>
+<p>But, if not, let <em>HE</em> be greater than <em>C.</em></p>
+<p>Now <em>HE</em> equals <em>GB,</em> therefore <em>GB</em> is also greater than <em>C.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI25/">VI.25</a></div>
+<p>Construct <em>KLMN</em> equal to <em>GB</em> minus <em>C</em> and similar and similarly situated to <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI21/">VI.21</a></div>
+<p>But <em>D</em> is similar to <em>GB,</em> therefore <em>KM</em> is also similar to <em>GB.</em></p>
+<p>Let, then, <em>KL</em> correspond to <em>GE,</em> and <em>LM</em> to <em>GF.</em></p>
+<p>Now, since <em>GB</em> equals <em>C</em> and <em>KM,</em> therefore <em>GB</em> is greater than <em>KM,</em> therefore also <em>GE</em> is greater than <em>KL,</em> and <em>GF</em> than <em>LM.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI21/">VI.21</a><br><a href="/elements/books/bookVI/propositions/propVI26/">VI.26</a></div>
+<p>Make <em>GO</em> equal to <em>KL,</em> and <em>GP</em> equal to <em>LM,</em> and let the parallelogram <em>OGPQ</em> be completed, therefore it is equal and similar to <em>KM.</em></p>
+<p>Therefore <em>GQ</em> is also similar to <em>GB,</em>  therefore <em>GQ</em> is about the same diameter with <em>GB.</em></p>
+<p>Let <em>GQB</em> be their diameter, and describe the figure.</p>
+<p>Then, since <em>BG</em> equals <em>C</em> and <em>KM,</em> and in them <em>GQ</em> equals <em>KM,</em> therefore the remainder, the gnomon <em>UWV,</em> equals the remainder <em>C.</em></p>
+<p>And, since <em>PR</em> equals <em>OS,</em> add <em>QB</em> to each, therefore the whole <em>PB</em> equals the whole <em>OB.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI36/">I.36</a></div>
+<p>But <em>OB</em> equals <em>TE,</em> since the side <em>AE</em> also equals the side <em>EB,</em>  therefore <em>TE</em> also equals <em>PB.</em></p>
+<p>Add <em>OS</em> to each.  Therefore the whole <em>TS</em> equals the whole, the gnomon <em>VWU.</em></p>
+<p>But the gnomon <em>VWU</em> was proved equal to <em>C,</em> therefore <em>TS</em> also equals <em>C.</em></p>
+<p>Therefore there the parallelogram <em>ST</em> equal to the given rectilinear figure <em>C</em> has been applied to the given straight line <em>AB</em> but falling short by a parallelogram <em>QB</em> similar to <em>D.</em></p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>When this proposition is used, the given parallelgram <em>D</em> usually is a square.  Then the problem is to cut the line <em>AB</em> at a point <em>S</em> so that the rectangle <em>AS</em> by <em>SB</em> equals the given rectilinear figure <em>C.</em>  This special case can be proved with the help of the propositions in Book II.  See the <a href="../../../bookII/propositions/propII5/#guide">Guide</a> to proposition II.5 for more details.</p>
+<h4>The outline of a simplified proof for rectangles</h4>
+<figure class="diagram">
+<canvas id="canvas_1" width="260" height="240" tabindex="0"></canvas>
+<noscript><img alt="VI.28 simplified diagram" src="propVI28a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "VI.28",
+        elements: [
+            "Z0;point;free;-1000,210;0;0",
+            "Z1;point;free;1000,210;0;0",
+            "A;point;lineSlider;Z0,Z1,30,0",
+            "B;point;lineSlider;Z0,Z1,230,0",
+            "E;point;midpoint;A,B",
+            "C1;point;free;30,20;0",
+            "C2;point;free;30,70;0",
+            "C3;point;free;150,70;0",
+            "C4;point;free;150,20;0",
+            "C;polygon;quadrilateral;C1,C2,C3,C4;black;0;black;145,50,100",
+            "G;point;perpendicular;E,B",
+            "F;point;parallelogram;G,E,B",
+            "ABFH;polygon;parallelogram;A,B,F;0;0;black;0",
+            "H;point;vertex;ABFH,4",
+            "GE;line;connect;G,E",
+            "FBB'F';polygon;application;C,F,B,H;0;0;0;0",
+            "F';point;vertex;FBB'F',4;0;0",
+            "P;point;meanProportional;G,E,G,F',G,F",
+            "O;point;cutoff;G,E,G,P",
+            "BG;line;connect;B,G",
+            "T;point;parallelogram;A,E,O",
+            "R;point;intersection;T,O,F,B",
+            "Q;point;intersection;B,G,T,O",
+            "S;point;intersection;P,Q,A,B",
+            "ASQT;polygon;parallelogram;A,S,Q;0;0;black;145,50,100",
+            "QP;line;connect;Q,P",
+            "BRQS;polygon;quadrilateral;B,R,Q,S;0;0;black;random"
+        ],
+    });
+</script>
+</figure><p>The proof of the current proposition is difficult to follow.  It is simplified when we take the special case mentioned above, namely, when the given parallelogram <em>D</em> is a square.  The simplified proof is easier to follow since the rest of the parallelograms mentioned all become rectangles.</p>
+<p>The construction is as follows.  Bisect <em>AB</em> at <em>E,</em> construct a square <em>GFBE.</em></p>
+<p>The next stage is to construct a square <em>GPQO</em> equal to the square <em>GFBE</em> minus the figure <em>C.</em> For an alternate construction of <em>GPQO,</em> see the <a href="../../../bookX/propositions/propX14/#lemma">lemma</a> for X.14 which applies <a href="/elements/books/bookI/propositions/propI47/">I.47</a> to do that.)</p>
+<p>Complete the figure.</p>
+<p>We can understand the meaning of this construction more easily if we interpret it algebraically.  Let <em>a</em> stand for the known quantity <em>AB,</em> and <em>c</em> the known quantity <em>C.</em> Then let <em>x</em> and <em>y</em> stand for the unknown quantities <em>SB</em> and <em>SA.</em> Then this construction finds <em>x</em> and <em>y</em> so that their sum is <em>a</em> and their product is <em>c.</em></p>
+<p>In terms of the single variable <em>x,</em> the construction solves the quadratic equation <em>ax</em> – <em>x</em><sup>2</sup> = <em>C.</em></p>
+<p>The next proposition solves a similar quadratic equation: <em>ax</em> + <em>x</em><sup>2</sup> = <em>C.</em></p>
+<h4>Use of this proposition</h4>
+<p>This construction in this proposition is used in propositions <a href="/elements/books/bookX/propositions/propX33/">X.33</a> and <a href="/elements/books/bookX/propositions/propX34/">X.34</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX33/">X.33</a>, <a href="/elements/books/bookX/propositions/propX34/">X.34</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

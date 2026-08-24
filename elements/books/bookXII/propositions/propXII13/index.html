@@ -1,0 +1,161 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 13</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 13</h1>
+    <div class="statement">If a cylinder is cut by a plane parallel to its opposite planes, then the cylinder is to the cylinder as the axis is to the axis.</div>
+    <p>Let the cylinder <em>AD</em> be cut by the plane <em>GH</em> parallel to the opposite planes <em>AB</em> and <em>CD.</em> Let the plane <em>GH</em> meet the axis at the point <em>K.</em></p>
+<p>I say that the cylinder <em>BG</em> is to the cylinder <em>GD</em> as the axis <em>EK</em> is to the axis <em>KF.</em></p>
+<p>Produce the axis <em>EF</em> in both directions to the points <em>L</em> and <em>M.</em> Set out any number whatever of axes <em>EN</em> and <em>NL</em> equal to the axis <em>EK,</em> and any number whatever <em>FO</em> and <em>OM</em> equal to <em>FK.</em> Construct the cylinder <em>PW</em> on the axis <em>LM</em> with the circles <em>PQ</em> and <em>VW</em> as bases.</p>
+<center>
+<canvas id="canvas_0" width="540" height="210" tabindex="0"></canvas>
+<noscript><img alt="XII.13 diagram" src="propXII13.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.13",
+        elements: [
+            "E0;point;fixed;-10000,110,0",
+            "E3;point;fixed;10000,110,0",
+            "E;point;lineSlider;E0,E3,170,0,0",
+            "U0;point;fixed;-10000,110,-4000",
+            "K;point;lineSlider;U0,E,240,0,0",
+            "F;point;lineSlider;U0,E,340,0,0",
+            "Eplane;plane;perpendicular;E,U0;0;0;0;0",
+            "Kplane;plane;perpendicular;K,U0;0;0;0;0",
+            "Fplane;plane;perpendicular;F,U0;0;0;0;0",
+            "A';point;perpendicular;E,E0",
+            "A;point;lineSlider;E,A',0,40",
+            "B;point;extend;A,E,A,E",
+            "C;point;parallelogram;F,E,A",
+            "D;point;parallelogram;F,E,B",
+            "G;point;parallelogram;K,E,A",
+            "H;point;parallelogram;K,E,B",
+            "Ecirc;circle;radius;E,A,Eplane;0;0;black;160,60,100",
+            "ABHG;polygon;quadrilateral;A,B,H,G;0;0;0;160,60,100",
+            "Kcirc;circle;radius;K,E,A,Kplane;0;0;black;20,75,90",
+            "GHDC;polygon;quadrilateral;G,H,D,C;0;0;0;20,75,90",
+            "Fcirc;circle;radius;F,E,A,Fplane;0;0;black;20,60,100",
+            "N;point;extend;K,E,K,E",
+            "L;point;extend;K,N,K,E",
+            "O;point;extend;K,F,K,F",
+            "M;point;extend;K,O,K,F",
+            "LM;line;connect;L,M",
+            "Nplane;plane;perpendicular;N,U0;0;0;0;0",
+            "Lplane;plane;perpendicular;L,U0;0;0;0;0",
+            "Oplane;plane;perpendicular;O,U0;0;0;0;0",
+            "Mplane;plane;perpendicular;M,U0;0;0;0;0",
+            "Ncirc;circle;radius;N,E,A,Nplane;0;0;black;0",
+            "Lcirc;circle;radius;L,E,A,Lplane;0;0;black;0",
+            "Ocirc;circle;radius;O,E,A,Oplane;0;0;black;0",
+            "Mcirc;circle;radius;M,E,A,Mplane;0;0;black;0",
+            "P;point;parallelogram;L,E,A",
+            "Q;point;parallelogram;L,E,B",
+            "R;point;parallelogram;N,E,A",
+            "S;point;parallelogram;N,E,B",
+            "T;point;parallelogram;O,E,A",
+            "U;point;parallelogram;O,E,B",
+            "V;point;parallelogram;M,E,A",
+            "W;point;parallelogram;M,E,B",
+            "PV;line;connect;P,V",
+            "QW;line;connect;Q,W"
+        ],
+    });
+</script>
+</center><p>Carry the planes through the points <em>N</em> and <em>O</em> parallel to <em>AB</em> and <em>CD</em> and to the bases of the cylinder <em>PW,</em> and let them produce the circles <em>RS</em> and <em>TU</em> about the centers <em>N, O.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a></div>
+<p>Then, since the axes <em>LN, NE,</em> and <em>EK</em> equal one another, therefore the cylinders <em>QR, RB,</em> and <em>BG</em> are to one another as their bases.</p>
+<p>But the bases are equal, therefore the cylinders <em>QR, RB,</em> and <em>BG</em> also equal one another.</p>
+<p>Since then the axes <em>LN, NE,</em> and <em>EK</em> equal one another, and the cylinders <em>QR, RB,</em> and <em>BG</em> also equal one another, and the multitude of the former equals the multitude of the latter, therefore, the multiple the axis <em>KL</em> is of the axis <em>EK</em> is the same multiple the cylinder <em>QG</em> is of the cylinder <em>GB.</em></p>
+<p>For the same reason, the multiple the axis <em>MK</em> is of the axis <em>KF</em> is the same multiple the cylinder <em>WG</em> is of the cylinder <em>GD.</em></p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV5/">V.Def.5</a></div>
+<p>And, if the axis <em>KL</em> equals the axis <em>KM,</em> then the cylinder <em>QG</em> also equals the cylinder <em>GW</em>; if the axis is greater than the axis, then the cylinder is also greater than the cylinder; and if less, less. Thus, there being four magnitudes, the axes <em>EK</em> and <em>KF</em> and the cylinders <em>BG</em> and <em>GD,</em> there have been taken equimultiples of the axis <em>EK</em> and of the cylinder <em>BG,</em> namely the axis <em>LK</em> and the cylinder <em>QG,</em> and equimultiples of the axis <em>KF</em> and of the cylinder <em>GD,</em> namely the axis <em>KM</em> and the cylinder <em>GW,</em> and it has been proved that, if the axis <em>KL</em> is in excess of the axis <em>KM,</em> the cylinder <em>QG</em> is also in excess of the cylinder <em>GW</em>; if equal, equal; and if less, less. Therefore the axis <em>EK</em> is to the axis <em>KF</em> as the cylinder <em>BG</em> is to the cylinder <em>GD.</em></p>
+<p>Therefore, <em>if a cylinder is cut by a plane parallel to its opposite planes, then the cylinder is to the cylinder as the axis is to the axis.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Use of this proposition</h4>
+<p>This proposition is preliminary to the next in which it is shown that cylinders on equal bases are proportional to their heights. It is also used in the proposition following that.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII14/">XII.14</a>, <a href="/elements/books/bookXII/propositions/propXII15/">XII.15</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 2</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 2</h1>
+    <div class="statement">Circles are to one another as the squares on their diameters.</div>
+    <p>Let <em>ABCD</em> and <em>EFGH</em> be circles, and let <em>BD</em> and <em>FH</em> be their diameters.</p>
+<p>I say that the circle <em>ABCD</em> is to the circle <em>EFGH</em> as the square on <em>BD</em> is to the square on <em>FH.</em></p>
+<center>
+<canvas id="canvas_0" width="550" height="250" tabindex="0"></canvas>
+<noscript><img alt="XII.2 diagram" src="propXII2.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.2",
+        fontsize: "14",
+        elements: [
+            "X0;point;free;-10000,145;0;0",
+            "X1;point;free;10000,145;0;0",
+            "B;point;lineSlider;X0,X1,35,0",
+            "D;point;lineSlider;X0,X1,150,0",
+            "F;point;lineSlider;X0,X1,190,0",
+            "H;point;lineSlider;X0,X1,320,0",
+            "BD;line;connect;B,D",
+            "FH;line;connect;F,H",
+            "BDcenter;point;midpoint;BD;0;0",
+            "ABCD;circle;radius;BDcenter,B;0;0;black;random",
+            "FHcenter;point;midpoint;FH;0;0",
+            "EFGH;circle;radius;FHcenter,F;0;0;black;random",
+            "A;point;perpendicular;BDcenter,D",
+            "C;point;extend;A,BDcenter,A,BDcenter",
+            "E;point;perpendicular;FHcenter,H",
+            "G;point;extend;E,FHcenter,E,FHcenter",
+            "S0;point;lineSlider;X0,X1,355,125;0",
+            "S1;point;cutoff;S0,X1,FHcenter,F;0;0",
+            "S2;point;perpendicular;S1,S0;0;0",
+            "S3;point;parallelogram;S2,S1,S0;0;0",
+            "S4;point;extend;S3,S0,F,H;0;0",
+            "S;polygon;parallelogram;S2,S3,S4;black;0;black;random",
+            "EFGHsquare;polygon;quadrilateral;E,F,G,H;0;0;black;random",
+            "K';point;midpoint;E,F;0;0",
+            "K;point;cutoff;FHcenter,K',FHcenter,F",
+            "L';point;midpoint;F,G;0;0",
+            "L;point;cutoff;FHcenter,L',FHcenter,F",
+            "M';point;midpoint;G,H;0;0",
+            "M;point;cutoff;FHcenter,M',FHcenter,F",
+            "N';point;midpoint;H,E;0;0",
+            "N;point;cutoff;FHcenter,N',FHcenter,F",
+            "EKFLGMHN;polygon;octagon;E,K,F,L,G,M,H,N;0;0;black;0",
+            "K'';point;parallelogram;K,E,F;0;0",
+            "F';point;intersection;K,K'',G,F;0;0",
+            "KEFrect;polygon;parallelogram;E,F,F';0;0;black;0",
+            "O';point;midpoint;A,B;0;0",
+            "O;point;cutoff;BDcenter,O',BDcenter,B",
+            "P';point;midpoint;B,C;0;0",
+            "P;point;cutoff;BDcenter,P',BDcenter,B",
+            "Q';point;midpoint;C,D;0;0",
+            "Q;point;cutoff;BDcenter,Q',BDcenter,B",
+            "R';point;midpoint;D,A;0;0",
+            "R;point;cutoff;BDcenter,R',BDcenter,B",
+            "AOBPCQDR;polygon;octagon;A,O,B,P,C,Q,D,R;0;0;black;0",
+            "T0;point;lineSlider;X0,X1,450,125;0",
+            "T1;point;cutoff;T0,X1,BDcenter,B;0;0",
+            "T2;point;perpendicular;T1,T0;0;0",
+            "T3;point;parallelogram;T2,T1,T0;0;0",
+            "T4;point;extend;T3,T0,B,D;0;0",
+            "T;polygon;parallelogram;T2,T3,T4;black;0;black;random"
+        ],
+    });
+</script>
+</center><p>For, if the square on <em>BD</em> is not to the square on <em>FH</em> as the circle <em>ABCD</em> is to the circle <em>EFGH,</em> then as the square on <em>BD</em> is to the square on <em>FH,</em> the circle <em>ABCD</em> is either to some less area than the circle <em>EFGH,</em> or to a greater area.</p>
+<p>First, let it be in that ratio to a less area <em>S.</em></p>
+<div class="just"><a href="/elements/books/bookIV/propositions/propIV6/">IV.6</a><br><a href="/elements/books/bookIII/propositions/propIII17/">III.17</a></div>
+<p>Inscribe the square <em>EFGH</em> in the circle <em>EFGH.</em> Then the inscribed square is greater than the half of the circle <em>EFGH,</em> for if through the points <em>E, F, G,</em> and <em>H</em> we draw tangents to the circle, then the square <em>EFGH</em> is half the square circumscribed about the circle, and the circle is less than the circumscribed square, hence the inscribed square <em>EFGH</em> is greater than the half of the circle <em>EFGH.</em></p>
+<p>Bisect the circumferences <em>EF, FG, GH,</em> and <em>HE</em> at the points <em>K, L, M,</em> and <em>N.</em> Join <em>EK, KF, FL, LG, GM, MH, HN,</em> and <em>NE.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII17/">III.17</a></div>
+<p>Therefore each of the triangles <em>EKF, FLG, GMH,</em> and <em>HNE</em> is also greater than the half of the segment of the circle about it, for if through the points <em>K, L, M,</em> and <em>N</em> we draw tangents to the circle and complete the parallelograms on the straight lines <em>EF, FG, GH,</em> and <em>HE,</em> then each of the triangles <em>EKF, FLG, GMH,</em> and <em>HNE</em> is half of the parallelogram about it, while the segment about it is less than the parallelogram, hence each of the triangles <em>EKF, FLG, GMH,</em> and <em>HNE</em> is greater than the half of the segment of the circle about it.</p>
+<p>Thus, by bisecting the remaining circumferences and joining straight lines, and by doing this repeatedly, we shall leave some segments of the circle which will be less than the excess by which the circle <em>EFGH</em> exceeds the area <em>S.</em></p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX1/">X.1</a></div>
+<p>For it was proved in the first theorem of the tenth book that if two unequal magnitudes are set out, and if from the greater there is subtracted a magnitude greater than the half, and from that which is left a greater than the half, and if this is done repeatedly, then there will be left some magnitude which is less than the lesser magnitude set out.</p>
+<p>Let segments be left such as described, and let the segments of the circle <em>EFGH</em> on <em>EK, KF, FL, LG, GM, MH, HN,</em> and <em>NE</em> be less than the excess by which the circle <em>EFGH</em> exceeds the area <em>S.</em></p>
+<p>Therefore the remainder, the polygon <em>EKFLGMHN,</em> is greater than the area <em>S.</em></p>
+<p>Now inscribe in the circle <em>ABCD</em> the polygon <em>AOBPCQDR</em> similar to the polygon <em>EKFLGMHN.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII1/">XII.1</a></div>
+<p>Therefore the square on <em>BD</em> is to the square on <em>FH</em> as the polygon <em>AOBPCQDR</em> is to the polygon <em>EKFLGMHN.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a><br><a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>But the square on <em>BD</em> is to the square on <em>FH</em> as the circle <em>ABCD</em> to the area <em>S,</em> therefore the circle <em>ABCD</em> is to the area <em>S</em> as the polygon <em>AOBPCQDR</em> is to the polygon <em>EKFLGMHN.</em> Therefore, alternately the circle <em>ABCD</em> is to the polygon inscribed in it as the area <em>S</em> is to the polygon <em>EKFLGMHN.</em></p>
+<p>But the circle <em>ABCD</em> is greater than the polygon inscribed in it, therefore the area <em>S</em> is also greater than the polygon <em>EKFLGMHN.</em> But it is also less, which is impossible.</p>
+<p>Therefore the square on <em>BD</em> is to the square on <em>FH</em> not as the circle <em>ABCD</em> is to any area less than the circle <em>EFGH.</em></p>
+<p>Similarly we can prove that the circle <em>EFGH</em> is to any area less than the circle <em>ABCD</em> not as the square on <em>FH</em> is to the square on <em>BD.</em></p>
+<p>I say next that neither is the circle <em>ABCD</em> to any area greater than the circle <em>EFGH</em> as the square on <em>BD</em> is to the square on <em>FH.</em></p>
+<p>For, if possible, let it be in that ratio to a greater area <em>S.</em> Therefore, inversely the square on <em>FH</em> is to the square on <em>DB</em> as the area <em>S</em> is to the circle <em>ABCD.</em></p>
+<p>But the area <em>S</em> is to the circle <em>ABCD</em> as the circle <em>EFGH</em> is to some area less than the circle <em>ABCD,</em> therefore the square on <em>FH</em> is to the square on <em>BD</em> as the circle <em>EFGH</em> is to some area less than the circle <em>ABCD,</em> which was proved impossible. Therefore the square on <em>BD</em> is to the square on <em>FH</em> not as the circle <em>ABCD</em> to any area greater than the circle <em>EFGH.</em> <div class="just"><a href="/elements/books/bookXII/propositions/propXII2/#lemma">Lemma</a><br><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div></p>
+<p>And it was proved that neither is it in that ratio to any area less than the circle <em>EFGH,</em> therefore the square on <em>BD</em> is to the square on <em>FH</em> as the circle <em>ABCD</em> is to the circle <em>EFGH.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+<p><br></p>
+<p><a name="lemma"></a></p>
+<h3>Lemma</h3>
+<p>I say that, the area <em>S</em> being greater than the circle <em>EFGH</em> the area <em>S</em> is to the circle <em>ABCD</em> as the circle <em>EFGH</em> is to some area less than the circle <em>ABCD.</em></p>
+<p>For let it be contrived that the area <em>S</em> is to the circle <em>ABCD</em> as the circle <em>EFGH</em> to the area <em>T.</em></p>
+<p>I say that the area <em>T</em> is less than the circle <em>ABCD.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>Since the area <em>S</em> is to the circle <em>ABCD</em> as the circle <em>EFGH</em> is to the area <em>T,</em> therefore, alternately the area <em>S</em> is to the circle <em>EFGH</em> as the circle <em>ABCD</em> is to the area <em>T.</em></p>
+<p>But the area <em>S</em> is greater than the circle <em>EFGH,</em> therefore the circle <em>ABCD</em> is also greater than the area <em>T.</em></p>
+<p>Hence the area <em>S</em> is to the circle <em>ABCD</em> as the circle <em>EFGH</em> is to some area less than the circle <em>ABCD.</em></p>
+<p>Therefore, <em>circles are to one another as the squares on their diameters.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>In the last proposition it was shown that similar polygons inscribed in circles are proportional to the squares on the diameters of the circles. By approximating circles closely by similar polygons, the proportion is carried over to the circles.</p>
+<p>The form of the proof is a double proof by contradiction. There are three cases when comparing the ratio of the squares <em>BD</em> : <em>FH</em> to the ratio of the circles <em>ABCD</em> : <em>EFGH.</em> One case is that the ratio of the squares <em>BD</em> : <em>FH</em> equals <em>ABCD</em> : <em>S</em> where <em>S</em> is some area less than circle <em>EFGH.</em> Most of the proof is spent refuting this case. The second case is that the ratio of the squares <em>BD</em> : <em>FH</em> equals <em>ABCD</em> : <em>S</em> where this time <em>S</em> is some area greater than circle <em>EFGH.</em> This is inverted to a statement that the ratio of the squares <em>FH</em> : <em>BD</em> equals <em>EFGH</em> to some area less than circle <em>ABCD,</em> which is the first case already already shown not to occur. That leaves only the third case that the ratio of the squares <em>BD</em> : <em>FH</em> equals the ratio of the circles <em>ABCD</em> : <em>EFGH.</em> (Actually, there is a gap in the proof at this last step; it was never shown that these are the only three cases. It may be true that there are three cases, that the ratio of the squares is greater, less, or equal to the ratio of the circles, but the three cases of in the proof are one step removed from these three cases.)</p>
+<h4>Approximation by polygons</h4>
+<p>The first case is disposed of by approximating the circles by very close polygons. To begin with a square <em>EFGH</em> is inscribed in the circle <em>EFGH,</em> and it is shown that the remainder is less than half the circle. Next the circumferences are bisected to construct an octagon <em>EKFLGMHN,</em> and the remainder of the circle is shown to be less than half the old remainder. Continuing, polygons of 16, 32, 64, etc., sides are constructed and each one leaves a remainder less than half the previous remainder.</p>
+<p>Now the circle <em>EFGH</em> exceeds the area <em>S</em> by some finite amount, and by the principle of proposition <a href="/elements/books/bookX/propositions/propX1/">X.1</a>, at some stage mentioned above, the remainder will be less than the excess of circle <em>EFGH</em> over <em>S.</em> For the rest of the proof, that stage is taken as that of the polygon <em>EKFLGMHN,</em> that is, circle</p>
+<center><i>EFGH</i> – polygon <i>EKFLGMHN</i> < circle <i>EFGH</i> – area <i>S,</i></center><p>and so area <em>S</em> &lt; polygon <em>EKFLGMHN.</em></p>
+<p>The similar polygon <em>AOBPCQDR</em> is inscribed in the other circle <em>ABCD.</em> Then</p>
+<center>circle <i>ABCD</i> : area <i>S</i> = <i>BC</i><sup>2</sup> : <i>FH</i><sup>2</sup> = polygon <i>AOBPCQDR</i> : polygon <i>EKFLGMHN.</i></center><p>Alternately, circle <em>ABCD</em> : polygon <em>AOBPCQDR</em> = area <em>S</em> : polygon <em>EKFLGMHN.</em> But circle <em>ABCD</em> &gt; polygon <em>AOBPCQDR,</em> so area <em>S</em> &gt; polygon <em>EKFLGMHN,</em> contradicting the statement above that the area <em>S</em> is less than the polygon.</p>
+<h4>Principle of exhaustion</h4>
+<p>The approximation of a figure by a sequence of figures inside it is sometimes called the "principle of exhaustion." The important point of this principle is that the sequence of approximations can be made so that the difference between the original figure and the inscribed figure decreases by at least half at each step of the sequence.</p>
+<p>This principle is used in several later propositions in this book. Proposition <a href="/elements/books/bookXII/propositions/propXII5/">XII.5</a> uses it to show that pyramids of the same height with triangular bases are proportional to their bases. The pyramids are approximated by a union of similar triangular prisms. Proposition <a href="/elements/books/bookXII/propositions/propXII10/">XII.10</a> uses the principle of exhaustion to show that a cone inscribed in a cylinder is one-third of the cylinder. The cone is approximated by inscribed pyramids while the cylinder is approximated by inscribed prisms. Pyramids inscribed in cones are similarly used in <a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a> and <a href="/elements/books/bookXII/propositions/propXII12/">XII.12</a>. Finally, the principle of exhaustion is used in proposition <a href="/elements/books/bookXII/propositions/propXII18/">XII.18</a> to show spheres are to one another in triplicate ratio of their diameters. There the spheres are exhausted by inscribed polyhedra.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII10/">XII.10</a>, <a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

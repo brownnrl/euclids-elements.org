@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 15</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 15</h1>
+    <div class="statement">If a unit number measures any number, and another number measures any other number the same number of times, then alternately, the unit measures the third number the same number of times that the second measures the fourth.</div>
+    <p>Let the unit <em>A</em> measure any number <em>BC,</em> and let another number <em>D</em> measure any other number <em>EF</em> the same number of times.</p>
+<p>I say that, alternately also, the unit measures the number <em>D</em> the same number of times that <em>BC</em> measures <em>EF.</em></p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_0" width="280" height="140" tabindex="0"></canvas>
+<noscript><img alt="VII.15 diagram" src="propVII15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.15",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "D0;point;free;-1000,75;0;0",
+            "D3;point;free;1000,75;0;0",
+            "E0;point;free;-1000,110;0;0",
+            "E3;point;free;1000,110;0;0",
+            "A1;point;lineSlider;A0,A3,30,40;0",
+            "A2;point;lineSlider;A0,A3,65,40;0",
+            "A;line;connect;A1,A2;black",
+            "B;point;lineSlider;A0,A3,110,40",
+            "G;point;cutoff;B,A3,A1,A2",
+            "H;point;cutoff;G,A3,A1,A2",
+            "C;point;cutoff;H,A3,A1,A2",
+            "BC;line;connect;B,C",
+            "D1;point;lineSlider;D0,D3,100,40;0",
+            "D2;point;cutoff;D1,D3,B,H;0",
+            "D;line;connect;D1,D2;black",
+            "E;point;lineSlider;E0,E3,30,40",
+            "K;point;cutoff;E,E3,D1,D2",
+            "L;point;cutoff;K,E3,D1,D2",
+            "F;point;cutoff;L,E3,D1,D2",
+            "EF;line;connect;E,F"
+        ],
+    });
+</script>
+</figure><p>Since the unit <em>A</em> measures the number <em>BC</em> the same number of times that <em>D</em> measures <em>EF,</em> therefore there are as many numbers equal to <em>D</em> in <em>EF</em> as there are units in <em>BC.</em></p>
+<p>Divide <em>BC</em> into the units in it, <em>BG, GH,</em> and <em>HC,</em> and divide <em>EF</em> into the numbers <em>EK, KL,</em> and <em>LF</em> equal to <em>D.</em> Then the multitude of <em>BG, GH,</em> and <em>HC</em> equals the multitude of <em>EK, KL,</em> and <em>LF.</em></p>
+<p>And, since the units <em>BG, GH,</em> and <em>HC</em> equal one another, and the numbers <em>EK, KL,</em> and <em>LF</em> also equal one another, while the multitude of the units <em>BG, GH,</em> and <em>HC</em> equals the multitude of the numbers <em>EK, KL,</em> and <em>LF,</em> therefore the unit <em>BG</em> is to the number <em>EK</em> as the unit <em>GH</em> is to the number <em>KL,</em> and as the unit <em>HC</em> is to the number <em>LF.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII12/">VII.12</a></div>
+<p>Since one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents, therefore the unit <em>BG</em> is to the number <em>EK</em> as <em>BC</em> is to <em>EF.</em></p>
+<p>But the unit <em>BG</em> equals the unit <em>A,</em> and the number <em>EK</em> equals the number <em>D.</em> Therefore the unit <em>A</em> is to the number <em>D</em> as <em>BC</em> is to <em>EF.</em></p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a></div>
+<p>Therefore the unit <em>A</em> measures the number <em>D</em> the same number of times that <em>BC</em> measures <em>EF.</em></p>
+<p>Therefore, <em>if a unit number measures any number, and another number measures any other number the same number of times, then alternately, the unit measures the third number the same number of times that the second measures the fourth.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Euclid shows that if <em>b</em> = <em>nu</em>, and <em>e</em> = <em>nd</em>, and <em>d</em> = <em>mu</em>, then <em>e</em> = <em>mb</em>. As a single equation,</p>
+<center>
+<i>n</i>(<i>mu</i>) = <i>m</i>(<i>nu</i>)
+</center><p>This proposition expresses the commutativity of multiplication, but it is a commutativity with regard multiple multiples of the the unit <em>u</em>. The next proposition states a commutativity of multiplication of formal numbers.</p>
+<h4>Outline of the proof</h4>
+<p>Proposition <a href="/elements/books/bookVII/propositions/propVII12/">VII.12</a> said that</p>
+<center>if <i>a</i><sub>1</sub> : <i>b</i><sub>1</sub> = <i>a</i><sub>2</sub> : <i>b</i><sub>2</sub> = ... = <i>a<sub>n</sub></i> : <i>b<sub>n</sub>,</i>
+</center><p>then each of these ratios also equals the ratio</p>
+<center>(<i>a</i><sub>1</sub> + <i>a</i><sub>2</sub> + ... + <i>a<sub>n</sub></i>) : (<i>b</i><sub>1</sub> + <i>b</i><sub>2</sub> + ... + <i>b<sub>n</sub></i>).
+</center><p>Now take all the <em>a<sub>i</sub></em>'s to be the unit <em>u</em>, all the <em>b<sub>i</sub></em>'s to be <em>d</em>, then conclude</p>
+<center>
+<i>u</i> : <i>d</i> = <i>nu</i> : <i>nd</i>.
+</center><p>But <em>d</em> = <em>mu</em>. Therefore <em>nd</em> = <em>m</em>(<em>nu</em>), as required. <small>Q.E.D.</small></p>
+<p>This proposition is used in the next proposition and a few others in Books VII and IX.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VII</th><td><a href="/elements/books/bookVII/propositions/propVII16/">VII.16</a>, <a href="/elements/books/bookVII/propositions/propVII37/">VII.37</a>, <a href="/elements/books/bookVII/propositions/propVII38/">VII.38</a></td></tr>
+  <tr><th>Book IX</th><td><a href="/elements/books/bookIX/propositions/propIX11/">IX.11</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

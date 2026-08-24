@@ -1,0 +1,137 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 18</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 18</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 18</h1>
+    <div class="statement">If a straight line is at right angles to any plane, then all the planes through it are also at right angles to the same plane.</div>
+    <p>Let any straight line <em>AB</em> be at right angles to the plane of reference.</p>
+<p>I say that all the planes through <em>AB</em> are also at right angles to the plane of reference.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="220" tabindex="0"></canvas>
+<noscript><img alt="XI.18 diagram" src="propXI18.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.18",
+        elements: [
+            "X;point;free;100000,200",
+            "Y;point;free;200,-100000",
+            "Z;point;free;30000,-100000",
+            "P0;point;free;30,200;0;0,75,100",
+            "P2;point;free;260,70;0;0,75,100",
+            "P1;point;intersection;P0,X,P2,Z;0;0",
+            "P3;point;intersection;P2,X,P0,Z;0;0",
+            "P;polygon;quadrilateral;P0,P1,P2,P3;0;0;lightGray;brighter",
+            "A;point;free;180,40",
+            "B;point;lineSlider;A,Y,180,140",
+            "AB;line;connect;A,B",
+            "E;point;lineSlider;P1,P2,200,120",
+            "C;point;intersection;E,B,P0,P3",
+            "D;point;parallelogram;A,B,C",
+            "DE;polygon;parallelogram;D,C,E;0;0;black;random",
+            "F;point;lineSlider;C,E,100,150",
+            "G;point;intersection;A,D,F,Y",
+            "FG;line;connect;F,G"
+        ],
+    });
+</script>
+</figure><p>Let the plane <em>DE</em> be drawn through <em>AB.</em> Let <em>CE</em> be the intersection of the plane <em>DE</em> and the plane of reference.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
+<p>Take a point <em>F</em> at random on <em>CE,</em> and draw <em>FG</em> from <em>F</em> at right angles to <em>CE</em> in the plane <em>DE.</em></p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI3/">XI.Def.3</a></div>
+<p>Now, since <em>AB</em> is at right angles to the plane of reference, therefore <em>AB</em> is also at right angles to all the straight lines which meet it and lie in the plane of reference, so that it is also at right angles to <em>CE.</em> Therefore the angle <em>ABF</em> is right.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI28/">I.28</a></div>
+<p>But the angle <em>GFB</em> is also right, therefore <em>AB</em> is parallel to <em>FG.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI8/">XI.8</a></div>
+<p>But <em>AB</em> is at right angles to the plane of reference, therefore <em>FG</em> is also at right angles to the plane of reference.</p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI4/">XI.Def.4</a></div>
+<p>Now a plane is at right angles to a plane when the straight lines drawn in one of the planes at right angles to the intersection of the planes are at right angles to the remaining plane. And <em>FG,</em> drawn in one of the planes <em>DE</em> at right angles to <em>CE,</em> the intersection of the planes, was proved to be at right angles to the plane of reference. Therefore the plane <em>DE</em> is at right angles to the plane of reference.</p>
+<p>Similarly it can also be proved that all the planes through <em>AB</em> are at right angles to the plane of reference.</p>
+<p>Therefore, <em>if a straight line is at right angles to any plane, then all the planes through it are also at right angles to the same plane.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used in the proof of proposition <a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

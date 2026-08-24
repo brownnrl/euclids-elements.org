@@ -1,0 +1,153 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 26</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 26</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 26</h1>
+    <div class="statement">To construct a solid angle equal to a given solid angle on a given straight line at a given point on it.</div>
+    <p>Let <em>A</em> be the given point on the given straight line <em>AB,</em> and let the angle at <em>D</em> be the given solid angle contained by the angles <em>EDC, EDF,</em> and <em>FDC.</em></p>
+<p>It is required to construct at the point <em>A</em> on the straight line <em>AB</em> a solid angle equal to the solid angle at <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI11/">XI.11</a></div>
+<p>Take a point <em>F</em> at random on <em>DF,</em> draw <em>FG</em> from <em>F</em> perpendicular to the plane through <em>ED</em> and <em>DC,</em> and let it meet the plane at <em>G.</em> Join <em>DG.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="360" height="320" tabindex="0"></canvas>
+<noscript><img alt="XI.26 diagram" src="propXI26.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.26",
+        pivot: "A,xyplane",
+        elements: [
+            "origin;point;free;110,140;0;0,50,100",
+            "x;point;fixed;330,210,100;0;120,50,100",
+            "yzplane;plane;perpendicular;origin,x;0;0;0;0",
+            "y;point;planeSlider;yzplane,-90,202,90;0;0,50,100",
+            "xyplane;plane;3points;origin,x,y;0;0;lightGray",
+            "z1;point;perpendicular;origin,y,yzplane;0;0",
+            "z;point;lineSlider;origin,z1,40,40,100;0",
+            "Oz;line;connect;origin,z;0;0;lightGray",
+            "ceiling;plane;parallel;xyplane,z;0;0;0;0",
+            "A;point;planeSlider;xyplane,180,240,150",
+            "B;point;planeSlider;xyplane,220,220,210",
+            "AB;line;connect;A,B",
+            "C;point;planeSlider;xyplane,150,200,20",
+            "D;point;planeSlider;xyplane,50,210,100",
+            "E;point;planeSlider;xyplane,110,190,160",
+            "F;point;planeSlider;ceiling,160,140,110",
+            "G;point;foot;F,xyplane",
+            "FG;line;connect;F,G",
+            "DCG;polygon;triangle;D,C,G;0;0;black;270,70,100",
+            "DGE;polygon;triangle;D,G,E;0;0;black;270,70,100",
+            "DCF;polygon;triangle;D,C,F;0;0;black;random",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "L;point;similar;B,A,xyplane,E,D,C,xyplane",
+            "K';point;similar;B,A,xyplane,E,D,G,xyplane;0;0",
+            "K;point;cutoff;A,K',D,G",
+            "ABK;polygon;triangle;A,B,K;0;0;black;270,70,100",
+            "AKL;polygon;triangle;A,K,L;0;0;black;270,70,100",
+            "KH;line;perpendicular;K,xyplane,F,G",
+            "H;point;last;KH",
+            "ALH;polygon;triangle;A,L,H;0;0;black;random",
+            "ABH;polygon;triangle;A,B,H;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a></div>
+<p>At the point <em>A</em> on the straight line <em>AB</em> construct the angle <em>BAL</em> equal to the angle <em>EDC,</em> and construct the angle <em>BAK</em> equal to the angle <em>EDG.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI12/">XI.12</a></div>
+<p>Make <em>AK</em> equal to <em>DG.</em> Set <em>KH</em> up from the point <em>K</em> at right angles to the plane through <em>BA</em> and <em>AL.</em> Make <em>KH</em> equal to <em>GF,</em> and join <em>HA.</em></p>
+<p>I say that the solid angle at <em>A</em> contained by the angles <em>BAL, BAH,</em> and <em>HAL</em> equals the solid angle at <em>D</em> contained by the angles <em>EDC, EDF,</em> and <em>FDC.</em></p>
+<p>Cut <em>AB</em> and <em>DE</em> off equal to one another, and join <em>HB, KB, FE,</em> and <em>GE.</em></p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI3/">XI.Def.3</a></div>
+<p>Then, since <em>FG</em> is at right angles to the plane of reference, therefore it is also at right angles with all the straight lines which meet it and are in the plane of reference. Therefore each of the angles <em>FGD</em> and <em>FGE</em> is right. For the same reason each of the angles <em>HKA</em> and <em>HKB</em> is also right.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>And, since the two sides <em>KA</em> and <em>AB</em> equal the two sides <em>GD</em> and <em>DE</em> respectively, and they contain equal angles, therefore the base <em>KB</em> equals the base <em>GE.</em> But <em>KH</em> also equals <em>GF,</em> and they contain right angles, therefore <em>HB</em> also equals <em>FE.</em> Again, since the two sides <em>AK</em> and <em>KH</em> equal the two sides <em>DG</em> and <em>GF,</em> and they contain right angles, therefore the base <em>AH</em> equals the base <em>FD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>But <em>AB</em> also equals <em>DE,</em> therefore the two sides <em>HA</em> and <em>AB</em> are equal to the two sides <em>DF</em> and <em>DE.</em> And the base <em>HB</em> is equal to the base <em>FE,</em> therefore the angle <em>BAH</em> equals the angle <em>EDF.</em> For the same reason the angle <em>HAL</em> also equals the angle <em>FDC.</em></p>
+<p>And the angle <em>BAL</em> also equals the angle <em>EDC.</em> Therefore at the point <em>A</em> on the straight line <em>AB</em> a solid angle has been constructed equal to the given solid angle at <em>D.</em></p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This construction is used in the next one to construct similar parallelepipeds.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI27/">XI.27</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

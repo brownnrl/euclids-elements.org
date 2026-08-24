@@ -1,0 +1,149 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 15</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 15</h1>
+    <div class="statement">If two straight lines meeting one another are parallel to two straight lines meeting one another not in the same plane, then the planes through them are parallel.</div>
+    <p>Let the two straight lines <em>AB</em> and <em>BC</em> meeting one another be parallel to the two straight lines <em>DE</em> and <em>EF</em> meeting one another not in the same plane.</p>
+<p>I say that the plane produced through <em>AB</em> and <em>BC</em> and the plane produced through <em>DE</em> and <em>EF</em> do not meet one another.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="310" tabindex="0"></canvas>
+<noscript><img alt="XI.15 diagram" src="propXI15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.15",
+        elements: [
+            "X;point;free;100000,200",
+            "Y;point;free;200,-100000",
+            "Z;point;free;30000,-100000",
+            "P0;point;free;30,100;0;0,75,100",
+            "P2;point;free;180,20;0;0,75,100",
+            "P1;point;intersection;P0,X,P2,Z;0;0",
+            "P3;point;intersection;P2,X,P0,Z;0;0",
+            "P;polygon;quadrilateral;P0,P1,P2,P3;0;0;gray;brighter",
+            "Q0;point;free;30,280;0;0,75,100",
+            "Q2;point;free;230,140;0;0,75,100",
+            "Q1;point;intersection;Q0,X,Q2,Z;0;0",
+            "Q3;point;intersection;Q2,X,Q0,Z;0;0",
+            "Q;polygon;quadrilateral;Q0,Q1,Q2,Q3;0;0;gray;brighter",
+            "A;point;free;70,80",
+            "B;point;free;110,50",
+            "C;point;free;140,70",
+            "AB;line;connect;A,B",
+            "BC;line;connect;B,C",
+            "E;point;free;140,160",
+            "D';point;parallelogram;A,B,E;0;0",
+            "D;point;lineSlider;E,D',80,210",
+            "F';point;parallelogram;C,B,E;0;0",
+            "F;point;lineSlider;E,F',180,210",
+            "DE;line;connect;D,E",
+            "EF;line;connect;E,F",
+            "G;point;lineSlider;B,Y,110,220",
+            "BG;line;connect;B,G",
+            "H';point;parallelogram;D,E,G;0;0",
+            "H;point;lineSlider;G,H',80,250",
+            "K';point;parallelogram;F,E,G;0;0",
+            "K;point;lineSlider;G,K',160,250",
+            "GH;line;connect;G,H",
+            "GK;line;connect;G,K"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookXI/propositions/propXI11/">XI.11</a></div>
+<p>Draw <em>BG</em> from the point <em>B</em> perpendicular to the plane through <em>DE</em> and <em>EF</em> to where it meets the plane at the point <em>G.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Draw <em>GH</em> through <em>G</em> parallel to <em>ED,</em> and <em>GK</em> parallel to <em>EF.</em></p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI3/">XI.Def.3</a></div>
+<p>Now, since <em>BG</em> is at right angles to the plane through <em>DE</em> and <em>EF,</em> therefore it makes right angles with all the straight lines which meet it and lie in the plane through <em>DE</em> and <em>EF.</em></p>
+<p>But each of the straight lines <em>GH</em> and <em>GK</em> meets it and lies in the plane through <em>DE</em> and <em>EF,</em> therefore each of the angles <em>BGH</em> and <em>BGK</em> is right.</p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI9/">XI.9</a>, <a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>And, since <em>BA</em> is parallel to <em>GH,</em> therefore the sum of the angles <em>GBA</em> and <em>BGH</em> equals two right angles.</p>
+<p>But the angle <em>BGH</em> is right, therefore the angle <em>GBA</em> is also right. Therefore <em>GB</em> is at right angles to <em>BA.</em> For the same reason <em>GB</em> is also at right angles to <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI4/">XI.4</a></div>
+<p>Since then the straight line <em>GB</em> is set up at right angles to the two straight lines <em>BA</em> and <em>BC</em> which cut one another, therefore <em>GB</em> is also at right angles to the plane through <em>BA</em> and <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI14/">XI.14</a></div>
+<p>But planes to which the same straight line is at right angles are parallel, therefore the plane through <em>AB</em> and <em>BC</em> is parallel to the plane through <em>DE</em> and <em>EF.</em></p>
+<p>Therefore, <em>if two straight lines meeting one another are parallel to two straight lines meeting one another not in the same plane, then the planes through them are parallel.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is not used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

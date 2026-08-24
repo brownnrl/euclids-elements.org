@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 30</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 30</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 30</h1>
+    <div class="statement">To cut a given finite straight line in extreme and mean ratio.</div>
+    <p>Let <em>AB</em> be the given finite straight line.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="350" tabindex="0"></canvas>
+<noscript><img alt="VI.30 diagram" src="propVI30.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.30",
+        elements: [
+            "A;point;free;50,220",
+            "B;point;free;220,220",
+            "ABHC;polygon;square;A,B;0;0;black;random",
+            "H;point;vertex;ABHC,3",
+            "C;point;vertex;ABHC,4",
+            "M;point;midpoint;A,C;0;0",
+            "N;point;cutoff;M,A,M,B;0",
+            "E;point;cutoff;A,B,A,N",
+            "NAED;polygon;parallelogram;N,A,E;0;0;black;random",
+            "D;point;vertex;NAED,4",
+            "F;point;intersection;C,H,D,E",
+            "EF;line;connect;E,F"
+        ],
+    });
+</script>
+</figure><p>It is required to cut <em>AB</em> in extreme and mean ratio.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a><br><a href="/elements/books/bookVI/propositions/propVI29/">VI.29</a></div>
+<p>Describe the square <em>BC</em> on <em>AB.</em>  Apply the parallelogram <em>CD</em> to <em>AC</em> equal to the sum of <em>BC</em> and the figure <em>AD</em> similar to <em>BC.</em></p>
+<p>Now <em>BC</em> is a square, therefore <em>AD</em> is also a square.</p>
+<p>And, since <em>BC</em> equals <em>CD,</em> subtract <em>CE</em> from each, therefore the remainder <em>BF</em> equals the remainder <em>AD.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI14/">VI.14</a></div>
+<p>But it is also equiangular with it, therefore in <em>BF</em> and <em>AD</em> the sides about the equal angles are reciprocally proportional. Therefore <em>FE</em> is to <em>ED</em> as <em>AE</em> is to <em>EB.</em></p>
+<p>But <em>FE</em> equals <em>AB,</em> and <em>ED</em> equals <em>AE.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV7/">V.7</a></div>
+<p>Therefore <em>AB</em> is to <em>AE</em> as <em>AE</em> is to <em>EB.</em></p>
+<p>And <em>AB</em> is greater than <em>AE,</em> therefore <em>AE</em> is also greater than <em>EB.</em></p>
+<div class="just"><a href="/elements/books/bookVI/definitions/defVI3/">VI.Def.3</a></div>
+<p>Therefore the straight line <em>AB</em> has been cut in extreme and mean ratio at <em>E,</em> and the greater segment of it is <em>AE.</em></p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The construction given here cuts a line into two parts <em>A</em> and <em>B</em> so that
+(<em>A</em> + <em>B</em>):<em>B</em> = <em>B</em> : <em>A.</em>
+By proposition <a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a>, that condition is equivalent to making the rectangle <em>A</em> + <em>B</em> by <em>A</em> equal the square <em>B</em> by <em>B,</em> and that is the construction of proposition <a href="/elements/books/bookII/propositions/propII11/">II.11</a>.</p>
+<h4>Use of this proposition</h4>
+<p>This construction is used in <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a> to construct a pentagonal face of a regular dodecahedron.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

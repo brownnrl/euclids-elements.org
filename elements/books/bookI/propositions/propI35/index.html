@@ -1,0 +1,253 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 35</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 35</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 35</h1>
+    <div class="statement">Parallelograms which are on the same base and in the same parallels equal one another.</div>
+    <p>Let <span class="elem-ref" data-elem="ABCD">ABCD</span> and <span class="elem-ref" data-elem="EBCF">EBCF</span> be parallelograms on the same base <span class="elem-ref" data-elem="BC">BC</span> and in the same parallels <span class="elem-ref" data-elem="AF">AF</span> and <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<p>I say that <span class="elem-ref" data-elem="ABCD">ABCD</span> equals the parallelogram <span class="elem-ref" data-elem="EBCF">EBCF</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.35 diagram" src="propI35.gif"/></noscript>
+<script type="text/javascript">
+    // The whole figure stays on screen for every slide; only the angle
+    // indicators (angEAB / angFDC) are gated to the slide that references
+    // them. Per-slide `highlighted` guides the eye instead of hiding parts.
+    var FULL = ["A","B","C","D","E","F","G",
+                "BC","AB","CD","BE","CF","DE","AF","AD","EF","AE","DF",
+                "ABCD","EBCF","EAB","FDC","DGE","GBC","ABGD","EGCF"];
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.35",
+        elements: [
+            "B;point;free;70,180",
+            "C;point;free;160,180",
+            "BC;line;connect;B,C",
+            "A;point;free;30,40",
+            "AB;line;connect;A,B",
+            "D;point;parallelogram;A,B,C",
+            "CD;line;connect;C,D",
+            // E1 sets how far E' extends past D along the A→D ray (E' = D +
+            // dist(A,E1) along that direction), so it also sets how far E can
+            // slide. Joyce's value is 10000,0 — "direction at infinity".
+            // It was pulled on-canvas as a euclid#138 workaround (present-centring
+            // measured it and shoved the figure off-screen); #138 shipped in
+            // 0.14.0 and now measures only elements that PAINT, so the original
+            // value is safe again. The ;0;0 matters — it is what makes E1
+            // inkless, and therefore unmeasured.
+            "E1;point;free;10000,0;0;0",
+            "E';point;extend;A,D,A,E1;0;0",
+            "E;point;lineSegmentSlider;D,E',180,40",
+            "BE;line;connect;B,E",
+            "F;point;parallelogram;E,B,C",
+            "CF;line;connect;C,F",
+            "DE;line;connect;D,E",
+            "AF;line;connect;A,F",
+            "G;point;intersection;CD,BE",
+            // Top-parallel sub-segment hover targets (AF is the whole parallel).
+            "AD;line;connect;A,D;0;0;0",
+            "EF;line;connect;E,F;0;0;0",
+            "AE;line;connect;A,E;0;0;0",
+            "DF;line;connect;D,F;0;0;0",
+            // The two parallelograms as fillable regions (cyan / pink).
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;0;cyan",
+            "EBCF;polygon;quadrilateral;E,B,C,F;0;0;0;pink",
+            // Cut-and-paste regions: the congruent triangles (yellow), the
+            // subtracted overlap DGE (orange), the added GBC (green), and the
+            // two remaining trapezia (cyan). Fill only — the boundary segments
+            // are already drawn.
+            "EAB;polygon;triangle;E,A,B;0;0;0;yellow",
+            "FDC;polygon;triangle;F,D,C;0;0;0;yellow",
+            "DGE;polygon;triangle;D,G,E;0;0;0;orange",
+            "GBC;polygon;triangle;G,B,C;0;0;0;green",
+            "ABGD;polygon;quadrilateral;A,B,G,D;0;0;0;cyan",
+            "EGCF;polygon;quadrilateral;E,G,C,F;0;0;0;cyan",
+            // Corresponding angles ∠EAB = ∠FDC (magenta). Triangles own EAB/FDC,
+            // so the angle markers are angEAB / angFDC.
+            "angEAB;sector;angleMarker;A,E,B,22;0;0;magenta;magenta",
+            "angFDC;sector;angleMarker;D,F,C,22;0;0;magenta;magenta"
+        ],
+        aliases: { "EA": "AE", "FD": "DF", "DC": "CD", "EB": "BE", "FC": "CF" },
+        deferDraggables: ["E1"],
+        slides: [
+            { text: "Let {ABCD} and {EBCF} be parallelograms on the same base {BC} and in the same parallels {AF} and {BC}. I say that {ABCD} equals {EBCF}.",
+              visible: FULL,
+              highlighted: ["ABCD","EBCF"] },
+            { text: "Since {ABCD} is a parallelogram, {AD} equals {BC}. For the same reason {EF} equals {BC}, so {AD} also equals {EF}.",
+              visible: FULL,
+              highlighted: ["AD","EF","BC"],
+              justifications: [{ ref: "I.34" }] },
+            { text: "And {DE} is common, therefore the whole {AE} equals the whole {DF}.",
+              visible: FULL,
+              highlighted: ["AE","DF","DE"],
+              justifications: [{ ref: "C.N.1" }, { ref: "C.N.2" }] },
+            { text: "But {AB} also equals {DC}, and the angle {EAB|angEAB} equals the angle {FDC|angFDC}. So the two sides {EA} and {AB} equal {FD} and {DC}, and the triangle {EAB} equals the triangle {FDC}.",
+              visible: FULL.concat(["angEAB","angFDC"]),
+              highlighted: ["EAB","FDC","angEAB","angFDC"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "angEAB", name: geomlib.A.Sector.sweep },
+                  { elem: "angFDC", name: geomlib.A.Sector.sweep },
+                  { elem: "EAB",    name: geomlib.A.Polygon.superpose, args: { onto: "FDC" } } ] },
+              justifications: [{ ref: "I.34" }, { ref: "I.29" }, { ref: "I.4" }] },
+            { text: "Subtract the triangle {DGE} from each. Then the trapezium {ABGD} which remains equals the trapezium {EGCF} which remains.",
+              visible: FULL,
+              highlighted: ["ABGD","EGCF"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "ABGD", name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "EGCF", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ ref: "C.N.3" }] },
+            { text: "Add the triangle {GBC} to each. Then the whole parallelogram {ABCD} equals the whole parallelogram {EBCF}.",
+              visible: FULL,
+              highlighted: ["ABCD","EBCF"],
+              transition: { animations: [ { elem: "GBC", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ ref: "C.N.2" }] },
+            { text: "So parallelograms which are on the same base and in the same parallels equal one another.",
+              visible: FULL,
+              highlighted: ["ABCD","EBCF"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.4":   "/elements/books/bookI/propositions/propI4/",
+        "I.29":  "/elements/books/bookI/propositions/propI29/",
+        "I.34":  "/elements/books/bookI/propositions/propI34/",
+        "C.N.1": "/elements/books/bookI/commonnotions/cn1/",
+        "C.N.2": "/elements/books/bookI/commonnotions/cn2/",
+        "C.N.3": "/elements/books/bookI/commonnotions/cn3/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
+<p>Since <span class="elem-ref" data-elem="ABCD">ABCD</span> is a parallelogram, therefore <span class="elem-ref" data-elem="AD">AD</span> equals <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a><br><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>For the same reason <span class="elem-ref" data-elem="EF">EF</span> equals <span class="elem-ref" data-elem="BC">BC</span>, so that <span class="elem-ref" data-elem="AD">AD</span> also equals <span class="elem-ref" data-elem="EF">EF</span>. And <span class="elem-ref" data-elem="DE">DE</span> is common, therefore the whole <span class="elem-ref" data-elem="AE">AE</span> equals the whole <span class="elem-ref" data-elem="DF">DF</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a><br><a href="/elements/books/bookI/propositions/propI29/">I.29</a><br><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>But <span class="elem-ref" data-elem="AB">AB</span> also equals <span class="elem-ref" data-elem="DC">DC</span>. Therefore the two sides <span class="elem-ref" data-elem="EA">EA</span> and <span class="elem-ref" data-elem="AB">AB</span> equal the two sides <span class="elem-ref" data-elem="FD">FD</span> and <span class="elem-ref" data-elem="DC">DC</span> respectively, and the angle <span class="elem-ref" data-elem="angFDC">FDC</span> equals the angle <span class="elem-ref" data-elem="angEAB">EAB</span>, the exterior equals the interior. Therefore the base <span class="elem-ref" data-elem="EB">EB</span> equals the base <span class="elem-ref" data-elem="FC">FC</span>, and the triangle <span class="elem-ref" data-elem="EAB">EAB</span> equals the triangle <span class="elem-ref" data-elem="FDC">FDC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn3/">C.N.3</a></div>
+<p>Subtract <span class="elem-ref" data-elem="DGE">DGE</span> from each. Then the trapezium <span class="elem-ref" data-elem="ABGD">ABGD</span> which remains equals the trapezium <span class="elem-ref" data-elem="EGCF">EGCF</span> which remains.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>Add the triangle <span class="elem-ref" data-elem="GBC">GBC</span> to each. Then the whole parallelogram <span class="elem-ref" data-elem="ABCD">ABCD</span> equals the whole parallelogram <span class="elem-ref" data-elem="EBCF">EBCF</span>.</p>
+<p>Therefore <em>parallelograms which are on the same base and in the same parallels equal one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Euclid's proof specifically treats the case when the point <em>D</em> lies between <em>A</em> and <em>E</em> in which case subtraction of a triangle is necessary. There are other cases to consider, for instance, when <em>E</em> lies between <em>A</em> and <em>D.</em> In that case the point <em>G</em> is irrelevant and the trapezium <em>BCED</em> may be added to the congruent triangles <em>ABE</em> and <em>DCF</em> to derive the conclusion. Euclid often supplies a proof for only one case, although occasionally he gives proofs for two or three cases.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="270" height="170" tabindex="0"></canvas>
+<noscript><img alt="I.35 alternate case" src="propI35a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "I.35",
+        elements: [
+            "B;point;free;60,140",
+            "C;point;free;170,140",
+            "BC;line;connect;B,C",
+            "A;point;free;30,40",
+            "AB;line;connect;A,B",
+            "D;point;parallelogram;A,B,C",
+            "CD;line;connect;C,D",
+            "E;point;lineSegmentSlider;A,D,120,40",
+            "BE;line;connect;B,E",
+            "F;point;parallelogram;E,B,C",
+            "CF;line;connect;C,F",
+            "DE;line;connect;D,E",
+            "AF;line;connect;A,F"
+        ],
+    });
+</script>
+</figure><h4>Rectilinear figures as magnitudes</h4>
+<p>We see how Euclid treats figures as magnitudes by adding as subtracting them. The triangles <em>EAB</em> and <em>FDC</em> are shown directly to be equal. Then the triangle <em>DGE,</em> which is contained in each, is subtracted from each, and Euclid concludes that the remaining trapezia <em>ABGD</em> and <em>EGCF</em> are therefore equal. These trapezia are not congruent, but they do have the same area. Next, the triangle <em>GBC</em> is added to each trapezium to conclude the two parallelograms <em>ABCD</em> and <em>EBCF</em> are equal.</p>
+<p>These are the same kinds of cut-and-paste operations that Euclid used on lines and angles earlier in Book I, but these are applied to rectilinear figures. In later books cut-and-paste operations will be applied to other kinds of magnitudes such as solid figures and arcs of circles.</p>
+<h4>Use of Proposition 35</h4>
+<p>This proposition is used in the next two propositions and in <a href="/elements/books/bookXI/propositions/propXI31/">XI.31</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI36/">I.36</a>, <a href="/elements/books/bookI/propositions/propI37/">I.37</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI31/">XI.31</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

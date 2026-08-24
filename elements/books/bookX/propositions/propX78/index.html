@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 78</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 78</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 78</h1>
+    <div class="statement">If from a straight line there is subtracted a straight line which is incommensurable in square with the whole and which with the whole makes the sum of the squares on them medial, twice the rectangle contained by them medial, and further the squares on them incommensurable with twice the rectangle contained by them, then the remainder is irrational; let it be called <i>that which produces with a medial area a medial whole.</i></div>
+    <div class="just"><a href="/elements/books/bookX/propositions/propX35/">X.35</a></div>
+<p>From the straight line <em>AB</em> let there be subtracted the straight line <em>BC</em> incommensurable in square with <em>AB</em> and fulfilling the given conditions.</p>
+<p>I say that the remainder <em>AC</em> is the irrational straight line called that which produces with a medial area a medial whole.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="320" height="180" tabindex="0"></canvas>
+<noscript><img alt="X.78 diagram" src="propX78.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.78",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "D0;point;free;40,-1000;0;0",
+            "D3;point;free;40,1000;0;0",
+            "A;point;lineSlider;A0,A3,90,0",
+            "B;point;lineSlider;A0,A3,210,0",
+            "C;point;lineSlider;A0,A3,160,0",
+            "AB;line;connect;A,B",
+            "D;point;lineSlider;D0,D3,0,70",
+            "I;point;lineSlider;D0,D3,0,145",
+            "G'';point;perpendicular;D,D3;0;0",
+            "G';point;proportion;D,I,A,B,A,B,D,G'';0;0",
+            "G;point;proportion;D,I,B,C,B,C,G',G''",
+            "E;point;parallelogram;I,D,G",
+            "F';point;proportion;D,I,A,B,B,C,D,G'';0;0",
+            "F;point;extend;D,F',D,F'",
+            "H;point;parallelogram;I,D,F",
+            "IDFH;polygon;quadrilateral;I,D,F,H;0;0;black;random",
+            "HFGE;polygon;quadrilateral;H,F,G,E;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookII/propositions/propII7/">II.7</a></div>
+<p>Set out a rational straight line <em>DI</em>. Apply <em>DE</em>, equal to the sum of the squares on <em>AB</em> and <em>BC</em>, to <em>DI</em> producing <em>DG</em> as breadth. Subtract <em>DH</em> equal twice the rectangle <em>AB</em> by <em>BC</em>. Then the remainder <em>FE</em> equals the square on <em>AC</em>, so that <em>AC</em> is the side of <em>FE</em>.</p>
+<p>Now, since the sum of the squares on <em>AB</em> and <em>BC</em> is medial and equals <em>DE</em>, therefore <em>DE</em> is medial.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX22/">X.22</a></div>
+<p>And it is applied to the rational straight line <em>DI</em> producing <em>DG</em> as breadth, therefore <em>DG</em> is rational and incommensurable in length with <em>DI</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX22/">X.22</a></div>
+<p>Again, since twice the rectangle <em>AB</em> by <em>BC</em> is medial and equals <em>DH</em>, therefore <em>DH</em> is medial. And it is applied to the rational straight line <em>DI</em> producing <em>DF</em> as breadth, therefore <em>DF</em> is also rational and incommensurable in length with <em>DI</em>.</p>
+<p>Since the sum of the squares on <em>AB</em> and <em>BC</em> is incommensurable with twice the rectangle <em>AB</em> by <em>BC</em>, therefore <em>DE</em> is also incommensurable with <em>DH</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX11/">X.11</a>, <a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a></div>
+<p>But <em>DE</em> is to <em>DH</em> as <em>DG</em> is to <em>DF</em>, therefore <em>DG</em> is incommensurable with <em>DF</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX73/">X.73</a></div>
+<p>And both are rational, therefore <em>GD</em> and <em>DF</em> are rational straight lines commensurable in square only. Therefore <em>FG</em> is an apotome.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX20/">X.20</a></div>
+<p>And <em>FH</em> is rational, but the rectangle contained by a rational straight line and an apotome is irrational, and its side is irrational.</p>
+<p>And <em>AC</em> is the side of <em>FE</em>, therefore <em>AC</em> is irrational.</p>
+<p>Let it be called <em>that which produces with a medial area a medial whole</em>.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is used for a few later propositions in Book X starting with <a href="/elements/books/bookX/propositions/propX84/">X.84</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX84/">X.84</a>, <a href="/elements/books/bookX/propositions/propX96/">X.96</a>, <a href="/elements/books/bookX/propositions/propX102/">X.102</a>, <a href="/elements/books/bookX/propositions/propX107/">X.107</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

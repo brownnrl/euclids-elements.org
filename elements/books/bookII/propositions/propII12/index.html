@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book II</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book II</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 12</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 12</h1>
+    <div class="statement">In obtuse-angled triangles the square on the side opposite the obtuse angle is greater than the sum of the squares on the sides containing the obtuse angle by twice the rectangle contained by one of the sides about the obtuse angle, namely that on which the perpendicular falls, and the straight line cut off outside by the perpendicular towards the obtuse angle.</div>
+    <div class="just"><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>Let <em>ABC</em> be an obtuse-angled triangle having the angle <em>BAC</em> obtuse, and draw <em>BD</em> from the point <em>B</em> perpendicular to <em>CA</em> produced.</p>
+<p>I say that the square on <em>BC</em> is greater than the sum of the squares on <em>BA</em> and <em>AC</em> by twice the rectangle <em>CA</em> by <em>AD.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="250" height="230" tabindex="0"></canvas>
+<noscript><img src="propII12.gif" alt="II.12"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "II.12",
+        elements: [
+            "A;point;free;100,200",
+            "B;point;free;30,30",
+            "C;point;free;200,200",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            "BD;line;foot;B,A,C",
+            "D;point;last;BD",
+            "DA;line;connect;D,A"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookII/propositions/propII4/">II.4</a></div>
+<p>Since the straight line <em>CD</em> has been cut at random at the point <em>A,</em> the square on <em>DC</em> equals the sum of the squares on <em>CA</em> and <em>AD</em> and twice the rectangle <em>CA</em> by <em>AD.</em></p>
+<p>Add the square on <em>DB</em> be added to each. Therefore the sum of the squares on <em>CD</em> and <em>DB</em> equals the sum of the squares on <em>CA, AD,</em>  and <em>DB</em> plus twice the rectangle <em>CA</em> by <em>AD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the square on <em>CB</em> equals the sum of the squares on <em>CD</em> and <em>DB,</em> for the angle at <em>D</em> is right,  and the square on <em>AB</em> equals the sum of the squares on <em>AD</em> and <em>DB,</em> therefore the square on <em>CB</em> equals the sum of the squares on <em>CA</em> and <em>AB</em> plus twice the rectangle  <em>CA</em> by <em>AD,</em> so that the square on <em>CB</em> is greater than the sum of the squares on <em>CA</em> and <em>AB</em> by twice the rectangle  <em>CA</em> by <em>AD.</em></p>
+<p>Therefore <em>in obtuse-angled triangles the square on the side opposite the obtuse angle is greater than the sum of the squares on the sides containing the obtuse angle by twice the rectangle contained by one of the sides about the obtuse angle, namely that on which the perpendicular falls, and the straight line cut off outside by the perpendicular towards the obtuse angle.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition for obtuse angles, together with the next one for acute triangles, complement the Pythagorean theorem, <a href="/elements/books/bookI/propositions/propI47/">I.47</a>, for right triangles. Prop.I.47 says that if triangle <em>ABC</em> has a right angle at <em>A,</em> then</p>
+<p>where <em>a, b,</em> and <em>c</em> are the sides opposite the angles <em>A, B,</em> and <em>C,</em> respectively.</p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="280" height="200" tabindex="0"></canvas>
+<noscript><img src="propII12a.gif" alt="Oblique triangle"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Oblique triangle",
+        elements: [
+            "A;point;free;100,160",
+            "C;point;free;40,40",
+            "B;point;free;240,160",
+            "a;line;connect;B,C;black",
+            "c;line;connect;A,B;black",
+            "b;line;connect;A,C;black",
+            "ABC;polygon;triangle;A,B,C;0;0;0;random",
+            "D;point;foot;C,A,B",
+            "h;line;connect;C,D;0;0;gray",
+            "DA;line;connect;D,A;0;0;gray"
+        ],
+    });
+</script>
+</figure><center><i>a</i><sup>2</sup> = <i>b</i><sup>2</sup> + <i>c</i><sup>2</sup></center><p>In this proposition, II.12, the angle <em>A</em> is obtuse rather than right, and the conclusion is that</p>
+<center><i>a</i><sup>2</sup> = <i>b</i><sup>2</sup> + <i>c</i><sup>2</sup> + 2<i>c</i> (<i>AD</i>)</center><p>The next proposition, <a href="/elements/books/bookII/propositions/propII13/">II.13</a> has a similar conclusion, but the hypothesis is that the angle at <em>A</em> is acute rather than obtuse.</p>
+<h4>Law of Cosines</h4>
+<p>This conclusion is very close to the law of cosines for oblique triangles.</p>
+<center><i>a</i><sup>2</sup> = <i>b</i><sup>2</sup> + <i>c</i><sup>2</sup> – 2<i>bc</i> cos <i>A,</i></center><p>since <em>AD</em> equals –<em>b</em> cos <em>A,</em> the cosine of an obtuse angle being negative. Trigonometry was developed some time after the <em>Elements</em> was written, and the negative numbers needed here (for the cosine of an obtuse angle) were not accepted until long after most of trigonometry was developed.  Nonetheless, this proposition and the next may be considered geometric versions of the law of cosines.</p>
+<p>Neither this nor the next is used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

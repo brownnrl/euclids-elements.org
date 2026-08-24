@@ -1,0 +1,189 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 11</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 11</h1>
+    <div class="statement">Cones and cylinders of the same height are to one another as their bases.</div>
+    <p>Let there be cones and cylinders of the same height, let the circles <em>ABCD</em> and <em>EFGH</em> be their bases, <em>KL</em> and <em>MN</em> their axes, and <em>AC</em> and <em>EG</em> the diameters of their bases.</p>
+<p>I say that the circle <em>ABCD</em> is to the circle <em>EFGH</em> as the cone <em>AL</em> is to the cone <em>EN.</em></p>
+<center>
+<canvas id="canvas_0" width="560" height="300" tabindex="0"></canvas>
+<noscript><img alt="XII.11 diagram" src="propXII11.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.11",
+        elements: [
+            "A0;point;free;-1000,160;0;0",
+            "A3;point;free;1000,160;0;0",
+            "A;point;lineSlider;A0,A3,40,0",
+            "C;point;lineSlider;A0,A3,210,0",
+            "K;point;midpoint;A,C",
+            "Kcirc;circle;radius;K,A;0;0;black;random",
+            "B;point;perpendicular;K,A",
+            "D;point;extend;B,K,K,A",
+            "U';point;midpoint;A,B;0;0",
+            "U;point;cutoff;K,U',K,A",
+            "V';point;midpoint;B,C;0;0",
+            "V;point;cutoff;K,V',K,A",
+            "W';point;midpoint;C,D;0;0",
+            "W;point;cutoff;K,W',K,A",
+            "T';point;midpoint;D,A;0;0",
+            "T;point;cutoff;K,T',K,A",
+            "AUBVCWDT;polygon;octagon;A,U,B,V,C,W,D,T;0;0;black;random",
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random",
+            "AC;line;connect;A,C",
+            "E;point;lineSlider;A0,A3,260,0",
+            "G;point;lineSlider;A0,A3,390,0",
+            "M;point;midpoint;E,G",
+            "Mcirc;circle;radius;M,E;0;0;black;random",
+            "F;point;perpendicular;M,E",
+            "H;point;extend;F,M,M,E",
+            "Q';point;midpoint;E,F;0;0",
+            "Q;point;cutoff;M,Q',M,E",
+            "R';point;midpoint;F,G;0;0",
+            "R;point;cutoff;M,R',M,E",
+            "S';point;midpoint;G,H;0;0",
+            "S;point;cutoff;M,S',M,E",
+            "P';point;midpoint;H,E;0;0",
+            "P;point;cutoff;M,P',M,E",
+            "EQFRGSHP;polygon;octagon;E,Q,F,R,G,S,H,P;0;0;black;random",
+            "EFGH;polygon;quadrilateral;E,F,G,H;0;0;black;random",
+            "EG;line;connect;E,G",
+            "L3;point;free;2000,-10000;0;0",
+            "L;point;lineSlider;K,L3,130,40",
+            "KL;line;connect;K,L",
+            "N;point;cutoff;M,L3,K,L",
+            "MN;line;connect;M,N",
+            "O0;point;free;440,240;0;0",
+            "O1;point;free;440,160;0;0",
+            "O2;point;free;480,210;0;0",
+            "O3;point;free;510,240;0;0",
+            "O;polyhedron;parallelepiped;O0,O1,O2,O3;black;0;black;random",
+            "X0;point;free;480,100;0;0",
+            "X1;point;free;480,60;0;0",
+            "X2;point;free;500,80;0;0",
+            "X3;point;free;530,100;0;0",
+            "X;polyhedron;parallelepiped;X0,X1,X2,X3;black;0;black;random"
+        ],
+    });
+</script>
+</center><p>For, if not, then the circle <em>ABCD</em> is to the circle <em>EFGH</em> as the cone <em>AL</em> is either to some solid less than the cone <em>EN</em> or to a greater.</p>
+<p>First, let it be in that ratio to a less solid <em>O,</em> and let the solid <em>X</em> be equal to that by which the solid <em>O</em> is less than the cone <em>EN.</em> Therefore the cone <em>EN</em> equals the sum of the solids <em>O</em> and <em>X.</em></p>
+<div class="just"><a href="/elements/books/bookIV/propositions/propIV6/">IV.6</a></div>
+<p>Inscribe the square <em>EFGH</em> in the circle <em>EFGH.</em> Therefore the square is greater than the half of the circle.</p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII6/">XII.6</a></div>
+<p>Set up from the square <em>EFGH</em> a pyramid of equal height with the cone. Therefore the pyramid so set up is greater than the half of the cone, for if we circumscribe a square about the circle, and set up from it a pyramid of equal height with the cone, then the inscribed pyramid is half of the circumscribed pyramid, for they are to one another as their bases, while the cone is less than the circumscribed pyramid.</p>
+<p>Bisect the circumferences <em>EF, FG, GH,</em> and <em>HE</em> at the points <em>P, Q, R,</em> and <em>S,</em> and join <em>HP, PE, EQ, QF, FR, RG, GS,</em> and <em>SH.</em></p>
+<p>Therefore each of the triangles <em>HPE, EQF, FRG,</em> and <em>GSH</em> is greater than the half of that segment of the circle about it.</p>
+<p>Set up on each of the triangles <em>HPE, EQF, FRG,</em> and <em>GSH</em> a pyramid of equal height with the cone. Therefore each of the pyramids so set up is also greater than the half of that segment of the cone about it.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX1/">X.1</a></div>
+<p>Thus, bisecting the circumferences which are left, joining straight lines, setting up on each of the triangles pyramids of equal height with the cone, and doing this repeatedly, we shall leave some segments of the cone which are less than the solid <em>X.</em></p>
+<p>Let such be left, and let them be the segments on <em>HP, PE, EQ, QF, FR, RG, GS,</em> and <em>SH.</em> Therefore the remainder, the pyramid with the polygonal base <em>HPEQFRGS</em> and the same height as that of the cone, is greater than the solid <em>O.</em></p>
+<p>Now inscribe in the circle <em>ABCD</em> the polygon <em>DTAUBVCW</em> similar and similarly situated to the polygon <em>HPEQFRGS,</em> and on it set up a pyramid of equal height with the cone <em>AL.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII1/">XII.1</a><br><a href="/elements/books/bookXII/propositions/propXII2/">XII.2</a></div>
+<p>Since then the square on <em>AC</em> is to the square on <em>EG</em> as the polygon <em>DTAUBVCW</em> is to the polygon <em>HPEQFRGS,</em> while the square on <em>AC</em> is to the square on <em>EG</em> as the circle <em>ABCD</em> is to the circle <em>EFGH,</em> therefore the circle <em>ABCD</em> is to the circle <em>EFGH</em> as the polygon <em>DTAUBVCW</em> is to the polygon <em>HPEQFRGS.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII6/">XII.6</a></div>
+<p>But the circle <em>ABCD</em> is to the circle <em>EFGH</em> as the cone <em>AL</em> is to the solid 0, and the polygon <em>DTAUBVCW</em> is to the polygon <em>HPEQFRGS</em> as the pyramid with the polygonal base <em>DTAUBVCW</em> and the vertex <em>L</em> is to the pyramid with the polygonal base <em>HPEQFRGS</em> and the vertex <em>N.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a><br><a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>Therefore the cone <em>AL</em> is to the solid <em>O</em> as the pyramid with the polygonal base <em>DTAUBVCW</em> and vertex <em>L</em> is to the pyramid with the polygonal base <em>HPEQFRGS</em> and vertex <em>N.</em> Therefore, alternately the cone <em>AL</em> is to the pyramid in it as the solid <em>O</em> is to the pyramid in the cone <em>EN.</em></p>
+<p>But the cone <em>AL</em> is greater than the pyramid in it, therefore the solid <em>O</em> is also greater than the pyramid in the cone <em>EN.</em></p>
+<p>But it is also less, which is absurd.</p>
+<p>Therefore the cone <em>AL</em> is not to any solid less than the cone <em>EN</em> as the circle <em>ABCD</em> is to the circle <em>EFGH.</em></p>
+<p>Similarly we can prove that neither is the cone <em>EN</em> to any solid less than the cone <em>AL</em> as the circle <em>EFGH</em> is to the circle <em>ABCD.</em></p>
+<p>I say next that neither is the cone <em>AL</em> to any solid greater than the cone <em>EN</em> as the circle <em>ABCD</em> is to the circle <em>EFGH.</em></p>
+<p>For, if possible, let it be in that ratio to a greater solid <em>O.</em> Therefore, inversely the circle <em>EFGH</em> is to the circle <em>ABCD</em> as the solid <em>O</em> is to the cone <em>AL.</em></p>
+<p>But the solid <em>O</em> is to the cone <em>AL</em> as the cone <em>EN</em> to some solid less than the cone <em>AL,</em> therefore the circle <em>EFGH</em> is to the circle <em>ABCD</em> as the cone <em>EN</em> is to some solid less than the cone <em>AL,</em> which was proved impossible.</p>
+<p>Therefore the cone <em>AL</em> is not to any solid greater than the cone <em>EN</em> as the circle <em>ABCD</em> is to the circle <em>EFGH.</em></p>
+<p>But it was proved that neither is it in this ratio to a less solid, therefore the circle <em>ABCD</em> is to the circle <em>EFGH</em> as the cone <em>AL</em> is to the cone <em>EN.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII10/">XII.10</a></div>
+<p>But the cone is to the cone as the cylinder is to the cylinder, for each is triple each. Therefore the circle <em>ABCD</em> is to the circle <em>EFGH</em> as are the cylinders on them of equal height.</p>
+<p>Therefore, <em>cones and cylinders of the same height are to one another as their bases.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Use of this proposition</h4>
+<p>This proposition is used in the proofs of <a href="/elements/books/bookXII/propositions/propXII13/">XII.13</a> and <a href="/elements/books/bookXII/propositions/propXII14/">XII.14</a> when the cylinders under question have the same height and equal bases, and in the proof of <a href="/elements/books/bookXII/propositions/propXII15/">XII.15</a> for cylinders of different heights.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII13/">XII.13</a>, <a href="/elements/books/bookXII/propositions/propXII14/">XII.14</a>, <a href="/elements/books/bookXII/propositions/propXII15/">XII.15</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

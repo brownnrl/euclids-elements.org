@@ -1,0 +1,134 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 30</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 30</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 30</h1>
+    <div class="statement">To find two rational straight lines commensurable in square only such that the square on the greater is greater than the square on the less by the square on a straight line incommensurable in length with the greater.</div>
+    <p>Set out a rational straight line <em>AB,</em> and two square numbers <em>CE</em> and <em>ED</em> such that their sum <em>CD</em> is not square. Describe the semicircle <em>AFB</em> on <em>AB.</em> Let it be contrived that <em>DC</em> is to <em>CE</em> as the square on <em>BA</em> is to the square on <em>AF,</em> and join <em>FB.</em> <div class="just"><a href="/elements/books/bookX/propositions/propX29/#lemma2">X.29.Lem.2</a><br><a href="/elements/books/bookX/propositions/propX6/#cor">X.6,Cor.</a></div></p>
+<p>Then, in a similar manner to the preceding, we can prove that <em>BA</em> and <em>AF</em> are rational straight lines commensurable in square only.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="200" tabindex="0"></canvas>
+<noscript><img alt="X.30 diagram" src="propX30.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.30",
+        elements: [
+            "A0;point;free;-1000,130;0;0",
+            "A3;point;free;1000,130;0;0",
+            "C0;point;free;-1000,170;0;0",
+            "C3;point;free;1000,170;0;0",
+            "A;point;lineSlider;A0,A3,40,0",
+            "B;point;lineSlider;A0,A3,240,0",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;C0,C3,50,0",
+            "D;point;lineSlider;C0,C3,200,0",
+            "CD;line;connect;C,D;0;0;green",
+            "E;point;lineSlider;C0,C3,150,0",
+            "M;point;midpoint;A,B;0;0",
+            "ABF;circle;radius;M,A;0;0;0;0",
+            "G;point;meanProportional;D,C,C,E,C,D;0;0",
+            "F';point;proportion;D,C,C,G,A,B,A,B;0;0",
+            "AFcirc;circle;radius;A,F';0;0;0;0",
+            "FF'';line;bichord;ABF,AFcirc;0;0;0",
+            "F;point;first;FF''",
+            "semi;sector;arc;B,F,A;0;0;black;random",
+            "tri;polygon;triangle;A,B,F;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookV/propositions/propV19/#cor">V.19.Cor</a><br><a href="/elements/books/bookIII/propositions/propIII31/">III.31</a>, <a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>Since <em>DC</em> is to <em>CE</em> as the square on <em>BA</em> is to the square on <em>AF,</em> therefore, in conversion, <em>CD</em> is to <em>DE</em> as the square on <em>AB</em> is to the square on <em>BF.</em></p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX9/">X.9</a></div>
+<p>But <em>CD</em> does not have to <em>DE</em> the ratio which a square number has to a square number, therefore neither has the square on <em>AB</em> to the square on <em>BF</em> the ratio which a square number has to a square number. Therefore <em>AB</em> is incommensurable in length with <em>BF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>And the square on <em>AB</em> is greater than the square on <em>AF</em> by the square on <em>FB</em> incommensurable with <em>AB.</em></p>
+<p>Therefore <em>AB</em> and <em>AF</em> are rational straight lines commensurable in square only, and the square on <em>AB</em> is greater than the square on <em>AF</em> by the square on <em>FB</em> incommensurable in length with <em>AB.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>With the same construction as in the previous proposition, just note at the end that two the lines <em>AB</em> and <em>AF</em> are incommensurable.</p>
+<p>This proposition is used in the next three propositions.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX31/">X.31</a>, <a href="/elements/books/bookX/propositions/propX32/">X.32</a>, <a href="/elements/books/bookX/propositions/propX33/">X.33</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

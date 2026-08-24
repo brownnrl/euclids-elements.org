@@ -1,0 +1,177 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 25</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 25</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 25</h1>
+    <div class="statement">If two triangles have two sides equal to two sides respectively, but have the base greater than the base, then they also have the one of the angles contained by the equal straight lines greater than the other.</div>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> and <span class="elem-ref" data-elem="DEF">DEF</span> be two triangles having two sides <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="AC">AC</span> equal to two sides <span class="elem-ref" data-elem="DE">DE</span> and <span class="elem-ref" data-elem="DF">DF</span> respectively, namely <span class="elem-ref" data-elem="AB">AB</span> to <span class="elem-ref" data-elem="DE">DE</span>, and <span class="elem-ref" data-elem="AC">AC</span> to <span class="elem-ref" data-elem="DF">DF</span>, and let the base <span class="elem-ref" data-elem="BC">BC</span> be greater than the base <span class="elem-ref" data-elem="EF">EF</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="220" tabindex="0"></canvas>
+<noscript><img alt="I.25 diagram" src="propI25.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.25",
+        elements: [
+            "D;point;free;210,40",
+            "E;point;free;200,180",
+            "F;point;free;260,180",
+            "DEF;polygon;triangle;D,E,F;0;0;0,0,0;random",
+            "A;point;free;70,40",
+            "ABcirc;circle;radius;A,D,E;0;0;0;0",
+            "ACcirc;circle;radius;A,D,F;0;0;0;0",
+            "B;point;circleSlider;ABcirc,30,170",
+            "C;point;circleSlider;ACcirc,135,178",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;random",
+            // Angle markers: the contained angle of each triangle (#91).
+            // Named vertex-in-the-middle so they don't collide with the
+            // ABC / DEF triangle polygons.
+            "BAC;sector;angleMarker;A,B,C",
+            "EDF;sector;angleMarker;D,E,F",
+            // Zero-color side hover targets (the polygons give no per-edge
+            // hover): the two equal-side pairs and the two compared bases.
+            "AB;line;connect;A,B;0;0;0",
+            "AC;line;connect;A,C;0;0;0",
+            "BC;line;connect;B,C;0;0;0",
+            "DE;line;connect;D,E;0;0;0",
+            "DF;line;connect;D,F;0;0;0",
+            "EF;line;connect;E,F;0;0;0"
+        ],
+        slides: [
+            { text: "Let {ABC} and {DEF} be two triangles having two sides {AB} and {AC} equal to two sides {DE} and {DF} respectively, namely {AB} to {DE}, and {AC} to {DF}, and let the base {BC} be greater than the base {EF}.",
+              visible: ["ABC","DEF"],
+              highlighted: ["AB","AC","DE","DF","BC","EF"] },
+            { text: "I say that the angle {BAC} is also greater than the angle {EDF}.",
+              visible: ["ABC","DEF","BAC","EDF"],
+              highlighted: ["BAC","EDF"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "BAC", name: geomlib.A.Sector.sweep },
+                  { elem: "EDF", name: geomlib.A.Sector.sweep } ] } },
+            { text: "If not, it either equals it or is less.",
+              visible: ["ABC","DEF","BAC","EDF"],
+              highlighted: ["BAC","EDF"] },
+            { text: "Now the angle {BAC} does not equal the angle {EDF}, for then the base {BC} would equal the base {EF}, but it is not. Therefore the angle {BAC} does not equal the angle {EDF}.",
+              visible: ["ABC","DEF","BAC","EDF"],
+              highlighted: ["BAC","EDF","BC","EF"],
+              justifications: [{ ref: "I.4" }] },
+            { text: "Neither is the angle {BAC} less than the angle {EDF}, for then the base {BC} would be less than the base {EF}, but it is not. Therefore the angle {BAC} is not less than the angle {EDF}.",
+              visible: ["ABC","DEF","BAC","EDF"],
+              highlighted: ["BAC","EDF","BC","EF"],
+              justifications: [{ ref: "I.24" }] },
+            { text: "But it was proved that it is not equal either. Therefore the angle {BAC} is greater than the angle {EDF}.",
+              visible: ["ABC","DEF","BAC","EDF"],
+              highlighted: ["BAC","EDF"] },
+            { text: "Therefore if two triangles have two sides equal to two sides respectively, but have the base greater than the base, then they also have the one of the angles contained by the equal straight lines greater than the other.",
+              visible: ["ABC","DEF","BAC","EDF"],
+              highlighted: ["BC","EF","BAC","EDF"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.4":  "/elements/books/bookI/propositions/propI4/",
+        "I.24": "/elements/books/bookI/propositions/propI24/"
+    });
+</script>
+</figure><p>I say that the angle <span class="elem-ref" data-elem="BAC">BAC</span> is also greater than the angle <span class="elem-ref" data-elem="EDF">EDF</span>.</p>
+<p>If not, it either equals it or is less.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Now the angle <span class="elem-ref" data-elem="BAC">BAC</span> does not equal the angle <span class="elem-ref" data-elem="EDF">EDF</span>, for then the base <span class="elem-ref" data-elem="BC">BC</span> would equal the base <span class="elem-ref" data-elem="EF">EF</span>, but it is not. Therefore the angle <span class="elem-ref" data-elem="BAC">BAC</span> does not equal the angle <span class="elem-ref" data-elem="EDF">EDF</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI24/">I.24</a></div>
+<p>Neither is the angle <span class="elem-ref" data-elem="BAC">BAC</span> less than the angle <span class="elem-ref" data-elem="EDF">EDF</span>, for then the base <span class="elem-ref" data-elem="BC">BC</span> would be less than the base <span class="elem-ref" data-elem="EF">EF</span>, but it is not. Therefore the angle <span class="elem-ref" data-elem="BAC">BAC</span> is not less than the angle <span class="elem-ref" data-elem="EDF">EDF</span>.</p>
+<p>But it was proved that it is not equal either. Therefore the angle <span class="elem-ref" data-elem="BAC">BAC</span> is greater than the angle <span class="elem-ref" data-elem="EDF">EDF</span>.</p>
+<p>Therefore <em>if two triangles have two sides equal to two sides respectively, but have the base greater than the base, then they also have the one of the angles contained by the equal straight lines greater than the other.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The conclusions of this proposition and the previous are partial converses of each other. Together they say that if two triangles have two sides equal to two sides respectively, then the base greater than the base if and only if the one of the angles contained by the equal straight lines greater than the other.</p>
+<h4>Use of Proposition 25</h4>
+<p>This proposition is not used in the rest of Book I, but it is used in <a href="/elements/books/bookXI/propositions/propXI20/">XI.20</a> and <a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI20/">XI.20</a>, <a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

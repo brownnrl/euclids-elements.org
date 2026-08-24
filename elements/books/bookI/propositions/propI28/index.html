@@ -1,0 +1,197 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 28</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 28</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 28</h1>
+    <div class="statement">If a straight line falling on two straight lines makes the exterior angle equal to the interior and opposite angle on the same side, or the sum of the interior angles on the same side equal to two right angles, then the straight lines are parallel to one another.</div>
+    <p>Let the straight line <span class="elem-ref" data-elem="EF">EF</span> falling on the two straight lines <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span> make the exterior angle <span class="elem-ref" data-elem="EGB">EGB</span> equal to the interior and opposite angle <span class="elem-ref" data-elem="GHD">GHD</span>, or the sum of the interior angles on the same side, namely <span class="elem-ref" data-elem="BGH">BGH</span> and <span class="elem-ref" data-elem="GHD">GHD</span>, equal to two right angles.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="230" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.28 diagram" src="propI28.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.28",
+        elements: [
+            "A;point;free;40,80",
+            "B;point;free;190,80",
+            "AB;line;connect;A,B",
+            "C;point;free;40,120",
+            "D';point;parallelogram;C,A,B;0;0",
+            "D;point;lineSlider;C,D',190,40",
+            "CD;line;connect;C,D",
+            "E;point;free;70,40",
+            "F;point;free;130,170",
+            "EF;line;connect;E,F",
+            "G;point;intersection;A,B,E,F",
+            "H;point;intersection;C,D,E,F",
+            // Angle markers (#91). At G the transversal crosses AB: ∠EGB
+            // (exterior), ∠AGH (alternate, vertical to ∠EGB), ∠BGH
+            // (co-interior). At H it crosses CD: ∠GHD. Explicit px radii
+            // pin the size — the #103 auto-nesting otherwise pushes a
+            // same-vertex marker out to ~31–40px. ∠EGB/∠AGH are vertical
+            // (opposite quadrants) so share 22px; ∠BGH shares an arm with
+            // both, so a smaller 14px keeps it distinct.
+            "EGB;sector;angleMarker;G,E,B,22",
+            "AGH;sector;angleMarker;G,A,H,22",
+            "BGH;sector;angleMarker;G,B,H,14",
+            "GHD;sector;angleMarker;H,G,D,22"
+        ],
+        slides: [
+            { text: "Let the straight line {EF} falling on the two straight lines {AB} and {CD} make the exterior angle {EGB} equal to the interior and opposite angle {GHD}, or the sum of the interior angles on the same side, namely {BGH} and {GHD}, equal to two right angles.",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH"],
+              highlighted: ["EF","AB","CD","EGB","GHD","BGH"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "EGB", name: geomlib.A.Sector.sweep },
+                  { elem: "GHD", name: geomlib.A.Sector.sweep } ] } },
+            { text: "I say that {AB} is parallel to {CD}.",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH"],
+              highlighted: ["AB","CD"] },
+            { text: "Since the angle {EGB} equals the angle {GHD}, and the angle {EGB} equals the angle {AGH}, therefore the angle {AGH} equals the angle {GHD}.",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH","AGH"],
+              highlighted: ["EGB","GHD","AGH"],
+              transition: { animations: [ { elem: "AGH", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.15" }, { ref: "C.N.1" }] },
+            { text: "And they are alternate, therefore {AB} is parallel to {CD}.",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH","AGH"],
+              highlighted: ["AGH","GHD","AB","CD"],
+              justifications: [{ ref: "I.27" }] },
+            { text: "Next, since the sum of the angles {BGH} and {GHD} equals two right angles,",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH","AGH"],
+              highlighted: ["BGH","GHD"] },
+            { text: "and the sum of the angles {AGH} and {BGH} also equals two right angles,",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH","AGH"],
+              highlighted: ["AGH","BGH"],
+              justifications: [{ ref: "I.13" }, { ref: "I.Post.4" }] },
+            { text: "therefore the sum of the angles {AGH} and {BGH} equals the sum of the angles {BGH} and {GHD}.",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH","AGH"],
+              highlighted: ["AGH","BGH","GHD"],
+              justifications: [{ ref: "C.N.1" }] },
+            { text: "Subtract the angle {BGH} from each. Therefore the remaining angle {AGH} equals the remaining angle {GHD}.",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH","AGH"],
+              highlighted: ["BGH","AGH","GHD"],
+              justifications: [{ ref: "C.N.3" }] },
+            { text: "And they are alternate, therefore {AB} is parallel to {CD}.",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH","AGH"],
+              highlighted: ["AGH","GHD","AB","CD"],
+              justifications: [{ ref: "I.27" }] },
+            { text: "Therefore if a straight line falling on two straight lines makes the exterior angle equal to the interior and opposite angle on the same side, or the sum of the interior angles on the same side equal to two right angles, then the straight lines are parallel to one another.",
+              visible: ["AB","CD","EF","G","H","EGB","GHD","BGH","AGH"],
+              highlighted: ["AB","CD"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.4": "/elements/books/bookI/postulates/post4/",
+        "I.13":     "/elements/books/bookI/propositions/propI13/",
+        "I.15":     "/elements/books/bookI/propositions/propI15/",
+        "I.27":     "/elements/books/bookI/propositions/propI27/",
+        "C.N.1":    "/elements/books/bookI/commonnotions/cn1/",
+        "C.N.3":    "/elements/books/bookI/commonnotions/cn3/"
+    });
+</script>
+</figure><p>I say that <span class="elem-ref" data-elem="AB">AB</span> is parallel to <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI15/">I.15</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a><br><a href="/elements/books/bookI/propositions/propI27/">I.27</a></div>
+<p>Since the angle <span class="elem-ref" data-elem="EGB">EGB</span> equals the angle <span class="elem-ref" data-elem="GHD">GHD</span>, and the angle <span class="elem-ref" data-elem="EGB">EGB</span> equals the angle <span class="elem-ref" data-elem="AGH">AGH</span>, therefore the angle <span class="elem-ref" data-elem="AGH">AGH</span> equals the angle <span class="elem-ref" data-elem="GHD">GHD</span>. And they are alternate, therefore <span class="elem-ref" data-elem="AB">AB</span> is parallel to <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI13/">I.13</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a><br><a href="/elements/books/bookI/postulates/post4/">I.Post.4</a></div>
+<p>Next, since the sum of the angles <span class="elem-ref" data-elem="BGH">BGH</span> and <span class="elem-ref" data-elem="GHD">GHD</span> equals two right angles, and the sum of the angles <span class="elem-ref" data-elem="AGH">AGH</span> and <span class="elem-ref" data-elem="BGH">BGH</span> also equals two right angles, therefore the sum of the angles <span class="elem-ref" data-elem="AGH">AGH</span> and <span class="elem-ref" data-elem="BGH">BGH</span> equals the sum of the angles <span class="elem-ref" data-elem="BGH">BGH</span> and <span class="elem-ref" data-elem="GHD">GHD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn3/">C.N.3</a><br><a href="/elements/books/bookI/propositions/propI27/">I.27</a></div>
+<p>Subtract the angle <span class="elem-ref" data-elem="BGH">BGH</span> from each. Therefore the remaining angle <span class="elem-ref" data-elem="AGH">AGH</span> equals the remaining angle <span class="elem-ref" data-elem="GHD">GHD</span>. And they are alternate, therefore <span class="elem-ref" data-elem="AB">AB</span> is parallel to <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<p>Therefore <em>if a straight line falling on two straight lines makes the exterior angle equal to the interior and opposite angle on the same side, or the sum of the interior angles on the same side equal to two right angles, then the straight lines are parallel to one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition states two useful minor variants of the previous proposition. The three statements differ only in their hypotheses which are easily seen to be equivalent with the help of proposition <a href="/elements/books/bookI/propositions/propI13/">I.13</a>.</p>
+<h4>Use of Proposition 28</h4>
+<p>This proposition is used in <a href="/elements/books/bookIV/propositions/propIV7/">IV.7</a>, <a href="/elements/books/bookVI/propositions/propVI4/">VI.4</a>, and a couple times in Book XI.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV7/">IV.7</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI4/">VI.4</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI6/">XI.6</a>, <a href="/elements/books/bookXI/propositions/propXI18/">XI.18</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IV</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IV</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 8</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 8</h1>
+    <div class="statement">To inscribe a circle in a given square.</div>
+    <p>Let <em>ABCD</em> be the given square.</p>
+<p>It is required to inscribe a circle in the given square <em>ABCD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI10/">I.10</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Bisect the straight lines <em>AD</em> and <em>AB</em> at the points <em>E</em> and <em>F</em> respectively. Draw <em>EH</em> through <em>E</em> parallel to either <em>AB</em> or <em>CD,</em> and draw <em>FK</em> through <em>F</em> parallel to either <em>AD</em> or <em>BC.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="280" tabindex="0"></canvas>
+<noscript><img alt="IV.8 diagram" src="propIV8.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IV.8",
+        pivot: "G",
+        elements: [
+            "A;point;free;40,40",
+            "B;point;free;40,240",
+            "ABCD;polygon;square;A,B;0;0;black;random",
+            "C;point;vertex;ABCD,3",
+            "D;point;vertex;ABCD,4",
+            "E;point;midpoint;A,D",
+            "F;point;midpoint;A,B",
+            "H;point;midpoint;B,C",
+            "K;point;midpoint;C,D",
+            "EH;line;connect;E,H",
+            "FK;line;connect;F,K",
+            "G;point;intersection;EH,FK;black;green",
+            "EFHK;circle;radius;G,E;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
+<p>Therefore each of the figures <em>AK, KB, AH, HD, AG, GC, BG,</em> and <em>GD</em> is a parallelogram, and their opposite sides are evidently equal.</p>
+<p>Now, since <em>AD</em> equals <em>AB,</em> and <em>AE</em> is half of <em>AD,</em> and <em>AF</em> half of <em>AB,</em> therefore <em>AE</em> equals <em>AF,</em> so that the opposite sides are also equal, therefore <em>FG</em> equals <em>GE.</em></p>
+<p>Similarly we can prove that each of the straight lines <em>GH</em> and <em>GK</em> equals each of the straight lines <em>FG</em> and <em>GE.</em> Therefore the four straight lines <em>GE, GF,</em> <em>GH,</em> and <em>GK</em> equal one another.</p>
+<p>Therefore the circle described with center <em>G</em> and radius one of the straight lines <em>GE,</em> <em>GF, GH,</em> or <em>GK</em> also passes through the remaining points.</p>
+<p>And it touches the straight lines <em>AB, BC, CD,</em> and <em>DA,</em> because the angles at <em>E, F, H,</em> and <em>K</em> are right.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII16/">III.16</a></div>
+<p>For, if the circle cuts <em>AB, BC, CD,</em> or <em>DA,</em> the straight line drawn at right angles to the diameter of the circle from its end will fall within the circle, which was proved absurd. Therefore the circle described with center <em>G</em> and radius one of the straight lines <em>GE, GF, GH,</em> or <em>GK</em> does not cut the straight lines <em>AB, BC, CD,</em> and <em>DA.</em></p>
+<p>Therefore it touches them, and has been inscribed in the square <em>ABCD.</em></p>
+<p>Therefore a circle has been inscribed in the given square.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This is a straightforward proposition, one of four in the sequence IV.6 through IV.9 about circles and squares.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

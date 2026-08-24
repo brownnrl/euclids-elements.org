@@ -1,0 +1,185 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 25</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 25</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 25</h1>
+    <div class="statement">Given a segment of a circle, to describe the complete circle of which it is a segment.</div>
+    <p>Let <em>ABC</em> be the given segment of a circle.</p>
+<p>It is required to describe the complete circle belonging to the segment <em>ABC,</em> that is, of which it is a segment.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI10/">I.10</a><br><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
+<p>Bisect <em>AC</em> at <em>D,</em> draw <em>DB</em> from the point <em>D</em> at right angles to <em>AC,</em> and join <em>AB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="230" height="230" tabindex="0"></canvas>
+<noscript><img alt="III.25a diagram" src="propIII25a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.25a",
+        pivot: "E",
+        elements: [
+            "A;point;free;60,30",
+            "C;point;free;60,200",
+            "AC;line;connect;A,C",
+            "D;point;midpoint;AC",
+            "DB;line;perpendicular;D,A;0;0;0",
+            "B;point;lineSlider;DB,30,115",
+            "E;point;circumcenter;A,B,C;black;green",
+            "BE;line;connect;B,E",
+            "AE;line;connect;A,E",
+            "CE;line;connect;C,E",
+            "ABC;sector;sector;E,A,C;0;0;black;random",
+            "AB;line;connect;A,B",
+            "ACE;polygon;triangle;A,C,E;0;0;0;background"
+        ],
+    });
+</script>
+</figure><p>The angle <em>ABD</em> is then greater than, equal to, or less than the angle <em>BAD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a></div>
+<p>First let it be greater.  Construct the angle <em>BAE</em> on the straight line <em>BA,</em> and at the point <em>A</em> on it, equal to the angle <em>ABD.</em>  Draw <em>DB</em> through to <em>E,</em> and join <em>EC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
+<p>Then, since the angle <em>ABE</em> equals the angle <em>BAE,</em> the straight line <em>EB</em> also equals <em>EA.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>And, since <em>AD</em> equals <em>DC,</em> and <em>DE</em> is common, the two sides <em>AD</em> and <em>DE</em> equal the two sides <em>CD</em> and <em>DE</em> respectively, and the angle <em>ADE</em> equals the angle <em>CDE,</em> for each is right, therefore the base <em>AE</em> equals the base <em>CE.</em></p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="150" height="200" tabindex="0"></canvas>
+<noscript><img alt="III.25b diagram" src="propIII25b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "III.25b",
+        pivot: "D",
+        elements: [
+            "A;point;free;120,30",
+            "C;point;free;120,170",
+            "AC;line;connect;A,C",
+            "D;point;midpoint;AC;black;green",
+            "DB;line;perpendicular;D,A",
+            "B;point;last;DB",
+            "ABC;sector;arc;A,B,C;0;0;black;random",
+            "AB;line;connect;A,B"
+        ],
+    });
+</script>
+</figure><p>But <em>AE</em> was proved equal to <em>BE,</em> therefore be also equals <em>CE.</em>  Therefore the three straight lines <em>AE, EB,</em> and <em>EC</em> equal one another.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII9/">III.9</a></div>
+<p>Therefore the circle drawn with center <em>E</em> and radius one of the straight lines <em>AE, EB,</em> or <em>EC</em> also passes through the remaining points and has been completed.</p>
+<p>Therefore, given a segment of a circle, the complete circle has been described.</p>
+<hr width="30%">
+
+<figure class="diagram">
+<canvas id="canvas_2" width="250" height="230" tabindex="0"></canvas>
+<noscript><img alt="III.25c diagram" src="propIII25c.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_2",
+        background: "35,19,100",
+        title: "III.25c",
+        pivot: "E",
+        elements: [
+            "A;point;free;200,30",
+            "C;point;free;200,200",
+            "AC;line;connect;A,C",
+            "D;point;midpoint;AC",
+            "DB;line;perpendicular;D,A;0;0;0",
+            "B;point;lineSlider;DB,30,115",
+            "E;point;circumcenter;A,B,C;black;green",
+            "BD;line;connect;B,D",
+            "AE;line;connect;A,E",
+            "ABC;sector;sector;E,A,C",
+            "AB;line;connect;A,B",
+            "ACE;polygon;triangle;A,C,E;0;0;0"
+        ],
+    });
+</script>
+</figure><p>And it is manifest that the segment <em>ABC</em> is less than a semicircle, because the center <em>E</em> happens to be outside it.</p>
+<p>Similarly, even if the angle <em>ABD</em> equals the angle <em>BAD</em> and <em>AD</em> being equal to each of the two <em>BD</em> and <em>DC,</em> the three straight lines <em>DA, DB,</em> and <em>DC</em> will equal one another, <em>D</em> will be the center of the completed circle, and <em>ABC</em> will clearly be a semicircle.</p>
+<hr width="30%">
+
+<div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a></div>
+<p>But, if the angle <em>ABD</em> is less than the angle <em>BAD,</em> and if we construct, on the straight line <em>BA</em> and at the point <em>A</em> on it, an angle equal to the angle <em>ABD,</em> the center will fall on <em>DB</em> within the segment <em>ABC,</em> and the segment <em>ABC</em> will clearly be greater than a semicircle.</p>
+<p>Therefore, given a segment of a circle, the complete circle has been described.</p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The construction in this proposition is not used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

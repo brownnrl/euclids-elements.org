@@ -1,0 +1,138 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 4</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 4</h1>
+    <div class="statement">If a straight line is cut in extreme and mean ratio, then the sum of the squares on the whole and on the lesser segment is triple the square on the greater segment.</div>
+    <p>Let <em>AB</em> be a straight line cut in extreme and mean ratio at <em>C,</em> and let <em>AC</em> be the greater segment.</p>
+<p>I say that the sum of the squares on <em>AB</em> and <em>BC</em> is triple the square on <em>CA.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="250" tabindex="0"></canvas>
+<noscript><img alt="XIII.4 diagram" src="propXIII4.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.4",
+        elements: [
+            "A;point;free;30,30",
+            "B;point;free;220,30",
+            "BADE;polygon;square;B,A;0;0;black;random",
+            "D;point;vertex;BADE,3",
+            "E;point;vertex;BADE,4",
+            "X;point;midpoint;A,B;0;0",
+            "Y;point;extend;A,X,X,E;0;0",
+            "C;point;cutoff;A,B,B,Y",
+            "BD;line;connect;B,D",
+            "G;point;parallelogram;C,B,E",
+            "CG;line;connect;C,G",
+            "F;point;intersection;BD,CG",
+            "H;point;parallelogram;A,C,F",
+            "K;point;parallelogram;H,A,B",
+            "HK;line;connect;H,K",
+            "F';point;midpoint;F,K;0;0",
+            "L;point;cutoff;F,H,F,F'",
+            "M;point;cutoff;F,B,F,F'",
+            "N;point;cutoff;F,G,F,F'",
+            "NML;sector;arc;N,M,L;0;0;gray"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a></div>
+<p>Describe the square <em>ADEB</em> on <em>AB,</em> and draw the figure.</p>
+<div class="just"><a href="/elements/books/bookVI/definitions/defVI3/">VI.Def.3</a>, <a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a></div>
+<p>Since, then, <em>AB</em> is cut in extreme and mean ratio at <em>C,</em> and <em>AC</em> is the greater segment, therefore the rectangle <em>AB</em> by <em>BC</em> equals the square on <em>AC.</em></p>
+<p>And <em>AK</em> is the rectangle <em>AB</em> by <em>BC,</em> and <em>HG</em> is the square on <em>AC,</em> therefore <em>AK</em> equals <em>HG.</em></p>
+<p>And, since <em>AF</em> equals <em>FE,</em> add <em>CK</em> to each, therefore the whole <em>AK</em> equals the whole <em>CE.</em> Therefore the sum of <em>AK</em> and <em>CE</em> is double <em>AK.</em></p>
+<p>But the sum of <em>AK</em> and <em>CE</em> is the sum of the gnomon <em>LMN</em> and the square <em>CK,</em> therefore the sum of the gnomon <em>LMN</em> and the square <em>CK</em> is double <em>AK.</em></p>
+<p>But, further, <em>AK</em> was also proved equal to <em>HG,</em> therefore the sum of the gnomon <em>LMN</em> and the squares <em>CK</em> and <em>HG</em> is triple the square <em>HG.</em></p>
+<p>And the sum of the gnomon <em>LMN</em> and the squares <em>CK</em> and <em>HG</em> is the sum of the whole square <em>AE</em> and <em>CK,</em> which are the squares on <em>AB</em> and <em>BC,</em> while <em>HG</em> is the square on <em>AC.</em></p>
+<p>Therefore the sum of the squares on <em>AB</em> and <em>BC</em> is triple the square on <em>AC.</em></p>
+<p>Therefore, <em>if a straight line is cut in extreme and mean ratio, then the sum of the squares on the whole and on the lesser segment is triple the square on the greater segment.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Use of this proposition</h4>
+<p>This and the next three propositions are all preparatory to the construction of a dodecahedron in proposition <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

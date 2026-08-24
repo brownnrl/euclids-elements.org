@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 2</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 2</h1>
+    <div class="statement">If the square on a straight line is five times the square on a segment on it, then, when the double of the said segment is cut in extreme and mean ratio, the greater segment is the remaining part of the original straight line.</div>
+    <p>Let the square on the straight line <em>AB</em> be five times the square on the segment <em>AC</em> of it, and let <em>CD</em> be double <em>AC.</em></p>
+<p>I say that, when <em>CD</em> is cut in extreme and mean ratio, then the greater segment is <em>CB.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="240" height="320" tabindex="0"></canvas>
+<noscript><img alt="XIII.2 diagram" src="propXIII2.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.2",
+        elements: [
+            "B;point;free;150,160",
+            "A;point;free;30,160",
+            "ABFL;polygon;square;A,B;0;0;black;random",
+            "F;point;vertex;ABFL,3",
+            "L;point;vertex;ABFL,4",
+            "A1;point;perpendicular;A,B;0;0",
+            "B1;point;perpendicular;B,A;0;0",
+            "B2;point;extend;B,B1,B,B1;0;0",
+            "B4;point;extend;B,B2,B,B2;0;0",
+            "AB/5;point;intersection;A,B,A1,B4;0;0",
+            "C;point;meanProportional;A,B,A,AB/5,A,B",
+            "D';point;extend;A,C,A,C;0;0",
+            "D;point;extend;A,D',A,C",
+            "DCKG;polygon;square;D,C;0;0;black;random",
+            "K;point;vertex;DCKG,3",
+            "G;point;vertex;DCKG,4",
+            "AF;line;connect;A,F",
+            "E;point;intersection;F,B,K,G",
+            "BE;line;connect;B,E",
+            "Q;point;intersection;F,L,C,K;0;0",
+            "CQ;line;connect;C,Q",
+            "H;point;intersection;CQ,AF",
+            "P;point;parallelogram;A,C,H;0;0",
+            "R;point;intersection;P,H,B,F;0;0",
+            "PR;line;connect;P,R",
+            "O;point;midpoint;H,C",
+            "M;point;cutoff;H,P,H,O",
+            "N;point;cutoff;H,F,H,O",
+            "ONM;sector;arc;O,N,M;0;0;gray"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a></div>
+<p>Describe the squares <em>AF</em> and <em>CG</em> on <em>AB</em> and <em>CD</em> respectively, draw the figure in <em>AF,</em> and draw <em>BE</em> through.</p>
+<p>Now, since the square on <em>BA</em> is five times the square on <em>AC,</em> therefore <em>AF</em> is five times <em>AH.</em> Therefore the gnomon <em>MNO</em> is quadruple <em>AH.</em></p>
+<p>And, since <em>DC</em> is double <em>CA,</em> therefore the square on <em>DC</em> is quadruple the square on <em>CA,</em> that is, <em>CG</em> is quadruple <em>AH.</em> But the gnomon <em>MNO</em> is also quadruple <em>AH,</em> therefore the gnomon <em>MNO</em> equals <em>CG.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a></div>
+<p>And, since <em>DC</em> is double <em>CA,</em> while <em>DC</em> equals <em>CK,</em> and <em>AC</em> equals <em>CH,</em> therefore <em>KB</em> is also double <em>BH.</em></p>
+<p>But the sum of <em>LH</em> and <em>HB</em> is also double <em>HB,</em> therefore <em>KB</em> equals the sum of <em>LH</em> and <em>HB.</em></p>
+<p>But the whole gnomon <em>MNO</em> was also proved equal to the whole <em>CG,</em> therefore the remainder <em>HF</em> equals <em>BG.</em></p>
+<p>And <em>BG</em> is the rectangle <em>CD</em> by <em>DB,</em> for <em>CD</em> equals <em>DG,</em> and <em>HF</em> is the square on <em>CB,</em> therefore the rectangle <em>CD</em> by <em>DB</em> equals the square on <em>CB.</em></p>
+<p>Therefore <em>DC</em> is to <em>CB</em> as <em>CB</em> is to <em>BD.</em> But <em>DC</em> is greater than <em>CB,</em> therefore <em>CB</em> is also greater than <em>BD.</em></p>
+<p>Therefore, when the straight line <em>CD</em> is cut in extreme and mean ratio, <em>CB</em> is the greater segment.</p>
+<div class="qed">Q.E.D.</div><h3>Lemma</h3>
+<p>That the double <em>AC</em> is greater than <em>BC</em> is to be proved thus.</p>
+<p>If not, let <em>BC</em> be, if possible, double <em>CA.</em></p>
+<p>Therefore the square on <em>BC</em> is quadruple the square on <em>CA.</em> Therefore the sum of the squares on <em>BC</em> and <em>CA</em> is five times the square on <em>CA.</em> But, by hypothesis, the square on <em>BA</em> is also five times the square on <em>CA</em></p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII4/">II.4</a></div>
+<p>Therefore the square on <em>BA</em> equals the sum of the squares on <em>BC</em> and <em>CA,</em> which is impossible.</p>
+<p>Therefore <em>CB</em> is not double <em>AC.</em></p>
+<p>Similarly we can prove that neither is a straight line less than <em>CB</em> double <em>CA,</em> for the absurdity is much greater.</p>
+<p>Therefore the double <em>AC</em> is greater than <em>CB.</em></p>
+<p>Therefore, <em>if the square on a straight line is five times the square on a segment on it, then, when the double of the said segment is cut in extreme and mean ratio, the greater segment is the remaining part of the original straight line.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is not used in the rest of the <em>Elements.</em> It is only included because it is the converse of the previous proposition <a href="/elements/books/bookXIII/propositions/propXIII1/">XIII.1</a> and, thus, gives an algebraic characterization of cutting in extreme and mean ratio.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

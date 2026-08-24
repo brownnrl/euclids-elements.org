@@ -1,0 +1,805 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Book III</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+<center>
+  <img src="/elements/logo.gif" alt="Euclid's Elements"
+       usemap="#tocmap" height="238" width="245" border="0">
+</center>
+
+<map name="tocmap">
+  <area shape="rect" coords="59,88,193,164"   href="/elements/" alt="Table of Contents">
+  <area shape="rect" coords="160,10,188,31"   href="/elements/books/bookI/"    alt="Book I">
+  <area shape="rect" coords="194,34,215,70"   href="/elements/books/bookII/"   alt="Book II">
+  <area shape="rect" coords="215,73,243,98"   href="/elements/books/bookIII/"  alt="Book III">
+  <area shape="rect" coords="217,118,242,139" href="/elements/books/bookIV/"   alt="Book IV">
+  <area shape="rect" coords="208,163,231,185" href="/elements/books/bookV/"    alt="Book V">
+  <area shape="rect" coords="176,199,203,219" href="/elements/books/bookVI/"   alt="Book VI">
+  <area shape="rect" coords="134,215,172,236" href="/elements/books/bookVII/"  alt="Book VII">
+  <area shape="rect" coords="74,215,115,236"  href="/elements/books/bookVIII/" alt="Book VIII">
+  <area shape="rect" coords="44,197,72,218"   href="/elements/books/bookIX/"   alt="Book IX">
+  <area shape="rect" coords="16,163,44,183"   href="/elements/books/bookX/"    alt="Book X">
+  <area shape="rect" coords="0,121,31,140"    href="/elements/books/bookXI/"   alt="Book XI">
+  <area shape="rect" coords="0,78,36,98"      href="/elements/books/bookXII/"  alt="Book XII">
+  <area shape="rect" coords="10,32,57,54"     href="/elements/books/bookXIII/" alt="Book XIII">
+</map>
+  
+    <h1>Book III</h1>
+  
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../">Books</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Book III</span>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Table of Contents</h2>
+<ul>
+  
+  
+    <li><a href="#defs">Definitions</a> (11)</li>
+  
+  
+  
+  <li><a href="#props">Propositions</a> (37)</li>
+  
+</ul>
+
+
+
+
+
+  <hr size="4">
+  <h2 id="defs"><a href="definitions/">Definitions</a></h2>
+  <dl>
+    
+  
+  <dt><b><a href="definitions/defIII1/">Definition 1</a>.</b></dt>
+  
+  <dd>
+    
+      <i>Equal circles</i> are those whose diameters are equal, or whose radii are equal.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII2/">Definition 2</a>.</b></dt>
+  
+  <dd>
+    
+      A straight line is said to <i>touch</i> a circle which, meeting the circle and being produced, does not cut the circle.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII3/">Definition 3</a>.</b></dt>
+  
+  <dd>
+    
+      Circles are said to <i>touch</i> one another which meet one another but do not cut one another.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII4/">Definition 4</a>.</b></dt>
+  
+  <dd>
+    
+      Straight lines in a circle are said to be <i>equally distant</i> from the center when the perpendiculars drawn to them from the center are equal.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII5/">Definition 5</a>.</b></dt>
+  
+  <dd>
+    
+      And that straight line is said to be at a <i>greater distance</i> on which the greater perpendicular falls.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII6/">Definition 6</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>segment</i> of a circle is the figure contained by a straight line and a circumference of a circle.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII7/">Definition 7</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>angle of a segment</i> is that contained by a straight line and a circumference of a circle.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII8/">Definition 8</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>angle in a segment</i> is the angle which, when a point is taken on the circumference of the segment and straight lines are joined from it to the ends of the straight line which is the base of the segment, is contained by the straight lines so joined.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII9/">Definition 9</a>.</b></dt>
+  
+  <dd>
+    
+      And, when the straight lines containing the angle cut off a circumference, the angle is said to <i>stand upon</i> that circumference.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII10/">Definition 10</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>sector</i> of a circle is the figure which, when an angle is constructed at the center of the circle, is contained by the straight lines containing the angle and the circumference cut off by them.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defIII11/">Definition 11</a>.</b></dt>
+  
+  <dd>
+    
+      <i>Similar segments</i> of circles are those which admit equal angles, or in which the angles equal one another.
+    
+  </dd>
+
+  </dl>
+
+
+
+
+
+
+
+
+  <hr size="4">
+  <h2 id="props"><a href="propositions/">Propositions</a></h2>
+  <dl>
+    
+  
+  <dt class="red-highlight"><b><a href="propositions/propIII1/">Proposition 1</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To find the center of a given circle.
+        
+      
+        
+        
+          <p><b><a href="propositions/propIII1/#cor">Corollary.</a></b> if in a circle a straight line cuts a straight line into two equal parts and at right angles, then the center of the circle lies on the cutting straight line.</p>
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII2/">Proposition 2</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two points are taken at random on the circumference of a circle, then the straight line joining the points falls within the circle.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII3/">Proposition 3</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a straight line passing through the center of a circle bisects a straight line not passing through the center, then it also cuts it at right angles; and if it cuts it at right angles, then it also bisects it.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII4/">Proposition 4</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If in a circle two straight lines which do not pass through the center cut one another, then they do not bisect one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII5/">Proposition 5</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two circles cut one another, then they do not have the same center.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII6/">Proposition 6</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two circles touch one another, then they do not have the same center.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII7/">Proposition 7</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If on the diameter of a circle a point is taken which is not the center of the circle, and from the point straight lines fall upon the circle, then that is greatest on which passes through the center, the remainder of the same diameter is least, and of the rest the nearer to the straight line through the center is always greater than the more remote; and only two equal straight lines fall from the point on the circle, one on each side of the least straight line.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII8/">Proposition 8</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a point is taken outside a circle and from the point straight lines are drawn through to the circle, one of which is through the center and the others are drawn at random, then, of the straight lines which fall on the concave circumference, that through the center is greatest, while of the rest the nearer to that through the center is always greater than the more remote, but, of the straight lines falling on the convex circumference, that between the point and the diameter is least, while of the rest the nearer to the least is always less than the more remote; and only two equal straight lines fall on the circle from the point, one on each side of the least.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII9/">Proposition 9</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a point is taken within a circle, and more than two equal straight lines fall from the point on the circle, then the point taken is the center of the circle.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII10/">Proposition 10</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          A circle does not cut a circle at more than two points.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII11/">Proposition 11</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two circles touch one another internally, and their centers are taken, then the straight line joining their centers, being produced, falls on the point of contact of the circles.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII12/">Proposition 12</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two circles touch one another externally, then the straight line joining their centers passes through the point of contact.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII13/">Proposition 13</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          A circle does not touch another circle at more than one point whether it touches it internally or externally.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII14/">Proposition 14</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Equal straight lines in a circle are equally distant from the center, and those which are equally distant from the center equal one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII15/">Proposition 15</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Of straight lines in a circle the diameter is greatest, and of the rest the nearer to the center is always greater than the more remote.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII16/">Proposition 16</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          The straight line drawn at right angles to the diameter of a circle from its end will fall outside the circle, and into the space between the straight line and the circumference another straight line cannot be interposed, further the angle of the semicircle is greater, and the remaining angle less, than any acute rectilinear angle.
+        
+      
+        
+        
+          <p><b><a href="propositions/propIII16/#cor">Corollary.</a></b></p>
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propIII17/">Proposition 17</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          From a given point to draw a straight line touching a given circle.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII18/">Proposition 18</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a straight line touches a circle, and a straight line is joined from the center to the point of contact, the straight line so joined will be perpendicular to the tangent.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII19/">Proposition 19</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII20/">Proposition 20</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          In a circle the angle at the center is double the angle at the circumference when the angles have the same circumference as base.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII21/">Proposition 21</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          In a circle the angles in the same segment equal one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII22/">Proposition 22</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          The sum of the opposite angles of quadrilaterals in circles equals two right angles.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII23/">Proposition 23</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          On the same straight line there cannot be constructed two similar and unequal segments of circles on the same side.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII24/">Proposition 24</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Similar segments of circles on equal straight lines equal one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propIII25/">Proposition 25</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          Given a segment of a circle, to describe the complete circle of which it is a segment.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII26/">Proposition 26</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          In equal circles equal angles stand on equal circumferences whether they stand at the centers or at the circumferences.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII27/">Proposition 27</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          In equal circles angles standing on equal circumferences equal one another whether they stand at the centers or at the circumferences.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII28/">Proposition 28</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          In equal circles equal straight lines cut off equal circumferences, the greater circumference equals the greater and the less equals the less.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII29/">Proposition 29</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          In equal circles straight lines that cut off equal circumferences are equal.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propIII30/">Proposition 30</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To bisect a given circumference. </font color>
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII31/">Proposition 31</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          In a circle the angle in the semicircle is right, that in a greater segment less than a right angle, and that in a less segment greater than a right angle; further the angle of the greater segment is greater than a right angle, and the angle of the less segment is less than a right angle.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII32/">Proposition 32</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a straight line touches a circle, and from the point of contact there is drawn across, in the circle, a straight line cutting the circle, then the angles which it makes with the tangent equal the angles in the alternate segments of the circle.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propIII33/">Proposition 33</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          On a given straight line to describe a segment of a circle admitting an angle equal to a given rectilinear angle.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propIII34/">Proposition 34</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          From a given circle to cut off a segment admitting an angle equal to a given rectilinear angle. </font color>
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII35/">Proposition 35</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If in a circle two straight lines cut one another, then the rectangle contained by the segments of the one equals the rectangle contained by the segments of the other.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII36/">Proposition 36</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a point is taken outside a circle and two straight lines fall from it on the circle, and if one of them cuts the circle and the other touches it, then the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference equals the square on the tangent.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propIII37/">Proposition 37</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a point is taken outside a circle and from the point there fall on the circle two straight lines, if one of them cuts the circle, and the other falls on it, and if further the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference equals the square on the straight line which falls on the circle, then the straight line which falls on it touches the circle.
+        
+      
+    
+  </dd>
+
+  </dl>
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book V</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book V</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 6</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 6</h1>
+    <div class="statement">If two magnitudes are equimultiples of two magnitudes, and any magnitudes subtracted from them are equimultiples of the same, then the remainders either equal the same or are equimultiples of them.</div>
+    <p>Let two magnitudes <em>AB</em> and <em>CD</em> be equimultiples of two magnitudes <em>E</em> and <em>F,</em> and let <em>AG</em> and <em>CH</em> subtracted from them be equimultiples of the same two <em>E</em> and <em>F.</em></p>
+<p>I say that the remainders <em>GB</em> and <em>HD</em> either equal <em>E</em> and <em>F</em> or are equimultiples of them.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="400" height="145" tabindex="0"></canvas>
+<noscript><img alt="V.6 diagram" src="propV6.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "V.6",
+        elements: [
+            "U0;point;free;-1000,30;0;0",
+            "U1;point;free;1000,30;0;0",
+            "V0;point;free;-1000,60;0;0",
+            "V1;point;free;1000,60;0;0",
+            "W0;point;free;-1000,100;0;0",
+            "W1;point;free;1000,100;0;0",
+            "X0;point;free;-1000,130;0;0",
+            "X1;point;free;1000,130;0;0",
+            "E0;point;lineSlider;W0,W1,40,100;0",
+            "E1;point;lineSlider;W0,W1,80,100;0",
+            "E;line;connect;E0,E1;black;0;cyan",
+            "F0;point;lineSlider;X0,X1,40,130;0",
+            "F1;point;lineSlider;X0,X1,105,130;0",
+            "F;line;connect;F0,F1;black;0;red",
+            "A;point;lineSlider;U0,U1,40,30",
+            "A1;point;cutoff;A,U1,E0,E1;0;lightGray",
+            "A2;point;cutoff;A1,U1,E0,E1;0;lightGray",
+            "G;point;cutoff;A2,U1,E0,E1",
+            "B;point;cutoff;G,U1,E0,E1",
+            "AB;line;connect;A,B;0;0;cyan",
+            "C;point;lineSlider;V0,V1,105,130",
+            "K;point;cutoff;C,V0,F0,F1",
+            "C1;point;cutoff;C,V1,F0,F1;0;lightGray",
+            "C2;point;cutoff;C1,V1,F0,F1;0;lightGray",
+            "H;point;cutoff;C2,V1,F0,F1",
+            "D;point;cutoff;H,V1,F0,F1",
+            "KD;line;connect;K,D;0;0;red"
+        ],
+    });
+</script>
+</figure><p>First, let <em>GB</em> equal <em>E.</em></p>
+<p>I say that <em>HD</em> also equals <em>F.</em></p>
+<p>Make <em>CK</em> equal to <em>F.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV2/">V.2</a></div>
+<p>Since <em>AG</em> is the same multiple of <em>E</em> that <em>CH</em> is of <em>F,</em> while <em>GB</em> equals <em>E,</em> and <em>KC</em> equals <em>F,</em> therefore <em>AB</em> is the same multiple of <em>E</em> that <em>KH</em> is of <em>F.</em></p>
+<p>But, by hypothesis, <em>AB</em> is the same multiple of <em>E</em> that <em>CD</em> is of <em>F,</em> therefore <em>KH</em> is the same multiple of <em>F</em> that <em>CD</em> is of <em>F.</em></p>
+<p>Since then each of the magnitudes <em>KH</em> and <em>CD</em> is the same multiple of <em>F,</em> therefore <em>KH</em> equals <em>CD.</em></p>
+<p>Subtract <em>CH</em> from each. Then the remainder <em>KC</em> equals the remainder <em>HD.</em></p>
+<p>But <em>F</em> equals <em>KC,</em> therefore <em>HD</em> also equals <em>F.</em></p>
+<p>Hence, if <em>GB</em> equals <em>E, HD</em> also equals <em>F.</em></p>
+<p>Similarly we can prove that, even if <em>GB</em> is a multiple of <em>E, HD</em> is also the same multiple of <em>F.</em></p>
+<p>Therefore, <em>if two magnitudes are equimultiples of two magnitudes, and any magnitudes subtracted from them are equimultiples of the same, then the remainders either equal the same or are equimultiples of them.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The proposition states that if <em>ma</em> and <em>mb</em> are equimultiples of <em>a</em> and <em>b,</em> and <em>na</em> and <em>nb</em> are also equimultiples, then the differences, <em>ma</em> – <em>na</em> and <em>mb</em> – <em>nb</em> are more equimultiples. It's analogous to proposition <a href="/elements/books/bookV/propositions/propV2/">V.2</a> which was for addition.</p>
+<p>Its proof depends on a distributivity, namely that multiplication by magnitudes distributes over subtraction of numbers: (<em>m</em> – <em>n</em>)<em>a</em> = <em>ma</em> – <em>na.</em> Euclid takes 4 as <em>m</em> and 3 as <em>n.</em> He has two cases since since he doesn't take 1 to be a number.</p>
+<p>This proposition is not used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

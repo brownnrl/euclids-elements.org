@@ -1,0 +1,159 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 16</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 16</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 16</h1>
+    <div class="statement">The straight line drawn at right angles to the diameter of a circle from its end will fall outside the circle, and into the space between the straight line and the circumference another straight line cannot be interposed, further the angle of the semicircle is greater, and the remaining angle less, than any acute rectilinear angle.</div>
+    <p>Let <em>ABC</em> be a circle about <em>D</em> as center and <em>AB</em> as diameter.</p>
+<p>I say that the straight line drawn from <em>A</em> at right angles to <em>AB</em> from its end will fall outside the circle.</p>
+<p>For suppose it does not, but, if possible, let it fall within as <em>CA,</em> and join <em>DC.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="380" height="270" tabindex="0"></canvas>
+<noscript><img alt="III.16 diagram" src="propIII16.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.16",
+        pivot: "D",
+        elements: [
+            "A;point;free;240,240",
+            "B;point;free;240,30",
+            "AB;line;connect;A,B",
+            "D;point;midpoint;A,B;0,0,0;120,0,0",
+            "ABC;circle;radius;D,A;0;0;0,0,0;random",
+            "C;point;circleSlider;ABC,120,130",
+            "CA;line;connect;C,A",
+            "CD;line;connect;C,D",
+            "AE';line;perpendicular;A,D;0;0;0",
+            "E;point;lineSlider;AE',30,220",
+            "AE;line;connect;A,E",
+            "F;point;free;60,110",
+            "AF;line;connect;A,F",
+            "G;point;foot;D,AF",
+            "H;point;cutoff;D,G,D,A",
+            "DH;line;connect;D,H"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>Since <em>DA</em> equals <em>DC,</em> the angle <em>DAC</em> also equals the angle <em>ACD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI17/">I.17</a></div>
+<p>But the angle <em>DAC</em> is right, therefore the angle <em>ACD</em> is also right.  Thus, in the triangle <em>ACD,</em> the two angles <em>DAC</em> and <em>ACD</em> equal two right angles, which is impossible.</p>
+<p>Therefore the straight line drawn from the point <em>A</em> at right angles to <em>BA</em> will not fall within the circle.</p>
+<p>Similarly we can prove that neither will it fall on the circumference, therefore it will fall outside. Let it fall as <em>AE.</em></p>
+<p>I say next that into the space between the straight line <em>AE</em> and the circumference <em>CHA</em> another straight line cannot be interposed.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>For, if possible, let another straight line be so interposed, as <em>FA.</em> Draw <em>DG</em> from the point <em>D</em> perpendicular to <em>FA.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI17/">I.17</a>, <a href="/elements/books/bookI/propositions/propI19/">I.19</a></div>
+<p>Then, since the angle <em>AGD</em> is right, and the angle <em>DAG</em> is less than a right angle, <em>AD</em> is greater than <em>DG.</em></p>
+<p>But <em>DA</em> equals <em>DH,</em> therefore <em>DH</em> is greater than <em>DG,</em> the less greater than the greater, which is impossible.</p>
+<p>Therefore another straight line cannot be interposed into the space between the straight line and the circumference.</p>
+<p>I say further that the angle of the semicircle contained by the straight line <em>BA</em> and the circumference <em>CHA</em> is greater than any acute rectilinear angle, and the remaining angle contained by the circumference <em>CHA</em> and the straight line <em>AE</em> is less than any acute rectilinear angle.</p>
+<p>For, if there is any rectilinear angle greater than the angle contained by the straight line <em>BA</em> and the circumference <em>CHA,</em> and any rectilinear angle less than the angle contained by the circumference <em>CHA</em> and the straight line <em>AE,</em> then into the space between the circumference and the straight line <em>AE</em> a straight line will be interposed such as will make an angle contained by straight lines which is greater than the angle contained by the straight line <em>BA</em> and the circumference CHA, and another angle contained by straight lines which is less than the angle contained by the circumference CHA and the straight line <em>AE.</em></p>
+<div class="just">Above</div><p>But such a straight line cannot be interposed, therefore there will not be any acute angle contained by straight lines which is greater than the angle contained by the straight line <em>BA</em> and the circumference <em>CHA,</em> nor yet any acute angle contained by straight lines which is less than the angle contained by the circumference <em>CHA</em> and the straight line <em>AE.</em></p>
+<p>Therefore <em>the straight line drawn at right angles to the diameter of a circle from its end will fall outside the circle, and into the space between the straight line and the circumference another straight line cannot be interposed, further the angle of the semicircle is greater, and the remaining angle less, than any acute rectilinear angle.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="cor">Corollary.</h1>
+    
+    <p>From this it is clear that the straight line drawn at right angles to the diameter of a circle from its end touches the circle.</p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Horn angles</h4>
+<p>Back in Book I, <a href="/elements/books/bookI/definitions/defI8/">I.Def.8</a>, Euclid defined an angle and included the possibility that the sides were not straight lines.  Those whose sides were straight were called <em>rectilinear angles</em> in <a href="/elements/books/bookI/definitions/defI9/">I.Def.9</a>.  Until this proposition we only saw rectilinear angles.  In this proposition Euclid showed that the angle contained by the circumference <em>CHA</em> and the tangent straight line <em>AE</em> is less than any acute rectilinear angle.  An angle of that sort is commonly called a <em>horn angle</em>.  Its complement, the angle contained by the diameter and the circumference, is less than a right angle but greater than any acute rectilinear angle.</p>
+<p>There's a lot that could be said about these curvilinear angles, but their only appearance in the <em>Elements</em> is in this proposition.</p>
+<p>Horn angles are infinitesimal with respect to rectilinear angles, that is, no multiple of a horn angle is greater than any rectilinear angle, or equivalently, no part (meaning fraction) of a rectilinear angle is less than a horn angle.  The contemplation of horn angles leads to difficulties in the theory of proportions that's developed in <a href="../../../bookV/">Book V</a>.</p>
+<h4>Use of Proposition 16 and its corollary</h4>
+<p>This proposition is used in the proof of proposition <a href="/elements/books/bookIV/propositions/propIV4/">IV.4</a> and two others in Book IV.  The corollary is used in <a href="/elements/books/bookIII/propositions/propIII17/">III.17</a>, <a href="/elements/books/bookIII/propositions/propIII33/">III.33</a>, <a href="/elements/books/bookIII/propositions/propIII37/">III.37</a>, a few propositions in Book IV, and <a href="/elements/books/bookXII/propositions/propXII16/">XII.16</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV4/">IV.4</a>, <a href="/elements/books/bookIV/propositions/propIV8/">IV.8</a>, <a href="/elements/books/bookIV/propositions/propIV13/">IV.13</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII16/">XII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

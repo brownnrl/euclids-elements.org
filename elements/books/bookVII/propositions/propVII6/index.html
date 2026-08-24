@@ -1,0 +1,138 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 6</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 6</h1>
+    <div class="statement">If a number is parts of a number, and another is the same parts of another, then the sum is also the same parts of the sum that the one is of the one.</div>
+    <p>Let the number <em>AB</em> be parts of the number <em>C,</em> and another number <em>DE</em> be the same parts of another number <em>F</em> that <em>AB</em> is of <em>C.</em></p>
+<p>I say that the sum of <em>AB</em> and <em>DE</em> is also the same parts of the sum of <em>C</em> and <em>F</em> that <em>AB</em> is of <em>C.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="150" height="210" tabindex="0"></canvas>
+<noscript><img alt="VII.6 diagram" src="propVII6.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.6",
+        elements: [
+            "A0;point;free;30,-1000;0;0",
+            "A3;point;free;30,1000;0;0",
+            "A;point;lineSlider;A0,A3,30,30",
+            "C0;point;free;60,-1000;0;0",
+            "C3;point;free;60,1000;0;0",
+            "C1;point;lineSlider;C0,C3,60,30;0",
+            "D0;point;free;90,-1000;0;0",
+            "D3;point;free;90,1000;0;0",
+            "D;point;lineSlider;D0,D3,90,30",
+            "F0;point;free;120,-1000;0;0",
+            "F3;point;free;120,1000;0;0",
+            "F1;point;lineSlider;F0,F3,120,30;0",
+            "G;point;lineSlider;A0,A3,30,80",
+            "B;point;cutoff;G,A3,A,G",
+            "AB;line;connect;A,B",
+            "C';point;cutoff;C1,C3,A,B;0;0",
+            "C2;point;cutoff;C',C3,A,G;0",
+            "C;line;connect;C1,C2;black",
+            "H;point;lineSlider;D0,D3,30,70",
+            "E;point;cutoff;H,D3,D,H",
+            "DE;line;connect;D,E",
+            "F';point;cutoff;F1,F3,D,E;0;0",
+            "F2;point;cutoff;F',F3,D,H;0",
+            "F;line;connect;F1,F2;black"
+        ],
+    });
+</script>
+</figure><p>Since there are as many parts of <em>DE</em> in <em>F</em> as there are parts <em>AB</em> is of <em>C,</em> therefore there are as many parts of <em>F</em> in <em>DE</em> as there are parts of <em>C</em> in <em>AB.</em></p>
+<p>Divide <em>AB</em> into the parts of <em>C,</em> namely <em>AG</em> and <em>GB,</em> and divide <em>DE</em> into the parts of <em>F,</em> namely <em>DH,</em> and <em>HE.</em> Then the multitude of <em>AG</em> and <em>GB</em> equals the multitude of <em>DH</em> and <em>HE.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII5/">VII.5</a></div>
+<p>And since <em>DH</em> is the same part of <em>F</em> that <em>AG</em> is of <em>C,</em> therefore the sum of <em>AG</em> and <em>DH</em> is the same part of the sum of <em>C</em> and <em>F</em> that <em>AG</em> is of <em>C.</em> For the same reason, the sum of <em>GB</em> and <em>HE</em> is the same parts of the sum of <em>C</em> and <em>F</em> that <em>GB</em> is of <em>C.</em></p>
+<p>Therefore the sum of <em>AB</em> and <em>DE</em> is the same parts of the sum of <em>C</em> and <em>F</em> that <em>AB</em> is of <em>C.</em></p>
+<p>Therefore, <em>if a number is parts of a number, and another is the same parts of another, then the sum is also the same parts of the sum that the one is of the one.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition says multiplication by fractions distributes over addition. Algebraically, if <em>a</em> = (<em>m/n</em>)<em>b</em> and <em>d</em> = (<em>m/n</em>)<em>e</em> then <em>a</em> + <em>d</em> = (<em>m/n</em>)(<em>b</em> + <em>e</em>). As an equation, this says</p>
+<center>(<i>m/n</i>)<i>b</i> + (<i>m/n</i>)<i>e</i> = (<i>m/n</i>)(<i>b</i> + <i>e</i>).</center><h4>Use of this proposition</h4>
+<p>This proposition is used in a few of the propositions coming up starting with <a href="/elements/books/bookVII/propositions/propVII9/">VII.9</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VII</th><td><a href="/elements/books/bookVII/propositions/propVII9/">VII.9</a>, <a href="/elements/books/bookVII/propositions/propVII10/">VII.10</a>, <a href="/elements/books/bookVII/propositions/propVII12/">VII.12</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

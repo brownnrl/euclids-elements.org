@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 14</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 14</h1>
+    <div class="statement">Equal straight lines in a circle are equally distant from the center, and those which are equally distant from the center equal one another.</div>
+    <p>Let <em>AB</em> and <em>CD</em> be equal straight lines in a circle <em>ABDC.</em></p>
+<p>I say that <em>AB</em> and <em>CD</em> are equally distant from the center.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="270" tabindex="0"></canvas>
+<noscript><img alt="III.14 diagram" src="propIII14.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.14",
+        elements: [
+            "A;point;free;135,235",
+            "E;point;free;135,135",
+            "ABC;circle;radius;E,A;0;0;0,0,0;random",
+            "B;point;circleSlider;ABC,40,70",
+            "AB;line;connect;A,B",
+            "C;point;circleSlider;ABC,150,180",
+            "ECD;polygon;similar;E,C,E,B,A;0;0;0;0",
+            "D;point;vertex;ECD,3",
+            "CD;line;connect;C,D",
+            "EA;line;connect;E,A",
+            "EC;line;connect;E,C",
+            "F;point;midpoint;AB",
+            "G;point;midpoint;CD",
+            "EF;line;connect;E,F",
+            "EG;line;connect;E,G",
+            "EAF;polygon;triangle;E,A,F;0;0;0",
+            "ECG;polygon;triangle;E,C,G;0;0;0"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a><br><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>Take the center <em>E</em> of the circle <em>ABDC.</em> Draw <em>EF</em> and <em>EG</em> from <em>E</em>  perpendicular to <em>AB</em> and <em>CD,</em> and join <em>AE</em> and <em>EC.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII3/">III.3</a></div>
+<p>Then, since a straight line <em>EF</em> passing through the center cuts a straight line <em>AB</em> not passing through the center at right angles, it also bisects it.  Therefore <em>AF</em> equals <em>FB.</em> Therefore <em>AB</em> is double <em>AF.</em></p>
+<p>For the same reason <em>CD</em> is also double <em>CG.</em> But <em>AB</em> equals <em>CD,</em> therefore <em>AF</em> also equals <em>CG.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>Also, since <em>AE</em> equals <em>EC,</em> the square on <em>AE</em> also equals the square on <em>EC.</em>  But the sum of the squares on <em>AF</em> and <em>EF</em> equals the square on <em>AE,</em> for the angle at <em>F</em> is right, and the sum of the squares on <em>EG</em> and <em>GC</em> equals the square on <em>EC,</em> for the angle at <em>G</em> is right.  Therefore the sum of the squares on <em>AF</em> and <em>FE</em> equals the sum of the squares on <em>CG</em> and <em>GE,</em> of which the square on <em>AF</em> equals the square on <em>CG,</em> for <em>AF</em> equals <em>CG.</em>  Therefore the remaining square on <em>FE</em> equals the square on <em>EG.</em>  Therefore <em>EF</em> equals <em>EG.</em></p>
+<div class="just"><a href="/elements/books/bookIII/definitions/defIII4/">III.Def.4</a></div>
+<p>But straight lines in a circle are said to be equally distant from the center when the perpendiculars drawn to them from the center are equal.  Therefore <em>AB</em> and <em>CD</em> are equally distant from the center.</p>
+<hr width="50%">
+
+<p>Next, let the straight lines <em>AB</em> and <em>CD</em> be equally distant from the center, that is, let <em>EF</em> equal <em>EG.</em></p>
+<p>I say that <em>AB</em> also equals <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>For, with the same construction, we can prove, as before, that <em>AB</em> is double <em>AF,</em> and <em>CD</em> double <em>CG.</em>  And, since <em>AE</em> equals <em>CE,</em> the square on <em>AE</em> equals the square on <em>CE.</em>  But the sum of the squares on <em>EF</em> and <em>FA</em> equals the square on <em>AE,</em> and the sum of the squares on <em>EG</em> and <em>GC</em> equals the square on <em>CE.</em></p>
+<p>Therefore the sum of the squares on <em>EF</em> and <em>FA</em> equals the sum of the squares on <em>EG</em> and <em>GC,</em> of which the square on <em>EF</em> equals the square on <em>EG,</em> for <em>EF</em> equals <em>EG.</em> Therefore the remaining square on <em>AF</em> equals the square on <em>CG.</em>  Therefore <em>AF</em> equals <em>CG.</em>  And <em>AB</em> is double <em>AF,</em> and <em>CD</em> double <em>CG,</em> therefore <em>AB</em> equals <em>CD.</em></p>
+<p>Therefore <em>equal straight lines in a circle are equally distant from the center, and those which are equally distant from the center equal one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Note how Euclid has proved twice in the course of this proof the side-side-right angle congruence theorem.  See the <a href="../../../bookI/propositions/propI26/#cong">note</a> after I.26 about congruence theorems for triangles.</p>
+<p>This proposition is used in the next one.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII15/">III.15</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

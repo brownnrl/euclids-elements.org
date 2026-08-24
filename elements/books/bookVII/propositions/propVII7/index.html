@@ -1,0 +1,131 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 7</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 7</h1>
+    <div class="statement">If a number is that part of a number which a subtracted number is of a subtracted number, then the remainder is also the same part of the remainder that the whole is of the whole.</div>
+    <p>Let the number <em>AB</em> be that part of the number <em>CD</em> which <em>AE</em> subtracted is of <em>CF</em> subtracted.</p>
+<p>I say that the remainder <em>EB</em> is also the same part of the remainder <em>FD</em> that the whole <em>AB</em> is of the whole <em>CD.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="120" tabindex="0"></canvas>
+<noscript><img alt="VII.7 diagram" src="propVII7.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.7",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "C0;point;free;-1000,80;0;0",
+            "C3;point;free;1000,80;0;0",
+            "A;point;lineSlider;A0,A3,120,40",
+            "B;point;lineSlider;A0,A3,195,40",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;C0,C3,120,80",
+            "D';point;cutoff;C,C3,A,B;0;0",
+            "D;point;cutoff;D',C3,A,B",
+            "CD;line;connect;C,D",
+            "E;point;lineSlider;A0,A3,150,40",
+            "F';point;cutoff;C,C3,A,E;0;0",
+            "F;point;cutoff;F',C3,A,E",
+            "G;point;cutoff;C,C0,F,D",
+            "GC;line;connect;G,C"
+        ],
+    });
+</script>
+</figure><p>Let <em>EB</em> be the same part of <em>CG</em> that <em>AE</em> is of <em>CF.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII5/">VII.5</a></div>
+<p>Now since <em>EB</em> is the same part of <em>CG</em> that <em>AE</em> is of <em>CF,</em> therefore <em>AB</em> is the same part of <em>GF</em> that <em>AE</em> is of <em>CF.</em></p>
+<p>But, by hypothesis, <em>AB</em> is the same part of <em>CD</em> that <em>AE</em> is of <em>CF,</em> therefore <em>AB</em> is the same part of <em>CD</em> that it is of <em>GF.</em> Therefore <em>GF</em> equals <em>CD.</em></p>
+<p>Subtract <em>CF</em> from each. Then the remainder <em>GC</em> equals the remainder <em>FD.</em></p>
+<p>Now since <em>EB</em> is the same part of <em>GC</em> that <em>AE</em> is of <em>CF,</em> and <em>GC</em> equals <em>FD,</em> therefore <em>EB</em> is the same part of <em>FD</em> that <em>AE</em> is of <em>CF.</em></p>
+<p>But <em>AB</em> is the same part of <em>CD</em> that <em>AE</em> is of <em>CF,</em> therefore the remainder <em>EB</em> is the same part of the remainder <em>FD</em> that the whole <em>AB</em> is of the whole <em>CD.</em></p>
+<p>Therefore, <em>if a number is that part of a number which a subtracted number is of a subtracted number, then the remainder is also the same part of the remainder that the whole is of the whole.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is like <a href="/elements/books/bookVII/propositions/propVII5/">VII.5</a> except it deals with subtraction instead of addition. It says division distributes over subtraction. Algebraically,</p>
+<center><i>b/n</i> – <i>e/n,</i> = (<i>b</i> – <i>e</i>)/<i>n.</i></center><p>This proposition is used in the next proposition and in <a href="/elements/books/bookVII/propositions/propVII11/">VII.11</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VII</th><td><a href="/elements/books/bookVII/propositions/propVII8/">VII.8</a>, <a href="/elements/books/bookVII/propositions/propVII11/">VII.11</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

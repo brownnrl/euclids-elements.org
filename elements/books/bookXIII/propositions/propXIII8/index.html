@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 8</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 8</h1>
+    <div class="statement">If in an equilateral and equiangular pentagon straight lines subtend two angles are taken in order, then they cut one another in extreme and mean ratio, and their greater segments equal the side of the pentagon.</div>
+    <p>In the equilateral and equiangular pentagon <em>ABCDE</em> let the straight lines <em>AC</em> and <em>BE,</em> cutting one another at the point <em>H,</em> subtend two angles taken in order, the angles at <em>A</em> and <em>B.</em></p>
+<p>I say that each of them has been cut in extreme and mean ratio at the point <em>H,</em> and their greater segments equal the side of the pentagon.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="240" tabindex="0"></canvas>
+<noscript><img alt="XIII.8 diagram" src="propXIII8.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.8",
+        elements: [
+            "A;point;free;130,40",
+            "B;point;free;217,103",
+            "BAEDC;polygon;regularPolygon;B,A,5;0;0;black;random",
+            "C;point;vertex;BAEDC,5",
+            "D;point;vertex;BAEDC,4",
+            "E;point;vertex;BAEDC,3",
+            "circ;circle;circumcircle;A,B,D;0;0;black;0",
+            "AC;line;connect;A,C",
+            "BE;line;connect;B,E",
+            "H;point;intersection;AC,BE"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookIV/propositions/propIV14/">IV.14</a></div>
+<p>Circumscribe the circle <em>ABCDE</em> about the pentagon <em>ABCDE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Then, since the two straight lines <em>EA</em> and <em>AB</em> equal the two lines <em>AB</em> and <em>BC,</em> and they contain equal angles, therefore the base <em>BE</em> equals the base <em>AC,</em> the triangle <em>ABE</em> equals the triangle <em>ABC,</em> and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>Therefore the angle <em>BAC</em> equals the angle <em>ABE.</em> Therefore the angle <em>AHE</em> is double the angle <em>BAH.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII28/">III.28</a>, <a href="/elements/books/bookVI/propositions/propVI33/">VI.33</a></div>
+<p>But the angle <em>EAC</em> is also double the angle <em>BAC,</em> for the circumference <em>EDC</em> is also double the circumference <em>CB.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
+<p>Therefore the angle <em>HAE</em> equals the angle <em>AHE.</em> Hence the straight line <em>HE</em> also equals <em>EA,</em> that is, <em>AB.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>And, since the straight line <em>BA</em> equals <em>AE,</em> therefore the angle <em>ABE</em> also equals the angle <em>AEB.</em></p>
+<p>But the angle <em>ABE</em> was proved equal to the angle <em>BAH,</em> therefore the angle <em>BEA</em> also equals the angle <em>BAH.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>And the angle <em>ABE</em> is common to the two triangles <em>ABE</em> and <em>ABH,</em> therefore the remaining angle <em>BAE</em> equals the remaining angle <em>AHB.</em> Therefore the triangle <em>ABE</em> is equiangular with the triangle <em>ABH.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI4/">VI.4</a></div>
+<p>Therefore, proportionally <em>EB</em> is to <em>BA</em> as <em>AB</em> is to <em>BH.</em></p>
+<p>But <em>BA</em> equals <em>EH,</em> therefore <em>BE</em> is to <em>EH</em> as <em>EH</em> is to <em>HB.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV14/">V.14</a></div>
+<p>And <em>BE</em> is greater than <em>EH,</em> therefore <em>EH</em> is also greater than <em>HB.</em></p>
+<p>Therefore <em>BE</em> has been cut in extreme and mean ratio at <em>H,</em> and the greater segment <em>HE</em> equals the side of the pentagon.</p>
+<p>Similarly we can prove that <em>AC</em> has also been cut in extreme and mean ratio at <em>H,</em> and its greater segment <em>CH</em> equals the side of the pentagon.</p>
+<p>Therefore, <em>if in an equilateral and equiangular pentagon straight lines subtend two angles are taken in order, then they cut one another in extreme and mean ratio, and their greater segments equal the side of the pentagon.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition shows why cutting a line in extreme and mean ratio is so important.</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is used in the proof of <a href="/elements/books/bookXIII/propositions/propXIII11/">XIII.11</a> to establish that the side of a regular pentagon inscribed in a circle with rational diameter is the irrational straight line called minor.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII11/">XIII.11</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

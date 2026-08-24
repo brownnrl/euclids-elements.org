@@ -1,0 +1,161 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 12</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 12</h1>
+    <div class="statement">Magnitudes commensurable with the same magnitude are also commensurable with one another.</div>
+    <p>Let each of the magnitudes <em>A</em> and <em>B</em> be commensurable with <em>C.</em></p>
+<p>I say that <em>A</em> is also commensurable with <em>B.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="320" height="200" tabindex="0"></canvas>
+<noscript><img alt="X.12 diagram" src="propX12.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.12",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "D0;point;free;-1000,65;0;0",
+            "D3;point;free;1000,65;0;0",
+            "E0;point;free;-1000,100;0;0",
+            "E3;point;free;1000,100;0;0",
+            "F0;point;free;-1000,135;0;0",
+            "F3;point;free;1000,135;0;0",
+            "G0;point;free;-1000,170;0;0",
+            "G3;point;free;1000,170;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,30;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;lineSlider;A0,A3,100,0;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;lineSlider;A0,A3,130,0;0",
+            "B2;point;lineSlider;A0,A3,220,0;0",
+            "B;line;connect;B1,B2;black",
+            "C1;point;lineSlider;A0,A3,250,0;0",
+            "C2;point;lineSlider;A0,A3,290,0;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;D0,D3,30,0;0",
+            "D2;point;lineSlider;D0,D3,80,0;0",
+            "D;line;connect;D1,D2;black;0;blue",
+            "E1;point;lineSlider;E0,E3,30,0;0",
+            "E2;point;proportion;A1,A2,C1,C2,D1,D2,E1,E3;0",
+            "E;line;connect;E1,E2;black;0;blue",
+            "F1;point;lineSlider;F0,F3,30,0;0",
+            "F2;point;lineSlider;F0,F3,90,0;0",
+            "F;line;connect;F1,F2;black;0;blue",
+            "G1;point;lineSlider;G0,G3,30,0;0",
+            "G2;point;proportion;B1,B2,C1,C2,F1,F2,G1,G3;0",
+            "G;line;connect;G1,G2;black;0;blue",
+            "H1;point;lineSlider;E0,E3,150,0;0",
+            "H2;point;lineSlider;E0,E3,270,0;0",
+            "H;line;connect;H1,H2;black;0;blue",
+            "K1;point;lineSlider;F0,F3,150,0;0",
+            "K2;point;proportion;D1,D2,E1,E2,H1,H2,K1,F3;0",
+            "K;line;connect;K1,K2;black;0;blue",
+            "L1;point;lineSlider;G0,G3,150,0;0",
+            "L2;point;proportion;F1,F2,G1,G2,K1,K2,L1,G3;0",
+            "L;line;connect;L1,L2;black;0;blue"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookX/propositions/propX5/">X.5</a></div>
+<p>Since <em>A</em> is commensurable with <em>C,</em> therefore <em>A</em> has to <em>C</em> the ratio which a number has to a number. Let it have the ratio which <em>D</em> has to <em>E.</em> Again, since <em>C</em> is commensurable with <em>B,</em> therefore <em>C</em> has to <em>B</em> the ratio which a number has to a number. Let it have the ratio which <em>F</em> has to <em>G.</em></p>
+<div class="just"><a href="/elements/books/bookVIII/propositions/propVIII4/">VIII.4</a></div>
+<p>And, given any number of ratios we please, namely the ratio which <em>D</em> has to <em>E</em> and that which <em>F</em> has to <em>G,</em> take the numbers <em>H, K,</em> and <em>L</em> continuously in the given ratios, so that <em>D</em> is to <em>E</em> as <em>H</em> is to <em>K,</em> and <em>F</em> is to <em>G</em> as <em>K</em> is to <em>L.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>Since <em>A</em> is to <em>C</em> as <em>D</em> is to <em>E,</em> while <em>D</em> is to <em>E</em> as <em>H</em> is to <em>K,</em> therefore <em>A</em> is to <em>C</em> as <em>H</em> is to <em>K.</em> Again, since <em>C</em> is to <em>B</em> as <em>F</em> is to <em>G,</em> while <em>F</em> is to <em>G</em> as <em>K</em> is to <em>L,</em> therefore <em>C</em> is to <em>B</em> as <em>K</em> is to <em>L.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV22/">V.22</a></div>
+<p>But <em>A</em> is to <em>C</em> as <em>H</em> is to <em>K,</em> therefore, <em>ex aequali,</em> <em>A</em> is to <em>B</em> as <em>H</em> is to <em>L.</em></p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX6/">X.6</a></div>
+<p>Therefore <em>A</em> has to <em>B</em> the ratio which a number has to a number. Therefore <em>A</em> is commensurable with <em>B.</em></p>
+<p>Therefore, <em>magnitudes commensurable with the same magnitude are also commensurable with one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The proof is primarily an application of <a href="/elements/books/bookVIII/propositions/propVIII4/">VIII.4</a>.</p>
+<p>This proposition is used in frequently in Book X starting with the next proposition. It is also used in <a href="/elements/books/bookXIII/propositions/propXIII11/">XIII.11</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX13/">X.13</a>, <a href="/elements/books/bookX/propositions/propX17/">X.17</a>, <a href="/elements/books/bookX/propositions/propX54/">X.54</a>, <a href="/elements/books/bookX/propositions/propX55/">X.55</a>, <a href="/elements/books/bookX/propositions/propX58/">X.58</a>, <a href="/elements/books/bookX/propositions/propX62/">X.62</a>, <a href="/elements/books/bookX/propositions/propX66/">X.66</a>, <a href="/elements/books/bookX/propositions/propX91/">X.91</a>, <a href="/elements/books/bookX/propositions/propX103/">X.103</a>, <a href="/elements/books/bookX/propositions/propX111/">X.111</a>, <a href="/elements/books/bookX/propositions/propX112/">X.112</a>, <a href="/elements/books/bookX/propositions/propX113/">X.113</a>, <a href="/elements/books/bookX/propositions/propX114/">X.114</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII11/">XIII.11</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

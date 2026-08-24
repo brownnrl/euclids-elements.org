@@ -1,0 +1,194 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 19</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 19</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 19</h1>
+    <div class="statement">Between two similar solid numbers there fall two mean proportional numbers, and the solid number has to the solid number the ratio triplicate of that which the corresponding side has to the corresponding side.</div>
+    <p>Let <em>A</em> and <em>B</em> be two similar solid numbers, and let <em>C, D,</em> and <em>E</em> be the sides of <em>A,</em> and let <em>F, G,</em> and <em>H</em> be the sides of <em>B.</em></p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII21/">VII.Def.21</a></div>
+<p>Now, since similar solid numbers are those which have their sides proportional, therefore <em>C</em> is to <em>D</em> as <em>F</em> is to <em>G,</em> and <em>D</em> is to <em>E</em> as <em>G</em> is to <em>H.</em></p>
+<p>I say that between <em>A</em> and <em>B</em> there fall two mean proportional numbers, and <em>A</em> has to <em>B</em> the ratio triplicate of that which <em>C</em> has to <em>F, D</em> has to <em>G,</em> and <em>E</em> has to <em>H.</em></p>
+<p>Multiply <em>C</em> by <em>D</em> to make <em>K,</em> and multiply <em>F</em> by <em>G</em> to make <em>L.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="500" height="170" tabindex="0"></canvas>
+<noscript><img alt="VIII.19 diagram" src="propVIII19.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VIII.19",
+        elements: [
+            "U1;point;free;0,0;0;0",
+            "U2;point;free;25,0;0;0",
+            "U;line;connect;U1,U2;0;0;0",
+            "C1;point;free;30,30;0",
+            "C3;point;parallelogram;C1,U;0;0",
+            "C2;point;lineSlider;C1,C3,65,0;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;free;30,70;0",
+            "D3;point;parallelogram;D1,U;0;0",
+            "D2;point;lineSlider;D1,D3,80,0;0",
+            "D;line;connect;D1,D2;black",
+            "E1;point;free;30,110;0",
+            "E3;point;parallelogram;E1,U;0;0",
+            "E2;point;lineSlider;E1,E3,70,0;0",
+            "E;line;connect;E1,E2;black",
+            "F1;point;free;100,50;0",
+            "F3;point;parallelogram;F1,U;0;0",
+            "F2;point;lineSlider;F1,F3,140,0;0",
+            "F;line;connect;F1,F2;black",
+            "G1;point;free;100,90;0",
+            "G3;point;parallelogram;G1,U;0;0",
+            "G2;point;proportion;C,F,D,G1,G3;0",
+            "G;line;connect;G1,G2;black",
+            "H1;point;free;100,130;0",
+            "H3;point;parallelogram;H1,U;0;0",
+            "H2;point;proportion;C,F,E,H1,H3;0",
+            "H;line;connect;H1,H2;black",
+            "K1;point;free;190,50;0",
+            "K3;point;parallelogram;K1,U;0;0",
+            "K2;point;proportion;U,C,D,K1,K3;0",
+            "K;line;connect;K1,K2;black",
+            "L1;point;free;190,130;0",
+            "L3;point;parallelogram;L1,U;0;0",
+            "L2;point;proportion;U,F,G,L1,L3;0",
+            "L;line;connect;L1,L2;black",
+            "M1;point;free;190,90;0",
+            "M3;point;parallelogram;M1,U;0;0",
+            "M2;point;proportion;C,F,K,M1,M3;0",
+            "M;line;connect;M1,M2;black",
+            "A1;point;free;310,30;0",
+            "A3;point;parallelogram;A1,U;0;0",
+            "A2;point;proportion;U,E,K,A1,A3;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;free;310,150;0",
+            "B3;point;parallelogram;B1,U;0;0",
+            "B2;point;proportion;U,H,L,B1,B3;0",
+            "B;line;connect;B1,B2;black",
+            "N1;point;free;310,70;0",
+            "N3;point;parallelogram;N1,U;0;0",
+            "N2;point;proportion;C,F,A,N1,N3;0",
+            "N;line;connect;N1,N2;black",
+            "O1;point;free;310,110;0",
+            "O3;point;parallelogram;O1,U;0;0",
+            "O2;point;proportion;C,F,N,O1,O3;0",
+            "O;line;connect;O1,O2;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVII/definitions/defVII21/">VII.Def.21</a><br><a href="/elements/books/bookVIII/propositions/propVIII18/">VIII.18</a></div>
+<p>Now, since <em>C</em> and <em>D</em> are in the same ratio with <em>F</em> and <em>G,</em> and <em>K</em> is the product of <em>C</em> and <em>D,</em> and <em>L</em> the product of <em>F</em> and <em>G, K</em> and <em>L</em> are similar plane numbers, therefore between <em>K</em> and <em>L</em> there is one mean proportional number <em>M.</em></p>
+<div class="just"><a href="/elements/books/bookVIII/propositions/propVIII18/">VIII.18</a></div>
+<p>Therefore <em>M</em> is the product of <em>D</em> and <em>F</em> was proved in the theorem preceding.</p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII17/">VII.17</a></div>
+<p>Now, since <em>D</em> multiplied by <em>C</em> makes <em>K,</em> and multiplied by <em>F</em> makes <em>M,</em> therefore <em>C</em> is to <em>F</em> as <em>K</em> is to <em>M.</em> But <em>K</em> is to <em>M</em> as <em>M</em> is to <em>L.</em> Therefore <em>K, M,</em> and <em>L</em> are continuously proportional in the ratio of <em>C</em> to <em>F.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII13/">VII.13</a></div>
+<p>And since <em>C</em> is to <em>D</em> as <em>F</em> is to <em>G,</em> alternately therefore <em>C</em> is to <em>F</em> as <em>D</em> is to <em>G.</em> For the same reason also <em>D</em> is to <em>G</em> as <em>E</em> is to <em>H.</em></p>
+<p>Therefore <em>K, M,</em> and <em>L</em> are continuously proportional in the ratio of <em>C</em> to <em>F,</em> in the ratio of <em>D</em> to <em>G,</em> and also in the ratio of <em>E</em> to <em>H.</em></p>
+<p>Next, multiply <em>E</em> and <em>H</em> by <em>M</em> to make <em>N</em> and <em>O</em> respectively.</p>
+<p>Now, since <em>A</em> is a solid number, and <em>C, D,</em> and <em>E</em> are its sides, therefore <em>E</em> multiplied by the product of <em>C</em> and <em>D</em> makes <em>A.</em> But the product of <em>C</em> and <em>D</em> is <em>K,</em> therefore <em>E</em> multiplied by <em>K</em> makes <em>A.</em> For the same reason also <em>H</em> multiplied by <em>L</em> makes <em>B.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII17/">VII.17</a></div>
+<p>Now, since <em>E</em> multiplied by <em>K</em> makes <em>A,</em> and further also multiplied by <em>M</em> makes <em>N,</em> therefore <em>K</em> is to <em>M</em> as <em>A</em> is to <em>N.</em></p>
+<p>But <em>K</em> is to <em>M</em> as <em>C</em> is to <em>F,</em> as <em>D</em> is to <em>G,</em> and as <em>E</em> is to <em>H,</em> therefore <em>C</em> is to <em>F</em> as <em>D</em> is to <em>G,</em> as <em>E</em> is to <em>H,</em> and as <em>A</em> is to <em>N.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII18/">VII.18</a></div>
+<p>Again, since <em>E</em> and <em>H</em> multiplied by <em>M</em> make <em>N</em> and <em>O</em> respectively, therefore <em>E</em> is to <em>H</em> as <em>N</em> is to <em>O.</em></p>
+<p>But <em>E</em> is to <em>H</em> as <em>C</em> is to <em>F</em> and as <em>D</em> is to <em>G,</em> therefore <em>C</em> is to <em>F</em> as <em>D</em> is to <em>G,</em> as <em>E</em> is to <em>H,</em> as <em>A</em> is to <em>N,</em> and as <em>N</em> is to <em>O.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII17/">VII.17</a></div>
+<p>Again, since <em>H</em> multiplied by <em>M</em> makes <em>O,</em> and further also multiplied by <em>L</em> makes <em>B,</em> therefore <em>M</em> is to <em>L</em> as <em>O</em> is to <em>B.</em> But <em>M</em> is to <em>L</em> as <em>C</em> is to <em>F,</em> a <em>D</em> is to <em>G,</em> and as <em>E</em> is to <em>H.</em> Therefore <em>C</em> is to <em>F</em> as <em>D</em> is to <em>G,</em> and as <em>E</em> is to <em>H,</em> as are <em>O</em> to <em>B, A</em> to <em>N,</em> and <em>N</em> to <em>O.</em></p>
+<p>Therefore <em>A, N, O,</em> and <em>B</em> are continuously proportional in the aforesaid ratios of the sides.</p>
+<p>I say that <em>A</em> also has to <em>B</em> the ratio triplicate of that which the corresponding side has to the corresponding side, that is, of the ratio which the number <em>C</em> has to <em>F,</em> or <em>D</em> has to <em>G,</em> and also <em>E</em> has to <em>H.</em></p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV10/">V.Def.10</a></div>
+<p>Since <em>A, N, O,</em> and <em>B</em> are four numbers in continued proportion, therefore <em>A</em> has to <em>B</em> the ratio triplicate of that which <em>A</em> has to <em>N.</em> But it was proved that <em>A</em> is to <em>N</em> as <em>C</em> is to <em>F,</em> as <em>D</em> is to <em>G,</em> and as <em>E</em> is to <em>H.</em></p>
+<p>Therefore <em>A</em> also has to <em>B</em> the ratio triplicate of that which the corresponding side has to the corresponding side, that is, of the ratio which the number <em>C</em> has to <em>F, D</em> has to <em>G,</em> and also <em>E</em> has to <em>H.</em></p>
+<p>Therefore, <em>between two similar solid numbers there fall two mean proportional numbers, and the solid number has to the solid number the ratio triplicate of that which the corresponding side has to the corresponding side.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Assume <em>cde</em> and <em>fgh</em> are similar solid numbers so that <em>c</em> : <em>d</em> : <em>e</em> = <em>f</em> : <em>g</em> : <em>h,</em> or, expressed alternately,</p>
+<center><i>c</i> : <i>f</i> = <i>d</i> : <i>g</i> = <i>e</i> : <i>h.</i></center><p>Then the numbers</p>
+<center><i>cde, fde, fge,</i> and <i>fgh</i></center><p>are in continued proportion giving two mean proportionals between <em>cde</em> and <em>fgh.</em> Also, the ratio <em>cde</em> : <em>fgh</em> is compounded of the three equal ratios of the sides <em>c</em> : <em>f, d</em> : <em>g,</em> and <em>e</em> : <em>h,</em> so it is a triplicate ratio of each.</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is used in a few propositions in Books VIII and IX starting with <a href="/elements/books/bookVIII/propositions/propVIII25/">VIII.25</a>. Proposition <a href="/elements/books/bookVIII/propositions/propVIII21/">VIII.21</a> is a partial converse of this one.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VIII</th><td><a href="/elements/books/bookVIII/propositions/propVIII25/">VIII.25</a>, <a href="/elements/books/bookVIII/propositions/propVIII27/">VIII.27</a></td></tr>
+  <tr><th>Book IX</th><td><a href="/elements/books/bookIX/propositions/propIX4/">IX.4</a>, <a href="/elements/books/bookIX/propositions/propIX5/">IX.5</a>, <a href="/elements/books/bookIX/propositions/propIX6/">IX.6</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

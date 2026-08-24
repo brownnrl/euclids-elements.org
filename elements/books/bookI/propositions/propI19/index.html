@@ -1,0 +1,200 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 19</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 19</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 19</h1>
+    <div class="statement">In any triangle the side opposite the greater angle is greater.</div>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> be a triangle having the angle <span class="elem-ref" data-elem="CBA">ABC</span> greater than the angle <span class="elem-ref" data-elem="BCA">BCA</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="170" height="220" tabindex="0"></canvas>
+<noscript><img alt="I.19 diagram" src="propI19.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.19",
+        elements: [
+            "A;point;free;130,40",
+            "B;point;free;40,80",
+            "C;point;free;70,180",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            // Zero-color hover targets for the two sides compared.
+            "AC;line;connect;A,C;0;0;0",
+            "AB;line;connect;A,B;0;0;0",
+            // Angle markers. Angle at B named CBA (the triangle owns
+            // "ABC"; "angle ABC" via {ABC|CBA}); ∠BCA at C, alias ACB→BCA.
+            "CBA;sector;angleMarker;B,C,A",
+            "BCA;sector;angleMarker;C,B,A"
+        ],
+        aliases: {
+            "ACB": "BCA"
+        },
+        slides: [
+            { text: "Let {ABC} be a triangle having the angle {ABC|CBA} greater than the angle {BCA}.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["CBA","BCA"],
+              transition: {
+                  mode: "parallel",
+                  animations: [
+                      { elem: "CBA", name: geomlib.A.Sector.sweep },
+                      { elem: "BCA", name: geomlib.A.Sector.sweep }
+                  ]
+              } },
+            { text: "I say that the side {AC} is greater than the side {AB}.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["AC","AB"] },
+            { text: "If not, either {AC} equals {AB} or it is less than it.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["AC","AB"] },
+            { text: "Now {AC} does not equal {AB}, for then the angle {ABC|CBA} would equal the angle {ACB}, but it does not. Therefore {AC} does not equal {AB}.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["AC","AB","CBA","BCA"],
+              justifications: [{ ref: "I.5" }] },
+            { text: "Neither is {AC} less than {AB}, for then the angle {ABC|CBA} would be less than the angle {ACB}, but it is not. Therefore {AC} is not less than {AB}.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["AC","AB","CBA","BCA"],
+              justifications: [{ ref: "I.18" }] },
+            { text: "And it was proved that it is not equal either. Therefore {AC} is greater than {AB}.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["AC","AB"] },
+            { text: "Therefore in any triangle the side opposite the greater angle is greater.",
+              visible: ["ABC","CBA","BCA"],
+              highlighted: ["AC","AB"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification
+    // callback — same hand-authored pattern as the earlier props.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.5":  "/elements/books/bookI/propositions/propI5/",
+        "I.18": "/elements/books/bookI/propositions/propI18/"
+    });
+</script>
+</figure><p>I say that the side <span class="elem-ref" data-elem="AC">AC</span> is greater than the side <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<p>If not, either <span class="elem-ref" data-elem="AC">AC</span> equals <span class="elem-ref" data-elem="AB">AB</span> or it is less than it.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
+<p>Now <span class="elem-ref" data-elem="AC">AC</span> does not equal <span class="elem-ref" data-elem="AB">AB</span>, for then the angle <span class="elem-ref" data-elem="CBA">ABC</span> would equal the angle <span class="elem-ref" data-elem="ACB">ACB</span>, but it does not. Therefore <span class="elem-ref" data-elem="AC">AC</span> does not equal <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI18/">I.18</a></div>
+<p>Neither is <span class="elem-ref" data-elem="AC">AC</span> less than <span class="elem-ref" data-elem="AB">AB</span>, for then the angle <span class="elem-ref" data-elem="CBA">ABC</span> would be less than the angle <span class="elem-ref" data-elem="ACB">ACB</span>, but it is not. Therefore <span class="elem-ref" data-elem="AC">AC</span> is not less than <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<p>And it was proved that it is not equal either. Therefore <span class="elem-ref" data-elem="AC">AC</span> is greater than <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<p>Therefore <em>in any triangle the side opposite the greater angle is greater.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>As mentioned before, this proposition is a disguised converse of the previous one. As Euclid often does, he uses a proof by contradiction involving the already proved converse to prove this proposition. It is not that there is a logical connection between this statement and its converse that makes this tactic work, but some kind of symmetry involved. In this case, if one side is less than another, then the other is greater than the one, and the previous proposition applies. So the relevant symmetry is between "lesser" and "greater."</p>
+<h4>The law of sines</h4>
+<p>Although some of the geometric underpinnings of trigonometry appear in the <em>Elements,</em> trigonometry itself does not. Trigonometry makes its appearance among later Greek mathematics where the the basic trigonometric function is the <em>chord,</em> which is related to the <em>sine.</em></p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="250" height="200" tabindex="0"></canvas>
+<noscript><img alt="I.19 law of sines" src="propI19a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "I.19",
+        elements: [
+            "A;point;free;50,100",
+            "B;point;free;200,50",
+            "C;point;free;180,150",
+            "a;line;connect;B,C;black",
+            "b;line;connect;A,C;black",
+            "c;line;connect;A,B;black",
+            "ABC;polygon;triangle;A,B,C;0;0;0;random"
+        ],
+    });
+</script>
+</figure><p>Without going into details, the law of sines contains more precise information about the relation between angles and sides of a triangle than this and the last proposition did. The law of sines states that</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>A</mi></mrow><mrow><mi>B</mi><mi>C</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>B</mi></mrow><mrow><mi>A</mi><mi>C</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>C</mi></mrow><mrow><mi>A</mi><mi>B</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\sin A}{BC} = \dfrac{\sin B}{AC} = \dfrac{\sin C}{AB}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><p>where <span class="elem-ref" data-elem="a">a</span> denotes the side opposite angle <span class="elem-ref" data-elem="A">A</span>, <span class="elem-ref" data-elem="b">b</span> denotes the side opposite angle <span class="elem-ref" data-elem="B">B</span>, and <span class="elem-ref" data-elem="c">c</span> denotes the side opposite angle <span class="elem-ref" data-elem="C">C</span>. In other words, the sine of an angle in a triangle is proportional to the opposite side.</p>
+<p>By means of the law of sines the size of a angle can be related directly to the length of the opposite side.</p>
+<h4>Use of Proposition 19</h4>
+<p>This proposition is used in the proofs of propositions <a href="/elements/books/bookI/propositions/propI20/">I.20</a>, <a href="/elements/books/bookI/propositions/propI24/">I.24</a>, and some others in Book III.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI20/">I.20</a>, <a href="/elements/books/bookI/propositions/propI24/">I.24</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII2/">III.2</a>, <a href="/elements/books/bookIII/propositions/propIII16/">III.16</a>, <a href="/elements/books/bookIII/propositions/propIII18/">III.18</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

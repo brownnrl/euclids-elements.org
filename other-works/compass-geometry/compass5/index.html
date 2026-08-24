@@ -1,0 +1,222 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; 5. Invert a point in a circle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  <h1><a href="../" class="hover">Compass Geometry</a></h1>
+  <h1>5. Invert a point in a circle</h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Other works</a><span class="crumb-sep">&rsaquo;</span><a href="../">Compass Geometry</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">5. Invert a point in a circle</span>
+</nav>
+
+
+
+<p>Let there be given a circle <em>C</em> with center <em>O</em> and point <em>A</em> on its circumference, and a point <em>P</em> either outside the circle <em>C</em> or inside but more than half the radius away from <em>O.</em> Here is a construction to invert <em>P</em> in the circle <em>C</em> to get <em>P'</em> = <em>P</em>▻<em>C.</em> Draw the circle with center <em>P</em> and radius <em>PO.</em> Then this new circle meets the circle <em>C</em> at two points, <em>Q</em> and <em>Q'.</em> Draw the two circles with centers <em>Q</em> and <em>Q'</em> and radii <em>QO</em> and <em>QO',</em> respectively. Besides <em>O,</em> they will meet at another point <em>P'.</em></p>
+<p>This point <em>P'</em> will be the image of the point <em>P</em> inverted in the circle <em>C.</em> The usual definition of the inverted point <em>P'</em> is that it is situated on the line <em>OP</em> from the center of the circle to <em>P</em> so that <em>OP</em>:<em>OA</em> = <em>OA</em>:<em>OP'.</em> From the symmetry of the construction, <em>P'</em> is clearly on that line. To see that the proportion is valid, note that the two triangles <em>QOP</em> and <em>P'OQ</em> are each isosceles, and they have the same base angles, so they're similar. The proportion immediately follows.</p>
+<figure class="diagram block">
+<canvas id="canvas_0" width="400" height="250" tabindex="0"></canvas>
+<noscript><img alt="Invert P in a circle" src="compass5a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "Invert P in a circle",
+        elements: [
+            "O;point;free;100,125",
+            "A;point;free;100,220",
+            "P;point;free;170,125",
+            "Ocirc;circle;radius;O,A;0;0;black;random",
+            "Pcirc;circle;radius;P,O;0;0;black;0",
+            "QQ';line;bichord;Ocirc,Pcirc;0;0;0",
+            "Q;point;first;QQ'",
+            "Q';point;last;QQ'",
+            "Qcirc;circle;radius;Q,O;0;0;black;0",
+            "Q'circ;circle;radius;Q',O;0;0;black;0",
+            "OP';line;bichord;Qcirc,Q'circ;0;0;0",
+            "OPmid;point;midpoint;OP';0;0",
+            "P';point;extend;O,OPmid,O,OPmid",
+        ],
+    });
+</script>
+</figure><p>Now, this construction doesn't work if <em>P</em> is within half the radius of <em>O</em> since the two circles won't intersect to produce the points <em>Q</em> and <em>Q',</em> so some other construction is needed to invert such <em>P.</em> But if <em>P</em> is at least a quarter of the radius away from <em>O,</em> then we will find the point <em>R</em> twice as far from <em>O</em> as <em>P</em> is, then invert <em>R</em> in the circle <em>C</em> to get <em>R'</em> = <em>R</em>▻<em>C</em> by the method described above, and then <em>P'</em> will be the point twice as far from <em>O</em> as <em>R'</em> is. This requires a doubling construction <strong>2OP</strong>.</p>
+<figure class="diagram block">
+<canvas id="canvas_1" width="300" height="250" tabindex="0"></canvas>
+<noscript><img alt="Double OP" src="compass5b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Double OP",
+        elements: [
+            "O;point;free;40,125",
+            "P;point;free;120,125",
+            "Ocirc;circle;radius;O,P;0;0;black;random",
+            "Pcirc;circle;radius;P,O;0;0;black;0",
+            "QQ';line;bichord;Ocirc,Pcirc;0;0;0",
+            "Q;point;first;QQ'",
+            "Q';point;last;QQ'",
+            "Qcirc;circle;radius;Q,Q';0;0;black;0",
+            "Q'R;line;bichord;Qcirc,Pcirc;0;0;0",
+            "Q'Rmid;point;midpoint;Q'R;0;0",
+            "R;point;extend;Q',Q'Rmid,Q',Q'Rmid",
+        ],
+    });
+</script>
+</figure><blockquote><p><strong>2OP</strong>: given two points <em>O</em> and <em>P,</em> constuct the point <em>R</em> on the line <em>OP</em> twice as far from <em>O</em> as <em>P</em> is.</p>
+</blockquote>
+<p>The construction <strong>2OP</strong> can be effected as follows. Draw the circles with centers <em>O</em> and <em>P</em> and radius <em>OP.</em> Let them intersect at <em>Q</em> and <em>Q'.</em> Draw the circle with center <em>Q</em> and radius <em>QQ'.</em> It will intersect the circle with center <em>P</em> at the points <em>Q'</em> and <em>R.</em></p>
+<p>Now we can invert any point <em>P</em> in a circle so long as it is at least a quarter of a radius away from the center of the circle.</p>
+<p>When <em>P</em> is very close to <em>O,</em> all we have to do is repeatedly double the distance from <em>O</em> until we've got a point at least half the radius from <em>O,</em> invert that point, and double the resulting distance the same number of times to get <em>P'.</em></p>
+<figure class="diagram block">
+<canvas id="canvas_2" width="400" height="250" tabindex="0"></canvas>
+<noscript><img alt="Invert P in a circle" src="compass5c.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_2",
+        background: "0,0,100",
+        title: "Invert P in a circle",
+        elements: [
+            "O;point;free;100,125",
+            "A;point;free;100,210",
+            "P;point;free;130,125",
+            "R;point;extend;O,P,O,P",
+            "Ocirc;circle;radius;O,A;0;0;black;random",
+            "Rcirc;circle;radius;R,O;0;0;black;0",
+            "QQ';line;bichord;Ocirc,Rcirc;0;0;0",
+            "Q;point;first;QQ'",
+            "Q';point;last;QQ'",
+            "Qcirc;circle;radius;Q,O;0;0;black;0",
+            "Q'circ;circle;radius;Q',O;0;0;black;0",
+            "OR';line;bichord;Qcirc,Q'circ;0;0;0",
+            "OR'mid;point;midpoint;OR';0;0",
+            "R';point;extend;O,OR'mid,O,OR'mid",
+            "P';point;extend;O,R',O,R'",
+        ],
+    });
+</script>
+</figure><h4>Bisecting and multisecting lines</h4>
+<p>Before going on, we can use inversion in circles to effect a construction to bisect a line segment, or more generally, cut off one <em>n</em>-th of a line segment. To bisect a line segment <em>OP,</em> use construction <strong>2OP</strong> to double it to <em>OR,</em> then construction <strong>PC</strong> to invert <em>R</em> in the circle with center <em>O</em> and radius <em>OP</em> to get the midpoint <em>M</em> of <em>OP.</em></p>
+<figure class="diagram block">
+<canvas id="canvas_3" width="400" height="250" tabindex="0"></canvas>
+<noscript><img alt="A midpoint construction" src="compass5d.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_3",
+        background: "0,0,100",
+        title: "A midpoint construction",
+        elements: [
+            "O;point;free;100,125",
+            "P;point;free;180,125",
+            "R;point;extend;O,P,O,P",
+            "Ocirc;circle;radius;O,P;0;0;black;random",
+            "Rcirc;circle;radius;R,O;0;0;black;0",
+            "QQ';line;bichord;Ocirc,Rcirc;0;0;0",
+            "Q;point;first;QQ'",
+            "Q';point;last;QQ'",
+            "Qcirc;circle;radius;Q,O;0;0;black;0",
+            "Q'circ;circle;radius;Q',O;0;0;black;0",
+            "OM;line;bichord;Qcirc,Q'circ;0;0;0",
+            "OMmid;point;midpoint;OM;0;0",
+            "M;point;extend;O,OMmid,O,OMmid",
+        ],
+    });
+</script>
+</figure><p>We can trisect <em>OP</em> by doubling <em>OP</em> to <em>OR</em> then doubling <em>PR</em> to <em>PS,</em> so that <em>OS</em> is triple <em>OP,</em> then inverting <em>S</em> in the circle with center <em>O</em> and radius <em>OP</em> to get <em>S'.</em> Then <em>OS'</em> will be one-third of <em>OP</em></p>
+<p>More generally, we can cut off an <em>n</em>-th of <em>OP</em> by first extending <em>OP</em> by a factor of <em>n</em> (which is easily seen as a variant of the doubling construction), then inverting in that same circle.</p>
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+        
+      
+    
+      
+    
+      
+    
+  
+  <footer class="other-works-nav">
+    
+    <hr>
+    <table class="footer-nav">
+      <tr>
+        <td style="text-align:left; width:33%;">
+          <a href="../compass4/">&larr;&nbsp;4. Stereographic projection</a>
+        </td>
+        <td style="text-align:center; width:34%;">
+          <a href="../">Compass Geometry</a>
+        </td>
+        <td style="text-align:right; width:33%;">
+          <a href="../compass6/">6. Find the center of a circle&nbsp;&rarr;</a>
+        </td>
+      </tr>
+    </table>
+    
+    <hr>
+    <p class="footer-credit">
+      <a href="/">Home</a>
+      <br>&copy;1996, 1997, 2025
+      <br>David E. Joyce (Professor Emeritus, <a href="https://www.clarku.edu/">Clark University</a>)
+      <br><a href="/elements/prematter/copyright/">Copyright Notice</a>
+      <br><a href="https://github.com/brownnrl/euclids-elements-lektor">Source</a>
+    </p>
+  </footer>
+
+
+</body>
+</html>

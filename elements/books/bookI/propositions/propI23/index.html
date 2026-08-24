@@ -1,0 +1,322 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 23</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 23</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 23</h1>
+    <div class="statement">To construct a rectilinear angle equal to a given rectilinear angle on a given straight line and at a point on it.</div>
+    <p>Let the angle <span class="elem-ref" data-elem="DCE">DCE</span> be the given rectilinear angle, <span class="elem-ref" data-elem="AB">AB</span> the given straight line, and <span class="elem-ref" data-elem="A">A</span> the point on it.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="340" height="220" tabindex="0"></canvas>
+<noscript><img alt="I.23 diagram" src="propI23.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.23",
+        elements: [
+            "D;point;free;260,40",
+            "C;point;free;190,80",
+            "E;point;free;270,180",
+            "D1;line;extend;C,D,C,D;0;0",
+            "E1;line;extend;C,E,C,E;0;0",
+            "CDE;polygon;triangle;C,D,E;0;0;0,0,0;random",
+            "A;point;free;40,180",
+            "B;point;free;200,180",
+            "AB;line;connect;A,B",
+            "DE;line;connect;D,E",
+            "G;point;cutoff;A,B,C,E",
+            "AGF;polygon;similar;A,G,C,E,D;0;0;0,0,0;random",
+            "F;point;vertex;AGF,3",
+            // Zero-color hover/segment targets for the angle sides and the
+            // copied triangle's sides (the polygons give no per-edge hover).
+            "CD;line;connect;C,D;0;0;0",
+            "CE;line;connect;C,E;0;0;0",
+            "AF;line;connect;A,F;0;0;0",
+            "AG;line;connect;A,G;0;0;0",
+            "FG;line;connect;F,G;0;0;0",
+            // Angle markers: the given angle DCE at C, and the copy FAG at A.
+            // Named vertex-in-the-middle so they don't collide with the
+            // CDE / AGF triangle polygons.
+            "DCE;sector;angleMarker;C,D,E",
+            "FAG;sector;angleMarker;A,F,G"
+        ],
+        aliases: {
+            "AFG": "AGF",
+            "DC":  "CD",
+            "FA":  "AF"
+        },
+        slides: [
+            { text: "Let the angle {DCE} be the given rectilinear angle, {AB} the given straight line, and {A} the point on it.",
+              visible: ["CDE","DCE","AB"],
+              highlighted: ["DCE","AB","A"],
+              transition: { animations: [ { elem: "DCE", name: geomlib.A.Sector.sweep } ] } },
+            { text: "It is required to construct a rectilinear angle equal to the given rectilinear angle {DCE} on the given straight line {AB} and at the point {A} on it.",
+              visible: ["CDE","DCE","AB"],
+              highlighted: ["DCE","AB","A"] },
+            { text: "Take the points {D} and {E} at random on the straight lines {CD} and {CE} respectively, and join {DE}.",
+              visible: ["CDE","DCE","AB","DE"],
+              highlighted: ["D","E","CD","CE","DE"],
+              justifications: [{ ref: "I.Post.1" }] },
+            { text: "Out of three straight lines which equal the three straight lines {CD}, {DE}, and {CE} construct the triangle {AFG} in such a way that {CD} equals {AF}, {CE} equals {AG}, and {DE} equals {FG}.",
+              visible: ["CDE","DCE","AB","DE","G","F","AGF","AF","AG","FG"],
+              highlighted: ["AGF","CD","AF","CE","AG","DE","FG"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "G",   name: geomlib.A.Point.appear },
+                  { elem: "F",   name: geomlib.A.Point.appear },
+                  { elem: "AGF", name: geomlib.A.Polygon.outline } ] },
+              justifications: [{ ref: "I.22" }] },
+            { text: "Since the two sides {DC} and {CE} equal the two sides {FA} and {AG} respectively, and the base {DE} equals the base {FG}, therefore the angle {DCE} equals the angle {FAG}.",
+              visible: ["CDE","DCE","AB","DE","G","F","AGF","AF","AG","FG","FAG"],
+              highlighted: ["CD","CE","AF","AG","DE","FG","DCE","FAG"],
+              transition: { animations: [ { elem: "FAG", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.8" }] },
+            { text: "Therefore on the given straight line {AB}, and at the point {A} on it, the rectilinear angle {FAG} has been constructed equal to the given rectilinear angle {DCE}.",
+              visible: ["CDE","DCE","AB","DE","G","F","AGF","AF","AG","FG","FAG"],
+              highlighted: ["AB","FAG","DCE"],
+              justifications: [{ ref: "Q.E.F." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.8":      "/elements/books/bookI/propositions/propI8/",
+        "I.22":     "/elements/books/bookI/propositions/propI22/"
+    });
+</script>
+</figure><p>It is required to construct a rectilinear angle equal to the given rectilinear angle <span class="elem-ref" data-elem="DCE">DCE</span> on the given straight line <span class="elem-ref" data-elem="AB">AB</span> and at the point <span class="elem-ref" data-elem="A">A</span> on it.</p>
+<div class="just"><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a><br><a href="/elements/books/bookI/propositions/propI22/">I.22</a></div>
+<p>Take the points <span class="elem-ref" data-elem="D">D</span> and <span class="elem-ref" data-elem="E">E</span> at random on the straight lines <span class="elem-ref" data-elem="CD">CD</span> and <span class="elem-ref" data-elem="CE">CE</span> respectively, and join <span class="elem-ref" data-elem="DE">DE</span>. Out of three straight lines which equal the three straight lines <span class="elem-ref" data-elem="CD">CD</span>, <span class="elem-ref" data-elem="DE">DE</span>, and <span class="elem-ref" data-elem="CE">CE</span> construct the triangle <span class="elem-ref" data-elem="AFG">AFG</span> in such a way that <span class="elem-ref" data-elem="CD">CD</span> equals <span class="elem-ref" data-elem="AF">AF</span>, <span class="elem-ref" data-elem="CE">CE</span> equals <span class="elem-ref" data-elem="AG">AG</span>, and <span class="elem-ref" data-elem="DE">DE</span> equals <span class="elem-ref" data-elem="FG">FG</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>Since the two sides <span class="elem-ref" data-elem="DC">DC</span> and <span class="elem-ref" data-elem="CE">CE</span> equal the two sides <span class="elem-ref" data-elem="FA">FA</span> and <span class="elem-ref" data-elem="AG">AG</span> respectively, and the base <span class="elem-ref" data-elem="DE">DE</span> equals the base <span class="elem-ref" data-elem="FG">FG</span>, therefore the angle <span class="elem-ref" data-elem="DCE">DCE</span> equals the angle <span class="elem-ref" data-elem="FAG">FAG</span>.</p>
+<p>Therefore on the given straight line <span class="elem-ref" data-elem="AB">AB</span>, and at the point <span class="elem-ref" data-elem="A">A</span> on it, the rectilinear angle <span class="elem-ref" data-elem="FAG">FAG</span> has been constructed equal to the given rectilinear angle <span class="elem-ref" data-elem="DCE">DCE</span>.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>As Proclus and Heath point out, a very minor variant of the construction in <a href="/elements/books/bookI/propositions/propI22/">I.22</a> is needed to make the triangle <span class="elem-ref" data-elem="AFG">AFG</span>. The problem is that in I.22 the triangle is placed not at the end of line, but somewhere beyond that, and in I.23, the triangle needs to be placed right at the end <span class="elem-ref" data-elem="A">A</span> of the line.</p>
+<h4>Construction steps</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="360" height="300" tabindex="0"></canvas>
+<noscript><img alt="I.23 construction steps" src="propI23a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "I.23",
+        elements: [
+            "D;point;free;270,30",
+            "C;point;free;200,80",
+            "Ccirc;circle;radius;C,D;0;0;0;0",
+            "E;point;circleSlider;Ccirc,280,130",
+            "D1;point;extend;C,D,C,D;0;0",
+            "E1;point;extend;C,E,C,E;0;0",
+            "CD1;line;connect;C,D1",
+            "CE1;line;connect;C,E1",
+            "CDE;sector;sector;C,E,D;0;0;black",
+            "A;point;free;50,180",
+            "B;point;free;210,180",
+            "AB;line;connect;A,B",
+            "G;point;cutoff;A,B,C,D",
+            // The two result circles (centre A radius CD, centre G radius ED)
+            // are part of Joyce's static figure — keep them drawn (black).
+            // They still animate on their slide; the slideshow visible-set
+            // governs when they show during the walk.
+            "Acirc;circle;radius;A,C,D;0;0;black;0",
+            "Gcirc;circle;radius;G,D,E;0;0;black;0",
+            "F'F;line;bichord;Acirc,Gcirc;0;0",
+            "F;point;last;F'F",
+            "AF;line;connect;A,F",
+            "AGF;sector;sector;A,G,F;0;0;0",
+            // Angle-marker indicators (in addition to the filled sectors) for
+            // the closing slide: the given angle at C and the copied one at A.
+            "DCE;sector;angleMarker;C,D,E",
+            "FAG;sector;angleMarker;A,G,F",
+            // Side hover targets.
+            "CD;line;connect;C,D;0;0;0",
+            "CE;line;connect;C,E;0;0;0",
+            "DE;line;connect;D,E;0;0;0"
+            // The two I.2/I.1 transfer rigs are gone — replaced by
+            // A.Circle.compassTransfer on Acirc / Gcirc (#127, geomlib
+            // 0.13.0). The macro owns the join + I.1 circles + equilateral +
+            // produced sides + lay-off circles as self-clearing ephemerals;
+            // args.keepCircles names the four construction circles per
+            // transfer (t1Ka/t1Kc/t1Kc2/t1KT, t2Kg/t2Ke/t2Ke2/t2KT) so they
+            // PERSIST (initiallyHidden) for the ten-circle count slide.
+        ],
+        aliases: {
+            "ED": "DE"
+        },
+        slides: [
+            { text: "Unless there is some special reason for selecting particular points {D} and {E} on the sides of the angle {C}, they might as well be taken equidistant from {C} as Apollonius suggested — then only two distances need to be transferred instead of three.",
+              visible: ["CD1","CE1","CDE","AB"],
+              highlighted: ["D","E","C"] },
+            { text: "In order to make {CE} equal to {CD}, one circle is required.",
+              visible: ["CD1","CE1","CDE","AB","Ccirc","CD","CE"],
+              highlighted: ["Ccirc","CE","CD"],
+              transition: { animations: [ { elem: "Ccirc", name: geomlib.A.Circle.compass } ] } },
+            { text: "Next, to transfer the distance {CD} to {A}, a compass-transfer lays off the length, leaving the circle with center {A} and radius {CD}, which meets {AB} at {G}.",
+              visible: ["CD1","CE1","CDE","AB","Acirc","G","CD"],
+              highlighted: ["Acirc","CD"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "Acirc", name: geomlib.A.Circle.compassTransfer,
+                    args: { side: -1, keepCircles: ["t1Ka","t1Kc","t1Kc2","t1KT"] } },
+                  { elem: "G",     name: geomlib.A.Point.appear } ] },
+              justifications: [{ ref: "I.1" }, { ref: "I.2" }] },
+            { text: "With {G} fixed, the transfer scaffolding has cleared, leaving {G} and the circle on {A}.",
+              visible: ["CD1","CE1","CDE","AB","G","Acirc"],
+              highlighted: ["G","Acirc"] },
+            { text: "In the same way, transfer the distance {ED} to {G}, leaving the circle with center {G} and radius {ED}.",
+              visible: ["CD1","CE1","CDE","AB","G","Acirc","Gcirc","DE"],
+              highlighted: ["Gcirc","DE"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "Gcirc", name: geomlib.A.Circle.compassTransfer,
+                    args: { side: -1, keepCircles: ["t2Kg","t2Ke","t2Ke2","t2KT"] } } ] },
+              justifications: [{ ref: "I.1" }, { ref: "I.2" }] },
+            { text: "Clearing that scaffolding too leaves the two circles — one on {A} with radius {CD}, one on {G} with radius {ED}.",
+              visible: ["CD1","CE1","CDE","AB","G","Acirc","Gcirc"],
+              highlighted: ["Acirc","Gcirc"] },
+            { text: "These two circles meet at the point {F}.",
+              visible: ["CD1","CE1","CDE","AB","G","Acirc","Gcirc","F","CD","DE"],
+              highlighted: ["Acirc","Gcirc","F"],
+              transition: { animations: [ { elem: "F", name: geomlib.A.Point.appear } ] } },
+            { text: "The line {AF} is the other side of the required angle.",
+              visible: ["CD1","CE1","CDE","AB","G","Acirc","Gcirc","F","AF","AGF"],
+              highlighted: ["AF","AGF"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AF",  name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "AGF", name: geomlib.A.Sector.sweep } ] } },
+            { text: "In all there are ten circles and one line that must be drawn;",
+              visible: ["CD1","CE1","CDE","AB","G","F","AF","AGF","t1Ka","t1Kc","t1Kc2","t1KT","Acirc","t2Kg","t2Ke","t2Ke2","t2KT","Gcirc"],
+              highlighted: ["AF","t1Ka","t1Kc","t1Kc2","t1KT","Acirc","t2Kg","t2Ke","t2Ke2","t2KT","Gcirc"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AF",    name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "t1Ka",  name: geomlib.A.Circle.compass },
+                  { elem: "t1Kc",  name: geomlib.A.Circle.compass },
+                  { elem: "t1Kc2", name: geomlib.A.Circle.compass },
+                  { elem: "t1KT",  name: geomlib.A.Circle.compass },
+                  { elem: "Acirc", name: geomlib.A.Circle.compass },
+                  { elem: "t2Kg",  name: geomlib.A.Circle.compass },
+                  { elem: "t2Ke",  name: geomlib.A.Circle.compass },
+                  { elem: "t2Ke2", name: geomlib.A.Circle.compass },
+                  { elem: "t2KT",  name: geomlib.A.Circle.compass },
+                  { elem: "Gcirc", name: geomlib.A.Circle.compass } ] } },
+            { text: "The lines in the intermediate stages may be suppressed as usual, since they are only needed to verify the construction is correct. The constructed angle {FAG} equals the given angle {DCE}.",
+              visible: ["CD1","CE1","CDE","AB","G","Acirc","Gcirc","F","AF","AGF","DCE","FAG"],
+              highlighted: ["DCE","FAG"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "DCE", name: geomlib.A.Sector.sweep },
+                  { elem: "FAG", name: geomlib.A.Sector.sweep } ] } }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Guide-construction citations (merged into the shared page lookup).
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.1": "/elements/books/bookI/propositions/propI1/",
+        "I.2": "/elements/books/bookI/propositions/propI2/"
+    });
+</script>
+</figure><p>This construction that moves an angle requires a number of steps involving a straightedge and compass. Unless there is some special reason for selecting particular points <span class="elem-ref" data-elem="D">D</span> and <span class="elem-ref" data-elem="E">E</span> on the sides of the angle <span class="elem-ref" data-elem="C">C</span>, they might as well be taken equidistant from <span class="elem-ref" data-elem="C">C</span> as Apollonius suggested. Then only two distances need to be transferred instead of three.</p>
+<p>In order to make <span class="elem-ref" data-elem="CE">CE</span> equal to <span class="elem-ref" data-elem="CD">CD</span>, one circle is required. Next, in order to transfer the distance <span class="elem-ref" data-elem="CD">CD</span> to <span class="elem-ref" data-elem="A">A</span>, four circles (not drawn in the static diagram, but shown transitorily in the slideshow above) are required as per Propositions <a href="/elements/books/bookI/propositions/propI2/">I.2</a> and <a href="/elements/books/bookI/propositions/propI1/">I.1</a>, and four more circles (likewise) to transfer <span class="elem-ref" data-elem="ED">ED</span> to <span class="elem-ref" data-elem="G">G</span>. Finally, two more circles are required, one with center <span class="elem-ref" data-elem="A">A</span> and radius <span class="elem-ref" data-elem="CD">CD</span> (which has been transferred), the other with center <span class="elem-ref" data-elem="G">G</span> and radius <span class="elem-ref" data-elem="ED">ED</span>. These last two circles meet at the point <span class="elem-ref" data-elem="F">F</span>, and the line <span class="elem-ref" data-elem="AF">AF</span> is the other side of the required angle.</p>
+<p>In all there are ten circles and one line that must be drawn. The lines in the intermediate stages may be suppressed as usual since they're only needed to verify the construction is correct.</p>
+<h4>Use of Proposition 23</h4>
+<p>The construction in this proposition is used in the next one and a couple others in Book I. It is also used frequently in the later books. It is also used frequently in Books III and VI<sup class="fn-ref" id="fnref-1"><a href="#fn-1">1</a></sup> and occasionally in Books IV and XI.</p>
+<p>Although it may appear that the triangles are to be in the same plane, that is not necessary. Indeed, the construction in this proposition is used to construct an angle in a different plane in proposition <a href="/elements/books/bookXI/propositions/propXI31/">XI.31</a>.</p>
+<p><hr class="footnotes-sep"></p>
+<section class="footnotes" id="footnotes">
+<ol>
+<li id="fn-1">Typo correction from &ldquo;BookS III and VI&rdquo; to &ldquo;Books III and VI.&rdquo; &mdash;NB, 2026-06-17 <a href="#fnref-1" class="fn-back" aria-label="Back to text">&#8617;</a></li>
+</ol>
+</section>
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI24/">I.24</a>, <a href="/elements/books/bookI/propositions/propI31/">I.31</a>, <a href="/elements/books/bookI/propositions/propI42/">I.42</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII7/">III.7</a>, <a href="/elements/books/bookIII/propositions/propIII8/">III.8</a>, <a href="/elements/books/bookIII/propositions/propIII25/">III.25</a>, <a href="/elements/books/bookIII/propositions/propIII27/">III.27</a>, <a href="/elements/books/bookIII/propositions/propIII33/">III.33</a>, <a href="/elements/books/bookIII/propositions/propIII34/">III.34</a></td></tr>
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV2/">IV.2</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI5/">VI.5</a>, <a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a>, <a href="/elements/books/bookVI/propositions/propVI7/">VI.7</a>, <a href="/elements/books/bookVI/propositions/propVI18/">VI.18</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI20/">XI.20</a>, <a href="/elements/books/bookXI/propositions/propXI22/">XI.22</a>, <a href="/elements/books/bookXI/propositions/propXI26/">XI.26</a>, <a href="/elements/books/bookXI/propositions/propXI31/">XI.31</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

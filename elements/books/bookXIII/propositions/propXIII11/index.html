@@ -1,0 +1,173 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 11</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 11</h1>
+    <div class="statement">If an equilateral pentagon is inscribed in a circle which has its diameter rational, then the side of the pentagon is the irrational straight line called minor.</div>
+    <p>In the circle <em>ABCDE</em> which has its diameter rational let the equilateral pentagon <em>ABCDE</em> be inscribed.</p>
+<p>I say that the side of the pentagon is the irrational straight line called minor.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="310" height="270" tabindex="0"></canvas>
+<noscript><img alt="XIII.11 diagram" src="propXIII11.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.11",
+        fontsize: "16",
+        elements: [
+            "C;point;free;110,220",
+            "D;point;free;230,220",
+            "CDEAB;polygon;regularPolygon;C,D,5;0;0;0;0",
+            "E;point;vertex;CDEAB,3",
+            "A;point;vertex;CDEAB,4",
+            "B;point;vertex;CDEAB,5",
+            "circ;circle;circumcircle;C,D,A;0;0;black;random",
+            "CDEABdup;polygon;regularPolygon;C,D,5;0;0;black;random",
+            "F;point;center;circ",
+            "G;point;extend;A,F,A,F",
+            "AG;line;connect;A,G",
+            "H;point;extend;B,F,B,F",
+            "BH;line;connect;B,H",
+            "AC;line;connect;A,C",
+            "K';point;midpoint;F,H;0;0",
+            "K;point;midpoint;F,K'",
+            "L;point;intersection;A,G,C,D",
+            "M;point;intersection;B,H,A,C",
+            "Kcirc;circle;radius;K,M;0;0;0;0",
+            "Z;point;midpoint;B,K;0;0",
+            "Zcirc;circle;radius;Z,B;0;0;0;0",
+            "WW';line;bichord;Kcirc,Zcirc;0;0;0;0",
+            "W;point;first;WW';0;0",
+            "N1;point;free;40,-1000;0;0",
+            "N4;point;free;40,1000;0;0",
+            "N2;point;lineSlider;N1,N4,40,60;0",
+            "N3;point;cutoff;N2,N4,B,W;0",
+            "N;line;connect;N2,N3;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a><br><a href="/elements/books/bookVI/propositions/propVI9/">VI.9</a></div>
+<p>Take the center <em>F</em> of the circle, join <em>AF</em> and <em>FB</em> and carry them through to the points  <em>G</em> and <em>H,</em> join <em>AC,</em> and make <em>FK</em>  a fourth part of <em>AF.</em></p>
+<p>Now <em>AF</em> is rational,  therefore <em>FK</em> is also rational.  But <em>BF</em> is also rational, therefore the whole <em>BK</em> is rational.</p>
+<p>And, since the circumference <em>ACG</em> equals the circumference <em>ADG,</em> and in them <em>ABC</em> equals <em>AED,</em> therefore the remainder <em>CG</em> equals the remainder <em>GD.</em></p>
+<p>And, if we join <em>AD,</em> then we conclude that the angles at <em>L</em> are right, and <em>CD</em> is double <em>CL.</em></p>
+<p>For the same reason the angles at <em>M</em> are also right, and <em>AC</em> is double <em>CM.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>Since then the angle <em>ALC</em> equals the angle <em>AMF,</em> and the angle <em>LAC</em> is common to the two triangles <em>ACL</em> and <em>AMF,</em> therefore the remaining angle <em>ACL</em> equals the remaining angle <em>MFA.</em></p>
+<p>Therefore the triangle <em>ACL</em> is equiangular with the triangle <em>AMF.</em> Therefore, proportionally <em>LC</em> is to <em>CA</em> as <em>MF</em> is to <em>FA.</em> Taking the doubles of the antecedents, therefore double <em>LC</em> is to <em>CA</em> as double <em>MF</em> to <em>FA.</em></p>
+<p>But double <em>MF</em> is to <em>FA</em> as <em>MF</em> is to the half of <em>FA,</em> therefore also double <em>LC</em> is to <em>CA</em> as <em>MF</em> is to the half of <em>FA.</em></p>
+<p>Taking the halves of the consequents, therefore double <em>LC</em> is to the half of <em>CA</em> as <em>MF</em> to the fourth of <em>FA.</em></p>
+<p>And <em>DC</em> is double <em>LC, CM</em> is half of <em>CA,</em> and <em>FK</em> is a fourth part of <em>FA,</em> therefore <em>DC</em> is to <em>CM</em> as <em>MF</em> to <em>FK.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV18/">V.18</a></div>
+<p>Taken together, the sum of <em>DC</em> and <em>CM</em> is to <em>CM</em> as <em>MK</em> to <em>KF.</em> Therefore the square on the sum of <em>DC</em> and <em>CM</em> is to the square on <em>CM</em> as the square on <em>MK</em> is to the square on <em>KF.</em></p>
+<div class="just"><a href="/elements/books/bookXIII/propositions/propXIII8/">XIII.8</a><br><a href="/elements/books/bookXIII/propositions/propXIII1/">XIII.1</a></div>
+<p>And since, when the straight line opposite two sides of the pentagon <em>AC</em> is cut in extreme and mean ratio, the greater segment equals the side of the pentagon, that is, <em>DC,</em> while the square on the greater segment added to the half of the whole is five times the square on the half of the whole, and <em>CM</em> is half of the whole <em>AC,</em> therefore the square on <em>DC</em> and <em>CM</em> taken as one straight line is five times the square on <em>CM.</em></p>
+<p>But it was proved that the square on <em>DC</em> and <em>CM</em> taken as one straight line is to the square on <em>CM</em> as the square on <em>MK</em> to the square on <em>KF,</em> therefore the square on <em>MK</em> is five times the square on <em>KF.</em></p>
+<p>But the square on <em>KF</em> is rational, for the diameter is rational, therefore the square on <em>MK</em> is also rational. Therefore <em>MK</em> is rational.</p>
+<p>And, since <em>BF</em> is quadruple <em>FK,</em> therefore <em>BK</em> is five times <em>KF.</em> Therefore the square on <em>BK</em> is twenty-five times the square on <em>KF.</em></p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX9/">X.9</a></div>
+<p>But the square on <em>MK</em> is five times the square on <em>KF,</em> therefore the square on <em>BK</em> is five times the square on <em>KM.</em> Therefore the square on <em>BK</em> has not to the square on <em>KM</em> the ratio which a square number has to a square number. Therefore <em>BK</em> is incommensurable in length with <em>KM.</em></p>
+<p>And each of them is rational. Therefore <em>BK</em> and <em>KM</em> are rational straight lines commensurable in square only.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX73/">X.73</a></div>
+<p>But, if from a rational straight line there is subtracted a rational straight line which is commensurable with the whole in square only, then the remainder is irrational, namely an apotome, therefore <em>MB</em> is an apotome and <em>MK</em> the annex to it.</p>
+<p>I say next that <em>MB</em> is also a fourth apotome.</p>
+<p>Let the square on <em>N</em> be equal to that by which the square on <em>BK</em> is greater than the square on <em>KM.</em> Therefore the square on <em>BK</em> is greater than the square on <em>KM</em> by the square on <em>N.</em></p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX15/">X.15</a><br><a href="/elements/books/bookX/propositions/propX12/">X.12</a></div>
+<p>And, since <em>KF</em> is commensurable with <em>FB,</em> taken together, <em>KB</em> is commensurable with <em>FB.</em> But <em>BF</em> is commensurable with <em>BH,</em> therefore <em>BK</em> is also commensurable with <em>BH.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV19/#cor">V.19.Cor</a><br><a href="/elements/books/bookX/propositions/propX9/">X.9</a></div>
+<p>And, since the square on <em>BK</em> is five times the square on <em>KM,</em> therefore the square on <em>BK</em> has to the square on <em>KM</em> the ratio which 5 has to 1. Therefore, in conversion, the square on <em>BK</em> has to the square on <em>N</em> the ratio which 5 has to 4, and this is not the ratio which a square number has to a square number. Therefore <em>BK</em> is incommensurable with <em>N.</em> Therefore the square on <em>BK</em> is greater than the square on <em>KM</em> by the square on a straight line incommensurable with <em>BK.</em></p>
+<div class="just"><a href="/elements/books/bookX/definitions/defX.III.4/">X.Def.III.4</a></div>
+<p>Since then the square on the whole <em>BK</em> is greater than the square on the annex <em>KM</em> by the square on a straight line incommensurable with <em>BK,</em> and the whole <em>BK</em> is commensurable with the rational straight line, <em>BH,</em> set out, therefore <em>MB</em> is a fourth apotome.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX94/">X.94</a></div>
+<p>But the rectangle contained by a rational straight line and a fourth apotome is irrational, and its square root is irrational, and is called minor.</p>
+<p>But the square on <em>AB</em> equals the rectangle <em>HB</em> by <em>BM,</em> because, when <em>AH</em> is joined, the triangle <em>ABH</em> is equiangular with the triangle <em>ABM,</em> and <em>HB</em> is to <em>BA</em> as <em>AB</em> is to <em>BM.</em></p>
+<p>Therefore the side <em>AB</em> of the pentagon is the irrational straight line called minor.</p>
+<p>Therefore, <em>if an equilateral pentagon is inscribed in a circle which has its diameter rational, then the side of the pentagon is the irrational straight line called minor.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Use of this proposition</h4>
+<p>This proposition is needed in <a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a> after the construction of a dodecahedron to show the side of a pentagonal face is the irrational straight line called minor.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

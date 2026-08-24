@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 8</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 8</h1>
+    <div class="statement">If a number is the same parts of a number that a subtracted number is of a subtracted number, then the remainder is also the same parts of the remainder that the whole is of the whole.</div>
+    <p>Let the number <em>AB</em> be the same parts of the number <em>CD</em> that <em>AE</em> subtracted is of <em>CF</em> subtracted.</p>
+<p>I say that the remainder <em>EB</em> is also the same parts of the remainder <em>FD</em> that the whole <em>AB</em> is of the whole <em>CD.</em></p>
+<figure class="diagram rdiagram">
+<canvas id="canvas_0" width="280" height="150" tabindex="0"></canvas>
+<noscript><img alt="VII.8 diagram" src="propVII8.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.8",
+        elements: [
+            "C0;point;free;-1000,40;0;0",
+            "C3;point;free;1000,40;0;0",
+            "G0;point;free;-1000,75;0;0",
+            "G3;point;free;1000,75;0;0",
+            "A0;point;free;-1000,110;0;0",
+            "A3;point;free;1000,110;0;0",
+            "A;point;lineSlider;A0,A3,40,110",
+            "B;point;lineSlider;A0,A3,200,110",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;C0,C3,40,40",
+            "D;point;lineSlider;C0,C3,240,110",
+            "CD;line;connect;C,D",
+            "P0;point;free;1000,1000;0;0",
+            "P1;point;free;1000,1100;0;0",
+            "P2;point;extend;P0,P1,P0,P1;0;0",
+            "P3;point;extend;P1,P2,P0,P1;0;0",
+            "E;point;proportion;P0,P3,P0,P2,A,B,A,B",
+            "F;point;proportion;P0,P3,P0,P2,C,D,C,D",
+            "G;point;lineSlider;G0,G3,40,75",
+            "H;point;cutoff;G,G3,A,B",
+            "GH;line;connect;G,H",
+            "K;point;midpoint;G,H",
+            "L;point;midpoint;A,E",
+            "M;point;cutoff;G,H,A,L",
+            "N;point;cutoff;K,H,E,B"
+        ],
+    });
+</script>
+</figure><p>Make <em>GH</em> equal to <em>AB.</em></p>
+<p>Therefore <em>AE</em> is the same parts of <em>CF</em> that <em>GH</em> is of <em>CD.</em></p>
+<p>Divide <em>GH</em> into the parts of <em>CD,</em> namely <em>GK</em> and <em>KH,</em> and divide <em>AE</em> into the parts of <em>CF,</em> namely <em>AL</em> and <em>LE.</em> Then the multitude of <em>GK</em> and <em>KH</em> equals the multitude of <em>AL</em> and <em>LE.</em></p>
+<p>Now since <em>AL</em> is the same part of <em>CF</em> that <em>GK</em> is of <em>CD,</em> and <em>CD</em> is greater than <em>CF,</em> therefore <em>GK</em> is also greater than <em>AL.</em></p>
+<p>Make <em>GM</em> equal to <em>AL.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII7/">VII.7</a></div>
+<p>Then <em>GK</em> is the same part of <em>CD</em> that <em>GM</em> is of <em>CF.</em> Therefore the remainder <em>MK</em> is the same part of the remainder <em>FD</em> that the whole <em>GK</em> is of the whole <em>CD.</em></p>
+<p>Again, since <em>EL</em> is the same part of <em>CF</em> that <em>KH</em> is of <em>CD,</em> and <em>CD</em> is greater than <em>CF,</em> therefore <em>HK</em> is also greater than <em>EL.</em></p>
+<p>Make <em>KN</em> equal to <em>EL.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII7/">VII.7</a></div>
+<p>Therefore <em>KN</em> is the same part of <em>CF</em> that <em>KH</em> is of <em>CD.</em> Therefore the remainder <em>NH</em> is the same part of the remainder <em>FD</em> that the whole <em>KH</em> is of the whole <em>CD.</em></p>
+<p>But the remainder <em>MK</em> was proved to be the same part of the remainder <em>FD</em> that the whole <em>GK</em> is of the whole <em>CD,</em> therefore the sum of <em>MK</em> and <em>NH</em> is the same parts of <em>DF</em> that the whole <em>HG</em> is of the whole <em>CD.</em></p>
+<p>But the sum of <em>MK</em> and <em>NH</em> equals <em>EB,</em> and <em>HG</em> equals <em>BA,</em> therefore the remainder <em>EB</em> is the same parts of the remainder <em>FD</em> that the whole <em>AB</em> is of the whole <em>CD.</em></p>
+<p>Therefore, <em>if a number is the same parts of a number that a subtracted number is of a subtracted number, then the remainder is also the same parts of the remainder that the whole is of the whole.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition says multiplication by fractions distributes over subtraction. Algebraically,</p>
+<center>(<i>m/n</i>)<i>b</i> + (<i>m/n</i>)<i>e,</i> = (<i>m/n</i>)(<i>b</i> + <i>e</i>).</center><p>The sample value taken for <em>m/n</em> in the proof is 2/3.</p>
+<p>This proposition is used in <a href="/elements/books/bookVII/propositions/propVII11/">VII.11</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VII</th><td><a href="/elements/books/bookVII/propositions/propVII11/">VII.11</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

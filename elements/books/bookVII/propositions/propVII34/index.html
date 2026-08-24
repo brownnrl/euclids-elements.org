@@ -1,0 +1,215 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 34</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 34</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 34</h1>
+    <div class="statement">To find the least number which two given numbers measure.</div>
+    <p>Let <em>A</em> and <em>B</em> be the two given numbers.</p>
+<p>It is required to find the least number which they measure.</p>
+<p>Now either <em>A</em> and <em>B</em> are relatively prime or they are not.</p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII18/">VII.18</a></div>
+<p>First, let <em>A</em> and <em>B</em> be relatively prime. Multiply <em>A</em> by <em>B</em> to make <em>C.</em> Then <em>B</em> multiplied by <em>A</em> makes <em>C.</em> Therefore <em>A</em> and <em>B</em> measure <em>C.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="250" height="170" tabindex="0"></canvas>
+<noscript><img alt="VII.34 diagram" src="propVII34a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.34",
+        elements: [
+            "A0;point;free;-1000,35;0;0",
+            "A3;point;free;1000,35;0;0",
+            "C0;point;free;-1000,70;0;0",
+            "C3;point;free;1000,70;0;0",
+            "D0;point;free;-1000,105;0;0",
+            "D3;point;free;1000,105;0;0",
+            "E0;point;free;-1000,140;0;0",
+            "E3;point;free;1000,140;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,40;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;lineSlider;A0,A3,100,0;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;lineSlider;A0,A3,130,0;0",
+            "B2;point;lineSlider;A0,A3,190,0;0",
+            "B;line;connect;B1,B2;black",
+            "C1;point;lineSlider;C0,C3,30,0;0",
+            "C2;point;proportion;U1,U2,A1,A2,B1,B2,C1,C3;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;D0,D3,30,0;0",
+            "D2;point;lineSlider;D0,D3,120,0;0",
+            "D;line;connect;D1,D2;black",
+            "E1;point;lineSlider;E0,E3,30,0;0",
+            "E2;point;proportion;A1,A2,D1,D2,U1,U2,E1,E3;0",
+            "E;line;connect;E1,E2;black",
+            "F1;point;lineSlider;E0,E3,130,0;0",
+            "F2;point;proportion;B1,B2,D1,D2,U1,U2,F1,E3;0",
+            "F;line;connect;F1,F2;black"
+        ],
+    });
+</script>
+</figure><p>I say next that it is also the least number they measure.</p>
+<p>If not, then <em>A</em> and <em>B</em> measure some number <em>D</em> less than <em>C</em></p>
+<p>Let there be as many units in <em>E</em> as the times that <em>A</em> measures <em>D,</em> and as many units in <em>F</em> as the times that <em>B</em> measures <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII15/">VII.Def.15</a><br><a href="/elements/books/bookVII/propositions/propVII19/">VII.19</a></div>
+<p>Then <em>A</em> multiplied by <em>E</em> makes <em>D,</em> and <em>B</em> multiplied by <em>F</em> makes <em>D.</em> Therefore the product of <em>A</em> and <em>E</em> equals the product of <em>B</em> and <em>F.</em> Therefore <em>A</em> is to <em>B</em> as <em>F</em> is to <em>E.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII21/">VII.21</a><br><a href="/elements/books/bookVII/propositions/propVII20/">VII.20</a></div>
+<p>But <em>A</em> and <em>B</em> are relatively prime, primes are also least, and the least measure the numbers which have the same ratio the same number of times, the greater the greater and the less the less, therefore <em>B</em> measures <em>E</em> as the consequent the consequent.</p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII17/">VII.17</a></div>
+<p>And, since <em>A</em> multiplied by <em>B</em> and by <em>E</em> makes <em>C</em> and <em>D,</em> therefore <em>B</em> is to <em>E</em> as <em>C</em> is to <em>D.</em> But <em>B</em> measures <em>E,</em> therefore <em>C</em> also measures <em>D,</em> the greater the less, which is impossible.</p>
+<p>Therefore <em>A</em> and <em>B</em> do not measure any number less than <em>C.</em> Therefore <em>C</em> is the least that is measured by <em>A</em> and <em>B.</em></p>
+<hr width="40%">
+
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII33/">VII.33</a><br><a href="/elements/books/bookVII/propositions/propVII19/">VII.19</a></div>
+<p>Next, let <em>A</em> and <em>B</em> not be relatively prime. Take <em>F</em> and <em>E,</em> the least numbers of those which have the same ratio with <em>A</em> and <em>B.</em> Therefore the product of <em>A</em> and <em>E</em> equals the product of <em>B</em> and <em>F.</em></p>
+<figure class="diagram">
+<canvas id="canvas_1" width="250" height="205" tabindex="0"></canvas>
+<noscript><img alt="VII.34 diagram" src="propVII34b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "VII.34",
+        elements: [
+            "A0;point;free;-1000,35;0;0",
+            "A3;point;free;1000,35;0;0",
+            "F0;point;free;-1000,70;0;0",
+            "F3;point;free;1000,70;0;0",
+            "C0;point;free;-1000,105;0;0",
+            "C3;point;free;1000,105;0;0",
+            "D0;point;free;-1000,140;0;0",
+            "D3;point;free;1000,140;0;0",
+            "G0;point;free;-1000,175;0;0",
+            "G3;point;free;1000,175;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,40;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;lineSlider;A0,A3,100,0;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;lineSlider;A0,A3,130,0;0",
+            "B2;point;lineSlider;A0,A3,220,0;0",
+            "B;line;connect;B1,B2;black",
+            "F1;point;lineSlider;F0,F3,30,0;0",
+            "F2;point;lineSlider;F0,F3,65,0;0",
+            "F;line;connect;F1,F2;black",
+            "E1;point;lineSlider;F0,F3,130,0;0",
+            "E2;point;proportion;A1,A2,B1,B2,F1,F2,E1,F3;0",
+            "E;line;connect;E1,E2;black",
+            "C1;point;lineSlider;C0,C3,30,0;0",
+            "C2;point;proportion;U1,U2,A1,A2,E1,E2,C1,C3;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;D0,D3,30,0;0",
+            "D2;point;lineSlider;D0,D3,90,0;0",
+            "D;line;connect;D1,D2;black",
+            "G1;point;lineSlider;G0,G3,30,0;0",
+            "G2;point;proportion;A1,A2,D1,D2,U1,U2,G1,G3;0",
+            "G;line;connect;G1,G2;black",
+            "H1;point;lineSlider;G0,G3,130,0;0",
+            "H2;point;proportion;B1,B2,D1,D2,U1,U2,H1,G3;0",
+            "H;line;connect;H1,H2;black"
+        ],
+    });
+</script>
+</figure><p>Multiply <em>A</em> by <em>E</em> to make <em>C.</em> Then <em>B</em> multiplied by <em>F</em> makes <em>C.</em> Therefore <em>A</em> and <em>B</em> measure <em>C.</em></p>
+<p>I say next that it is also the least number that they measure.</p>
+<p>If not, then <em>A</em> and <em>B</em> measure some number <em>D</em> less than <em>C.</em></p>
+<p>Let there be as many units in <em>G</em> as the times that <em>A</em> measures <em>D,</em> and as many units in <em>H</em> as the times that <em>B</em> measures <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII19/">VII.19</a></div>
+<p>Then <em>A</em> multiplied by <em>G</em> makes <em>D,</em> and <em>B</em> multiplied by <em>H</em> makes <em>D.</em> Therefore the product of <em>A</em> and <em>G</em> equals the product of <em>B</em> and <em>H.</em> Therefore <em>A</em> is to <em>B</em> as <em>H</em> is to <em>G.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>But <em>A</em> is to <em>B</em> as <em>F</em> is to <em>E.</em> Therefore <em>F</em> is to <em>E</em> as <em>H</em> is to <em>G.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII20/">VII.20</a></div>
+<p>But <em>F</em> and <em>E</em> are least, and the least measure the numbers which have the same ratio the same number of times, the greater the greater and the less the less, therefore <em>E</em> measures <em>G.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII17/">VII.17</a></div>
+<p>And, since <em>A</em> multiplied by <em>E</em> and by <em>G</em> makes <em>C</em> and <em>D,</em> therefore <em>E</em> is to <em>G</em> as <em>C</em> is to <em>D.</em></p>
+<p>But <em>E</em> measures <em>G,</em> therefore <em>C</em> also measures <em>D,</em> the greater the less, which is impossible. Therefore <em>A</em> and <em>B</em> do not measure any number less than <em>C.</em> Therefore <em>C</em> is the least that is measured by <em>A</em> and <em>B.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The least common multiple of two numbers <em>a</em> and <em>b</em> is the smallest number that they both divide. It is denoted <em>LCM</em>(<em>a, b</em>). This proposition constructs it as the product divided by the greatest common divisor:</p>
+<center>LCM(<i>a, b</i>) = <i>ab</i>/LCM(<i>a, b</i>).</center><h4>Use of this proposition</h4>
+<p>This proposition is used in <a href="/elements/books/bookVII/propositions/propVII36/">VII.36</a> and <a href="/elements/books/bookVIII/propositions/propVIII4/">VIII.4</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VII</th><td><a href="/elements/books/bookVII/propositions/propVII36/">VII.36</a></td></tr>
+  <tr><th>Book VIII</th><td><a href="/elements/books/bookVIII/propositions/propVIII4/">VIII.4</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

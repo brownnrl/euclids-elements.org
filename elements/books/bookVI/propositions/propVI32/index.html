@@ -1,0 +1,127 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 32</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 32</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 32</h1>
+    <div class="statement">If two triangles having two sides proportional to two sides are placed together at one angle so that their corresponding sides are also parallel, then the remaining sides of the triangles are in a straight line.</div>
+    <p>Let <em>ABC</em> and <em>DCE</em> be two triangles having the two sides <em>AB</em> and <em>AC</em> proportional to the two sides <em>DC</em> and <em>DE,</em> so that <em>AB</em> is to <em>AC</em> as <em>DC</em> is to <em>DE,</em> and <em>AB</em> parallel to <em>DC,</em> and <em>AC</em> parallel to <em>DE.</em></p>
+<p>I say that <em>BC</em> is in a straight line with <em>CE.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="370" height="250" tabindex="0"></canvas>
+<noscript><img alt="VI.32 diagram" src="propVI32.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.32",
+        elements: [
+            "A;point;free;130,80",
+            "B;point;free;50,220",
+            "C;point;free;160,220",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D';point;parallelogram;A,B,C;0;0",
+            "D;point;lineSlider;C,D',250,40",
+            "E;point;similar;C,D,B,A,C",
+            "CDE;polygon;triangle;C,D,E;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Since <em>AB</em> is parallel to <em>DC,</em> and the straight line <em>AC</em> falls upon them, therefore the alternate angles <em>BAC</em> and <em>ACD</em> equal one another.</p>
+<p>For the same reason the angle <em>CDE</em> also equals the angle <em>ACD,</em> so that the angle <em>BAC</em> equals the angle <em>CDE.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a></div>
+<p>And, since <em>ABC</em> and <em>DCE</em> are two triangles having one angle, the angle at <em>A,</em> equal to one angle, the angle at <em>D,</em> and the sides about the equal angles proportional, so that <em>AB</em> is to <em>AC</em> as <em>DC</em> is to <em>DE,</em> therefore the triangle <em>ABC</em> is equiangular with the triangle <em>DCE.</em>  Therefore the angle <em>ABC</em> equals the angle <em>DCE.</em></p>
+<p>But the angle <em>ACD</em> was also proved equal to the angle <em>BAC,</em> therefore the whole angle <em>ACE</em> equals the sum of the two angles <em>ABC</em> and <em>BAC.</em></p>
+<p>Add the angle <em>ACB</em> to each.  Therefore the sum of the angles <em>ACE</em> and <em>ACB</em> equals the sum of the angles <em>BAC, ACB,</em> and <em>CBA.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>But the sum of the angles <em>BAC, ABC,</em> and <em>ACB</em> equals two right angles, therefore the sum of the angles <em>ACE</em> and <em>ACB</em> also equals two right angles.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI14/">I.14</a></div>
+<p>Therefore with a straight line <em>AC,</em> and at the point <em>C</em> on it, the two straight lines <em>BC</em> and <em>CE</em> not lying on the same side make the sum of the adjacent angles <em>ACE</em> and <em>ACB</em> equal to two right angles.  Therefore <em>BC</em> is in a straight line with <em>CE.</em></p>
+<p>Therefore, <em>if two triangles having two sides proportional to two sides are placed together at one angle so that their corresponding sides are also parallel, then the remaining sides of the triangles are in a straight line.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The corresponding sides mentioned in the statement of the proposition are supposed to be directed in the same direction, even though that is not explicitly stated.</p>
+<p>This proposition is used in the proof of proposition <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a> which inscribes a regular dodecahedron in a sphere.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

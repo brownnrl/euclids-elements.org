@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IX</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IX</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 14</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 14</h1>
+    <div class="statement">If a number is the least that is measured by prime numbers, then it is not measured by any other prime number except those originally measuring it.</div>
+    <p>Let the number <em>A</em> be the least that is measured by the prime numbers <em>B, C,</em> and <em>D.</em></p>
+<p>I say that <em>A</em> is not measured by any other prime number except <em>B, C,</em> or <em>D.</em></p>
+<p>If possible, let it be measured by the prime number <em>E,</em> and let <em>E</em> not be the same as any one of the numbers <em>B, C,</em> or <em>D.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="130" tabindex="0"></canvas>
+<noscript><img alt="IX.14 diagram" src="propIX14.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IX.14",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "E0;point;free;-1000,65;0;0",
+            "E3;point;free;1000,65;0;0",
+            "F0;point;free;-1000,100;0;0",
+            "F3;point;free;1000,100;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,35;0;0",
+            "B1;point;lineSlider;A0,A3,180,0;0",
+            "B2;point;lineSlider;A0,A3,220,0;0",
+            "B;line;connect;B1,B2;black",
+            "C1;point;lineSlider;E0,E3,180,0;0",
+            "C2;point;lineSlider;E0,E3,230,0;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;F0,F3,180,0;0",
+            "D2;point;lineSlider;F0,F3,250,0;0",
+            "D;line;connect;D1,D2;black",
+            "C4;point;proportion;U1,U2,B1,B2,C1,C2,C1,E3;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;proportion;U1,U2,C1,C4,D1,D2,A1,A3;0",
+            "A;line;connect;A1,A2;black",
+            "E1;point;lineSlider;E0,E3,30,0;0",
+            "E2;point;lineSlider;E0,E3,80,0;0",
+            "E;line;connect;E1,E2;black",
+            "F1;point;lineSlider;F0,F3,30,0;0",
+            "F2;point;proportion;E1,E2,A1,A2,U1,U2,F1,F3;0",
+            "F;line;connect;F1,F2;black"
+        ],
+    });
+</script>
+</figure><p>Now, since <em>E</em> measures <em>A,</em> let it measure it according to <em>F,</em> therefore <em>E</em> multiplied by <em>F</em> makes <em>A.</em> And <em>A</em> is measured by the prime numbers <em>B, C,</em> and <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII30/">VII.30</a></div>
+<p>But, if two numbers multiplied by one another make some number, and any prime number measures the product, then it also measures one of the original numbers, therefore each of <em>B, C,</em> and <em>D</em> measures one of the numbers <em>E</em> or <em>F.</em></p>
+<p>Now they do not measure <em>E,</em> for <em>E</em> is prime and not the same with any one of the numbers <em>B, C,</em> or <em>D.</em> Therefore they measure <em>F,</em> which is less than <em>A,</em> which is impossible, for <em>A</em> is by hypothesis the least number measured by <em>B, C,</em> and <em>D.</em></p>
+<p>Therefore no prime number measures <em>A</em> except <em>B, C,</em> and <em>D.</em></p>
+<p>Therefore, <em>if a number is the least that is measured by prime numbers, then it is not measured by any other prime number except those originally measuring it.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition states that the least common multiple of a set of prime numbers is not divisible by any other prime. The least common multiple is actually the product of those primes, but that isn't mentioned.</p>
+<p>The proof is clear, and it depends on <a href="/elements/books/bookVII/propositions/propVII30/">VII.30</a>, that if a prime divides a product, then it divides one of the factors.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

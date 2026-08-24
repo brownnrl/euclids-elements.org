@@ -1,0 +1,171 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 9</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 9</h1>
+    <div class="statement">To cut off a prescribed part from a given straight line.</div>
+    <p>Let <em>AB</em> be the given straight line.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="250" tabindex="0"></canvas>
+<noscript><img alt="VI.9 diagram" src="propVI9.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.9",
+        elements: [
+            "A;point;free;30,220",
+            "B;point;free;250,220",
+            "AB;line;connect;A,B",
+            "D;point;free;80,170",
+            "E;point;extend;A,D,A,D",
+            "C;point;extend;D,E,A,D",
+            "G;point;extend;E,C,A,D;0;0",
+            "AG;line;connect;A,G",
+            "F';point;parallelogram;B,C,D;0;0",
+            "F;point;intersection;A,B,D,F'",
+            "DF;line;connect;D,F",
+            "CB;line;connect;C,B"
+        ],
+    });
+</script>
+</figure><p>It is required to cut off from <em>AB</em> a prescribed part.</p>
+<p>Let the third part be that prescribed.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a></div>
+<p>Draw a straight line <em>AC</em> through from <em>A</em> containing with <em>AB</em> any angle. Take a point <em>D</em> random on <em>AC,</em> and make <em>DE</em> and <em>EC</em> equal to <em>AD.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Join <em>CB,</em> and draw <em>DF</em> through <em>D</em> parallel to it.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI2/">VI.2</a></div>
+<p>Then, since <em>DF</em> is parallel to a side <em>CB</em> of the triangle <em>ABC,</em> therefore, proportionally, <em>AD</em> is to <em>DC</em> as <em>AF</em> is to <em>FB.</em></p>
+<p>But <em>DC</em> is double <em>AD,</em> therefore <em>FB</em> is also double <em>AF,</em> therefore <em>AB</em> is triple of <em>AF.</em></p>
+<p>Therefore from the given straight line <em>AB</em> the prescribed third part <em>AF</em> has been cut off.</p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The word "part" in this proposition means submultiple. The problem here is to divide a line <em>AB</em> into some given number <em>n</em> of equal parts, or actually, to to find just one of these parts. Euclid takes the case <em>n</em> = 3 in his proof.</p>
+<p>Simson complained that proving the general case by using a specific case, the one-third part, "is not at all like Euclid's manner." But it is very much Euclid's manner throughout books V and VI to prove a general numerical statement with a specific numerical value.</p>
+<h4>Al-Nayrizi's construction</h4>
+<figure class="diagram">
+<canvas id="canvas_1" width="320" height="300" tabindex="0"></canvas>
+<noscript><img alt="Al-Nayrizi's construction" src="propVI9a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "An-Nairizi's construction",
+        elements: [
+            "A;point;free;40,150",
+            "B;point;free;280,150",
+            "AB;line;connect;A,B",
+            "A';point;perpendicular;A,B;0;0",
+            "B';point;perpendicular;B,A;0;0",
+            "D;point;lineSlider;A,A',30,120",
+            "E;point;cutoff;B,B',A,D",
+            "F;point;extend;A,D,A,D",
+            "G;point;extend;B,E,B,E",
+            "H;point;extend;D,F,A,D",
+            "K;point;extend;E,G,B,E",
+            "L;point;extend;F,H,A,D",
+            "M;point;extend;G,K,B,E",
+            "AL;line;connect;A,L",
+            "BM;line;connect;B,M",
+            "DM;line;connect;D,M",
+            "FK;line;connect;F,K",
+            "HG;line;connect;H,G",
+            "LE;line;connect;L,E",
+            "N;point;intersection;AB,DM",
+            "O;point;intersection;AB,FK",
+            "P;point;intersection;AB,HG",
+            "Q;point;intersection;AB,LE"
+        ],
+    });
+</script>
+</figure><p>Abu'l-Abbas al-Fadl ibn al-Nayrizi (fl. c. 897, d. c. 922) wrote a commentary on the first ten books of the <em>Elements.</em> He gives another construction to divide a line <em>AB</em> into <em>n</em> equal parts. First, construct equal perpendiculars at <em>A</em> and <em>B</em> in opposite directions, mark off <em>n</em> – 1 equal parts on each of them, and connect the points as illustrated. The diagram shows <em>AB</em> divided into five equal parts.</p>
+<p>Al-Nayrizi's construction takes considerably less work than Euclid's. The proof that this construction is valid is about the same length as that for Euclid's construction.</p>
+<h4>Use of this construction</h4>
+<p>This construction is used in a few propositions in Book XIII to find a third or a fifth of a line.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX6/">X.6</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII11/">XIII.11</a>, <a href="/elements/books/bookXIII/propositions/propXIII13/">XIII.13</a>, <a href="/elements/books/bookXIII/propositions/propXIII15/">XIII.15</a>, <a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 17</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 17</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 17</h1>
+    <div class="statement">Given two spheres about the same center, to inscribe in the greater sphere a polyhedral solid which does not touch the lesser sphere at its surface.</div>
+    <p>Let there be two spheres about the same center <em>A.</em></p>
+<p>It is required to inscribe in the greater sphere a polyhedral solid which does not touch the lesser sphere at its surface.</p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI14/">XI.Def.14</a></div>
+<p>Cut the spheres by any plane through the center. Then the sections are circles, for as a sphere is produced by the diameter remaining fixed and the semicircle being carried round it, hence, in whatever position we conceive the semicircle to be, the plane carried through it produces a circle on the circumference of the sphere.</p>
+<p>And it is clear that this circle is the greatest possible, for the diameter of the sphere, which is of course the diameter both of the semicircle and of the circle, is greater than all the straight lines drawn across in the circle or the sphere.</p>
+<center>
+<canvas id="canvas_0" width="500" height="500" tabindex="0"></canvas>
+<noscript><img alt="XII.17 diagram" src="propXII17.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.17",
+        fontsize: "14",
+        elements: [
+            "zen;point;fixed;250,-10000,5000;0;0",
+            "A;point;free;250,250",
+            "eqplane;plane;perpendicular;A,zen;0;0;0;0",
+            "B;point;planeSlider;eqplane,450,360,60",
+            "Bsphere;sphere;radius;A,B;0;0;black;random",
+            "D;point;extend;B,A,A,B",
+            "C;point;perpendicular;A,B,eqplane",
+            "E;point;extend;C,A,A,B",
+            "BCDE;circle;radius;A,B,eqplane;0;0;black;0",
+            "BD;line;connect;B,D",
+            "CE;line;connect;C,E",
+            "G;point;lineSlider;A,B,370,260",
+            "H;point;cutoff;A,C,A,G",
+            "F;point;cutoff;A,E,A,G",
+            "Gsphere;sphere;radius;A,F;0;0;black;random",
+            "FGH;circle;radius;A,F,eqplane;0;0;black;0",
+            "L';point;angleBisector;B,A,E,eqplane;0;0",
+            "L;point;cutoff;A,L',A,B",
+            "K';point;angleBisector;L,A,B,eqplane;0;0",
+            "K;point;cutoff;A,K',A,B",
+            "M;point;similar;L,A,eqplane,B,A,K,eqplane",
+            "BK;line;connect;B,K",
+            "KL;line;connect;K,L",
+            "LM;line;connect;L,M",
+            "ME;line;connect;M,E",
+            "N;point;extend;K,A,A,B",
+            "KN;line;connect;K,N",
+            "O;point;cutoff;A,zen,A,B",
+            "AO;line;connect;A,O",
+            "BODplane;plane;3points;B,O,D;0;0;0;0",
+            "KONplane;plane;3points;K,O,N;0;0;0;0",
+            "BOD;circle;radius;A,B,BODplane;0;0;black;0",
+            "KON;circle;radius;A,B,KONplane;0;0;black;0",
+            "P;point;similar;B,A,BODplane,B,A,K,eqplane",
+            "Q;point;similar;P,A,BODplane,B,A,K,eqplane",
+            "R;point;similar;Q,A,BODplane,B,A,K,eqplane",
+            "S;point;similar;K,A,KONplane,B,A,K,eqplane",
+            "T;point;similar;S,A,KONplane,B,A,K,eqplane",
+            "U;point;similar;T,A,KONplane,B,A,K,eqplane",
+            "ORU;polygon;triangle;O,R,U",
+            "RUTQ;polygon;quadrilateral;R,U,T,Q",
+            "QTSP;polygon;quadrilateral;Q,T,S,P",
+            "PSKB;polygon;quadrilateral;P,S,K,B",
+            "V;point;foot;P,eqplane",
+            "W;point;foot;S,eqplane",
+            "PV;line;connect;P,V",
+            "SW;line;connect;S,W",
+            "VW;line;connect;V,W",
+            "KBPSplane;plane;3points;K,B,P;0;0;0;0",
+            "X;point;foot;A,KBPSplane",
+            "AX;line;connect;A,X",
+            "BX;line;connect;B,X",
+            "KX;line;connect;K,X",
+            "Z;point;foot;K,B,V;0",
+            "KZ;line;connect;K,Z",
+            "KD;line;connect;K,D"
+        ],
+    });
+</script>
+</center><div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
+<p>Let then <em>BCDE</em> be the circle in the greater sphere, and <em>FGH</em> the circle in the lesser sphere. Draw two diameters in them, <em>BD</em> and <em>CE,</em> at right angles to one another.</p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII16/">XII.16</a></div>
+<p>Then, given the two circles <em>BCDE</em> and <em>FGH</em> about the same center, inscribe in the greater circle <em>BCDE</em> an equilateral polygon with an even number of sides which does not touch the lesser circle <em>FGH.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI12/">XI.12</a></div>
+<p>Let <em>BK, KL, LM,</em> and <em>ME</em> be its sides in the quadrant <em>BE.</em> Join <em>KA</em> and carry it through to <em>N.</em> Set <em>AO</em> up from the point <em>A</em> at right angles to the plane of the circle <em>BCDE,</em> and let it meet the surface of the sphere at <em>O.</em></p>
+<p>Carry planes through <em>AO</em> and each of the straight lines <em>BD</em> and <em>KN.</em> They make the greatest circles on the surface of the sphere for the reason stated.</p>
+<p>Let them make such, and in them let <em>BOD</em> and <em>KON</em> be the semicircles on <em>BD</em> and <em>KN.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI18/">XI.18</a></div>
+<p>Now, since <em>OA</em> is at right angles to the plane of the circle <em>BCDE,</em> therefore all the planes through <em>OA</em> are also at right angles to the plane of the circle <em>BCDE.</em> Hence the semicircles <em>BOD</em> and <em>KON</em> are also at right angles to the plane of the circle <em>BCDE.</em></p>
+<p>And, since the semicircles <em>BED, BOD,</em> and <em>KON</em> are equal, for they are on equal diameters <em>BD</em> and <em>KN,</em> therefore the quadrants <em>BE, BO,</em> and <em>KO</em> equal one another.</p>
+<p>Therefore there are as many straight lines in the quadrants <em>BO</em> and <em>KO</em> equal to the straight lines <em>BK, KL, LM,</em> and <em>ME</em> as there are sides of the polygon in the quadrant <em>BE.</em></p>
+<div class="just"><a href="/elements/books/bookIV/propositions/propIV1/">IV.1</a><br><a href="/elements/books/bookXI/propositions/propXI11/">XI.11</a></div>
+<p>Inscribe them as <em>BP, PQ, QR,</em> and <em>RO</em> and as <em>KS, ST, TU,</em> and <em>UO.</em> Join <em>SP, TQ, UR,</em> and draw perpendiculars from <em>P</em> and <em>S</em> to the plane of the circle <em>BCDE.</em></p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI4/">XI.Def.4</a></div>
+<p>These will fall on <em>BD</em> and <em>KN,</em> the common sections of the planes, for the planes of <em>BOD</em> and <em>KON</em> are also at right angles to the plane of the circle <em>BCDE.</em></p>
+<p>Let them so fall as <em>PV</em> and <em>SW,</em> and join <em>WV.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII27/">III.27</a><br><a href="/elements/books/bookI/propositions/propI26/">I.26</a></div>
+<p>Now since, in the equal semicircles <em>BOD</em> and <em>KON,</em> equal straight lines <em>BP</em> and <em>KS</em> have been cut off, and the perpendiculars <em>PV</em> and <em>SW</em> have been drawn, therefore <em>PV</em> equals <em>SW,</em> and <em>BV</em> equals <em>KW.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI2/">VI.2</a></div>
+<p>But the whole <em>BA</em> also equals the whole <em>KA,</em> therefore the remainder <em>VA</em> also equals the remainder <em>WA.</em> Therefore <em>BV</em> is to <em>VA</em> as <em>KW</em> is to <em>WA.</em> Therefore <em>WV</em> is parallel to <em>KB.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI6/">XI.6</a></div>
+<p>And, since each of the straight lines <em>PV</em> and <em>SW</em> is at right angles to the plane of the circle <em>BCDE,</em> therefore <em>PV</em> is parallel to <em>SW.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI33/">I.33</a></div>
+<p>But it was also proved equal to it, therefore <em>WV</em> and <em>SP</em> are equal and parallel.</p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI9/">XI.9</a></div>
+<p>And, since <em>WV</em> is parallel to <em>SP,</em> and <em>WV</em> is parallel to <em>KB,</em> therefore <em>SP</em> is also parallel to <em>KB.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI7/">XI.7</a></div>
+<p>And <em>BP</em> and <em>KS</em> join their ends, therefore the quadrilateral <em>KBPS</em> is in one plane, for if two straight lines are parallel, and points are taken at random on each of them, then the straight line joining the points is in the same plane with the parallels. For the same reason each of the quadrilaterals <em>SPQT</em> and <em>TQRU</em> is also in one plane.</p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI2/">XI.2</a></div>
+<p>But the triangle <em>URO</em> is also in one plane. If then we join straight lines from the points <em>P, S, Q, T, R,</em> and <em>U</em> to <em>A,</em> then there will be constructed a certain polyhedral solid figure between the circumferences <em>BO</em> and <em>KO</em> consisting of pyramids of which the quadrilaterals <em>KBPS, SPQT,</em> and <em>TQRU</em> and the triangle <em>URO</em> are the bases and the point <em>A</em> is the vertex.</p>
+<p>And, if we make the same construction in the case of each of the sides <em>KL, LM,</em> and <em>ME</em> as in the case of <em>BK,</em> and further, in the case of the remaining three quadrants, then there will be constructed a certain polyhedral figure inscribed in the sphere and contained by pyramids, of which the said quadrilaterals and the triangle <em>URO,</em> and the others corresponding to them, are the bases and the point <em>A</em> is the vertex.</p>
+<p>I say that the said polyhedron does not touch the lesser sphere at the surface on which the circle <em>FGH</em> is.</p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI11/">XI.11</a></div>
+<p>Draw <em>AX</em> from the point <em>A</em> perpendicular to the plane of the quadrilateral <em>KBPS,</em> and let it meet the plane at the point <em>X.</em> Join <em>XB</em> and <em>XK.</em></p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI3/">XI.Def.3</a></div>
+<p>Then, since <em>AX</em> is at right angles to the plane of the quadrilateral <em>KBPS,</em> therefore it is also at right angles to all the straight lines which meet it and are in the plane of the quadrilateral. Therefore <em>AX</em> is at right angles to each of the straight lines <em>BX</em> and <em>XK.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>And, since <em>AB</em> equals <em>AK,</em> therefore the square on <em>AB</em> equals the square on <em>AK.</em> And the sum of the squares on <em>AX</em> and <em>XB</em> equals the square on <em>AB,</em> for the angle at <em>X</em> is right, and the sum of the squares on <em>AX</em> and <em>XK</em> equals the square on <em>AK.</em></p>
+<p>Therefore the sum of the squares on <em>AX</em> and <em>XB</em> equals the sum of the squares on <em>AX</em> and <em>XK.</em></p>
+<p>Subtract the square on <em>AX</em> from each, therefore the remainder, the square on <em>BX,</em> equals the remainder, the square on <em>XK.</em> Therefore <em>BX</em> equals <em>XK.</em></p>
+<p>Similarly we can prove that the straight lines joined from <em>X</em> to <em>P</em> and <em>S</em> are equal to each of the straight lines <em>BX</em> and <em>XK.</em></p>
+<p>Therefore the circle with center <em>X</em> and radius on of the straight lines <em>XB</em> or <em>XK</em> passes through <em>P</em> and <em>S</em> also, and <em>KBPS</em> is a quadrilateral in a circle.</p>
+<p>Now, since <em>KB</em> is greater than <em>WV,</em> and <em>WV</em> equals <em>SP,</em> therefore <em>KB</em> is greater than <em>SP.</em> But <em>KB</em> equals each of the straight lines <em>KS</em> and <em>BP,</em> therefore each of the straight lines <em>KS</em> and <em>BP</em> is greater than <em>SP.</em> And, since <em>KBPS</em> is a quadrilateral in a circle, and <em>KB, BP,</em> and <em>KS</em> are equal, and <em>PS</em> less, and <em>BX</em> is the radius of the circle, therefore the square on <em>KB</em> is greater than double the square on <em>BX.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>Draw <em>KZ</em> from <em>K</em> perpendicular to <em>BV.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a><br><a href="/elements/books/bookIII/propositions/propIII31/">III.31</a><br><a href="/elements/books/bookVI/propositions/propVI8/#cor">VI.8.Cor</a></div>
+<p>Then, since <em>BD</em> is less than double <em>DZ,</em> and <em>BD</em> is to <em>DZ</em> as the rectangle <em>DB</em> by <em>BZ</em> is to the rectangle <em>DZ</em> by <em>ZB,</em> therefore if a square is described on <em>BZ</em> and the parallelogram on <em>ZD</em> is completed, then the rectangle <em>DB</em> by <em>BZ</em> is also less than double the rectangle <em>DZ</em> by <em>ZB.</em> And, if <em>KD</em> is joined, then the rectangle <em>DB</em> by <em>BZ</em> equals the square on <em>BK,</em> and the rectangle <em>DZ</em> by <em>ZB</em> equals the square on <em>KZ.</em> Therefore the square on <em>KB</em> is less than double the square on <em>KZ.</em></p>
+<p>But the square on <em>KB</em> is greater than double the square on <em>BX,</em> therefore the square on <em>KZ</em> is greater than the square on <em>BX.</em> And, since <em>BA</em> equals <em>KA,</em> therefore the square on <em>BA</em> equals the square on <em>AK.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>And the sum of the squares on <em>BX</em> and <em>XA</em> equals the square on <em>BA,</em> and the sum of the squares on <em>KZ</em> and <em>ZA</em> equals the square on <em>KA,</em> therefore the sum of the squares on <em>BX</em> and <em>XA</em> equals the sum of the squares on <em>KZ</em> and <em>ZA,</em> and of these the square on <em>KZ</em> is greater than the square on <em>BX,</em> therefore the remainder, the square on <em>ZA,</em> is less than the square on <em>XA.</em></p>
+<p>Therefore <em>AX</em> is greater than <em>AZ.</em> Therefore <em>AX</em> is much greater than <em>AG.</em></p>
+<p>And <em>AX</em> is the perpendicular on one base of the polyhedron, and <em>AG</em> on the surface of the lesser sphere, hence the polyhedron does not touch the lesser sphere on its surface.</p>
+<p>Therefore, given two spheres about the same center, a polyhedral solid has been inscribed in the greater sphere which does not touch the lesser sphere at its surface.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="cor">Corollary.</h1>
+    
+    <p>But if in another sphere a polyhedral solid is inscribed similar to the solid in the sphere <em>BCDE,</em> then the polyhedral solid in the sphere <em>BCDE</em> has to the polyhedral solid in the other sphere the ratio triplicate of that which the diameter of the sphere <em>BCDE</em> has to the diameter of the other sphere.</p>
+<p>For, the solids being divided into their pyramids similar in multitude and arrangement, the pyramids will be similar.</p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII8/#cor">XII.8.Cor</a></div>
+<p>But similar pyramids are to one another in the triplicate ratio of their corresponding sides, therefore the pyramid with the quadrilateral base <em>KBPS</em> and the vertex <em>A</em> has to the similarly arranged pyramid in the other sphere the ratio triplicate of that which the corresponding side has to the corresponding side, that is, of that which the radius <em>AB</em> of the sphere about <em>A</em> as center has to the radius of the other sphere.</p>
+<p>Similarly each pyramid of those in the sphere about <em>A</em> as center has to each similarly arranged pyramid of those in the other sphere the ratio triplicate of that which <em>AB</em> has to the radius of the other sphere.</p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV12/">V.12</a></div>
+<p>And one of the antecedents is to one of the consequents as all the antecedents are to all the consequents, hence the whole polyhedral solid in the sphere about <em>A</em> as center has to the whole polyhedral solid in the other sphere the ratio triplicate of that which <em>AB</em> has to the radius of the other sphere, that is, of that which the diameter <em>BD</em> has to the diameter of the other sphere.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p><img src="propXII17a.gif" align="right" alt="diagram detail" vspace="5" hspace="5"></p>
+<p>The detail in the diagram is so small that it's hard to see. The detail is expanded to the right.</p>
+<p>The purpose of this proposition and its corollary is to separate concentric spheres so that it can be proved in the next proposition <a href="/elements/books/bookXII/propositions/propXII18/">XII.18</a> that spheres are to each other in triplicate ratios of their diameters.</p>
+<p>The argument that the intersection of a sphere and a plane through its center is a circle is weak. It has not been shown that the sphere is generated by taking any of its diameters and rotating a semicircle on that diameter about the diameter. Even the very concept of rotation about an axis has not been formalized.</p>
+<p><br clear="all"></p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII18/">XII.18</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

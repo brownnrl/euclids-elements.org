@@ -1,0 +1,134 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 11</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 11</h1>
+    <div class="statement">If two circles touch one another internally, and their centers are taken, then the straight line joining their centers, being produced, falls on the point of contact of the circles.</div>
+    <div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a></div>
+<p>Let the two circles <em>ABC</em> and <em>ADE</em> touch one another internally at the point <em>A,</em> and let the centers <em>F</em> and <em>G</em> of the circles <em>ABC</em> and <em>ADE</em> be taken.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="290" height="280" tabindex="0"></canvas>
+<noscript><img alt="III.11 diagram" src="propIII11.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.11",
+        pivot: "F",
+        elements: [
+            "A;point;free;50,70",
+            "B;point;free;260,160;black;0",
+            "C;point;free;110,260;black;0",
+            "ABC;circle;circumcircle;A,B,C;0;0;black;random",
+            "F;point;center;ABC;black;green",
+            "AF;line;connect;A,F",
+            "D;point;free;143,50",
+            "M;point;midpoint;A,D;0;0",
+            "MN;line;perpendicular;M,D;0;0;0",
+            "F';point;intersection;MN,AF;0;0",
+            "ADE;circle;radius;F',A;0;0;black;random",
+            "E;point;circleSlider;ADE,110,210;black;0",
+            "G;point;lineSlider;D,F,90,110",
+            "AG;line;connect;A,G",
+            "AH;line;cutoff;F,D,F,A",
+            "H;point;last;AH"
+        ],
+    });
+</script>
+</figure><p>I say that the straight line joined from <em>G</em> to <em>F</em> and produced falls on <em>A.</em></p>
+<p>For suppose it does not, but, if possible, let it fall as <em>FGH.</em>  Join  <em>AF</em> and <em>AG.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI20/">I.20</a></div>
+<p>Then, since the sum of <em>AG</em> and <em>GF</em> is greater than <em>FA,</em> that is, than <em>FH,</em> subtract <em>FG</em> from each, therefore the remainder <em>AG</em> is greater than the remainder <em>GH.</em></p>
+<p>But <em>AG</em> equals <em>GD,</em> therefore <em>GD</em> is also greater than <em>GH,</em> the less greater than the greater, which is impossible.</p>
+<p>Therefore the straight line joined from <em>F</em> to <em>G</em> does not fall outside. Therefore it falls on <em>A,</em> the point of contact.</p>
+<p>Therefore <em>if two circles touch one another internally, and their centers are taken, then the straight line joining their centers, being produced, falls on the point of contact of the circles.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear=all></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>In order to carry through the proof, in particular so that <em>FA</em> = <em>FH,</em> the circle <em>ABC</em> needs to be the larger circle.</p>
+<p>Various conclusions in the proof are based on the figure rather than rigorous deductive reasoning.  Camerer and others have suggested ways of filling the gaps.</p>
+<p>This proposition is used in <a href="/elements/books/bookIII/propositions/propIII13/">III.13</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII13/">III.13</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

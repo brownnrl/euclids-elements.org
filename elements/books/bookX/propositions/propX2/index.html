@@ -1,0 +1,165 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 2</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 2</h1>
+    <div class="statement">If, when the less of two unequal magnitudes is continually subtracted in turn from the greater that which is left never measures the one before it, then the two magnitudes are incommensurable.</div>
+    <p>There being two unequal magnitudes <em>AB</em> and <em>CD,</em> with <em>AB</em> being the less, when the less is continually subtracted in turn from the greater, let that which is left over never measure the one before it.</p>
+<p>I say that the magnitudes <em>AB</em> and <em>CD</em> are incommensurable.</p>
+<p>If they are commensurable, then some magnitude <em>E</em> measures them.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="100" tabindex="0"></canvas>
+<noscript><img alt="X.2 diagram" src="propX2.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.2",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "C0;point;free;-1000,70;0;0",
+            "C3;point;free;1000,70;0;0",
+            "A;point;lineSlider;A0,A3,160,0",
+            "B;point;lineSlider;A0,A3,260,0",
+            "AB;line;connect;A,B",
+            "C;point;lineSlider;C0,C3,30,0",
+            "D;point;lineSlider;C0,C3,260,0",
+            "CD;line;connect;C,D",
+            "E1;point;lineSlider;A0,A3,30,0;0",
+            "E2;point;lineSlider;A0,A3,80,0;0",
+            "E;line;connect;E1,E2;black",
+            "F1;point;cutoff;D,C,A,B;0;0",
+            "F;point;cutoff;F1,C,A,B",
+            "G1;point;cutoff;B,A,C,F;0;0",
+            "G;point;cutoff;G1,A,C,F"
+        ],
+    });
+</script>
+</figure><p>Let <em>AB,</em> measuring <em>FD,</em> leave <em>CF</em> less than itself, let <em>CF</em> measuring <em>BG,</em> leave <em>AG</em> less than itself, and let this process be repeated continually, until there is left some magnitude which is less than <em>E.</em></p>
+<p>Suppose this done, and let there be left <em>AG</em> less than <em>E.</em></p>
+<p>Then, since <em>E</em> measures <em>AB,</em> while <em>AB</em> measures <em>DF,</em> therefore <em>E</em> also measures <em>FD.</em> But it measures the whole <em>CD</em> also, therefore it also measures the remainder <em>CF.</em> But <em>CF</em> measures <em>BG,</em> therefore <em>E</em> also measures <em>BG.</em> But it measures the whole <em>AB</em> also, therefore it also measures the remainder <em>AG,</em> the greater the less, which is impossible.</p>
+<div class="just"><a href="/elements/books/bookX/definitions/defX.I.1/">X.Def.I.1</a></div>
+<p>Therefore no magnitude measures the magnitudes <em>AB</em> and <em>CD.</em> Therefore the magnitudes <em>AB</em> and <em>CD</em> are incommensurable.</p>
+<p>Therefore, <em>if, when the less of two unequal magnitudes is continually subtracted in turn from the greater that which is left never measures the one before it, then the two magnitudes are incommensurable.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Antenaresis (also called the Euclidean algorithm), first used in proposition <a href="/elements/books/bookVII/propositions/propVII1/">VII.1</a>, is again used in this proposition. Beginning with two magnitudes, the smaller, whichever it is, is repeated subtracted from the larger. Proposition VII.1 concerns relatively prime numbers. It is similar to this proposition, but its conclusion is different.</p>
+<p>Heath claims that Euclid uses <a href="/elements/books/bookX/propositions/propX1/">X.1</a> to prove this proposition, in particular, to show that antenaresis eventually leaves some magnitude which is less than <em>E.</em> It is hard to tell what Euclid thought his justification was. Since both magnitudes are multiples of <em>E,</em> whatever justification Euclid intended back in proposition <a href="/elements/books/bookVII/propositions/propVII2/">VII.2</a> works just as well here. Euclid did, however, put X.1 just before this proposition, perhaps for an intended logical connection. If so, there is a missing statement to the effect that <em>GB</em> is greater than half of <em>AB,</em> and so forth, so that X.1 might be invoked.</p>
+<h4>An example of incommensurable magnitudes</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="230" height="320" tabindex="0"></canvas>
+<noscript><img alt="X.2 pentagram diagram" src="propX2a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "A pentagram",
+        elements: [
+            "C;point;free;40,280",
+            "B;point;free;190,280",
+            "ABCDE;polygon;regularPolygon;C,B,5;0;0;0;0",
+            "A;point;vertex;ABCDE,4",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;similar;B,C,A,B,C",
+            "BCD;polygon;triangle;B,C,D;0;0;black;random",
+            "E;point;similar;C,D,B,C,D",
+            "CDE;polygon;triangle;C,D,E;0;0;black;random",
+            "F;point;similar;D,E,C,D,E",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "G;point;similar;E,F,D,E,F",
+            "EFG;polygon;triangle;E,F,G;0;0;black;random",
+            "H;point;similar;F,G,E,F,G;0",
+            "FGH;polygon;triangle;F,G,H;0;0;black;random"
+        ],
+    });
+</script>
+</figure><p>Consider the 36°-72°-72° triangle constructed <em>ABC</em> in proposition <a href="/elements/books/bookIV/propositions/propIV10/">IV.10</a>. This triangle was used in the following proposition <a href="/elements/books/bookIV/propositions/propIV11/">IV.11</a> to construct regular pentagons. When its base <em>BC</em> is subtracted from a side <em>AC</em> then the remainder <em>CD</em> is the base of a similar triangle <em>BCD.</em> Likewise, when the base <em>CD</em> of this new triangle is subtracted from its side <em>BD</em> then the remainder <em>DE</em> is the base of yet another smaller similar triangle <em>CDE.</em> And so forth.</p>
+<p>Thus, when we begin with the two lines <em>AB</em> and <em>BC</em> and apply the algorithm of antenaresis to them, we get a series of lines which never ends <em>AB, BC, CD, DE, EF,</em> and so forth, and these lines form a never-ending continued proportion.</p>
+<center><i>AB</i> : <i>BC</i> = <i>BC</i> : <i>CD</i> = <i>CD</i> : <i>DE</i> = <i>DE</i> : <i>EF</i> = ...</center><p>Thus, according to this proposition, the two quantities <em>AB</em> and <em>BC</em> are incommensurable.</p>
+<p>Cutting the line <em>AB</em> at <em>C</em> to make this ratio <em>AB</em> : <em>BC</em> is called in <a href="/elements/books/bookVI/definitions/defVI3/">VI.Def.3</a> cutting <em>AB</em> into extreme and mean ratio. A more recent name for this ratio is the "golden ratio."</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is used in the next one.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX3/">X.3</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IV</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IV</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 13</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 13</h1>
+    <div class="statement">To inscribe a circle in a given equilateral and equiangular pentagon.</div>
+    <p>Let <em>ABCDE</em> be the given equilateral and equiangular pentagon.</p>
+<p>It is required to inscribe a circle in the pentagon <em>ABCDE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI9/">I.9</a></div>
+<p>Bisect the angles <em>BCD</em> and <em>CDE</em> by the straight lines <em>CF</em> and <em>DF</em> respectively.  Join the straight lines <em>FB, FA,</em> and <em>FE</em> from the point <em>F</em> at which the straight lines <em>CF</em> and <em>DF</em> meet one another.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="320" height="310" tabindex="0"></canvas>
+<noscript><img alt="IV.13 diagram" src="propIV13.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IV.13",
+        pivot: "F",
+        elements: [
+            "C;point;free;80,270",
+            "D;point;free;240,270",
+            "CDEAB;polygon;regularPolygon;C,D,5;0;0;black;random",
+            "E;point;vertex;CDEAB,3",
+            "A;point;vertex;CDEAB,4",
+            "B;point;vertex;CDEAB,5",
+            "CF;line;angleBisector;B,C,D;0;0;0",
+            "DF;line;angleBisector;C,D,E;0;0;0",
+            "F;point;intersection;CF,DF;black;green",
+            "M;point;intersection;A,E,C,F;black;0",
+            "G;point;intersection;B,A,D,F;black;0",
+            "H;point;intersection;C,B,E,F;black;0",
+            "K;point;intersection;D,C,A,F;black;0",
+            "L;point;intersection;E,D,B,F;black;0",
+            "AK;line;connect;A,K",
+            "BL;line;connect;B,L",
+            "CM;line;connect;C,M",
+            "DG;line;connect;D,G",
+            "EH;line;connect;E,H",
+            "circ;circle;radius;F,K;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Then, since <em>BC</em> equals <em>CD,</em> and <em>CF</em> common, the two sides <em>BC</em> and <em>CF</em> equal the two sides <em>DC</em> and <em>CF,</em> and the angle <em>BCF</em> equals the angle <em>DCF,</em> therefore the base <em>BF</em> equals the base <em>DF,</em> and the triangle <em>BCF</em> equals the triangle <em>DCF,</em> and the remaining angles equal the remaining angles, namely those opposite the equal sides.</p>
+<p>Therefore the angle <em>CBF</em> equals the angle <em>CDF.</em></p>
+<p>And, since the angle <em>CDE</em> is double the angle <em>CDF,</em> and the angle <em>CDE</em> equals the angle <em>ABC,</em> while the angle <em>CDF</em> equals the angle <em>CBF,</em> therefore the angle <em>CBA</em> is also double the angle <em>CBF.</em>  Therefore the angle <em>ABF</em> equals the angle <em>FBC.</em>  Therefore the angle <em>ABC</em> is bisected by the straight line <em>BF.</em></p>
+<p>Similarly it can be proved that the angles <em>BAE</em> and <em>AED</em> are also bisected by the straight lines <em>FA</em> and <em>FE</em> respectively.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>Now draw <em>FG, FH, FK, FL,</em> and <em>FM</em> from the point <em>F</em> perpendicular to the straight lines <em>AB, BC, CD, DE,</em> and <em>EA.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI26/">I.26</a></div>
+<p>Then, since the angle <em>HCF</em> equals the angle <em>KCF,</em> and the right angle <em>FHC</em> also equals the angle <em>FKC, FHC</em> and <em>FKC</em> are two triangles having two angles equal to two angles and one side equal to one side, namely <em>FC</em> which is common to them and opposite one of the equal angles, therefore they also have the remaining sides equal to the remaining sides.  Therefore the perpendicular <em>FH</em> equals the perpendicular <em>FK.</em></p>
+<p>Similarly it can be proved that each of the straight lines <em>FL, FM,</em> and <em>FG</em> also equals each of the straight lines <em>FH</em> and <em>FK,</em> therefore the five straight lines <em>FG, FH, FK,</em>  <em>FL,</em> and <em>FM</em> equal one another.</p>
+<p>Therefore the circle described with center <em>F</em> and radius one of the straight lines <em>FG,</em> <em>FH, FK, FL,</em> or <em>FM</em> also passes through the remaining points, and it touches the straight lines <em>AB, BC, CD, DE,</em> and <em>EA,</em> because the angles at the points <em>G, H, K, L,</em> and <em>M</em> are right.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII16/">III.16</a></div>
+<p>For, if it does not touch them. but cuts them, it will result that the straight line drawn at right angles to the diameter of the circle from its end falls within the circle, which was proved absurd.</p>
+<p>Therefore the circle described with center <em>F</em> and radius one of the straight lines <em>FG, FH, FK, FL,</em> or <em>FM</em> does not cut the straight lines <em>AB, BC, CD, DE,</em> and <em>EA.</em>  Therefore it touches them.</p>
+<p>Let it be described, as <em>GHKLM.</em></p>
+<p>Therefore a circle has been inscribed in the given equilateral and equiangular pentagon.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The method given here to inscribe a circle in a regular pentagon works in general to inscribe a circle in a regular <em>n</em>-gon.  Simply bisect two of the angles of the <em>n</em>-gon to find the center of the circle.  Then draw a perpendicular to one of the sides.  The foot of the perpendicular gives a point on the circumference of the circle.</p>
+<p>The construction and statements in the first part of the proof are the same for the next proposition which circumscribes a circle about a regular pentagon.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

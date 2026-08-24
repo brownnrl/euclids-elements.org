@@ -1,0 +1,298 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 9</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 9</h1>
+    <div class="statement">To bisect a given rectilinear angle.</div>
+    <p>Let the angle <span class="elem-ref" data-elem="BAC">BAC</span> be the given rectilinear angle.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="300" height="260" tabindex="0"></canvas>
+<noscript><img alt="I.9 diagram" src="propI9.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_0",
+    background: "35,19,100",
+    title: "I.9",
+    pivot: "F",
+    elements: [
+        "A;point;free;150,40",
+        "B;point;free;50,150",
+        "C;point;free;250,150",
+        "AB;line;connect;A,B",
+        "AC;line;connect;A,C",
+        "D;point;lineSlider;A,B,75,90",
+        "E;point;cutoff;A,C,A,D",
+        "DE;line;connect;D,E",
+        "EDF;polygon;equilateralTriangle;E,D;0;0;black;random",
+        "F;point;vertex;EDF,3;black;green",
+        "AF;line;connect;A,F",
+        // Invisible highlight targets (zero-color; gold under highlight
+        // or hover) for the segments the prose names.
+        "AD;line;connect;A,D;0;0;0",
+        "AE;line;connect;A,E;0;0;0",
+        "DF;line;connect;D,F;0;0;0",
+        "EF;line;connect;E,F;0;0;0",
+        // Transitory construction circles (zero-color; gold while
+        // sweeping). Joyce's three compass circles, drawn in full here
+        // to tie the proposition figure to the Guide's construction-
+        // steps canvas: AEcirc (centre A through D) fixes E since
+        // AE = AD; DEcirc and EDcirc (centres D and E, common radius DE)
+        // intersect to give F.
+        "AEcirc;circle;radius;A,D;0;0;0;0",
+        "DEcirc;circle;radius;D,E;0;0;0;0",
+        "EDcirc;circle;radius;E,D;0;0;0;0",
+        // Angle markers (geomlib 0.8.0 angleMarker) — all at vertex A:
+        // the whole angle BAC and the two halves DAF, EAF. They overlap
+        // at the default radius until 0.8.1's auto radius-stepping nests
+        // them (deck-tracker.md). angDAF = angle BAF (D on ray AB),
+        // angEAF = angle CAF (E on ray AC).
+        "angBAC;sector;angleMarker;A,B,C",
+        "angDAF;sector;angleMarker;A,D,F",
+        "angEAF;sector;angleMarker;A,E,F"
+    ],
+    // D is the arbitrary point introduced mid-proof, so it opts out of
+    // the every-slide draggable auto-union and appears on its slide.
+    deferDraggables: ["D"],
+    aliases: {
+        "BAC": "angBAC",
+        "DAF": "angDAF",
+        "EAF": "angEAF",
+        "DEF": "EDF",
+        "EA":  "AE"
+    },
+    slides: [
+        { text: "Let the angle {BAC} be the given rectilinear angle.",
+          visible: ["AB","AC","angBAC"],
+          transition: {
+              animations: [
+                  { elem: "angBAC", name: geomlib.A.Sector.sweep }
+              ]
+          } },
+        { text: "It is required to bisect it.",
+          visible: ["AB","AC","angBAC"],
+          highlighted: ["angBAC"] },
+        { text: "Take an arbitrary point {D} on {AB}.",
+          visible: ["AB","AC","D"],
+          transition: {
+              animations: [
+                  { elem: "D", name: geomlib.A.Point.appear }
+              ]
+          } },
+        { text: "Cut off {AE} from {AC} equal to {AD},",
+          visible: ["AB","AC","D","AD","AE","E","AEcirc"],
+          highlighted: ["AD","AE"],
+          transition: {
+              animations: [
+                  { elem: "AEcirc", name: geomlib.A.Circle.compass },
+                  { elem: "E",      name: geomlib.A.Point.appear }
+              ]
+          },
+          justifications: [{ ref: "I.3" }] },
+        { text: "and join {DE}.",
+          visible: ["AB","AC","D","E","DE"],
+          transition: {
+              animations: [
+                  { elem: "DE", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          },
+          justifications: [{ ref: "I.Post.1" }] },
+        { text: "Construct the equilateral triangle {DEF} on {DE},",
+          visible: ["AB","AC","D","E","DE","DEcirc","EDcirc","EDF","F"],
+          transition: {
+              animations: [
+                  { elem: "DEcirc", name: geomlib.A.Circle.compass },
+                  { elem: "EDcirc", name: geomlib.A.Circle.compass },
+                  { elem: "F",      name: geomlib.A.Point.appear },
+                  { elem: "EDF",    name: geomlib.A.Polygon.outline }
+              ]
+          },
+          justifications: [{ ref: "I.1" }] },
+        { text: "and join {AF}.",
+          visible: ["AB","AC","D","E","DE","EDF","F","AF"],
+          transition: {
+              animations: [
+                  { elem: "AF", name: geomlib.A.Line.straightEdgeConnect }
+              ]
+          },
+          justifications: [{ ref: "I.Post.1" }] },
+        { text: "I say that the angle {BAC} is bisected by the straight line {AF}.",
+          visible: ["AB","AC","D","E","DE","EDF","F","AF","angBAC"],
+          highlighted: ["AF","angBAC"] },
+        { text: "Since {AD} equals {AE}, and {AF} is common, the two sides {AD} and {AF} equal the two sides {EA} and {AF}.",
+          visible: ["AB","AC","D","E","DE","EDF","F","AF","AD","AE"],
+          highlighted: ["AD","AE","AF"] },
+        { text: "And the base {DF} equals the base {EF}, therefore the angle {DAF} equals the angle {EAF}.",
+          visible: ["AB","AC","D","E","DE","EDF","F","AF","DF","EF","angDAF","angEAF"],
+          highlighted: ["DF","EF"],
+          transition: {
+              mode: "parallel",
+              animations: [
+                  { elem: "angDAF", name: geomlib.A.Sector.sweep },
+                  { elem: "angEAF", name: geomlib.A.Sector.sweep }
+              ]
+          },
+          justifications: [{ ref: "I.Def.20" }, { ref: "I.8" }] },
+        { text: "Therefore the given rectilinear angle {BAC} is bisected by the straight line {AF}.",
+          visible: ["AB","AC","D","E","DE","EDF","F","AF","angBAC","angDAF","angEAF"],
+          highlighted: ["AF","angBAC","angDAF","angEAF"],
+          justifications: [{ ref: "Q.E.F." }] }
+    ],
+    resolveJustification: function(ref) {
+        return (window.eucrefs && window.eucrefs[ref]) || null;
+    }
+});
+
+// Per-page citation lookup for the slideshow's resolveJustification
+// callback — same hand-authored pattern as propI.1 – propI.6.
+window.eucrefs = (window.eucrefs || {});
+Object.assign(window.eucrefs, {
+    "I.1":       "/elements/books/bookI/propositions/propI1/",
+    "I.3":       "/elements/books/bookI/propositions/propI3/",
+    "I.8":       "/elements/books/bookI/propositions/propI8/",
+    "I.Post.1":  "/elements/books/bookI/postulates/post1/",
+    "I.Def.20":  "/elements/books/bookI/definitions/defI20/"
+});
+</script>
+</figure><p>It is required to bisect it.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a>, <a href="/elements/books/bookI/propositions/propI1/">I.1</a></div>
+<p>Take an arbitrary point <span class="elem-ref" data-elem="D">D</span> on <span class="elem-ref" data-elem="AB">AB</span>. Cut off <span class="elem-ref" data-elem="AE">AE</span> from <span class="elem-ref" data-elem="AC">AC</span> equal to <span class="elem-ref" data-elem="AD">AD</span>, and join <span class="elem-ref" data-elem="DE">DE</span>. Construct the equilateral triangle <span class="elem-ref" data-elem="DEF">DEF</span> on <span class="elem-ref" data-elem="DE">DE</span>, and join <span class="elem-ref" data-elem="AF">AF</span>.</p>
+<p>I say that the angle <span class="elem-ref" data-elem="BAC">BAC</span> is bisected by the straight line <span class="elem-ref" data-elem="AF">AF</span>.</p>
+<p>Since <span class="elem-ref" data-elem="AD">AD</span> equals <span class="elem-ref" data-elem="AE">AE</span>, and <span class="elem-ref" data-elem="AF">AF</span> is common, therefore the two sides <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="AF">AF</span> equal the two sides <span class="elem-ref" data-elem="EA">EA</span> and <span class="elem-ref" data-elem="AF">AF</span> respectively.</p>
+<div class="just"><a href="/elements/books/bookI/definitions/defI20/">I.Def.20</a>, <a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>And the base <span class="elem-ref" data-elem="DF">DF</span> equals the base <span class="elem-ref" data-elem="EF">EF</span>, therefore the angle <span class="elem-ref" data-elem="DAF">DAF</span> equals the angle <span class="elem-ref" data-elem="EAF">EAF</span>.</p>
+<p>Therefore the given rectilinear angle <span class="elem-ref" data-elem="BAC">BAC</span> is bisected by the straight line <span class="elem-ref" data-elem="AF">AF</span>.</p>
+<p><div class="qed">Q.E.F.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Construction steps</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="320" height="260" tabindex="0"></canvas>
+<noscript><img alt="I.9 construction steps" src="propI9a.gif"/></noscript>
+<script type="text/javascript">
+geomlib.init({
+    canvasid: "canvas_1",
+    background: "0,0,100",
+    title: "I.9",
+    pivot: "F",
+    elements: [
+        "A;point;free;160,30",
+        "B;point;free;90,220",
+        "C;point;free;230,220",
+        "AB;line;connect;A,B",
+        "AC;line;connect;A,C",
+        "D;point;lineSlider;A,B,80,140",
+        "E;point;cutoff;A,C,A,D",
+        "ADE;sector;sector;A,D,E;0;0;black;0",
+        "DEcirc;circle;radius;D,E",
+        "EDcirc;circle;radius;E,D",
+        "FF';line;bichord;DEcirc,EDcirc;0;0;0",
+        "F;point;first;FF';black;green",
+        "AF;line;connect;A,F;0;0;blue",
+        // Invisible highlight targets for the Guide prose's {NAME} hover
+        // refs — segments named in the text but not drawn here (the
+        // triangle's sides aren't needed for the construction). Render
+        // gold only on hover. They make {AD}/{AE}/{DE} resolve to this
+        // canvas (elem-ref-highlight.js binds a ref to the latest
+        // preceding canvas that has the named element).
+        "AD;line;connect;A,D;0;0;0",
+        "AE;line;connect;A,E;0;0;0",
+        "DE;line;connect;D,E;0;0;0"
+    ],
+});
+</script>
+</figure><p>When using a compass and a straightedge to perform this construction, three circles and the final bisecting line need to be drawn. One circle with center <span class="elem-ref" data-elem="A">A</span> and radius <span class="elem-ref" data-elem="AD">AD</span> is needed to determine the point <span class="elem-ref" data-elem="E">E</span>. The other two circles with centers at <span class="elem-ref" data-elem="D">D</span> and <span class="elem-ref" data-elem="E">E</span> and common radius <span class="elem-ref" data-elem="DE">DE</span> intersect to give the point <span class="elem-ref" data-elem="F">F</span>. The sides of the equilateral triangle aren't needed for the construction.</p>
+<p>There is an alternate construction where the circles centered at <span class="elem-ref" data-elem="D">D</span> and <span class="elem-ref" data-elem="E">E</span> have a different radius, namely, <span class="elem-ref" data-elem="AD">AD</span>, which equals <span class="elem-ref" data-elem="AE">AE</span>. A different proof is required to show that this alternate construction works.</p>
+<h4>On angle trisection</h4>
+<p>Angle bisection is an easy construction to make using Euclidean tools of straightedge and compass. Also, line bisection is quite easy (see the next proposition <a href="/elements/books/bookI/propositions/propI10/">I.10</a>), and division of a line into any number of equal parts is not especially difficult (see proposition <a href="/elements/books/bookVI/propositions/propVI9/">VI.9</a>).</p>
+<p>Dividing an angle into an odd number of equal parts is not so easy, in fact, it is impossible to trisect a 60°-angle using Euclidean tools (the Postulates 1 through 3). Euclid's predecessors employed a variety higher curves for this purpose. Archimedes, after Euclid, created two constructions: his spiral could divide an angle into any number of parts, and his neusis construction could trisect angles (see the note on <a href="/elements/books/bookI/postulates/post2/">I.Post.2</a>). By Pappus' time it was believed that angle trisection was not possible using Euclidean tools, but that wasn't proven until 1837 when Wantzel (1814–1838) published his proof.</p>
+<p>Nevertheless, amateur geometers continue to search in vain for such a construction and frequently bother mathematicians with their purported solutions. Their solutions are of two forms. Sometimes they simply construct approximate trisections. Other times they use neusis or some other other tool that goes beyond Euclid's tools.</p>
+<p>Students of geometry are cautioned not to waste their time on this problem and, if they do, not to bother others with their purported solutions. Much better would be to study Galois theory, the mathematics that proves the impossibility of angle trisection.</p>
+<h4>Use of Proposition 9</h4>
+<p>The construction of this proposition is used in the next one and a few propositions in Books IV, VI, and XIII.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI10/">I.10</a></td></tr>
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV4/">IV.4</a>, <a href="/elements/books/bookIV/propositions/propIV11/">IV.11</a>, <a href="/elements/books/bookIV/propositions/propIV13/">IV.13</a>, <a href="/elements/books/bookIV/propositions/propIV14/">IV.14</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI28/">VI.28</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

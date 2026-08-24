@@ -1,0 +1,224 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 36</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IX</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IX</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 36</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 36</h1>
+    <div class="statement">If as many numbers as we please beginning from a unit are set out continuously in double proportion until the sum of all becomes prime, and if the sum multiplied into the last makes some number, then the product is perfect.</div>
+    <p>Let as many numbers as we please, <em>A, B, C,</em> and <em>D,</em> beginning from a unit be set out in double proportion, until the sum of all becomes prime, let <em>E</em> equal the sum, and let <em>E</em> multiplied by <em>D</em> make <em>FG.</em></p>
+<p>I say that <em>FG</em> is perfect.</p>
+<p>For, however many <em>A, B, C,</em> and <em>D</em> are in multitude, take so many <em>E, HK, L,</em> and <em>M</em> in double proportion beginning from <em>E.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="420" height="230" tabindex="0"></canvas>
+<noscript><img alt="IX.36 diagram" src="propIX36.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IX.36",
+        elements: [
+            "A0;point;free;-1000,30;0;0",
+            "A3;point;free;1000,30;0;0",
+            "E0;point;free;-1000,65;0;0",
+            "E3;point;free;1000,65;0;0",
+            "L0;point;free;-1000,100;0;0",
+            "L3;point;free;1000,100;0;0",
+            "M0;point;free;-1000,135;0;0",
+            "M3;point;free;1000,135;0;0",
+            "F0;point;free;-1000,170;0;0",
+            "F3;point;free;1000,170;0;0",
+            "P0;point;free;-1000,205;0;0",
+            "P3;point;free;1000,205;0;0",
+            "U1;point;free;1000,0;0;0",
+            "U2;point;free;1000,20;0;0",
+            "U3;point;free;1000,35;0;0",
+            "A1;point;lineSlider;A0,A3,30,0;0",
+            "A2;point;cutoff;A1,A3,U1,U2;0",
+            "A;line;connect;A1,A2;black",
+            "B1;point;lineSlider;A0,A3,75,0;0",
+            "B2;point;cutoff;B1,A3,U1,U3;0",
+            "B;line;connect;B1,B2;black",
+            "C1;point;lineSlider;A0,A3,135,0;0",
+            "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,A3;0",
+            "C;line;connect;C1,C2;black",
+            "D1;point;lineSlider;A0,A3,230,0;0",
+            "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,A3;0",
+            "D;line;connect;D1,D2;black",
+            "E1;point;lineSlider;E0,E3,30,0;0",
+            "E2;point;lineSlider;E0,E3,80,0;0",
+            "E;line;connect;E1,E2;black",
+            "H;point;lineSlider;E0,E3,130,0",
+            "K;point;proportion;U1,U2,U1,U3,E1,E2,H,E3",
+            "HK;line;connect;H,K",
+            "L1;point;lineSlider;L0,L3,30,0;0",
+            "L2;point;proportion;E1,E2,H,K,H,K,L1,L3;0",
+            "L;line;connect;L1,L2;black",
+            "M1;point;lineSlider;M0,M3,30,0;0",
+            "M2;point;proportion;E1,E2,H,K,L1,L2,M1,M3;0",
+            "M;line;connect;M1,M2;black",
+            "F;point;lineSlider;F0,F3,30,0",
+            "G;point;proportion;U2,U3,E1,E2,D1,D2,F,F3",
+            "FG;line;connect;F,G",
+            "N;point;cutoff;H,K,E1,E2",
+            "O;point;cutoff;F,G,E1,E2",
+            "P1;point;lineSlider;P0,P3,30,0;0",
+            "P2;point;lineSlider;P0,P3,100,0;0",
+            "P;line;connect;P1,P2;black",
+            "Q1;point;lineSlider;P0,P3,150,0;0",
+            "Q2;point;proportion;P1,P2,F,G,U1,U2,Q1,P3;0",
+            "Q;line;connect;Q1,Q2;black"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVII/propositions/propVII14/">VII.14</a><br><a href="/elements/books/bookVII/propositions/propVII19/">VII.19</a></div>
+<p>Therefore, <em>ex aequali A</em> is to <em>D</em> as <em>E</em> is to <em>M.</em> Therefore the product of <em>E</em> and <em>D</em> equals the product of <em>A</em> and <em>M.</em> And the product of <em>E</em> and <em>D</em> is <em>FG,</em> therefore the product of <em>A</em> and <em>M</em> is also <em>FG.</em></p>
+<p>Therefore <em>A</em> multiplied by <em>M</em> makes <em>FG.</em> Therefore <em>M</em> measures <em>FG</em> according to the units in <em>A.</em> And <em>A</em> is a dyad, therefore <em>FG</em> is double of <em>M.</em></p>
+<p>But <em>M, L, HK,</em> and <em>E</em> are continuously double of each other, therefore <em>E, HK, L, M,</em> and <em>FG</em> are continuously proportional in double proportion.</p>
+<div class="just"><a href="/elements/books/bookIX/propositions/propIX35/">IX.35</a></div>
+<p>Subtract from the second <em>HK</em> and the last <em>FG</em> the numbers <em>HN</em> and <em>FO,</em> each equal to the first <em>E.</em> Therefore the excess of the second is to the first as the excess of the last is to the sum of those before it. Therefore <em>NK</em> is to <em>E</em> as <em>OG</em> is to the sum of <em>M, L, KH,</em> and <em>E.</em></p>
+<p>And <em>NK</em> equals <em>E,</em> therefore <em>OG</em> also equals <em>M, L, HK, E.</em> But <em>FO</em> also equals <em>E,</em> and <em>E</em> equals the sum of <em>A, B, C, D</em> and the unit. Therefore the whole <em>FG</em> equals the sum of <em>E, HK, L, M, A, B, C, D,</em> and the unit, and it is measured by them.</p>
+<hr width=50%>
+
+<p>I say also that <em>FG</em> is not measured by any other number except <em>A, B, C, D, E, HK, L, M,</em> and the unit.</p>
+<p>If possible, let some number <em>P</em> measure <em>FG,</em> and let <em>P</em> not be the same with any of the numbers <em>A, B, C, D, E, HK, L,</em> or <em>M.</em></p>
+<p>And, as many times as <em>P</em> measures <em>FG,</em> so many units let there be in <em>Q,</em> therefore <em>Q</em> multiplied by <em>P</em> makes <em>FG.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII19/">VII.19</a></div>
+<p>But, further, <em>E</em> multiplied by <em>D</em> makes <em>FG,</em> therefore <em>E</em> is to <em>Q</em> as <em>P</em> is to <em>D.</em></p>
+<div class="just"><a href="/elements/books/bookIX/propositions/propIX13/">IX.13</a></div>
+<p>And, since <em>A, B, C,</em> and <em>D</em> are continuously proportional beginning from a unit, therefore <em>D</em> is not measured by any other number except <em>A, B,</em> or <em>C.</em></p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII20/">VII.Def.20</a></div>
+<p>And, by hypothesis, <em>P</em> is not the same with any of the numbers <em>A, B,</em> or <em>C,</em> therefore <em>P</em> does not measure <em>D.</em> But <em>P</em> is to <em>D</em> as <em>E</em> is to <em>Q,</em> therefore neither does <em>E</em> measure <em>Q.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII29/">VII.29</a></div>
+<p>And <em>E</em> is prime, and any prime number is prime to any number which it does not measure. Therefore <em>E</em> and <em>Q</em> are relatively prime.</p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII21/">VII.21</a><br><a href="/elements/books/bookVII/propositions/propVII20/">VII.20</a></div>
+<p>But primes are also least, and the least numbers measure those which have the same ratio the same number of times, the antecedent the antecedent and the consequent the consequent, and <em>E</em> is to <em>Q</em> as <em>P</em> is to <em>D,</em> therefore <em>E</em> measures <em>P</em> the same number of times that <em>Q</em> measures <em>D.</em></p>
+<p>But <em>D</em> is not measured by any other number except <em>A, B,</em> or <em>C,</em> therefore <em>Q</em> is the same with one of the numbers <em>A, B,</em> or <em>C.</em> Let it be the same with <em>B.</em></p>
+<p>And, however many <em>B, C,</em> and <em>D</em> are in multitude, take so many <em>E, HK,</em> and <em>L</em> beginning from <em>E.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII14/">VII.14</a></div>
+<p>Now <em>E, HK,</em> and <em>L</em> are in the same ratio with <em>B, C,</em> and <em>D,</em> therefore, <em>ex aequali B</em> is to <em>D</em> as <em>E</em> is to <em>L.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII19/">VII.19</a></div>
+<p>Therefore the product of <em>B</em> and <em>L</em> equals the product of <em>D</em> and <em>E.</em> But the product of <em>D</em> and <em>E</em> equals the product of <em>Q</em> and <em>P,</em> therefore the product of <em>Q</em> and <em>P</em> also equals the product of <em>B</em> and <em>L.</em></p>
+<div class="just"><a href="/elements/books/bookVII/propositions/propVII19/">VII.19</a></div>
+<p>Therefore <em>Q</em> is to <em>B</em> as <em>L</em> is to <em>P.</em> And <em>Q</em> is the same with <em>B,</em> therefore <em>L</em> is also the same with <em>P,</em> which is impossible, for by hypothesis <em>P</em> is not the same with any of the numbers set out.</p>
+<p>Therefore no number measures <em>FG</em> except <em>A, B, C, D, E, HK, L, M,</em> and the unit.</p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII22/">VII.Def.22</a></div>
+<p>And <em>FG</em> was proved equal to the sum of <em>A, B, C, D, E, HK, L, M,</em> and the unit, and a perfect number is that which equals its own parts, therefore <em>FG</em> is perfect.</p>
+<p>Therefore, <em>if as many numbers as we please beginning from a unit are set out continuously in double proportion until the sum of all becomes prime, and if the sum multiplied into the last makes some number, then the product is perfect.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>In modern notation, this proposition says that if <em>s</em> = 1 + 2 + 2<sup>2</sup> + ... + 2<sup>*p*-1</sup> is a prime number, then <em>n</em> = <em>s</em>2<sup>*p*-1</sup> is a perfect number.</p>
+<h4>Summary of the proof</h4>
+<p>Euclid begins by assuming that the sum of a number of powers of 2 (the sum beginning with 1) is a prime number. Let <em>p</em> be the number of powers of 2, and let <em>s</em> be their sum which is prime.</p>
+<center><i>s</i> = 1 + 2 + 2<sup>2</sup> + ... + 2<sup><i>p</i>-1</sup></center><p>Note that the last power of 2 is 2<sup>*p*-1</sup> since the sum starts with 1, which is 2<sup>0</sup>.</p>
+<p>In Euclid's proof, <em>A</em> represents 2, <em>B</em> represents 2<sup>2</sup>, <em>C</em> represents 2<sup>3</sup>, and <em>D</em> is supposed to be the last power of 2, so it represents 2<sup>*p*-1</sup>. Also, <em>E</em> represents their sum <em>s,</em> and <em>FG</em> is the product of <em>E</em> and <em>D,</em> so it represents <em>s</em>2<sup>*p*-1</sup>. Let's denote that last by <em>n.</em></p>
+<center><i>n</i> = <i>s</i>2<sup><i>p</i>-1</sup></center><p>The goal is to show that <em>n</em> is a perfect number.</p>
+<p>In the first part of this proof, Euclid finds some proper divisors of <em>n</em> that sum to <em>n.</em> These come in two sequences:</p>
+<center>1, 2, 2<sup>2</sup>, ..., 2<sup><i>p</i>-1</sup></center><p>and</p>
+<center><i>s,</i> 2<i>s,</i> 2<sup>2</sup><i>s,</i> ..., 2<sup><i>p</i>-2</sup><i>s</i></center><p>In his proof, the latter are represented by <em>E, HK, L,</em> and finally <em>M.</em></p>
+<p>It is clear that each of these is a proper divisor of <em>n,</em> and later in the proof Euclid shows that they are the only proper divisors of <em>n.</em></p>
+<p>Using the previous proposition, <a href="/elements/books/bookIX/propositions/propIX35/">IX.35</a>, Euclid finds the sum of the continued proportion,</p>
+<center><i>s</i> + 2<i>s</i> + 2<sup>2</sup><i>s</i> + ... + 2<sup><i>p</i>-2</sup><i>s,</i></center><p>to be 2<sup>*p*-1</sup><em>s</em> – <em>s.</em> But <em>s</em> was the sum 1 + 2 + 2<sup>2</sup> + ... + 2<sup>*p*-1</sup>, hence,</p>
+<center>
+<table><tr valign=bottom>
+<td><i>n</i> = 2<sup><i>p</i>-1</sup><i>s</i></td>
+<td> = </td>
+<td>1 + 2 + 2<sup>2</sup> + ... + 2<sup><i>p</i>-1</sup></td></tr>
+<tr><td></td><td></td>
+<td> + <i>s</i> + 2<i>s</i> + 2<sup>2</sup><i>s</i> + ... + 2<sup><i>p</i>-2</sup><i>s</i></td>
+</tr></table>
+</center><p>Thus, <em>n</em> is a sum of these proper divisors.</p>
+<p>All that is left to do is to show that they are the only proper divisors of <em>n,</em> for then <em>n</em> will be the sum of all of its proper divisors, whence a perfect number.</p>
+<p>The remainder of the proof is detailed and difficult to follow. It hinges on <a href="/elements/books/bookIX/propositions/propIX13/">IX.13</a> which implies that the only factors of 2<sup>*p*-1</sup> are powers of 2, so all the factors of 2<sup>*p*-1</sup> have been found. Here's a not-too-faithful version of Euclid's argument. Suppose <em>n</em> factors as <em>ab</em> where <em>a</em> is not a proper divisor of <em>n</em> in the list above. In Euclid's proof, <em>P</em> represents <em>a</em> and <em>Q</em> represents <em>b.</em></p>
+<p>Since <em>ab</em> = <em>n</em> = 2<sup>*p*-1</sup><em>s</em>, but <em>a</em> is not a power of 2, and <em>s</em> is prime, therefore <em>s</em> divides <em>a</em>. So <em>b</em> has to be a power of 2. But then <em>a</em> has to be a power of 2 times <em>s.</em> But all the powers of 2 times <em>s</em> are on the list of known proper divisors. Therefore, the list includes all the proper divisors.</p>
+<h4>Mersenne primes and perfect numbers</h4>
+<p>Note that the sum, <em>s</em> = 1 + 2 + 2<sup>2</sup> + ... + 2<sup>*p*-1</sup>, equals 2<sup>*p*</sup> – 1, by <a href="/elements/books/bookIX/propositions/propIX35/">IX.35</a>. As this fact is not needed in the proof, Euclid omits to mention it. Thus, we can restate the proposition as follows:</p>
+<blockquote><p>If 2<sup>*p*</sup> – 1 is a prime number, then (2<sup>*p*</sup> – 1) 2<sup>*p*-1</sup> is a perfect number.</p>
+</blockquote>
+<p>Prime numbers of the form 2<sup>*p*</sup> – 1 have come to be called <em>Mersenne primes</em> named in honor of Marin Mersenne (1588–1648), one of many people who have studied these numbers. The four smallest perfect numbers, 6, 28, 496, and 8128, were known to the ancient Greek mathematicians. The Mersenne primes 2<sup>*p*</sup> – 1 corresponding to these four perfect numbers are 3, 7, 31, and 127, respectively, where the exponents <em>p</em> are 2, 3, 5, and 7, respectively.</p>
+<p>The observation that these four exponents are all prime suggests the following two questions:</p>
+<ol>
+<li>In order for 2<sup>*p*</sup> – 1 to be prime, is it sufficient for <em>p</em> to be prime?</li>
+<li>In order for 2<sup>*p*</sup> – 1 to be prime, is it necessary for <em>p</em> to be prime?</li>
+</ol>
+<p>Naturally, the next number to check for primality is 2<sup>11</sup> – 1, 2047, which, by a simple search for prime factors is found not to be prime. The number 2047 factors as 23 times 89. Therefore, primality of <em>p</em> is <em>not</em> sufficient.</p>
+<p>In 1640 Pierre de Fermat (1601–1665) wrote to Mersenne with his investigation of these primes. Fermat found three conditions on <em>p</em> that were necessary for 2<sup>*p*</sup> – 1 to be prime. One of these conditions answers the second question above: <em>p</em> does have to be prime. Here's a quick argument for that. If <em>p</em> did factor, say as <em>ab,</em> then 2<sup>*p*</sup> – 1, which is 2<sup>*ab*</sup> – 1, would also factor, namely as</p>
+<center>2<sup><i>ab</i></sup> – 1 = (2<sup><i>a</i></sup> – 1) (2<sup><i>a</i>(<i>b</i>-1)</sup> + 2<sup><i>a</i>(<i>b</i>-2)</sup> + ... + 2<sup><i>a</i></sup>).</center><p>Many mathematicians have studied Mersenne primes since then. A fairly practical testing algorithm was constructed in 1876 by Éduard Lucas (1842–1891). He showed that the the number 2<sup>*p*</sup> – 1 is prime if and only if it divides the number <em>S</em>(<em>p</em>–1), where <em>S</em>(<em>p</em>–1) is defined recursively: <em>S</em>(1) = 4, and <em>S</em>(<em>n</em>+1) = <em>S</em>(<em>n</em>)<sup>2</sup> – 2.</p>
+<p>The search for more Mersenne primes, and therefore more perfect numbers, continues. It is not known if there are infinitely many or finitely many even perfect numbers. Mersenne primes are scarce, but more continue to be found. There are at least 48 of them, the largest known (as of January 2013) is 2<sup>57,885,161</sup> – 1. It has 17,425,170 digits. For more information, see the <a href="http://www.mersenne.org/">The Great Internet Mersenne Prime Search</a>, GIMPS.</p>
+<p>There is a also a question about odd perfect numbers: Are there any? It has been shown that there are no small odd perfect numbers; it is known that odd numbers with fewer then 300 digits are not perfect. It may well be that there are no odd perfect numbers, but to date there is no proof.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

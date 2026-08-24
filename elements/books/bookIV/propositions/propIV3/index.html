@@ -1,0 +1,138 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IV</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IV</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 3</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 3</h1>
+    <div class="statement">To circumscribe about a given circle a triangle equiangular with a given triangle.</div>
+    <p>Let <em>ABC</em> be the given circle, and <em>DEF</em> the given triangle.</p>
+<p>It is required to circumscribe a triangle equiangular with the triangle <em>DEF</em> about the circle <em>ABC.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="360" height="290" tabindex="0"></canvas>
+<noscript><img alt="IV.3 diagram" src="propIV3.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IV.3",
+        elements: [
+            "B;point;free;160,120",
+            "K;point;free;120,150",
+            "BK;line;connect;B,K",
+            "ABC;circle;radius;K,B;0;0;black;0",
+            "D;point;free;320,55",
+            "E;point;free;230,150",
+            "F;point;free;220,55",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "H;point;lineSlider;E,F,220,30",
+            "G;point;lineSlider;E,F,260,220",
+            "HF;line;connect;H,F",
+            "EG;line;connect;E,G",
+            "A';point;similar;B,K,G,E,D;0;0",
+            "A;point;cutoff;K,A',K,B",
+            "AK;line;connect;A,K",
+            "C';point;similar;B,K,H,F,D;0;0",
+            "C;point;cutoff;K,C',K,B",
+            "CK;line;connect;C,K",
+            "Atan;line;perpendicular;A,K;0;0;0",
+            "Btan;line;perpendicular;B,K;0;0;0",
+            "Ctan;line;perpendicular;C,K;0;0;0",
+            "M;point;intersection;Atan,Btan",
+            "N;point;intersection;Btan,Ctan",
+            "L;point;intersection;Ctan,Atan",
+            "LMN;polygon;triangle;L,M,N;0;0;black;random",
+            "ABCdup;circle;radius;K,B;0;0;0;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a><br><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookIII/propositions/propIII16/#cor">III.16,Cor</a></div><p>Produce <em>EF</em> in both directions to the points <em>G</em> and <em>H.</em> Take the center <em>K</em> of the circle <em>ABC,</em> and draw a radius <em>KB</em> at random. On the straight line <em>KB</em> and at the point <em>K</em> on it, construct the angle <em>BKA</em> equal to the angle <em>DEG,</em> and the angle <em>BKC</em> equal to the angle <em>DFH.</em> Through the points <em>A,</em> <em>B,</em> and <em>C</em> draw <em>LAM, MBN,</em> and <em>NCL</em> touching the circle <em>ABC.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII18/">III.18</a></div>
+<p>Now, since <em>LM, MN,</em> and <em>NL</em> touch the circle <em>ABC</em> at the points <em>A, B,</em> and <em>C,</em> and <em>KA, KB,</em> and <em>KC</em> have been joined from the center <em>K</em> to the points <em>A, B,</em> and <em>C,</em> therefore the angles at the points <em>A, B,</em> and <em>C</em> are right.</p>
+<p>And, since the four angles of the quadrilateral <em>AMBK</em> equal four right angles, inasmuch as <em>AMBK</em> is in fact divisible into two triangles, and the angles <em>KAM</em> and <em>KBM</em> are right, therefore the sum of the remaining angles <em>AKB</em> and <em>AMB</em> equals two right angles.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI13/">I.13</a></div>
+<p>But the sum of the angles <em>DEG</em> and <em>DEF</em> also equals two right angles, therefore the sum of the angles <em>AKB</em> and <em>AMB</em> equals the sum of the angles <em>DEG</em> and <em>DEF,</em> of which the angle <em>AKB</em> equals the angle <em>DEG,</em> therefore the remaining angle <em>AMB</em> equals the remaining angle <em>DEF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>Similarly it can be proved that the angle <em>LNB</em> also equals the angle <em>DFE,</em> therefore the remaining angle <em>MLN</em> equals the angle <em>EDF.</em></p>
+<div class="just"><a href="/elements/books/bookIV/definitions/defIV4/">IV.Def.4</a></div>
+<p>Therefore the triangle <em>LMN</em> is equiangular with the triangle <em>DEF,</em> and it has been circumscribed about the circle <em>ABC.</em></p>
+<p>Therefore a triangle equiangular with the given triangle has been circumscribed about a given circle.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is not used elsewhere in the <em>Elements,</em> but is included as a mate to the previous proposition in which a triangle is inscribed inside rather than circumscribed outside a given circle.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IV</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IV</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 14</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 14</h1>
+    <div class="statement">To circumscribe a circle about a given equilateral and equiangular pentagon.</div>
+    <p>Let <em>ABCDE</em> be the given pentagon, which is equilateral and equiangular.</p>
+<p>It is required to circumscribe a circle about the pentagon <em>ABCDE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI9/">I.9</a></div>
+<p>Bisect the angles <em>BCD</em> and <em>CDE</em> by the straight lines <em>CF</em> and <em>DF</em> respectively.  Join the straight lines <em>FB, FA,</em> and <em>FE</em> from the point <em>F</em> at which the straight lines meet to the points <em>B, A,</em> and <em>E.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="250" height="220" tabindex="0"></canvas>
+<noscript><img alt="IV.14 diagram" src="propIV14.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IV.14",
+        pivot: "F",
+        elements: [
+            "C;point;free;70,190",
+            "D;point;free;170,190",
+            "CDEAB;polygon;regularPolygon;C,D,5;0;0;black;random",
+            "E;point;vertex;CDEAB,3",
+            "A;point;vertex;CDEAB,4",
+            "B;point;vertex;CDEAB,5",
+            "circ;circle;circumcircle;A,B,C;0;0;black;random",
+            "F;point;center;circ;;black;green",
+            "AF;line;connect;A,F",
+            "BF;line;connect;B,F",
+            "CF;line;connect;C,F",
+            "DF;line;connect;D,F",
+            "EF;line;connect;E,F"
+        ],
+    });
+</script>
+</figure><div class="just">As in <a href="/elements/books/bookIV/propositions/propIV13/">IV.13</a></div><p>Then in manner similar to the preceding it can be proved that the angles <em>CBA, BAE,</em> and <em>AED</em> are also bisected by the straight lines <em>FB, FA,</em> and <em>FE</em> respectively.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
+<p>Now, since the angle <em>BCD</em> equals the angle <em>CDE,</em> and the angle <em>FCD</em> is half of the angle <em>BCD,</em> and the angle <em>CDF</em> half of the angle <em>CDE,</em> therefore the angle <em>FCD</em> also equals the angle <em>CDF,</em> so that the side <em>FC</em> also equals the side <em>FD.</em></p>
+<p>Similarly it can be proved that each of the straight lines <em>FB, FA,</em> and <em>FE</em> also equals each of the straight lines <em>FC</em> and <em>FD.</em>  Therefore the five straight lines <em>FA, FB, FC,</em>  <em>FD,</em> and <em>FE</em> equal one another.</p>
+<p>Therefore the circle described with center <em>F</em> and radius one of the straight lines <em>FA, FB, FC, FD,</em> or <em>FE</em> also passes through the remaining points, and is circumscribed.</p>
+<p>Let it be circumscribed, and let it be <em>ABCDE.</em></p>
+<p>Therefore a circle has been circumscribed about the given equilateral and equiangular pentagon.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The method given here to circumscribe a circle about any regular <em>n</em>-gon. Simply bisect two of the angles of the n-gon to find the center of the circle, then choose one of the lines from it to a vertex as the radius.</p>
+<p>This construction is used in propositions <a href="/elements/books/bookXIII/propositions/propXIII8/">XIII.8</a> and <a href="/elements/books/bookXIII/propositions/propXIII18/">XIII.18</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII8/">XIII.8</a>, <a href="/elements/books/bookXIII/propositions/propXIII18/">XIII.18</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 33</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 33</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 33</h1>
+    <div class="statement">Straight lines which join the ends of equal and parallel straight lines in the same directions are themselves equal and parallel.</div>
+    <p>Let <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span> be equal and parallel, and let the straight lines <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="BD">BD</span> join them at their ends in the same directions.</p>
+<p>I say that <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="BD">BD</span> are also equal and parallel.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="160" tabindex="0"></canvas>
+<noscript><img alt="I.33 diagram" src="propI33.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.33",
+        elements: [
+            "A;point;free;40,40",
+            "B;point;free;180,40",
+            "C;point;free;80,120",
+            "CABD;polygon;parallelogram;C,A,B;0;0;0,0,0;0",
+            "D;point;vertex;CABD,4",
+            "BC;line;connect;B,C",
+            // Side hover targets (the parallelogram draws the edges; these only
+            // light when a prose/caption ref names the segment).
+            "AB;line;connect;A,B;0;0;0",
+            "CD;line;connect;C,D;0;0;0",
+            "AC;line;connect;A,C;0;0;0",
+            "BD;line;connect;B,D;0;0;0",
+            // The other diagonal AD (not drawn) — hover target for the guide's
+            // "which of the three pairs intersects" discussion (AD & BC cross).
+            "AD;line;connect;A,D;0;0;0",
+            // Triangle hover targets for the I.4 congruence (ABC upper, DCB
+            // lower — the two halves split by diagonal BC).
+            "ABC;polygon;triangle;A,B,C;0;0;0;0",
+            "DCB;polygon;triangle;D,C,B;0;0;0;0",
+            // Angle markers (#91), colour-matched alternate pairs: ∠ABC=∠BCD
+            // (red, from AB∥CD) and ∠ACB=∠CBD (blue, proved ⟹ AC∥BD). Radii
+            // pinned (#103) at 22. Triangle owns `ABC`, so ∠ABC marker = `CBA`.
+            "CBA;sector;angleMarker;B,C,A,22;0;0;red;red",
+            "BCD;sector;angleMarker;C,B,D,22;0;0;red;red",
+            "ACB;sector;angleMarker;C,A,B,22;0;0;blue;blue",
+            "CBD;sector;angleMarker;B,C,D,22;0;0;blue;blue"
+        ],
+        aliases: { "DC": "CD", "CB": "BC" },
+        slides: [
+            { text: "Let {AB} and {CD} be equal and parallel, and let {AC} and {BD} join them at their ends in the same directions. I say that {AC} and {BD} are also equal and parallel.",
+              visible: ["CABD","AB","CD","AC","BD"],
+              highlighted: ["AB","CD"] },
+            { text: "Join {BC}.",
+              visible: ["CABD","AB","CD","AC","BD","BC"],
+              highlighted: ["BC"],
+              transition: { animations: [ { elem: "BC", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "I.Post.1" }] },
+            { text: "Since {AB} is parallel to {CD}, and {BC} falls upon them, the alternate angles {ABC|CBA} and {BCD} equal one another.",
+              visible: ["CABD","AB","CD","BC","CBA","BCD"],
+              highlighted: ["CBA","BCD"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "CBA", name: geomlib.A.Sector.sweep },
+                  { elem: "BCD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.29" }] },
+            { text: "Since {AB} equals {CD}, {BC} is common, and {ABC|CBA} equals {BCD}, the triangle {ABC} equals the triangle {DCB}. So the base {AC} equals the base {BD}, and the angle {ACB} equals the angle {CBD}.",
+              visible: ["CABD","AB","CD","BC","ABC","DCB","AC","BD","CBA","BCD","ACB","CBD"],
+              highlighted: ["AC","BD","ACB","CBD"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "ACB", name: geomlib.A.Sector.sweep },
+                  { elem: "CBD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.4" }] },
+            { text: "Since {BC} falling on {AC} and {BD} makes the alternate angles {ACB} and {CBD} equal, {AC} is parallel to {BD}.",
+              visible: ["CABD","BC","AC","BD","ACB","CBD"],
+              highlighted: ["AC","BD","ACB","CBD"],
+              justifications: [{ ref: "I.27" }] },
+            { text: "And {AC} was also proved equal to {BD}. So straight lines joining the ends of equal, parallel segments in the same directions are themselves equal and parallel.",
+              visible: ["CABD","AB","CD","AC","BD"],
+              highlighted: ["AC","BD"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.4":      "/elements/books/bookI/propositions/propI4/",
+        "I.27":     "/elements/books/bookI/propositions/propI27/",
+        "I.29":     "/elements/books/bookI/propositions/propI29/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a></div>
+<p>Join <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
+<p>Since <span class="elem-ref" data-elem="AB">AB</span> is parallel to <span class="elem-ref" data-elem="CD">CD</span>, and <span class="elem-ref" data-elem="BC">BC</span> falls upon them, therefore the alternate angles <span class="elem-ref" data-elem="CBA">ABC</span> and <span class="elem-ref" data-elem="BCD">BCD</span> equal one another.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Since <span class="elem-ref" data-elem="AB">AB</span> equals <span class="elem-ref" data-elem="CD">CD</span>, and <span class="elem-ref" data-elem="BC">BC</span> is common, the two sides <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="BC">BC</span> equal the two sides <span class="elem-ref" data-elem="DC">DC</span> and <span class="elem-ref" data-elem="CB">CB</span>, and the angle <span class="elem-ref" data-elem="CBA">ABC</span> equals the angle <span class="elem-ref" data-elem="BCD">BCD</span>, therefore the base <span class="elem-ref" data-elem="AC">AC</span> equals the base <span class="elem-ref" data-elem="BD">BD</span>, the triangle <span class="elem-ref" data-elem="ABC">ABC</span> equals the triangle <span class="elem-ref" data-elem="DCB">DCB</span>, and the remaining angles equals the remaining angles respectively, namely those opposite the equal sides. Therefore the angle <span class="elem-ref" data-elem="ACB">ACB</span> equals the angle <span class="elem-ref" data-elem="CBD">CBD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI27/">I.27</a></div>
+<p>Since the straight line <span class="elem-ref" data-elem="BC">BC</span> falling on the two straight lines <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="BD">BD</span> makes the alternate angles equal to one another, therefore <span class="elem-ref" data-elem="AC">AC</span> is parallel to <span class="elem-ref" data-elem="BD">BD</span>.</p>
+<p>And it was also proved equal to it.</p>
+<p>Therefore <em>straight lines which join the ends of equal and parallel straight lines in the same directions are themselves equal and parallel.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The qualifier "in the same directions" in the statement of this proposition is necessary since without it the lines <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="BC">BC</span> could join the endpoints of the parallel lines, and <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="BC">BC</span> are not parallel but intersect. But these words of Euclid words are informal, and it would take some work to determine geometrically which end of <span class="elem-ref" data-elem="AD">AD</span> corresponds to which end of a parallel line <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<p>In general, given four points <span class="elem-ref" data-elem="A">A</span>, <span class="elem-ref" data-elem="B">B</span>, <span class="elem-ref" data-elem="C">C</span>, and <span class="elem-ref" data-elem="D">D</span>, exactly one of the three pairs of lines, <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span>, <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="BD">BD</span>, and <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="BC">BC</span>, intersects. (If extended to infinite lines, all three pairs of lines might intersect, but as line segments only one pair does.) This statement belongs to the fundamental part of plane geometry that includes betweenness and sides of lines that wasn't developed until the late nineteenth century.</p>
+<h4>Use of Proposition 33</h4>
+<p>This proposition is used in <a href="/elements/books/bookI/propositions/propI36/">I.36</a>, <a href="/elements/books/bookI/propositions/propI45/">I.45</a>, and a few propositions in Books XI through XIII.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI36/">I.36</a>, <a href="/elements/books/bookI/propositions/propI45/">I.45</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI10/">XI.10</a>, <a href="/elements/books/bookXI/propositions/propXI38/">XI.38</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

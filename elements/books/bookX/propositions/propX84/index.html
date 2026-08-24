@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 84</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 84</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 84</h1>
+    <div class="statement">To a straight line which produces with a medial area a medial whole only one straight line can be annexed which is incommensurable in square with the whole straight line and which with the whole straight line makes the sum of squares on them medial and twice the rectangle contained by them both medial and also incommensurable with the sum of the squares on them.</div>
+    <div class="just"><a href="/elements/books/bookX/propositions/propX78/">X.78</a></div>
+<p>Let <em>AB</em> be the straight line which produces with a medial area a medial whole, and <em>BC</em> an annex to it. Then <em>AC</em> and <em>CB</em> are straight lines incommensurable in square which fulfill the aforesaid conditions.</p>
+<p>I say that no other straight line can be annexed to <em>AB</em> which fulfills the aforesaid conditions.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX78/">X.78</a></div>
+<p>If possible, let <em>BD</em> be so annexed, so that <em>AD</em> and <em>DB</em> are also straight lines incommensurable in square which make the squares on <em>AD</em> and <em>DB</em> added together medial, twice the rectangle <em>AD</em> by <em>DB</em> medial, and also the sum of the squares on <em>AD</em> and <em>DB</em> incommensurable with twice the rectangle <em>AD</em> by <em>DB</em>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="200" height="270" tabindex="0"></canvas>
+<noscript><img alt="X.84 diagram" src="propX84.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.84",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "F0;point;free;-1000,75;0;0",
+            "F3;point;free;1000,75;0;0",
+            "A;point;lineSlider;A0,A3,40,0",
+            "B;point;lineSlider;A0,A3,105,0",
+            "C;point;lineSlider;A0,A3,135,0",
+            "D;point;lineSlider;A0,A3,160,0",
+            "AD;line;connect;A,D",
+            "F;point;lineSlider;F0,F3,40,0",
+            "E;point;lineSlider;F0,F3,160,0",
+            "G''';point;perpendicular;F,E;0;0",
+            "G'';point;extend;G''',F,A0,A3;0;0",
+            "G';point;proportion;F,E,A,C,A,C,F,G'';0;0",
+            "G;point;proportion;F,E,B,C,B,C,G',G''",
+            "M;point;parallelogram;E,F,G",
+            "EFGM;polygon;quadrilateral;E,F,G,M;0;0;black;random",
+            "L';point;proportion;F,E,A,C,C,B,G,F;0;0",
+            "L;point;extend;G,L',G,L'",
+            "H;point;parallelogram;M,G,L",
+            "MGLH;polygon;quadrilateral;M,G,L,H;0;0;black;random",
+            "I';point;proportion;F,E,A,D,A,D,F,G'';0;0",
+            "I;point;proportion;F,E,B,D,B,D,I',G''",
+            "N;point;parallelogram;E,F,I",
+            "MGIN;polygon;quadrilateral;M,G,I,N;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookII/propositions/propII7/">II.7</a></div>
+<p>Set out a rational straight line <em>EF</em>. Apply <em>EG</em>, equal to the sum of the squares on <em>AC</em> and <em>CB</em>, to <em>EF</em> producing <em>EM</em> as breadth. Apply <em>HG</em>, equal to twice the rectangle <em>AC</em> by <em>CB</em>, to <em>EF</em> producing <em>HM</em> as breadth. Then the remainder, the square on <em>AB</em>, equals <em>EL</em>. Therefore <em>AB</em> is the side of <em>EL</em>.</p>
+<p>Again, apply <em>EI</em>, equal to the sum of the squares on <em>AD</em> and <em>DB</em>, to <em>EF</em> producing <em>EN</em> as breadth.</p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII7/">II.7</a></div>
+<p>But the square on <em>AB</em> also equals <em>EL</em>, therefore the remainder, twice the rectangle <em>AD</em> by <em>DB</em>, equals <em>HI</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX22/">X.22</a></div>
+<p>Now, since the sum of the squares on <em>AC</em> and <em>CB</em> is medial and equals <em>EG</em>, therefore <em>EG</em> is also medial. And it is applied to the rational straight line <em>EF</em> producing <em>EM</em> as breadth, therefore <em>EM</em> is rational and incommensurable in length with <em>EF</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX22/">X.22</a></div>
+<p>Again, since twice the rectangle <em>AC</em> by <em>CB</em> is medial and equals <em>HG</em>, therefore <em>HG</em> is also medial. And it is applied to the rational straight line <em>EF</em> producing <em>HM</em> as breadth, therefore <em>HM</em> is rational and incommensurable in length with <em>EF</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>Since the sum of the squares on <em>AC</em> and <em>CB</em> is incommensurable with twice the rectangle <em>AC</em> by <em>CB</em>, therefore <em>EG</em> is also incommensurable with <em>HG</em>. Therefore <em>EM</em> is also incommensurable in length with <em>MH</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX73/">X.73</a></div>
+<p>And both are rational, therefore <em>EM</em> and <em>MH</em> are rational straight lines commensurable in square only. Therefore <em>EH</em> is an apotome, and <em>HM</em> an annex to it.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX79/">X.79</a></div>
+<p>Similarly we can prove that <em>EH</em> is again an apotome and <em>HN</em> an annex to it. Therefore to an apotome different rational straight lines are annexed which are commensurable with the wholes in square only, which was proved impossible.</p>
+<p>Therefore no other straight line can be so annexed to <em>AB</em>. Therefore to <em>AB</em> only one straight line can be annexed which is incommensurable in square with the whole and which with the whole makes the squares on them added together medial, twice the rectangle contained by them medial, and also the sum of the squares on them incommensurable with twice the rectangle contained by them.</p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is not used in the rest of the <em>Elements</em>.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

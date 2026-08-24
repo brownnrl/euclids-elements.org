@@ -1,0 +1,929 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Book VII</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+<center>
+  <img src="/elements/logo.gif" alt="Euclid's Elements"
+       usemap="#tocmap" height="238" width="245" border="0">
+</center>
+
+<map name="tocmap">
+  <area shape="rect" coords="59,88,193,164"   href="/elements/" alt="Table of Contents">
+  <area shape="rect" coords="160,10,188,31"   href="/elements/books/bookI/"    alt="Book I">
+  <area shape="rect" coords="194,34,215,70"   href="/elements/books/bookII/"   alt="Book II">
+  <area shape="rect" coords="215,73,243,98"   href="/elements/books/bookIII/"  alt="Book III">
+  <area shape="rect" coords="217,118,242,139" href="/elements/books/bookIV/"   alt="Book IV">
+  <area shape="rect" coords="208,163,231,185" href="/elements/books/bookV/"    alt="Book V">
+  <area shape="rect" coords="176,199,203,219" href="/elements/books/bookVI/"   alt="Book VI">
+  <area shape="rect" coords="134,215,172,236" href="/elements/books/bookVII/"  alt="Book VII">
+  <area shape="rect" coords="74,215,115,236"  href="/elements/books/bookVIII/" alt="Book VIII">
+  <area shape="rect" coords="44,197,72,218"   href="/elements/books/bookIX/"   alt="Book IX">
+  <area shape="rect" coords="16,163,44,183"   href="/elements/books/bookX/"    alt="Book X">
+  <area shape="rect" coords="0,121,31,140"    href="/elements/books/bookXI/"   alt="Book XI">
+  <area shape="rect" coords="0,78,36,98"      href="/elements/books/bookXII/"  alt="Book XII">
+  <area shape="rect" coords="10,32,57,54"     href="/elements/books/bookXIII/" alt="Book XIII">
+</map>
+  
+    <h1>Book VII</h1>
+  
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../">Books</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Book VII</span>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Table of Contents</h2>
+<ul>
+  
+  
+    <li><a href="#defs">Definitions</a> (22)</li>
+  
+  
+  
+  <li><a href="#props">Propositions</a> (39)</li>
+  
+</ul>
+
+
+
+
+
+  <hr size="4">
+  <h2 id="defs"><a href="definitions/">Definitions</a></h2>
+  <dl>
+    
+  
+  <dt><b><a href="definitions/defVII1/">Definition 1</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>unit</i> is that by virtue of which each of the things that exist is called one.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII2/">Definition 2</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>number</i> is a multitude composed of units.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII3/">Definition 3</a>.</b></dt>
+  
+  <dd>
+    
+      A number is <i>a part</i> of a number, the less of the greater, when it measures the greater;
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII4/">Definition 4</a>.</b></dt>
+  
+  <dd>
+    
+      But <i>parts</i> when it does not measure it.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII5/">Definition 5</a>.</b></dt>
+  
+  <dd>
+    
+      The greater number is a <i>multiple</i> of the less when it is measured by the less.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII6/">Definition 6</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>even number</i> is that which is divisible into two equal parts.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII7/">Definition 7</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>odd number</i> is that which is not divisible into two equal parts, or that which differs by a unit from an even number.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII8/">Definition 8</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>even-times-even number</i> is that which is measured by an even number according to an even number.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII9/">Definition 9</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>even-times-odd number</i> is that which is measured by an even number according to an odd number.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII10/">Definition 10</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>odd-times-odd number</i> is that which is measured by an odd number according to an odd number.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII11/">Definition 11</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>prime number</i> is that which is measured by a unit alone.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII12/">Definition 12</a>.</b></dt>
+  
+  <dd>
+    
+      Numbers <i>relatively prime</i> are those which are measured by a unit alone as a common measure.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII13/">Definition 13</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>composite number</i> is that which is measured by some number.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII14/">Definition 14</a>.</b></dt>
+  
+  <dd>
+    
+      Numbers <i>relatively composite</i> are those which are measured by some number as a common measure.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII15/">Definition 15</a>.</b></dt>
+  
+  <dd>
+    
+      A number is said to <i>multiply</i> a number when the latter is added as many times as there are units in the former.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII16/">Definition 16</a>.</b></dt>
+  
+  <dd>
+    
+      And, when two numbers having multiplied one another make some number, the number so produced be called <i>plane,</i> and its <i>sides</i> are the numbers which have multiplied one another.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII17/">Definition 17</a>.</b></dt>
+  
+  <dd>
+    
+      And, when three numbers having multiplied one another make some number, the number so produced be called <i>solid,</i> and its <i>sides</i> are the numbers which have multiplied one another.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII18/">Definition 18</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>square number</i> is equal multiplied by equal, or a number which is contained by two equal numbers.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII19/">Definition 19</a>.</b></dt>
+  
+  <dd>
+    
+      And a <i>cube</i> is equal multiplied by equal and again by equal, or a number which is contained by three equal numbers.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII20/">Definition 20</a>.</b></dt>
+  
+  <dd>
+    
+      Numbers are <i>proportional</i> when the first is the same multiple, or the same part, or the same parts, of the second that the third is of the fourth.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII21/">Definition 21</a>.</b></dt>
+  
+  <dd>
+    
+      <i>Similar plane</i> and <i>solid</i> numbers are those which have their sides proportional.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defVII22/">Definition 22</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>perfect number</i> is that which is equal to the sum its own parts.
+    
+  </dd>
+
+  </dl>
+
+
+
+
+
+
+
+
+  <hr size="4">
+  <h2 id="props"><a href="propositions/">Propositions</a></h2>
+  <dl>
+    
+  
+  <dt class="red-highlight"><b><a href="propositions/propVII1/">Proposition 1</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          When two unequal numbers are set out, and the less is continually subtracted in turn from the greater, if the number which is left never measures the one before it until a unit is left, then the original numbers are relatively prime.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propVII2/">Proposition 2</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To find the greatest common measure of two given numbers not relatively prime.
+        
+      
+        
+        
+          <p><b><a href="propositions/propVII2/#cor">Corollary.</a></b> if a number measures two numbers, then it also measures their greatest common measure.</p>
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propVII3/">Proposition 3</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To find the greatest common measure of three given numbers not relatively prime.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII4/">Proposition 4</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Any number is either a part or parts of any number, the less of the greater.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII5/">Proposition 5</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number is part of a number, and another is the same part of another, then the sum is also the same part of the sum that the one is of the one.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII6/">Proposition 6</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number is parts of a number, and another is the same parts of another, then the sum is also the same parts of the sum that the one is of the one.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII7/">Proposition 7</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number is that part of a number which a subtracted number is of a subtracted number, then the remainder is also the same part of the remainder that the whole is of the whole.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII8/">Proposition 8</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number is the same parts of a number that a subtracted number is of a subtracted number, then the remainder is also the same parts of the remainder that the whole is of the whole.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII9/">Proposition 9</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number is a part of a number, and another is the same part of another, then alternately, whatever part or parts the first is of the third, the same part, or the same parts, the second is of the fourth.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII10/">Proposition 10</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number is a parts of a number, and another is the same parts of another, then alternately, whatever part of parts the first is of the third, the same part, or the same parts, the second is of the fourth.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII11/">Proposition 11</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a whole is to a whole as a subtracted number is to a subtracted number, then the remainder is to the remainder as the whole is to the whole.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII12/">Proposition 12</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If any number of numbers are proportional, then one of the antecedents is to one of the consequents as the sum of the antecedents is to the sum of the consequents.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII13/">Proposition 13</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If four numbers are proportional, then they are also proportional alternately.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII14/">Proposition 14</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If there are any number of numbers, and others equal to them in multitude, which taken two and two together are in the same ratio, then they are also in the same ratio <i>ex aequali.</i>
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII15/">Proposition 15</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a unit number measures any number, and another number measures any other number the same number of times, then alternately, the unit measures the third number the same number of times that the second measures the fourth.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII16/">Proposition 16</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers multiplied by one another make certain numbers, then the numbers so produced equal one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII17/">Proposition 17</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number multiplied by two numbers makes certain numbers, then the numbers so produced have the same ratio as the numbers multiplied.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII18/">Proposition 18</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two number multiplied by any number make certain numbers, then the numbers so produced have the same ratio as the multipliers.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII19/">Proposition 19</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If four numbers are proportional, then the number produced from the first and fourth equals the number produced from the second and third; and, if the number produced from the first and fourth equals that produced from the second and third, then the four numbers are proportional.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII20/">Proposition 20</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          The least numbers of those which have the same ratio with them measure those which have the same ratio with them the same number of times; the greater the greater; and the less the less.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII21/">Proposition 21</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Numbers relatively prime are the least of those which have the same ratio with them.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII22/">Proposition 22</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          The least numbers of those which have the same ratio with them are relatively prime.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII23/">Proposition 23</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers are relatively prime, then any number which measures one of them is relatively prime to the remaining number.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII24/">Proposition 24</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers are relatively prime to any number, then their product is also relatively prime to the same.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII25/">Proposition 25</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers are relatively prime, then the product of one of them with itself is relatively prime to the remaining one.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII26/">Proposition 26</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers are relatively prime to two numbers, both to each, then their products are also relatively prime.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII27/">Proposition 27</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers are relatively prime, and each multiplied by itself makes a certain number, then the products are relatively prime; and, if the original numbers multiplied by the products make certain numbers, then the latter are also relatively prime.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII28/">Proposition 28</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers are relatively prime, then their sum is also prime to each of them; and, if the sum of two numbers is relatively prime to either of them, then the original numbers are also relatively prime.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII29/">Proposition 29</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Any prime number is relatively prime to any number which it does not measure.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII30/">Proposition 30</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers, multiplied by one another make some number, and any prime number measures the product, then it also measures one of the original numbers.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII31/">Proposition 31</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Any composite number is measured by some prime number.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII32/">Proposition 32</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Any number is either prime or is measured by some prime number.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propVII33/">Proposition 33</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          Given as many numbers as we please, to find the least of those which have the same ratio with them.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propVII34/">Proposition 34</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To find the least number which two given numbers measure.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII35/">Proposition 35</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two numbers measure any number, then the least number measured by them also measures the same.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propVII36/">Proposition 36</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To find the least number which three given numbers measure.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII37/">Proposition 37</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number is measured by any number, then the number which is measured has a part called by the same name as the measuring number.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propVII38/">Proposition 38</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a number has any part whatever, then it is measured by a number called by the same name as the part.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propVII39/">Proposition 39</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To find the number which is the least that has given parts.
+        
+      
+    
+  </dd>
+
+  </dl>
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

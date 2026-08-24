@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 18</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 18</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 18</h1>
+    <div class="statement">Spheres are to one another in triplicate ratio of their respective diameters.</div>
+    <p>Let the <em>ABC</em> and <em>DEF</em> be spheres, and let <em>BC</em> and <em>EF</em> be their diameters.</p>
+<p>I say that the sphere <em>ABC</em> has to the sphere <em>DEF</em> the ratio triplicate of that which <em>BC</em> has to <em>EF.</em></p>
+<p>For, if the sphere <em>ABC</em> has not to the sphere <em>DEF</em> the ratio triplicate of that which <em>BC</em> has to <em>EF,</em> then the sphere <em>ABC</em> has either to some less sphere than the sphere <em>DEF,</em> or to a greater, the ratio triplicate of that which <em>BC</em> has to <em>EF.</em></p>
+<p>First, let it have that ratio to a less sphere <em>GHK.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a></div>
+<p>Let <em>DEF</em> be about the same center with <em>GHK.</em> Inscribe in the greater sphere <em>DEF</em> a polyhedral solid which does not touch the lesser sphere <em>GHK</em> at its surface.</p>
+<center>
+<canvas id="canvas_0" width="540" height="300" tabindex="0"></canvas>
+<noscript><img alt="XII.18 diagram" src="propXII18.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.18",
+        elements: [
+            "B0;point;free;-1000,100;0;0",
+            "B3;point;free;1000,100;0;0",
+            "B;point;lineSlider;B0,B3,40,0",
+            "C;point;lineSlider;B0,B3,155,0",
+            "BC;line;connect;B,C",
+            "ABCcenter;point;midpoint;B,C;0;0",
+            "A;point;perpendicular;ABCcenter,C",
+            "ABCsphere;circle;radius;ABCcenter,B;0;0;black;random",
+            "E;point;lineSlider;B0,B3,355,0",
+            "F;point;lineSlider;B0,B3,500,0",
+            "EF;line;connect;E,F",
+            "DEFcenter;point;midpoint;EF;0;0",
+            "D;point;perpendicular;DEFcenter,F",
+            "DEFsphere;circle;radius;DEFcenter,D;0;0;black;random",
+            "H;point;lineSlider;B0,B3,380,0",
+            "K;point;extend;H,DEFcenter,H,DEFcenter",
+            "G;point;perpendicular;DEFcenter,K",
+            "GHKsphere;circle;radius;DEFcenter,H;0;0;black;random",
+            "M0;point;free;-1000,200;0;0",
+            "M3;point;free;1000,200;0;0",
+            "M;point;lineSlider;M0,M3,180,0",
+            "N;point;lineSlider;M0,M3,340,0",
+            "LMNcenter;point;midpoint;M,N;0;0",
+            "L;point;perpendicular;LMNcenter,N",
+            "LMNsphere;circle;radius;LMNcenter,M;0;0;black;random"
+        ],
+    });
+</script>
+</center><div class="just"><a href="/elements/books/bookXII/propositions/propXII17/#cor">XII.17.Cor</a></div>
+<p>Also inscribe in the sphere <em>ABC</em> a polyhedral solid similar to the polyhedral solid in the sphere <em>DEF.</em> Therefore the polyhedral solid in <em>ABC</em> has to the polyhedral solid in <em>DEF</em> the ratio triplicate of that which <em>BC</em> has to <em>EF.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV16/">V.16</a></div>
+<p>But the sphere <em>ABC</em> also has to the sphere <em>GHK</em> the ratio triplicate of that which <em>BC</em> has to <em>EF,</em> therefore the sphere <em>ABC</em> is to the sphere <em>GHK</em> as the polyhedral solid in the sphere <em>ABC</em> is to the polyhedral solid in the sphere <em>DEF,</em> and, alternately the sphere <em>ABC</em> is to the polyhedron in it as the sphere <em>GHK</em> is to the polyhedral solid in the sphere <em>DEF.</em></p>
+<div class="just"><a href="/elements/books/bookV/definitions/defV5/">V.Def.5</a></div>
+<p>But the sphere <em>ABC</em> is greater than the polyhedron in it, therefore the sphere <em>GHK</em> is also greater than the polyhedron in the sphere <em>DEF.</em></p>
+<p>But it is also less, for it is enclosed by it. Therefore the sphere <em>ABC</em> has not to a less sphere than the sphere <em>DEF</em> the ratio triplicate of that which the diameter <em>BC</em> has to <em>EF.</em></p>
+<p>Similarly we can prove that neither has the sphere <em>DEF</em> to a less sphere than the sphere <em>ABC</em> the ratio triplicate of that which <em>EF</em> has to <em>BC.</em></p>
+<p>I say next that neither has the sphere <em>ABC</em> to any greater sphere than the sphere <em>DEF</em> the ratio triplicate of that which <em>BC</em> has to <em>EF.</em></p>
+<p>For, if possible, let it have that ratio to a greater, <em>LMN.</em> Therefore, inversely, the sphere <em>LMN</em> has to the sphere <em>ABC</em> the ratio triplicate of that which the diameter <em>EF</em> has to the diameter <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookXII/propositions/propXII2/#lemma">XII.2,Lemma</a></div><p>But, since <em>LMN</em> is greater than <em>DEF,</em> therefore the sphere <em>LMN</em> is to the sphere <em>ABC</em> as the sphere <em>DEF</em> is to some less sphere than the sphere <em>ABC,</em> as was before proved.</p>
+<p>Therefore the sphere <em>DEF</em> also has to some less sphere than the sphere <em>ABC</em> the ratio triplicate of that which <em>EF</em> has to <em>BC,</em> which was proved impossible.</p>
+<p>Therefore the sphere <em>ABC</em> has not to any sphere greater than the sphere <em>DEF</em> the ratio triplicate of that which <em>BC</em> has to <em>EF.</em></p>
+<p>But it was proved that neither has it that ratio to a less sphere.</p>
+<p>Therefore the sphere <em>ABC</em> has to the sphere <em>DEF</em> the ratio triplicate of that which <em>BC</em> has to <em>EF.</em></p>
+<p>Therefore, <em>spheres are to one another in triplicate ratio of their respective diameters.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition completes Book XII.</p>
+<p>Although this is an important proposition, it is just the beginning of the study of volumes of spheres. The arguments given in this proof are fairly convincing that any two similar solids are to each other in triplicate ratio of their linear parts. One difficulty is defining just what similar solids are.</p>
+<h4>The volume of a sphere</h4>
+<p>Euclid proved in proposition <a href="/elements/books/bookXII/propositions/propXII10/">XII.10</a> that the cone with the same base and height as a cylinder was one third of the cylinder, but he could not find the ratio of a sphere to the circumscribed cylinder.</p>
+<p>In the century after Euclid, Archimedes solved this problem as well as the much more difficult problem of the surface area of a sphere. He showed that the ratio of the sphere to the cylinder is 4:3. Since the volume of the cylinder is proportional to its base and its height, it follows that the volumes of spheres, cylinders, and cones can be found in terms of areas of circles. In algebraic terms, if we let <em>π</em> stand for the ratio of a circle to the square on its radius, then the volume of a cylinder of radius <em>r</em> and height <em>h</em> is <em>π**r</em><sup>2</sup><em>h</em>; the volume of an inscribed cone is <em>π**r</em><sup>2</sup><em>h</em>/3; and the volume of a sphere of radius <em>r</em> is 4<em>π**r</em><sup>3</sup>/3.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

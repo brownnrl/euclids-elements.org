@@ -1,0 +1,169 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 2</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 2</h1>
+    <div class="statement">To find the greatest common measure of two given numbers not relatively prime.</div>
+    <p>Let <em>AB</em> and <em>CD</em> be the two given numbers not relatively prime.</p>
+<p>It is required to find the greatest common measure of <em>AB</em> and <em>CD.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="120" height="280" tabindex="0"></canvas>
+<noscript><img alt="VII.2 diagram" src="propVII2.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VII.2",
+        elements: [
+            "A0;point;free;30,-1000;0;0",
+            "A3;point;free;30,1000;0;0",
+            "C0;point;free;60,-1000;0;0",
+            "C3;point;free;60,1000;0;0",
+            "G0;point;free;90,-1000;0;0",
+            "G3;point;free;90,1000;0;0",
+            "A;point;lineSlider;A0,A3,30,30",
+            "C;point;lineSlider;C0,C3,60,30",
+            "G1;point;lineSlider;G0,G3,90,30;0",
+            "F;point;lineSlider;C,C3,60,60",
+            "E';point;cutoff;A,A3,C,F;0;0",
+            "E;point;cutoff;E',A3,C,F",
+            "D';point;cutoff;F,C3,A,E;0;0",
+            "D;point;cutoff;D',C3,A,E",
+            "B;point;cutoff;E,A3,C,D",
+            "AB;line;connect;A,B",
+            "CD;line;connect;C,D",
+            "G2;point;cutoff;G1,G3,C,F;0",
+            "G;line;connect;G1,G2;black"
+        ],
+    });
+</script>
+</figure><p>If now <em>CD</em> measures <em>AB,</em> since it also measures itself, then <em>CD</em> is a common measure of <em>CD</em> and <em>AB.</em> And it is clear that it is also the greatest, for no greater number than <em>CD</em> measures <em>CD.</em></p>
+<p>But, if <em>CD</em> does not measure <em>AB,</em> then, when the less of the numbers <em>AB</em> and <em>CD</em> being continually subtracted from the greater, some number is left which measures the one before it.</p>
+<div class="just"><a href="/elements/books/bookVII/definitions/defVII12/">VII.Def.12</a><br><a href="/elements/books/bookVII/propositions/propVII1/">VII.1</a></div>
+<p>For a unit is not left, otherwise <em>AB</em> and <em>CD</em> would be relatively prime, which is contrary to the hypothesis.</p>
+<p>Therefore some number is left which measures the one before it.</p>
+<p>Now let <em>CD,</em> measuring <em>BE,</em> leave <em>EA</em> less than itself, let <em>EA,</em> measuring <em>DF,</em> leave <em>FC</em> less than itself, and let <em>CF</em> measure <em>AE.</em></p>
+<p>Since then, <em>CF</em> measures <em>AE,</em> and <em>AE</em> measures <em>DF,</em> therefore <em>CF</em> also measures <em>DF.</em> But it measures itself, therefore it also measures the whole <em>CD.</em></p>
+<p>But <em>CD</em> measures <em>BE,</em> therefore <em>CF</em> also measures <em>BE.</em> And it also measures <em>EA,</em> therefore it measures the whole <em>BA.</em></p>
+<p>But it also measures <em>CD,</em> therefore <em>CF</em> measures <em>AB</em> and <em>CD.</em> Therefore <em>CF</em> is a common measure of <em>AB</em> and <em>CD.</em></p>
+<p>I say next that it is also the greatest.</p>
+<p>If <em>CF</em> is not the greatest common measure of <em>AB</em> and <em>CD,</em> then some number <em>G,</em> which is greater than <em>CF,</em> measures the numbers <em>AB</em> and <em>CD.</em></p>
+<p>Now, since <em>G</em> measures <em>CD,</em> and <em>CD</em> measures <em>BE,</em> therefore <em>G</em> also measures <em>BE.</em> But it also measures the whole <em>BA,</em> therefore it measures the remainder <em>AE.</em></p>
+<p>But <em>AE</em> measures <em>DF,</em> therefore <em>G</em> also measures <em>DF.</em> And it measures the whole <em>DC,</em> therefore it also measures the remainder <em>CF,</em> that is, the greater measures the less, which is impossible.</p>
+<p>Therefore no number which is greater than <em>CF</em> measures the numbers <em>AB</em> and <em>CD.</em> Therefore <em>CF</em> is the greatest common measure of <em>AB</em> and <em>CD.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="cor">Corollary.</h1>
+    <div class="statement">if a number measures two numbers, then it also measures their greatest common measure.</div>
+    <p>From this it is clear that, <em>if a number measures two numbers, then it also measures their greatest common measure.</em></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Euclid again uses antenaresis (the Euclidean algorithm) in this proposition, this time to find the greatest common divisor of two numbers that aren't relatively prime. Had Euclid considered the unit (1) to be a number, he could have merged these two propositions into one.</p>
+<h4>The Euclidean algorithm, antenaresis</h4>
+<p>The greatest common divisor of two numbers <em>m</em> and <em>n</em> is the largest number which divides both. It's usually denoted <small>GCD</small>(<em>m, n</em>). It can be found using antenaresis by repeatedly subtracting the smaller, whichever it happens to be at the time, from the larger until the smaller divides the larger.</p>
+<p>As an illustration consider the problem of computing the greatest common divisor of 884 and 3009. First, repeatedly subtract 884 from 3009 until the remainder is less than 884. An equivalent numerical operation is to divide 884 into 3009; you'll get the same remainder. In this case after subtracting 884 three times, the remainder is 357. The two numbers under our consideration are now 884 and 357. Repeatedly subtract 357 from 884 to get the remainder 170. Repeatedly subtract 170 from 357 to get the remainder 17. Finally, stop since 17 divides 170. We' found that <small>GCD</small>(884, 3009) equals 17.</p>
+<p>The stages of the algorithm are the same as in <a href="/elements/books/bookVII/propositions/propVII1/">VII.1</a> except that the final remainder <em>a</em><sub>*n*+1</sub>, which divides the previous number <em>a</em><sub>*n*</sub>, is not 1.</p>
+<center>
+<i>a</i><sub>1</sub> – <i>m</i><sub>1</sub> <i>a</i><sub>2</sub> = <i>a</i><sub>3</sub>
+<br><i>a</i><sub>2</sub> – <i>m</i><sub>2</sub> <i>a</i><sub>3</sub> = <i>a</i><sub>4</sub>
+<br>            ...
+<br><i>a</i><sub><i>n</i>-1</sub> – <i>m</i><sub><i>n</i>-1</sub> <i>a</i><sub><i>n</i></sub> = <i>a</i><sub><i>n</i>+1</sub>.
+</center><p>(In Euclid's proof <em>a</em><sub>1</sub> is <em>AB, a</em><sub>2</sub> is <em>CD, a</em><sub>3</sub> is <em>AE,</em> and <em>a</em><sub>4</sub> = <em>a</em><sub>*n*+1</sub> is <em>CF.</em>)</p>
+<p>In the first part of the proof, Euclid shows that since <em>a</em><sub>*n*+1</sub> divides <em>a</em><sub>*n*</sub>, it also divides <em>a</em><sub>*n*-1</sub>, ... , <em>a</em><sub>2</sub>, and <em>a</em><sub>1</sub>. Therefore <em>a</em><sub>*n*+1</sub> is a common divisor of <em>a</em><sub>2</sub> and <em>a</em><sub>1</sub>. In the last part of the proof, Euclid shows that if any number <em>d</em> divides both <em>a</em><sub>2</sub> and <em>a</em><sub>1</sub>, then it also divides <em>a</em><sub>3</sub>, ... , <em>a</em><sub>*n*</sub>, and <em>a</em><sub>*n*+1</sub>. Therefore <em>a</em><sub>*n*+1</sub> is the greatest common divisor. The last part of the proof also shows that every common divisor divides the greatest common divisor as noted in the corollary.</p>
+<h4>Foundations of number theory</h4>
+<p>Euclid makes many implicit assumptions about numbers. For instance, he assumes that if <em>a</em> &lt; <em>b,</em> then <em>a</em> can be repeatedly subtracted from <em>b</em> until there is eventually a remainder less than or equal to <em>a.</em> He seems to have recognized that magnitudes need not have this property since the property is used as a qualifier in the definition of ratios (<a href="/elements/books/bookV/definitions/defV4/">V.Def.4</a>), but he didn't recognize its importance for numbers. There are, in fact, nonstandard models of number theory which satisfy the usual properties of numbers, but do not have this property. In such models, there are numbers than can be decreased by 1 infinitely many times but not ever reach 1. The existence of such models implies an axiom is needed to exclude such behavior.</p>
+<p>There is a similar assumption that the process of antenaresis eventually reaches an end when applied to numbers. Euclid certainly knew it needn't halt for magnitudes since its halting is used as a criterion for incommensurability (<a href="/elements/books/bookX/propositions/propX2/">X.2</a>).</p>
+<p>There needs to be an explicit axiom to cover these situations. One such axiom is a descending chain condition which states that there is no infinite decreasing sequence of numbers</p>
+<center><i>a</i><sub>1</sub> > <i>a</i><sub>2</sub> > ... > <i>a</i><sub><i>n</i></sub> > ... </center><h4>Use of this proposition</h4>
+<p>This proposition and its corollary are used in the next two propositions.</p>
+<p>Note how similar this proposition is to <a href="/elements/books/bookX/propositions/propX3/">X.3</a>, even having the same diagram and the same corollary. The terminology is slightly different and X.3 deals with magnitudes rather than numbers.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VII</th><td><a href="/elements/books/bookVII/propositions/propVII3/">VII.3</a>, <a href="/elements/books/bookVII/propositions/propVII4/">VII.4</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

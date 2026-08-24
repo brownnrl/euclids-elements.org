@@ -1,0 +1,183 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book II</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book II</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 11</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 11</h1>
+    <div class="statement">To cut a given straight line so that the rectangle contained by the whole and one of the segments equals the square on the remaining segment.</div>
+    <p>Let <em>AB</em> be the given straight line.</p>
+<p>It is required to cut <em>AB</em> so that the rectangle contained by the whole and one of the segments equals the square on the remaining segment.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="250" height="280" tabindex="0"></canvas>
+<noscript><img src="propII11.gif" alt="II.11"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "II.11",
+        elements: [
+            "A0;point;free;-1000,120;0,0",
+            "A3;point;free;1000,120;0,0",
+            "A;point;lineSlider;A0,A3,50,100",
+            "B;point;lineSlider;A0,A3,190,100",
+            "BD;line;perpendicular;B,A;0;0;0",
+            "D;point;last;BD",
+            "ABDC;polygon;parallelogram;A,B,D;0;0;0,0,0;random",
+            "C;point;vertex;ABDC,4",
+            "E;point;midpoint;A,C",
+            "BE;line;connect;B,E",
+            "F;point;extend;C,E,E,B",
+            "FAHG;polygon;square;F,A;0;0;0,0,0;random",
+            "H;point;vertex;FAHG,3",
+            "G;point;vertex;FAHG,4",
+            "HK;line;parallel;H,A,C",
+            "K;point;last;HK"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a>, <a href="/elements/books/bookI/propositions/propI10/">I.10</a></div>
+<p>Describe the square <em>ABDC</em> on <em>AB.</em>  Bisect <em>AC</em> at the point <em>E,</em> and join <em>BE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI46/">I.46</a></div>
+<p>Draw <em>CA</em> through to <em>F,</em> and make <em>EF</em> equal to <em>BE.</em>  Describe the square <em>FH</em> on <em>AF,</em> and draw <em>GH</em> through to <em>K.</em></p>
+<p>I say that <em>AB</em> has been cut at <em>H</em> so that the rectangle <em>AB</em> by <em>BH</em> equals the square on <em>AH.</em></p>
+<div class="just"><a href="/elements/books/bookII/propositions/propII6/">II.6</a></div>
+<p>Since the straight line <em>AC</em> has been bisected at <em>E,</em> and <em>FA</em> is added to it, the rectangle <em>CF</em> by <em>FA</em> together with the square on <em>AE</em> equals the square on <em>EF.</em></p>
+<p>But <em>EF</em> equals <em>EB,</em> therefore the rectangle <em>CF</em> by <em>FA</em> together with the square on <em>AE</em> equals the square on <em>EB.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
+<p>But the sum of the squares on <em>BA</em> and <em>AE</em> equals the square on <em>EB,</em> for the angle at <em>A</em> is right,  therefore the rectangle <em>CF</em> by <em>FA</em> together with the square on <em>AE</em> equals the sum of the squares on <em>BA</em> and <em>AE.</em></p>
+<p>Subtract the square on <em>AE</em>  from each. Therefore the remaining rectangle <em>CF</em> by <em>FA</em> equals the square on <em>AB.</em></p>
+<p>Now the rectangle <em>CF</em> by <em>FA</em> is <em>FK,</em> for <em>AF</em> equals <em>FG,</em> and the square on <em>AB</em> is <em>AD,</em> therefore <em>FK</em> equals <em>AD.</em></p>
+<p>Subtract <em>AK</em> from each. Therefore <em>FH,</em> which remains, equals <em>HD.</em></p>
+<p>And <em>HD</em> is the rectangle <em>AB</em> by <em>BH,</em> for <em>AB</em> equals <em>BD,</em> and <em>FH</em> is the square on <em>AH,</em> therefore the rectangle  <em>AB</em> by <em>BH</em> equals the square on <em>HA.</em></p>
+<p>Therefore the given straight line <em>AB</em> has been cut at <em>H</em> so that the rectangle  <em>AB</em> by <em>BH</em>  equals the square on <em>HA.</em></p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This construction cuts a line into two parts to solve the equation <em>a</em> (<em>a</em> – <em>x</em>) = <em>x</em><sup>2</sup> geometrically.</p>
+<p>This construction is used in the proof of <a href="/elements/books/bookIV/propositions/propIV10/">IV.10</a>, which is later used to construct a regular pentagon.  It accomplishes the same thing as the construction of proposition <a href="/elements/books/bookVI/propositions/propVI30/">VI.30</a>, which cuts a line into extreme and mean ratio, defined in <a href="/elements/books/bookVI/definitions/defVI3/">VI.Def.3</a>, and that construction is used
+later in <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a>.</p>
+<p>The difference between this proposition and VI.30 is a matter of terminology.  Propositions dealing with ratios of lines are postponed until Book VI, but any ratio concerning lines can be converted into a statement about areas of rectangles.  Proposition <a href="/elements/books/bookVI/propositions/propVI16/">VI.16</a> states that the line <em>A</em> is to the line <em>B</em> as the line <em>C</em> is to the line <em>D</em> is equivalent to the statement that the rectangle <em>A</em> by <em>D</em> equals the rectangle <em>B</em> by <em>C.</em></p>
+<p>The construction of this proposition cuts a line into two parts <em>A</em> and <em>B</em> so that the rectangle <em>A</em> + <em>B</em> by <em>A</em> equals the square <em>B</em> by <em>B.</em>  The construction in VI.30 cuts a line so that <em>A</em> + <em>B</em> : <em>B</em> = <em>B</em> : <em>A,</em> which by VI.16, or by its special case <a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a>, is the same thing.</p>
+<h4>Construction steps</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="280" height="360" tabindex="0"></canvas>
+<noscript><img src="propII11a.gif" alt="Extreme and mean ratio"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Extreme and mean ratio",
+        elements: [
+            "A;point;free;140,180",
+            "B;point;free;220,180",
+            "L;point;extend;B,A,B,A",
+            "LB;line;connect;L,B",
+            "Lcirc;circle;radius;L,B;0;0;0;0",
+            "Bcirc;circle;radius;B,L;0;0;0;0",
+            "MN;line;bichord;Lcirc,Bcirc",
+            "M;point;last;MN",
+            "N;point;first;MN",
+            "MLNarc;sector;sector;B,M,N;0;0;black;0",
+            "NBMarc;sector;sector;L,N,M;0;0;black;0",
+            "Acirc;circle;radius;A,B;0;0;0;0",
+            "LBarc;sector;sector;A,L,B;0;0;black;0",
+            "C;point;cutoff;A,N,A,B",
+            "Ccirc;circle;radius;C,A;0;0;0;0",
+            "Eline;line;bichord;Acirc,Ccirc",
+            "E1;point;first;Eline;0",
+            "E2;point;last;Eline;0",
+            "Carc;sector;sector;C,E2,E1;0;0;black;0",
+            "E;point;intersection;A,C,Eline",
+            "F;point;cutoff;E,A,E,B",
+            "FBarc;sector;sector;E,B,F;0;0;black;0",
+            "H;point;cutoff;A,B,A,F",
+            "FHarc;sector;sector;A,H,F;0;0;black;0"
+        ],
+    });
+</script>
+</figure><p>For the purposes of cutting the line <em>AB,</em> the entire diagram does not have to be constructed.  The points <em>D, G,</em> and <em>K</em> are unnecessary.  In the diagram to the right, only those lines and circles necessary for the construction are shown, and only those parts of them that are relevant.</p>
+<p>Altogether, there are six circles to be drawn, two lines connected, and one line extended. In order, they are as follows. Extend <em>BA</em> and draw a circle centered at <em>A</em> with radius <em>AB</em> to determine the point <em>L.</em> Draw circles centered at <em>B</em> and <em>L</em> with radius <em>BL</em> to determine points <em>M</em> and <em>N.</em>  Draw the straight line <em>MN.</em> Then <em>C</em> is where it meets the circle centered at <em>A.</em>  Draw a circle centered at <em>C</em> with radius <em>CA,</em> and connect the two points where it meets the circle centered at <em>A.</em>  Then <em>E</em> is where that line meets <em>AC.</em>  Draw the circle centered at <em>E</em> with radius <em>EB</em> to determine <em>F.</em>  Draw the circle centered at <em>A</em> with radius <em>F</em> to determine <em>H,</em> the desired point to cut <em>AB.</em></p>
+<h4>The golden ratio, the 36°-72°-72° triangle, and regular pentagons</h4>
+<p>This is the first of several propositions in the <em>Elements</em> that treats these concepts. At this point, ratios have not been introduced, so Euclid describes it in basic terms, that a given straight line is cut so that "the rectangle contained by the whole and one of the segments equals the square on the remaining segment."</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV10/">IV.10</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

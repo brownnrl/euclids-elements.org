@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book III</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book III</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 15</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 15</h1>
+    <div class="statement">Of straight lines in a circle the diameter is greatest, and of the rest the nearer to the center is always greater than the more remote.</div>
+    <p>Let <em>ABCD</em> be a circle, <em>AD</em> its diameter, and <em>E</em> its center.  Let <em>BC</em> be nearer to the center <em>AD,</em> and <em>FG</em> more remote.</p>
+<p>I say that <em>AD</em> is greatest and <em>BC</em> greater than <em>FG.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="280" height="280" tabindex="0"></canvas>
+<noscript><img alt="III.15 diagram" src="propIII15.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "III.15",
+        pivot: "E",
+        elements: [
+            "A;point;free;140,35",
+            "D;point;free;140,245",
+            "E;point;midpoint;A,D;black;green",
+            "ABCD;circle;radius;E,A;0;0;black;random",
+            "AD;line;connect;A,D",
+            "B;point;circleSlider;ABCD,200,60",
+            "C;point;circleSlider;ABCD,170,200",
+            "F;point;circleSlider;ABCD,50,80",
+            "G;point;circleSlider;ABCD,40,160",
+            "BC;line;connect;B,C",
+            "FG;line;connect;F,G",
+            "H;point;foot;E,BC",
+            "K;point;foot;E,FG",
+            "EH;line;connect;E,H",
+            "EK;line;connect;E,K",
+            "L;point;cutoff;E,K,E,H",
+            "LL';line;perpendicular;L,E;0;0;0",
+            "MN;line;chord;LL',ABCD",
+            "M;point;first;MN",
+            "N;point;last;MN",
+            "EF;line;connect;E,F",
+            "EG;line;connect;E,G",
+            "EM;line;connect;E,M",
+            "EN;line;connect;E,N"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>Draw <em>EH</em> and <em>EK</em> from the center <em>E</em> perpendicular to <em>BC</em> and <em>FG.</em></p>
+<div class="just"><a href="/elements/books/bookIII/definitions/defIII5/">III.Def.5</a></div>
+<p>Then, since <em>BC</em> is nearer to the center and <em>FG</em> more remote, <em>EK</em> is greater than <em>EH.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
+<p>Make <em>EL</em>  equal to <em>EH.</em> Draw <em>LM</em> through <em>L</em> at right angles to <em>EK,</em> and carry it through to <em>N.</em> Join <em>ME, EN, FE,</em> and <em>EG.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII14/">III.14</a></div>
+<p>Then, since <em>EH</em> equals <em>EL, BC</em> also equals <em>MN.</em></p>
+<p>Again, since <em>AE</em> equals <em>EM,</em> and <em>ED</em> equals <em>EN, AD</em> equals the sum of <em>ME</em> and <em>EN.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI20/">I.20</a></div>
+<p>But the sum of <em>ME</em> and <em>EN</em> is greater than <em>MN,</em> and <em>MN</em> equals <em>BC,</em> therefore <em>AD</em> is greater than <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI24/">I.24</a></div>
+<p>And, since the two sides <em>ME</em> and <em>EN</em> equal the two sides <em>FE</em> and <em>EG,</em> and the angle <em>MEN</em> greater than the angle <em>FEG,</em> therefore the base <em>MN</em> is greater than the base <em>FG.</em></p>
+<p>But <em>MN</em> was proved equal to <em>BC.</em></p>
+<p>Therefore the diameter <em>AD</em> is greatest and <em>BC</em> greater than <em>FG.</em></p>
+<p>Therefore <em>of straight lines in a circle the diameter is greatest, and of the rest the nearer to the center is always greater than the more remote.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is not used in the rest of the <em>Elements.</em></p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

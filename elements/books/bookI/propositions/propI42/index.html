@@ -1,0 +1,268 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 42</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 42</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 42</h1>
+    <div class="statement">To construct a parallelogram equal to a given triangle in a given rectilinear angle.</div>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> be the given triangle, and <span class="elem-ref" data-elem="D">D</span> the given rectilinear angle.</p>
+<p>It is required to construct in <span class="elem-ref" data-elem="D">D</span> a parallelogram equal to the triangle <span class="elem-ref" data-elem="ABC">ABC</span> in the rectilinear angle.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="320" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.42 diagram" src="propI42.gif"/></noscript>
+<script type="text/javascript">
+    // First application-of-areas construction. The chain is
+    // ABC = 2*AEC = FECG, so the goal itself is stated in colour: the given
+    // triangle ABC and the constructed parallelogram FECG are the equal pair
+    // and share cyan, while the two half-triangles ABE and AEC — equal to each
+    // other, and tiling ABC — are orange. The two equal angles, the given D and
+    // the copied CEF, are magenta (the I.35 pairing). They sit at different
+    // vertices, so no #103 nesting.
+    //
+    // Each slide shows what its caption is about: the given triangle through
+    // the construction (1-4), the finished parallelogram alone (5), the two
+    // halves (6), the doubling that links them (7), and finally both equal
+    // figures together (8-9).
+    //
+    // euclid#138 WORKAROUND: B0/B3 are invisible anchors defining the line B
+    // and C slide along. They were at x=-1000 / +1000; presentation centring
+    // measures figureBounds() ignoring visibility, so that span would centre
+    // the walk near x=0 and translate the whole figure off-canvas — a blank
+    // slideshow, the I.35 failure again. Pulled to -40 / 360: same horizontal
+    // line, same B and C, ample drag room, sane bounds.
+    var FRAME  = ["A","B","C","AB","AC","BC","D","D1","D2","D3","D1D2","D2D3","angD"];
+    var GIVEN  = FRAME.concat(["ABC"]);
+    var BISECT = GIVEN.concat(["E","AE","BE","EC"]);
+    var COPY   = BISECT.concat(["F","EF","angCEF"]);
+    var PARA   = COPY.concat(["G","AG","CG","FG"]);
+    var BUILT  = FRAME.concat(["E","AE","BE","EC","F","EF","angCEF","G","AG","CG","FG"]);
+    var PGRAM  = BUILT.concat(["FECG"]);
+    var HALVES = BUILT.concat(["ABE","AEC"]);
+    var DOUBLE = BUILT.concat(["FECG","AEC"]);
+    var CLOSE  = BUILT.concat(["FECG","ABC"]);
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.42",
+        elements: [
+            // Invisible anchors for the base line — see the #138 note above.
+            "B0;point;free;-1000,180;0;0",
+            "B3;point;free;1000,180;0;0",
+            "B;point;lineSlider;B0,B3,90,0",
+            "C;point;lineSlider;B0,B3,210,0",
+            "A;point;free;120,30",
+            // The given triangle's sides, drawn in their own right so its
+            // outline stands on the slides where its fill is gated off.
+            "AB;line;connect;A,B",
+            "AC;line;connect;A,C",
+            "BC;line;connect;B,C",
+            // The given rectilinear angle D: two arms and a label-only polygon
+            // (transparent edges, black name) that places the letter D.
+            "D1;point;free;45,25;0",
+            "D2;point;free;30,75;0",
+            "D3;point;free;80,75;0",
+            "D1D2;line;connect;D1,D2",
+            "D2D3;line;connect;D2,D3",
+            "D;polygon;triangle;D1,D2,D3;0,0,0;0;0;0",
+            // Bisect BC at E and join AE.
+            "E;point;midpoint;B,C",
+            "AE;line;connect;A,E",
+            // Copy the angle D onto EC at E: F' aims the ray, G' aims the
+            // parallel through A, and F is where they meet.
+            "F';point;similar;C,E,D3,D2,D1;0;0",
+            "G';point;parallelogram;C,B,A;0;0",
+            "F;point;intersection;A,G',E,F'",
+            "EF;line;connect;E,F",
+            // Complete the parallelogram: AG through A parallel to EC, CG
+            // through C parallel to EF.
+            "G;point;parallelogram;C,E,F",
+            "AG;line;connect;A,G",
+            "CG;line;connect;C,G",
+            "FG;line;connect;F,G",
+            // The equal halves of BC: hover targets, already drawn by BC.
+            "BE;line;connect;B,E;0;0;0",
+            "EC;line;connect;E,C;0;0;0",
+            // Regions. ABC and FECG are the equal pair the construction aims
+            // at, so they share cyan; the halves ABE and AEC are orange.
+            "ABC;polygon;triangle;A,B,C;0;0;0;cyan",
+            "FECG;polygon;quadrilateral;F,E,C,G;0;0;0;cyan",
+            "ABE;polygon;triangle;A,B,E;0;0;0;orange",
+            "AEC;polygon;triangle;A,E,C;0;0;0;orange",
+            // The given angle and its copy — equal, so colour-matched magenta.
+            "angD;sector;angleMarker;D2,D1,D3;0;0;magenta;magenta",
+            "angCEF;sector;angleMarker;E,C,F;0;0;magenta;magenta"
+        ],
+        aliases: { "CE": "EC", "EB": "BE", "BA": "AB", "CA": "AC", "CB": "BC",
+                   "EA": "AE", "FE": "EF", "GA": "AG", "GC": "CG", "GF": "FG",
+                   "AEB": "ABE", "ACE": "AEC", "CEF": "angCEF" },
+        initiallyHidden: ["FECG","ABE","AEC"],
+        slides: [
+            { text: "Let {ABC} be the given triangle, and {D} the given rectilinear angle. It is required to construct in {D} a parallelogram equal to {ABC}.",
+              visible: GIVEN,
+              highlighted: ["ABC","D","angD"],
+              transition: { animations: [ { elem: "angD", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Bisect {BC} at {E}, and join {AE}.",
+              visible: BISECT,
+              highlighted: ["E","AE","BE","EC"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "E",  name: geomlib.A.Point.appear },
+                  { elem: "AE", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "I.10" }, { ref: "I.Post.1" }] },
+            { text: "Construct the angle {CEF|angCEF} on the straight line {EC} at the point {E} on it equal to the angle {D}.",
+              visible: COPY,
+              highlighted: ["angCEF","angD","EF"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "EF",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "angCEF", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.23" }] },
+            { text: "Draw {AG} through {A} parallel to {EC}, and draw {CG} through {C} parallel to {EF}.",
+              visible: PARA,
+              highlighted: ["AG","CG"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AG", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "CG", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "I.31" }] },
+            { text: "Then {FECG} is a parallelogram.",
+              visible: PGRAM,
+              highlighted: ["FECG"],
+              transition: { animations: [ { elem: "FECG", name: geomlib.A.Polygon.outlineAndFill } ] } },
+            { text: "Since {BE} equals {EC}, the triangle {ABE} equals the triangle {AEC}, for they are on equal bases {BE} and {EC} and in the same parallels {BC} and {AG}. Therefore {ABC} is double {AEC}.",
+              visible: HALVES,
+              highlighted: ["ABE","AEC","BE","EC"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "ABE", name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "AEC", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ ref: "I.38" }] },
+            { text: "But the parallelogram {FECG} is also double the triangle {AEC}, for it has the same base with it and is in the same parallels with it. Therefore {FECG} equals {ABC}.",
+              visible: DOUBLE,
+              highlighted: ["FECG","AEC"],
+              transition: { animations: [ { elem: "FECG", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ ref: "I.41" }, { ref: "C.N.1" }] },
+            { text: "And it has the angle {CEF|angCEF} equal to the given angle {D}.",
+              visible: CLOSE,
+              highlighted: ["angCEF","angD"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "angCEF", name: geomlib.A.Sector.sweep },
+                  { elem: "angD",   name: geomlib.A.Sector.sweep } ] } },
+            { text: "So the parallelogram {FECG} has been constructed equal to the given triangle {ABC}, in the angle {CEF|angCEF} which equals {D}.",
+              visible: CLOSE,
+              highlighted: ["FECG","ABC"],
+              justifications: [{ ref: "Q.E.F." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.10":     "/elements/books/bookI/propositions/propI10/",
+        "I.23":     "/elements/books/bookI/propositions/propI23/",
+        "I.31":     "/elements/books/bookI/propositions/propI31/",
+        "I.38":     "/elements/books/bookI/propositions/propI38/",
+        "I.41":     "/elements/books/bookI/propositions/propI41/",
+        "C.N.1":    "/elements/books/bookI/commonnotions/cn1/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI10/">I.10</a><br><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a><br><a href="/elements/books/bookI/propositions/propI23/">I.23</a>, <a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Bisect <span class="elem-ref" data-elem="BC">BC</span> at <span class="elem-ref" data-elem="E">E</span>, and join <span class="elem-ref" data-elem="AE">AE</span>. Construct the angle <span class="elem-ref" data-elem="angCEF">CEF</span> on the straight line <span class="elem-ref" data-elem="EC">EC</span> at the point <span class="elem-ref" data-elem="E">E</span> on it equal to the angle <span class="elem-ref" data-elem="D">D</span>. Draw <span class="elem-ref" data-elem="AG">AG</span> through <span class="elem-ref" data-elem="A">A</span> parallel to <span class="elem-ref" data-elem="EC">EC</span>, and draw <span class="elem-ref" data-elem="CG">CG</span> through <span class="elem-ref" data-elem="C">C</span> parallel to <span class="elem-ref" data-elem="EF">EF</span>.</p>
+<p>Then <span class="elem-ref" data-elem="FECG">FECG</span> is a parallelogram.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI38/">I.38</a></div>
+<p>Since <span class="elem-ref" data-elem="BE">BE</span> equals <span class="elem-ref" data-elem="EC">EC</span>, therefore the triangle <span class="elem-ref" data-elem="ABE">ABE</span> also equals the triangle <span class="elem-ref" data-elem="AEC">AEC</span>, for they are on equal bases <span class="elem-ref" data-elem="BE">BE</span> and <span class="elem-ref" data-elem="EC">EC</span> and in the same parallels <span class="elem-ref" data-elem="BC">BC</span> and <span class="elem-ref" data-elem="AG">AG</span>. Therefore the triangle <span class="elem-ref" data-elem="ABC">ABC</span> is double the triangle <span class="elem-ref" data-elem="AEC">AEC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI41/">I.41</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>But the parallelogram <span class="elem-ref" data-elem="FECG">FECG</span> is also double the triangle <span class="elem-ref" data-elem="AEC">AEC</span>, for it has the same base with it and is in the same parallels with it, therefore the parallelogram <span class="elem-ref" data-elem="FECG">FECG</span> equals the triangle <span class="elem-ref" data-elem="ABC">ABC</span>.</p>
+<p>And it has the angle <span class="elem-ref" data-elem="angCEF">CEF</span> equal to the given angle <span class="elem-ref" data-elem="D">D</span>.</p>
+<p>Therefore the parallelogram <span class="elem-ref" data-elem="FECG">FECG</span> has been constructed equal to the given triangle <span class="elem-ref" data-elem="ABC">ABC</span>, in the angle <span class="elem-ref" data-elem="angCEF">CEF</span> which equals <span class="elem-ref" data-elem="D">D</span>.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The idea of the construction is as follows. First make a triangle half the size of the given triangle. Next skew the half-size triangle to make one of its angles the desired angle without changing its area. Complete the resulting half-size triangle to a parallelogram. That's the desired parallelogram equal to the original triangle in the desired angle.</p>
+<h4>Application of areas</h4>
+<p>With this proposition Euclid moves to the next phase in his study of areas, the application of areas. Before this, he has exhibited various situations when triangles or parallelograms have equal areas, or when a triangle has half the area of a parallelogram. But now he's interested in constructing another figure with the same area as a given figure.</p>
+<p>In this proposition, he constructs a parallelogram that has a given angle and has the same area as a given triangle. But his goals are coming up, application of areas in I.45 and quadrature in II.14. In proposition <a href="/elements/books/bookI/propositions/propI45/">I.45</a>, given a rectilinear figure an equal parallelogram is constructed on a given side within a given angle. This kind of construction is called "applying" an area to a side. The area is sort of laid along the line. It may be that before Euclid the area was always applied to a rectangle along the line, but Euclid generalized the construction to parallelograms. This extra generalization is not often used.</p>
+<p>Later, in proposition <a href="/elements/books/bookII/propositions/propII14/">II.14</a> a square is constructed equal to a given rectilinear figure, a process called quadrature (making into a square) of the figure. This square is a canonical measure of the area.</p>
+<h4>Use of Proposition 42</h4>
+<p>This construction is used as part of the constructions in the two propositions following the next one.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI44/">I.44</a>, <a href="/elements/books/bookI/propositions/propI45/">I.45</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

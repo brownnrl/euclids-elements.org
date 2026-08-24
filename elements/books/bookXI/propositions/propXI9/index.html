@@ -1,0 +1,163 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 9</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 9</h1>
+    <div class="statement">Straight lines which are parallel to the same straight line but do not lie in the same plane with it are also parallel to each other.</div>
+    <p>Let each of the straight lines <em>AB</em> and <em>CD</em> be parallel to <em>EF,</em> but not in the same plane with it.</p>
+<p>I say that <em>AB</em> is parallel to <em>CD.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="200" tabindex="0"></canvas>
+<noscript><img alt="XI.9 diagram" src="propXI9.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.9",
+        elements: [
+            "A;point;free;220,40",
+            "B;point;free;90,40",
+            "AB;line;connect;A,B",
+            "C;point;free;210,160",
+            "D';point;parallelogram;B,A,C;0;0",
+            "D;point;lineSlider;C,D',80,160",
+            "CD;line;connect;C,D",
+            "E;point;free;160,120",
+            "F';point;parallelogram;B,A,E;0;0",
+            "F;point;lineSlider;E,F',30,120",
+            "EF;line;connect;E,F",
+            "G;point;lineSlider;EF,100,160",
+            "H;point;parallelogram;A,E,G",
+            "K;point;parallelogram;C,E,G",
+            "GH;line;connect;G,H",
+            "GK;line;connect;G,K"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
+<p>Let a point <em>G</em> be taken at random on <em>EF,</em> and from it draw <em>GH</em> in the plane through <em>EF</em> and <em>AB</em> at right angles to <em>EF,</em> and <em>GK</em> in the plane through <em>EF</em> and <em>CD</em> again at right angles to <em>EF.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI4/">XI.4</a></div>
+<p>Now, since <em>EF</em> is at right angles to each of the straight lines <em>GH</em> and <em>GK,</em> therefore <em>EF</em> is also at right angles to the plane through <em>GH</em> and <em>GK.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI8/">XI.8</a></div>
+<p>And <em>EF</em> is parallel to <em>AB,</em> therefore <em>AB</em> is also at right angles to the plane through <em>HG</em> and <em>GK.</em></p>
+<p>For the same reason <em>CD</em> is also at right angles to the plane through <em>HG</em> and <em>GK.</em> Therefore each of the straight lines <em>AB</em> and <em>CD</em> is at right angles to the plane through <em>HG</em> and <em>GK.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI6/">XI.6</a></div>
+<p>But if two straight lines are at right angles to the same plane, then the straight lines are parallel. Therefore <em>AB</em> is parallel to <em>CD.</em></p>
+<p>Therefore, <em>straight lines which are parallel to the same straight line but do not lie in the same plane with it are also parallel to each other.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Note that this proposition is the three-dimensional analogue to proposition <a href="/elements/books/bookI/propositions/propI30/">I.30</a>.</p>
+<h4>The Varignon parallelogram of space quadrilaterals</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="270" height="250" tabindex="0"></canvas>
+<noscript><img alt="Varignon parallelogram" src="propXI9a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Varignon parallelogram",
+        elements: [
+            "A;point;free;110,40",
+            "B;point;free;45,210",
+            "C;point;free;220,130",
+            "D;point;free;210,210",
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;0",
+            "E;point;midpoint;A,B",
+            "F;point;midpoint;B,C",
+            "G;point;midpoint;C,D",
+            "H;point;midpoint;D,A",
+            "EFGH;polygon;quadrilateral;E,F,G,H;0;0;black;random",
+            "AC;line;connect;A,C;0;0;gray",
+            "BD;line;connect;B,D;0;0;gray"
+        ],
+    });
+</script>
+</figure><p>Consider a quadrilateral <em>ABCD</em> whose four vertices may or may not lie in a plane. Let <em>E, F, G,</em> and <em>H</em> be the midpoints of the sides <em>AB, BC, CD,</em> and <em>DA,</em> respectively. Then the quadrilateral <em>EFGH</em> lies in a plane and is a parallelogram, called the Varignon parallelogram. Varignon (1654–1722) showed the area of a planar quadrilateral is twice the area of this parallelogram.</p>
+<p>The proof that <em>EFGH</em> is a parallelogram relies on this proposition XI.9 to show the sides are parallel, since it is readily shown that both <em>EF</em> and <em>HG</em> are parallel to the line <em>AC,</em> and both <em>FG</em> and <em>EH</em> are parallel to the line <em>BD.</em></p>
+<p>As a corollary, it follows that the lines joining the midpoints of an arbitrary quadrilateral are concurrent and bisect each other, even if the four sides of the quadrilateral do not lie in a plane. (These are the lines <em>EG</em> and <em>FH</em> which are not drawn in the diagram.)</p>
+<h4>Use of this proposition</h4>
+<p>This proposition is used in the proof of the next proposition as well as others in this and the next book.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI10/">XI.10</a>, <a href="/elements/books/bookXI/propositions/propXI15/">XI.15</a>, <a href="/elements/books/bookXI/propositions/propXI38/">XI.38</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

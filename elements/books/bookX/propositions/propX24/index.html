@@ -1,0 +1,121 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 24</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 24</h1>
+    <div class="statement">The rectangle contained by medial straight lines commensurable in length is medial.</div>
+    <p>Let the rectangle <em>AC</em> be contained by the medial straight lines <em>AB</em> and <em>BC</em> which are commensurable in length.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="170" height="250" tabindex="0"></canvas>
+<noscript><img alt="X.24 diagram" src="propX24.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.24",
+        elements: [
+            "A0;point;free;-1000,120;0;0",
+            "A3;point;free;1000,120;0;0",
+            "A;point;lineSlider;A0,A3,40,0",
+            "B;point;lineSlider;A0,A3,110,0",
+            "C';point;perpendicular;B,A;0;0",
+            "C;point;lineSlider;B,C',0,40",
+            "AC;polygon;parallelogram;A,B,C;0;0;black;random",
+            "AD;polygon;square;B,A;0;0;black;random",
+            "D;point;vertex;AD,4"
+        ],
+    });
+</script>
+</figure><p>I say that <em>AC</em> is medial.</p>
+<p>Describe the square <em>AD</em> on <em>AB</em>. Then <em>AD</em> is medial.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>And, since <em>AB</em> is commensurable in length with <em>BC</em>, while <em>AB</em> equals <em>BD</em>, therefore <em>DB</em> is commensurable in length with <em>BC</em>, so that <em>DA</em> is commensurable with <em>AC</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX23/#cor">X.23.Cor</a></div>
+<p>But <em>DA</em> is medial, therefore <em>AC</em> is also medial.</p>
+<p>Therefore, <em>the rectangle contained by medial straight lines commensurable in length is medial.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Medial lines were defined in Proposition <a href="/elements/books/bookX/propositions/propX21/">X.21</a>, but medial rectangles have not been defined. The meaning of the term medial rectangle must be interpreted by the way it is used in the proof of this proposition.</p>
+<p>The square <em>AD</em>, which is the square on the medial line <em>AB</em>, is called a medial square, and since the rectangle <em>AC</em> is equal to the square <em>AD</em>, it is also proclaimed to be medial. Thus, a medial rectangle is one equal to the square on a medial line.</p>
+<p>In this proposition, we have two medial numbers, <em>a</em> and <em>b</em>, such that <em>a</em>/<em>b</em> is a rational number. The conclusion is that <em>c</em> = √(<em>ab</em>) is a medial number. That is so since <em>c</em>² = <em>ab</em> = <em>b</em>²(<em>a</em>/<em>b</em>), which is an irrational number, while <em>c</em>⁴ = <em>a</em>²<em>b</em>² = <em>b</em>⁴(<em>a</em>/<em>b</em>)², which is a rational number.</p>
+<p>This proposition is not used in the rest of the <em>Elements</em>.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

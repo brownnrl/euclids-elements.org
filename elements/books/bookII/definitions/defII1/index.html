@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Definition 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book II</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book II</a><span class="crumb-sep">&rsaquo;</span><a href="../">Definitions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Definition 1</span>
+</nav>
+
+
+
+
+
+  
+  
+  
+    <a id="1"></a>
+    <div class="theorem">
+    <h1>Definition 1</h1>
+    <div class="statement">Any rectangular parallelogram is said to be <i>contained</i> by the two straight lines containing the right angle.</div>
+    </div>
+    
+    
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII1/">II.1</a>, <a href="/elements/books/bookII/propositions/propII2/">II.2</a></td></tr>
+  
+</table>
+    <br>
+  
+    <a id="2"></a>
+    <div class="theorem">
+    <h1>Definition 2</h1>
+    <div class="statement">And in any parallelogrammic area let any one whatever of the parallelograms about its diameter with the two complements be called a <i>gnomon.</i></div>
+    </div>
+    
+    
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book II</th><td><a href="/elements/books/bookII/propositions/propII5/">II.5</a>, <a href="/elements/books/bookII/propositions/propII6/">II.6</a></td></tr>
+  
+</table>
+    
+  
+  
+    <h2 id="guide">Guide</h2>
+    <p>Euclid didn't a single word for rectangle, but two words meaning right-angled parallelogram.</p>
+<center>
+<canvas id="canvas_0" width="500" height="220" tabindex="0"></canvas>
+<noscript><img src="defII.gif" hspace="10" alt="II.Def.1"></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "Def.II",
+        elements: [
+            "A;point;free;50,40",
+            "B;point;free;140,40",
+            "C';point;perpendicular;B,A;0;0",
+            "C;point;lineSlider;B,C',140,180",
+            "D;point;parallelogram;A,B,C",
+            "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random",
+            "E;point;free;270,40",
+            "F;point;free;450,40",
+            "G;point;free;400,180",
+            "H;point;parallelogram;E,F,G",
+            "EFGH;polygon;quadrilateral;E,F,G,H;0;0;black;random",
+            "EG;line;connect;E,G",
+            "L;point;lineSlider;EG,300,110",
+            "K';point;parallelogram;E,H,L;0;0",
+            "K;point;intersection;E,F,K',L",
+            "M;point;parallelogram;E,K,L",
+            "EKLM;polygon;quadrilateral;E,K,L,M;0;0;black;random",
+            "N;point;intersection;K,L,H,G",
+            "LN;line;connect;L,N",
+            "O;point;intersection;M,L,F,G",
+            "LO;line;connect;L,O",
+            "Q';point;midpoint;L,G;0;0",
+            "Q;point;midpoint;L,Q';black;gray",
+            "P;point;cutoff;L,K,L,Q;black;gray",
+            "R;point;cutoff;L,M,L,Q;black;gray",
+            "PQR;sector;arc;R,Q,P;0;0;gray;0"
+        ],
+    });
+</script>
+</center><p>According to the first definition, the rectangle <em>ABCD</em> illustrated on the left is contained by the lines <em>AB</em> and <em>BC,</em> and this rectangle can be called the rectangle <em>AB</em> by <em>BC.</em> Of course, it could also be called the rectangle <em>BC</em> by <em>CD,</em> or two other names.</p>
+<p>On the right, in the parallelogram <em>EFGH,</em> there is a diameter <em>EG</em> with a parallelogram <em>LNGO</em> about it and the two complements <em>KLOF</em> and <em>MHNL,</em> and these three parallelograms together make up the gnomon. In other words a gnomon is an L-shaped figure made by removing a parallelogram from a larger similar parallelogram.</p>
+<p>The word <em>gnomon</em> comes from the Greek word meaning carpenter's square. A carpenter's square is an L-shaped tool with its two sides at right angles. Euclid's use of the word is looser as he doesn't require that the sides be at right angles.</p>
+<p>Euclid illustrated gnomons by arcs of circles around the inner vertex. In this example, the gnomon is called the gnomon <em>PQR.</em></p>
+
+  
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

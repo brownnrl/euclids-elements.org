@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; 6. Find the center of a circle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  <h1><a href="../" class="hover">Compass Geometry</a></h1>
+  <h1>6. Find the center of a circle</h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Other works</a><span class="crumb-sep">&rsaquo;</span><a href="../">Compass Geometry</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">6. Find the center of a circle</span>
+</nav>
+
+
+
+<p>We're not done yet in showing that compasses alone are sufficient to construct all the constructable points in Euclidean geometry. The problem is that all the circle constructions depend on knowing the centers of the circles, and when we invert one circle <em>C</em> in another <em>D</em> to get a circle <em>E</em> = <em>C</em>▻<em>D,</em> then the center of <em>E</em> is not the inverse of the center of <em>C</em> inverted in <em>D.</em> The center of <em>E</em> is determined, however, by three of the points on <em>E,</em> and three points on <em>E</em> can by found by taking any three points on <em>C</em> and inverting them in <em>D.</em> Thus, we'll need the construction <strong>C</strong> to find the center of a circle given three points on its circumference.</p>
+<p>Let <em>P,Q,</em> and <em>R</em> be three given points. We are to construct the center <em>O</em> of the circle passing through them. We'll find <em>O</em> by inverting everything in the circle <em>C</em> with center <em>P</em> and radius <em>PQ.</em></p>
+<p>First, invert the point <em>R</em> in <em>C</em> to get the point <em>R'</em> = <em>R</em>▻<em>C.</em> Next draw two circles, one with center <em>Q</em> and radius <em>QP,</em> the other with center <em>R'</em> and radius <em>R'P.</em> Besides at <em>P,</em> these two circles will intersect at another point <em>O'.</em> It is evident that this point <em>O'</em> is the reflection of <em>P</em> in the line <em>QR',</em> that is, <em>O'</em> = <em>P</em>▻<em>QR'.</em> Finally, invert <em>O'</em> in <em>C</em> to get <em>O.</em></p>
+<p>Next, we'll show <em>O</em> is the center of the circle <em>PQR.</em> Now, when the circle <em>PQR</em> is inverted in the circle <em>C,</em> then the result is the straight line <em>QR',</em> since <em>P</em> will be sent to the point ∞ at infinity, <em>Q</em> is fixed, and <em>R</em> is sent to <em>R'.</em> Algebraically, that says <em>PQR</em>▻<em>C</em> = <em>QR'.</em> To show that <em>O</em> is the center of the circle <em>PQR,</em> we only need to show that <em>O</em> = ∞ ▻ <em>PQR.</em> That will follow from a property of ▻, namely, ▻ distributes over itself on the right, as shown in the next section.</p>
+<center>∞ ▻ <i>PQR</i> = (<i>P</i>▻<i>C</i>) ▻ (<i>QR'</i>▻<i>C</i>) = (<i>P</i>▻<i>QR'</i>)▻<i>C</i> = <i>O'</i>▻<i>C</i> = <i>O.</i></center><p>Thus, we have constructed <em>O,</em> the center of the circle passing through the three points <em>P,</em> <em>Q,</em> and <em>R.</em></p>
+<figure class="diagram block">
+<canvas id="canvas_0" width="400" height="300" tabindex="0"></canvas>
+<noscript><img alt="Circumcenter construction" src="compass6a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "Circumcenter construction",
+        elements: [
+            "P;point;free;120,120",
+            "Q;point;free;200,50",
+            "R;point;free;250,190",
+            "Pcirc;circle;radius;P,Q;0;0;black;random",
+            "R';point;invert;R,Pcirc",
+            "Qcirc;circle;radius;Q,P;0;0;gray;0",
+            "R'circ;circle;radius;R',P;0;0;gray;0",
+            "PO';line;bichord;Qcirc,R'circ;0;0;0",
+            "PO'mid;point;midpoint;PO';0;0",
+            "O';point;extend;P,PO'mid,P,PO'mid",
+            "O;point;invert;O',Pcirc",
+        ],
+    });
+</script>
+</figure><p><br clear="all"></p>
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+        
+      
+    
+      
+    
+  
+  <footer class="other-works-nav">
+    
+    <hr>
+    <table class="footer-nav">
+      <tr>
+        <td style="text-align:left; width:33%;">
+          <a href="../compass5/">&larr;&nbsp;5. Invert a point in a circle</a>
+        </td>
+        <td style="text-align:center; width:34%;">
+          <a href="../">Compass Geometry</a>
+        </td>
+        <td style="text-align:right; width:33%;">
+          <a href="../compass7/">7. Involutory quandles&nbsp;&rarr;</a>
+        </td>
+      </tr>
+    </table>
+    
+    <hr>
+    <p class="footer-credit">
+      <a href="/">Home</a>
+      <br>&copy;1996, 1997, 2025
+      <br>David E. Joyce (Professor Emeritus, <a href="https://www.clarku.edu/">Clark University</a>)
+      <br><a href="/elements/prematter/copyright/">Copyright Notice</a>
+      <br><a href="https://github.com/brownnrl/euclids-elements-lektor">Source</a>
+    </p>
+  </footer>
+
+
+</body>
+</html>

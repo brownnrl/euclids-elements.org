@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 25</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book X</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book X</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 25</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 25</h1>
+    <div class="statement">The rectangle contained by medial straight lines commensurable in square only is either rational or medial.</div>
+    <p>Let the rectangle <em>AC</em> be contained by the medial straight lines <em>AB</em> and <em>BC</em> which are commensurable in square only.</p>
+<p>I say that <em>AC</em> is either rational or medial.</p>
+<p>Describe the squares <em>AD</em> and <em>BE</em> on <em>AB</em> and <em>BC</em>. Then each of the squares <em>AD</em> and <em>BE</em> is medial.</p>
+<p>Set out a rational straight line <em>FG</em>. Apply the rectangular parallelogram <em>GH</em> to <em>FG</em> equal to <em>AD</em>, producing <em>FH</em> as breadth, apply the rectangular parallelogram <em>MK</em> to <em>HM</em> equal to <em>AC</em>, producing <em>HK</em> as breadth, and further apply similarly <em>NL</em> to <em>KN</em> equal to <em>BE</em>, producing <em>KL</em> as breadth. Then <em>FH</em>, <em>HK</em>, and <em>KL</em> are in a straight line.</p>
+<p>Since each of the squares <em>AD</em> and <em>BE</em> is medial, and <em>AD</em> equals <em>GH</em> while <em>BE</em> equals <em>NL</em>, therefore each of the rectangles <em>GH</em> and <em>NL</em> is also medial.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="340" height="270" tabindex="0"></canvas>
+<noscript><img alt="X.25 diagram" src="propX25.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "X.25",
+        elements: [
+            "A0;point;free;-1000,40;0;0",
+            "A3;point;free;1000,40;0;0",
+            "A;point;lineSlider;A0,A3,120,0",
+            "B';point;perpendicular;A,A3;0;0",
+            "B;point;lineSlider;A,B',0,120",
+            "C';point;parallelogram;A3,A,B;0;0",
+            "C;point;lineSlider;B,C',180,0",
+            "AC;polygon;parallelogram;A,B,C;0;0;black;yellow",
+            "AD;polygon;square;B,A;0;0;black;orange",
+            "D;point;vertex;AD,4",
+            "BE;polygon;square;C,B;0;0;black;pink",
+            "O;point;vertex;BE,3",
+            "E;point;vertex;BE,4",
+            "F;point;lineSlider;A0,A3,220,0",
+            "G;point;lineSlider;A0,A3,300,0",
+            "M';point;perpendicular;G,A0;0;0",
+            "M;point;proportion;F,G,A,B,A,B,G,M'",
+            "GH;polygon;parallelogram;F,G,M;0;0;black;orange",
+            "H;point;vertex;GH,4",
+            "N;point;proportion;F,G,A,B,C,B,M,M'",
+            "HN;polygon;parallelogram;H,M,N;0;0;black;yellow",
+            "K;point;vertex;HN,4",
+            "P;point;proportion;F,G,B,C,B,C,N,M';0;0",
+            "LN;polygon;parallelogram;K,N,P;0;0;black;pink",
+            "L;point;vertex;LN,4"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookX/propositions/propX22/">X.22</a></div>
+<p>And they are applied to the rational straight line <em>FG</em>, therefore each of the straight lines <em>FH</em> and <em>KL</em> is rational and incommensurable in length with <em>FG</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a><br><a href="/elements/books/bookX/propositions/propX11/">X.11</a></div>
+<p>And, since <em>AD</em> is commensurable with <em>BE</em>, therefore <em>GH</em> is commensurable with <em>NL</em>. And <em>GH</em> is to <em>NL</em> as <em>FH</em> is to <em>KL</em>, therefore <em>FH</em> is commensurable in length with <em>KL</em>.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX19/">X.19</a></div>
+<p>Therefore <em>FH</em> and <em>KL</em> are rational straight lines commensurable in length, therefore the rectangle <em>FH</em> by <em>KL</em> is rational.</p>
+<p>And, since <em>DB</em> equals <em>BA</em> while <em>OB</em> equals <em>BC</em>, therefore <em>DB</em> is to <em>BC</em> as <em>AB</em> is to <em>BO</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a></div>
+<p>But <em>DB</em> is to <em>BC</em> as <em>DA</em> is to <em>AC</em>, and <em>AB</em> is to <em>BO</em> as <em>AC</em> is to <em>CO</em>, therefore <em>DA</em> is to <em>AC</em> as <em>AC</em> is to <em>CO</em>.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI1/">VI.1</a>, <a href="/elements/books/bookV/propositions/propV11/">V.11</a><br><a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a></div>
+<p>But <em>AD</em> equals <em>GH</em>, <em>AC</em> equals <em>MK</em>, and <em>CO</em> equals <em>NL</em>, therefore <em>GH</em> is to <em>MK</em> as <em>MK</em> is to <em>NL</em>. Therefore <em>FH</em> is to <em>HK</em> as <em>HK</em> is to <em>KL</em>. Therefore the rectangle <em>FH</em> by <em>KL</em> equals the square on <em>HK</em>.</p>
+<p>But the rectangle <em>FH</em> by <em>KL</em> is rational, therefore the square on <em>HK</em> is also rational.</p>
+<div class="just"><a href="/elements/books/bookX/propositions/propX19/">X.19</a><br><a href="/elements/books/bookX/propositions/propX21/">X.21</a></div>
+<p>Therefore <em>HK</em> is rational. And, if it is commensurable in length with <em>FG</em>, then <em>HN</em> is rational, but, if it is incommensurable in length with <em>FG</em>, then <em>KH</em> and <em>HM</em> are rational straight lines commensurable in square only, and therefore <em>HN</em> is medial.</p>
+<p>Therefore <em>HN</em> is either rational or medial. But <em>HN</em> equals <em>AC</em>, therefore <em>AC</em> is either rational or medial.</p>
+<p>Therefore, <em>the rectangle contained by medial straight lines commensurable in square only is either rational or medial.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>To say a rectangle with sides <em>a</em> and <em>b</em> is rational says that <em>ab</em> is a rational number. To say that it's medial says that (<em>ab</em>)² is a rational number but <em>ab</em> is an irrational number. Therefore, to say it is either rational or medial says only that (<em>ab</em>)² is a rational number.</p>
+<p>In this proposition we are given that <em>a</em> and <em>b</em> are medial, so both <em>a</em>⁴ and <em>b</em>⁴ are rational numbers, and we are given that <em>a</em>²/<em>b</em>² is a rational number. Therefore, (<em>ab</em>)², which equals <em>b</em>⁴(<em>a</em>²/<em>b</em>²) is also a rational number.</p>
+<p>This proposition is not used in the rest of the <em>Elements</em>.</p>
+
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

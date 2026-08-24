@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Definition 20</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Definitions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Definition 20</span>
+</nav>
+
+
+
+
+
+  
+  
+  
+    <a id="18"></a>
+    <div class="theorem">
+    <h1>Definition 18</h1>
+    <div class="statement">When a right triangle with one side of those about the right angle remains fixed is carried round and restored again to the same position from which it began to be moved, the figure so comprehended is a <i>cone</i>. And, if the straight line which remains fixed equals the remaining side about the right angle which is carried round, the cone will be <i>right-angled</i>; if less, <i>obtuse-angled</i>; and if greater, <i>acute-angled</i>.</div>
+    </div>
+    
+    
+    <br>
+  
+    <a id="19"></a>
+    <div class="theorem">
+    <h1>Definition 19</h1>
+    <div class="statement">The <i>axis of the cone</i> is the straight line which remains fixed and about which the triangle is turned.</div>
+    </div>
+    
+    
+    <br>
+  
+    <a id="20"></a>
+    <div class="theorem">
+    <h1>Definition 20</h1>
+    <div class="statement">And the <i>base</i> is the circle described by the straight line which is carried round.</div>
+    </div>
+    
+    
+    
+  
+  
+    <h2 id="guide">Guide</h2>
+    <figure class="diagram">
+<canvas id="canvas_0" width="190" height="240" tabindex="0"></canvas>
+<noscript><img alt="XI.Def.18-20 diagram" src="defXI18.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "0,0,100",
+        title: "Def.XI.18-20",
+        elements: [
+            "origin;point;free;70,220;0;0",
+            "z;point;fixed;70,80,100;0;0",
+            "xyplane;plane;perpendicular;origin,z;0;0;0;0",
+            "A;point;planeSlider;xyplane,90,120,0",
+            "B;point;planeSlider;xyplane,140,120,0",
+            "D;point;extend;B,A,B,A;0",
+            "C';point;perpendicular;A,xyplane,A,B;0;0",
+            "C;point;lineSlider;A,C',70,140,200",
+            "AC;line;connect;A,C",
+            "CBD;polygon;triangle;C,B,D;0;0;black;75,50,100",
+            "circle;circle;radius;A,B,xyplane;0;0;black;75,50,100"
+        ],
+    });
+</script>
+</figure><p>The right triangle <em>ABC</em> with right angle at <em>A</em> is rotated about the side <em>AC</em> to produce a cone. The axis of the cone is <em>AC,</em> and its base is the circle with center at <em>A</em> and radius <em>AB.</em></p>
+<p>The three different kinds of cone are not used by Euclid in the <em>Elements,</em> but they were important in the theory of conic sections until Apollonius' work <em>Conics.</em> In Euclid's time conic sections were taken as the intersections of a plane at right angles to an edge (straight line from the vertex) of a cone. When the cone is acute-angled, the section is an ellipse; when right-angled, a parabola; and when obtuse-angle, a hyperbola. Even the names of these three curves were given by the kind of angle, so, for instance, Euclid knew a parabola as a "section of a right-angled cone." It was Apollonius who named them ellipse, parabola, and hyperbola.</p>
+
+  
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

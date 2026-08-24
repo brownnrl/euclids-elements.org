@@ -1,0 +1,988 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Book XI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+<center>
+  <img src="/elements/logo.gif" alt="Euclid's Elements"
+       usemap="#tocmap" height="238" width="245" border="0">
+</center>
+
+<map name="tocmap">
+  <area shape="rect" coords="59,88,193,164"   href="/elements/" alt="Table of Contents">
+  <area shape="rect" coords="160,10,188,31"   href="/elements/books/bookI/"    alt="Book I">
+  <area shape="rect" coords="194,34,215,70"   href="/elements/books/bookII/"   alt="Book II">
+  <area shape="rect" coords="215,73,243,98"   href="/elements/books/bookIII/"  alt="Book III">
+  <area shape="rect" coords="217,118,242,139" href="/elements/books/bookIV/"   alt="Book IV">
+  <area shape="rect" coords="208,163,231,185" href="/elements/books/bookV/"    alt="Book V">
+  <area shape="rect" coords="176,199,203,219" href="/elements/books/bookVI/"   alt="Book VI">
+  <area shape="rect" coords="134,215,172,236" href="/elements/books/bookVII/"  alt="Book VII">
+  <area shape="rect" coords="74,215,115,236"  href="/elements/books/bookVIII/" alt="Book VIII">
+  <area shape="rect" coords="44,197,72,218"   href="/elements/books/bookIX/"   alt="Book IX">
+  <area shape="rect" coords="16,163,44,183"   href="/elements/books/bookX/"    alt="Book X">
+  <area shape="rect" coords="0,121,31,140"    href="/elements/books/bookXI/"   alt="Book XI">
+  <area shape="rect" coords="0,78,36,98"      href="/elements/books/bookXII/"  alt="Book XII">
+  <area shape="rect" coords="10,32,57,54"     href="/elements/books/bookXIII/" alt="Book XIII">
+</map>
+  
+    <h1>Book XI</h1>
+  
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../">Books</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Book XI</span>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Table of Contents</h2>
+<ul>
+  
+  
+    <li><a href="#defs">Definitions</a> (28)</li>
+  
+  
+  
+  <li><a href="#props">Propositions</a> (39)</li>
+  
+</ul>
+
+
+
+
+
+  <hr size="4">
+  <h2 id="defs"><a href="definitions/">Definitions</a></h2>
+  <dl>
+    
+  
+  <dt><b><a href="definitions/defXI1/">Definition 1</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>solid</i> is that which has length, breadth, and depth.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI2/">Definition 2</a>.</b></dt>
+  
+  <dd>
+    
+      A face of a solid is a surface.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI3/">Definition 3</a>.</b></dt>
+  
+  <dd>
+    
+      A straight line is <i>at right angles</i> to a plane when it makes right angles with all the straight lines which meet it and are in the plane.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI4/">Definition 4</a>.</b></dt>
+  
+  <dd>
+    
+      A plane is <i>at right angles</i> to a plane when the straight lines drawn in one of the planes at right angles to the intersection of the planes are at right angles to the remaining plane.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI5/">Definition 5</a>.</b></dt>
+  
+  <dd>
+    
+      The <i>inclination</i> of a straight line to a plane is, assuming a perpendicular drawn from the end of the straight line which is elevated above the plane to the plane, and a straight line joined from the point thus arising to the end of the straight line which is in the plane, the angle contained by the straight line so drawn and the straight line standing up.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI6/">Definition 6</a>.</b></dt>
+  
+  <dd>
+    
+      The <i>inclination</i> of a plane to a plane is the acute angle contained by the straight lines drawn at right angles to the intersection at the same point, one in each of the planes.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI7/">Definition 7</a>.</b></dt>
+  
+  <dd>
+    
+      A plane is said to be <i>similarly inclined</i> to a plane as another is to another when the said angles of the inclinations equal one another.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI8/">Definition 8</a>.</b></dt>
+  
+  <dd>
+    
+      <i>Parallel planes</i> are those which do not meet.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI9/">Definition 9</a>.</b></dt>
+  
+  <dd>
+    
+      <i>Similar solid figures</i> are those contained by similar planes equal in multitude.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI10/">Definition 10</a>.</b></dt>
+  
+  <dd>
+    
+      <i>Equal and similar solid figures</i> are those contained by similar planes equal in multitude and magnitude.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI11/">Definition 11</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>solid angle</i> is the inclination constituted by more than two lines which meet one another and are not in the same surface, towards all the lines, that is, a <i>solid angle</i> is that which is contained by more than two plane angles which are not in the same plane and are constructed to one point.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI12/">Definition 12</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>pyramid</i> is a solid figure contained by planes which is constructed from one plane to one point.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI13/">Definition 13</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>prism</i> is a solid figure contained by planes two of which, namely those which are opposite, are equal, similar, and parallel, while the rest are parallelograms.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI14/">Definition 14</a>.</b></dt>
+  
+  <dd>
+    
+      When a semicircle with fixed diameter is carried round and restored again to the same position from which it began to be moved, the figure so comprehended is a <i>sphere</i>.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI15/">Definition 15</a>.</b></dt>
+  
+  <dd>
+    
+      The <i>axis of the sphere</i> is the straight line which remains fixed and about which the semicircle is turned.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI16/">Definition 16</a>.</b></dt>
+  
+  <dd>
+    
+      The <i>center of the sphere</i> is the same as that of the semicircle.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI17/">Definition 17</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>diameter of the sphere</i> is any straight line drawn through the center and terminated in both directions by the surface of the sphere.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI18/">Definition 18</a>.</b></dt>
+  
+  <dd>
+    
+      When a right triangle with one side of those about the right angle remains fixed is carried round and restored again to the same position from which it began to be moved, the figure so comprehended is a <i>cone</i>. And, if the straight line which remains fixed equals the remaining side about the right angle which is carried round, the cone will be <i>right-angled</i>; if less, <i>obtuse-angled</i>; and if greater, <i>acute-angled</i>.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI19/">Definition 19</a>.</b></dt>
+  
+  <dd>
+    
+      The <i>axis of the cone</i> is the straight line which remains fixed and about which the triangle is turned.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI20/">Definition 20</a>.</b></dt>
+  
+  <dd>
+    
+      And the <i>base</i> is the circle described by the straight line which is carried round.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI21/">Definition 21</a>.</b></dt>
+  
+  <dd>
+    
+      When a rectangular parallelogram with one side of those about the right angle remains fixed is carried round and restored again to the same position from which it began to be moved, the figure so comprehended is a <i>cylinder</i>.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI22/">Definition 22</a>.</b></dt>
+  
+  <dd>
+    
+      The <i>axis of the cylinder</i> is the straight line which remains fixed and about which the parallelogram is turned.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI23/">Definition 23</a>.</b></dt>
+  
+  <dd>
+    
+      And the <i>bases</i> are the circles described by the two sides opposite to one another which are carried round.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI24/">Definition 24</a>.</b></dt>
+  
+  <dd>
+    
+      <i>Similar cones and cylinders</i> are those in which the axes and the diameters of the bases are proportional.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI25/">Definition 25</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>cube</i> is a solid figure contained by six equal squares.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI26/">Definition 26</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>octahedron</i> is a solid figure contained by eight equal and equilateral triangles.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI27/">Definition 27</a>.</b></dt>
+  
+  <dd>
+    
+      An <i>icosahedron</i> is a solid figure contained by twenty equal and equilateral triangles.
+    
+  </dd>
+
+  
+  <dt><b><a href="definitions/defXI28/">Definition 28</a>.</b></dt>
+  
+  <dd>
+    
+      A <i>dodecahedron</i> is a solid figure contained by twelve equal, equilateral and equiangular pentagons.
+    
+  </dd>
+
+  </dl>
+
+
+
+
+
+
+
+
+  <hr size="4">
+  <h2 id="props"><a href="propositions/">Propositions</a></h2>
+  <dl>
+    
+  
+  <dt><b><a href="propositions/propXI1/">Proposition 1</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          A part of a straight line cannot be in the plane of reference and a part in plane more elevated.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI2/">Proposition 2</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two straight lines cut one another, then they lie in one plane; and every triangle lies in one plane.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI3/">Proposition 3</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two planes cut one another, then their intersection is a straight line.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI4/">Proposition 4</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a straight line is set up at right angles to two straight lines which cut one another at their common point of section, then it is also at right angles to the plane passing through them.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI5/">Proposition 5</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a straight line is set up at right angles to three straight lines which meet one another at their common point of section, then the three straight lines lie in one plane.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI6/">Proposition 6</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two straight lines are at right angles to the same plane, then the straight lines are parallel.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI7/">Proposition 7</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two straight lines are parallel and points are taken at random on each of them, then the straight line joining the points is in the same plane with the parallel straight lines.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI8/">Proposition 8</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two straight lines are parallel, and one of them is at right angles to any plane, then the remaining one is also at right angles to the same plane.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI9/">Proposition 9</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Straight lines which are parallel to the same straight line but do not lie in the same plane with it are also parallel to each other.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI10/">Proposition 10</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two straight lines meeting one another are parallel to two straight lines meeting one another not in the same plane, then they contain equal angles.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propXI11/">Proposition 11</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To draw a straight line perpendicular to a given plane from a given elevated point.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propXI12/">Proposition 12</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To set up a straight line at right angles to a given plane from a given point in it.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI13/">Proposition 13</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          From the same point two straight lines cannot be set up at right angles to the same plane on the same side.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI14/">Proposition 14</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Planes to which the same straight line is at right angles are parallel.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI15/">Proposition 15</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two straight lines meeting one another are parallel to two straight lines meeting one another not in the same plane, then the planes through them are parallel.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI16/">Proposition 16</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two parallel planes are cut by any plane, then their intersections are parallel.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI17/">Proposition 17</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two straight lines are cut by parallel planes, then they are cut in the same ratios.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI18/">Proposition 18</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a straight line is at right angles to any plane, then all the planes through it are also at right angles to the same plane.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI19/">Proposition 19</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If two planes which cut one another are at right angles to any plane, then their intersection is also at right angles to the same plane.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI20/">Proposition 20</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a solid angle is contained by three plane angles, then the sum of any two is greater than the remaining one.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI21/">Proposition 21</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Any solid angle is contained by plane angles whose sum is less than four right angles.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propXI22/">Proposition 22</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          If there are three plane angles such that the sum of any two is greater than the remaining one, and they are contained by equal straight lines, then it is possible to construct a triangle out of the straight lines joining the ends of the equal straight lines.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propXI23/">Proposition 23</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To construct a solid angles out of three plane angles such that the sum of any two is greater than the remaining one: thus the sum of the three angles must be less than four right angles.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI24/">Proposition 24</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a solid is contained by parallel planes, then the opposite planes in it are equal and parallelogrammic.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI25/">Proposition 25</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a parallelepipedal solid is cut by a plane parallel to the opposite planes, then the base is to the base as the solid is to the solid.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propXI26/">Proposition 26</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To construct a solid angle equal to a given solid angle on a given straight line at a given point on it.
+        
+      
+    
+  </dd>
+
+  
+  <dt class="red-highlight"><b><a href="propositions/propXI27/">Proposition 27</a>.</b></dt>
+  
+  <dd class="red-highlight">
+    
+      
+        
+        
+          
+          To describe a parallelepipedal solid similar and similarly situated to a given parallelepipedal solid on a given straight line.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI28/">Proposition 28</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If a parallelepipedal solid is cut by a plane through the diagonals of the opposite planes, then the solid is bisected by the plane.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI29/">Proposition 29</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Parallelepipedal solids which are on the same base and of the same height, and in which the ends of their edges which stand up are on the same straight lines, equal one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI30/">Proposition 30</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Parallelepipedal solids which are on the same base and of the same height, and in which the ends of their edges which stand up are not on the same straight lines, equal one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI31/">Proposition 31</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Parallelepipedal solids which are on equal bases and of the same height equal one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI32/">Proposition 32</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Parallelepipedal solids which are of the same height are to one another as their bases.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI33/">Proposition 33</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          Similar parallelepipedal solids are to one another in the triplicate ratio of their corresponding sides.
+        
+      
+        
+        
+          <p><b><a href="propositions/propXI33/#cor">Corollary.</a></b></p>
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI34/">Proposition 34</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          In equal parallelepipedal solids the bases are reciprocally proportional to the heights; and those parallelepipedal solids in which the bases are reciprocally proportional to the heights are equal.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI35/">Proposition 35</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If there are two equal plane angles, and on their vertices there are set up elevated straight lines containing equal angles with the original straight lines respectively, if on the elevated straight lines points are taken at random and perpendiculars are drawn from them to the planes in which the original angles are, and if from the points so arising in the planes straight lines are joined to the vertices of the original angles, then they contain with the elevated straight lines equal angles.
+        
+      
+        
+        
+          <p><b><a href="propositions/propXI35/#cor">Corollary.</a></b> if there are two equal plane angles, and if elevated straight lines set up on them which are equal and contain equal angles with the original straight lines respectively, then the perpendiculars drawn from their ends to the planes in which are the original angles equal one another.</p>
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI36/">Proposition 36</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If three straight lines are proportional, then the parallelepipedal solid formed out of the three equals the parallelepipedal solid on the mean which is equilateral, but equiangular with the aforesaid solid.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI37/">Proposition 37</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If four straight lines are proportional, then parallelepipedal solids on them which are similar and similarly described are also proportional; and, if the parallelepipedal solids on them which are similar and similarly described are proportional, then the straight lines themselves are also proportional.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI38/">Proposition 38</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If the sides of the opposite planes of a cube are bisected, and the planes are carried through the points of section, then the intersection of the planes and the diameter of the cube bisect one another.
+        
+      
+    
+  </dd>
+
+  
+  <dt><b><a href="propositions/propXI39/">Proposition 39</a>.</b></dt>
+  
+  <dd>
+    
+      
+        
+        
+          
+          If there are two prisms of equal height, and one has a parallelogram as base and the other a triangle, and if the parallelogram is double the triangle, then the prisms are equal.
+        
+      
+    
+  </dd>
+
+  </dl>
+
+
+
+
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 5</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 5</h1>
+    <div class="statement">If two triangles have their sides proportional, then the triangles are equiangular with the equal angles opposite the corresponding sides.</div>
+    <p>Let <em>ABC</em> and <em>DEF</em> be two triangles having their sides proportional, so that <em>AB</em> is to <em>BC</em> as <em>DE</em> is to <em>EF, BC</em> is to <em>CA</em> as <em>EF</em> is to <em>FD,</em> and further <em>BA</em> is to <em>AC</em> as <em>ED</em> is to <em>DF.</em></p>
+<p>I say that the triangle <em>ABC</em> is equiangular with the triangle <em>DEF</em> where the equal angles are opposite the corresponding sides, namely the angle <em>ABC</em> equals the angle <em>DEF,</em> the angle <em>BCA</em> equals the angle <em>EFD,</em> and the angle <em>BAC</em> equals the angle <em>EDF.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="400" height="260" tabindex="0"></canvas>
+<noscript><img alt="VI.5 diagram" src="propVI5.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.5",
+        elements: [
+            "A;point;free;170,30",
+            "B;point;free;30,230",
+            "C;point;free;145,200",
+            "ABC;polygon;triangle;A,B,C;0;0;black;random",
+            "D;point;free;310,30",
+            "E;point;free;230,148",
+            "F;point;similar;D,E,A,B,C",
+            "DEF;polygon;triangle;D,E,F;0;0;black;random",
+            "G';point;similar;F,E,D,E,F;0;0",
+            "G;point;cutoff;E,G',E,D",
+            "EFG;polygon;triangle;E,F,G;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>Construct the angle <em>FEG</em> equal to the angle <em>CBA</em> and the angle <em>EFG</em> equal to the angle <em>BCA</em> on the straight line <em>EF</em> and at the points <em>E</em> and <em>F</em> on it. Therefore the remaining angle at <em>A</em> equals the remaining angle at <em>G.</em></p>
+<p>Therefore the triangle <em>ABC</em> is equiangular with the triangle <em>GEF.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI4/">VI.4</a></div>
+<p>Therefore in the triangles <em>ABC</em> and <em>GEF</em> the sides about the equal angles are proportional where the corresponding sides are opposite the equal angles, therefore <em>AB</em> is to <em>BC</em> as <em>GE</em> is to <em>EF.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>But, by hypothesis, <em>AB</em> is to <em>BC</em> as <em>DE</em> to <em>EF,</em> therefore <em>DE</em> is to <em>EF</em> as <em>GE</em> is to <em>EF.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV9/">V.9</a></div>
+<p>Therefore each of the straight lines <em>DE</em> and <em>GE</em> has the same ratio to <em>EF,</em> therefore <em>DE</em> equals <em>GE.</em></p>
+<p>For the same reason <em>DF</em> also equals <em>GF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI8/">I.8</a><br><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
+<p>Then since <em>DE</em> equals <em>GE,</em> and <em>EF</em> is common, the two sides <em>DE</em> and <em>EF</em> equal the two sides <em>GE</em> and <em>EF,</em> and the base <em>DF</em> equals the base <em>GF,</em> therefore the angle <em>DEF</em> equals the angle <em>GEF,</em> and the triangle <em>DEF</em> equals the triangle <em>GEF,</em> and the remaining angles equal the remaining angles, namely those opposite the equal sides.</p>
+<p>Therefore the angle <em>DFE</em> also equals the angle <em>GFE,</em> and the angle <em>EDF</em> equals the angle <em>EGF.</em></p>
+<p>And, since the angle <em>DEF</em> equals the angle <em>GEF,</em> and the angle <em>GEF</em> equals the angle <em>ABC,</em> therefore the angle <em>ABC</em> also equals the angle <em>DEF.</em></p>
+<p>For the same reason the angle <em>ACB</em> also equals the angle <em>DFE,</em> and further, the angle at <em>A</em> equals the angle at <em>D,</em> therefore the triangle <em>ABC</em> is equiangular with the triangle <em>DEF.</em></p>
+<p>Therefore, <em>if two triangles have their sides proportional, then the triangles are equiangular with the equal angles opposite the corresponding sides.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Of course, this proposition is the converse of the previous. We now have two characterizations of similar triangles, either as equiangular triangles or as triangles with proportional sides. The next two propositions give two more characterizations corresponding to characterizations of congruent triangles.</p>
+<p>As in VI.2, a certain order is assumed for the proportionality. It is not intended, for instance, that <em>AB</em> : <em>BC</em> = <em>DE</em> : <em>EF</em> while <em>BC</em> : <em>CA</em> = <em>FD</em> : <em>EF.</em> See the remark about <a href="/elements/books/bookVI/definitions/defVI1/">VI.Def.1</a>.</p>
+<p>This proposition is used in the proof of proposition <a href="/elements/books/bookXII/propositions/propXII12/">XII.12</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII12/">XII.12</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

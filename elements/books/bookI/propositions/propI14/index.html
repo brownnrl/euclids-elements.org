@@ -1,0 +1,218 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 14</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 14</h1>
+    <div class="statement">If with any straight line, and at a point on it, two straight lines not lying on the same side make the sum of the adjacent angles equal to two right angles, then the two straight lines are in a straight line with one another.</div>
+    <p>With any straight line <span class="elem-ref" data-elem="AB">AB</span>, and at the point <span class="elem-ref" data-elem="B">B</span> on it, let the two straight lines <span class="elem-ref" data-elem="BC">BC</span> and <span class="elem-ref" data-elem="BD">BD</span> not lying on the same side make the sum of the adjacent angles <span class="elem-ref" data-elem="ABC">ABC</span> and <span class="elem-ref" data-elem="ABD">ABD</span> equal to two right angles.</p>
+<p>I say that <span class="elem-ref" data-elem="BD">BD</span> is in a straight line with <span class="elem-ref" data-elem="CB">CB</span>.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="220" height="210" tabindex="0"></canvas>
+<noscript><img alt="I.14 diagram" src="propI14.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.14",
+        elements: [
+            // The standing line AB at B.
+            "A;point;free;60,60",
+            "B;point;free;70,180",
+            "AB;line;connect;A,B",
+            // C and D on opposite sides of B, collinear through B (D slides
+            // on line BC), so CBD is a genuine straight line and the
+            // hypothesis ∠ABC + ∠ABD = two right angles really holds.
+            "C;point;free;40,180",
+            "D;point;lineSlider;B,C,170,180",
+            "CD;line;connect;C,D",
+            // BE: the hypothetical ray "in a straight line with CB" of the
+            // reductio. Drawn distinct from BD (E up-right, inside ∠ABD) —
+            // the impossible diagram; revealed mid-proof.
+            "E;point;free;160,130",
+            "BE;line;connect;B,E",
+            // Zero-color hover targets for the two halves of the line.
+            "BC;line;connect;B,C;0;0;0",
+            "BD;line;connect;B,D;0;0;0",
+            // The angles at B (0.8.0 angleMarker; hidden in static, swept
+            // on their slide). ∠ABE nests inside ∠ABD (#103) — the visible
+            // "the less equals the greater" of the contradiction.
+            "ABC;sector;angleMarker;B,A,C",
+            "ABD;sector;angleMarker;B,A,D",
+            "ABE;sector;angleMarker;B,A,E"
+        ],
+        // E (the hypothetical ray's endpoint) is introduced mid-proof.
+        deferDraggables: ["E"],
+        aliases: {
+            "CB":  "BC",
+            "CBA": "ABC",
+            "CBD": "CD"
+        },
+        slides: [
+            { text: "With any straight line {AB}, and at the point {B} on it, let the two straight lines {BC} and {BD} not lying on the same side make the sum of the adjacent angles {ABC} and {ABD} equal to two right angles.",
+              visible: ["AB","CD","ABC","ABD"],
+              transition: {
+                  mode: "parallel",
+                  animations: [
+                      { elem: "ABC", name: geomlib.A.Sector.sweep },
+                      { elem: "ABD", name: geomlib.A.Sector.sweep }
+                  ]
+              } },
+            { text: "I say that {BD} is in a straight line with {CB}.",
+              visible: ["AB","CD","ABC","ABD"],
+              highlighted: ["BD","BC"] },
+            { text: "If {BD} is not in a straight line with {BC}, then produce {BE} in a straight line with {CB}.",
+              visible: ["AB","CD","ABC","ABD","E","BE"],
+              highlighted: ["BE"],
+              transition: {
+                  animations: [
+                      { elem: "E",  name: geomlib.A.Point.appear },
+                      { elem: "BE", name: geomlib.A.Line.straightEdgeConnect }
+                  ]
+              },
+              justifications: [{ ref: "I.Post.2" }] },
+            { text: "Since the straight line {AB} stands on the straight line CBE, therefore the sum of the angles {ABC} and {ABE} equals two right angles.",
+              visible: ["AB","CD","ABC","ABD","E","BE","ABE"],
+              highlighted: ["ABC","ABE"],
+              transition: {
+                  animations: [
+                      { elem: "ABE", name: geomlib.A.Sector.sweep }
+                  ]
+              },
+              justifications: [{ ref: "I.13" }] },
+            { text: "But the sum of the angles {ABC} and {ABD} also equals two right angles, therefore the sum of the angles {CBA} and {ABE} equals the sum of the angles {CBA} and {ABD}.",
+              visible: ["AB","CD","ABC","ABD","E","BE","ABE"],
+              highlighted: ["ABC","ABD","ABE"],
+              justifications: [{ ref: "I.Post.4" }, { ref: "C.N.1" }] },
+            { text: "Subtract the angle {CBA} from each. Then the remaining angle {ABE} equals the remaining angle {ABD}, the less equals the greater, which is impossible.",
+              visible: ["AB","CD","ABC","ABD","E","BE","ABE"],
+              highlighted: ["ABE","ABD"],
+              justifications: [{ ref: "C.N.3" }] },
+            { text: "Therefore {BE} is not in a straight line with {CB}.",
+              // The hypothetical ray is eliminated: BE, E, ∠ABE drop out.
+              visible: ["AB","CD","ABC","ABD"],
+              highlighted: ["BC"] },
+            { text: "Similarly we can prove that neither is any other straight line except {BD}. Therefore {CB} is in a straight line with {BD}.",
+              visible: ["AB","CD","ABC","ABD"],
+              highlighted: ["BC","BD"] },
+            { text: "Therefore if with any straight line, and at a point on it, two straight lines not lying on the same side make the sum of the adjacent angles equal to two right angles, then the two straight lines are in a straight line with one another.",
+              visible: ["AB","CD","ABC","ABD"],
+              highlighted: ["BC","BD"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification
+    // callback — same hand-authored pattern as the earlier props.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.2": "/elements/books/bookI/postulates/post2/",
+        "I.Post.4": "/elements/books/bookI/postulates/post4/",
+        "I.13":     "/elements/books/bookI/propositions/propI13/",
+        "C.N.1":    "/elements/books/bookI/commonnotions/cn1/",
+        "C.N.3":    "/elements/books/bookI/commonnotions/cn3/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/postulates/post2/">I.Post.2</a></div>
+<p>If <span class="elem-ref" data-elem="BD">BD</span> is not in a straight line with <span class="elem-ref" data-elem="BC">BC</span>, then produce <span class="elem-ref" data-elem="BE">BE</span> in a straight line with <span class="elem-ref" data-elem="CB">CB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI13/">I.13</a><br><a href="/elements/books/bookI/postulates/post4/">I.Post.4</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>Since the straight line <span class="elem-ref" data-elem="AB">AB</span> stands on the straight line <em>CBE,</em> therefore the sum of the angles <span class="elem-ref" data-elem="ABC">ABC</span> and <span class="elem-ref" data-elem="ABE">ABE</span> equals two right angles. But the sum of the angles <span class="elem-ref" data-elem="ABC">ABC</span> and <span class="elem-ref" data-elem="ABD">ABD</span> also equals two right angles, therefore the sum of the angles <span class="elem-ref" data-elem="CBA">CBA</span> and <span class="elem-ref" data-elem="ABE">ABE</span> equals the sum of the angles <span class="elem-ref" data-elem="CBA">CBA</span> and <span class="elem-ref" data-elem="ABD">ABD</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn3/">C.N.3</a></div>
+<p>Subtract the angle <span class="elem-ref" data-elem="CBA">CBA</span> from each. Then the remaining angle <span class="elem-ref" data-elem="ABE">ABE</span> equals the remaining angle <span class="elem-ref" data-elem="ABD">ABD</span>, the less equals the greater, which is impossible. Therefore <span class="elem-ref" data-elem="BE">BE</span> is not in a straight line with <span class="elem-ref" data-elem="CB">CB</span>.</p>
+<p>Similarly we can prove that neither is any other straight line except <span class="elem-ref" data-elem="BD">BD</span>. Therefore <span class="elem-ref" data-elem="CB">CB</span> is in a straight line with <span class="elem-ref" data-elem="BD">BD</span>.</p>
+<p>Therefore <em>if with any straight line, and at a point on it, two straight lines not lying on the same side make the sum of the adjacent angles equal to two right angles, then the two straight lines are in a straight line with one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This is a converse of the last proposition.</p>
+<p>This is a proposition in plane geometry. If <span class="elem-ref" data-elem="A">A</span>, <span class="elem-ref" data-elem="B">B</span>, <span class="elem-ref" data-elem="C">C</span>, and <span class="elem-ref" data-elem="D">D</span> do not lie in a plane, then <span class="elem-ref" data-elem="CBD">CBD</span> cannot be a straight line. An ambient plane is necessary to talk about the sides of the line <span class="elem-ref" data-elem="AB">AB</span></p>
+<p>The qualifying sentence, "Similarly we can prove that neither is any other straight line except <span class="elem-ref" data-elem="BD">BD</span>," is meant to take care of the cases when <span class="elem-ref" data-elem="E">E</span> does not lie inside the angle <span class="elem-ref" data-elem="ABD">ABD</span>.</p>
+<p>This is the first use of <a href="/elements/books/bookI/postulates/post4/">I.Post.4</a> that all right angles are equal.</p>
+<h4>Use of Proposition 14</h4>
+<p>This proposition is used in propositions <a href="/elements/books/bookI/propositions/propI45/">I.45</a>, <a href="/elements/books/bookI/propositions/propI47/">I.47</a>, and a few in Books VI and XI.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book I</th><td><a href="/elements/books/bookI/propositions/propI45/">I.45</a>, <a href="/elements/books/bookI/propositions/propI47/">I.47</a></td></tr>
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI14/">VI.14</a>, <a href="/elements/books/bookVI/propositions/propVI15/">VI.15</a>, <a href="/elements/books/bookVI/propositions/propVI23/">VI.23</a>, <a href="/elements/books/bookVI/propositions/propVI32/">VI.32</a></td></tr>
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI38/">XI.38</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

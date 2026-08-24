@@ -1,0 +1,272 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 31</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 31</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 31</h1>
+    <div class="statement">Parallelepipedal solids which are on equal bases and of the same height equal one another.</div>
+    <p>Let the parallelepipedal solids <em>AE</em> and <em>CF</em> of the same height be on equal bases <em>AB</em> and <em>CD.</em></p>
+<p>I say that the solid <em>AE</em> equals the solid <em>CF.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>First, let the sides which stand up, <em>HK, BE, AG, LM, PQ, DF, CO,</em> and <em>RS,</em> be at right angles to the bases <em>AB</em> and <em>CD.</em> Produce the straight line <em>RT</em> in a straight line with <em>CR.</em> Construct the angle <em>TRU</em> equal to the angle <em>ALB</em> at the point <em>R</em> on the straight line <em>RT.</em> Make <em>RT</em> equal to <em>A,</em> and <em>RU</em> equal to <em>LB.</em> Complete the base <em>RW</em> and the solid <em>XU.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="400" height="280" tabindex="0"></canvas>
+<noscript><img alt="XI.31 diagram" src="propXI31a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.31",
+        elements: [
+            "G;point;fixed;60,120,0",
+            "1X;point;fixed;260,93,36;0;0",
+            "1Y;point;fixed;15,0,160;0;0",
+            "1Z;point;fixed;60,264,123;0;0",
+            "ceiling;plane;3points;G,1X,1Y;0;0;0;0",
+            "A;point;lineSlider;G,1Z,220,130,200",
+            "M;point;planeSlider;ceiling,130,120,0",
+            "K;point;planeSlider;ceiling,30,150,100",
+            "L;point;parallelogram;A,G,M",
+            "H;point;parallelogram;A,G,K",
+            "B;point;parallelogram;L,A,H",
+            "E;point;parallelogram;M,G,K",
+            "floor;plane;3points;A,L,H;0;0;0;0",
+            "AGKH;polygon;quadrilateral;A,G,K,H;0;0;black;60,75,100",
+            "ALMG;polygon;quadrilateral;A,L,M,G;0;0;black;60,100,90",
+            "GKEM;polygon;quadrilateral;G,K,E,M;0;0;black;60,50,100",
+            "EB;line;connect;E,B",
+            "HB;line;connect;H,B",
+            "LB;line;connect;L,B",
+            "H'';point;perpendicular;A,L,floor;0;0",
+            "H';point;intersection;A,H'',H,B,floor;0;0",
+            "C;point;planeSlider;floor,200,140,0",
+            "P;point;planeSlider;floor,160,30,0",
+            "D';point;perpendicular;C,P,floor;0;0",
+            "D'';point;proportion;C,P,A,L,A,H',C,D';0;0",
+            "D''';point;parallelogram;D'',C,P;0;0",
+            "D;point;lineSlider;D'',D''',170,10,0",
+            "R;point;parallelogram;C,P,D",
+            "F;point;parallelogram;D,A,G",
+            "Q;point;parallelogram;P,A,G",
+            "O;point;parallelogram;C,A,G",
+            "S;point;parallelogram;R,A,G",
+            "QOCP;polygon;quadrilateral;Q,O,C,P;0;0;black;180,100,90",
+            "QOSF;polygon;quadrilateral;Q,O,S,F;0;0;black;180,50,100",
+            "COSR;polygon;quadrilateral;C,O,S,R;0;0;black;180,75,100",
+            "FD;line;connect;F,D",
+            "PD;line;connect;P,D",
+            "RD;line;connect;R,D",
+            "T;point;extend;C,R,A,L",
+            "U;point;similar;T,R,floor,A,L,B,floor",
+            "W;point;parallelogram;T,R,U",
+            "X;point;parallelogram;T,A,G",
+            "V;point;parallelogram;W,A,G",
+            "d;point;parallelogram;U,A,G",
+            "UdSR;polygon;quadrilateral;U,d,S,R;0;0;black;60,75,100",
+            "UWVd;polygon;quadrilateral;U,W,V,d;0;0;black;60,100,90",
+            "dSXV;polygon;quadrilateral;d,S,X,V;0;0;black;60,50,100",
+            "RT;line;connect;R,T",
+            "WT;line;connect;W,T",
+            "XT;line;connect;X,T",
+            "Y;point;intersection;D,R,W,U,floor",
+            "a;point;parallelogram;T,R,D",
+            "b;point;parallelogram;T,R,Y",
+            "I;point;parallelogram;a,A,G",
+            "c;point;parallelogram;b,A,G",
+            "e;point;parallelogram;Y,A,G",
+            "abcI;polygon;quadrilateral;a,b,c,I;0;0;black;0",
+            "FI;line;connect;F,I",
+            "Da;line;connect;D,a",
+            "Se;line;connect;S,e",
+            "RY;line;connect;R,Y",
+            "eY;line;connect;e,Y",
+            "cV;line;connect;c,V",
+            "bW;line;connect;b,W",
+            "de;line;connect;d,e",
+            "UY;line;connect;U,Y"
+        ],
+    });
+</script>
+</figure><p>Now, since the two sides <em>TR</em> and <em>RU</em> equal the two sides <em>AL</em> and <em>LB,</em> and they contain equal angles, therefore the parallelogram <em>RW</em> equals and is similar to the parallelogram <em>HL.</em> Since again <em>AL</em> equals <em>RT,</em> and <em>LM</em> equals <em>RS,</em> and they contain right angles, therefore the parallelogram <em>RX</em> equals and is similar to the parallelogram <em>AM.</em> For the same reason <em>LE</em> also equals and is similar to <em>SU.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI24/">XI.24</a><br><a href="/elements/books/bookXI/definitions/defXI10/">XI.Def.10</a></div>
+<p>Therefore three parallelograms of the solid <em>AE</em> equal and are similar to three parallelograms of the solid <em>XU.</em> But the former three equal and are similar to the three opposite, and the latter three equal and are similar the three opposite, therefore the whole parallelepipedal solid <em>AE</em> equals the whole parallelepipedal solid <em>XU.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Draw <em>DR</em> and <em>WU</em> through to meet one another at <em>Y,</em> draw <em>aTb</em> through <em>T</em> parallel to <em>DY,</em> produce <em>PD</em> to <em>a,</em> and complete the solids <em>YX</em> and <em>RI.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI29/">XI.29</a></div>
+<p>Then the solid <em>XY,</em> of which the parallelogram <em>RX</em> is the base and <em>Yc</em> its opposite, equals the solid <em>XU,</em> of which the parallelogram <em>RX</em> is the base and <em>UV</em> its opposite, for they are on the same base <em>RX</em> and of the same height, and the ends of their edges which stand up, namely <em>RY, RU, Tb, TW, Se, Sd, Xc,</em> and <em>XV,</em> are on the same straight lines <em>YW</em> and <em>eV.</em> But the solid <em>XU</em> equals <em>AE,</em> therefore the solid <em>XY</em> also equals the solid <em>AE.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI35/">I.35</a></div>
+<p>And, since the parallelogram <em>RUWT</em> equals the parallelogram <em>YT,</em> for they are on the same base <em>RT</em> and in the same parallels <em>RT</em> and <em>YW,</em> and <em>RUWT</em> equals <em>CD,</em> since it also equals <em>AB,</em> therefore the parallelogram <em>YT</em> also equals <em>CD.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV7/">V.7</a></div>
+<p>But <em>DT</em> is another parallelogram, therefore the base <em>CD</em> is to <em>DT</em> as <em>YT</em> is to <em>DT.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI25/">XI.25</a></div>
+<p>And, since the parallelepipedal solid <em>CI</em> is cut by the plane <em>RF</em> which is parallel to opposite planes, therefore the base <em>CD</em> is to the base <em>DT</em> as the solid <em>CF</em> is to the solid <em>RI.</em> For the same reason, since the parallelepipedal solid <em>YI</em> is cut by the plane <em>RX</em> which is parallel to opposite planes, therefore the base <em>YT</em> is to the base <em>TD</em> as the solid <em>YX</em> is to the solid <em>RI.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV11/">V.11</a></div>
+<p>But the base <em>CD</em> is to <em>DT</em> as <em>YT</em> is to <em>DT,</em> therefore the solid <em>CF</em> is to the solid <em>RI</em> as the solid <em>YX</em> is to <em>RI.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV9/">V.9</a></div>
+<p>Therefore each of the solids <em>CF</em> and <em>YX</em> has to <em>RI</em> the same ratio. Therefore the solid <em>CF</em> equals the solid <em>YX.</em> But <em>YX</em> was proved equal to <em>AE,</em> therefore <em>AE</em> also equals <em>CF.</em></p>
+<hr width="50%">
+
+<p>Next, let the sides standing up, <em>AG, HK, BE, LM, CN, PQ, DF,</em> and <em>RS,</em> not be at right angles to the bases <em>AB</em> and <em>CD.</em></p>
+<p>I say again that the solid <em>AE</em> equals the solid <em>CF.</em></p>
+<figure class="diagram">
+<canvas id="canvas_1" width="400" height="280" tabindex="0"></canvas>
+<noscript><img alt="XI.31 diagram" src="propXI31b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "35,19,100",
+        title: "XI.31",
+        elements: [
+            "G;point;fixed;60,120,0;black;green",
+            "1X;point;fixed;260,93,36;0;0",
+            "1Y;point;fixed;15,0,160;0;0",
+            "1Z;point;fixed;60,264,123;0;0",
+            "ceiling;plane;3points;G,1X,1Y;0;0;0;0",
+            "U;point;lineSlider;G,1Z,220,130,200",
+            "xf;point;parallelogram;1X,G,U;0;0",
+            "yf;point;parallelogram;1Y,G,U;0;0",
+            "floor;plane;3points;U,xf,yf;0;0;0;0",
+            "A;point;planeSlider;floor,120,220,20",
+            "M;point;planeSlider;ceiling,30,120,0",
+            "K;point;planeSlider;ceiling,130,150,100",
+            "L;point;parallelogram;A,G,M",
+            "H;point;parallelogram;A,G,K",
+            "B;point;parallelogram;L,A,H",
+            "E;point;parallelogram;M,G,K",
+            "AGKH;polygon;quadrilateral;A,G,K,H;0;0;black;60,75,100",
+            "ALMG;polygon;quadrilateral;A,L,M,G;0;0;black;60,100,90",
+            "GKEM;polygon;quadrilateral;G,K,E,M;0;0;black;60,50,100",
+            "EB;line;connect;E,B",
+            "HB;line;connect;H,B",
+            "LB;line;connect;L,B",
+            "H'';point;perpendicular;A,L,floor;0;0",
+            "H';point;intersection;A,H'',H,B,floor;0;0",
+            "Q;point;planeSlider;ceiling,200,150,100",
+            "P;point;planeSlider;floor,230,273,100",
+            "C;point;planeSlider;floor,305,140,0",
+            "D';point;perpendicular;C,P,floor;0;0",
+            "D'';point;proportion;C,P,A,L,A,H',C,D';0;0",
+            "D''';point;parallelogram;D'',C,P;0;0",
+            "D;point;lineSlider;D'',D''',270,10,0",
+            "R;point;parallelogram;C,P,D",
+            "F;point;parallelogram;D,P,Q",
+            "S;point;parallelogram;R,P,Q",
+            "N;point;parallelogram;C,P,Q",
+            "QNCP;polygon;quadrilateral;Q,N,C,P;0;0;black;180,100,90",
+            "QNSF;polygon;quadrilateral;Q,N,S,F;0;0;black;180,50,100",
+            "CNSR;polygon;quadrilateral;C,N,S,R;0;0;black;180,75,100",
+            "FD;line;connect;F,D",
+            "PD;line;connect;P,D",
+            "RD;line;connect;R,D",
+            "O;point;parallelogram;K,G,U",
+            "V;point;parallelogram;M,G,U",
+            "T;point;parallelogram;E,G,U",
+            "UOTV;polygon;quadrilateral;U,O,T,V;0;0;black;0",
+            "GU;line;connect;G,U",
+            "KO;line;connect;K,O",
+            "ET;line;connect;E,T",
+            "MV;line;connect;M,V",
+            "W;point;parallelogram;Q,G,U",
+            "X;point;parallelogram;F,G,U",
+            "Y;point;parallelogram;N,G,U",
+            "I;point;parallelogram;S,G,U",
+            "WXIY;polygon;quadrilateral;W,X,I,Y;0;0;black;0",
+            "QW;line;connect;Q,W",
+            "NY;line;connect;N,Y",
+            "FX;line;connect;F,X",
+            "SI;line;connect;S,I"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookXI/propositions/propXI11/">XI.11</a></div>
+<p>Draw <em>KO, ET, GU, MV, QW, FX, NY</em> and <em>SI</em> from the points <em>K, E, G, M, Q, F, N,</em> and <em>S</em> perpendicular to the plane of reference, and let them meet the plane at the points <em>O, T, U, V, W, X, Y,</em> and <em>I.</em></p>
+<div class="just">Above</div><p>Then the solid <em>KV</em> equals the solid <em>QI,</em> for they are on the equal bases <em>KM</em> and <em>QS</em> and of the same height, and their sides which stand up are at right angles to their bases.</p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI30/">XI.30</a></div>
+<p>But the solid <em>KV</em> equals the solid <em>AE,</em> and <em>QI</em> equals <em>CF,</em> for they are on the same base and of the same height, while the ends of their edges which stand up are not on the same straight lines.</p>
+<p>Therefore the solid <em>AE</em> also equals the solid <em>CF.</em></p>
+<p>Therefore, <em>parallelepipedal solids which are on equal bases and of the same height equal one another.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>The statement that started with <a href="/elements/books/bookXI/propositions/propXI29/">XI.29</a> has now been generalized two steps. In the next proposition the heights of the two parallelepipeds remain equal, but the bases vary. The present proposition is used not only in the proof of the next, but also in three more of the remaining propositions of Book XI.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI32/">XI.32</a>, <a href="/elements/books/bookXI/propositions/propXI34/">XI.34</a>, <a href="/elements/books/bookXI/propositions/propXI36/">XI.36</a>, <a href="/elements/books/bookXI/propositions/propXI39/">XI.39</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

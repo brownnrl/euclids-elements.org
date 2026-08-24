@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 1</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 1</h1>
+    <div class="statement">Similar polygons inscribed in circles are to one another as the squares on their diameters.</div>
+    <p>Let <em>ABC</em> and <em>FGH</em> be circles, let <em>ABCDE</em> and <em>FGHKL</em> be similar polygons inscribed in them, and let <em>BM</em> and <em>GN</em> be diameters of the circles.</p>
+<p>I say that the square on <em>BM</em> is to the square on <em>GN</em> as the polygon <em>ABCDE</em> is to the polygon <em>FGHKL.</em></p>
+<p>Join <em>BE, AM, GL,</em> and <em>FN.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="440" height="250" tabindex="0"></canvas>
+<noscript><img alt="XII.1 diagram" src="propXII1.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XII.1",
+        elements: [
+            "A;point;free;110,40",
+            "B;point;free;50,100",
+            "C;point;free;80,200",
+            "ABC;circle;circumcircle;A,B,C;0;0;black;random",
+            "D;point;circleSlider;ABC,200,180",
+            "E;point;circleSlider;ABC,210,90",
+            "F;point;free;308,50",
+            "G;point;free;260,98",
+            "H;point;similar;F,G,A,B,C",
+            "K;point;similar;F,G,A,B,D",
+            "L;point;similar;F,G,A,B,E",
+            "FGH;circle;circumcircle;F,G,H;0;0;black;random",
+            "ABCDE;polygon;pentagon;A,B,C,D,E;0;0;black;random",
+            "FGHKL;polygon;pentagon;F,G,H,K,L;0;0;black;random",
+            "ABCcenter;point;center;ABC;0;0",
+            "M;point;extend;B,ABCcenter,B,ABCcenter",
+            "FGHcenter;point;center;FGH;0;0",
+            "N;point;extend;G,FGHcenter,G,FGHcenter",
+            "BM;line;connect;B,M",
+            "GN;line;connect;G,N",
+            "AM;line;connect;A,M",
+            "FN;line;connect;F,N",
+            "BE;line;connect;B,E",
+            "GL;line;connect;G,L"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookVI/definitions/defVI1/">VI.Def.1</a></div>
+<p>Now, since the polygon <em>ABCDE</em> is similar to the polygon <em>FGHKL,</em> therefore the angle <em>BAE</em> equals the angle <em>GFL,</em> and <em>BA</em> is to <em>AE</em> as <em>GF</em> is to <em>FL.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI6/">VI.6</a></div>
+<p>Thus <em>BAE</em> and <em>GFL</em> are two triangles which have one angle equal to one angle, namely the angle <em>BAE</em> equal to the angle <em>GFL,</em> and the sides about the equal angles proportional, therefore the triangle <em>ABE</em> is equiangular with the triangle <em>FGL.</em> Therefore the angle <em>AEB</em> equals the angle <em>FLG.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII27/">III.27</a></div>
+<p>But the angle <em>AEB</em> equals the angle <em>AMB,</em> for they stand on the same circumference, and the angle <em>FLG</em> equals the angle <em>FNG,</em> therefore the angle <em>AMB</em> also equals the angle <em>FNG.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII31/">III.31</a><br><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
+<p>But the right angle <em>BAM</em> also equals the right angle <em>GFN,</em> therefore the remaining angle equals the remaining angle. Therefore the triangle <em>ABM</em> is equiangular with the triangle <em>FGN.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI4/">VI.4</a></div>
+<p>Therefore, proportionally <em>BM</em> is to <em>GN</em> as <em>BA</em> is to <em>GF.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI20/">VI.20</a></div>
+<p>But the ratio of the square on <em>BM</em> to the square on <em>GN</em> is duplicate of the ratio of <em>BM</em> to <em>GN,</em> and the ratio of the polygon <em>ABCDE</em> to the polygon <em>FGHKL</em> is duplicate of the ratio of <em>BA</em> to <em>GF.</em></p>
+<p>Therefore the square on <em>BM</em> is to the square on <em>GN</em> as the polygon <em>ABCDE</em> is to the polygon <em>FGHKL.</em></p>
+<p>Therefore, <em>similar polygons inscribed in circles are to one another as the squares on their diameters.</em></p>
+<p><div class="qed">Q.E.D.</div>
+<br clear="all"></p>
+
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>Proposition <a href="/elements/books/bookVI/propositions/propVI20/">VI.20</a> states that the ratio of similar polygons is duplicate the ratio of their corresponding sides, so all that is needed is that the corresponding sides are proportional to the diameters of the circumscribed circles, a result that constitutes the bulk of the straightforward proof.</p>
+<p>This proposition is in preparation for the next in which it is shown that circles are proportional to the squares on their diameters. The connection is that the circles can be arbitrarily closely approximated by polygons, so that if the polygons are proportional to the squares, then so will the circles be proportional to the squares. The difficulty in that proof coming up is to make that argument rigorous.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII2/">XII.2</a>, <a href="/elements/books/bookXII/propositions/propXII11/">XII.11</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

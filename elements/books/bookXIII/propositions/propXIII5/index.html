@@ -1,0 +1,134 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XIII</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XIII</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 5</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 5</h1>
+    <div class="statement">If a straight line is cut in extreme and mean ratio, and a straight line equal to the greater segment is added to it, then the whole straight line has been cut in extreme and mean ratio, and the original straight line is the greater segment.</div>
+    <p>Let the straight line <em>AB</em> be cut in extreme and mean ratio at the point <em>C,</em> let <em>AC</em> be the greater segment, and let <em>AD</em> be equal to <em>AC.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="270" height="200" tabindex="0"></canvas>
+<noscript><img alt="XIII.5 diagram" src="propXIII5.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XIII.5",
+        elements: [
+            "A;point;free;110,40",
+            "B;point;free;230,40",
+            "BATE;polygon;square;B,A;0;0;black;random",
+            "T;point;vertex;BATE,3;0;0",
+            "E;point;vertex;BATE,4",
+            "X;point;midpoint;A,B;0;0",
+            "Y;point;extend;A,X,X,E;0;0",
+            "C;point;cutoff;A,B,B,Y",
+            "D;point;extend;C,A,C,A",
+            "ADLH;polygon;square;A,D;0;0;black;random",
+            "L;point;vertex;ADLH,3",
+            "H;point;vertex;ADLH,4",
+            "K;point;intersection;L,H,B,E",
+            "HK;line;connect;H,K",
+            "AE;line;connect;A,E",
+            "CC';line;parallel;C,B,E"
+        ],
+    });
+</script>
+</figure><p>I say that the straight line <em>DB</em> is cut in extreme and mean ratio at <em>A,</em> and the original straight line <em>AB</em> is the greater segment.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a></div>
+<p>Describe the square <em>AE</em> on <em>AB,</em> and draw the figure.</p>
+<div class="just"><a href="/elements/books/bookVI/definitions/defVI3/">VI.Def.3</a>, <a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a></div>
+<p>Since <em>AB</em> is cut in extreme and mean ratio at <em>C,</em> therefore the rectangle <em>AB</em> by <em>BC</em> equals the square on <em>AC.</em></p>
+<p>And <em>CE</em> is the rectangle <em>AB</em> by <em>BC,</em> and <em>CH</em> is the square on <em>AC,</em> therefore <em>CE</em> equals <em>HC.</em></p>
+<p>But <em>HE</em> equals <em>CE,</em> and <em>DH</em> equals <em>HC,</em> therefore <em>DH</em> also equals <em>HE.</em> Therefore the whole <em>DK</em> is equal to the whole <em>AE.</em></p>
+<p>And <em>DK</em> is the rectangle <em>BD</em> by <em>DA,</em> for <em>AD</em> equals <em>DL,</em> and <em>AE</em> is the square on <em>AB,</em> therefore the rectangle <em>BD</em> by <em>DA</em> equals the square on <em>AB.</em></p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a>, <a href="/elements/books/bookV/definitions/defV5/">V.Def.5</a></div>
+<p>Therefore <em>DB</em> is to <em>BA</em> as <em>BA</em> is to <em>AD.</em> And <em>DB</em> is greater than <em>BA,</em> therefore <em>BA</em> is also greater than <em>AD.</em></p>
+<p>Therefore <em>DB</em> has been cut in extreme and mean ratio at <em>A,</em> and <em>AB</em> is the greater segment.</p>
+<p>Therefore, <em>if a straight line is cut in extreme and mean ratio, and a straight line equal to the greater segment is added to it, then the whole straight line has been cut in extreme and mean ratio, and the original straight line is the greater segment.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Use of this proposition</h4>
+<p>This proposition is used <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a> where a dodecahedron is constructed.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

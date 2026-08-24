@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book XI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book XI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 11</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 11</h1>
+    <div class="statement">To draw a straight line perpendicular to a given plane from a given elevated point.</div>
+    <p>Let <em>A</em> be the given elevated point, and the plane of reference the given plane.</p>
+<p>It is required to draw from the point <em>A</em> a straight line perpendicular to the plane of reference.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="310" height="300" tabindex="0"></canvas>
+<noscript><img alt="XI.11 diagram" src="propXI11.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "XI.11",
+        pivot: "F,xyplane",
+        elements: [
+            "origin;point;free;120,160;0;0,50,100",
+            "x;point;fixed;280,160,100;0;darkGray",
+            "yzplane;plane;perpendicular;origin,x;0;0;0;0",
+            "y;point;planeSlider;yzplane,-90,260,40;0;0,50,100",
+            "xyplane;plane;3points;origin,x,y;0;0;lightGray",
+            "z1;point;perpendicular;origin,y,yzplane;0;0",
+            "z;point;lineSlider;origin,z1,50,50,100;0",
+            "Oz;line;connect;origin,z;0;0;lightGray",
+            "ceiling;plane;parallel;xyplane,z;0;0;0;0",
+            "A;point;planeSlider;ceiling,140,100,180",
+            "B;point;planeSlider;xyplane,208,270,140",
+            "C;point;planeSlider;xyplane,245,190,80",
+            "BC;line;connect;B,C",
+            "D;point;foot;A,BC",
+            "AD;line;connect;A,D",
+            "E';point;perpendicular;D,C,xyplane;0;0",
+            "E;point;lineSlider;D,E',100,120,80",
+            "DE;line;connect;D,E",
+            "F;point;foot;A,D,E;black;green",
+            "AF;line;connect;A,F",
+            "G;point;parallelogram;B,D,F",
+            "H;point;parallelogram;C,D,F",
+            "GH;line;connect;G,H"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>Draw any straight line <em>BC</em> at random in the plane of reference, and draw <em>AD</em> from the point <em>A</em> perpendicular to <em>BC.</em></p>
+<p>Then if <em>AD</em> is also perpendicular to the plane of reference, then that which was proposed is done.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI12/">I.12</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>But if not, draw <em>DE</em> from the point <em>D</em> at right angles to <em>BC</em> and in the plane of reference, draw <em>AF</em> from <em>A</em> perpendicular to <em>DE,</em> and draw <em>GH</em> through the point <em>F</em> parallel to <em>BC.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI4/">XI.4</a></div>
+<p>Now, since <em>BC</em> is at right angles to each of the straight lines <em>DA</em> and <em>DE,</em> therefore <em>BC</em> is also at right angles to the plane through <em>ED</em> and <em>DA.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI8/">XI.8</a></div>
+<p>And <em>GH</em> is parallel to it, but if two straight lines are parallel, and one of them is at right angles to any plane, then the remaining one is also at right angles to the same plane, therefore <em>GH</em> is also at right angles to the plane through <em>ED</em> and <em>DA.</em></p>
+<div class="just"><a href="/elements/books/bookXI/definitions/defXI3/">XI.Def.3</a></div>
+<p>Therefore <em>GH</em> is also at right angles to all the straight lines which meet it and are in the plane through <em>ED</em> and <em>DA.</em></p>
+<p>But <em>AF</em> meets it and lies in the plane through <em>ED</em> and <em>DA,</em> therefore <em>GH</em> is at right angles to <em>FA,</em> so that <em>FA</em> is also at right angles to <em>GH.</em> But <em>AF</em> is also at right angles to <em>DE,</em> therefore <em>AF</em> is at right angles to each of the straight lines <em>GH</em> and <em>DE.</em></p>
+<div class="just"><a href="/elements/books/bookXI/propositions/propXI4/">XI.4</a></div>
+<p>But if a straight is set up at right angles to two straight lines which cut one another at their intersection point, then it also is at right angles to the plane through them. Therefore <em>FA</em> is at right angles to the plane through <em>ED</em> and <em>GH.</em></p>
+<p>But the plane through <em>ED</em> and <em>GH</em> is the plane of reference, therefore <em>AF</em> is at right angles to the plane of reference.</p>
+<p>Therefore from the given elevated point <em>A</em> the straight line <em>AF</em> has been drawn perpendicular to the plane of reference.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>In the proof, before the line <em>AD</em> can be drawn from the point <em>A</em> perpendicular to the line <em>BC,</em> it is necessary to know that the point and line belong to the same plane. Such a plane can be specified by taking the line <em>BC</em> and a line from <em>A</em> to any point on <em>BC</em> since two intersecting lines determine a plane (<a href="/elements/books/bookXI/propositions/propXI2/">XI.2</a>).</p>
+<h4>Use of this proposition</h4>
+<p>The construction in this proposition is used frequently in the last three books of the <em>Elements.</em></p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI12/">XI.12</a>, <a href="/elements/books/bookXI/propositions/propXI15/">XI.15</a>, <a href="/elements/books/bookXI/propositions/propXI26/">XI.26</a>, <a href="/elements/books/bookXI/propositions/propXI31/">XI.31</a>, <a href="/elements/books/bookXI/propositions/propXI34/">XI.34</a>, <a href="/elements/books/bookXI/propositions/propXI35/">XI.35</a></td></tr>
+  <tr><th>Book XII</th><td><a href="/elements/books/bookXII/propositions/propXII4/">XII.4</a>, <a href="/elements/books/bookXII/propositions/propXII17/">XII.17</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

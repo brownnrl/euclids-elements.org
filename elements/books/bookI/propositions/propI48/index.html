@@ -1,0 +1,204 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 48</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book I</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book I</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 48</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 48</h1>
+    <div class="statement">If in a triangle the square on one of the sides equals the sum of the squares on the remaining two sides of the triangle, then the angle contained by the remaining two sides of the triangle is right.</div>
+    <p>In the triangle <span class="elem-ref" data-elem="ABC">ABC</span> let the square on one side <span class="elem-ref" data-elem="BC">BC</span> equal the sum of the squares on the sides <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AC">AC</span></p>
+<p>I say that the angle <span class="elem-ref" data-elem="BAC">BAC</span> is right.</p>
+<figure class="diagram">
+<canvas id="canvas_0" width="260" height="230" tabindex="0"></canvas>
+<noscript><img alt="I.48 diagram" src="propI48.gif"/></noscript>
+<script type="text/javascript">
+    // Converse of I.47, and it turns on a congruence rather than on areas:
+    // build DAC as a right-angled mirror of ABC across AC, show DC = BC by
+    // I.47 applied to DAC, then SSS (I.8) forces angle BAC = angle DAC, which
+    // is right by construction. So the two triangles are the equal pair and
+    // share cyan; they meet along AC without overlapping, so no gating is
+    // needed. The squares the proof reasons about are never drawn — Joyce's
+    // figure has none, and five of them would swamp a 260px canvas — so the
+    // area steps live in the captions and the figure carries the congruence.
+    //
+    // Note the right angle at A is enforced by the figure (C rides on the
+    // perpendicular to AB through A), exactly as I.39 enforced its parallel.
+    // The walk therefore proves what the diagram already guarantees.
+    var GIVEN = ["A","B","C","AB","AC","BC","ABC","angBAC"];
+    var BUILT = GIVEN.concat(["D","AD","CD","angDAC"]);
+    var TRI   = BUILT.concat(["DAC"]);
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "I.48",
+        elements: [
+            "A;point;free;130,190",
+            "B;point;free;220,190",
+            // C rides the perpendicular to AB at A, so angle BAC is right in
+            // the figure however the triangle is dragged.
+            "AC';line;perpendicular;A,B;0;0;0",
+            "C;point;lineSlider;AC',100,40",
+            "ABC;polygon;triangle;A,B,C;0;0;0,0,0;cyan",
+            // BA produced through A by its own length gives D, so DA = AB.
+            "AD;line;extend;B,A,B,A",
+            "D;point;last;AD",
+            "CD;line;connect;C,D",
+            // The mirror triangle, equal to ABC by I.8 — same cyan.
+            "DAC;polygon;triangle;D,A,C;0;0;0;cyan",
+            // Sides the proof names; the triangle and AD already draw them.
+            "AB;line;connect;A,B;0;0;0",
+            "AC;line;connect;A,C;0;0;0",
+            "BC;line;connect;B,C;0;0;0",
+            // Both angles at A are right and adjacent along AC, so they do not
+            // overlap — same radius, and red as the equal right-angle pair.
+            "angBAC;sector;angleMarker;A,B,C,20;0;0;red;red",
+            "angDAC;sector;angleMarker;A,D,C,20;0;0;red;red"
+        ],
+        aliases: { "BA": "AB", "CA": "AC", "CB": "BC", "DA": "AD", "DC": "CD",
+                   "BAC": "angBAC" },
+        initiallyHidden: ["DAC"],
+        slides: [
+            { text: "In the triangle {ABC} let the square on one side {BC} equal the sum of the squares on the sides {BA} and {AC}. I say that the angle {BAC} is right.",
+              visible: GIVEN,
+              highlighted: ["ABC","BC","AB","AC"],
+              transition: { animations: [ { elem: "angBAC", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Draw {AD} from the point {A} at right angles to the straight line {AC}. Make {AD} equal to {BA}, and join {DC}.",
+              visible: BUILT,
+              highlighted: ["AD","CD","angDAC"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AD",     name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "CD",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "angDAC", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ ref: "I.11" }, { ref: "I.3" }, { ref: "I.Post.1" }] },
+            { text: "Since {DA} equals {AB}, therefore the square on {DA} also equals the square on {AB}.",
+              visible: BUILT,
+              highlighted: ["AD","AB"] },
+            { text: "Add the square on {AC} to each. Then the sum of the squares on {DA} and {AC} equals the sum of the squares on {BA} and {AC}.",
+              visible: BUILT,
+              highlighted: ["AD","AC","AB"],
+              justifications: [{ ref: "C.N.2" }] },
+            { text: "But the square on {DC} equals the squares on {DA} and {AC}, for the angle {DAC|angDAC} is right; and the square on {BC} equals the squares on {BA} and {AC}, for that is the hypothesis. Therefore the square on {DC} equals the square on {BC}, so the side {DC} equals {BC}.",
+              visible: BUILT,
+              highlighted: ["CD","BC","angDAC"],
+              justifications: [{ ref: "I.47" }, { ref: "C.N.1" }] },
+            { text: "Since {DA} equals {AB}, and {AC} is common, the two sides {DA} and {AC} equal the two sides {BA} and {AC}, and the base {DC} equals the base {BC} — therefore the angle {DAC|angDAC} equals the angle {BAC}.",
+              visible: TRI,
+              highlighted: ["DAC","ABC"],
+              transition: { animations: [ { elem: "DAC", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ ref: "I.8" }] },
+            { text: "But the angle {DAC|angDAC} is right, therefore the angle {BAC} is also right.",
+              visible: TRI,
+              highlighted: ["angDAC","angBAC"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.3":      "/elements/books/bookI/propositions/propI3/",
+        "I.8":      "/elements/books/bookI/propositions/propI8/",
+        "I.11":     "/elements/books/bookI/propositions/propI11/",
+        "I.47":     "/elements/books/bookI/propositions/propI47/",
+        "C.N.1":    "/elements/books/bookI/commonnotions/cn1/",
+        "C.N.2":    "/elements/books/bookI/commonnotions/cn2/"
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/postulates/post1/">I.Post.1</a></div>
+<p>Draw <span class="elem-ref" data-elem="AD">AD</span> from the point <span class="elem-ref" data-elem="A">A</span> at right angles to the straight line <span class="elem-ref" data-elem="AC">AC</span>. Make <span class="elem-ref" data-elem="AD">AD</span> equal to <span class="elem-ref" data-elem="BA">BA</span>, and join <span class="elem-ref" data-elem="DC">DC</span>.</p>
+<p>Since <span class="elem-ref" data-elem="DA">DA</span> equals <span class="elem-ref" data-elem="AB">AB</span>, therefore the square on <span class="elem-ref" data-elem="DA">DA</span> also equals the square on <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<div class="just"><a href="/elements/books/bookI/commonnotions/cn2/">C.N.2</a></div>
+<p>Add the square on <span class="elem-ref" data-elem="AC">AC</span> to each. Then the sum of the squares on <span class="elem-ref" data-elem="DA">DA</span> and <span class="elem-ref" data-elem="AC">AC</span> equals the sum of the squares on <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AC">AC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a><br><a href="/elements/books/bookI/commonnotions/cn1/">C.N.1</a></div>
+<p>But the square on <span class="elem-ref" data-elem="DC">DC</span> equals the sum of the squares on <span class="elem-ref" data-elem="DA">DA</span> and <span class="elem-ref" data-elem="AC">AC</span>, for the angle <span class="elem-ref" data-elem="angDAC">DAC</span> is right, and the square on <span class="elem-ref" data-elem="BC">BC</span> equals the sum of the squares on <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AC">AC</span>, for this is the hypothesis, therefore the square on <span class="elem-ref" data-elem="DC">DC</span> equals the square on <span class="elem-ref" data-elem="BC">BC</span>, so that the side <span class="elem-ref" data-elem="DC">DC</span> also equals <span class="elem-ref" data-elem="BC">BC</span>.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
+<p>Since <span class="elem-ref" data-elem="DA">DA</span> equals <span class="elem-ref" data-elem="AB">AB</span>, and <span class="elem-ref" data-elem="AC">AC</span> is common, the two sides <span class="elem-ref" data-elem="DA">DA</span> and <span class="elem-ref" data-elem="AC">AC</span> equal the two sides <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AC">AC</span>, and the base <span class="elem-ref" data-elem="DC">DC</span> equals the base <span class="elem-ref" data-elem="BC">BC</span>, therefore the angle <span class="elem-ref" data-elem="angDAC">DAC</span> equals the angle <span class="elem-ref" data-elem="BAC">BAC</span>. But the angle <span class="elem-ref" data-elem="angDAC">DAC</span> is right, therefore the angle <span class="elem-ref" data-elem="BAC">BAC</span> is also right.</p>
+<p>Therefore <em>if in a triangle the square on one of the sides equals the sum of the squares on the remaining two sides of the triangle, then the angle contained by the remaining two sides of the triangle is right.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is the converse of the previous. It is used in proposition <a href="/elements/books/bookXI/propositions/propXI35/">XI.35</a>.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI35/">XI.35</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

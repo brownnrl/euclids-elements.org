@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 16</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book VI</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book VI</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 16</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 16</h1>
+    <div class="statement">If four straight lines are proportional, then the rectangle contained by the extremes equals the rectangle contained by the means; and, if the rectangle contained by the extremes equals the rectangle contained by the means, then the four straight lines are proportional.</div>
+    <p>Let the four straight lines <em>AB, CD, E,</em> and <em>F</em> be proportional, so that <em>AB</em> is to <em>CD</em> as <em>E</em> is to <em>F.</em></p>
+<p>I say that the rectangle <em>AB</em> by <em>F</em> equals the rectangle <em>CD</em> by <em>E.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a><br><a href="/elements/books/bookI/propositions/propI3/">I.3</a></div>
+<p>Draw <em>AG</em> and <em>CH</em> from the points <em>A</em> and <em>C</em> at right angles to the straight lines <em>AB</em> and <em>CD,</em> and make <em>AG</em> equal to <em>F,</em> and <em>CH</em> equal to <em>E.</em></p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
+<p>Complete the parallelograms <em>BG</em> and <em>DH.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="380" height="220" tabindex="0"></canvas>
+<noscript><img alt="VI.16 diagram" src="propVI16.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "VI.16",
+        elements: [
+            "A;point;free;40,120",
+            "B;point;free;170,120",
+            "C;point;free;220,150",
+            "D;point;free;350,150",
+            "L0;point;free;-1000,190;0;0",
+            "L1;point;free;1000,190;0;0",
+            "E0;point;lineSlider;L0,L1,40,0;0",
+            "E1;point;lineSlider;L0,L1,140,0;0",
+            "E;line;connect;E0,E1;black",
+            "F0;point;lineSlider;L0,L1,220,0;0",
+            "F1;point;lineSlider;L0,L1,290,0;0",
+            "F;line;connect;F0,F1;black",
+            "G';point;perpendicular;A,B;0;0",
+            "G;point;cutoff;A,G',F0,F1",
+            "BG;polygon;parallelogram;B,A,G;0;0;black;random",
+            "H';point;perpendicular;C,D;0;0",
+            "H;point;cutoff;C,H',E0,E1",
+            "DH;polygon;parallelogram;D,C,H;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookV/propositions/propV7/">V.7</a></div>
+<p>Then since <em>AB</em> is to <em>CD</em> as <em>E</em> is to <em>F,</em> while <em>E</em> equals <em>CH,</em> and <em>F</em> equals <em>AG,</em> therefore <em>AB</em> is to <em>CD</em> as <em>CH</em> is to <em>AG.</em></p>
+<p>Therefore in the parallelograms <em>BG</em> and <em>DH</em> the sides about the equal angles are reciprocally proportional.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI14/">VI.14</a></div>
+<p>But those equiangular parallelograms in which the sides about the equal angles are reciprocally proportional are equal, therefore the parallelogram <em>BG</em> equals the parallelogram <em>DH.</em></p>
+<p>And <em>BG</em> is the rectangle <em>AB</em> by <em>F,</em> for <em>AG</em> equals <em>F,</em> and <em>DH</em> is the rectangle <em>CD</em> by <em>E,</em> for <em>E</em> equals <em>CH,</em> therefore the rectangle <em>AB</em> by <em>F</em> equals the rectangle <em>CD</em> by <em>E.</em></p>
+<hr width="50%">
+
+<p>Next, let the rectangle <em>AB</em> by <em>F</em> be equal to the rectangle <em>CD</em> by <em>E.</em></p>
+<p>I say that the four straight lines are proportional, so that <em>AB</em> is to <em>CD</em> as <em>E</em> is to <em>F.</em></p>
+<p>With the same construction, since the rectangle <em>AB</em> by <em>F</em> equals the rectangle <em>CD</em> by <em>E,</em> and the rectangle <em>AB</em> by <em>F</em> is <em>BG,</em> for <em>AG</em> equals <em>F,</em> and the rectangle <em>CD</em> by <em>E</em> is <em>DH,</em> for <em>CH</em> equals <em>E,</em> therefore <em>BG</em> equals <em>DH.</em> And they are equiangular.</p>
+<div class="just"><a href="/elements/books/bookVI/propositions/propVI14/">VI.14</a></div>
+<p>But in equal and equiangular parallelograms the sides about the equal angles are reciprocally proportional. Therefore <em>AB</em> is to <em>CD</em> as <em>CH</em> is to <em>AG.</em></p>
+<div class="just"><a href="/elements/books/bookV/propositions/propV7/">V.7</a></div>
+<p>But <em>CH</em> equals <em>E,</em> and <em>AG</em> equals <em>F,</em> therefore <em>AB</em> is to <em>CD</em> as <em>E</em> is to <em>F.</em></p>
+<p>Therefore, <em>if four straight lines are proportional, then the rectangle contained by the extremes equals the rectangle contained by the means; and, if the rectangle contained by the extremes equals the rectangle contained by the means, then the four straight lines are proportional.</em></p>
+<div class="qed">Q.E.D.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <p>This proposition is a special case of <a href="/elements/books/bookVI/propositions/propVI14/">VI.14</a>. It hardly needs such a protracted proof. It is used occasionally in Book X, but the special case when the means are equal and the second figure is a square, as enunciated in the next proposition, is used throughout Book X and frequently in Book XIII.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book VI</th><td><a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a></td></tr>
+  <tr><th>Book X</th><td><a href="/elements/books/bookX/propositions/propX28/">X.28</a>, <a href="/elements/books/bookX/propositions/propX112/">X.112</a>, <a href="/elements/books/bookX/propositions/propX113/">X.113</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>

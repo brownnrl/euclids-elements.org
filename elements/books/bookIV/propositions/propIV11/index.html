@@ -1,0 +1,249 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euclid's Elements &mdash; Proposition 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+
+<script src="/js/footer-nav.js"></script>
+<script src="/js/elem-ref-highlight.js" defer></script>
+</head>
+<body>
+
+
+<header class="site-header">
+
+  
+  
+  <h1><a href="/" class="hover">Euclid&rsquo;s Elements</a></h1>
+  <h1><a href="../../" class="hover">Book IV</a></h1>
+
+</header>
+
+
+
+
+<nav class="breadcrumbs">
+  <a href="../../../../../">Introduction</a><span class="crumb-sep">&rsaquo;</span><a href="../../../../">Table of Contents</a><span class="crumb-sep">&rsaquo;</span><a href="../../../">Books</a><span class="crumb-sep">&rsaquo;</span><a href="../../">Book IV</a><span class="crumb-sep">&rsaquo;</span><a href="../">Propositions</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Proposition 11</span>
+</nav>
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="theorem">
+    <h1 id="prop">Proposition 11</h1>
+    <div class="statement">To inscribe an equilateral and equiangular pentagon in a given circle.</div>
+    <p>Let <em>ABCDE</em> be the given circle.</p>
+<p>It is required to inscribe an equilateral and equiangular pentagon in the circle <em>ABCDE.</em></p>
+<div class="just"><a href="/elements/books/bookIV/propositions/propIV10/">IV.10</a></div>
+<p>Set out the isosceles triangle <em>FGH</em> having each of the angles at <em>G</em> and <em>H</em> double the angle at <em>F.</em></p>
+<div class="just"><a href="/elements/books/bookIV/propositions/propIV2/">IV.2</a></div>
+<p>Inscribe in the circle <em>ABCDE</em> the triangle <em>ACD</em> equiangular with the triangle <em>FGH,</em> so that the angles <em>CAD,</em> <em>ACD,</em> and <em>CDA</em> equal the angles at <em>F,</em> <em>G,</em> and <em>H</em> respectively.   Therefore each of the angles <em>ACD</em> and <em>CDA</em> is also double the angle <em>CAD.</em></p>
+<figure class="diagram">
+<canvas id="canvas_0" width="350" height="250" tabindex="0"></canvas>
+<noscript><img alt="IV.11 diagram" src="propIV11.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_0",
+        background: "35,19,100",
+        title: "IV.11",
+        elements: [
+            "A;point;free;98,30",
+            "B;point;free;30,80",
+            "ABCDE;polygon;regularPolygon;A,B,5;0;0;black;0",
+            "C;point;vertex;ABCDE,3",
+            "D;point;vertex;ABCDE,4",
+            "E;point;vertex;ABCDE,5",
+            "circ;circle;circumcircle;A,B,C;0;0;black;random",
+            "dupABCDE;polygon;regularPolygon;A,B,5;0;0;0;random",
+            "AC;line;connect;A,C",
+            "AD;line;connect;A,D",
+            "BD;line;connect;B,D",
+            "CE;line;connect;C,E",
+            "G;point;free;210,220",
+            "H;point;free;310,220",
+            "F;point;similar;G,H,C,D,A",
+            "FGH;polygon;triangle;F,G,H;0;0;black;random"
+        ],
+    });
+</script>
+</figure><div class="just"><a href="/elements/books/bookI/propositions/propI9/">I.9</a></div>
+<p>Now bisect the angles <em>ACD</em> and <em>CDA</em> respectively by the straight lines <em>CE</em> and <em>DB,</em> and join <em>AB,</em> <em>BC,</em>  <em>DE,</em> and <em>EA.</em></p>
+<p>Then, since each of the angles <em>ACD</em> and <em>CDA</em> is double the angle <em>CAD,</em> and they are bisected by the straight lines <em>CE</em> and <em>DB,</em> therefore the five angles <em>DAC,</em> <em>ACE,</em> <em>ECD,</em> <em>CDB,</em> and <em>BDA</em> equal one another.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII26/">III.26</a></div>
+<p>But equal angles stand on equal circumferences, therefore the five circumferences <em>AB,</em> <em>BC,</em> <em>CD,</em> <em>DE,</em> and <em>EA</em> equal one another.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII29/">III.29</a></div>
+<p>But straight lines that cut off equal circumferences are equal, therefore the five straight lines <em>AB,</em> <em>BC,</em> <em>CD,</em> <em>DE,</em> and <em>EA</em> equal one another.  Therefore the pentagon <em>ABCDE</em> is equilateral.</p>
+<p>I say next that it is also equiangular.</p>
+<p>For, since the circumference <em>AB</em> equals the circumference <em>DE,</em> add <em>BCD</em> to each, therefore the whole circumference <em>ABCD</em> equals the whole circumference <em>EDCB.</em></p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII27/">III.27</a></div>
+<p>And the angle <em>AED</em> stands on the circumference <em>ABCD,</em> and the angle <em>BAE</em> on the circumference <em>EDCB,</em> therefore the angle <em>BAE</em> also equals the angle <em>AED.</em></p>
+<p>For the same reason each of the angles <em>ABC,</em> <em>BCD,</em> and <em>CDE</em> also equals each of the angles <em>BAE</em> and <em>AED,</em> therefore the pentagon <em>ABCDE</em> is equiangular.</p>
+<p>But it was also proved equilateral, therefore an equilateral and equiangular pentagon has been inscribed in the given circle.</p>
+<div class="qed">Q.E.F.</div>
+    
+  </div>
+
+
+
+  <h2 id="guide">Guide</h2>
+  <h4>Richmond's construction</h4>
+<figure class="diagram rdiagram">
+<canvas id="canvas_1" width="310" height="330" tabindex="0"></canvas>
+<noscript><img alt="Richmond's construction" src="propIV11a.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_1",
+        background: "0,0,100",
+        title: "Richmond's construction",
+        elements: [
+            "O;point;free;150,165",
+            "A;point;free;280,165",
+            "AEB;circle;radius;O,A;0;0;black;white",
+            "OA;line;connect;O,A",
+            "B;point;perpendicular;O,A",
+            "OB;line;connect;O,B",
+            "C;point;midpoint;O,B",
+            "AC;line;connect;A,C",
+            "D;point;angleBisector;O,C,A",
+            "CD;line;connect;C,D",
+            "E';point;perpendicular;D,A;0;0",
+            "EE';line;chord;D,E',AEB;0;0;0",
+            "E;point;first;EE'",
+            "DE;line;connect;D,E",
+            "AE;line;connect;A,E",
+            "F;point;similar;E,O,A,O,E;0;0",
+            "EF;line;connect;E,F;0;0;gray",
+            "G;point;similar;F,O,A,O,E;0;0",
+            "FG;line;connect;F,G;0;0;gray",
+            "H;point;similar;G,O,A,O,E;0;0",
+            "GH;line;connect;G,H;0;0;gray",
+            "HA;line;connect;H,A;0;0;gray"
+        ],
+    });
+</script>
+</figure><p>The construction of this proposition is rather tedious to carry out. First, a line has to be cut according to the construction in <a href="/elements/books/bookII/propositions/propII11/">II.11</a>. Next, that is used in <a href="/elements/books/bookIV/propositions/propIV10/">IV.10</a> for the construction of a 36°-72°-72° isosceles triangle.  Next, that triangle is fit into the given circle using the construction <a href="/elements/books/bookIV/propositions/propIV2/">IV.2</a>.  Finally, a couple more lines are drawn to finish the pentagon.</p>
+<p>Various alternatives have have been given by others, such as Ptolemy.  One of the nicest was given in 1893 by H. W. Richmond. To inscribe a regular pentagon in a circle, first draw perpendicular radii <em>OA</em> and <em>OB</em> from the center <em>O</em> of a circle.  Let <em>C</em> be the midpoint of <em>OB</em> and draw <em>AC.</em>  Bisect angle <em>ACO</em> to meet <em>OA</em> at <em>D.</em>  Draw a perpendicular <em>DE</em> to <em>OA</em> to the circle.  Then <em>AE</em> is one side of the pentagon.  The remaining sides can then be constructed.</p>
+<p>The easiest way to verify that Richmond's construction works is by means of trigonometry.</p>
+<p><br clear="all"></p>
+<h4>The angles and sections in extreme and mean ratio in a pentagram</h4>
+<figure class="diagram">
+<canvas id="canvas_2" width="380" height="350" tabindex="0"></canvas>
+<noscript><img alt="a pentagram" src="propIV11b.gif"/></noscript>
+<script type="text/javascript">
+    geomlib.init({
+        canvasid: "canvas_2",
+        background: "0,0,100",
+        title: "A pentagram",
+        elements: [
+            "A;point;free;190,28",
+            "B;point;free;41,136",
+            "ABCDE;polygon;regularPolygon;A,B,5;0;0;black;random",
+            "C;point;vertex;ABCDE,3",
+            "D;point;vertex;ABCDE,4",
+            "E;point;vertex;ABCDE,5",
+            "ACEBD;polygon;pentagon;A,C,E,B,D;0;0;black;random",
+            "F;point;intersection;B,D,C,E",
+            "G;point;intersection;A,D,C,E",
+            "H;point;intersection;A,D,B,E",
+            "K;point;intersection;A,C,B,E",
+            "L;point;intersection;B,D,C,A",
+            "FGHKL;polygon;pentagon;F,G,H,K,L;0;0;0;random",
+            "FHLGK;polygon;pentagon;F,H,L,G,K;0;0;black;random",
+            "M;point;intersection;L,H,G,K;0;0",
+            "N;point;intersection;L,H,K,F;0;0",
+            "P;point;intersection;L,G,K,F;0;0",
+            "Q;point;intersection;L,G,H,F;0;0",
+            "R;point;intersection;K,G,H,F;0;0",
+            "MNPQR;polygon;pentagon;M,N,P,Q,R;0;0;0;random",
+            "MPRNQ;polygon;pentagon;M,P,R,N,Q;0;0;black;random"
+        ],
+    });
+</script>
+</figure><p>Consider the regular pentagon <em>ABCDE</em> constructed in this proposition.</p>
+<p>Draw the diagonals of the pentagram to create a regular star pentagram <em>ACEBD</em> inside the pentagon. These diagonals meet forming a smaller regular pentagon in the center of the original pentagon.  The diagonals of that pentagon can be drawn to make an inscribed pentagram which, in turn, bound a yet smaller regular pentagon. And so forth.</p>
+<p>For purposes of analysis, let <em>d</em><sub>1</sub> and <em>s</em><sub>1</sub> denote the diagonal and side of the first regular pentagon <em>ABCDE.</em> Also let <em>d</em><sub>2</sub> and <em>s</em><sub>2</sub> denote the diagonal and side of the second regular pentagon <em>FGHKL.</em>  And so forth.</p>
+<p>It is evident that there are many lines parallel to the base <em>CD</em> of the triangle, namely <em>BE</em> and <em>LG,</em> as well as innumerable ones in the smaller pentagrams.  That means that there will be many 36°-72°-72° triangles besides the large one <em>ACD.</em> The next smaller one is <em>ALG,</em> then <em>FKH,</em> then many smaller ones.  Also, each of these various sized 36°-72°-72° triangles is congruent many others in the diagram.  For instance, triangles <em>ALG</em> and <em>EAK</em> are congruent.</p>
+<p>There is also a series of obtuse 36°-36°-108° isosceles triangles of varying sizes.</p>
+<p>All these parallel lines and similar triangles yield numerous relationships among the various diagonals and sides of the pentagons.  Some of these relationships are additive equations:</p>
+<blockquote><p><em>d</em><sub>1</sub> = <em>s</em><sub>1</sub> + <em>d</em><sub>2</sub>
+<br>
+<em>s</em><sub>1</sub> = <em>d</em><sub>2</sub> + <em>s</em><sub>2</sub>
+<br>
+<em>d</em><sub>2</sub> = <em>s</em><sub>2</sub> + <em>d</em><sub>3</sub>
+<br>
+<em>s</em><sub>2</sub> = <em>d</em><sub>3</sub> + <em>s</em><sub>3</sub>
+<br>
+and so forth.</p>
+</blockquote>
+<p>Other relationships are based on the property of 36°-72°-72° triangles used in their construction in <a href="/elements/books/bookIV/propositions/propIV10/">IV.10</a>, namely that the square of the base of such a triangle equals the product of a side and the difference between the side and the base.  In terms of the diagonals and sides of the pentagons, this gives the equations:</p>
+<blockquote><p><em>d</em><sub>1</sub> <em>d</em><sub>2</sub> = <em>s</em><sub>1</sub><sup>2</sup>
+<br>
+<em>s</em><sub>1</sub> <em>s</em><sub>2</sub> = <em>d</em><sub>2</sub><sup>2</sup>
+<br>
+<em>d</em><sub>2</sub> <em>d</em><sub>3</sub> = <em>s</em><sub>2</sub><sup>2</sup>
+<br>
+<em>s</em><sub>2</sub> <em>s</em><sub>3</sub> = <em>d</em><sub>3</sub><sup>2</sup>
+<br>
+and so forth.</p>
+</blockquote>
+<p>After ratios are proportions are developed in <a href="../../../bookV/">Book V</a> and <a href="../../../bookVI/">Book VI</a>, we can add the following continued proportion to the list of relationships:</p>
+<blockquote><p><em>d</em><sub>1</sub>:<em>s</em><sub>1</sub> =
+<em>s</em><sub>1</sub>:<em>d</em><sub>2</sub> =
+<em>d</em><sub>2</sub>:<em>s</em><sub>2</sub> =
+<em>s</em><sub>2</sub>:<em>d</em><sub>3</sub> =
+...</p>
+</blockquote>
+<p>See the <a href="../../../bookX/propositions/propX2/#guide">Guide</a> to proposition X.2 which shows that diagonal and side of a regular pentagon are incommensurable. In more modern terms we would say that their ratio, which is called the "golden ratio," is an irrational number.</p>
+<h4>Use of this proposition</h4>
+<p>This construction is used in the next proposition to circumscribe a regular pentagon around a circle and later in <a href="/elements/books/bookIV/propositions/propIV16/">IV.16</a> to construct a regular 15-gon. It is also used in <a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a> for the construction of a regular icosahedron (a 20-sided polyhedron each of whose faces is an equilateral triangle).  Surprisingly, it is not used in <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a> for construct a regular dodecahedron (a 12-sided polyhedron each of whose faces is a regular pentagon); the regular pentagons needed for it are constructed in space directly without the help of this proposition.</p>
+
+
+
+
+
+<h4>Referenced by</h4>
+<table class="ref-table">
+  <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV12/">IV.12</a>, <a href="/elements/books/bookIV/propositions/propIV16/">IV.16</a></td></tr>
+  <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a></td></tr>
+  
+</table>
+
+
+
+
+<div id="footer"></div>
+<script>loadFooter("1996, 1997, 2025");</script>
+
+
+</body>
+</html>
