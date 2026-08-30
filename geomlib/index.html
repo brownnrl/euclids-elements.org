@@ -30,6 +30,9 @@
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
+
+<meta name="geomlib-version" content="0.15.0">
+<script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
 
@@ -57,6 +60,25 @@ on an HTML5 <code>&lt;canvas&gt;</code>: drag a point, and every construction th
 depends on it follows. The original Java applet illustrated Euclid's
 <em>Elements</em>; this port does the same job in a modern browser, no JVM
 required.</p>
+<ul>
+<li><a href="quickstart/"><strong>Quickstart</strong></a> — build Euclid's Proposition I.1 from
+an empty canvas, one construction at a time, with the figure live at every
+step.</li>
+<li><a href="using/"><strong>Using geomlib diagrams</strong></a> — how to work the figures:
+dragging points, the sliders and pivots, and the reset key.</li>
+<li><a href="constructions/"><strong>Constructions</strong></a> — every construction the
+library implements, each with a figure you can drag and the element string
+that produced it.</li>
+<li><a href="animations/"><strong>Slide transitions</strong></a> — the animations that step a
+figure from one slide to the next, each with a deck you can walk through.</li>
+<li><a href="example/"><strong>Example page</strong></a> — a page built the way every page of
+the text is, whose own content describes each part of it.</li>
+<li><a href="colophon/"><strong>How this site is built</strong></a> — how a page is modelled so
+its proof can be stepped through, the extensions written to carry Euclid's own
+numbering, and the lettered references that tie the prose to the figures.</li>
+<li><a href="historical/"><strong>Geometry Applet (archival)</strong></a> — Dr. Joyce's
+original 1996 documentation for the Java applet this library ports.</li>
+</ul>
 <figure class="diagram block">
 <canvas id="canvas_0" width="400" height="360" tabindex="0"></canvas>
 <noscript><img alt="The icosahedron" src="propXIII16a.gif"/></noscript>
@@ -138,24 +160,9 @@ sphere) to move the figure; the rest of the construction follows
 automatically. See <a href="using/">Using geomlib diagrams</a> for the
 full set of interactions (free points vs sliders vs pivots, reset and
 pop-out shortcuts).</p>
-<h3>What it does</h3>
-<p>The library exposes eight element classes — <em>point</em>, <em>line</em>, <em>circle</em>,
-<em>polygon</em>, <em>sector</em>, <em>plane</em>, <em>sphere</em>, <em>polyhedron</em> — and ~70
-construction methods. All 465 propositions across Books I–XIII of the
-<em>Elements</em> are renderable.</p>
-<p>Two reference points for what's available:</p>
-<ul>
-<li><a href="https://github.com/brownnrl/euclid/blob/main/doc/quickstart.md"><strong>Quickstart</strong></a>
-walks through building Proposition I.1 from scratch — a <code>&lt;canvas&gt;</code>,
-a script tag, and a <code>geomlib.init({...})</code> with the ordered
-constructions.</li>
-<li><a href="https://github.com/brownnrl/euclid/blob/main/doc/constructions-reference.md"><strong>Constructions reference</strong></a>
-lists every construction available on each element type, with the
-expected parameters and return shape.</li>
-</ul>
 <h3>Use it on your own page</h3>
 <p>Drop the bundle in via CDN (no build step):</p>
-<pre><code class="lang-html">&lt;script src=&quot;https://unpkg.com/@brownnrl/geomlib@0.3.0/dist/bundle.js&quot;&gt;&lt;/script&gt;
+<pre><code class="lang-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>Or install from npm:</p>
 <pre><code class="lang-sh">npm install @brownnrl/geomlib
@@ -176,6 +183,10 @@ with joint copyright: © 1996–2020 David E. Joyce, 2019–2026 Nelson
 Brown.</p>
 <p>Joyce's original 1996 <em>Geometry Applet</em> documentation page is
 preserved <a href="historical/">here</a> for historical reference.</p>
+<p>For how this edition itself is put together — where the pages were converted
+from, how a proposition is modelled so its proof can be stepped through, and the
+extensions written to carry Euclid's own numbering — see
+<a href="colophon/">How this site is built</a>.</p>
 <h3>Source + reports</h3>
 <p><a href="https://github.com/brownnrl/euclid/actions/workflows/test.yml"><img src="https://github.com/brownnrl/euclid/actions/workflows/test.yml/badge.svg" alt="tests"></a>
 <a href="https://github.com/brownnrl/euclid/actions/workflows/github-code-scanning/codeql"><img src="https://github.com/brownnrl/euclid/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></a>
@@ -185,6 +196,30 @@ preserved <a href="historical/">here</a> for historical reference.</p>
 <li><strong>npm package</strong>: <a href="https://www.npmjs.com/package/@brownnrl/geomlib"><code>@brownnrl/geomlib</code></a></li>
 <li><strong>Code coverage</strong>: <a href="https://brownnrl.github.io/geomlib-reports/coverage/">coverage report</a></li>
 <li><strong>Visual regression</strong>: <a href="https://brownnrl.github.io/geomlib-reports/snapshots/report.html">snapshot report</a></li>
+</ul>
+<h3>Library documentation</h3>
+<p>Fuller documentation lives with the source, in the
+<a href="https://github.com/brownnrl/euclid">geomlib repository</a>:</p>
+<ul>
+<li><a href="https://github.com/brownnrl/euclid/blob/main/doc/quickstart.md"><strong>quickstart.md</strong></a>
+— Proposition I.1 built line by line. There is an interactive version of it
+<a href="quickstart/">on this site</a>.</li>
+<li><a href="https://github.com/brownnrl/euclid/blob/main/doc/api.md"><strong>api.md</strong></a> — every
+<code>init()</code> field, every <code>E.{Type}.{name}</code> construction and <code>A.{Type}.{name}</code>
+animation, every accepted colour value.</li>
+<li><a href="https://github.com/brownnrl/euclid/blob/main/doc/constructions-reference.md"><strong>constructions-reference.md</strong></a>
+— the table behind the <a href="constructions/">Constructions</a> page, with
+each construction's Java ancestor and how often it is used across Books I-III.</li>
+<li><a href="https://github.com/brownnrl/euclid/blob/main/doc/animations-reference.md"><strong>animations-reference.md</strong></a>
+— the table behind the <a href="animations/">Slide transitions</a> page,
+including the reserved names not yet implemented and the <code>animationConfig</code>
+tuning fields.</li>
+<li><a href="https://github.com/brownnrl/euclid/blob/main/doc/architecture.md"><strong>architecture.md</strong></a>
+— the implementation model: the slate, construction dispatch, the drag
+pipeline, the slideshow surface, the animation orchestrator.</li>
+<li><a href="https://github.com/brownnrl/euclid/blob/main/doc/creating-constructions.md"><strong>creating-constructions.md</strong></a>
+and <a href="https://github.com/brownnrl/euclid/blob/main/doc/creating-animations.md"><strong>creating-animations.md</strong></a>
+— adding a construction type, or a slide transition, that isn't there yet.</li>
 </ul>
 
 
