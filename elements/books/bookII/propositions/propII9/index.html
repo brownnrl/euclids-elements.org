@@ -65,12 +65,58 @@
   <div class="theorem">
     <h1 id="prop">Proposition 9</h1>
     <div class="statement">If a straight line is cut into equal and unequal segments, then the sum of the squares on the unequal segments of the whole is double the sum of the square on the half and the square on the straight line between the points of section.</div>
-    <p>Let a straight line <em>AB</em> be cut into equal segments at <em>C,</em> and into unequal segments at <em>D.</em></p>
-<p>I say that the sum of the squares on <em>AD</em> and <em>DB</em> is double the sum of the squares on <em>AC</em> and <em>CD.</em></p>
+    <p>Let a straight line <span class="elem-ref" data-elem="AB">AB</span> be cut into equal segments at <span class="elem-ref" data-elem="C">C</span>, and into unequal segments at <span class="elem-ref" data-elem="D">D</span>.</p>
+<p>I say that the sum of the squares on <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="DB">DB</span> is double the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CD">CD</span>.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="310" height="250" tabindex="0"></canvas>
 <noscript><img src="propII9.gif" alt="II.9"/></noscript>
 <script type="text/javascript">
+    // II.9 is where Book II stops cutting and pasting regions and argues from
+    // ANGLES instead. Everything turns on four isosceles right triangles —
+    // ACE, ECB, EGF, FDB — each of which doubles a square, plus I.47 applied
+    // four times. Joyce's figure draws every line the proof needs but no
+    // regions, no angles, and none of the sub-segments the argument runs
+    // through (AC, CB, AD, DB, CD, and the pieces EG of CE and EF of EB).
+    // All of those are added below.
+    //
+    // Colour: ACE and ECB are EQUAL (AC = CB, CE common, right angles at C),
+    // so they share yellow. EGF and FDB are isosceles right too but are NOT
+    // equal to them or to each other — their legs are CD and DB — so they take
+    // their own colours. What the family shares is not a colour but the two
+    // half-right-angle markers at its base, which is the same signal Euclid
+    // uses in the prose. AEB is left UNFILLED because it IS ACE + ECB, and AEF
+    // is left unfilled so the yellow and orange beneath it stay visible.
+    //
+    // The four coloured triangles are `initiallyHidden` (the I.41/I.45/I.47
+    // pattern) and angle markers are hidden in the static figure by default
+    // (geomlib registers every AngleMarkerElement as initiallyHidden unless
+    // showAngles is set), so the resting figure — and the figure after a walk,
+    // since clearVisibility restores this baseline — is exactly Joyce's.
+    // Everything else added here is fully transparent (;0;0;0 lines) and
+    // exists only so a slide or a {NAME} hover can light it.
+    //
+    // Angles that share their rays share ONE marker: angle GEF is angle CEB
+    // (G on EC, F on EB), angle AEF is angle AEB (F on EB), and "the angle
+    // at B" is angle EBC. Those reach the prose through aliases. Six angle
+    // names collide with triangle names, so the element name belongs to the
+    // triangle and the prose uses the display override — {ACE|angACE}.
+    var GIVEN = ["A","B","AB","C","D","AC","CB","AD","DB","CD"];
+    var PERP  = GIVEN.concat(["CE","E","AE","BE"]);
+    var FIG   = PERP.concat(["F'","F","FG","G","AF","DF","EG","EF"]);
+    var ANG1  = FIG.concat(["angEAC","angAEC"]);
+    var ANG2  = ANG1.concat(["angACE"]);
+    var ANG3  = ANG2.concat(["angECB","angCEB","angEBC","angAEB",
+                             "ACE","ECB","AEB"]);
+    var ANG4  = ANG3.concat(["angEGF","angEFG","EGF"]);
+    var ANG5  = ANG4.concat(["angFDB","angDFB","FDB"]);
+    // From slide 13 the proof leaves the angles behind and is purely about
+    // squares on segments, so the markers come off — all but angACE, which the
+    // caption still cites. ECB comes off with them: it CONTAINS EGF and FDB,
+    // so keeping it would tint them twice. ACE, EGF and FDB are mutually
+    // disjoint, so the closing picture is three clean tiles.
+    var SQ    = FIG.concat(["ACE","EGF","FDB","AEB","angACE"]);
+    var SQ2   = SQ.concat(["AEF","angAEB"]);
+    var SQ3   = SQ2.concat(["angADF"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -90,37 +136,247 @@
             "FG;line;parallel;F,D,C",
             "G;point;last;FG",
             "AF;line;connect;A,F",
-            "DF;line;connect;D,F"
+            "DF;line;connect;D,F",
+            // Hover / highlight targets: the segments the argument runs
+            // through. AB, CE and BE already draw every one of them.
+            "AC;line;connect;A,C;0;0;0",
+            "CB;line;connect;C,B;0;0;0",
+            "AD;line;connect;A,D;0;0;0",
+            "DB;line;connect;D,B;0;0;0",
+            "CD;line;connect;C,D;0;0;0",
+            "EG;line;connect;E,G;0;0;0",
+            "EF;line;connect;E,F;0;0;0",
+            // The four isosceles right triangles, fill-only and initially
+            // hidden, plus the two containing right triangles left UNFILLED.
+            // Note the explicit ;0 face on those two — an omitted faceColor is
+            // a near-white OPAQUE face, not transparency.
+            "ACE;polygon;triangle;A,C,E;0;0;0;yellow",
+            "ECB;polygon;triangle;E,C,B;0;0;0;yellow",
+            "EGF;polygon;triangle;E,G,F;0;0;0;orange",
+            "FDB;polygon;triangle;F,D,B;0;0;0;green",
+            "AEB;polygon;triangle;A,E,B;0;0;0;0",
+            "AEF;polygon;triangle;A,E,F;0;0;0;0",
+            // Angle markers. Hidden in the static figure by default — Euclid
+            // draws no angle arcs — and auto-nested where they share a vertex
+            // (three at E, two each at C, D and F).
+            "angEAC;sector;angleMarker;A,E,C",
+            "angAEC;sector;angleMarker;E,A,C",
+            "angACE;sector;angleMarker;C,A,E",
+            "angECB;sector;angleMarker;C,E,B",
+            "angCEB;sector;angleMarker;E,C,B",
+            "angEBC;sector;angleMarker;B,E,C",
+            "angAEB;sector;angleMarker;E,A,B",
+            "angEGF;sector;angleMarker;G,E,F",
+            "angEFG;sector;angleMarker;F,E,G",
+            "angFDB;sector;angleMarker;D,F,B",
+            "angDFB;sector;angleMarker;F,D,B",
+            "angADF;sector;angleMarker;D,A,F"
         ],
+        initiallyHidden: ["ACE","ECB","EGF","FDB"],
+        // No deferDraggables: the only draggables are A and B (free) and D
+        // (a lineSlider), and all three are the givens slide 1 introduces.
+        // Everything else is derived — C is a midpoint, E is `last`, F is an
+        // intersection, G is `last` — so none is auto-unioned and each is
+        // listed explicitly in the visible set that introduces it. F' is the
+        // invisible parallelogram carrier for F and travels with it.
+        aliases: { "EA": "AE", "EB": "BE", "BA": "AB", "CA": "AC", "BC": "CB",
+                   "EC": "CE",
+                   "DA": "AD", "BD": "DB", "DC": "CD",
+                   "GE": "EG", "FE": "EF", "GF": "FG", "FD": "DF", "FA": "AF",
+                   "EAC": "angEAC", "CAE": "angEAC",
+                   "AEC": "angAEC", "CEA": "angAEC",
+                   "CEB": "angCEB", "BEC": "angCEB",
+                   "GEF": "angCEB", "FEG": "angCEB",
+                   "EBC": "angEBC", "CBE": "angEBC",
+                   "DBF": "angEBC", "FBD": "angEBC",
+                   "EFG": "angEFG", "GFE": "angEFG",
+                   "DFB": "angDFB", "BFD": "angDFB",
+                   "ADF": "angADF", "FDA": "angADF" },
+        slides: [
+            { text: "Let a straight line {AB} be cut into equal segments at {C}, and into unequal segments at {D}.",
+              visible: GIVEN,
+              highlighted: ["AB","C","D"] },
+            { text: "I say that the sum of the squares on {AD} and {DB} is double the sum of the squares on {AC} and {CD}.",
+              visible: GIVEN,
+              highlighted: ["AD","DB","AC","CD"] },
+            { text: "Draw {CE} from {C} at right angles to {AB}, and make it equal to either {AC} or {CB}. Join {EA} and {EB}.",
+              visible: PERP,
+              // Not highlighted: these are this slide's animation targets
+              // (euclid#171) — a highlighted element draws even while the
+              // animator holds it hidden, so listing them paints all three
+              // from t=0. The animation is the emphasis.
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "CE", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "AE", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "BE", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "CE at right angles to AB", ref: "I.11" },
+                  { claim: "CE made equal to AC",      ref: "I.3" },
+                  { ref: "I.Post.1" } ] },
+            { text: "Draw {DF} through {D} parallel to {EC} and {FG} through {F} parallel to {AB}. Join {AF}.",
+              visible: FIG,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "DF", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "FG", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "AF", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "DF parallel to EC, FG parallel to AB", ref: "I.31" },
+                  { ref: "I.Post.1" } ] },
+            { text: "Then, since {AC} equals {CE}, the angle {EAC} also equals the angle {AEC}.",
+              visible: ANG1,
+              highlighted: ["AC","CE"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "angEAC", name: geomlib.A.Sector.sweep },
+                  { elem: "angAEC", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "the angles at the base of an isosceles triangle", ref: "I.5" }] },
+            { text: "And, since the angle at {C|angACE} is right, the sum of the remaining angles {EAC} and {AEC} equals one right angle.",
+              visible: ANG2,
+              // angACE is this slide's animation target (euclid#171); the two
+              // remaining angles are not, so they keep the gold.
+              highlighted: ["angEAC","angAEC"],
+              transition: { animations: [
+                  { elem: "angACE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "the three angles of a triangle make two right angles", ref: "I.32" }] },
+            { text: "And they are equal, therefore each of the angles {CEA} and {CAE} is half of a right angle.",
+              visible: ANG2,
+              highlighted: ["angEAC","angAEC"] },
+            { text: "For the same reason each of the angles {CEB} and {EBC} is also half of a right angle, therefore the whole angle {AEB|angAEB} is right.",
+              visible: ANG3,
+              highlighted: ["ACE","ECB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "angECB", name: geomlib.A.Sector.sweep },
+                  { elem: "angCEB", name: geomlib.A.Sector.sweep },
+                  { elem: "angEBC", name: geomlib.A.Sector.sweep },
+                  { elem: "angAEB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "the three angles of a triangle make two right angles", ref: "I.32" }] },
+            { text: "And, since the angle {GEF|angCEB} is half of a right angle, and the angle {EGF|angEGF} is right, for it equals the interior and opposite angle {ECB|angECB}, the remaining angle {EFG} is half of a right angle.",
+              visible: ANG4,
+              // The two markers being swept are this slide's animation targets
+              // (euclid#171); the two angles the step reasons FROM are not.
+              highlighted: ["angCEB","angECB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "angEGF", name: geomlib.A.Sector.sweep },
+                  { elem: "angEFG", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "angle EGF equals the interior and opposite angle ECB", ref: "I.29" },
+                  { claim: "the remaining angle EFG is half a right angle",        ref: "I.32" } ] },
+            { text: "Therefore the angle {GEF|angCEB} equals the angle {EFG}, so that the side {EG} also equals {GF}.",
+              visible: ANG4,
+              // EGF is this slide's animation target (euclid#171).
+              highlighted: ["EG","FG","angCEB","angEFG"],
+              transition: { animations: [
+                  { elem: "EGF", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ claim: "sides opposite equal angles are equal", ref: "I.6" }] },
+            { text: "Again, since the angle at {B|angEBC} is half of a right angle, and the angle {FDB|angFDB} is right, for it is again equal to the interior and opposite angle {ECB|angECB}, the remaining angle {BFD} is half of a right angle.",
+              visible: ANG5,
+              highlighted: ["angEBC","angECB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "angFDB", name: geomlib.A.Sector.sweep },
+                  { elem: "angDFB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "angle FDB equals the interior and opposite angle ECB", ref: "I.29" },
+                  { claim: "the remaining angle BFD is half a right angle",        ref: "I.32" } ] },
+            { text: "Therefore the angle at {B|angEBC} equals the angle {DFB}, so that the side {FD} also equals the side {DB}.",
+              visible: ANG5,
+              // FDB is this slide's animation target (euclid#171).
+              highlighted: ["DF","DB","angEBC","angDFB"],
+              transition: { animations: [
+                  { elem: "FDB", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ claim: "sides opposite equal angles are equal", ref: "I.6" }] },
+            { text: "Now, since {AC} equals {CE}, the square on {AC} also equals the square on {CE}, therefore the sum of the squares on {AC} and {CE} is double the square on {AC}.",
+              visible: SQ,
+              highlighted: ["AC","CE","ACE"] },
+            { text: "But the square on {EA} equals the sum of the squares on {AC} and {CE}, for the angle {ACE|angACE} is right, therefore the square on {EA} is double the square on {AC}.",
+              visible: SQ,
+              highlighted: ["AE","AC","CE","ACE"],
+              justifications: [{ claim: "the square on EA equals the squares on AC and CE", ref: "I.47" }] },
+            { text: "Again, since {EG} equals {GF}, the square on {EG} also equals the square on {GF}. Therefore the sum of the squares on {EG} and {GF} is double the square on {GF}.",
+              visible: SQ,
+              highlighted: ["EG","FG","EGF"] },
+            { text: "But the square on {EF} equals the sum of the squares on {EG} and {GF}, therefore the square on {EF} is double the square on {GF}.",
+              visible: SQ,
+              highlighted: ["EF","EG","FG","EGF"],
+              justifications: [{ claim: "the square on EF equals the squares on EG and GF", ref: "I.47" }] },
+            { text: "But {GF} equals {CD}, therefore the square on {EF} is double the square on {CD}.",
+              visible: SQ,
+              highlighted: ["FG","CD","EF"],
+              justifications: [{ claim: "GF equals CD, opposite sides of a parallelogram", ref: "I.34" }] },
+            { text: "But the square on {EA} is also double of the square on {AC}, therefore the sum of the squares on {AE} and {EF} is double the sum of the squares on {AC} and {CD}.",
+              visible: SQ,
+              highlighted: ["AE","EF","AC","CD"],
+              justifications: [{ claim: "equals added to equals", ref: "C.N.2" }] },
+            { text: "And the square on {AF} equals sum of the squares on {AE} and {EF}, for the angle {AEF|angAEB} is right. Therefore the square on {AF} is double the sum of the squares on {AC} and {CD}.",
+              visible: SQ2,
+              highlighted: ["AF","AE","EF"],
+              transition: { animations: [
+                  { elem: "AEF", name: geomlib.A.Polygon.outline } ] },
+              justifications: [{ claim: "the square on AF equals the squares on AE and EF", ref: "I.47" }] },
+            { text: "But the sum of the squares on {AD} and {DF} equals the square on {AF}, for the angle at {D|angADF} is right.",
+              visible: SQ3,
+              // angADF is this slide's animation target (euclid#171).
+              highlighted: ["AD","DF","AF"],
+              transition: { animations: [
+                  { elem: "angADF", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "the square on AF equals the squares on AD and DF", ref: "I.47" }] },
+            { text: "Therefore the sum of the squares on {AD} and {DF} is double the sum the squares on {AC} and {CD}.",
+              visible: SQ3,
+              highlighted: ["AD","DF","AC","CD"] },
+            { text: "And {DF} equals {DB}. Therefore the sum of the squares on {AD} and {DB} is double the sum of the squares on {AC} and {CD}.",
+              visible: SQ3,
+              highlighted: ["AD","DB","AC","CD"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    // Shared with the guide canvas below (keyed once across the page).
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.3":      "/elements/books/bookI/propositions/propI3/",
+        "I.5":      "/elements/books/bookI/propositions/propI5/",
+        "I.6":      "/elements/books/bookI/propositions/propI6/",
+        "I.11":     "/elements/books/bookI/propositions/propI11/",
+        "I.29":     "/elements/books/bookI/propositions/propI29/",
+        "I.31":     "/elements/books/bookI/propositions/propI31/",
+        "I.32":     "/elements/books/bookI/propositions/propI32/",
+        "I.34":     "/elements/books/bookI/propositions/propI34/",
+        "I.47":     "/elements/books/bookI/propositions/propI47/",
+        "C.N.2":    "/elements/books/bookI/commonnotions/cn2/"
     });
 </script>
 </figure><div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
-<p>Draw <em>CE</em> from <em>C</em> at right angles to <em>AB,</em> and make it equal to either <em>AC</em> or <em>CB.</em> Join <em>EA</em> and <em>EB.</em> Draw <em>DF</em> through <em>D</em> parallel to <em>EC</em> and <em>FG</em> through <em>F</em> parallel to <em>AB.</em> Join <em>AF.</em></p>
+<p>Draw <span class="elem-ref" data-elem="CE">CE</span> from <span class="elem-ref" data-elem="C">C</span> at right angles to <span class="elem-ref" data-elem="AB">AB</span>, and make it equal to either <span class="elem-ref" data-elem="AC">AC</span> or <span class="elem-ref" data-elem="CB">CB</span>. Join <span class="elem-ref" data-elem="EA">EA</span> and <span class="elem-ref" data-elem="EB">EB</span>. Draw <span class="elem-ref" data-elem="DF">DF</span> through <span class="elem-ref" data-elem="D">D</span> parallel to <span class="elem-ref" data-elem="EC">EC</span> and <span class="elem-ref" data-elem="FG">FG</span> through <span class="elem-ref" data-elem="F">F</span> parallel to <span class="elem-ref" data-elem="AB">AB</span>. Join <span class="elem-ref" data-elem="AF">AF</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
-<p>Then, since <em>AC</em> equals <em>CE,</em> the angle <em>EAC</em> also equals the angle <em>AEC.</em></p>
+<p>Then, since <span class="elem-ref" data-elem="AC">AC</span> equals <span class="elem-ref" data-elem="CE">CE</span>, the angle <span class="elem-ref" data-elem="EAC">EAC</span> also equals the angle <span class="elem-ref" data-elem="AEC">AEC</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI32/">I.32</a></div>
-<p>And, since the angle at <em>C</em> is right, the sum of the remaining angles <em>EAC</em> and <em>AEC</em> equals one right angle.</p>
-<p>And they are equal, therefore each of the angles <em>CEA</em> and <em>CAE</em> is half of a right angle.</p>
-<p>For the same reason each of the angles <em>CEB</em> and <em>EBC</em> is also half of a right angle, therefore the whole angle <em>AEB</em> is right.</p>
+<p>And, since the angle at <span class="elem-ref" data-elem="angACE">C</span> is right, the sum of the remaining angles <span class="elem-ref" data-elem="EAC">EAC</span> and <span class="elem-ref" data-elem="AEC">AEC</span> equals one right angle.</p>
+<p>And they are equal, therefore each of the angles <span class="elem-ref" data-elem="CEA">CEA</span> and <span class="elem-ref" data-elem="CAE">CAE</span> is half of a right angle.</p>
+<p>For the same reason each of the angles <span class="elem-ref" data-elem="CEB">CEB</span> and <span class="elem-ref" data-elem="EBC">EBC</span> is also half of a right angle, therefore the whole angle <span class="elem-ref" data-elem="angAEB">AEB</span> is right.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a><br><a href="/elements/books/bookI/propositions/propI32/">I.32</a><br><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
-<p>And, since the angle <em>GEF</em> is half of a right angle, and the angle <em>EGF</em> is right, for it equals the interior and opposite angle <em>ECB,</em> the remaining angle <em>EFG</em> is half of a right angle.  Therefore the angle <em>GEF</em> equals the angle <em>EFG,</em> so that the side <em>EG</em> also equals <em>GF.</em></p>
+<p>And, since the angle <span class="elem-ref" data-elem="angCEB">GEF</span> is half of a right angle, and the angle <span class="elem-ref" data-elem="angEGF">EGF</span> is right, for it equals the interior and opposite angle <span class="elem-ref" data-elem="angECB">ECB</span>, the remaining angle <span class="elem-ref" data-elem="EFG">EFG</span> is half of a right angle.  Therefore the angle <span class="elem-ref" data-elem="angCEB">GEF</span> equals the angle <span class="elem-ref" data-elem="EFG">EFG</span>, so that the side <span class="elem-ref" data-elem="EG">EG</span> also equals <span class="elem-ref" data-elem="GF">GF</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a><br><a href="/elements/books/bookI/propositions/propI32/">I.32</a><br><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
-<p>Again, since the angle at <em>B</em> is half of a right angle, and the angle <em>FDB</em> is right, for it is again equal to the interior and opposite angle <em>ECB,</em> the remaining angle <em>BFD</em> is half of a right angle.  Therefore the angle at <em>B</em> equals the angle <em>DFB,</em> so that the side <em>FD</em> also equals the side <em>DB.</em></p>
-<p>Now, since <em>AC</em> equals <em>CE,</em> the square on <em>AC</em> also equals the square on <em>CE,</em> therefore the sum of the squares on <em>AC</em> and <em>CE</em> is double the square on <em>AC.</em></p>
+<p>Again, since the angle at <span class="elem-ref" data-elem="angEBC">B</span> is half of a right angle, and the angle <span class="elem-ref" data-elem="angFDB">FDB</span> is right, for it is again equal to the interior and opposite angle <span class="elem-ref" data-elem="angECB">ECB</span>, the remaining angle <span class="elem-ref" data-elem="BFD">BFD</span> is half of a right angle.  Therefore the angle at <span class="elem-ref" data-elem="angEBC">B</span> equals the angle <span class="elem-ref" data-elem="DFB">DFB</span>, so that the side <span class="elem-ref" data-elem="FD">FD</span> also equals the side <span class="elem-ref" data-elem="DB">DB</span>.</p>
+<p>Now, since <span class="elem-ref" data-elem="AC">AC</span> equals <span class="elem-ref" data-elem="CE">CE</span>, the square on <span class="elem-ref" data-elem="AC">AC</span> also equals the square on <span class="elem-ref" data-elem="CE">CE</span>, therefore the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CE">CE</span> is double the square on <span class="elem-ref" data-elem="AC">AC</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
-<p>But the square on <em>EA</em> equals the sum of the squares on <em>AC</em> and <em>CE,</em> for the angle <em>ACE</em> is right, therefore the square on <em>EA</em> is double the square on <em>AC.</em></p>
-<p>Again, since <em>EG</em> equals <em>GF,</em> the square on <em>EG</em> also equals the square on <em>GF.</em>  Therefore the sum of the squares on <em>EG</em> and <em>GF</em> is double the square on <em>GF.</em></p>
+<p>But the square on <span class="elem-ref" data-elem="EA">EA</span> equals the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CE">CE</span>, for the angle <span class="elem-ref" data-elem="angACE">ACE</span> is right, therefore the square on <span class="elem-ref" data-elem="EA">EA</span> is double the square on <span class="elem-ref" data-elem="AC">AC</span>.</p>
+<p>Again, since <span class="elem-ref" data-elem="EG">EG</span> equals <span class="elem-ref" data-elem="GF">GF</span>, the square on <span class="elem-ref" data-elem="EG">EG</span> also equals the square on <span class="elem-ref" data-elem="GF">GF</span>.  Therefore the sum of the squares on <span class="elem-ref" data-elem="EG">EG</span> and <span class="elem-ref" data-elem="GF">GF</span> is double the square on <span class="elem-ref" data-elem="GF">GF</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
-<p>But the square on <em>EF</em> equals the sum of the squares on <em>EG</em> and <em>GF,</em> therefore the square on <em>EF</em> is double the square on <em>GF.</em></p>
+<p>But the square on <span class="elem-ref" data-elem="EF">EF</span> equals the sum of the squares on <span class="elem-ref" data-elem="EG">EG</span> and <span class="elem-ref" data-elem="GF">GF</span>, therefore the square on <span class="elem-ref" data-elem="EF">EF</span> is double the square on <span class="elem-ref" data-elem="GF">GF</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
-<p>But <em>GF</em> equals <em>CD,</em> therefore the square on <em>EF</em> is double the square on <em>CD.</em></p>
-<p>But the square on <em>EA</em> is also double of the square on <em>AC,</em> therefore the sum of the squares on <em>AE</em> and <em>EF</em> is double the sum of the squares on <em>AC</em> and <em>CD.</em></p>
+<p>But <span class="elem-ref" data-elem="GF">GF</span> equals <span class="elem-ref" data-elem="CD">CD</span>, therefore the square on <span class="elem-ref" data-elem="EF">EF</span> is double the square on <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<p>But the square on <span class="elem-ref" data-elem="EA">EA</span> is also double of the square on <span class="elem-ref" data-elem="AC">AC</span>, therefore the sum of the squares on <span class="elem-ref" data-elem="AE">AE</span> and <span class="elem-ref" data-elem="EF">EF</span> is double the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CD">CD</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
-<p>And the square on <em>AF</em> equals sum of the squares on <em>AE</em> and <em>EF,</em> for the angle <em>AEF</em> is right.  Therefore the square on <em>AF</em> is double the sum of the squares on <em>AC</em> and <em>CD.</em></p>
+<p>And the square on <span class="elem-ref" data-elem="AF">AF</span> equals sum of the squares on <span class="elem-ref" data-elem="AE">AE</span> and <span class="elem-ref" data-elem="EF">EF</span>, for the angle <span class="elem-ref" data-elem="angAEB">AEF</span> is right.  Therefore the square on <span class="elem-ref" data-elem="AF">AF</span> is double the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CD">CD</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
-<p>But the sum of the squares on <em>AD</em> and <em>DF</em> equals the square on <em>AF,</em> for the angle at <em>D</em> is right, therefore the sum of the squares on <em>AD</em> and <em>DF</em> is double the sum the squares on <em>AC</em> and <em>CD.</em></p>
-<p>And <em>DF</em> equals <em>DB.</em></p>
-<p>Therefore the sum of the squares on <em>AD</em> and <em>DB</em> is double the sum of the squares on <em>AC</em> and <em>CD.</em></p>
+<p>But the sum of the squares on <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="DF">DF</span> equals the square on <span class="elem-ref" data-elem="AF">AF</span>, for the angle at <span class="elem-ref" data-elem="angADF">D</span> is right, therefore the sum of the squares on <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="DF">DF</span> is double the sum the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<p>And <span class="elem-ref" data-elem="DF">DF</span> equals <span class="elem-ref" data-elem="DB">DB</span>.</p>
+<p>Therefore the sum of the squares on <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="DB">DB</span> is double the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CD">CD</span>.</p>
 <p>Therefore <em>if a straight line is cut into equal and unequal segments, then the sum of the squares on the unequal segments of the whole is double the sum of the square on the half and the square on the straight line between the points of section.</em></p>
 <div class="qed">Q.E.D.</div>
     
@@ -130,10 +386,10 @@
 
   <h2 id="guide">Guide</h2>
   <h4>Outline of the proof</h4>
-<p>Start with the given line <em>AB</em> bisected at <em>C</em> and cut at another point <em>D.</em>  The construction will result in a line <em>AF</em> whose square is
-simultaneously equal to both <em>AD</em><sup>2</sup> + <em>DB</em><sup>2</sup> and 2(<em>AC</em><sup>2</sup>+<em>CD</em><sup>2</sup>).</p>
-<p>Draw <em>CE</em> at right angles to <em>AB</em> and equal to half of it.  Finish the diagram by drawing parallel lines and connecting points.  That results in four isosceles right triangles, <em>ACE, ECB, EGF,</em> and <em>FDB,</em>
-as well as two other right triangles, <em>AEB</em> and <em>AEF.</em> Then,</p>
+<p>Start with the given line <span class="elem-ref" data-elem="AB">AB</span> bisected at <span class="elem-ref" data-elem="C">C</span> and cut at another point <span class="elem-ref" data-elem="D">D</span>.  The construction will result in a line <span class="elem-ref" data-elem="AF">AF</span> whose square is
+simultaneously equal to both <span class="elem-ref" data-elem="AD">AD</span><sup>2</sup> + <span class="elem-ref" data-elem="DB">DB</span><sup>2</sup> and 2(<span class="elem-ref" data-elem="AC">AC</span><sup>2</sup>+<span class="elem-ref" data-elem="CD">CD</span><sup>2</sup>).</p>
+<p>Draw <span class="elem-ref" data-elem="CE">CE</span> at right angles to <span class="elem-ref" data-elem="AB">AB</span> and equal to half of it.  Finish the diagram by drawing parallel lines and connecting points.  That results in four isosceles right triangles, <span class="elem-ref" data-elem="ACE">ACE</span>, <span class="elem-ref" data-elem="ECB">ECB</span>, <span class="elem-ref" data-elem="EGF">EGF</span>, and <span class="elem-ref" data-elem="FDB">FDB</span>,
+as well as two other right triangles, <span class="elem-ref" data-elem="AEB">AEB</span> and <span class="elem-ref" data-elem="AEF">AEF</span>. Then,</p>
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>A</mi><msup><mi>F</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><msup><mi>E</mi><mn>2</mn></msup><mo>+</mo><mi>E</mi><msup><mi>F</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mo stretchy="false">(</mo><mi>A</mi><msup><mi>C</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi><msup><mi>E</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">(</mo><mi>E</mi><msup><mi>G</mi><mn>2</mn></msup><mo>+</mo><mi>G</mi><msup><mi>F</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn><mo stretchy="false">(</mo><mi>A</mi><msup><mi>C</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi><msup><mi>D</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
 AF^2 &amp;= AE^2 + EF^2 \\
      &amp;= (AC^2 + CE^2) + (EG^2 + GF^2) \\
@@ -142,12 +398,40 @@ AF^2 &amp;= AE^2 + EF^2 \\
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>A</mi><msup><mi>F</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><msup><mi>D</mi><mn>2</mn></msup><mo>+</mo><mi>D</mi><msup><mi>F</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><msup><mi>D</mi><mn>2</mn></msup><mo>+</mo><mi>D</mi><msup><mi>B</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
 AF^2 &amp;= AD^2 + DF^2 \\
      &amp;= AD^2 + DB^2
-\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.7482em;vertical-align:-1.1241em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6241em;"><span style="top:-3.76em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.2359em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1241em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6241em;"><span style="top:-3.76em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.2359em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1241em;"><span></span></span></span></span></span></span></span></span></span></span></span><p>Thus, <em>AD</em><sup>2</sup> + <em>DB</em><sup>2</sup> = 2(<em>AC</em><sup>2</sup>+<em>CD</em><sup>2</sup>), as desired.</p>
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.7482em;vertical-align:-1.1241em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6241em;"><span style="top:-3.76em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.2359em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1241em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6241em;"><span style="top:-3.76em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.2359em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1241em;"><span></span></span></span></span></span></span></span></span></span></span></span><p>Thus, <span class="elem-ref" data-elem="AD">AD</span><sup>2</sup> + <span class="elem-ref" data-elem="DB">DB</span><sup>2</sup> = 2(<span class="elem-ref" data-elem="AC">AC</span><sup>2</sup>+<span class="elem-ref" data-elem="CD">CD</span><sup>2</sup>), as desired.</p>
 <h4>An alternate cut-and-paste proof</h4>
 <figure class="diagram rdiagram">
 <canvas id="canvas_1" width="280" height="280" tabindex="0"></canvas>
 <noscript><img src="propII9a.gif" alt="II.9"/></noscript>
 <script type="text/javascript">
+    // The guide's alternate proof is a proof worked in the guide, so this
+    // canvas carries its own slides array (process.md allows it for exactly
+    // this case) and its captions follow the guide prose. The moves the prose
+    // asks the reader to make — "cut out the rectangle KQ and move it to the
+    // right" — are A.Polygon.superpose, which lifts an ephemeral gold ghost
+    // off the source and lays it on the target.
+    //
+    // Joyce's figure draws the grid and the two random-filled squares AR and
+    // RF, but none of the rectangles the prose names. The two that MOVE (KQ
+    // and CN) get a colour and are initially hidden; they are congruent and
+    // play the same role, so they share it. Their destinations MP and MH, and
+    // the squares being counted MF and MR, are faceless outlines. AR and RF
+    // keep Joyce's own random fills.
+    //
+    // Vertex orders are chosen so each superpose is a PURE TRANSLATION: the
+    // animation lands vertex 0 on vertex 0 and lays side 0-1 onto side 0-1,
+    // and K,M,Q,O -> M,L,P,Q and C,D,N,M -> M,N,H,G both give zero rotation.
+    //
+    // AEFB is left exactly as Joyce declared it. Like II.8's DAEF it has no
+    // explicit faceColor, so it carries a near-white OPAQUE face; nothing here
+    // highlights or animates it, and the guide never names it.
+    var BASE  = ["A","B","AB","C","D","AC","CD","DB","AD","CB"];
+    var GRID  = BASE.concat(["E","F","AEFB","G","CG","H","DH","K","L","KL",
+                             "M","N","O","P","Q","R","OP"]);
+    var SQS   = GRID.concat(["ADRO","PRHF"]);
+    var MOVE1 = SQS.concat(["KQ","MP"]);
+    var MOVE2 = MOVE1.concat(["CN","MH"]);
+    var COUNT = MOVE2.concat(["MF","MR"]);
     geomlib.init({
         canvasid: "canvas_1",
         background: "0,0,100",
@@ -176,21 +460,68 @@ AF^2 &amp;= AD^2 + DF^2 \\
             "R;point;intersection;H,D,O,P",
             "OP;line;connect;O,P",
             "ADRO;polygon;quadrilateral;A,D,R,O;0;0;0;random",
-            "PRHF;polygon;quadrilateral;P,R,H,F;0;0;0;random"
+            "PRHF;polygon;quadrilateral;P,R,H,F;0;0;0;random",
+            // Hover targets for the segments the guide's algebra names.
+            "AC;line;connect;A,C;0;0;0",
+            "CD;line;connect;C,D;0;0;0",
+            "DB;line;connect;D,B;0;0;0",
+            "AD;line;connect;A,D;0;0;0",
+            "CB;line;connect;C,B;0;0;0",
+            // The rectangles the prose cuts out and moves, and the squares it
+            // counts. Note the explicit ;0 face on the outlines.
+            "KQ;polygon;quadrilateral;K,M,Q,O;0;0;0;orange",
+            "MP;polygon;quadrilateral;M,L,P,Q;0;0;0;0",
+            "CN;polygon;quadrilateral;C,D,N,M;0;0;0;orange",
+            "MH;polygon;quadrilateral;M,N,H,G;0;0;0;0",
+            "MF;polygon;quadrilateral;M,L,F,G;0;0;0;0",
+            "MR;polygon;quadrilateral;M,N,R,Q;0;0;0;0"
         ],
+        initiallyHidden: ["KQ","CN"],
+        // No deferDraggables here either: A and B are free, D is a lineSlider,
+        // and all three are introduced by slide 1. Every other point is
+        // derived, so each is listed explicitly in the set that introduces it.
+        aliases: { "AR": "ADRO", "RF": "PRHF", "BC": "CB", "DC": "CD" },
+        slides: [
+            { text: "It starts with the same line {AB} bisected at {C} and also cut at {D}.",
+              visible: BASE,
+              highlighted: ["AB","C","D"] },
+            { text: "Lines at right angles and parallel to {AB} make squares and rectangles of various sizes.",
+              visible: GRID,
+              highlighted: [] },
+            { text: "The left hand side of the equation is displayed as the two squares {AR} plus {RF}.",
+              visible: SQS,
+              highlighted: ["ADRO","PRHF"] },
+            { text: "Cut out the rectangle {KQ} and move it to the right to cover the rectangle {MP}.",
+              visible: MOVE1,
+              // KQ is the animation's own target (euclid#171), so only its
+              // destination is highlighted.
+              highlighted: ["MP"],
+              transition: { animations: [
+                  { elem: "KQ", name: geomlib.A.Polygon.superpose,
+                    args: { onto: "MP" } } ] } },
+            { text: "Also move the rectangle {CN} up to the rectangle {MH}.",
+              visible: MOVE2,
+              highlighted: ["MH"],
+              transition: { animations: [
+                  { elem: "CN", name: geomlib.A.Polygon.superpose,
+                    args: { onto: "MH" } } ] } },
+            { text: "Now the upper right square {MF} is completely covered once, with two extra coverings of the small square {MR}. That is, two squares of size {AC}² are covered as well as two squares of size {CD}².",
+              visible: COUNT,
+              highlighted: ["MF","MR","AC","CD"] }
+        ]
     });
 </script>
-</figure><p>Up until this proposition, Euclid has only used cut-and-paste proofs, and such a proof can  be made for this proposition as well.  It would start with the same line <em>AB</em> bisected at <em>C</em> and also cut at <em>D.</em>  Then lines at right angles and parallel to line <em>AB</em> would be constructed to make squares and rectangles of various sizes.</p>
+</figure><p>Up until this proposition, Euclid has only used cut-and-paste proofs, and such a proof can  be made for this proposition as well.  It would start with the same line <span class="elem-ref" data-elem="AB">AB</span> bisected at <span class="elem-ref" data-elem="C">C</span> and also cut at <span class="elem-ref" data-elem="D">D</span>.  Then lines at right angles and parallel to line <span class="elem-ref" data-elem="AB">AB</span> would be constructed to make squares and rectangles of various sizes.</p>
 <p>The goal is to show that</p>
-<center><i>AD</i><sup>2</sup> + <i>DB</i><sup>2</sup> = 2(<i>AC</i><sup>2</sup> + <i>CD</i><sup>2</sup>).</center><p>The left hand side of the equation is displayed to the right as the two squares <em>AR</em> plus <em>RF.</em>  Cut out the rectangle <em>KQ</em> and move it to the right to cover the rectangle <em>MP.</em>  Also move the rectangle <em>CN</em> up to the rectangle <em>MH.</em> Now the upper right square <em>MF</em> is completely covered once, with two extra coverings of the small square <em>MR.</em> That is, two squares of size <em>AC</em><sup>2</sup> are covered as well as two squares of size <em>CD</em><sup>2</sup>.  The two sides of the equation are, therefore, equal.</p>
+<center><span class="elem-ref" data-elem="AD"><i>AD</i></span><sup>2</sup> + <span class="elem-ref" data-elem="DB"><i>DB</i></span><sup>2</sup> = 2(<span class="elem-ref" data-elem="AC"><i>AC</i></span><sup>2</sup> + <span class="elem-ref" data-elem="CD"><i>CD</i></span><sup>2</sup>).</center><p>The left hand side of the equation is displayed to the right as the two squares <span class="elem-ref" data-elem="AR">AR</span> plus <span class="elem-ref" data-elem="RF">RF</span>.  Cut out the rectangle <span class="elem-ref" data-elem="KQ">KQ</span> and move it to the right to cover the rectangle <span class="elem-ref" data-elem="MP">MP</span>.  Also move the rectangle <span class="elem-ref" data-elem="CN">CN</span> up to the rectangle <span class="elem-ref" data-elem="MH">MH</span>. Now the upper right square <span class="elem-ref" data-elem="MF">MF</span> is completely covered once, with two extra coverings of the small square <span class="elem-ref" data-elem="MR">MR</span>. That is, two squares of size <span class="elem-ref" data-elem="AC">AC</span><sup>2</sup> are covered as well as two squares of size <span class="elem-ref" data-elem="CD">CD</span><sup>2</sup>.  The two sides of the equation are, therefore, equal.</p>
 <h4>Interpretations of the proposition</h4>
-<p>The equation, <em>AD</em><sup>2</sup> + <em>DB</em><sup>2</sup> =
-2(<em>AC</em><sup>2</sup>+<em>CD</em><sup>2</sup>), can be interpreted in various ways depending on which information are taken as given. These interpretations are more of an aid to the modern reader than as intrinsic aspects of the proposition, since they are interpretations in modern symbolic algebra.</p>
-<p>For instance, when <em>AC</em> and <em>CB</em> are set to <em>y</em> while <em>CD</em> is set to <em>z,</em> then the algebraic identity</p>
-<center>(<i>y</i> + <i>z</i>)<sup>2</sup> + (<i>y</i> – <i>z</i>)<sup>2</sup> = 2 (<i>y</i><sup>2</sup> + <i>z</i><sup>2</sup>)</center><p>results.</p>
-<p>Alternatively, when <em>AC</em> and <em>CB</em> are set to <em>y</em> while <em>BC</em> is set to <em>x,</em>, then we get the identity</p>
-<center>(2<i>y</i> – <i>x</i>)<sup>2</sup> + <i>x</i><sup>2</sup> = 2 (<i>y</i><sup>2</sup> + (<i>y</i> – <i>x</i>)<sup>2</sup>)</center><p>There are yet other interpretations. This proposition is used in Book X to prove a lemma for <a href="/elements/books/bookX/propositions/propX60/">X.60</a>, and in that lemma, <em>w</em> = <em>AD</em> and <em>x</em> = <em>DB</em> are given first, so that</p>
-<center><i>w</i><sup>2</sup> + <i>x</i><sup>2</sup> = 2 (((<i>w</i> + <i>x</i>)/2)<sup>2</sup> + ((<i>w</i> – <i>x</i>)/2)<sup>2</sup>)</center>
+<p>The equation, <span class="elem-ref" data-elem="AD">AD</span><sup>2</sup> + <span class="elem-ref" data-elem="DB">DB</span><sup>2</sup> =
+2(<span class="elem-ref" data-elem="AC">AC</span><sup>2</sup>+<span class="elem-ref" data-elem="CD">CD</span><sup>2</sup>), can be interpreted in various ways depending on which information are taken as given. These interpretations are more of an aid to the modern reader than as intrinsic aspects of the proposition, since they are interpretations in modern symbolic algebra.</p>
+<p>For instance, when <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CB">CB</span> are set to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span></span></span></span> while <span class="elem-ref" data-elem="CD">CD</span> is set to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span></span></span></span>, then the algebraic identity</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>+</mo><mi>z</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><mi>z</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo stretchy="false">(</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><msup><mi>z</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(y + z)^2 + (y - z)^2 = 2(y^2 + z^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><p>results.</p>
+<p>Alternatively, when <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CB">CB</span> are set to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span></span></span></span> while <span class="elem-ref" data-elem="BC">BC</span> is set to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>, then we get the identity</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mn>2</mn><mi>y</mi><mo>−</mo><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo stretchy="false">(</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(2y - x)^2 + x^2 = 2(y^2 + (y - x)^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><p>There are yet other interpretations. This proposition is used in Book X to prove a lemma for <a href="/elements/books/bookX/propositions/propX60/">X.60</a>, and in that lemma, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span></span></span></span> = <span class="elem-ref" data-elem="AD">AD</span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> = <span class="elem-ref" data-elem="DB">DB</span> are given first, so that</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>w</mi><mn>2</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>w</mi><mo>+</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mn>2</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>w</mi><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mn>2</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">w^2 + x^2 = 2\bigl(((w + x)/2)^2 + ((w - x)/2)^2\bigr)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mord">2</span><span class="mopen"><span class="delimsizing size1">(</span></span><span class="mopen">((</span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord">/2</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">((</span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.2141em;vertical-align:-0.35em;"></span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord">/2</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing size1">)</span></span></span></span></span></span>
 
 
 

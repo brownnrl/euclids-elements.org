@@ -65,11 +65,22 @@
   <div class="theorem">
     <h1 id="prop">Proposition 1</h1>
     <div class="statement">If there are two straight lines, and one of them is cut into any number of segments whatever, then the rectangle contained by the two straight lines equals the sum of the rectangles contained by the uncut straight line and each of the segments.</div>
-    <p>Let <em>A</em> and <em>BC</em> be two straight lines, and let <em>BC</em> be cut at random at the points <em>D</em> and <em>E.</em></p>
+    <p>Let <span class="elem-ref" data-elem="A">A</span> and <span class="elem-ref" data-elem="BC">BC</span> be two straight lines, and let <span class="elem-ref" data-elem="BC">BC</span> be cut at random at the points <span class="elem-ref" data-elem="D">D</span> and <span class="elem-ref" data-elem="E">E</span>.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="330" height="250" tabindex="0"></canvas>
 <noscript><img src="propII1.gif" alt="II.1"/></noscript>
 <script type="text/javascript">
+    // Joyce's figure draws the three rectangles but not the whole one they
+    // make up, and not the segments of BC — the proof names both. Everything
+    // added here is fully transparent (;0;0;0;0), so the static figure is
+    // unchanged; the names exist only so a slide can light them.
+    //
+    // Colour: the three parts keep their random fills, and the containing
+    // rectangle BCHG stays unfilled so its own regions fill it.
+    var GIVEN  = ["A1","A2","A","B","C","BC","D","E","BD","DE","EC"];
+    var PERP   = GIVEN.concat(["F","BF","G","BG"]);
+    var BUILT  = PERP.concat(["K","L","H","DBGK","EDKL","CELH","GH","DK","EL","CH"]);
+    var WHOLE  = BUILT.concat(["BCHG"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -95,17 +106,111 @@
             "EDKL;polygon;parallelogram;E,D,K;0;0;0,0,0;random",
             "L;point;vertex;EDKL,4",
             "CELH;polygon;parallelogram;C,E,L;0;0;0,0,0;random",
-            "H;point;vertex;CELH,4"
+            "H;point;vertex;CELH,4",
+            // Hover / highlight targets only — the lines above already draw
+            // every one of these.
+            "BD;line;connect;B,D;0;0;0",
+            "DE;line;connect;D,E;0;0;0",
+            "EC;line;connect;E,C;0;0;0",
+            "BG;line;connect;B,G;0;0;0",
+            "GH;line;connect;G,H;0;0;0",
+            "DK;line;connect;D,K;0;0;0",
+            "EL;line;connect;E,L;0;0;0",
+            "CH;line;connect;C,H;0;0;0",
+            // The whole rectangle, which the proof calls BH. Unfilled: its
+            // three parts carry the colour.
+            "BCHG;polygon;quadrilateral;B,C,H,G;0;0;0;0"
         ],
+        // F is a lineSlider, and draggables are auto-unioned into every
+        // slide — so it would stand on the canvas from slide 1, lettered,
+        // before the proof draws BF. Deferring drops it out of that union so
+        // it follows `visible` like anything else. The resting figure is
+        // unaffected. (D and E are draggable too, but slide 1 introduces
+        // them, so they belong there.)
+        deferDraggables: ["F"],
+        aliases: { "BH": "BCHG", "BK": "DBGK", "DL": "EDKL", "EH": "CELH",
+                   "GB": "BG", "KD": "DK", "LE": "EL", "HC": "CH",
+                   "CB": "BC", "DB": "BD", "ED": "DE", "CE": "EC" },
+        slides: [
+            { text: "Let {A} and {BC} be two straight lines, and let {BC} be cut at random at the points {D} and {E}.",
+              visible: GIVEN,
+              highlighted: ["A","BC","D","E"] },
+            { text: "I say that the rectangle {A} by {BC} equals the sum of the rectangle {A} by {BD}, the rectangle {A} by {DE}, and the rectangle {A} by {EC}.",
+              visible: GIVEN,
+              highlighted: ["A","BD","DE","EC"] },
+            { text: "Draw {BF} from {B} at right angles to {BC}, and make {BG} equal to {A}.",
+              visible: PERP,
+              // BF and BG are this slide's animation targets (euclid#171).
+              // A is not, and the step turns on it — "make BG equal to A".
+              highlighted: ["A"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "BF", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "BG", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "BF at right angles to BC", ref: "I.11" },
+                  { claim: "BG cut off equal to A",    ref: "I.3" } ] },
+            { text: "Draw {GH} through {G} parallel to {BC}. Through {D}, {E}, and {C} draw {DK}, {EL}, and {CH} parallel to {BG}.",
+              visible: BUILT,
+              // Deliberately NOT highlighted: these three are the animation's
+              // own targets. SlateAnimator hides an animated target until its
+              // own cascade step starts (#83), but it sets shouldHighlight at
+              // run start, and drawFace renders a hidden element that is
+              // highlighted — so listing them here paints all three filled
+              // while the first one animates. The animation is the emphasis.
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "DBGK", name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "EDKL", name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "CELH", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [{ claim: "parallels through G, D, E and C", ref: "I.31" }] },
+            { text: "Then {BH} equals the sum of {BK}, {DL} and {EH}.",
+              visible: WHOLE,
+              // BCHG is this slide's animation target (euclid#171); the three
+              // parts it is being compared with are not, so they keep the gold.
+              highlighted: ["DBGK","EDKL","CELH"],
+              transition: { animations: [
+                  { elem: "BCHG", name: geomlib.A.Polygon.outline } ] } },
+            { text: "Now {BH} is the rectangle {A} by {BC}, for it is contained by {GB} and {BC}, and {BG} equals {A}.",
+              visible: WHOLE,
+              highlighted: ["BCHG","BG","BC","A"],
+              justifications: [{ claim: "the rectangle contained by GB and BC", ref: "II.Def.1" }] },
+            { text: "{BK} is the rectangle {A} by {BD}, for it is contained by {GB} and {BD}, and {BG} equals {A}.",
+              visible: WHOLE,
+              highlighted: ["DBGK","BD","BG"],
+              justifications: [{ claim: "contained by GB and BD", ref: "II.Def.1" }] },
+            { text: "And {DL} is the rectangle {A} by {DE}, for {DK}, that is {BG}, equals {A}. Similarly also {EH} is the rectangle {A} by {EC}.",
+              visible: WHOLE,
+              highlighted: ["EDKL","CELH","DE","EC","DK"],
+              justifications: [
+                  { claim: "DK equals BG, opposite sides of a parallelogram", ref: "I.34" },
+                  { claim: "each part is contained by A and a segment",       ref: "II.Def.1" } ] },
+            { text: "Therefore the rectangle {A} by {BC} equals the sum of the rectangle {A} by {BD}, the rectangle {A} by {DE}, and the rectangle {A} by {EC}.",
+              visible: WHOLE,
+              highlighted: ["BCHG","DBGK","EDKL","CELH"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.3":       "/elements/books/bookI/propositions/propI3/",
+        "I.11":      "/elements/books/bookI/propositions/propI11/",
+        "I.31":      "/elements/books/bookI/propositions/propI31/",
+        "I.34":      "/elements/books/bookI/propositions/propI34/",
+        "II.Def.1":  "/elements/books/bookII/definitions/defII1/"
     });
 </script>
-</figure><p>I say that the rectangle <em>A</em> by <em>BC</em> equals the sum of the rectangle <em>A</em> by <em>BD,</em> the rectangle <em>A</em> by <em>DE,</em> and the rectangle <em>A</em> by <em>EC.</em></p>
+</figure><p>I say that the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="BC">BC</span> equals the sum of the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="BD">BD</span>, the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="DE">DE</span>, and the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="EC">EC</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
-<p>Draw <em>BF</em> from <em>B</em> at right angles to <em>BC.</em>  Make <em>BG</em> equal to <em>A.</em>  Draw <em>GH</em> through <em>G</em> parallel to <em>BC.</em>   Through <em>D, E,</em> and <em>C</em> draw <em>DK, EL,</em> and <em>CH</em> parallel to <em>BG.</em></p>
-<p>Then <em>BH</em> equals the sum of <em>BK, DL,</em> and <em>EH.</em></p>
+<p>Draw <span class="elem-ref" data-elem="BF">BF</span> from <span class="elem-ref" data-elem="B">B</span> at right angles to <span class="elem-ref" data-elem="BC">BC</span>.  Make <span class="elem-ref" data-elem="BG">BG</span> equal to <span class="elem-ref" data-elem="A">A</span>.  Draw <span class="elem-ref" data-elem="GH">GH</span> through <span class="elem-ref" data-elem="G">G</span> parallel to <span class="elem-ref" data-elem="BC">BC</span>.   Through <span class="elem-ref" data-elem="D">D</span>, <span class="elem-ref" data-elem="E">E</span>, and <span class="elem-ref" data-elem="C">C</span> draw <span class="elem-ref" data-elem="DK">DK</span>, <span class="elem-ref" data-elem="EL">EL</span>, and <span class="elem-ref" data-elem="CH">CH</span> parallel to <span class="elem-ref" data-elem="BG">BG</span>.</p>
+<p>Then <span class="elem-ref" data-elem="BH">BH</span> equals the sum of <span class="elem-ref" data-elem="BK">BK</span>, <span class="elem-ref" data-elem="DL">DL</span>, and <span class="elem-ref" data-elem="EH">EH</span>.</p>
 <div class="just"><a href="/elements/books/bookII/definitions/defII1/">II.Def.1</a><br><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
-<p>Now <em>BH</em> is the rectangle <em>A</em> by <em>BC,</em> for it is contained by <em>GB</em> and <em>BC,</em> and <em>BG</em> equals <em>A</em>; <em>BK</em> is the rectangle <em>A</em> by <em>BD,</em> for it is contained by <em>GB</em> and <em>BD,</em> and <em>BG</em> equals <em>A</em>; and <em>DL</em> is the rectangle <em>A</em> by <em>DE,</em> for <em>DK,</em> that is <em>BG,</em> equals <em>A.</em>  Similarly also <em>EH</em> is the rectangle <em>A</em> by <em>EC.</em></p>
-<p>Therefore the rectangle <em>A</em> by <em>BC</em> equals the sum of the rectangle <em>A</em> by <em>BD,</em> the rectangle <em>A</em> by <em>DE,</em> and the rectangle <em>A</em> by <em>EC.</em></p>
+<p>Now <span class="elem-ref" data-elem="BH">BH</span> is the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="BC">BC</span>, for it is contained by <span class="elem-ref" data-elem="GB">GB</span> and <span class="elem-ref" data-elem="BC">BC</span>, and <span class="elem-ref" data-elem="BG">BG</span> equals <span class="elem-ref" data-elem="A">A</span>; <span class="elem-ref" data-elem="BK">BK</span> is the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="BD">BD</span>, for it is contained by <span class="elem-ref" data-elem="GB">GB</span> and <span class="elem-ref" data-elem="BD">BD</span>, and <span class="elem-ref" data-elem="BG">BG</span> equals <span class="elem-ref" data-elem="A">A</span>; and <span class="elem-ref" data-elem="DL">DL</span> is the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="DE">DE</span>, for <span class="elem-ref" data-elem="DK">DK</span>, that is <span class="elem-ref" data-elem="BG">BG</span>, equals <span class="elem-ref" data-elem="A">A</span>.  Similarly also <span class="elem-ref" data-elem="EH">EH</span> is the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="EC">EC</span>.</p>
+<p>Therefore the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="BC">BC</span> equals the sum of the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="BD">BD</span>, the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="DE">DE</span>, and the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="EC">EC</span>.</p>
 <p>Therefore <em>if there are two straight lines, and one of them is cut into any number of segments whatever, then the rectangle contained by the two straight lines equals the sum of the rectangles contained by the uncut straight line and each of the segments.</em></p>
 <p><div class="qed">Q.E.D.</div>
 <br clear="all"></p>
@@ -117,12 +222,12 @@
 
   <h2 id="guide">Guide</h2>
   <p>As described in <a href="/elements/books/bookII/definitions/defII1/">II.Def.1</a>, the phrase "the rectangle contained by the two straight lines" means any rectangle constructed with two sides equal to the two given sides.  In some sense this is the product of the two lines.
-When the sides have names, such as <em>A</em> and <em>BC,</em> we will refer to that rectangle by "the rectangle <em>A</em> by <em>BC</em>" since that is a little clearer than Euclid's terse "the rectangle <em>A, BC.</em>"</p>
+When the sides have names, such as <span class="elem-ref" data-elem="A">A</span> and <span class="elem-ref" data-elem="BC">BC</span>, we will refer to that rectangle by "the rectangle <span class="elem-ref" data-elem="A">A</span> by <span class="elem-ref" data-elem="BC">BC</span>" since that is a little clearer than Euclid's terse "the rectangle <span class="elem-ref" data-elem="A">A</span>, <span class="elem-ref" data-elem="BC">BC</span>."</p>
 <p>In this proposition Euclid proves that if</p>
-<center><i>BC</i> = <i>BD</i> + <i>DE</i> + <i>EC,</i></center><p>then</p>
-<center>(<i>A</i> by <i>BC</i>) = (<i>A</i> by <i>BD</i>) + (<i>A</i> by <i>DE</i>) + (<i>A</i> by <i>EC</i>).</center><p>In modern algebraic notation this could be stated as follows:
-If <em>y</em> = <em>y</em><sub>1</sub> + <em>y</em><sub>2</sub> + ... + <em>y<sub>n</sub>,</em> then <em>xy</em> = <em>x</em> <em>y</em><sub>1</sub> + <em>x</em> <em>y</em><sub>2</sub> + ... + <em>x y<sub>n</sub>.</em>  This can also be stated in a single equation as</p>
-<center><i>x</i> (<i>y</i><sub>1</sub> + <i>y</i><sub>2</sub> + ... + <i>y<sub>n</sub></i>) = <i>x y</i><sub>1</sub> + <i>x y</i><sub>2</sub> + ... + <i>x y<sub>n</sub>.</i></center><p>Here <em>x</em> and the various <em>y<sub>i</sub></em>'s are all lines, and <em>n</em> is an arbitrary number.   In modern terminology this identity is called the <em>distributive law</em> for multiplication over addition.</p>
+<center><span class="elem-ref" data-elem="BC"><i>BC</i></span> = <span class="elem-ref" data-elem="BD"><i>BD</i></span> + <span class="elem-ref" data-elem="DE"><i>DE</i></span> + <span class="elem-ref" data-elem="EC"><i>EC</i></span>,</center><p>then</p>
+<center>(<span class="elem-ref" data-elem="A"><i>A</i></span> by <span class="elem-ref" data-elem="BC"><i>BC</i></span>) = (<span class="elem-ref" data-elem="A"><i>A</i></span> by <span class="elem-ref" data-elem="BD"><i>BD</i></span>) + (<span class="elem-ref" data-elem="A"><i>A</i></span> by <span class="elem-ref" data-elem="DE"><i>DE</i></span>) + (<span class="elem-ref" data-elem="A"><i>A</i></span> by <span class="elem-ref" data-elem="EC"><i>EC</i></span>).</center><p>In modern algebraic notation this could be stated as follows:
+If <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>y</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">y = y_1 + y_2 + \dots + y_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi><mo>=</mo><mi>x</mi><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><mi>x</mi><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>x</mi><msub><mi>y</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">xy = x y_1 + x y_2 + \dots + x y_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.  This can also be stated in a single equation as</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>x</mi><mtext> </mtext><mo stretchy="false">(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mi>x</mi><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><mi>x</mi><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>x</mi><msub><mi>y</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x\,(y_1 + y_2 + \dots + y_n) = x y_1 + x y_2 + \dots + x y_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><p>Here <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> and the various <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>'s are all lines, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> is an arbitrary number.   In modern terminology this identity is called the <em>distributive law</em> for multiplication over addition.</p>
 <h4>Use of this proposition</h4>
 <p>This proposition is not specifically invoked in the rest of the <em>Elements.</em>  The next two propositions, however, are special cases of it, and they are each explicitly used once.</p>
 

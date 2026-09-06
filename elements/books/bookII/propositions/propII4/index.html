@@ -65,12 +65,44 @@
   <div class="theorem">
     <h1 id="prop">Proposition 4</h1>
     <div class="statement">If a straight line is cut at random, the square on the whole equals the squares on the segments plus twice the rectangle contained by the segments.</div>
-    <p>Let the straight line <em>AB</em> be cut at random at <em>C.</em></p>
-<p>I say that the square on <em>AB</em> equals the sum of the squares on <em>AC</em> and <em>CB</em> plus twice the rectangle <em>AC</em> by <em>CB.</em></p>
+    <p>Let the straight line <span class="elem-ref" data-elem="AB">AB</span> be cut at random at <span class="elem-ref" data-elem="C">C</span>.</p>
+<p>I say that the square on <span class="elem-ref" data-elem="AB">AB</span> equals the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CB">CB</span> plus twice the rectangle <span class="elem-ref" data-elem="AC">AC</span> by <span class="elem-ref" data-elem="CB">CB</span>.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="230" height="220" tabindex="0"></canvas>
 <noscript><img src="propII4.gif" alt="II.4"/></noscript>
 <script type="text/javascript">
+    // Joyce's figure draws the two squares HF and CK but NOT the two equal
+    // rectangles AG and GE that the proof spends its last third on, and not the
+    // segments AC, CB, CG, GK, KB, HG it names throughout. Almost everything
+    // added here is fully transparent (;0;0;0 lines, ;0;0;0;0 polygons) or an
+    // angle marker (hidden in the static figure since 0.9.0), so the resting
+    // figure is unchanged. The two exceptions are commented where they are
+    // declared: the black AB, and the two initiallyHidden rectangles.
+    //
+    // Colour: the two squares on the segments take stable pastels, and the two
+    // rectangles — equal to each other, the "twice the rectangle" of the
+    // enunciation — SHARE one colour. The containing square ADEB is left
+    // unfilled so its own four parts fill it.
+    //
+    // NOTE on BADE: it carries the DEFAULT faceColor (only four ;-fields), i.e.
+    // lighten(bgcolor) — a near-white OPAQUE face, not transparency. That white
+    // is visible in Joyce's resting figure (it is why the AG and GE corners read
+    // white rather than the page's peach), so it stays. But a highlighted
+    // polygon is promoted within its draw pass (#140), so highlighting BADE
+    // would white out the whole decomposition on the closing slides — the
+    // I.41/I.44/I.47 bug. BADE is therefore NEVER named in a slide set; the
+    // fully transparent ADEB below is the highlight/hover target for the whole.
+    var CUT   = ["A","B","C","AB","AC","CB"];
+    var BUILT = CUT.concat(["BADE","D","E","F","G","H","K",
+                            "AD","BE","DE","BD","CF","HK","ADEB"]);
+    var PARL  = BUILT.concat(["angCGB","angADB"]);
+    var ISOSC = PARL.concat(["angABD"]);
+    var EQANG = ISOSC.concat(["CG"]);
+    var EQUIL = EQANG.concat(["GK","KB","CBKG"]);
+    var RTANG = EQUIL.concat(["angKBC","angGCB"]);
+    var RTALL = RTANG.concat(["angCGK","angGKB"]);
+    var AREAS = BUILT.concat(["CG","GK","KB","CBKG","DFGH","HG"]);
+    var TWICE = AREAS.concat(["ACGH","GKEF"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -88,35 +120,224 @@
             "F;point;parallelogram;D,A,C",
             "CF;line;connect;C,F",
             "G;point;intersection;C,F,B,D",
-            "DFGH;polygon;parallelogram;D,F,G;0;0;0;random",
+            // The two squares on the segments. Joyce's params gave both a
+            // `random` face — a fresh hue on every load, which in a deck whose
+            // argument is "equal regions share a colour" can roll up the same
+            // salmon as the two rectangles below and assert an equality that
+            // does not hold. Fixed pastels instead; same family, so they still
+            // read as the pair of squares on AC and CB.
+            "DFGH;polygon;parallelogram;D,F,G;0;0;0;palegreen",
             "H;point;vertex;DFGH,4",
             "K;point;intersection;G,H,B,E",
             "HK;line;connect;H,K",
-            "CBKG;polygon;quadrilateral;C,B,K,G;0;0;0;random"
+            "CBKG;polygon;quadrilateral;C,B,K,G;0;0;0;lightblue",
+            // AB is drawn BLACK, not transparent: slide 1 is the cut line
+            // alone, before the square exists, so there has to be something to
+            // see. It coincides pixel-for-pixel with the square's own top edge,
+            // so the resting figure is unchanged.
+            "AB;line;connect;A,B",
+            // Hover / highlight targets only — the square, CF and HK already
+            // draw every one of these.
+            "AC;line;connect;A,C;0;0;0",
+            "CB;line;connect;C,B;0;0;0",
+            "AD;line;connect;A,D;0;0;0",
+            "BE;line;connect;B,E;0;0;0",
+            "DE;line;connect;D,E;0;0;0",
+            "CG;line;connect;C,G;0;0;0",
+            "GK;line;connect;G,K;0;0;0",
+            "KB;line;connect;K,B;0;0;0",
+            "HG;line;connect;H,G;0;0;0",
+            // The two rectangles the proof calls AG and GE. Equal to each
+            // other, so one colour between them. initiallyHidden, so Joyce's
+            // resting figure keeps its two white corners.
+            "ACGH;polygon;quadrilateral;A,C,G,H;0;0;0;lightsalmon",
+            "GKEF;polygon;quadrilateral;G,K,E,F;0;0;0;lightsalmon",
+            // The whole square, which the proof calls ADEB. Unfilled: its four
+            // parts carry the colour. This, not BADE, is what the slides light.
+            "ADEB;polygon;quadrilateral;A,D,E,B;0;0;0;0",
+            // Angles. angABD doubles as GBC (G lies on BD, C on BA — same
+            // rays), and angGCB as BCG; #103 auto-nests the two same-vertex
+            // pairs (at G, CGB inside CGK; at B, ABD inside KBC).
+            "angCGB;sector;angleMarker;G,C,B",
+            "angADB;sector;angleMarker;D,A,B",
+            "angABD;sector;angleMarker;B,A,D",
+            "angKBC;sector;angleMarker;B,K,C",
+            "angGCB;sector;angleMarker;C,G,B",
+            "angCGK;sector;angleMarker;G,C,K",
+            "angGKB;sector;angleMarker;K,G,B"
         ],
+        // No deferDraggables. The only free / slider points are the off-canvas
+        // carriers A0 and A3 (drawn with no name and no vertex) and the three
+        // sliders A, B and C — and slide 1 introduces all three, so the
+        // auto-union is right here. The rest of the figure (D, E, F, G, H, K)
+        // is derived and therefore NOT auto-unioned: each is listed explicitly
+        // in every slide it belongs to, from BUILT on.
+        initiallyHidden: ["ACGH","GKEF"],
+        aliases: { "HF": "DFGH", "CK": "CBKG", "KC": "CBKG", "CGKB": "CBKG",
+                   "AG": "ACGH", "GE": "GKEF",
+                   "BA": "AB", "BC": "CB", "GC": "CG", "BK": "KB", "EB": "BE",
+                   "CGB": "angCGB", "ADB": "angADB", "ABD": "angABD",
+                   "GBC": "angABD", "KBC": "angKBC", "GCB": "angGCB",
+                   "BCG": "angGCB", "CGK": "angCGK", "GKB": "angGKB" },
+        slides: [
+            { text: "Let the straight line {AB} be cut at random at {C}.",
+              visible: CUT,
+              highlighted: ["AB","C"] },
+            { text: "I say that the square on {AB} equals the sum of the squares on {AC} and {CB} plus twice the rectangle {AC} by {CB}.",
+              visible: CUT,
+              highlighted: ["AC","CB"] },
+            { text: "Describe the square {ADEB} on {AB}. Join {BD}. Draw {CF} through {C} parallel to either {AD} or {EB}, and draw {HK} through {G} parallel to either {AB} or {DE}.",
+              visible: BUILT,
+              // Deliberately NOT highlighted: these four are the animation's own
+              // targets. SlateAnimator hides an animated target until its cascade
+              // step starts (#83) but sets shouldHighlight at run start, and
+              // drawFace draws a hidden element that is highlighted — so listing
+              // them paints the whole construction from t=0. The animation is
+              // the emphasis (euclid#171).
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "BADE", name: geomlib.A.Polygon.outline },
+                  { elem: "BD",   name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "CF",   name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "HK",   name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "the square ADEB on AB",    ref: "I.46" },
+                  { claim: "CF and HK drawn parallel", ref: "I.31" } ] },
+            { text: "Then, since {CF} is parallel to {AD}, and {BD} falls on them, the exterior angle {CGB} equals the interior and opposite angle {ADB}.",
+              visible: PARL,
+              highlighted: ["CF","AD","BD"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "angCGB", name: geomlib.A.Sector.sweep },
+                  { elem: "angADB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "exterior CGB = interior opposite ADB", ref: "I.29" } ] },
+            { text: "But the angle {ADB} equals the angle {ABD}, since the side {BA} also equals {AD}.",
+              visible: ISOSC,
+              // angABD is this slide's animation target (euclid#171).
+              highlighted: ["angADB","AB","AD"],
+              transition: { animations: [
+                  { elem: "angABD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "ADB = ABD, since BA = AD", ref: "I.5" } ] },
+            { text: "Therefore the angle {CGB} also equals the angle {GBC}, so that the side {BC} also equals the side {CG}.",
+              visible: EQANG,
+              highlighted: ["angCGB","angABD","CB","CG"],
+              justifications: [
+                  { claim: "equal angles give BC = CG", ref: "I.6" } ] },
+            { text: "But {CB} equals {GK}, and {CG} to {KB}. Therefore {GK} also equals {KB}. Therefore {CGKB} is equilateral.",
+              visible: EQUIL,
+              // CBKG is this slide's animation target (euclid#171).
+              highlighted: ["CB","GK","CG","KB"],
+              transition: { animations: [
+                  { elem: "CBKG", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [
+                  { claim: "opposite sides CB = GK, CG = KB", ref: "I.34" } ] },
+            { text: "I say next that it is also right-angled.",
+              visible: EQUIL,
+              highlighted: ["CBKG"] },
+            { text: "Since {CG} is parallel to {BK}, the sum of the angles {KBC} and {GCB} equals two right angles.",
+              visible: RTANG,
+              highlighted: ["CG","KB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "angKBC", name: geomlib.A.Sector.sweep },
+                  { elem: "angGCB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "KBC + GCB = two right angles", ref: "I.29" } ] },
+            { text: "But the angle {KBC} is right. Therefore the angle {BCG} is also right, so that the opposite angles {CGK} and {GKB} are also right.",
+              visible: RTALL,
+              highlighted: ["angKBC","angGCB"],
+              // parallel: CGK and GKB are the opposite pair, carried by one step.
+              transition: { mode: "parallel", animations: [
+                  { elem: "angCGK", name: geomlib.A.Sector.sweep },
+                  { elem: "angGKB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "opposite angles CGK and GKB are right", ref: "I.34" } ] },
+            { text: "Therefore {CGKB} is right-angled, and it was also proved equilateral, therefore it is a square, and it is described on {CB}.",
+              visible: RTALL,
+              highlighted: ["CBKG","CB"],
+              justifications: [
+                  { claim: "equilateral and right-angled, so a square", ref: "I.Def.22" } ] },
+            { text: "For the same reason {HF} is also a square, and it is described on {HG}, that is {AC}. Therefore the squares {HF} and {KC} are the squares on {AC} and {CB}.",
+              visible: AREAS,
+              // DFGH (HF) is this slide's animation target (euclid#171).
+              highlighted: ["HG","AC","CB","CBKG"],
+              transition: { animations: [
+                  { elem: "DFGH", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [
+                  { claim: "opposite sides HG = AC", ref: "I.34" } ] },
+            { text: "Now, since {AG} equals {GE}, and {AG} is the rectangle {AC} by {CB}, for {GC} equals {CB}, "
+                  + "therefore {GE} also equals the rectangle {AC} by {CB}.",
+              visible: TWICE,
+              // ACGH (AG) and GKEF (GE) are this slide's animation targets
+              // (euclid#171); GC and CB, which the step turns on, are not.
+              highlighted: ["CG","CB"],
+              // parallel: the two are equal, and the point is that they arrive
+              // together — one rectangle taken twice.
+              transition: { mode: "parallel", animations: [
+                  { elem: "ACGH", name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "GKEF", name: geomlib.A.Polygon.outlineAndFill } ] },
+              justifications: [
+                  { claim: "the complements AG and GE are equal", ref: "I.43" },
+                  { claim: "AG is the rectangle AC by CB",        ref: "II.Def.1" } ] },
+            { text: "Therefore the sum of {AG} and {GE} equals twice the rectangle {AC} by {CB}.",
+              visible: TWICE,
+              highlighted: ["ACGH","GKEF"] },
+            { text: "But the squares {HF} and {CK} are also the squares on {AC} and {CB}, therefore the sum of the four "
+                  + "figures {HF}, {CK}, {AG}, and {GE} equals the sum of the squares on {AC} and {CB} plus twice the "
+                  + "rectangle {AC} by {CB}.",
+              visible: TWICE,
+              highlighted: ["DFGH","CBKG","ACGH","GKEF"] },
+            { text: "But {HF}, {CK}, {AG}, and {GE} are the whole {ADEB}, which is the square on {AB}.",
+              visible: TWICE,
+              // ADEB is this slide's animation target (euclid#171).
+              highlighted: ["DFGH","CBKG","ACGH","GKEF"],
+              transition: { animations: [
+                  { elem: "ADEB", name: geomlib.A.Polygon.outline } ] } },
+            { text: "Therefore the square on {AB} equals the sum of the squares on {AC} and {CB} plus twice the rectangle {AC} by {CB}.",
+              visible: TWICE,
+              highlighted: ["ADEB","DFGH","CBKG","ACGH","GKEF"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.5":       "/elements/books/bookI/propositions/propI5/",
+        "I.6":       "/elements/books/bookI/propositions/propI6/",
+        "I.29":      "/elements/books/bookI/propositions/propI29/",
+        "I.31":      "/elements/books/bookI/propositions/propI31/",
+        "I.34":      "/elements/books/bookI/propositions/propI34/",
+        "I.43":      "/elements/books/bookI/propositions/propI43/",
+        "I.46":      "/elements/books/bookI/propositions/propI46/",
+        "I.Def.22":  "/elements/books/bookI/definitions/defI22/",
+        "II.Def.1":  "/elements/books/bookII/definitions/defII1/"
     });
 </script>
 </figure><div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a><br><a href="/elements/books/bookI/propositions/propI31/">I.31</a></div>
-<p>Describe the square <em>ADEB</em> on <em>AB.</em> Join <em>BD.</em> Draw <em>CF</em> through <em>C</em> parallel to either <em>AD</em> or <em>EB,</em> and draw <em>HK</em> through <em>G</em> parallel to either <em>AB</em> or <em>DE.</em></p>
+<p>Describe the square <span class="elem-ref" data-elem="ADEB">ADEB</span> on <span class="elem-ref" data-elem="AB">AB</span>. Join <span class="elem-ref" data-elem="BD">BD</span>. Draw <span class="elem-ref" data-elem="CF">CF</span> through <span class="elem-ref" data-elem="C">C</span> parallel to either <span class="elem-ref" data-elem="AD">AD</span> or <span class="elem-ref" data-elem="EB">EB</span>, and draw <span class="elem-ref" data-elem="HK">HK</span> through <span class="elem-ref" data-elem="G">G</span> parallel to either <span class="elem-ref" data-elem="AB">AB</span> or <span class="elem-ref" data-elem="DE">DE</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
-<p>Then, since <em>CF</em> is parallel to <em>AD,</em> and <em>BD</em> falls on them, the exterior angle <em>CGB</em> equals the interior and opposite angle <em>ADB.</em></p>
+<p>Then, since <span class="elem-ref" data-elem="CF">CF</span> is parallel to <span class="elem-ref" data-elem="AD">AD</span>, and <span class="elem-ref" data-elem="BD">BD</span> falls on them, the exterior angle <span class="elem-ref" data-elem="CGB">CGB</span> equals the interior and opposite angle <span class="elem-ref" data-elem="ADB">ADB</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI5/">I.5</a><br><a href="/elements/books/bookI/propositions/propI6/">I.6</a></div>
-<p>But the angle <em>ADB</em> equals the angle <em>ABD,</em> since the side <em>BA</em> also equals <em>AD.</em> Therefore the angle <em>CGB</em> also equals the angle <em>GBC,</em> so that the side <em>BC</em> also equals the side <em>CG.</em></p>
+<p>But the angle <span class="elem-ref" data-elem="ADB">ADB</span> equals the angle <span class="elem-ref" data-elem="ABD">ABD</span>, since the side <span class="elem-ref" data-elem="BA">BA</span> also equals <span class="elem-ref" data-elem="AD">AD</span>. Therefore the angle <span class="elem-ref" data-elem="CGB">CGB</span> also equals the angle <span class="elem-ref" data-elem="GBC">GBC</span>, so that the side <span class="elem-ref" data-elem="BC">BC</span> also equals the side <span class="elem-ref" data-elem="CG">CG</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
-<p>But <em>CB</em> equals <em>GK,</em> and <em>CG</em> to <em>KB.</em> Therefore <em>GK</em> also equals <em>KB.</em> Therefore <em>CGKB</em> is equilateral.</p>
+<p>But <span class="elem-ref" data-elem="CB">CB</span> equals <span class="elem-ref" data-elem="GK">GK</span>, and <span class="elem-ref" data-elem="CG">CG</span> to <span class="elem-ref" data-elem="KB">KB</span>. Therefore <span class="elem-ref" data-elem="GK">GK</span> also equals <span class="elem-ref" data-elem="KB">KB</span>. Therefore <span class="elem-ref" data-elem="CGKB">CGKB</span> is equilateral.</p>
 <p>I say next that it is also right-angled.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI29/">I.29</a></div>
-<p>Since <em>CG</em> is parallel to <em>BK,</em> the sum of the angles <em>KBC</em> and <em>GCB</em> equals two right angles.</p>
+<p>Since <span class="elem-ref" data-elem="CG">CG</span> is parallel to <span class="elem-ref" data-elem="BK">BK</span>, the sum of the angles <span class="elem-ref" data-elem="KBC">KBC</span> and <span class="elem-ref" data-elem="GCB">GCB</span> equals two right angles.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
-<p>But the angle <em>KBC</em> is right. Therefore the angle <em>BCG</em> is also right, so that the opposite angles <em>CGK</em> and <em>GKB</em> are also right.</p>
-<p>Therefore <em>CGKB</em> is right-angled, and it was also proved equilateral, therefore it is a square, and it is described on <em>CB.</em></p>
+<p>But the angle <span class="elem-ref" data-elem="KBC">KBC</span> is right. Therefore the angle <span class="elem-ref" data-elem="BCG">BCG</span> is also right, so that the opposite angles <span class="elem-ref" data-elem="CGK">CGK</span> and <span class="elem-ref" data-elem="GKB">GKB</span> are also right.</p>
+<p>Therefore <span class="elem-ref" data-elem="CGKB">CGKB</span> is right-angled, and it was also proved equilateral, therefore it is a square, and it is described on <span class="elem-ref" data-elem="CB">CB</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI34/">I.34</a></div>
-<p>For the same reason <em>HF</em> is also a square, and it is described on <em>HG,</em> that is <em>AC.</em>  Therefore the squares <em>HF</em> and <em>KC</em> are the squares on <em>AC</em> and <em>CB.</em></p>
+<p>For the same reason <span class="elem-ref" data-elem="HF">HF</span> is also a square, and it is described on <span class="elem-ref" data-elem="HG">HG</span>, that is <span class="elem-ref" data-elem="AC">AC</span>.  Therefore the squares <span class="elem-ref" data-elem="HF">HF</span> and <span class="elem-ref" data-elem="KC">KC</span> are the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CB">CB</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI43/">I.43</a></div>
-<p>Now, since <em>AG</em> equals <em>GE,</em> and <em>AG</em> is the rectangle <em>AC</em> by <em>CB,</em> for <em>GC</em> equals <em>CB,</em> therefore <em>GE</em> also equals the rectangle <em>AC</em> by <em>CB.</em>  Therefore the sum of <em>AG</em> and <em>GE</em> equals twice the rectangle <em>AC</em> by <em>CB.</em></p>
-<p>But the squares <em>HF</em> and <em>CK</em> are also the squares on <em>AC</em> and <em>CB,</em> therefore the sum of the four figures <em>HF, CK, AG,</em> and <em>GE</em> equals the sum of the squares on <em>AC</em> and <em>CB</em> plus twice the rectangle <em>AC</em> by <em>CB.</em></p>
-<p>But <em>HF, CK, AG,</em> and <em>GE</em> are the whole <em>ADEB,</em> which is the square on <em>AB.</em></p>
-<p>Therefore the square on <em>AB</em> equals the the sum of the squares on <em>AC</em> and <em>CB</em> plus twice the rectangle <em>AC</em> by <em>CB.</em></p>
+<p>Now, since <span class="elem-ref" data-elem="AG">AG</span> equals <span class="elem-ref" data-elem="GE">GE</span>, and <span class="elem-ref" data-elem="AG">AG</span> is the rectangle <span class="elem-ref" data-elem="AC">AC</span> by <span class="elem-ref" data-elem="CB">CB</span>, for <span class="elem-ref" data-elem="GC">GC</span> equals <span class="elem-ref" data-elem="CB">CB</span>, therefore <span class="elem-ref" data-elem="GE">GE</span> also equals the rectangle <span class="elem-ref" data-elem="AC">AC</span> by <span class="elem-ref" data-elem="CB">CB</span>.  Therefore the sum of <span class="elem-ref" data-elem="AG">AG</span> and <span class="elem-ref" data-elem="GE">GE</span> equals twice the rectangle <span class="elem-ref" data-elem="AC">AC</span> by <span class="elem-ref" data-elem="CB">CB</span>.</p>
+<p>But the squares <span class="elem-ref" data-elem="HF">HF</span> and <span class="elem-ref" data-elem="CK">CK</span> are also the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CB">CB</span>, therefore the sum of the four figures <span class="elem-ref" data-elem="HF">HF</span>, <span class="elem-ref" data-elem="CK">CK</span>, <span class="elem-ref" data-elem="AG">AG</span>, and <span class="elem-ref" data-elem="GE">GE</span> equals the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CB">CB</span> plus twice the rectangle <span class="elem-ref" data-elem="AC">AC</span> by <span class="elem-ref" data-elem="CB">CB</span>.</p>
+<p>But <span class="elem-ref" data-elem="HF">HF</span>, <span class="elem-ref" data-elem="CK">CK</span>, <span class="elem-ref" data-elem="AG">AG</span>, and <span class="elem-ref" data-elem="GE">GE</span> are the whole <span class="elem-ref" data-elem="ADEB">ADEB</span>, which is the square on <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<p>Therefore the square on <span class="elem-ref" data-elem="AB">AB</span> equals the sum of the squares on <span class="elem-ref" data-elem="AC">AC</span> and <span class="elem-ref" data-elem="CB">CB</span> plus twice the rectangle <span class="elem-ref" data-elem="AC">AC</span> by <span class="elem-ref" data-elem="CB">CB</span>.</p>
 <p>Therefore <em>if a straight line is cut at random, the square on the whole equals the squares on the segments plus twice the rectangle contained by the segments.</em></p>
 <div class="qed">Q.E.D.</div>
     
@@ -125,8 +346,8 @@
 
 
   <h2 id="guide">Guide</h2>
-  <p>The statement of the proposition can be interpreted in modern notation as saying that if <em>x</em> = <em>y</em> + <em>z,</em> then <em>x</em><sup>2</sup> = <em>y</em><sup>2</sup> + <em>z</em><sup>2</sup> + 2<em>yz.</em>  More simply, as an identity, it says</p>
-<center>(<i>y</i> + <i>z</i>)<sup>2</sup> = <i>y</i><sup>2</sup> + <i>z</i><sup>2</sup> + 2<i>yz.</i></center><h4>Use of this proposition</h4>
+  <p>The statement of the proposition can be interpreted in modern notation as saying that if <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>y</mi><mo>+</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x = y + z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span></span></span></span>, then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>y</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">x^2 = y^2 + z^2 + 2yz</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mord mathnormal" style="margin-right:0.044em;">z</span></span></span></span>.  More simply, as an identity, it says</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>+</mo><mi>z</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>y</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">(y + z)^2 = y^2 + z^2 + 2yz</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0585em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mord mathnormal" style="margin-right:0.044em;">z</span></span></span></span></span><h4>Use of this proposition</h4>
 <p>This is one of the more frequently used propositions of Book II.  It  is used in <a href="/elements/books/bookII/propositions/propII12/">II.12</a> later in this book,  frequently in <a href="../../../bookX/">Book X</a>, and in <a href="/elements/books/bookXIII/propositions/propXIII2/">XIII.2</a>.  Also, the analogous statement for numbers is used in <a href="/elements/books/bookIX/propositions/propIX15/">IX.15</a>,</p>
 
 

@@ -65,12 +65,41 @@
   <div class="theorem">
     <h1 id="prop">Proposition 11</h1>
     <div class="statement">To cut a given straight line so that the rectangle contained by the whole and one of the segments equals the square on the remaining segment.</div>
-    <p>Let <em>AB</em> be the given straight line.</p>
-<p>It is required to cut <em>AB</em> so that the rectangle contained by the whole and one of the segments equals the square on the remaining segment.</p>
+    <p>Let <span class="elem-ref" data-elem="AB">AB</span> be the given straight line.</p>
+<p>It is required to cut <span class="elem-ref" data-elem="AB">AB</span> so that the rectangle contained by the whole and one of the segments equals the square on the remaining segment.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="250" height="280" tabindex="0"></canvas>
 <noscript><img src="propII11.gif" alt="II.11"/></noscript>
 <script type="text/javascript">
+    // The first construction in Book II, and the book's most cited
+    // proposition — the golden section, stated before ratios exist.
+    //
+    // Joyce's figure draws the two squares but none of the three regions
+    // the proof names by their diagonal corners: FK (the rectangle CF by
+    // FA), AK (the piece subtracted from both wholes), and HD (the
+    // rectangle AB by BH). It also draws several named segments only as
+    // polygon edges. Everything added here is fully transparent
+    // (;0;0;0 lines, ;0;0;0;0 polygons), so the static figure is
+    // unchanged; the names exist only so a slide can light them.
+    //
+    // Colour: Joyce's two random fills stay. The containing figures are
+    // the unfilled ones — FK is FH + AK, and AD is AK + HD — so each
+    // whole is left unfilled and its own parts fill it. The equalities
+    // are carried by the gold highlight and the outline animations.
+    //
+    // Every lettered point the proof introduces mid-walk (D, C, E, F, H,
+    // G, K) is a DERIVED construction — vertex / last / midpoint /
+    // extend — so none of them is auto-unioned into every slide and
+    // deferDraggables has nothing to defer. The opposite rule bites
+    // instead: derived points follow `visible`, so each is listed
+    // explicitly in every slide it belongs to. The only draggables are
+    // A and B (the given line, introduced on slide 1) and the colourless
+    // carriers A0/A3.
+    var GIVEN = ["A","B","AB"];
+    var SQ    = GIVEN.concat(["C","D","BD","AC","ABDC","E","AE","BE"]);
+    var BUILT = SQ.concat(["F","CF","AF","EF","FAHG","G","H","FG","GH",
+                           "HK","K","AH","BH"]);
+    var CUT   = BUILT.concat(["FGKC","AHKC","HBDK"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -91,25 +120,160 @@
             "H;point;vertex;FAHG,3",
             "G;point;vertex;FAHG,4",
             "HK;line;parallel;H,A,C",
-            "K;point;last;HK"
+            "K;point;last;HK",
+            // Hover / highlight targets only — the squares and the lines
+            // above already draw every one of these segments.
+            "AB;line;connect;A,B;0;0;0",
+            "AC;line;connect;A,C;0;0;0",
+            "AE;line;connect;A,E;0;0;0",
+            "EF;line;connect;E,F;0;0;0",
+            "CF;line;connect;C,F;0;0;0",
+            "AF;line;connect;A,F;0;0;0",
+            "AH;line;connect;A,H;0;0;0",
+            "BH;line;connect;B,H;0;0;0",
+            "FG;line;connect;F,G;0;0;0",
+            "GH;line;connect;G,H;0;0;0",
+            // The three regions the proof names by diagonal corners: FK,
+            // AK, HD. Explicit ;0 faces — an omitted faceColor is an
+            // OPAQUE near-white face, and a highlighted polygon is
+            // promoted within its draw pass (#140), so an implicit face
+            // would white out the squares underneath at exactly the
+            // payoff slide.
+            "FGKC;polygon;quadrilateral;F,G,K,C;0;0;0;0",
+            "AHKC;polygon;quadrilateral;A,H,K,C;0;0;0;0",
+            "HBDK;polygon;quadrilateral;H,B,D,K;0;0;0;0",
+            // The one angle this proof needs: the right angle at A that
+            // lets I.47 turn triangle BAE into squares. Markers are
+            // hidden in the static figure (showAngles defaults false),
+            // so Euclid's arc-free diagram is untouched.
+            "angBAE;sector;angleMarker;A,B,E;0;0;red;red"
         ],
+        aliases: { "BA": "AB", "CA": "AC", "FA": "AF", "EA": "AE",
+                   "FE": "EF", "EB": "BE", "HA": "AH", "HB": "BH",
+                   "GF": "FG", "HG": "GH", "DB": "BD",
+                   // Joyce names each region by its diagonal corners.
+                   "AD": "ABDC", "FH": "FAHG", "FK": "FGKC",
+                   "AK": "AHKC", "HD": "HBDK",
+                   "BAE": "angBAE", "EAB": "angBAE" },
+        slides: [
+            { text: "Let {AB} be the given straight line.",
+              visible: GIVEN,
+              highlighted: ["AB"] },
+            { text: "It is required to cut {AB} so that the rectangle contained by the whole and one of the segments equals the square on the remaining segment.",
+              visible: GIVEN,
+              highlighted: ["AB"] },
+            { text: "Describe the square {ABDC} on {AB}. Bisect {AC} at the point {E}, and join {BE}.",
+              visible: SQ,
+              // Deliberately NOT highlighted: these are the animation's
+              // own targets. SlateAnimator hides an animated target until
+              // its own cascade step starts, but sets shouldHighlight at
+              // run start, and drawFace renders a hidden element that is
+              // highlighted — so listing them here paints the square
+              // filled from t=0. The animation is the emphasis.
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "ABDC", name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "E",    name: geomlib.A.Point.appear },
+                  { elem: "BE",   name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "the square ABDC on AB", ref: "I.46" },
+                  { claim: "AC bisected at E",      ref: "I.10" },
+                  { ref: "I.Post.1" } ] },
+            { text: "Draw {CA} through to {F}, and make {EF} equal to {BE}. Describe the square {FH} on {AF}, and draw {GH} through to {K}.",
+              visible: BUILT,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "CF",   name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "F",    name: geomlib.A.Point.appear },
+                  { elem: "FAHG", name: geomlib.A.Polygon.outlineAndFill },
+                  { elem: "HK",   name: geomlib.A.Line.straightEdgeExtend } ] },
+              justifications: [
+                  { ref: "I.Post.2" },
+                  { claim: "EF cut off equal to BE", ref: "I.3" },
+                  { claim: "the square FH on AF",    ref: "I.46" } ] },
+            { text: "I say that {AB} has been cut at {H} so that the rectangle {AB} by {BH} equals the square on {AH}.",
+              visible: BUILT,
+              highlighted: ["AB","H","BH","AH"] },
+            { text: "Since the straight line {AC} has been bisected at {E}, and {FA} is added to it, the rectangle {CF} by {FA} together with the square on {AE} equals the square on {EF}.",
+              visible: BUILT,
+              highlighted: ["AC","E","CF","AF","AE","EF"],
+              justifications: [
+                  { claim: "rectangle CF by FA plus square on AE equals square on EF", ref: "II.6" } ] },
+            { text: "But {EF} equals {EB}, therefore the rectangle {CF} by {FA} together with the square on {AE} equals the square on {EB}.",
+              visible: BUILT,
+              highlighted: ["EF","BE","CF","AF","AE"] },
+            { text: "But the sum of the squares on {BA} and {AE} equals the square on {EB}, for the angle at {A} is right, therefore the rectangle {CF} by {FA} together with the square on {AE} equals the sum of the squares on {BA} and {AE}.",
+              visible: BUILT.concat(["angBAE"]),
+              highlighted: ["AB","AE","BE"],
+              transition: { animations: [
+                  { elem: "angBAE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "square on EB equals squares on BA and AE", ref: "I.47" } ] },
+            { text: "Subtract the square on {AE} from each. Therefore the remaining rectangle {CF} by {FA} equals the square on {AB}.",
+              visible: BUILT.concat(["angBAE"]),
+              highlighted: ["CF","AF","AB","AE"],
+              justifications: [
+                  { claim: "subtract the square on AE", ref: "C.N.3" } ] },
+            { text: "Now the rectangle {CF} by {FA} is {FK}, for {AF} equals {FG}, and the square on {AB} is {AD}, therefore {FK} equals {AD}.",
+              visible: CUT,
+              highlighted: ["ABDC","AF","FG"],
+              transition: { animations: [
+                  { elem: "FGKC", name: geomlib.A.Polygon.outline } ] },
+              justifications: [
+                  { claim: "AF equals FG, sides of the square FH", ref: "I.Def.22" } ] },
+            { text: "Subtract {AK} from each. Therefore {FH}, which remains, equals {HD}.",
+              visible: CUT,
+              highlighted: ["FAHG","HBDK"],
+              transition: { animations: [
+                  { elem: "AHKC", name: geomlib.A.Polygon.outline } ] },
+              justifications: [
+                  { claim: "subtract the common part AK", ref: "C.N.3" } ] },
+            { text: "And {HD} is the rectangle {AB} by {BH}, for {AB} equals {BD}, and {FH} is the square on {AH}, therefore the rectangle {AB} by {BH} equals the square on {HA}.",
+              visible: CUT,
+              highlighted: ["HBDK","AB","BD","BH","FAHG","AH"],
+              justifications: [
+                  { claim: "AB equals BD, sides of the square AD", ref: "I.Def.22" },
+                  { claim: "HD is the rectangle contained by AB and BH", ref: "II.Def.1" } ] },
+            { text: "Therefore the given straight line {AB} has been cut at {H} so that the rectangle {AB} by {BH} equals the square on {HA}.",
+              visible: CUT,
+              highlighted: ["AB","H","HBDK","FAHG"],
+              justifications: [{ ref: "Q.E.F." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.3":       "/elements/books/bookI/propositions/propI3/",
+        "I.10":      "/elements/books/bookI/propositions/propI10/",
+        "I.46":      "/elements/books/bookI/propositions/propI46/",
+        "I.47":      "/elements/books/bookI/propositions/propI47/",
+        "I.Def.22":  "/elements/books/bookI/definitions/defI22/",
+        "I.Post.1":  "/elements/books/bookI/postulates/post1/",
+        "I.Post.2":  "/elements/books/bookI/postulates/post2/",
+        "C.N.3":     "/elements/books/bookI/commonnotions/cn3/",
+        "II.6":      "/elements/books/bookII/propositions/propII6/",
+        "II.Def.1":  "/elements/books/bookII/definitions/defII1/"
     });
 </script>
 </figure><div class="just"><a href="/elements/books/bookI/propositions/propI46/">I.46</a>, <a href="/elements/books/bookI/propositions/propI10/">I.10</a></div>
-<p>Describe the square <em>ABDC</em> on <em>AB.</em>  Bisect <em>AC</em> at the point <em>E,</em> and join <em>BE.</em></p>
+<p>Describe the square <span class="elem-ref" data-elem="ABDC">ABDC</span> on <span class="elem-ref" data-elem="AB">AB</span>.  Bisect <span class="elem-ref" data-elem="AC">AC</span> at the point <span class="elem-ref" data-elem="E">E</span>, and join <span class="elem-ref" data-elem="BE">BE</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI3/">I.3</a><br><a href="/elements/books/bookI/propositions/propI46/">I.46</a></div>
-<p>Draw <em>CA</em> through to <em>F,</em> and make <em>EF</em> equal to <em>BE.</em>  Describe the square <em>FH</em> on <em>AF,</em> and draw <em>GH</em> through to <em>K.</em></p>
-<p>I say that <em>AB</em> has been cut at <em>H</em> so that the rectangle <em>AB</em> by <em>BH</em> equals the square on <em>AH.</em></p>
+<p>Draw <span class="elem-ref" data-elem="CA">CA</span> through to <span class="elem-ref" data-elem="F">F</span>, and make <span class="elem-ref" data-elem="EF">EF</span> equal to <span class="elem-ref" data-elem="BE">BE</span>.  Describe the square <span class="elem-ref" data-elem="FH">FH</span> on <span class="elem-ref" data-elem="AF">AF</span>, and draw <span class="elem-ref" data-elem="GH">GH</span> through to <span class="elem-ref" data-elem="K">K</span>.</p>
+<p>I say that <span class="elem-ref" data-elem="AB">AB</span> has been cut at <span class="elem-ref" data-elem="H">H</span> so that the rectangle <span class="elem-ref" data-elem="AB">AB</span> by <span class="elem-ref" data-elem="BH">BH</span> equals the square on <span class="elem-ref" data-elem="AH">AH</span>.</p>
 <div class="just"><a href="/elements/books/bookII/propositions/propII6/">II.6</a></div>
-<p>Since the straight line <em>AC</em> has been bisected at <em>E,</em> and <em>FA</em> is added to it, the rectangle <em>CF</em> by <em>FA</em> together with the square on <em>AE</em> equals the square on <em>EF.</em></p>
-<p>But <em>EF</em> equals <em>EB,</em> therefore the rectangle <em>CF</em> by <em>FA</em> together with the square on <em>AE</em> equals the square on <em>EB.</em></p>
+<p>Since the straight line <span class="elem-ref" data-elem="AC">AC</span> has been bisected at <span class="elem-ref" data-elem="E">E</span>, and <span class="elem-ref" data-elem="FA">FA</span> is added to it, the rectangle <span class="elem-ref" data-elem="CF">CF</span> by <span class="elem-ref" data-elem="FA">FA</span> together with the square on <span class="elem-ref" data-elem="AE">AE</span> equals the square on <span class="elem-ref" data-elem="EF">EF</span>.</p>
+<p>But <span class="elem-ref" data-elem="EF">EF</span> equals <span class="elem-ref" data-elem="EB">EB</span>, therefore the rectangle <span class="elem-ref" data-elem="CF">CF</span> by <span class="elem-ref" data-elem="FA">FA</span> together with the square on <span class="elem-ref" data-elem="AE">AE</span> equals the square on <span class="elem-ref" data-elem="EB">EB</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
-<p>But the sum of the squares on <em>BA</em> and <em>AE</em> equals the square on <em>EB,</em> for the angle at <em>A</em> is right,  therefore the rectangle <em>CF</em> by <em>FA</em> together with the square on <em>AE</em> equals the sum of the squares on <em>BA</em> and <em>AE.</em></p>
-<p>Subtract the square on <em>AE</em>  from each. Therefore the remaining rectangle <em>CF</em> by <em>FA</em> equals the square on <em>AB.</em></p>
-<p>Now the rectangle <em>CF</em> by <em>FA</em> is <em>FK,</em> for <em>AF</em> equals <em>FG,</em> and the square on <em>AB</em> is <em>AD,</em> therefore <em>FK</em> equals <em>AD.</em></p>
-<p>Subtract <em>AK</em> from each. Therefore <em>FH,</em> which remains, equals <em>HD.</em></p>
-<p>And <em>HD</em> is the rectangle <em>AB</em> by <em>BH,</em> for <em>AB</em> equals <em>BD,</em> and <em>FH</em> is the square on <em>AH,</em> therefore the rectangle  <em>AB</em> by <em>BH</em> equals the square on <em>HA.</em></p>
-<p>Therefore the given straight line <em>AB</em> has been cut at <em>H</em> so that the rectangle  <em>AB</em> by <em>BH</em>  equals the square on <em>HA.</em></p>
+<p>But the sum of the squares on <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AE">AE</span> equals the square on <span class="elem-ref" data-elem="EB">EB</span>, for the angle at <span class="elem-ref" data-elem="A">A</span> is right,  therefore the rectangle <span class="elem-ref" data-elem="CF">CF</span> by <span class="elem-ref" data-elem="FA">FA</span> together with the square on <span class="elem-ref" data-elem="AE">AE</span> equals the sum of the squares on <span class="elem-ref" data-elem="BA">BA</span> and <span class="elem-ref" data-elem="AE">AE</span>.</p>
+<p>Subtract the square on <span class="elem-ref" data-elem="AE">AE</span>  from each. Therefore the remaining rectangle <span class="elem-ref" data-elem="CF">CF</span> by <span class="elem-ref" data-elem="FA">FA</span> equals the square on <span class="elem-ref" data-elem="AB">AB</span>.</p>
+<p>Now the rectangle <span class="elem-ref" data-elem="CF">CF</span> by <span class="elem-ref" data-elem="FA">FA</span> is <span class="elem-ref" data-elem="FK">FK</span>, for <span class="elem-ref" data-elem="AF">AF</span> equals <span class="elem-ref" data-elem="FG">FG</span>, and the square on <span class="elem-ref" data-elem="AB">AB</span> is <span class="elem-ref" data-elem="AD">AD</span>, therefore <span class="elem-ref" data-elem="FK">FK</span> equals <span class="elem-ref" data-elem="AD">AD</span>.</p>
+<p>Subtract <span class="elem-ref" data-elem="AK">AK</span> from each. Therefore <span class="elem-ref" data-elem="FH">FH</span>, which remains, equals <span class="elem-ref" data-elem="HD">HD</span>.</p>
+<p>And <span class="elem-ref" data-elem="HD">HD</span> is the rectangle <span class="elem-ref" data-elem="AB">AB</span> by <span class="elem-ref" data-elem="BH">BH</span>, for <span class="elem-ref" data-elem="AB">AB</span> equals <span class="elem-ref" data-elem="BD">BD</span>, and <span class="elem-ref" data-elem="FH">FH</span> is the square on <span class="elem-ref" data-elem="AH">AH</span>, therefore the rectangle  <span class="elem-ref" data-elem="AB">AB</span> by <span class="elem-ref" data-elem="BH">BH</span> equals the square on <span class="elem-ref" data-elem="HA">HA</span>.</p>
+<p>Therefore the given straight line <span class="elem-ref" data-elem="AB">AB</span> has been cut at <span class="elem-ref" data-elem="H">H</span> so that the rectangle  <span class="elem-ref" data-elem="AB">AB</span> by <span class="elem-ref" data-elem="BH">BH</span>  equals the square on <span class="elem-ref" data-elem="HA">HA</span>.</p>
 <div class="qed">Q.E.F.</div>
     
   </div>
@@ -117,11 +281,11 @@
 
 
   <h2 id="guide">Guide</h2>
-  <p>This construction cuts a line into two parts to solve the equation <em>a</em> (<em>a</em> – <em>x</em>) = <em>x</em><sup>2</sup> geometrically.</p>
+  <p>This construction cuts a line into two parts to solve the equation <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mtext> </mtext><mo stretchy="false">(</mo><mi>a</mi><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">a\,(a - x) = x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> geometrically.</p>
 <p>This construction is used in the proof of <a href="/elements/books/bookIV/propositions/propIV10/">IV.10</a>, which is later used to construct a regular pentagon.  It accomplishes the same thing as the construction of proposition <a href="/elements/books/bookVI/propositions/propVI30/">VI.30</a>, which cuts a line into extreme and mean ratio, defined in <a href="/elements/books/bookVI/definitions/defVI3/">VI.Def.3</a>, and that construction is used
 later in <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a>.</p>
 <p>The difference between this proposition and VI.30 is a matter of terminology.  Propositions dealing with ratios of lines are postponed until Book VI, but any ratio concerning lines can be converted into a statement about areas of rectangles.  Proposition <a href="/elements/books/bookVI/propositions/propVI16/">VI.16</a> states that the line <em>A</em> is to the line <em>B</em> as the line <em>C</em> is to the line <em>D</em> is equivalent to the statement that the rectangle <em>A</em> by <em>D</em> equals the rectangle <em>B</em> by <em>C.</em></p>
-<p>The construction of this proposition cuts a line into two parts <em>A</em> and <em>B</em> so that the rectangle <em>A</em> + <em>B</em> by <em>A</em> equals the square <em>B</em> by <em>B.</em>  The construction in VI.30 cuts a line so that <em>A</em> + <em>B</em> : <em>B</em> = <em>B</em> : <em>A,</em> which by VI.16, or by its special case <a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a>, is the same thing.</p>
+<p>The construction of this proposition cuts a line into two parts <em>A</em> and <em>B</em> so that the rectangle <em>A</em> + <em>B</em> by <em>A</em> equals the square <em>B</em> by <em>B.</em>  The construction in VI.30 cuts a line so that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>+</mo><mi>B</mi><mo>:</mo><mi>B</mi><mo>=</mo><mi>B</mi><mo>:</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A + B : B = B : A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span>, which by VI.16, or by its special case <a href="/elements/books/bookVI/propositions/propVI17/">VI.17</a>, is the same thing.</p>
 <h4>Construction steps</h4>
 <figure class="diagram rdiagram">
 <canvas id="canvas_1" width="280" height="360" tabindex="0"></canvas>
@@ -155,12 +319,91 @@ later in <a href="/elements/books/bookXIII/propositions/propXIII17/">XIII.17</a>
             "F;point;cutoff;E,A,E,B",
             "FBarc;sector;sector;E,B,F;0;0;black;0",
             "H;point;cutoff;A,B,A,F",
-            "FHarc;sector;sector;A,H,F;0;0;black;0"
+            "FHarc;sector;sector;A,H,F;0;0;black;0",
+            // Hover targets only, for the segments Joyce's construction
+            // narrative names but the figure draws only as arcs and
+            // radii. Fully transparent — the figure is unchanged.
+            "AB;line;connect;A,B;0;0;0",
+            "AC;line;connect;A,C;0;0;0",
+            "EB;line;connect;E,B;0;0;0"
         ],
+        aliases: { "BA": "AB", "CA": "AC", "BE": "EB", "BL": "LB" },
+        // A guide canvas that is itself a procedure, so it carries its own
+        // walk (the I.20 / I.47 exception). Joyce narrates it as an ordered
+        // list -- "six circles to be drawn, two lines connected, and one line
+        // extended" -- and the captions are his sentences, one step each.
+        //
+        // The invisible carrier circles (Lcirc, Bcirc, Acirc, Ccirc) stay in
+        // every set: they draw nothing, and Joyce shows only the arcs of them
+        // that matter, which is what the *arc elements are for. Every lettered
+        // point here is derived, so none is auto-unioned and each is listed on
+        // the slide whose sentence names it -- no deferDraggables needed, only
+        // A and B are draggable and both are given.
+        slides: (function () {
+            var CARRIER = ["Lcirc","Bcirc","Acirc","Ccirc"];
+            var GIVEN = CARRIER.concat(["A","B","AB"]);
+            var EXT   = GIVEN.concat(["L","LB","LBarc"]);
+            var MNC   = EXT.concat(["M","N","MLNarc","NBMarc"]);
+            var LINE  = MNC.concat(["MN"]);
+            var CUT   = LINE.concat(["C","AC"]);
+            var CCIRC = CUT.concat(["E1","E2","Carc","Eline"]);
+            var EPT   = CCIRC.concat(["E"]);
+            var FPT   = EPT.concat(["F","EB","FBarc"]);
+            var DONE  = FPT.concat(["H","FHarc"]);
+            return [
+              { text: "Altogether, there are six circles to be drawn, two lines connected, and one line extended. In order, they are as follows.",
+                visible: GIVEN,
+                highlighted: ["AB"] },
+              { text: "Extend {BA} and draw a circle centered at {A} with radius {AB} to determine the point {L}.",
+                visible: EXT,
+                highlighted: ["A"],
+                transition: { mode: "cascade", animations: [
+                    { elem: "LB", name: geomlib.A.Line.straightEdgeExtend },
+                    { elem: "LBarc", name: geomlib.A.Sector.sweep } ] } },
+              { text: "Draw circles centered at {B} and {L} with radius {BL} to determine points {M} and {N}.",
+                visible: MNC,
+                highlighted: ["BL"],
+                transition: { mode: "cascade", animations: [
+                    { elem: "MLNarc", name: geomlib.A.Sector.sweep },
+                    { elem: "NBMarc", name: geomlib.A.Sector.sweep } ] } },
+              { text: "Draw the straight line {MN}.",
+                visible: LINE,
+                transition: { animations: [
+                    { elem: "MN", name: geomlib.A.Line.straightEdgeConnect } ] } },
+              { text: "Then {C} is where it meets the circle centered at {A}.",
+                visible: CUT,
+                highlighted: ["MN","LBarc"],
+                transition: { animations: [
+                    { elem: "C", name: geomlib.A.Point.appear } ] } },
+              { text: "Draw a circle centered at {C} with radius {CA}, and connect the two points where it meets the circle centered at {A}.",
+                visible: CCIRC,
+                highlighted: ["CA"],
+                transition: { mode: "cascade", animations: [
+                    { elem: "Carc", name: geomlib.A.Sector.sweep },
+                    { elem: "Eline", name: geomlib.A.Line.straightEdgeConnect } ] } },
+              { text: "Then {E} is where that line meets {AC}.",
+                visible: EPT,
+                highlighted: ["Eline","AC"],
+                transition: { animations: [
+                    { elem: "E", name: geomlib.A.Point.appear } ] } },
+              { text: "Draw the circle centered at {E} with radius {EB} to determine {F}.",
+                visible: FPT,
+                highlighted: ["EB"],
+                transition: { mode: "cascade", animations: [
+                    { elem: "FBarc", name: geomlib.A.Sector.sweep },
+                    { elem: "F", name: geomlib.A.Point.appear } ] } },
+              { text: "Draw the circle centered at {A} with radius {F} to determine {H}, the desired point to cut {AB}.",
+                visible: DONE,
+                highlighted: ["AB"],
+                transition: { mode: "cascade", animations: [
+                    { elem: "FHarc", name: geomlib.A.Sector.sweep },
+                    { elem: "H", name: geomlib.A.Point.appear } ] } }
+            ];
+        })()
     });
 </script>
-</figure><p>For the purposes of cutting the line <em>AB,</em> the entire diagram does not have to be constructed.  The points <em>D, G,</em> and <em>K</em> are unnecessary.  In the diagram to the right, only those lines and circles necessary for the construction are shown, and only those parts of them that are relevant.</p>
-<p>Altogether, there are six circles to be drawn, two lines connected, and one line extended. In order, they are as follows. Extend <em>BA</em> and draw a circle centered at <em>A</em> with radius <em>AB</em> to determine the point <em>L.</em> Draw circles centered at <em>B</em> and <em>L</em> with radius <em>BL</em> to determine points <em>M</em> and <em>N.</em>  Draw the straight line <em>MN.</em> Then <em>C</em> is where it meets the circle centered at <em>A.</em>  Draw a circle centered at <em>C</em> with radius <em>CA,</em> and connect the two points where it meets the circle centered at <em>A.</em>  Then <em>E</em> is where that line meets <em>AC.</em>  Draw the circle centered at <em>E</em> with radius <em>EB</em> to determine <em>F.</em>  Draw the circle centered at <em>A</em> with radius <em>F</em> to determine <em>H,</em> the desired point to cut <em>AB.</em></p>
+</figure><p>For the purposes of cutting the line <span class="elem-ref" data-elem="AB">AB</span>, the entire diagram does not have to be constructed.  The points <span class="elem-ref" data-elem="D">D</span>, <span class="elem-ref" data-elem="G">G</span>, and <span class="elem-ref" data-elem="K">K</span> are unnecessary.  In the diagram to the right, only those lines and circles necessary for the construction are shown, and only those parts of them that are relevant.</p>
+<p>Altogether, there are six circles to be drawn, two lines connected, and one line extended. In order, they are as follows. Extend <span class="elem-ref" data-elem="BA">BA</span> and draw a circle centered at <span class="elem-ref" data-elem="A">A</span> with radius <span class="elem-ref" data-elem="AB">AB</span> to determine the point <span class="elem-ref" data-elem="L">L</span>. Draw circles centered at <span class="elem-ref" data-elem="B">B</span> and <span class="elem-ref" data-elem="L">L</span> with radius <span class="elem-ref" data-elem="BL">BL</span> to determine points <span class="elem-ref" data-elem="M">M</span> and <span class="elem-ref" data-elem="N">N</span>.  Draw the straight line <span class="elem-ref" data-elem="MN">MN</span>. Then <span class="elem-ref" data-elem="C">C</span> is where it meets the circle centered at <span class="elem-ref" data-elem="A">A</span>.  Draw a circle centered at <span class="elem-ref" data-elem="C">C</span> with radius <span class="elem-ref" data-elem="CA">CA</span>, and connect the two points where it meets the circle centered at <span class="elem-ref" data-elem="A">A</span>.  Then <span class="elem-ref" data-elem="E">E</span> is where that line meets <span class="elem-ref" data-elem="AC">AC</span>.  Draw the circle centered at <span class="elem-ref" data-elem="E">E</span> with radius <span class="elem-ref" data-elem="EB">EB</span> to determine <span class="elem-ref" data-elem="F">F</span>.  Draw the circle centered at <span class="elem-ref" data-elem="A">A</span> with radius <span class="elem-ref" data-elem="F">F</span> to determine <span class="elem-ref" data-elem="H">H</span>, the desired point to cut <span class="elem-ref" data-elem="AB">AB</span>.</p>
 <h4>The golden ratio, the 36°-72°-72° triangle, and regular pentagons</h4>
 <p>This is the first of several propositions in the <em>Elements</em> that treats these concepts. At this point, ratios have not been introduced, so Euclid describes it in basic terms, that a given straight line is cut so that "the rectangle contained by the whole and one of the segments equals the square on the remaining segment."</p>
 
