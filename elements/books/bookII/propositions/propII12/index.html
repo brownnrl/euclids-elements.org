@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.16.0/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.15.0">
+<meta name="geomlib-version" content="0.16.0">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -142,14 +142,7 @@
         slides: [
             { text: "Let {ABC} be an obtuse-angled triangle having the angle {BAC} obtuse.",
               visible: TRI,
-              // angBAC is this slide's animation target, so it is deliberately
-              // NOT highlighted (euclid#171). SlateAnimator hides an animated
-              // target until its cascade step starts (#83) but sets
-              // shouldHighlight at run start, and drawFace renders a hidden
-              // element that is highlighted — so listing it here would paint
-              // the wedge from t=0 and the sweep would have nothing to reveal.
-              // The animation is the emphasis.
-              highlighted: ["ABC"],
+              highlighted: ["ABC", "angBAC"],
               transition: { animations: [
                   { elem: "angBAC", name: geomlib.A.Sector.sweep } ] },
               justifications: [{ claim: "greater than a right angle", ref: "I.Def.11" }] },
@@ -188,8 +181,6 @@
               justifications: [{ claim: "the right triangle BDC", ref: "I.47" }] },
             { text: "And the square on {AB} equals the sum of the squares on {AD} and {DB}.",
               visible: RT2,
-              // BDA is this slide's animation target — kept out of
-              // highlighted, per the note on slide 1.
               highlighted: ["AB","DA","BD"],
               transition: { animations: [
                   { elem: "BDA", name: geomlib.A.Polygon.outline } ] },

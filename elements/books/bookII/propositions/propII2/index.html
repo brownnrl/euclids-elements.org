@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.15.0/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.16.0/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.15.0">
+<meta name="geomlib-version" content="0.16.0">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -89,8 +89,8 @@
         background: "35,19,100",
         title: "II.2",
         elements: [
-            "A0;point;free;-1000,40;0,0",
-            "A3;point;free;1000,40;0,0",
+            "A0;point;free;-1000,40;0",
+            "A3;point;free;1000,40;0",
             "A;point;lineSlider;A0,A3,40,0",
             "B;point;lineSlider;A0,A3,180,0",
             "C;point;lineSlider;A0,A3,110,0",
@@ -133,20 +133,13 @@
               highlighted: ["AC","BC"] },
             { text: "Describe the square {ADEB} on {AB}.",
               visible: SQUARE,
-              // BADE is this slide's animation target, so it is deliberately
-              // NOT highlighted (euclid#171) — a highlighted element draws
-              // even while the animator has it hidden.
-              highlighted: ["AB"],
+              highlighted: ["AB", "BADE"],
               transition: { animations: [
                   { elem: "BADE", name: geomlib.A.Polygon.outline } ] },
               justifications: [{ claim: "the square described on AB", ref: "I.46" }] },
             { text: "Draw {CF} through {C} parallel to either {AD} or {BE}.",
               visible: BUILT,
-              // Same as slide 3: CF, ACFD and CBEF are this slide's own
-              // animation targets and stay out of `highlighted`, or both
-              // rectangles paint filled from t=0 while CF is still drawing.
-              // The two parallels named in the caption are the emphasis.
-              highlighted: ["AD","BE"],
+              highlighted: ["AD", "BE", "CF", "ACFD", "CBEF"],
               transition: { mode: "cascade", animations: [
                   { elem: "CF",   name: geomlib.A.Line.straightEdgeConnect },
                   { elem: "ACFD", name: geomlib.A.Polygon.outlineAndFill },
