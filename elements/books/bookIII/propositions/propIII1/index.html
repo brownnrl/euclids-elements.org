@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.17.1/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.18.1/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.17.1">
+<meta name="geomlib-version" content="0.18.1">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -65,12 +65,51 @@
   <div class="theorem">
     <h1 id="prop">Proposition 1</h1>
     <div class="statement">To find the center of a given circle.</div>
-    <p>Let <em>ABC</em> be the given circle.</p>
-<p>It is required to find the center of the circle <em>ABC.</em></p>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> be the given circle.</p>
+<p>It is required to find the center of the circle <span class="elem-ref" data-elem="ABC">ABC</span>.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="260" height="260" tabindex="0"></canvas>
 <noscript><img alt="III.1 diagram" src="propIII1.gif"/></noscript>
 <script type="text/javascript">
+    // The foundation of Book III — cited by about half its proofs — and a
+    // CONSTRUCTION, so the apparatus is shown in full, one animated step per
+    // clause: the random chord, its bisection, the perpendicular, its
+    // production, the second bisection. I.10 / I.11 are long past their
+    // demonstration (the fatigue rule), so D and F simply appear and the
+    // perpendicular is a single stroke; the marginal ref carries the
+    // justification.
+    //
+    // Joyce's figure draws the perpendicular as ONE chord, EC (first point
+    // E at the bottom, last point C at the top), so a straightEdge trace of
+    // it would run E -> D -> C — backwards against his "Draw DC from D ...
+    // and draw it through to E". DC and DE below are real black lines that
+    // are `initiallyHidden` (as II.8's coloured areas were): the resting
+    // figure is pixel-identical to the converted one (verified by rendering
+    // both against the bundle with a seeded Math.random), and the walk
+    // draws DC upward from D, then DE downward, never showing EC at all.
+    // CE is a transparent twin so "bisect CE at F" has a hover target while
+    // EC stays out of the slide sets.
+    //
+    // Everything else added is fully transparent (;0;0;0): the two halves
+    // of AB the proof names, and the angle markers (hidden at rest —
+    // showAngles defaults false).
+    //
+    // Colour: the circle keeps Joyce's random face. The two angles the I.8
+    // step proves equal share the palette default; the right angle FDB is
+    // red, the book's idiom for a right angle.
+    var GIVEN = ["A","B","ABC"];
+    var LINE  = GIVEN.concat(["AB","D"]);
+    var PERP  = LINE.concat(["DC","C"]);
+    var THRU  = PERP.concat(["DE","E"]);
+    var BIS   = THRU.concat(["CE","F"]);
+    var SUP   = BIS.concat(["G"]);
+    var JOIN  = SUP.concat(["AG","DG","BG"]);
+    var SIDES = JOIN.concat(["AD","DB"]);
+    var ANG   = SIDES.concat(["angADG","angGDB"]);
+    var RT    = ANG.concat(["angFDB"]);
+    // The payoff: everything the reductio needed is gone; the circle, its
+    // three named points, the centre and its radii remain.
+    var DONE  = ["A","B","C","ABC","F","FA","FB","FC"];
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -91,21 +130,163 @@
             "G;point;free;150,140",
             "AG;line;connect;A,G",
             "BG;line;connect;B,G",
-            "DG;line;connect;D,G"
+            "DG;line;connect;D,G",
+            // Walk-only halves of the chord EC (initiallyHidden, see above).
+            "DC;line;connect;D,C",
+            "DE;line;connect;D,E",
+            // Hover / highlight targets only — the lines above already draw
+            // every one of these.
+            "CE;line;connect;C,E;0;0;0",
+            "AD;line;connect;A,D;0;0;0",
+            "DB;line;connect;D,B;0;0;0",
+            // The radii from F, which Joyce's figure never draws: the closing slide
+            // clears the construction and draws these three, so "F is the center"
+            // is seen as FA = FB = FC. Transparent at rest.
+            "FA;line;connect;F,A;0;0;0",
+            "FB;line;connect;F,B;0;0;0",
+            "FC;line;connect;F,C;0;0;0",
+            // The two angles at D the reductio compares, and the right angle
+            // FDB that GDB is nested inside. Radii pinned by design: ADG and
+            // GDB are ADJACENT wedges sharing the arm DG, so they share one
+            // radius (auto-nesting would step every marker at a vertex and
+            // stack three rings to 40px on a 100px circle); only FDB, which
+            // contains GDB, sits outside.
+            "angADG;sector;angleMarkerRight;D,A,G,20",
+            "angGDB;sector;angleMarkerRight;D,G,B,20",
+            "angFDB;sector;angleMarkerRight;D,F,B,28;0;0;red;red"
         ],
+        // Draggables are auto-unioned into every slide. G is the supposed
+        // centre the reductio introduces on slide 8, and C' is the third
+        // point that fixes the circle — it draws a dot at the top of the
+        // circle, where C lands later — so both are deferred (checked
+        // against the bundle: `draggable` is true for A, B, C', G only).
+        // A and B are given with the circle, whose name they carry. The
+        // resting figure is unaffected.
+        deferDraggables: ["C'","G"],
+        initiallyHidden: ["DC","DE"],
+        aliases: { "GA": "AG", "GD": "DG", "GB": "BG", "BD": "DB",
+                   "DA": "AD", "BA": "AB",
+                   "ADG": "angADG", "GDB": "angGDB", "FDB": "angFDB" },
+        slides: [
+            { text: "Let {ABC} be the given circle.",
+              visible: GIVEN,
+              highlighted: ["ABC"] },
+            { text: "It is required to find the center of the circle {ABC}.",
+              visible: GIVEN,
+              highlighted: ["ABC"] },
+            { text: "Draw a straight line {AB} through it at random, and bisect it at the point {D}.",
+              visible: LINE,
+              highlighted: ["AB", "D"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AB", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "D",  name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "AB bisected at D", ref: "I.10" }] },
+            { text: "Draw {DC} from {D} at right angles to {AB},",
+              visible: PERP,
+              // DC and C are the targets; AB, the line it stands on, is not.
+              highlighted: ["AB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "DC", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "C",  name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "DC at right angles to AB", ref: "I.11" }] },
+            { text: "and draw it through to {E}.",
+              visible: THRU,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "DE", name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "E",  name: geomlib.A.Point.appear } ] },
+              justifications: [{ ref: "I.Post.2" }] },
+            { text: "Bisect {CE} at {F}.",
+              visible: BIS,
+              // F is the target; CE, the line bisected, is not.
+              highlighted: ["CE"],
+              transition: { animations: [
+                  { elem: "F", name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "CE bisected at F", ref: "I.10" }] },
+            { text: "I say that {F} is the center of the circle {ABC}.",
+              visible: BIS,
+              highlighted: ["F","ABC"] },
+            { text: "For suppose it is not, but, if possible, let {G} be the center.",
+              visible: SUP,
+              highlighted: [],
+              transition: { animations: [
+                  { elem: "G", name: geomlib.A.Point.appear } ] } },
+            { text: "Join {GA}, {GD}, and {GB}.",
+              visible: JOIN,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AG", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "DG", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "BG", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "I.Post.1" }] },
+            { text: "Then, since {AD} equals {DB}, and {DG} is common, the two sides {AD} and {DG} equal the two sides {BD} and {DG} respectively.",
+              visible: SIDES,
+              highlighted: ["AD","DB","DG"] },
+            { text: "And the base {GA} equals the base {GB}, for they are radii,",
+              visible: SIDES,
+              highlighted: ["AG","BG"],
+              justifications: [{ claim: "GA and GB are radii", ref: "I.Def.15" }] },
+            { text: "therefore the angle {ADG} equals the angle {GDB}.",
+              visible: ANG,
+              highlighted: ["angADG", "angGDB"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "angADG", name: geomlib.A.Sector.sweep },
+                  { elem: "angGDB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "triangles ADG and BDG, three sides equal to three sides", ref: "I.8" }] },
+            { text: "But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, therefore the angle {GDB} is right.",
+              visible: ANG,
+              highlighted: ["angGDB"],
+              justifications: [{ ref: "I.Def.10" }] },
+            { text: "But the angle {FDB} is also right, therefore the angle {FDB} equals the angle {GDB}, the greater equals the less, which is impossible.",
+              visible: RT,
+              // angFDB is the target; GDB, the angle it is compared with, is
+              // not.
+              highlighted: ["angGDB"],
+              transition: { animations: [
+                  { elem: "angFDB", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Therefore {G} is not the center of the circle {ABC}.",
+              visible: RT,
+              highlighted: ["G"] },
+            { text: "Similarly we can prove that neither is any other point except {F}.",
+              visible: RT,
+              highlighted: ["F"] },
+            { text: "Therefore the point {F} is the center of the circle {ABC}.",
+              visible: DONE,
+              highlighted: ["F","FA","FB","FC"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "FA", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "FB", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "FC", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "Q.E.F." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Def.10": "/elements/books/bookI/definitions/defI10/",
+        "I.Def.15": "/elements/books/bookI/definitions/defI15/",
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.Post.2": "/elements/books/bookI/postulates/post2/",
+        "I.8":      "/elements/books/bookI/propositions/propI8/",
+        "I.10":     "/elements/books/bookI/propositions/propI10/",
+        "I.11":     "/elements/books/bookI/propositions/propI11/"
     });
 </script>
 </figure><div class="just"><a href="/elements/books/bookI/propositions/propI10/">I.10</a><br><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI10/">I.10</a></div>
-<p>Draw a straight line <em>AB</em> through it at random, and bisect it at the point <em>D.</em>  Draw <em>DC</em> from <em>D</em> at right angles to <em>AB,</em> and draw it through to <em>E.</em>  Bisect <em>CE</em> at <em>F.</em></p>
-<p>I say that <em>F</em> is the center of the circle <em>ABC.</em></p>
-<p>For suppose it is not, but, if possible, let <em>G</em> be the center. Join <em>GA, GD,</em> and <em>GB.</em></p>
+<p>Draw a straight line <span class="elem-ref" data-elem="AB">AB</span> through it at random, and bisect it at the point <span class="elem-ref" data-elem="D">D</span>.  Draw <span class="elem-ref" data-elem="DC">DC</span> from <span class="elem-ref" data-elem="D">D</span> at right angles to <span class="elem-ref" data-elem="AB">AB</span>, and draw it through to <span class="elem-ref" data-elem="E">E</span>.  Bisect <span class="elem-ref" data-elem="CE">CE</span> at <span class="elem-ref" data-elem="F">F</span>.</p>
+<p>I say that <span class="elem-ref" data-elem="F">F</span> is the center of the circle <span class="elem-ref" data-elem="ABC">ABC</span>.</p>
+<p>For suppose it is not, but, if possible, let <span class="elem-ref" data-elem="G">G</span> be the center. Join <span class="elem-ref" data-elem="GA">GA</span>, <span class="elem-ref" data-elem="GD">GD</span>, and <span class="elem-ref" data-elem="GB">GB</span>.</p>
 <div class="just"><a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a><br><a href="/elements/books/bookI/propositions/propI8/">I.8</a></div>
-<p>Then, since <em>AD</em> equals <em>DB,</em> and <em>DG</em> is common, the two sides <em>AD</em> and <em>DG</em> equal the two sides <em>BD</em> and <em>DG</em> respectively.  And the base <em>GA</em> equals the base <em>GB,</em> for they are radii, therefore the angle <em>ADG</em> equals the angle <em>GDB.</em></p>
+<p>Then, since <span class="elem-ref" data-elem="AD">AD</span> equals <span class="elem-ref" data-elem="DB">DB</span>, and <span class="elem-ref" data-elem="DG">DG</span> is common, the two sides <span class="elem-ref" data-elem="AD">AD</span> and <span class="elem-ref" data-elem="DG">DG</span> equal the two sides <span class="elem-ref" data-elem="BD">BD</span> and <span class="elem-ref" data-elem="DG">DG</span> respectively.  And the base <span class="elem-ref" data-elem="GA">GA</span> equals the base <span class="elem-ref" data-elem="GB">GB</span>, for they are radii, therefore the angle <span class="elem-ref" data-elem="ADG">ADG</span> equals the angle <span class="elem-ref" data-elem="GDB">GDB</span>.</p>
 <div class="just"><a href="/elements/books/bookI/definitions/defI10/">I.Def.10</a></div>
-<p>But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right,  therefore the angle <em>GDB</em> is right.</p>
-<p>But the angle <em>FDB</em> is also right, therefore the angle <em>FDB</em> equals the angle <em>GDB,</em> the greater equals the less, which is impossible.  Therefore <em>G</em> is not the center of the circle <em>ABC.</em></p>
-<p>Similarly we can prove that neither is any other point except <em>F.</em></p>
-<p>Therefore the point <em>F</em> is the center of the circle <em>ABC.</em></p>
+<p>But, when a straight line standing on a straight line makes the adjacent angles equal to one another, each of the equal angles is right,  therefore the angle <span class="elem-ref" data-elem="GDB">GDB</span> is right.</p>
+<p>But the angle <span class="elem-ref" data-elem="FDB">FDB</span> is also right, therefore the angle <span class="elem-ref" data-elem="FDB">FDB</span> equals the angle <span class="elem-ref" data-elem="GDB">GDB</span>, the greater equals the less, which is impossible.  Therefore <span class="elem-ref" data-elem="G">G</span> is not the center of the circle <span class="elem-ref" data-elem="ABC">ABC</span>.</p>
+<p>Similarly we can prove that neither is any other point except <span class="elem-ref" data-elem="F">F</span>.</p>
+<p>Therefore the point <span class="elem-ref" data-elem="F">F</span> is the center of the circle <span class="elem-ref" data-elem="ABC">ABC</span>.</p>
 <div class="qed">Q.E.F.</div>
     
   </div>
@@ -125,9 +306,9 @@
 
 
   <h2 id="guide">Guide</h2>
-  <p>Since the definition of a circle, <a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a>, includes the existence of a center, Euclid is justified in taking a point <em>G</em> as the center.</p>
-<p>In this proof <em>G</em> is shown to lie on the perpendicular bisector of the line <em>AB.</em>  He leaves to the reader to show that <em>G</em> actually is the point <em>F</em> on the perpendicular bisector, but that's clear since only the midpoint <em>F</em> is equidistant from the two points <em>C</em> and <em>E</em> on the circle.  From that observation it also follows that the center of a circle is unique, although the uniqueness can easily be proved in other ways.</p>
-<p>As Todhunter remarked, Euclid implicitly assumes that the perpendicular bisector of <em>AB</em> actually intersects the circle in points <em>C</em> and <em>E.</em></p>
+  <p>Since the definition of a circle, <a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a>, includes the existence of a center, Euclid is justified in taking a point <span class="elem-ref" data-elem="G">G</span> as the center.</p>
+<p>In this proof <span class="elem-ref" data-elem="G">G</span> is shown to lie on the perpendicular bisector of the line <span class="elem-ref" data-elem="AB">AB</span>.  He leaves to the reader to show that <span class="elem-ref" data-elem="G">G</span> actually is the point <span class="elem-ref" data-elem="F">F</span> on the perpendicular bisector, but that's clear since only the midpoint <span class="elem-ref" data-elem="F">F</span> is equidistant from the two points <span class="elem-ref" data-elem="C">C</span> and <span class="elem-ref" data-elem="E">E</span> on the circle.  From that observation it also follows that the center of a circle is unique, although the uniqueness can easily be proved in other ways.</p>
+<p>As Todhunter remarked, Euclid implicitly assumes that the perpendicular bisector of <span class="elem-ref" data-elem="AB">AB</span> actually intersects the circle in points <span class="elem-ref" data-elem="C">C</span> and <span class="elem-ref" data-elem="E">E</span>.</p>
 <h4>Use of this proposition and its corollary</h4>
 <p>About half the proofs in Book III and several of those in Book IV begin with taking the center of a given circle, but in plane geometry, it isn't necessary to invoke this proposition III.1 since the only way that circles can occur is if they were constructed around a center to begin with.  Even in solid geometry, the center of a circle is usually known so that III.1 isn't necessary.  Indeed, that is the case whenever the center is needed in Euclid's books on solid geometry (see <a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a>, <a href="/elements/books/bookXIII/propositions/propXIII9/">XIII.9</a> through XIII.13, and <a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a>).  Sections of spheres cut by planes are also circles as are certain plane sections of cylinders and cones, and as the spheres, cylinders, and cones were generated by rotating semicircles, rectangles, and triangles about their sides, the center of the circle is known to be at the intersection of the side and the plane.  In that sense, this proposition is redundant.</p>
 <p>The corollary is used in propositions <a href="/elements/books/bookIII/propositions/propIII9/">III.9</a> and <a href="/elements/books/bookIII/propositions/propIII10/">III.10</a>.</p>
@@ -138,7 +319,7 @@
 
 <h4>Referenced by</h4>
 <table class="ref-table">
-  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII2/">III.2</a>, <a href="/elements/books/bookIII/propositions/propIII3/">III.3</a>, <a href="/elements/books/bookIII/propositions/propIII4/">III.4</a>, <a href="/elements/books/bookIII/propositions/propIII8/">III.8</a>, <a href="/elements/books/bookIII/propositions/propIII11/">III.11</a>, <a href="/elements/books/bookIII/propositions/propIII12/">III.12</a>, <a href="/elements/books/bookIII/propositions/propIII13/">III.13</a>, <a href="/elements/books/bookIII/propositions/propIII14/">III.14</a>, <a href="/elements/books/bookIII/propositions/propIII17/">III.17</a>, <a href="/elements/books/bookIII/propositions/propIII18/">III.18</a>, <a href="/elements/books/bookIII/propositions/propIII21/">III.21</a>, <a href="/elements/books/bookIII/propositions/propIII28/">III.28</a>, <a href="/elements/books/bookIII/propositions/propIII29/">III.29</a>, <a href="/elements/books/bookIII/propositions/propIII35/">III.35</a>, <a href="/elements/books/bookIII/propositions/propIII36/">III.36</a>, <a href="/elements/books/bookIII/propositions/propIII37/">III.37</a></td></tr>
+  <tr><th>Book III</th><td><a href="/elements/books/bookIII/propositions/propIII2/">III.2</a>, <a href="/elements/books/bookIII/propositions/propIII3/">III.3</a>, <a href="/elements/books/bookIII/propositions/propIII4/">III.4</a>, <a href="/elements/books/bookIII/propositions/propIII8/">III.8</a>, <a href="/elements/books/bookIII/propositions/propIII9/">III.9</a>, <a href="/elements/books/bookIII/propositions/propIII10/">III.10</a>, <a href="/elements/books/bookIII/propositions/propIII11/">III.11</a>, <a href="/elements/books/bookIII/propositions/propIII12/">III.12</a>, <a href="/elements/books/bookIII/propositions/propIII13/">III.13</a>, <a href="/elements/books/bookIII/propositions/propIII14/">III.14</a>, <a href="/elements/books/bookIII/propositions/propIII17/">III.17</a>, <a href="/elements/books/bookIII/propositions/propIII18/">III.18</a>, <a href="/elements/books/bookIII/propositions/propIII21/">III.21</a>, <a href="/elements/books/bookIII/propositions/propIII28/">III.28</a>, <a href="/elements/books/bookIII/propositions/propIII29/">III.29</a>, <a href="/elements/books/bookIII/propositions/propIII35/">III.35</a>, <a href="/elements/books/bookIII/propositions/propIII36/">III.36</a>, <a href="/elements/books/bookIII/propositions/propIII37/">III.37</a></td></tr>
   <tr><th>Book IV</th><td><a href="/elements/books/bookIV/propositions/propIV6/">IV.6</a>, <a href="/elements/books/bookIV/propositions/propIV7/">IV.7</a>, <a href="/elements/books/bookIV/propositions/propIV15/">IV.15</a></td></tr>
   <tr><th>Book XI</th><td><a href="/elements/books/bookXI/propositions/propXI23/">XI.23</a></td></tr>
   <tr><th>Book XIII</th><td><a href="/elements/books/bookXIII/propositions/propXIII9/">XIII.9</a>, <a href="/elements/books/bookXIII/propositions/propXIII10/">XIII.10</a>, <a href="/elements/books/bookXIII/propositions/propXIII11/">XIII.11</a>, <a href="/elements/books/bookXIII/propositions/propXIII12/">XIII.12</a>, <a href="/elements/books/bookXIII/propositions/propXIII16/">XIII.16</a></td></tr>

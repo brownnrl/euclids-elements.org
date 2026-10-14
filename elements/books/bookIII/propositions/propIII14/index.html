@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.17.1/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.18.1/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.17.1">
+<meta name="geomlib-version" content="0.18.1">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -65,12 +65,35 @@
   <div class="theorem">
     <h1 id="prop">Proposition 14</h1>
     <div class="statement">Equal straight lines in a circle are equally distant from the center, and those which are equally distant from the center equal one another.</div>
-    <p>Let <em>AB</em> and <em>CD</em> be equal straight lines in a circle <em>ABDC.</em></p>
-<p>I say that <em>AB</em> and <em>CD</em> are equally distant from the center.</p>
+    <p>Let <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span> be equal straight lines in a circle <span class="elem-ref" data-elem="ABDC">ABDC</span>.</p>
+<p>I say that <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span> are equally distant from the center.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="270" height="270" tabindex="0"></canvas>
 <noscript><img alt="III.14 diagram" src="propIII14.gif"/></noscript>
 <script type="text/javascript">
+    // A theorem and its converse on one figure, so one deck walks both
+    // halves over the same construction ("with the same construction" is
+    // Euclid's own instruction). The construction is short — the center,
+    // two perpendiculars, two radii — and each clause is animated; the
+    // rest is highlight beats over the I.47 accounting.
+    //
+    // Joyce's figure draws the halves AF, FB, CG only as parts of the
+    // chords, so they get transparent twins (;0;0;0). The circle is the
+    // random-filled ABC; the prose calls it ABDC, and that name goes to a
+    // transparent twin so a highlight never promotes the fill over the
+    // triangles (#140). EAF and ECG are Joyce's two triangles: converted
+    // with no faceColor field, so they carry the opaque near-white default
+    // — which is what his gif shows, a pale pair on the green — and they
+    // are never named in a slide set. No squares are drawn (none would fit
+    // a 270px canvas), so "the square on AF" lights AF. The two right
+    // angles get red markers, hidden in the static figure. Resting figure
+    // pixel-unchanged.
+    var GIVEN = ["A","B","C","D","AB","CD","ABC","ABDC"];
+    var CENT  = GIVEN.concat(["E"]);
+    var PERP  = CENT.concat(["F","G","EF","EG","EA","EC"]);
+    var RTF   = PERP.concat(["angAFE"]);
+    var HALF  = RTF.concat(["AF","FB"]);
+    var RTG   = HALF.concat(["CG","angCGE"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -92,26 +115,169 @@
             "EF;line;connect;E,F",
             "EG;line;connect;E,G",
             "EAF;polygon;triangle;E,A,F;0;0;0",
-            "ECG;polygon;triangle;E,C,G;0;0;0"
+            "ECG;polygon;triangle;E,C,G;0;0;0",
+            // Transparent twin of the circle under the prose's name.
+            "ABDC;circle;radius;E,A;0;0;0;0",
+            // Halves of the chords; AB and CD already draw them.
+            "AF;line;connect;A,F;0;0;0",
+            "FB;line;connect;F,B;0;0;0",
+            "CG;line;connect;C,G;0;0;0",
+            // The right angles at F and G. One marker per vertex, so no
+            // radius override.
+            "angAFE;sector;angleMarkerRight;F,A,E;0;0;red;red",
+            "angCGE;sector;angleMarkerRight;G,C,E;0;0;red;red"
         ],
+        // Draggables (checked against the bundle): A, E, B, C. A, B and C
+        // are the chords' endpoints and belong to slide 1; E is the center,
+        // declared as a free point, and the proof takes it on slide 3 — so
+        // it is deferred out of the every-slide auto-union. D (vertex) and
+        // F, G (midpoint) are derived and listed per slide.
+        deferDraggables: ["E"],
+        aliases: { "AE": "EA", "CE": "EC", "FA": "AF", "BF": "FB",
+                   "GC": "CG", "FE": "EF", "GE": "EG" },
+        slides: [
+            // The deck opens on the proposition's statement over the givens
+            // (process.md “Open on the statement”), split at its seams.
+            { text: "“Equal straight lines in a circle are equally distant from the center,”",
+              visible: GIVEN,
+              highlighted: [] },
+            { text: "“and those which are equally distant from the center equal one another.”",
+              visible: GIVEN,
+              highlighted: [],
+              justifications: [{ ref: "III.14" }] },
+            { text: "Let {AB} and {CD} be equal straight lines in a circle {ABDC}.",
+              visible: GIVEN,
+              highlighted: ["AB","CD"] },
+            { text: "I say that {AB} and {CD} are equally distant from the center.",
+              visible: GIVEN,
+              highlighted: ["AB","CD"] },
+            { text: "Take the center {E} of the circle {ABDC}.",
+              visible: CENT,
+              highlighted: ["ABDC", "E"],
+              transition: { animations: [
+                  { elem: "E", name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "the center of the circle", ref: "III.1" }] },
+            { text: "Draw {EF} and {EG} from {E} perpendicular to {AB} and {CD}, and join {AE} and {EC}.",
+              visible: PERP,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "EF", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "F",  name: geomlib.A.Point.appear },
+                  { elem: "EG", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "G",  name: geomlib.A.Point.appear },
+                  { elem: "EA", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "EC", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "perpendiculars from E to AB and CD", ref: "I.12" },
+                  { ref: "I.Post.1" } ] },
+            { text: "Then, since a straight line {EF} passing through the center cuts a straight line {AB} not passing through the center at right angles, it also bisects it.",
+              visible: RTF,
+              highlighted: ["EF","AB","E"],
+              transition: { animations: [
+                  { elem: "angAFE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "EF through the center at right angles to AB bisects it", ref: "III.3" }] },
+            { text: "Therefore {AF} equals {FB}. Therefore {AB} is double {AF}.",
+              visible: HALF,
+              highlighted: ["AF","FB"] },
+            { text: "For the same reason {CD} is also double {CG}.",
+              visible: RTG,
+              highlighted: ["CD","CG"],
+              transition: { animations: [
+                  { elem: "angCGE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "EG through the center at right angles to CD bisects it", ref: "III.3" }] },
+            { text: "But {AB} equals {CD}, therefore {AF} also equals {CG}.",
+              visible: RTG,
+              highlighted: ["AB","CD","AF","CG"] },
+            { text: "Also, since {AE} equals {EC}, the square on {AE} also equals the square on {EC}.",
+              visible: RTG,
+              highlighted: ["EA","EC"],
+              justifications: [{ claim: "AE and EC are radii of the circle", ref: "I.Def.15" }] },
+            { text: "But the sum of the squares on {AF} and {EF} equals the square on {AE}, for the angle at {F} is right,",
+              visible: RTG,
+              highlighted: ["AF","EF","EA","angAFE"],
+              justifications: [{ claim: "the right angle at F in the triangle EAF", ref: "I.47" }] },
+            { text: "and the sum of the squares on {EG} and {GC} equals the square on {EC}, for the angle at {G} is right.",
+              visible: RTG,
+              highlighted: ["EG","CG","EC","angCGE"],
+              justifications: [{ claim: "the right angle at G in the triangle ECG", ref: "I.47" }] },
+            { text: "Therefore the sum of the squares on {AF} and {FE} equals the sum of the squares on {CG} and {GE}, of which the square on {AF} equals the square on {CG}, for {AF} equals {CG}.",
+              visible: RTG,
+              highlighted: ["AF","EF","CG","EG"] },
+            { text: "Therefore the remaining square on {FE} equals the square on {EG}. Therefore {EF} equals {EG}.",
+              visible: RTG,
+              highlighted: ["EF","EG"],
+              justifications: [{ claim: "subtract the equal squares on AF and CG", ref: "C.N.3" }] },
+            { text: "But straight lines in a circle are said to be equally distant from the center when the perpendiculars drawn to them from the center are equal. Therefore {AB} and {CD} are equally distant from the center.",
+              visible: RTG,
+              highlighted: ["AB","CD","EF","EG"],
+              justifications: [{ claim: "equal perpendiculars from the center", ref: "III.Def.4" }] },
+            // The converse, on the same construction.
+            { text: "Next, let the straight lines {AB} and {CD} be equally distant from the center, that is, let {EF} equal {EG}.",
+              visible: RTG,
+              highlighted: ["EF","EG"],
+              justifications: [{ claim: "equally distant from the center", ref: "III.Def.4" }] },
+            { text: "I say that {AB} also equals {CD}.",
+              visible: RTG,
+              highlighted: ["AB","CD"] },
+            { text: "For, with the same construction, we can prove, as before, that {AB} is double {AF}, and {CD} double {CG}.",
+              visible: RTG,
+              highlighted: ["AB","AF","CD","CG"],
+              justifications: [{ claim: "EF and EG bisect AB and CD", ref: "III.3" }] },
+            { text: "And, since {AE} equals {CE}, the square on {AE} equals the square on {CE}.",
+              visible: RTG,
+              highlighted: ["EA","EC"],
+              justifications: [{ claim: "AE and CE are radii of the circle", ref: "I.Def.15" }] },
+            { text: "But the sum of the squares on {EF} and {FA} equals the square on {AE}, and the sum of the squares on {EG} and {GC} equals the square on {CE}.",
+              visible: RTG,
+              highlighted: ["EF","AF","EA","EG","CG","EC"],
+              justifications: [{ claim: "the right angles at F and G", ref: "I.47" }] },
+            { text: "Therefore the sum of the squares on {EF} and {FA} equals the sum of the squares on {EG} and {GC}, of which the square on {EF} equals the square on {EG}, for {EF} equals {EG}.",
+              visible: RTG,
+              highlighted: ["EF","AF","EG","CG"] },
+            { text: "Therefore the remaining square on {AF} equals the square on {CG}. Therefore {AF} equals {CG}.",
+              visible: RTG,
+              highlighted: ["AF","CG"],
+              justifications: [{ claim: "subtract the equal squares on EF and EG", ref: "C.N.3" }] },
+            { text: "And {AB} is double {AF}, and {CD} double {CG}, therefore {AB} equals {CD}.",
+              visible: RTG,
+              highlighted: ["AB","CD"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            if (ref === "III.14") return "#prop";
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1":  "/elements/books/bookI/postulates/post1/",
+        "I.Def.15":  "/elements/books/bookI/definitions/defI15/",
+        "I.12":      "/elements/books/bookI/propositions/propI12/",
+        "I.47":      "/elements/books/bookI/propositions/propI47/",
+        "C.N.3":     "/elements/books/bookI/commonnotions/cn3/",
+        "III.1":     "/elements/books/bookIII/propositions/propIII1/",
+        "III.3":     "/elements/books/bookIII/propositions/propIII3/",
+        "III.Def.4": "/elements/books/bookIII/definitions/defIII4/"
     });
 </script>
 </figure><div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a><br><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
-<p>Take the center <em>E</em> of the circle <em>ABDC.</em> Draw <em>EF</em> and <em>EG</em> from <em>E</em>  perpendicular to <em>AB</em> and <em>CD,</em> and join <em>AE</em> and <em>EC.</em></p>
+<p>Take the center <span class="elem-ref" data-elem="E">E</span> of the circle <span class="elem-ref" data-elem="ABDC">ABDC</span>. Draw <span class="elem-ref" data-elem="EF">EF</span> and <span class="elem-ref" data-elem="EG">EG</span> from <span class="elem-ref" data-elem="E">E</span>  perpendicular to <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span>, and join <span class="elem-ref" data-elem="AE">AE</span> and <span class="elem-ref" data-elem="EC">EC</span>.</p>
 <div class="just"><a href="/elements/books/bookIII/propositions/propIII3/">III.3</a></div>
-<p>Then, since a straight line <em>EF</em> passing through the center cuts a straight line <em>AB</em> not passing through the center at right angles, it also bisects it.  Therefore <em>AF</em> equals <em>FB.</em> Therefore <em>AB</em> is double <em>AF.</em></p>
-<p>For the same reason <em>CD</em> is also double <em>CG.</em> But <em>AB</em> equals <em>CD,</em> therefore <em>AF</em> also equals <em>CG.</em></p>
+<p>Then, since a straight line <span class="elem-ref" data-elem="EF">EF</span> passing through the center cuts a straight line <span class="elem-ref" data-elem="AB">AB</span> not passing through the center at right angles, it also bisects it.  Therefore <span class="elem-ref" data-elem="AF">AF</span> equals <span class="elem-ref" data-elem="FB">FB</span>. Therefore <span class="elem-ref" data-elem="AB">AB</span> is double <span class="elem-ref" data-elem="AF">AF</span>.</p>
+<p>For the same reason <span class="elem-ref" data-elem="CD">CD</span> is also double <span class="elem-ref" data-elem="CG">CG</span>. But <span class="elem-ref" data-elem="AB">AB</span> equals <span class="elem-ref" data-elem="CD">CD</span>, therefore <span class="elem-ref" data-elem="AF">AF</span> also equals <span class="elem-ref" data-elem="CG">CG</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
-<p>Also, since <em>AE</em> equals <em>EC,</em> the square on <em>AE</em> also equals the square on <em>EC.</em>  But the sum of the squares on <em>AF</em> and <em>EF</em> equals the square on <em>AE,</em> for the angle at <em>F</em> is right, and the sum of the squares on <em>EG</em> and <em>GC</em> equals the square on <em>EC,</em> for the angle at <em>G</em> is right.  Therefore the sum of the squares on <em>AF</em> and <em>FE</em> equals the sum of the squares on <em>CG</em> and <em>GE,</em> of which the square on <em>AF</em> equals the square on <em>CG,</em> for <em>AF</em> equals <em>CG.</em>  Therefore the remaining square on <em>FE</em> equals the square on <em>EG.</em>  Therefore <em>EF</em> equals <em>EG.</em></p>
+<p>Also, since <span class="elem-ref" data-elem="AE">AE</span> equals <span class="elem-ref" data-elem="EC">EC</span>, the square on <span class="elem-ref" data-elem="AE">AE</span> also equals the square on <span class="elem-ref" data-elem="EC">EC</span>.  But the sum of the squares on <span class="elem-ref" data-elem="AF">AF</span> and <span class="elem-ref" data-elem="EF">EF</span> equals the square on <span class="elem-ref" data-elem="AE">AE</span>, for the angle at <span class="elem-ref" data-elem="F">F</span> is right, and the sum of the squares on <span class="elem-ref" data-elem="EG">EG</span> and <span class="elem-ref" data-elem="GC">GC</span> equals the square on <span class="elem-ref" data-elem="EC">EC</span>, for the angle at <span class="elem-ref" data-elem="G">G</span> is right.  Therefore the sum of the squares on <span class="elem-ref" data-elem="AF">AF</span> and <span class="elem-ref" data-elem="FE">FE</span> equals the sum of the squares on <span class="elem-ref" data-elem="CG">CG</span> and <span class="elem-ref" data-elem="GE">GE</span>, of which the square on <span class="elem-ref" data-elem="AF">AF</span> equals the square on <span class="elem-ref" data-elem="CG">CG</span>, for <span class="elem-ref" data-elem="AF">AF</span> equals <span class="elem-ref" data-elem="CG">CG</span>.  Therefore the remaining square on <span class="elem-ref" data-elem="FE">FE</span> equals the square on <span class="elem-ref" data-elem="EG">EG</span>.  Therefore <span class="elem-ref" data-elem="EF">EF</span> equals <span class="elem-ref" data-elem="EG">EG</span>.</p>
 <div class="just"><a href="/elements/books/bookIII/definitions/defIII4/">III.Def.4</a></div>
-<p>But straight lines in a circle are said to be equally distant from the center when the perpendiculars drawn to them from the center are equal.  Therefore <em>AB</em> and <em>CD</em> are equally distant from the center.</p>
+<p>But straight lines in a circle are said to be equally distant from the center when the perpendiculars drawn to them from the center are equal.  Therefore <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span> are equally distant from the center.</p>
 <hr width="50%">
 
-<p>Next, let the straight lines <em>AB</em> and <em>CD</em> be equally distant from the center, that is, let <em>EF</em> equal <em>EG.</em></p>
-<p>I say that <em>AB</em> also equals <em>CD.</em></p>
+<p>Next, let the straight lines <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span> be equally distant from the center, that is, let <span class="elem-ref" data-elem="EF">EF</span> equal <span class="elem-ref" data-elem="EG">EG</span>.</p>
+<p>I say that <span class="elem-ref" data-elem="AB">AB</span> also equals <span class="elem-ref" data-elem="CD">CD</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI47/">I.47</a></div>
-<p>For, with the same construction, we can prove, as before, that <em>AB</em> is double <em>AF,</em> and <em>CD</em> double <em>CG.</em>  And, since <em>AE</em> equals <em>CE,</em> the square on <em>AE</em> equals the square on <em>CE.</em>  But the sum of the squares on <em>EF</em> and <em>FA</em> equals the square on <em>AE,</em> and the sum of the squares on <em>EG</em> and <em>GC</em> equals the square on <em>CE.</em></p>
-<p>Therefore the sum of the squares on <em>EF</em> and <em>FA</em> equals the sum of the squares on <em>EG</em> and <em>GC,</em> of which the square on <em>EF</em> equals the square on <em>EG,</em> for <em>EF</em> equals <em>EG.</em> Therefore the remaining square on <em>AF</em> equals the square on <em>CG.</em>  Therefore <em>AF</em> equals <em>CG.</em>  And <em>AB</em> is double <em>AF,</em> and <em>CD</em> double <em>CG,</em> therefore <em>AB</em> equals <em>CD.</em></p>
+<p>For, with the same construction, we can prove, as before, that <span class="elem-ref" data-elem="AB">AB</span> is double <span class="elem-ref" data-elem="AF">AF</span>, and <span class="elem-ref" data-elem="CD">CD</span> double <span class="elem-ref" data-elem="CG">CG</span>.  And, since <span class="elem-ref" data-elem="AE">AE</span> equals <span class="elem-ref" data-elem="CE">CE</span>, the square on <span class="elem-ref" data-elem="AE">AE</span> equals the square on <span class="elem-ref" data-elem="CE">CE</span>.  But the sum of the squares on <span class="elem-ref" data-elem="EF">EF</span> and <span class="elem-ref" data-elem="FA">FA</span> equals the square on <span class="elem-ref" data-elem="AE">AE</span>, and the sum of the squares on <span class="elem-ref" data-elem="EG">EG</span> and <span class="elem-ref" data-elem="GC">GC</span> equals the square on <span class="elem-ref" data-elem="CE">CE</span>.</p>
+<p>Therefore the sum of the squares on <span class="elem-ref" data-elem="EF">EF</span> and <span class="elem-ref" data-elem="FA">FA</span> equals the sum of the squares on <span class="elem-ref" data-elem="EG">EG</span> and <span class="elem-ref" data-elem="GC">GC</span>, of which the square on <span class="elem-ref" data-elem="EF">EF</span> equals the square on <span class="elem-ref" data-elem="EG">EG</span>, for <span class="elem-ref" data-elem="EF">EF</span> equals <span class="elem-ref" data-elem="EG">EG</span>. Therefore the remaining square on <span class="elem-ref" data-elem="AF">AF</span> equals the square on <span class="elem-ref" data-elem="CG">CG</span>.  Therefore <span class="elem-ref" data-elem="AF">AF</span> equals <span class="elem-ref" data-elem="CG">CG</span>.  And <span class="elem-ref" data-elem="AB">AB</span> is double <span class="elem-ref" data-elem="AF">AF</span>, and <span class="elem-ref" data-elem="CD">CD</span> double <span class="elem-ref" data-elem="CG">CG</span>, therefore <span class="elem-ref" data-elem="AB">AB</span> equals <span class="elem-ref" data-elem="CD">CD</span>.</p>
 <p>Therefore <em>equal straight lines in a circle are equally distant from the center, and those which are equally distant from the center equal one another.</em></p>
 <div class="qed">Q.E.D.</div>
     

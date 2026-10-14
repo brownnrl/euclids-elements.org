@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.17.1/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.18.1/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.17.1">
+<meta name="geomlib-version" content="0.18.1">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -65,11 +65,51 @@
   <div class="theorem">
     <h1 id="prop">Proposition 2</h1>
     <div class="statement">If two points are taken at random on the circumference of a circle, then the straight line joining the points falls within the circle.</div>
-    <p>Let <em>ABC</em> be a circle, and let two points <em>A</em> and <em>B</em> be taken at random on its circumference.</p>
+    <p>Let <span class="elem-ref" data-elem="ABC">ABC</span> be a circle, and let two points <span class="elem-ref" data-elem="A">A</span> and <span class="elem-ref" data-elem="B">B</span> be taken at random on its circumference.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="260" height="260" tabindex="0"></canvas>
 <noscript><img alt="III.2 diagram" src="propIII2.gif"/></noscript>
 <script type="text/javascript">
+    // Joyce's "impossible figure": AEB is an arc standing in for the
+    // hypothetical straight line that falls outside the circle. His figure
+    // draws that arc and DE, but NOT the chord AB the proposition is about
+    // and NOT the radii DA, DB the proof joins.
+    //
+    // AB is a transparent twin (;0;0;0): it lights gold when a slide names
+    // it — the true chord, inside the circle — and draws nothing at rest.
+    // DA and DB are real black lines that are `initiallyHidden` (II.8's
+    // idiom): the walk joins them on slide 5 and they stay on the canvas
+    // for the argument, while the resting figure is pixel-identical to the
+    // converted one (verified by rendering both against the bundle with a
+    // seeded Math.random). A transparent twin would vanish the moment its
+    // stroke finished, which is worse than not joining them at all.
+    //
+    // "The triangle DAE" has the arc for a side, so it is a curvedTriangle
+    // (geomlib 0.15.0): straight sides on the carriers DA and DE, and the
+    // A-E side clipped from the transparent circle through A, E, B — the
+    // same circle Joyce's arc lies on. Highlighting it outlines exactly
+    // the figure the prose calls a triangle. DF is a transparent twin of
+    // the radius inside DE.
+    //
+    // Sweep of the arc (euclid#172): measured against the bundle, AEB's
+    // A.Sector.sweep is monotonic for its A,E,B arm order — drawn pixels
+    // 0 / 85 / 170 / 253 / 338 at t = 0 / .25 / .5 / .75 / 1 — so it keeps
+    // the sweep. The arms are Joyce's and are not touched.
+    //
+    // Colour: the circle keeps Joyce's random face. The two base angles the
+    // I.5 step proves equal share magenta; the exterior angle DEB is orange.
+    var GIVEN = ["A","B","C","ABC"];
+    var CLAIM = GIVEN.concat(["AB"]);
+    var OUT   = CLAIM.concat(["E","AEB"]);
+    var CEN   = OUT.concat(["D"]);
+    var JOIN  = CEN.concat(["DA","DB","DE","F"]);
+    var BASE  = JOIN.concat(["angDAE","angDBE"]);
+    var EXT   = BASE.concat(["DAE","angDEB"]);
+    var RAD   = EXT.concat(["DF"]);
+    // The reductio is closed: the supposed outside line AEB, the point E,
+    // DE, F, DF and the angle markers all go. What remains is true — the
+    // circle, its centre, the radii to A and B, and the chord AB within.
+    var TRUE  = CLAIM.concat(["D","DA","DB"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -84,20 +124,136 @@
             "E;point;free;70,210",
             "AEB;sector;arc;A,E,B;0;0;black;0",
             "DE;line;connect;D,E",
-            "F;point;cutoff;D,E,D,A"
+            "F;point;cutoff;D,E,D,A",
+            // The radii the proof joins (initiallyHidden, see above).
+            "DA;line;connect;D,A",
+            "DB;line;connect;D,B",
+            // Hover / highlight targets only.
+            "AB;line;connect;A,B;0;0;0",
+            "DF;line;connect;D,F;0;0;0",
+            // Carrier for the curved side of the triangle DAE: the circle
+            // Joyce's arc AEB lies on. Transparent.
+            "AEBc;circle;circumcircle;A,E,B;0;0;0;0",
+            "DAE;polygon;curvedTriangle;D,A,E,DA,AEBc,DE;0;0;0;0",
+            // Angle markers (hidden at rest — showAngles defaults false).
+            "angDAE;sector;angleMarker;A,D,E;0;0;magenta;magenta",
+            "angDBE;sector;angleMarker;B,D,E;0;0;magenta;magenta",
+            "angDEB;sector;angleMarker;E,D,B;0;0;orange;orange"
         ],
+        // E is the free point that shapes the hypothetical arc, and
+        // draggables are auto-unioned into every slide — it would stand
+        // lettered on the canvas from slide 1, before "let it fall outside,
+        // as AEB". Deferred, so it arrives with the arc. A, B, C are given
+        // (checked against the bundle: `draggable` is true for A, B, C, E
+        // only). D and F are derived (center, cutoff), so they are listed
+        // per slide. The resting figure is unaffected.
+        deferDraggables: ["E"],
+        initiallyHidden: ["DA","DB"],
+        // DAE is both the triangle and an angle; the element name belongs to
+        // the triangle, and the angle rides on the display override
+        // {DAE|angDAE} in prose and captions.
+        aliases: { "DFE": "DE", "AD": "DA", "BD": "DB", "ED": "DE",
+                   "FD": "DF", "BA": "AB", "DBE": "angDBE", "DEB": "angDEB" },
+        slides: [
+            { text: "Let {ABC} be a circle, and let two points {A} and {B} be taken at random on its circumference.",
+              visible: GIVEN,
+              highlighted: ["A","B"] },
+            { text: "I say that the straight line joined from {A} to {B} falls within the circle.",
+              visible: CLAIM,
+              highlighted: ["AB"] },
+            { text: "For suppose it does not, but, if possible, let it fall outside, as {AEB}.",
+              visible: OUT,
+              highlighted: ["AEB", "E"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AEB", name: geomlib.A.Sector.sweep },
+                  { elem: "E",   name: geomlib.A.Point.appear } ] } },
+            { text: "Take the center {D} of the circle {ABC}.",
+              visible: CEN,
+              highlighted: [],
+              transition: { animations: [
+                  { elem: "D", name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "the center of the circle", ref: "III.1" }] },
+            { text: "Join {DA} and {DB}, and draw {DFE} through.",
+              visible: JOIN,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "DA", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "DB", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "DE", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "F",  name: geomlib.A.Point.appear } ] },
+              justifications: [{ ref: "I.Post.1" }] },
+            { text: "Then, since {DA} equals {DB}, the angle {DAE|angDAE} also equals the angle {DBE}.",
+              visible: BASE,
+              // The two markers are the targets; the radii are not.
+              highlighted: ["DA","DB"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "angDAE", name: geomlib.A.Sector.sweep },
+                  { elem: "angDBE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "DA and DB are radii",                      ref: "I.Def.15" },
+                  { claim: "base angles of the isosceles triangle DAB", ref: "I.5" } ] },
+            { text: "And, since one side {AEB} of the triangle {DAE} is produced, the angle {DEB} is greater than the angle {DAE|angDAE}.",
+              visible: EXT,
+              // angDEB is the target; the triangle and its interior angle
+              // are not.
+              highlighted: ["DAE","angDAE"],
+              transition: { animations: [
+                  { elem: "angDEB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "exterior angle of the triangle DAE", ref: "I.16" }] },
+            { text: "And the angle {DAE|angDAE} equals the angle {DBE}, therefore the angle {DEB} is greater than the angle {DBE}.",
+              visible: EXT,
+              highlighted: ["angDEB","angDBE"] },
+            { text: "And the side opposite the greater angle is greater, therefore {DB} is greater than {DE}.",
+              visible: EXT,
+              highlighted: ["DB","DE"],
+              justifications: [{ claim: "the greater angle DEB is opposite DB", ref: "I.19" }] },
+            { text: "But {DB} equals {DF},",
+              visible: RAD,
+              highlighted: ["DB","DF"],
+              justifications: [{ claim: "DB and DF are radii", ref: "I.Def.15" }] },
+            { text: "therefore {DF} is greater than {DE}, the less greater than the greater, which is impossible.",
+              visible: RAD,
+              highlighted: ["DF","DE"] },
+            { text: "Therefore the straight line joined from {A} to {B} does not fall outside the circle.",
+              visible: TRUE,
+              highlighted: ["AB"],
+              // The false figure is gone; the true chord is drawn in its place.
+              transition: { animations: [
+                  { elem: "AB", name: geomlib.A.Line.straightEdgeConnect } ] } },
+            { text: "Similarly we can prove that neither does it fall on the circumference itself, therefore it falls within.",
+              visible: TRUE,
+              highlighted: ["AB"] },
+            { text: "Therefore if two points are taken at random on the circumference of a circle, then the straight line joining the points falls within the circle.",
+              visible: TRUE,
+              highlighted: ["AB"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Def.15": "/elements/books/bookI/definitions/defI15/",
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.5":      "/elements/books/bookI/propositions/propI5/",
+        "I.16":     "/elements/books/bookI/propositions/propI16/",
+        "I.19":     "/elements/books/bookI/propositions/propI19/",
+        "III.1":    "/elements/books/bookIII/propositions/propIII1/"
     });
 </script>
-</figure><p>I say that the straight line joined from <em>A</em> to <em>B</em> falls within the circle.</p>
+</figure><p>I say that the straight line joined from <span class="elem-ref" data-elem="A">A</span> to <span class="elem-ref" data-elem="B">B</span> falls within the circle.</p>
 <div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a></div>
-<p>For suppose it does not, but, if possible, let it fall outside, as <em>AEB.</em> Take the center <em>D</em> of the circle <em>ABC.</em> Join <em>DA</em> and <em>DB,</em> and draw <em>DFE</em> through.</p>
+<p>For suppose it does not, but, if possible, let it fall outside, as <span class="elem-ref" data-elem="AEB">AEB</span>. Take the center <span class="elem-ref" data-elem="D">D</span> of the circle <span class="elem-ref" data-elem="ABC">ABC</span>. Join <span class="elem-ref" data-elem="DA">DA</span> and <span class="elem-ref" data-elem="DB">DB</span>, and draw <span class="elem-ref" data-elem="DFE">DFE</span> through.</p>
 <div class="just"><a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a><br><a href="/elements/books/bookI/propositions/propI5/">I.5</a></div>
-<p>Then, since <em>DA</em> equals <em>DB,</em> the angle <em>DAE</em> also equals the angle <em>DBE.</em></p>
+<p>Then, since <span class="elem-ref" data-elem="DA">DA</span> equals <span class="elem-ref" data-elem="DB">DB</span>, the angle <span class="elem-ref" data-elem="angDAE">DAE</span> also equals the angle <span class="elem-ref" data-elem="DBE">DBE</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI16/">I.16</a></div>
-<p>And, since one side <em>AEB</em> of the triangle <em>DAE</em> is produced, the angle <em>DEB</em> is greater than the angle <em>DAE.</em></p>
+<p>And, since one side <span class="elem-ref" data-elem="AEB">AEB</span> of the triangle <span class="elem-ref" data-elem="DAE">DAE</span> is produced, the angle <span class="elem-ref" data-elem="DEB">DEB</span> is greater than the angle <span class="elem-ref" data-elem="angDAE">DAE</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI19/">I.19</a><br><a href="/elements/books/bookI/definitions/defI15/">I.Def.15</a></div>
-<p>And the angle <em>DAE</em> equals the angle <em>DBE,</em> therefore the angle <em>DEB</em> is greater than the angle <em>DBE.</em>  And the side opposite the greater angle is greater, therefore <em>DB</em> is greater than <em>DE.</em>  But <em>DB</em> equals <em>DF,</em> therefore <em>DF</em> is greater than <em>DE,</em> the less greater than the greater, which is impossible.</p>
-<p>Therefore the straight line joined from <em>A</em> to <em>B</em> does not fall outside the circle.</p>
+<p>And the angle <span class="elem-ref" data-elem="angDAE">DAE</span> equals the angle <span class="elem-ref" data-elem="DBE">DBE</span>, therefore the angle <span class="elem-ref" data-elem="DEB">DEB</span> is greater than the angle <span class="elem-ref" data-elem="DBE">DBE</span>.  And the side opposite the greater angle is greater, therefore <span class="elem-ref" data-elem="DB">DB</span> is greater than <span class="elem-ref" data-elem="DE">DE</span>.  But <span class="elem-ref" data-elem="DB">DB</span> equals <span class="elem-ref" data-elem="DF">DF</span>, therefore <span class="elem-ref" data-elem="DF">DF</span> is greater than <span class="elem-ref" data-elem="DE">DE</span>, the less greater than the greater, which is impossible.</p>
+<p>Therefore the straight line joined from <span class="elem-ref" data-elem="A">A</span> to <span class="elem-ref" data-elem="B">B</span> does not fall outside the circle.</p>
 <p>Similarly we can prove that neither does it fall on the circumference itself, therefore it falls within.</p>
 <p>Therefore <em>if two points are taken at random on the circumference of a circle, then the straight line joining the points falls within the circle.</em></p>
 <div class="qed">Q.E.D.</div>
@@ -107,9 +263,9 @@
 
 
   <h2 id="guide">Guide</h2>
-  <p>The figure for this proposition is rather strange, but that is necessary since it refers to a hypothetical situation which is shown to be impossible.  In this figure <em>AEB</em> is supposed to be a straight line that lies on outside the circle.  There are other impossible figures in later propositions in this Book.</p>
+  <p>The figure for this proposition is rather strange, but that is necessary since it refers to a hypothetical situation which is shown to be impossible.  In this figure <span class="elem-ref" data-elem="AEB">AEB</span> is supposed to be a straight line that lies on outside the circle.  There are other impossible figures in later propositions in this Book.</p>
 <p>That Euclid even has this proposition is remarkable.  Of course, it should be included, but there are equally obvious statements (but difficult to prove) left out in earlier books.  For instance, that the two circles constructed in a plane on a line <em>AB</em> intersect is not proved although it is used in <a href="/elements/books/bookI/propositions/propI1/">I.1</a>.  This indicates that more care has been given to the foundations for this book than for the previous books.</p>
-<p>Euclid leaves to the reader to prove that <em>AB</em> cannot lie <em>on</em> the circumference, and that is not particularly difficult to prove.</p>
+<p>Euclid leaves to the reader to prove that <span class="elem-ref" data-elem="AB">AB</span> cannot lie <em>on</em> the circumference, and that is not particularly difficult to prove.</p>
 <p>This proposition is used in <a href="/elements/books/bookIII/propositions/propIII13/">III.13</a>.</p>
 
 

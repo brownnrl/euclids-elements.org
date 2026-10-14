@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.17.1/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.18.1/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.17.1">
+<meta name="geomlib-version" content="0.18.1">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -66,11 +66,38 @@
     <h1 id="prop">Proposition 11</h1>
     <div class="statement">If two circles touch one another internally, and their centers are taken, then the straight line joining their centers, being produced, falls on the point of contact of the circles.</div>
     <div class="just"><a href="/elements/books/bookIII/propositions/propIII1/">III.1</a></div>
-<p>Let the two circles <em>ABC</em> and <em>ADE</em> touch one another internally at the point <em>A,</em> and let the centers <em>F</em> and <em>G</em> of the circles <em>ABC</em> and <em>ADE</em> be taken.</p>
+<p>Let the two circles <span class="elem-ref" data-elem="ABC">ABC</span> and <span class="elem-ref" data-elem="ADE">ADE</span> touch one another internally at the point <span class="elem-ref" data-elem="A">A</span>, and let the centers <span class="elem-ref" data-elem="F">F</span> and <span class="elem-ref" data-elem="G">G</span> of the circles <span class="elem-ref" data-elem="ABC">ABC</span> and <span class="elem-ref" data-elem="ADE">ADE</span> be taken.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="290" height="280" tabindex="0"></canvas>
 <noscript><img alt="III.11 diagram" src="propIII11.gif"/></noscript>
 <script type="text/javascript">
+    // A reductio: the figure is the IMPOSSIBLE one, with G placed off the
+    // line FA so that FG produced misses A and lands at H. Nothing is
+    // constructed beyond two joins and the false line, so the deck is
+    // mostly highlight beats on the segments the argument compares.
+    //
+    // Joyce's two circles are the random-filled ABC and ADE, and ADE lies
+    // inside ABC — a highlighted circle is promoted within the face pass
+    // (#140), so lighting the outer one would paint over the inner. The
+    // filled circles are renamed ABCfill / ADEfill (circle names are never
+    // drawn, so the figure is unchanged) and the prose names go to fully
+    // transparent twins (;0;0;0;0). The segments GF, GH, GD the proof
+    // compares are drawn only as parts of the false line, so they get
+    // transparent twins too. The resting figure is pixel-unchanged.
+    //
+    // The converter named the false line "AH" — it is the cutoff from F
+    // toward D of length FA, i.e. the line FGH. Kept as declared; the
+    // prose reaches it through the aliases FH / FGH.
+    var GIVEN = ["A","B","C","D","E","ABCfill","ADEfill","ABC","ADE"];
+    var CENT  = GIVEN.concat(["F","G"]);
+    var FALSE = CENT.concat(["AH","H"]);
+    var JOIN  = FALSE.concat(["AF","AG"]);
+    var ARG   = JOIN.concat(["GF","GH","GD"]);
+    var TRI   = ARG.concat(["AGF"]);
+    var SWING = ARG.concat(["swingAD"]);
+    // The closing slide withdraws the false line FGH and keeps the join
+    // FG (the transparent GF, lit gold) with A.
+    var CLOSE = CENT.concat(["AF","AG","GF"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -80,28 +107,132 @@
             "A;point;free;50,70",
             "B;point;free;260,160;black;0",
             "C;point;free;110,260;black;0",
-            "ABC;circle;circumcircle;A,B,C;0;0;black;random",
-            "F;point;center;ABC;black;green",
+            "ABCfill;circle;circumcircle;A,B,C;0;0;black;random",
+            "F;point;center;ABCfill;black;green",
             "AF;line;connect;A,F",
             "D;point;free;143,50",
             "M;point;midpoint;A,D;0;0",
             "MN;line;perpendicular;M,D;0;0;0",
             "F';point;intersection;MN,AF;0;0",
-            "ADE;circle;radius;F',A;0;0;black;random",
-            "E;point;circleSlider;ADE,110,210;black;0",
+            "ADEfill;circle;radius;F',A;0;0;black;random",
+            "E;point;circleSlider;ADEfill,110,210;black;0",
             "G;point;lineSlider;D,F,90,110",
             "AG;line;connect;A,G",
             "AH;line;cutoff;F,D,F,A",
-            "H;point;last;AH"
+            "H;point;last;AH",
+            // Transparent twins of the two circles, carrying the prose
+            // names so a hover or a slide lights the edge only.
+            "ABC;circle;circumcircle;A,B,C;0;0;0;0",
+            "ADE;circle;radius;F',A;0;0;0;0",
+            // Segments of the false line FGH the argument compares; the
+            // line AH already draws all three.
+            "GF;line;connect;G,F;0;0;0",
+            "GH;line;connect;G,H;0;0;0",
+            "GD;line;connect;G,D;0;0;0",
+            // Two illustration-only pieces, transparent at rest: the triangle
+            // the I.20 step is about, and the compass arc that swings the
+            // radius GA round onto the false line as GD (arms G,D,A draw the
+            // short arc — measured 305 px against 2159 for G,A,D — and the
+            // sweep runs reverse so it grows from A to D).
+            "AGF;polygon;triangle;A,G,F;0;0;0;0",
+            "swingAD;sector;sector;G,D,A;0;0;0;0"
         ],
+        // Draggables here (checked against the bundle): A, B, C, D, E, G.
+        // All but G are the given circles' own points, which slide 1
+        // introduces. G is a lineSlider the proof takes on slide 2, so it
+        // is deferred out of the every-slide auto-union. F and H are
+        // derived (center / last) and are listed per slide.
+        deferDraggables: ["G"],
+        aliases: { "FA": "AF", "GA": "AG", "FG": "GF", "HG": "GH", "DG": "GD",
+                   "FH": "AH", "FGH": "AH" },
+        slides: [
+            // The deck opens on the proposition's statement over the givens
+            // (process.md “Open on the statement”), split at its seams.
+            { text: "“If two circles touch one another internally, and their centers are taken,”",
+              visible: GIVEN,
+              highlighted: [] },
+            { text: "“then the straight line joining their centers, being produced, falls on the point of contact of the circles.”",
+              visible: GIVEN,
+              highlighted: [],
+              justifications: [{ ref: "III.11" }] },
+            { text: "Let the two circles {ABC} and {ADE} touch one another internally at the point {A},",
+              visible: GIVEN,
+              highlighted: ["ABC","ADE","A"] },
+            { text: "and let the centers {F} and {G} of the circles {ABC} and {ADE} be taken.",
+              visible: CENT,
+              highlighted: ["ABC", "ADE", "F", "G"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "F", name: geomlib.A.Point.appear },
+                  { elem: "G", name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "the centers of the circles", ref: "III.1" }] },
+            { text: "I say that the straight line joined from {G} to {F} and produced falls on {A}.",
+              visible: CENT,
+              highlighted: ["G","F","A"] },
+            { text: "For suppose it does not, but, if possible, let it fall as {FGH}.",
+              visible: FALSE,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AH", name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "H",  name: geomlib.A.Point.appear } ] } },
+            { text: "Join {AF} and {AG}.",
+              visible: JOIN,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AF", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "AG", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "I.Post.1" }] },
+            { text: "Then, since the sum of {AG} and {GF} is greater than {FA}, that is, than {FH},",
+              visible: TRI,
+              highlighted: ["AG","GF","AF","AH"],
+              // The triangle AGF is traced so the inequality reads as one:
+              // two sides of it against the third. FA = FH, both radii.
+              transition: { animations: [
+                  { elem: "AGF", name: geomlib.A.Polygon.outline } ] },
+              justifications: [
+                  { claim: "two sides of the triangle AGF exceed the third", ref: "I.20" } ] },
+            { text: "subtract {FG} from each, therefore the remainder {AG} is greater than the remainder {GH}.",
+              visible: ARG,
+              highlighted: ["GF","AG","GH"],
+              justifications: [{ claim: "subtract FG from each", ref: "C.N.3" }] },
+            { text: "But {AG} equals {GD},",
+              visible: SWING,
+              highlighted: ["AG","GD"],
+              // The compass: GA swung about G round onto the false line, where
+              // it reaches exactly D — the point where that line leaves the
+              // small circle, short of H where it leaves the large one.
+              transition: { animations: [
+                  { elem: "swingAD", name: geomlib.A.Sector.sweep, args: { reverse: true } } ] },
+              justifications: [{ claim: "AG and GD are radii of the circle ADE", ref: "I.Def.15" }] },
+            { text: "therefore {GD} is also greater than {GH}, the less greater than the greater, which is impossible.",
+              visible: ARG,
+              highlighted: ["GD","GH"] },
+            { text: "Therefore the straight line joined from {F} to {G} does not fall outside. Therefore it falls on {A}, the point of contact.",
+              visible: CLOSE,
+              highlighted: ["GF","A"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            if (ref === "III.11") return "#prop";
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.Def.15": "/elements/books/bookI/definitions/defI15/",
+        "I.20":     "/elements/books/bookI/propositions/propI20/",
+        "C.N.3":    "/elements/books/bookI/commonnotions/cn3/",
+        "III.1":    "/elements/books/bookIII/propositions/propIII1/"
     });
 </script>
-</figure><p>I say that the straight line joined from <em>G</em> to <em>F</em> and produced falls on <em>A.</em></p>
-<p>For suppose it does not, but, if possible, let it fall as <em>FGH.</em>  Join  <em>AF</em> and <em>AG.</em></p>
+</figure><p>I say that the straight line joined from <span class="elem-ref" data-elem="G">G</span> to <span class="elem-ref" data-elem="F">F</span> and produced falls on <span class="elem-ref" data-elem="A">A</span>.</p>
+<p>For suppose it does not, but, if possible, let it fall as <span class="elem-ref" data-elem="FGH">FGH</span>.  Join  <span class="elem-ref" data-elem="AF">AF</span> and <span class="elem-ref" data-elem="AG">AG</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI20/">I.20</a></div>
-<p>Then, since the sum of <em>AG</em> and <em>GF</em> is greater than <em>FA,</em> that is, than <em>FH,</em> subtract <em>FG</em> from each, therefore the remainder <em>AG</em> is greater than the remainder <em>GH.</em></p>
-<p>But <em>AG</em> equals <em>GD,</em> therefore <em>GD</em> is also greater than <em>GH,</em> the less greater than the greater, which is impossible.</p>
-<p>Therefore the straight line joined from <em>F</em> to <em>G</em> does not fall outside. Therefore it falls on <em>A,</em> the point of contact.</p>
+<p>Then, since the sum of <span class="elem-ref" data-elem="AG">AG</span> and <span class="elem-ref" data-elem="GF">GF</span> is greater than <span class="elem-ref" data-elem="FA">FA</span>, that is, than <span class="elem-ref" data-elem="FH">FH</span>, subtract <span class="elem-ref" data-elem="FG">FG</span> from each, therefore the remainder <span class="elem-ref" data-elem="AG">AG</span> is greater than the remainder <span class="elem-ref" data-elem="GH">GH</span>.</p>
+<p>But <span class="elem-ref" data-elem="AG">AG</span> equals <span class="elem-ref" data-elem="GD">GD</span>, therefore <span class="elem-ref" data-elem="GD">GD</span> is also greater than <span class="elem-ref" data-elem="GH">GH</span>, the less greater than the greater, which is impossible.</p>
+<p>Therefore the straight line joined from <span class="elem-ref" data-elem="F">F</span> to <span class="elem-ref" data-elem="G">G</span> does not fall outside. Therefore it falls on <span class="elem-ref" data-elem="A">A</span>, the point of contact.</p>
 <p>Therefore <em>if two circles touch one another internally, and their centers are taken, then the straight line joining their centers, being produced, falls on the point of contact of the circles.</em></p>
 <p><div class="qed">Q.E.D.</div>
 <br clear=all></p>
@@ -112,7 +243,7 @@
 
 
   <h2 id="guide">Guide</h2>
-  <p>In order to carry through the proof, in particular so that <em>FA</em> = <em>FH,</em> the circle <em>ABC</em> needs to be the larger circle.</p>
+  <p>In order to carry through the proof, in particular so that <span class="elem-ref" data-elem="FA">FA</span> = <span class="elem-ref" data-elem="FH">FH</span>, the circle <span class="elem-ref" data-elem="ABC">ABC</span> needs to be the larger circle.</p>
 <p>Various conclusions in the proof are based on the figure rather than rigorous deductive reasoning.  Camerer and others have suggested ways of filling the gaps.</p>
 <p>This proposition is used in <a href="/elements/books/bookIII/propositions/propIII13/">III.13</a>.</p>
 

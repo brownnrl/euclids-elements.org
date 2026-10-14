@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.17.1/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.18.1/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.17.1">
+<meta name="geomlib-version" content="0.18.1">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -65,12 +65,29 @@
   <div class="theorem">
     <h1 id="prop">Proposition 24</h1>
     <div class="statement">Similar segments of circles on equal straight lines equal one another.</div>
-    <p>Let <em>AEB</em> and <em>CFD</em> be similar segments of circles on equal straight lines <em>AB</em> and <em>CD.</em></p>
-<p>I say that the segment <em>AEB</em> equals the segment <em>CFD.</em></p>
+    <p>Let <span class="elem-ref" data-elem="AEB">AEB</span> and <span class="elem-ref" data-elem="CFD">CFD</span> be similar segments of circles on equal straight lines <span class="elem-ref" data-elem="AB">AB</span> and <span class="elem-ref" data-elem="CD">CD</span>.</p>
+<p>I say that the segment <span class="elem-ref" data-elem="AEB">AEB</span> equals the segment <span class="elem-ref" data-elem="CFD">CFD</span>.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="350" height="110" tabindex="0"></canvas>
 <noscript><img alt="III.24 diagram" src="propIII24.gif"/></noscript>
 <script type="text/javascript">
+    // A superposition proof, like I.4 and I.8. Joyce's figure draws the two
+    // segments as arcs (BEA, DFC), their chords, and the third curve CGD —
+    // the "cuts across" case — as two arcs (GC, DG) meeting at G on the arc
+    // CFD. Everything added here is fully transparent (;0;0;0 lines,
+    // ;0;0;0;0 circles / polygons), so the resting figure is unchanged.
+    //
+    // The superposition itself is A.Polygon.superpose on a transparent
+    // triangle A,B,E laid onto C,D,F' — F' is the figure's own `similar`
+    // point, the image of E under the motion that carries A to C and AB to
+    // CD, and it lies on the arc CFD. The ghost is a gold outline of chord +
+    // apex; the arcs themselves never move.
+    //
+    // CGD is one curvedTriangle (#119) over the two arc carriers and the
+    // chord, so the caption's {CGD} lights the whole curve at once.
+    var GIVEN = ["A","B","AB","E","BEA","C","Ccirc","D","CD","F'","CF'G","F","DFC"];
+    var SUPER = GIVEN.concat(["AEBt","CFDt"]);
+    var CUT   = SUPER.concat(["G","GC","DG","Hcirc","Kcirc","CGD"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -96,15 +113,89 @@
             "M;point;midpoint;D,G;0;0",
             "M';point;perpendicular;M,D;0;0",
             "K;point;intersection;M,M',H,G;0;0",
-            "DG;sector;sector;K,D,G;0;0;black;0"
+            "DG;sector;sector;K,D,G;0;0;black;0",
+            // Superposition carriers: chord + apex of each segment. Vertex 0
+            // lands on vertex 0 (A on C) and side 0-1 on side 0-1 (AB on CD).
+            "AEBt;polygon;triangle;A,B,E;0;0;0;0",
+            "CFDt;polygon;triangle;C,D,F';0;0;0;0",
+            // The cutting curve CGD as one hover / highlight target: its two
+            // arcs lie on the circles about H and K, its third side is CD.
+            "Hcirc;circle;radius;H,G;0;0;0;0",
+            "Kcirc;circle;radius;K,G;0;0;0;0",
+            "CGD;polygon;curvedTriangle;C,G,D,Hcirc,Kcirc,CD;0;0;0;0"
         ],
+        // G is a circleSlider, and draggables are auto-unioned into every
+        // slide — it would stand lettered on the canvas from slide 1, before
+        // the proof reaches "as CGD". Deferring drops it out of that union.
+        // A, B, E, C, D, F are draggable too, but all are givens of slide 1.
+        // The resting figure is unaffected.
+        deferDraggables: ["G"],
+        aliases: { "AEB": "BEA", "CFD": "DFC", "BA": "AB", "DC": "CD" },
+        slides: [
+            // The deck opens on the proposition's statement over the givens
+            // (process.md “Open on the statement”).
+            { text: "Similar segments of circles on equal straight lines equal one another.",
+              visible: GIVEN,
+              highlighted: [],
+              justifications: [{ ref: "III.24" }] },
+            { text: "Let {AEB} and {CFD} be similar segments of circles on equal straight lines {AB} and {CD}.",
+              visible: GIVEN,
+              highlighted: ["BEA","DFC","AB","CD"] },
+            { text: "I say that the segment {AEB} equals the segment {CFD}.",
+              visible: GIVEN,
+              highlighted: ["BEA","DFC"] },
+            { text: "For, if the segment {AEB} is superposed on {CFD}, and if the point {A} is placed on {C} and the straight line {AB} on {CD}, then the point {B} coincides with the point {D}, because {AB} equals {CD},",
+              visible: SUPER,
+              highlighted: ["AB","CD"],
+              transition: { animations: [
+                  { elem: "AEBt", name: geomlib.A.Polygon.superpose,
+                    args: { onto: "CFDt" } } ] } },
+            { text: "and, {AB} coinciding with {CD}, the segment {AEB} also coincides with {CFD}.",
+              visible: SUPER,
+              highlighted: ["AB","CD","BEA","DFC"] },
+            { text: "For, if the straight line {AB} coincides with {CD} but the segment {AEB} does not coincide with {CFD}, then it either falls within it, or outside it, or it cuts across it, as {CGD},",
+              visible: CUT,
+              highlighted: ["DFC", "GC", "G", "DG"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "GC", name: geomlib.A.Sector.sweep },
+                  { elem: "G",  name: geomlib.A.Point.appear },
+                  { elem: "DG", name: geomlib.A.Sector.sweep } ] },
+              justifications: [
+                  { claim: "neither within it nor outside it", ref: "III.23" } ] },
+            { text: "and a circle cuts a circle at more points than two, which is impossible.",
+              visible: CUT,
+              highlighted: ["DFC","CGD"],
+              justifications: [
+                  { claim: "a circle cuts a circle at more points than two", ref: "III.10" } ] },
+            // The cutting curve was the impossible case; it is dropped here.
+            { text: "Therefore, if the straight line {AB} is superposed on {CD}, then the segment {AEB} does not fail to coincide with {CFD} also, therefore it coincides with it and equals it.",
+              visible: SUPER,
+              highlighted: ["AB","CD","BEA","DFC"],
+              justifications: [{ ref: "C.N.4" }] },
+            { text: "Therefore similar segments of circles on equal straight lines equal one another.",
+              visible: SUPER,
+              highlighted: ["BEA","DFC"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            if (ref === "III.24") return "#prop";
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "III.10": "/elements/books/bookIII/propositions/propIII10/",
+        "III.23": "/elements/books/bookIII/propositions/propIII23/",
+        "C.N.4":  "/elements/books/bookI/commonnotions/cn4/"
     });
 </script>
-</figure><p>For, if the segment <em>AEB</em> is superposed on <em>CFD,</em> and if the point <em>A</em> is placed on <em>C</em> and the straight line <em>AB</em> on <em>CD,</em> then the point <em>B</em> coincides with the point <em>D,</em> because <em>AB</em> equals <em>CD,</em> and, <em>AB</em> coinciding with <em>CD,</em> the segment <em>AEB</em> also coincides with <em>CFD.</em></p>
+</figure><p>For, if the segment <span class="elem-ref" data-elem="AEB">AEB</span> is superposed on <span class="elem-ref" data-elem="CFD">CFD</span>, and if the point <span class="elem-ref" data-elem="A">A</span> is placed on <span class="elem-ref" data-elem="C">C</span> and the straight line <span class="elem-ref" data-elem="AB">AB</span> on <span class="elem-ref" data-elem="CD">CD</span>, then the point <span class="elem-ref" data-elem="B">B</span> coincides with the point <span class="elem-ref" data-elem="D">D</span>, because <span class="elem-ref" data-elem="AB">AB</span> equals <span class="elem-ref" data-elem="CD">CD</span>, and, <span class="elem-ref" data-elem="AB">AB</span> coinciding with <span class="elem-ref" data-elem="CD">CD</span>, the segment <span class="elem-ref" data-elem="AEB">AEB</span> also coincides with <span class="elem-ref" data-elem="CFD">CFD</span>.</p>
 <div class="just"><a href="/elements/books/bookIII/propositions/propIII23/">III.23</a><br><a href="/elements/books/bookIII/propositions/propIII10/">III.10</a></div>
-<p>For, if the straight line <em>AB</em> coincides with <em>CD</em> but the segment <em>AEB</em> does not coincide with <em>CFD,</em> then it either falls within it, or outside it, or it cuts across it, as <em>CGD,</em> and a circle cuts a circle at more points than two, which is impossible.</p>
+<p>For, if the straight line <span class="elem-ref" data-elem="AB">AB</span> coincides with <span class="elem-ref" data-elem="CD">CD</span> but the segment <span class="elem-ref" data-elem="AEB">AEB</span> does not coincide with <span class="elem-ref" data-elem="CFD">CFD</span>, then it either falls within it, or outside it, or it cuts across it, as <span class="elem-ref" data-elem="CGD">CGD</span>, and a circle cuts a circle at more points than two, which is impossible.</p>
 <div class="just"><a href="/elements/books/bookI/commonnotions/cn4/">C.N.4</a></div>
-<p>Therefore, if the straight line <em>AB</em> is superposed on <em>CD,</em> then the segment <em>AEB</em> does not fail to coincide with <em>CFD</em> also, therefore it coincides with it and equals it.</p>
+<p>Therefore, if the straight line <span class="elem-ref" data-elem="AB">AB</span> is superposed on <span class="elem-ref" data-elem="CD">CD</span>, then the segment <span class="elem-ref" data-elem="AEB">AEB</span> does not fail to coincide with <span class="elem-ref" data-elem="CFD">CFD</span> also, therefore it coincides with it and equals it.</p>
 <p>Therefore <em>similar segments of circles on equal straight lines equal one another.</em></p>
 <div class="qed">Q.E.D.</div>
     

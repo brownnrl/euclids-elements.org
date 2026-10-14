@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.17.1/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.18.1/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.17.1">
+<meta name="geomlib-version" content="0.18.1">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -65,13 +65,43 @@
   <div class="theorem">
     <h1 id="prop">Proposition 33</h1>
     <div class="statement">On a given straight line to describe a segment of a circle admitting an angle equal to a given rectilinear angle.</div>
-    <p>Let <em>AB</em> be the given straight line, and the angle at <em>C</em> the given rectilinear angle.</p>
-<p>It is required to describe on the given straight line <em>AB</em> a segment of a circle admitting an angle equal to the angle at <em>C.</em></p>
-<p>The angle at <em>C</em> is then acute, or right, or obtuse.</p>
-<figure class="diagram">
+    <div class="proofgrid"><div class="figrow"><figure class="diagram" data-spans="12">
 <canvas id="canvas_0" width="330" height="240" tabindex="0"></canvas>
 <noscript><img alt="III.33a diagram" src="propIII33a.gif"/></noscript>
 <script type="text/javascript">
+    // Three cases, three figures, three decks. Each canvas is the
+    // proposition figure for its own case and Joyce walks each case as a
+    // complete construction and proof, so each carries the slides for its
+    // case; the opening "Let AB be the given straight line …" is carried by
+    // all three (each has its own AB and C), and the closing Q.E.F. by the
+    // third only, where Joyce puts it.
+    //
+    // First case: the angle at C acute. Joyce's figure draws the tangent
+    // line DH through A, the perpendicular AE, the bisector FG, GB, BE and
+    // the circle. The proof names AD, AF, BF, AG (all drawn as parts of
+    // longer lines), the circle under its own name, the segment AEB and six
+    // angles. Everything added here is fully transparent (;0;0;0 lines,
+    // ;0;0;0;0 circles / sectors), so the resting figure is pixel-unchanged.
+    //
+    // The circle ABE carries a random face and a highlighted face is
+    // promoted within its pass (#140) — over the angle markers — so
+    // circABE, a transparent twin, is what slides and prose light. The
+    // segment AEB is chord + arc: AB plus segAEB, a zero-colour sector
+    // whose drawEdge strokes only the arc; its arm order was checked by
+    // pixel against the bundle (euclid#172) so the arc passes E. Not swept.
+    //
+    // Colour: the given angle and the two proved equal to it — at C, BAD,
+    // AEB — share orange; right angles are red. Same-vertex markers (A, F)
+    // ring-step automatically (#103).
+    var GIVEN = ["A","B","AB","C1","C2","C3","C12","C23","C","angC"];
+    var ANG   = GIVEN.concat(["D","H","DH","AD","angBAD"]);
+    var PERP  = ANG.concat(["AE","E","angDAE"]);
+    var BIS   = PERP.concat(["F"]);
+    var FGB   = BIS.concat(["G","FG","BG"]);
+    var SIDES = FGB.concat(["AF","BF","AG"]);
+    var ANGF  = SIDES.concat(["angAFG","angBFG"]);
+    var CIRC  = ANGF.concat(["ABE","circABE","BE","segAEB"]);
+    var FIN   = CIRC.concat(["angAEB"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -99,29 +129,199 @@
             "AE;line;connect;A,E",
             "BG;line;connect;B,G",
             "FG;line;connect;F,G",
-            "BE;line;connect;B,E"
+            "BE;line;connect;B,E",
+            // Segments the proof names, drawn already as parts of DH, AB, AE.
+            "AD;line;connect;A,D;0;0;0",
+            "AF;line;connect;A,F;0;0;0",
+            "BF;line;connect;B,F;0;0;0",
+            "AG;line;connect;A,G;0;0;0",
+            // Transparent twin of the circle, and the arc of the segment
+            // AEB: A through E to B.
+            "circABE;circle;radius;G,A;0;0;0;0",
+            "segAEB;sector;sector;G,B,A;0;0;0;0",
+            // Angle markers, hidden in the resting figure.
+            "angC;sector;angleMarker;C2,C1,C3;0;0;orange;orange",
+            "angBAD;sector;angleMarker;A,B,D;0;0;orange;orange",
+            "angDAE;sector;angleMarkerRight;A,D,E;0;0;red;red",
+            "angAFG;sector;angleMarkerRight;F,A,G;0;0;red;red",
+            "angBFG;sector;angleMarkerRight;F,B,G;0;0;red;red",
+            "angAEB;sector;angleMarker;E,A,B;0;0;orange;orange"
         ],
+        // Dumping `draggable` against the bundle gives A, B, C1, C2, C3, D,
+        // H. D (and H, the unlettered far end of the tangent line) arrive
+        // with "Construct the angle BAD", so both are deferred; the rest are
+        // the givens of slide 1. F (midpoint), G (intersection) and E
+        // (extend) are derived — not auto-unioned — and are listed per slide.
+        deferDraggables: ["D","H"],
+        aliases: { "BA": "AB", "DA": "AD", "FB": "BF", "GB": "BG", "GA": "AG",
+                   "EB": "BE", "FA": "AF",
+                   "BAD": "angBAD", "DAB": "angBAD",
+                   "AFG": "angAFG", "BFG": "angBFG",
+                   "AEB": "angAEB", "BEA": "angAEB" },
+        slides: [
+            // The deck opens on the proposition's statement over the givens
+            // (process.md “Open on the statement”), split at its seams.
+            { text: "“On a given straight line to describe a segment of a circle”",
+              visible: GIVEN,
+              highlighted: [] },
+            { text: "“admitting an angle equal to a given rectilinear angle.”",
+              visible: GIVEN,
+              highlighted: [],
+              justifications: [{ ref: "III.33" }] },
+            { text: "Let {AB} be the given straight line, and the angle at {C|angC} the given rectilinear angle.",
+              visible: GIVEN,
+              highlighted: ["AB", "angC"],
+              transition: { animations: [
+                  { elem: "angC", name: geomlib.A.Sector.sweep } ] } },
+            { text: "It is required to describe on the given straight line {AB} a segment of a circle admitting an angle equal to the angle at {C|angC}.",
+              visible: GIVEN,
+              highlighted: ["AB","angC"] },
+            { text: "The angle at {C|angC} is then acute, or right, or obtuse. First let it be acute as in the first figure.",
+              visible: GIVEN,
+              highlighted: ["angC"] },
+            { text: "Construct the angle {BAD} equal to the angle at {C|angC} on the straight line {AB} and at the point {A}. Therefore the angle {BAD} is also acute.",
+              visible: ANG,
+              highlighted: ["angC","AB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "D",      name: geomlib.A.Point.appear },
+                  { elem: "DH",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "angBAD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "angle BAD constructed equal to the angle at C", ref: "I.23" }] },
+            { text: "Draw {AE} at right angles to {DA}.",
+              visible: PERP,
+              highlighted: ["AD"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AE",     name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "E",      name: geomlib.A.Point.appear },
+                  { elem: "angDAE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "AE at right angles to DA", ref: "I.11" }] },
+            { text: "Bisect {AB} at {F}.",
+              visible: BIS,
+              highlighted: ["AB"],
+              transition: { animations: [
+                  { elem: "F", name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "AB bisected at F", ref: "I.10" }] },
+            { text: "Draw {FG} from the point {F} at right angles to {AB}, and join {GB}.",
+              visible: FGB,
+              highlighted: ["F","AB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "FG", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "G",  name: geomlib.A.Point.appear },
+                  { elem: "BG", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "FG at right angles to AB", ref: "I.12" },
+                  { ref: "I.Post.1" } ] },
+            { text: "Then, since {AF} equals {FB}, and {FG} is common, the two sides {AF} and {FG} equal the two sides {BF} and {FG},",
+              visible: SIDES,
+              highlighted: ["AF","BF","FG"] },
+            { text: "and the angle {AFG} equals the angle {BFG},",
+              visible: ANGF,
+              highlighted: ["FG"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "angAFG", name: geomlib.A.Sector.sweep },
+                  { elem: "angBFG", name: geomlib.A.Sector.sweep } ] } },
+            { text: "therefore the base {AG} equals the base {BG}.",
+              visible: ANGF,
+              highlighted: ["AG","BG"],
+              justifications: [{ claim: "two sides and the included angle", ref: "I.4" }] },
+            { text: "Therefore the circle described with center {G} and radius {GA} passes through {B} also.",
+              visible: ANGF,
+              highlighted: ["G","AG","B"],
+              justifications: [{ claim: "GB equals GA, the radius", ref: "I.Def.15" }] },
+            { text: "Draw it as {ABE|circABE}, and join {EB}.",
+              visible: CIRC,
+              highlighted: ["G"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "ABE", name: geomlib.A.Circle.compass },
+                  { elem: "BE",  name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "the circle with center G and radius GA", ref: "I.Post.3" },
+                  { ref: "I.Post.1" } ] },
+            { text: "Now, since {AD} is drawn from {A}, the end of the diameter {AE}, at right angles to {AE}, therefore {AD} touches the circle {ABE|circABE}.",
+              visible: CIRC,
+              highlighted: ["AD","AE","angDAE","circABE"],
+              justifications: [{ claim: "at right angles to the diameter from its end", ref: "III.16.Cor" }] },
+            { text: "Since then a straight line {AD} touches the circle {ABE|circABE}, and from the point of contact at {A} a straight line {AB} has been drawn across in the circle {ABE|circABE},",
+              visible: CIRC,
+              highlighted: ["AD","AB","circABE"] },
+            { text: "the angle {DAB} equals the angle {AEB} in the alternate segment of the circle.",
+              visible: FIN,
+              highlighted: ["angBAD","segAEB","AB"],
+              transition: { animations: [
+                  { elem: "angAEB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "the tangent-chord angle equals the angle in the alternate segment", ref: "III.32" }] },
+            { text: "But the angle {DAB} equals the angle at {C|angC}, therefore the angle at {C|angC} also equals the angle {AEB}.",
+              visible: FIN,
+              highlighted: ["angBAD","angC","angAEB"],
+              justifications: [{ ref: "C.N.1" }] },
+            { text: "Therefore on the given straight line {AB} the segment {AEB|segAEB} of a circle has been described admitting the angle {AEB} equal to the given angle, the angle at {C|angC}.",
+              visible: FIN,
+              highlighted: ["AB","segAEB","angAEB","angC"] }
+        ],
+        resolveJustification: function(ref) {
+            if (ref === "III.33") return "#prop";
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification —
+    // keyed once across all three canvases on the page.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Def.15":   "/elements/books/bookI/definitions/defI15/",
+        "I.Post.1":   "/elements/books/bookI/postulates/post1/",
+        "I.Post.3":   "/elements/books/bookI/postulates/post3/",
+        "I.4":        "/elements/books/bookI/propositions/propI4/",
+        "I.10":       "/elements/books/bookI/propositions/propI10/",
+        "I.11":       "/elements/books/bookI/propositions/propI11/",
+        "I.12":       "/elements/books/bookI/propositions/propI12/",
+        "I.23":       "/elements/books/bookI/propositions/propI23/",
+        "III.16.Cor": "/elements/books/bookIII/propositions/propIII16/#cor",
+        "III.31":     "/elements/books/bookIII/propositions/propIII31/",
+        "III.32":     "/elements/books/bookIII/propositions/propIII32/",
+        "C.N.1":      "/elements/books/bookI/commonnotions/cn1/"
     });
 </script>
-</figure><div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a></div>
-<p>First let it be acute as in the first figure.  Construct the angle <em>BAD</em> equal to the angle at <em>C</em> on the straight line <em>AB</em> and at the point <em>A.</em>  Therefore the angle <em>BAD</em> is also acute.</p>
+</figure><div class="figtext"><p>Let <span class="elem-ref" data-elem="AB" data-canvases="canvas_0,canvas_1,canvas_2">AB</span> be the given straight line, and the angle at <span class="elem-ref" data-elem="angC" data-canvases="canvas_0,canvas_1,canvas_2">C</span> the given rectilinear angle.</p>
+<p>It is required to describe on the given straight line <span class="elem-ref" data-elem="AB" data-canvases="canvas_0,canvas_1,canvas_2">AB</span> a segment of a circle admitting an angle equal to the angle at <span class="elem-ref" data-elem="angC" data-canvases="canvas_0,canvas_1,canvas_2">C</span>.</p>
+<p>The angle at <span class="elem-ref" data-elem="angC" data-canvases="canvas_0,canvas_1,canvas_2">C</span> is then acute, or right, or obtuse.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a></div>
+<p>First let it be acute as in the first figure.  Construct the angle <span class="elem-ref" data-elem="BAD">BAD</span> equal to the angle at <span class="elem-ref" data-elem="angC">C</span> on the straight line <span class="elem-ref" data-elem="AB">AB</span> and at the point <span class="elem-ref" data-elem="A">A</span>.  Therefore the angle <span class="elem-ref" data-elem="BAD">BAD</span> is also acute.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI10/">I.10</a><br><a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
-<p>Draw <em>AE</em> at right angles to <em>DA.</em>  Bisect <em>AB</em> at <em>F.</em> Draw <em>FG</em> from the point <em>F</em> at right angles to <em>AB,</em> and join <em>GB.</em></p>
+<p>Draw <span class="elem-ref" data-elem="AE">AE</span> at right angles to <span class="elem-ref" data-elem="DA">DA</span>.  Bisect <span class="elem-ref" data-elem="AB">AB</span> at <span class="elem-ref" data-elem="F">F</span>. Draw <span class="elem-ref" data-elem="FG">FG</span> from the point <span class="elem-ref" data-elem="F">F</span> at right angles to <span class="elem-ref" data-elem="AB">AB</span>, and join <span class="elem-ref" data-elem="GB">GB</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
-<p>Then, since <em>AF</em> equals <em>FB,</em> and <em>FG</em> is common, the two sides <em>AF</em> and <em>FG</em> equal the two sides <em>BF</em> and <em>FG,</em> and the angle <em>AFG</em> equals the angle <em>BFG,</em> therefore the base <em>AG</em> equals the base <em>BG.</em></p>
-<p>Therefore the circle described with center <em>G</em> and radius <em>GA</em> passes through <em>B</em> also.</p>
-<p>Draw it as <em>ABE,</em> and join <em>EB.</em></p>
-<div class="just"><a href="/elements/books/bookIII/propositions/propIII16/#cor">III.16,Cor.</a></div><p>Now, since <em>AD</em> is drawn from A, the end of the diameter <em>AE,</em> at right angles to <em>AE,</em> therefore <em>AD</em> touches the circle <em>ABE.</em></p>
+<p>Then, since <span class="elem-ref" data-elem="AF">AF</span> equals <span class="elem-ref" data-elem="FB">FB</span>, and <span class="elem-ref" data-elem="FG">FG</span> is common, the two sides <span class="elem-ref" data-elem="AF">AF</span> and <span class="elem-ref" data-elem="FG">FG</span> equal the two sides <span class="elem-ref" data-elem="BF">BF</span> and <span class="elem-ref" data-elem="FG">FG</span>, and the angle <span class="elem-ref" data-elem="AFG">AFG</span> equals the angle <span class="elem-ref" data-elem="BFG">BFG</span>, therefore the base <span class="elem-ref" data-elem="AG">AG</span> equals the base <span class="elem-ref" data-elem="BG">BG</span>.</p>
+<p>Therefore the circle described with center <span class="elem-ref" data-elem="G">G</span> and radius <span class="elem-ref" data-elem="GA">GA</span> passes through <span class="elem-ref" data-elem="B">B</span> also.</p>
+<p>Draw it as <span class="elem-ref" data-elem="circABE">ABE</span>, and join <span class="elem-ref" data-elem="EB">EB</span>.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII16/#cor">III.16.Cor</a></div>
+<p>Now, since <span class="elem-ref" data-elem="AD">AD</span> is drawn from <span class="elem-ref" data-elem="A">A</span>, the end of the diameter <span class="elem-ref" data-elem="AE">AE</span>, at right angles to <span class="elem-ref" data-elem="AE">AE</span>, therefore <span class="elem-ref" data-elem="AD">AD</span> touches the circle <span class="elem-ref" data-elem="circABE">ABE</span>.</p>
 <div class="just"><a href="/elements/books/bookIII/propositions/propIII32/">III.32</a></div>
-<p>Since then a straight line <em>AD</em> touches the circle <em>ABE,</em> and from the point of contact at A a straight line <em>AB</em> has been drawn across in the circle <em>ABE,</em> the angle <em>DAB</em> equals the angle <em>AEB</em> in the alternate segment of the circle.</p>
-<p>But the angle <em>DAB</em> equals the angle at <em>C,</em> therefore the angle at <em>C</em> also equals the angle <em>AEB.</em></p>
-<p>Therefore on the given straight line <em>AB</em> the segment <em>AEB</em> of a circle has been described admitting the angle <em>AEB</em> equal to the given angle, the angle at <em>C.</em></p>
+<p>Since then a straight line <span class="elem-ref" data-elem="AD">AD</span> touches the circle <span class="elem-ref" data-elem="circABE">ABE</span>, and from the point of contact at <span class="elem-ref" data-elem="A">A</span> a straight line <span class="elem-ref" data-elem="AB">AB</span> has been drawn across in the circle <span class="elem-ref" data-elem="circABE">ABE</span>, the angle <span class="elem-ref" data-elem="DAB">DAB</span> equals the angle <span class="elem-ref" data-elem="AEB">AEB</span> in the alternate segment of the circle.</p>
+<p>But the angle <span class="elem-ref" data-elem="DAB">DAB</span> equals the angle at <span class="elem-ref" data-elem="angC">C</span>, therefore the angle at <span class="elem-ref" data-elem="angC">C</span> also equals the angle <span class="elem-ref" data-elem="AEB">AEB</span>.</p>
+<p>Therefore on the given straight line <span class="elem-ref" data-elem="AB">AB</span> the segment <span class="elem-ref" data-elem="segAEB">AEB</span> of a circle has been described admitting the angle <span class="elem-ref" data-elem="AEB">AEB</span> equal to the given angle, the angle at <span class="elem-ref" data-elem="angC">C</span>.</p></div></div>
 <hr width="30%">
 
-<figure class="diagram rdiagram">
+<div class="figrow"><figure class="diagram rdiagram" data-spans="6">
 <canvas id="canvas_1" width="320" height="240" tabindex="0"></canvas>
 <noscript><img alt="III.33b diagram" src="propIII33b.gif"/></noscript>
 <script type="text/javascript">
+    // Second case: the angle at C right. The short case — the circle on AB
+    // as diameter is the whole construction, and III.31 does the proving.
+    // Joyce's figure draws the tangent line DH through A, the circle on AB,
+    // and AE, BE to a draggable E on it. Added, all transparent: AD, FA, FB
+    // (parts of DH and AB), the circle's twin, the semicircle's arc, and the
+    // three markers — all right angles, so all red, and all equal, so the
+    // shared colour holds either way.
+    //
+    // segAEB is the semicircle A through E to B. At exactly 180 degrees the
+    // two arm orders are the two different semicircles (euclid#172), so the
+    // order was checked by pixel against the bundle: this one passes E's
+    // side. Not swept.
+    var GIVEN = ["A","B","AB","C1","C2","C3","C12","C23","C","angC"];
+    var ANG   = GIVEN.concat(["D","H","DH","AD","angBAD"]);
+    var BIS   = ANG.concat(["F"]);
+    var CIRC  = BIS.concat(["ABE","circABE","FA","FB"]);
+    var SEG   = CIRC.concat(["E","AE","BE","segAEB","angAEB"]);
     geomlib.init({
         canvasid: "canvas_1",
         background: "35,19,100",
@@ -146,25 +346,124 @@
             "ABE;circle;radius;F,A;0;0;black;random",
             "E;point;circleSlider;ABE,80,170",
             "AE;line;connect;A,E",
-            "BE;line;connect;B,E"
+            "BE;line;connect;B,E",
+            // Segments the proof names, drawn already as parts of DH and AB.
+            "AD;line;connect;A,D;0;0;0",
+            "FA;line;connect;F,A;0;0;0",
+            "FB;line;connect;F,B;0;0;0",
+            // Transparent twin of the circle, and the semicircle's arc.
+            "circABE;circle;radius;F,A;0;0;0;0",
+            "segAEB;sector;sector;F,A,B;0;0;0;0",
+            // Angle markers, hidden in the resting figure.
+            "angC;sector;angleMarkerRight;C2,C1,C3;0;0;red;red",
+            "angBAD;sector;angleMarkerRight;A,B,D;0;0;red;red",
+            "angAEB;sector;angleMarkerRight;E,A,B;0;0;red;red"
         ],
+        // Dumping `draggable` against the bundle gives A, B, C1, C3, C2, D,
+        // H, E. D and H arrive with "Let the angle BAD be constructed", and E
+        // — a circleSlider — with "the angle in the segment AEB", so all three
+        // are deferred. F is a midpoint, derived, listed per slide.
+        deferDraggables: ["D","H","E"],
+        aliases: { "BA": "AB", "DA": "AD", "AF": "FA", "BF": "FB",
+                   "EA": "AE", "EB": "BE",
+                   "BAD": "angBAD", "DAB": "angBAD",
+                   "AEB": "angAEB", "BEA": "angAEB" },
+        slides: [
+            { text: "Next let the angle at {C|angC} be right, and let it be again required to describe on {AB} a segment of a circle admitting an angle equal to the right angle at {C|angC}.",
+              visible: GIVEN,
+              highlighted: ["AB", "angC"],
+              transition: { animations: [
+                  { elem: "angC", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Let the angle {BAD} be constructed equal to the right angle at {C|angC}, as is the case in the second figure.",
+              visible: ANG,
+              highlighted: ["angC","AB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "D",      name: geomlib.A.Point.appear },
+                  { elem: "DH",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "angBAD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "angle BAD constructed equal to the angle at C", ref: "I.23" }] },
+            { text: "Bisect {AB} at {F}.",
+              visible: BIS,
+              highlighted: ["AB"],
+              transition: { animations: [
+                  { elem: "F", name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "AB bisected at F", ref: "I.10" }] },
+            { text: "Describe the circle {AEB|circABE} with center {F} and radius either {FA} or {FB}.",
+              visible: CIRC,
+              highlighted: ["F","FA","FB"],
+              transition: { animations: [
+                  { elem: "ABE", name: geomlib.A.Circle.compass } ] },
+              justifications: [{ ref: "I.Post.3" }] },
+            { text: "Therefore the straight line {AD} touches the circle {ABE|circABE}, because the angle at {A} is right.",
+              visible: CIRC,
+              highlighted: ["AD","circABE","angBAD"],
+              justifications: [{ claim: "at right angles to the diameter from its end", ref: "III.16.Cor" }] },
+            { text: "And the angle {BAD} equals the angle in the segment {AEB|segAEB}, for the latter too is itself a right angle, being an angle in a semicircle.",
+              visible: SEG,
+              highlighted: ["angBAD","segAEB","AB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "E",      name: geomlib.A.Point.appear },
+                  { elem: "AE",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "BE",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "angAEB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "the angle in a semicircle is right", ref: "III.31" }] },
+            { text: "But the angle {BAD} also equals the angle at {C|angC}, therefore the angle {AEB} also equals the angle at {C|angC}.",
+              visible: SEG,
+              highlighted: ["angBAD","angC","angAEB"],
+              justifications: [{ ref: "C.N.1" }] },
+            { text: "Therefore again the segment {AEB|segAEB} of a circle has been described on {AB} admitting an angle equal to the angle at {C|angC}.",
+              visible: SEG,
+              highlighted: ["segAEB","angAEB","AB","angC"] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.3":   "/elements/books/bookI/postulates/post3/",
+        "I.10":       "/elements/books/bookI/propositions/propI10/",
+        "I.23":       "/elements/books/bookI/propositions/propI23/",
+        "III.16.Cor": "/elements/books/bookIII/propositions/propIII16/#cor",
+        "III.31":     "/elements/books/bookIII/propositions/propIII31/",
+        "C.N.1":      "/elements/books/bookI/commonnotions/cn1/"
     });
 </script>
-</figure><p>Next let the angle at <em>C</em> be right, and let it be again required to describe on <em>AB</em> a segment of a circle admitting an angle equal to the right angle at <em>C.</em></p>
+</figure><div class="figtext"><p>Next let the angle at <span class="elem-ref" data-elem="angC">C</span> be right, and let it be again required to describe on <span class="elem-ref" data-elem="AB">AB</span> a segment of a circle admitting an angle equal to the right angle at <span class="elem-ref" data-elem="angC">C</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookI/propositions/propI10/">I.10</a></div>
-<p>Let the angle <em>BAD</em> be constructed equal to the right angle at <em>C,</em> as is the case in the second figure.  Bisect <em>AB</em> at <em>F.</em> Describe  the circle <em>AEB</em> with center <em>F</em> and radius either <em>FA</em> or <em>FB.</em></p>
-<div class="just"><a href="/elements/books/bookIII/propositions/propIII16/#cor">III.16 Cor.</a></div><p>Therefore the straight line <em>AD</em> touches the circle <em>ABE,</em> because the angle at A is right.</p>
+<p>Let the angle <span class="elem-ref" data-elem="BAD">BAD</span> be constructed equal to the right angle at <span class="elem-ref" data-elem="angC">C</span>, as is the case in the second figure.  Bisect <span class="elem-ref" data-elem="AB">AB</span> at <span class="elem-ref" data-elem="F">F</span>. Describe  the circle <span class="elem-ref" data-elem="circABE">AEB</span> with center <span class="elem-ref" data-elem="F">F</span> and radius either <span class="elem-ref" data-elem="FA">FA</span> or <span class="elem-ref" data-elem="FB">FB</span>.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII16/#cor">III.16.Cor</a></div>
+<p>Therefore the straight line <span class="elem-ref" data-elem="AD">AD</span> touches the circle <span class="elem-ref" data-elem="circABE">ABE</span>, because the angle at <span class="elem-ref" data-elem="A">A</span> is right.</p>
 <div class="just"><a href="/elements/books/bookIII/propositions/propIII31/">III.31</a></div>
-<p>And the angle <em>BAD</em> equals the angle in the segment <em>AEB,</em> for the latter too is itself a right angle, being an angle in a semicircle.</p>
-<p>But the angle <em>BAD</em> also equals the angle at <em>C,</em> therefore the angle <em>AEB</em> also equals the angle at <em>C.</em></p>
-<p>Therefore again the segment <em>AEB</em> of a circle has been described on <em>AB</em> admitting an angle equal to the angle at <em>C.</em></p>
+<p>And the angle <span class="elem-ref" data-elem="BAD">BAD</span> equals the angle in the segment <span class="elem-ref" data-elem="segAEB">AEB</span>, for the latter too is itself a right angle, being an angle in a semicircle.</p>
+<p>But the angle <span class="elem-ref" data-elem="BAD">BAD</span> also equals the angle at <span class="elem-ref" data-elem="angC">C</span>, therefore the angle <span class="elem-ref" data-elem="AEB">AEB</span> also equals the angle at <span class="elem-ref" data-elem="angC">C</span>.</p>
+<p>Therefore again the segment <span class="elem-ref" data-elem="segAEB">AEB</span> of a circle has been described on <span class="elem-ref" data-elem="AB">AB</span> admitting an angle equal to the angle at <span class="elem-ref" data-elem="angC">C</span>.</p></div></div>
 <hr width="30%">
 
-<p>Next, let the angle at <em>C</em> be obtuse.</p>
-<figure class="diagram">
+<div class="figrow"><figure class="diagram" data-spans="9">
 <canvas id="canvas_2" width="320" height="240" tabindex="0"></canvas>
 <noscript><img alt="III.33c diagram" src="propIII33c.gif"/></noscript>
 <script type="text/javascript">
+    // Third case: the angle at C obtuse. The same construction as the first
+    // case with the tangent on the other side of A; Joyce's figure draws AD
+    // as its own line here, plus AH and BH to a draggable H on the circle,
+    // which is how the "angle constructed in the alternate segment AHB" is
+    // shown. Added, all transparent: AF, BF, AG (parts of AB and AE), the
+    // circle's twin, the segment's arc, and the markers.
+    //
+    // segAHB is the arc A through H to B — the minor arc, since the angle in
+    // the segment is obtuse. Arm order checked by pixel against the bundle
+    // (euclid#172). Not swept.
+    var GIVEN = ["A","B","AB","C1","C2","C3","C12","C23","C","angC"];
+    var ANG   = GIVEN.concat(["D","AD","angBAD"]);
+    var PERP  = ANG.concat(["AE","E","angDAE"]);
+    var BIS   = PERP.concat(["F"]);
+    var FGB   = BIS.concat(["G","FG","BG"]);
+    var SIDES = FGB.concat(["AF","BF","AG"]);
+    var ANGF  = SIDES.concat(["angAFG","angBFG"]);
+    var CIRC  = ANGF.concat(["ABE","circABE","segAHB"]);
+    var FIN   = CIRC.concat(["H","AH","BH","angAHB"]);
     geomlib.init({
         canvasid: "canvas_2",
         background: "35,19,100",
@@ -193,22 +492,153 @@
             "FG;line;connect;F,G",
             "H;point;circleSlider;ABE,155,55",
             "BH;line;connect;B,H",
-            "AH;line;connect;A,H"
+            "AH;line;connect;A,H",
+            // Segments the proof names, drawn already as parts of AB and AE.
+            "AF;line;connect;A,F;0;0;0",
+            "BF;line;connect;B,F;0;0;0",
+            "AG;line;connect;A,G;0;0;0",
+            // Transparent twin of the circle, and the arc of the segment
+            // AHB: A through H to B.
+            "circABE;circle;radius;G,A;0;0;0;0",
+            "segAHB;sector;sector;G,A,B;0;0;0;0",
+            // Angle markers, hidden in the resting figure.
+            "angC;sector;angleMarker;C2,C1,C3;0;0;orange;orange",
+            "angBAD;sector;angleMarker;A,B,D;0;0;orange;orange",
+            "angDAE;sector;angleMarkerRight;A,D,E;0;0;red;red",
+            "angAFG;sector;angleMarkerRight;F,A,G;0;0;red;red",
+            "angBFG;sector;angleMarkerRight;F,B,G;0;0;red;red",
+            "angAHB;sector;angleMarker;H,A,B;0;0;orange;orange"
         ],
+        // Dumping `draggable` against the bundle gives A, B, C1, C2, C3, D,
+        // H. D arrives with "Construct the angle BAD" and H — a circleSlider
+        // — with "the alternate segment AHB", so both are deferred. F, G, E
+        // are derived and listed per slide.
+        deferDraggables: ["D","H"],
+        aliases: { "BA": "AB", "DA": "AD", "FB": "BF", "GB": "BG", "GA": "AG",
+                   "FA": "AF", "HA": "AH", "HB": "BH",
+                   "BAD": "angBAD", "DAB": "angBAD",
+                   "AFG": "angAFG", "BFG": "angBFG",
+                   "AHB": "angAHB", "BHA": "angAHB" },
+        slides: [
+            { text: "Next, let the angle at {C|angC} be obtuse.",
+              visible: GIVEN,
+              highlighted: ["AB"],
+              transition: { animations: [
+                  { elem: "angC", name: geomlib.A.Sector.sweep } ] } },
+            { text: "Construct the angle {BAD} equal to {C|angC} on the straight line {AB} and at the point {A} as is the case in the third figure.",
+              visible: ANG,
+              highlighted: ["angC","AB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "D",      name: geomlib.A.Point.appear },
+                  { elem: "AD",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "angBAD", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "angle BAD constructed equal to the angle at C", ref: "I.23" }] },
+            { text: "Draw {AE} at right angles to {AD}.",
+              visible: PERP,
+              highlighted: ["AD"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "AE",     name: geomlib.A.Line.straightEdgeExtend },
+                  { elem: "E",      name: geomlib.A.Point.appear },
+                  { elem: "angDAE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "AE at right angles to AD", ref: "I.11" }] },
+            { text: "Bisect {AB} again at {F}.",
+              visible: BIS,
+              highlighted: ["AB"],
+              transition: { animations: [
+                  { elem: "F", name: geomlib.A.Point.appear } ] },
+              justifications: [{ claim: "AB bisected at F", ref: "I.10" }] },
+            { text: "Draw {FG} at right angles to {AB}, and join {GB}.",
+              visible: FGB,
+              highlighted: ["F","AB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "FG", name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "G",  name: geomlib.A.Point.appear },
+                  { elem: "BG", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [
+                  { claim: "FG at right angles to AB", ref: "I.12" },
+                  { ref: "I.Post.1" } ] },
+            { text: "Then, since {AF} again equals {FB}, and {FG} is common, the two sides {AF} and {FG} equal the two sides {BF} and {FG},",
+              visible: SIDES,
+              highlighted: ["AF","BF","FG"] },
+            { text: "and the angle {AFG} equals the angle {BFG},",
+              visible: ANGF,
+              highlighted: ["FG"],
+              transition: { mode: "parallel", animations: [
+                  { elem: "angAFG", name: geomlib.A.Sector.sweep },
+                  { elem: "angBFG", name: geomlib.A.Sector.sweep } ] } },
+            { text: "therefore the base {AG} equals the base {BG}.",
+              visible: ANGF,
+              highlighted: ["AG","BG"],
+              justifications: [{ claim: "two sides and the included angle", ref: "I.4" }] },
+            { text: "Therefore the circle described with center {G} and radius {GA} also passes through {B}.",
+              visible: ANGF,
+              highlighted: ["G","AG","B"],
+              justifications: [{ claim: "GB equals GA, the radius", ref: "I.Def.15" }] },
+            { text: "Let it so pass, as {AEB|circABE}.",
+              visible: CIRC,
+              highlighted: ["G"],
+              transition: { animations: [
+                  { elem: "ABE", name: geomlib.A.Circle.compass } ] },
+              justifications: [{ claim: "the circle with center G and radius GA", ref: "I.Post.3" }] },
+            { text: "Now, since {AD} is drawn at right angles to the diameter {AE} from its end, {AD} touches the circle {AEB|circABE}.",
+              visible: CIRC,
+              highlighted: ["AD","AE","angDAE","circABE"],
+              justifications: [{ claim: "at right angles to the diameter from its end", ref: "III.16.Cor" }] },
+            { text: "And {AB} has been drawn across from the point of contact at {A}, therefore the angle {BAD} equals the angle constructed in the alternate segment {AHB|segAHB} of the circle.",
+              visible: FIN,
+              highlighted: ["AB","angBAD","segAHB"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "H",      name: geomlib.A.Point.appear },
+                  { elem: "AH",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "BH",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "angAHB", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "the tangent-chord angle equals the angle in the alternate segment", ref: "III.32" }] },
+            { text: "But the angle {BAD} equals the angle at {C|angC}.",
+              visible: FIN,
+              highlighted: ["angBAD","angC"] },
+            { text: "Therefore the angle in the segment {AHB|segAHB} also equals the angle at {C|angC}.",
+              visible: FIN,
+              highlighted: ["angAHB","segAHB","angC"],
+              justifications: [{ ref: "C.N.1" }] },
+            { text: "Therefore on the given straight line {AB} the segment {AHB|segAHB} of a circle has been described admitting an angle equal to the angle at {C|angC}.",
+              visible: FIN,
+              highlighted: ["AB","segAHB","angAHB","angC"],
+              justifications: [{ ref: "Q.E.F." }] }
+        ],
+        resolveJustification: function(ref) {
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Def.15":   "/elements/books/bookI/definitions/defI15/",
+        "I.Post.1":   "/elements/books/bookI/postulates/post1/",
+        "I.Post.3":   "/elements/books/bookI/postulates/post3/",
+        "I.4":        "/elements/books/bookI/propositions/propI4/",
+        "I.10":       "/elements/books/bookI/propositions/propI10/",
+        "I.11":       "/elements/books/bookI/propositions/propI11/",
+        "I.12":       "/elements/books/bookI/propositions/propI12/",
+        "I.23":       "/elements/books/bookI/propositions/propI23/",
+        "III.16.Cor": "/elements/books/bookIII/propositions/propIII16/#cor",
+        "III.32":     "/elements/books/bookIII/propositions/propIII32/",
+        "C.N.1":      "/elements/books/bookI/commonnotions/cn1/"
     });
 </script>
-</figure><div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
-<p>Construct the angle <em>BAD</em> equal to <em>C</em> on the straight line <em>AB</em> and at the point A as is the case in the third figure.   Draw <em>AE</em> at right angles to <em>AD.</em>  Bisect <em>AB</em> again at <em>F.</em>  Draw <em>FG</em> at right angles to <em>AB,</em> and join <em>GB.</em></p>
+</figure><div class="figtext"><p>Next, let the angle at <span class="elem-ref" data-elem="angC" data-canvas="canvas_2">C</span> be obtuse.</p>
+<div class="just"><a href="/elements/books/bookI/propositions/propI23/">I.23</a><br><a href="/elements/books/bookI/propositions/propI11/">I.11</a>, <a href="/elements/books/bookI/propositions/propI12/">I.12</a></div>
+<p>Construct the angle <span class="elem-ref" data-elem="BAD">BAD</span> equal to <span class="elem-ref" data-elem="angC">C</span> on the straight line <span class="elem-ref" data-elem="AB">AB</span> and at the point <span class="elem-ref" data-elem="A">A</span> as is the case in the third figure.   Draw <span class="elem-ref" data-elem="AE">AE</span> at right angles to <span class="elem-ref" data-elem="AD">AD</span>.  Bisect <span class="elem-ref" data-elem="AB">AB</span> again at <span class="elem-ref" data-elem="F">F</span>.  Draw <span class="elem-ref" data-elem="FG">FG</span> at right angles to <span class="elem-ref" data-elem="AB">AB</span>, and join <span class="elem-ref" data-elem="GB">GB</span>.</p>
 <div class="just"><a href="/elements/books/bookI/propositions/propI4/">I.4</a></div>
-<p>Then, since <em>AF</em> again equals <em>FB,</em> and <em>FG</em> is common, the two sides <em>AF</em> and <em>FG</em> equal the two sides <em>BF</em> and <em>FG,</em> and the angle <em>AFG</em> equals the angle <em>BFG,</em> therefore the base <em>AG</em> equals the base <em>BG.</em></p>
-<p>Therefore the circle described with center <em>G</em> and radius <em>GA</em> also passes through <em>B.</em>  Let it so pass, as <em>AEB.</em></p>
-<div class="just"><a href="/elements/books/bookIII/propositions/propIII16/#cor">III.16 Cor.</a></div><p>Now, since <em>AD</em> is drawn at right angles to the diameter <em>AE</em> from its end, <em>AD</em> touches the circle <em>AEB.</em></p>
+<p>Then, since <span class="elem-ref" data-elem="AF">AF</span> again equals <span class="elem-ref" data-elem="FB">FB</span>, and <span class="elem-ref" data-elem="FG">FG</span> is common, the two sides <span class="elem-ref" data-elem="AF">AF</span> and <span class="elem-ref" data-elem="FG">FG</span> equal the two sides <span class="elem-ref" data-elem="BF">BF</span> and <span class="elem-ref" data-elem="FG">FG</span>, and the angle <span class="elem-ref" data-elem="AFG">AFG</span> equals the angle <span class="elem-ref" data-elem="BFG">BFG</span>, therefore the base <span class="elem-ref" data-elem="AG">AG</span> equals the base <span class="elem-ref" data-elem="BG">BG</span>.</p>
+<p>Therefore the circle described with center <span class="elem-ref" data-elem="G">G</span> and radius <span class="elem-ref" data-elem="GA">GA</span> also passes through <span class="elem-ref" data-elem="B">B</span>.  Let it so pass, as <span class="elem-ref" data-elem="circABE">AEB</span>.</p>
+<div class="just"><a href="/elements/books/bookIII/propositions/propIII16/#cor">III.16.Cor</a></div>
+<p>Now, since <span class="elem-ref" data-elem="AD">AD</span> is drawn at right angles to the diameter <span class="elem-ref" data-elem="AE">AE</span> from its end, <span class="elem-ref" data-elem="AD">AD</span> touches the circle <span class="elem-ref" data-elem="circABE">AEB</span>.</p>
 <div class="just"><a href="/elements/books/bookIII/propositions/propIII32/">III.32</a></div>
-<p>And <em>AB</em> has been drawn across from the point of contact at A, therefore the angle <em>BAD</em> equals the angle constructed in the alternate segment <em>AHB</em> of the circle.</p>
-<p>But the angle <em>BAD</em> equals the angle at <em>C.</em></p>
-<p>Therefore the angle in the segment <em>AHB</em> also equals the angle at <em>C.</em></p>
-<p>Therefore on the given straight line <em>AB</em> the segment <em>AHB</em> of a circle has been described admitting an angle equal to the angle at <em>C.</em></p>
-<div class="qed">Q.E.F.</div>
+<p>And <span class="elem-ref" data-elem="AB">AB</span> has been drawn across from the point of contact at <span class="elem-ref" data-elem="A">A</span>, therefore the angle <span class="elem-ref" data-elem="BAD">BAD</span> equals the angle constructed in the alternate segment <span class="elem-ref" data-elem="segAHB">AHB</span> of the circle.</p>
+<p>But the angle <span class="elem-ref" data-elem="BAD">BAD</span> equals the angle at <span class="elem-ref" data-elem="angC">C</span>.</p>
+<p>Therefore the angle in the segment <span class="elem-ref" data-elem="segAHB">AHB</span> also equals the angle at <span class="elem-ref" data-elem="angC">C</span>.</p>
+<p>Therefore on the given straight line <span class="elem-ref" data-elem="AB">AB</span> the segment <span class="elem-ref" data-elem="segAHB">AHB</span> of a circle has been described admitting an angle equal to the angle at <span class="elem-ref" data-elem="angC">C</span>.</p></div></div>
+<div class="qed">Q.E.F.</div></div>
     
   </div>
 

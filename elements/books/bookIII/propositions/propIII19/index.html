@@ -26,12 +26,12 @@
 <link rel="stylesheet" type="text/css" href="/css/katex/katex.min.css">
 
 
-<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.17.1/dist/bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@brownnrl/geomlib@0.18.1/dist/bundle.js" type="text/javascript"></script>
 
 <script src="/js/footer-nav.js"></script>
 <script src="/js/elem-ref-highlight.js" defer></script>
 
-<meta name="geomlib-version" content="0.17.1">
+<meta name="geomlib-version" content="0.18.1">
 <script src="/js/ctor-source.js" defer></script>
 </head>
 <body>
@@ -66,11 +66,25 @@
     <h1 id="prop">Proposition 19</h1>
     <div class="statement">If a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.</div>
     <div class="just"><a href="/elements/books/bookI/propositions/propI11/">I.11</a></div>
-<p>For let a straight line <em>DE</em> touch the circle <em>ABC</em> at the point <em>C.</em> Draw <em>CA</em> from <em>C</em> at right angles to <em>DE.</em></p>
+<p>For let a straight line <span class="elem-ref" data-elem="DE">DE</span> touch the circle <span class="elem-ref" data-elem="ABC">ABC</span> at the point <span class="elem-ref" data-elem="C">C</span>. Draw <span class="elem-ref" data-elem="CA">CA</span> from <span class="elem-ref" data-elem="C">C</span> at right angles to <span class="elem-ref" data-elem="DE">DE</span>.</p>
 <figure class="diagram">
 <canvas id="canvas_0" width="270" height="250" tabindex="0"></canvas>
 <noscript><img alt="III.19 diagram" src="propIII19.gif"/></noscript>
 <script type="text/javascript">
+    // The converse of III.18, by reductio: a center F off the perpendicular
+    // CA would make FCE a right angle inside the right angle ACE. Joyce's
+    // figure draws F and CF; the walk brings them on with their sentence.
+    //
+    // Only two angle markers are added, both right angles in red: ACE, the
+    // constructed one, and FCE, the one III.18 forces. Both sit at C and
+    // share the arm CE; auto radius-stepping nests FCE inside ACE. Nothing
+    // else is added, so the static figure is unchanged. O, the midpoint
+    // that centers Joyce's circle, is colourless in his figure and stays
+    // out of every slide set.
+    var GIVEN = ["D","E","DE","ABC","C","B"];
+    var PERP  = GIVEN.concat(["A","AC","angACE"]);
+    var SUPP  = PERP.concat(["F","CF"]);
+    var RT    = SUPP.concat(["angFCE"]);
     geomlib.init({
         canvasid: "canvas_0",
         background: "35,19,100",
@@ -87,17 +101,102 @@
             "AC;line;connect;A,C",
             "B;point;circleSlider;ABC,180,80;0,0,0;0",
             "F;point;free;140,120",
-            "CF;line;connect;C,F"
+            "CF;line;connect;C,F",
+            "angACE;sector;angleMarkerRight;C,A,E;0;0;red;red",
+            "angFCE;sector;angleMarkerRight;C,F,E;0;0;red;red"
         ],
+        // Draggable, checked against the bundle: D, E, C, A, B, F. A is the
+        // end of the perpendicular the second sentence draws and F the
+        // supposed center, so both are deferred to follow `visible`. D, E
+        // and C are the given tangent and its point of contact; B is a
+        // letter of the given circle. O (midpoint) is derived and never
+        // drawn. The resting figure is unaffected.
+        deferDraggables: ["A","F"],
+        aliases: { "CA": "AC", "FC": "CF", "ED": "DE",
+                   "ACE": "angACE", "ECA": "angACE",
+                   "FCE": "angFCE", "ECF": "angFCE" },
+        slides: [
+            // The deck opens on the proposition's statement over the givens
+            // (process.md “Open on the statement”), split at its seams.
+            { text: "“If a straight line touches a circle,”",
+              visible: GIVEN,
+              highlighted: [] },
+            { text: "“and from the point of contact a straight line is drawn at right angles to the tangent,”",
+              visible: GIVEN,
+              highlighted: [] },
+            { text: "“the center of the circle will be on the straight line so drawn.”",
+              visible: GIVEN,
+              highlighted: [],
+              justifications: [{ ref: "III.19" }] },
+            { text: "For let a straight line {DE} touch the circle {ABC} at the point {C}.",
+              visible: GIVEN,
+              highlighted: ["DE","ABC","C"] },
+            { text: "Draw {CA} from {C} at right angles to {DE}.",
+              visible: PERP,
+              highlighted: ["C", "DE", "A", "AC", "angACE"],
+              transition: { mode: "cascade", animations: [
+                  { elem: "A",      name: geomlib.A.Point.appear },
+                  { elem: "AC",     name: geomlib.A.Line.straightEdgeConnect },
+                  { elem: "angACE", name: geomlib.A.Sector.sweep } ] },
+              justifications: [{ claim: "CA at right angles to DE", ref: "I.11" }] },
+            { text: "I say that the center of the circle is on {AC}.",
+              visible: PERP,
+              highlighted: ["AC","ABC"] },
+            { text: "For suppose it is not, but, if possible, let {F} be the center, and join {CF}.",
+              visible: SUPP,
+              highlighted: [],
+              transition: { mode: "cascade", animations: [
+                  { elem: "F",  name: geomlib.A.Point.appear },
+                  { elem: "CF", name: geomlib.A.Line.straightEdgeConnect } ] },
+              justifications: [{ ref: "I.Post.1" }] },
+            // His III.18 step is two sentences; the marker lands with the
+            // second.
+            { text: "Since a straight line {DE} touches the circle {ABC}, and {FC} has been joined from the center to the point of contact, {FC} is perpendicular to {DE}.",
+              visible: SUPP,
+              highlighted: ["DE","ABC","CF"],
+              justifications: [{ claim: "FC perpendicular to DE", ref: "III.18" }] },
+            { text: "Therefore the angle {FCE} is right.",
+              visible: RT,
+              highlighted: [],
+              transition: { animations: [
+                  { elem: "angFCE", name: geomlib.A.Sector.sweep } ] } },
+            { text: "But the angle {ACE} is also right, therefore the angle {FCE} equals the angle {ACE}, the less equals the greater, which is impossible.",
+              visible: RT,
+              highlighted: ["angACE","angFCE"],
+              justifications: [{ claim: "all right angles are equal", ref: "I.Post.4" }] },
+            { text: "Therefore {F} is not the center of the circle {ABC}.",
+              visible: RT,
+              highlighted: ["F","ABC"] },
+            { text: "Similarly we can prove that neither is any other point except a point on {AC}.",
+              visible: RT,
+              highlighted: ["AC"] },
+            { text: "Therefore if a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.",
+              visible: RT,
+              highlighted: ["DE","AC","ABC"],
+              justifications: [{ ref: "Q.E.D." }] }
+        ],
+        resolveJustification: function(ref) {
+            if (ref === "III.19") return "#prop";
+            return (window.eucrefs && window.eucrefs[ref]) || null;
+        }
+    });
+
+    // Per-page citation lookup for the slideshow's resolveJustification.
+    window.eucrefs = (window.eucrefs || {});
+    Object.assign(window.eucrefs, {
+        "I.Post.1": "/elements/books/bookI/postulates/post1/",
+        "I.Post.4": "/elements/books/bookI/postulates/post4/",
+        "I.11":     "/elements/books/bookI/propositions/propI11/",
+        "III.18":   "/elements/books/bookIII/propositions/propIII18/"
     });
 </script>
-</figure><p>I say that the center of the circle is on <em>AC.</em></p>
-<p>For suppose it is not, but, if possible, let <em>F</em> be the center, and join <em>CF.</em></p>
+</figure><p>I say that the center of the circle is on <span class="elem-ref" data-elem="AC">AC</span>.</p>
+<p>For suppose it is not, but, if possible, let <span class="elem-ref" data-elem="F">F</span> be the center, and join <span class="elem-ref" data-elem="CF">CF</span>.</p>
 <div class="just"><a href="/elements/books/bookIII/propositions/propIII18/">III.18</a></div>
-<p>Since a straight line <em>DE</em> touches the circle <em>ABC,</em> and <em>FC</em> has been joined from the center to the point of contact, <em>FC</em> is perpendicular to <em>DE.</em> Therefore the angle <em>FCE</em> is right.</p>
-<p>But the angle <em>ACE</em> is also right, therefore the angle <em>FCE</em> equals the angle <em>ACE,</em> the less equals the greater, which is impossible.</p>
-<p>Therefore <em>F</em> is not the center of the circle <em>ABC.</em></p>
-<p>Similarly we can prove that neither is any other point except a point on <em>AC.</em></p>
+<p>Since a straight line <span class="elem-ref" data-elem="DE">DE</span> touches the circle <span class="elem-ref" data-elem="ABC">ABC</span>, and <span class="elem-ref" data-elem="FC">FC</span> has been joined from the center to the point of contact, <span class="elem-ref" data-elem="FC">FC</span> is perpendicular to <span class="elem-ref" data-elem="DE">DE</span>. Therefore the angle <span class="elem-ref" data-elem="FCE">FCE</span> is right.</p>
+<p>But the angle <span class="elem-ref" data-elem="ACE">ACE</span> is also right, therefore the angle <span class="elem-ref" data-elem="FCE">FCE</span> equals the angle <span class="elem-ref" data-elem="ACE">ACE</span>, the less equals the greater, which is impossible.</p>
+<p>Therefore <span class="elem-ref" data-elem="F">F</span> is not the center of the circle <span class="elem-ref" data-elem="ABC">ABC</span>.</p>
+<p>Similarly we can prove that neither is any other point except a point on <span class="elem-ref" data-elem="AC">AC</span>.</p>
 <p>Therefore <em>if a straight line touches a circle, and from the point of contact a straight line is drawn at right angles to the tangent, the center of the circle will be on the straight line so drawn.</em></p>
 <p><div class="qed">Q.E.D.</div>
 <br clear="all"></p>
